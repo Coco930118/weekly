@@ -64,4 +64,10 @@ Add LINE stamp series Day N (YYYY-MM-DD): [シリーズタイトル]
 - 1日3投稿（Threads×2＋X×1、またはThreads×1＋X×2）を基本配分とする
 
 ## 完了報告
-全7コミット・プッシュ終了後、ユーザーに完了を報告する。
+全7コミット・プッシュ終了後、ユーザーに以下を報告する。
+
+1. 完了メッセージ
+2. 以下のURLを表示する：
+   - **ブランチURL**：`https://github.com/coco930118/weekly/tree/[branch-name]`
+   - **週次ファイルURL**：`https://github.com/coco930118/weekly/blob/[branch-name]/posts/week_YYYY_MM_DD_YYYY_MM_DD.json`
+   - **コミット履歴URL**：`https://github.com/coco930118/weekly/commits/[branch-name]`
