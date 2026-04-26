@@ -68,7 +68,10 @@ function renderWeekFilter(weeks) {
   all.textContent = '全週';
   row.appendChild(all);
 
+  // Week filter shows only non-stamp weeks
   weeks.forEach(week => {
+    const hasNonStamp = allPosts.some(p => p.weekId === week && p.platform !== 'LINEスタンプ');
+    if (!hasNonStamp) return;
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
@@ -90,7 +93,13 @@ function renderWeekFilter(weeks) {
 
 function getFilteredPosts() {
   return allPosts.filter(p => {
-    if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
+    const isStamp = p.platform === 'LINEスタンプ';
+    if (activeFilters.platform === 'LINEスタンプ') {
+      if (!isStamp) return false;
+    } else {
+      if (isStamp) return false;
+      if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
+    }
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -99,9 +108,15 @@ function getFilteredPosts() {
 function renderPosts() {
   const container = document.getElementById('postsContainer');
   const filtered = getFilteredPosts();
+  const stampMode = activeFilters.platform === 'LINEスタンプ';
+  const nonStampTotal = allPosts.filter(p => p.platform !== 'LINEスタンプ').length;
 
-  document.getElementById('statsBar').textContent =
-    `${filtered.length}件 / 全${allPosts.length}件`;
+  document.getElementById('statsBar').textContent = stampMode
+    ? `LINEスタンプ ${filtered.length}個`
+    : `${filtered.length}件 / 全${nonStampTotal}件`;
+
+  const weekRow = document.getElementById('weekFilterRow');
+  if (weekRow) weekRow.style.display = stampMode ? 'none' : '';
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
@@ -130,6 +145,8 @@ function renderPosts() {
 }
 
 function renderCard(post) {
+  if (post.platform === 'LINEスタンプ') return renderStampCard(post);
+
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
@@ -157,6 +174,37 @@ function renderCard(post) {
     </article>`;
 }
 
+function renderStampCard(post) {
+  const stampEscaped = escapeHtml(post.stamp || '');
+  const contentEscaped = escapeHtml(post.content);
+  const quoteEscaped = escapeHtml(post.quote);
+
+  return `
+    <article class="card stamp-card" data-platform="LINEスタンプ">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-stamp">LINEスタンプ</span>
+          <span class="card-character">${post.character}</span>
+        </div>
+        <span class="purpose-badge">${post.purpose}</span>
+      </div>
+      <div class="stamp-phrase-row">
+        <span class="stamp-phrase-text">${stampEscaped}</span>
+        <button class="copy-btn" data-copy="${escapeHtml(post.stamp || '')}">コピー</button>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${contentEscaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">本文コピー</button>
+        </div>
+      </div>
+      <div class="card-quote">
+        <p class="quote-text">${quoteEscaped}</p>
+        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+      </div>
+    </article>`;
+}
+
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -166,7 +214,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp');
     });
 
     const platform = btn.dataset.platform;
@@ -174,6 +222,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
     else btn.classList.add('active');
 
     renderPosts();
@@ -198,7 +247,6 @@ function setupCopyHandler() {
         btn.classList.remove('copied');
       }, 1800);
     } catch {
-      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';

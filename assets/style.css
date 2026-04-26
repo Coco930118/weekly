@@ -349,3 +349,36 @@ body {
     padding: 0 40px;
   }
 }
+
+/* LINE stamp platform badge */
+.platform-stamp {
+  background: rgba(6, 199, 85, 0.12);
+  color: #4ade80;
+  border: 1px solid rgba(6, 199, 85, 0.25);
+}
+
+/* LINE stamp filter button */
+.filter-btn.active-stamp {
+  background: #06C755;
+  border-color: #06C755;
+  color: #fff;
+}
+
+/* Stamp phrase row */
+.stamp-phrase-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(6, 199, 85, 0.04);
+  gap: 12px;
+}
+
+.stamp-phrase-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #4ade80;
+  letter-spacing: 0.04em;
+  flex: 1;
+}
