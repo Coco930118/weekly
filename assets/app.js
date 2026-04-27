@@ -68,9 +68,10 @@ function renderWeekFilter(weeks) {
   all.textContent = '全週';
   row.appendChild(all);
 
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
   weeks.forEach(week => {
-    const hasNonStamp = allPosts.some(p => p.weekId === week && p.platform !== 'LINEスタンプ');
-    if (!hasNonStamp) return;
+    const hasRegular = allPosts.some(p => p.weekId === week && !EXCLUDED.includes(p.platform));
+    if (!hasRegular) return;
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
@@ -91,14 +92,18 @@ function renderWeekFilter(weeks) {
 }
 
 function getFilteredPosts() {
+  const mode = activeFilters.platform;
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+
   return allPosts.filter(p => {
     const isStamp = p.platform === 'LINEスタンプ';
-    if (activeFilters.platform === 'LINEスタンプ') {
-      if (!isStamp) return false;
-    } else {
-      if (isStamp) return false;
-      if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
-    }
+
+    if (mode === 'LINEスタンプ') return isStamp;
+    if (mode === 'LINEスタンププロンプト') return isStamp;
+
+    // Regular modes: exclude stamps and promo posts
+    if (EXCLUDED.includes(p.platform)) return false;
+    if (mode !== 'all' && p.platform !== mode) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -107,18 +112,35 @@ function getFilteredPosts() {
 function renderPosts() {
   const container = document.getElementById('postsContainer');
   const filtered = getFilteredPosts();
-  const stampMode = activeFilters.platform === 'LINEスタンプ';
-  const nonStampTotal = allPosts.filter(p => p.platform !== 'LINEスタンプ').length;
+  const mode = activeFilters.platform;
+  const stampMode = mode === 'LINEスタンプ';
+  const promptMode = mode === 'LINEスタンププロンプト';
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform)).length;
 
-  document.getElementById('statsBar').textContent = stampMode
+  document.getElementById('statsBar').textContent = promptMode
+    ? `DALL-E 3 プロンプト ${filtered.length}個`
+    : stampMode
     ? `LINEスタンプ ${filtered.length}個`
-    : `${filtered.length}件 / 全${nonStampTotal}件`;
+    : `${filtered.length}件 / 全${regularTotal}件`;
 
   const weekRow = document.getElementById('weekFilterRow');
-  if (weekRow) weekRow.style.display = stampMode ? 'none' : '';
+  if (weekRow) weekRow.style.display = (stampMode || promptMode) ? 'none' : '';
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
+    return;
+  }
+
+  const seriesHeader = (stampMode || promptMode) ? `
+    <div class="stamp-series-header">
+      <p class="stamp-series-title">きょうも、そのままで ③</p>
+      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
+    </div>` : '';
+
+  if (promptMode) {
+    const cards = filtered.map(renderCard).join('');
+    container.innerHTML = seriesHeader + `<div class="cards-grid prompt-grid">${cards}</div>`;
     return;
   }
 
@@ -127,12 +149,6 @@ function renderPosts() {
     if (!byDate[p.date]) byDate[p.date] = [];
     byDate[p.date].push(p);
   });
-
-  const seriesHeader = stampMode ? `
-    <div class="stamp-series-header">
-      <p class="stamp-series-title">きょうも、そのままで ③</p>
-      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
-    </div>` : '';
 
   const html = Object.keys(byDate)
     .sort()
@@ -150,6 +166,7 @@ function renderPosts() {
 }
 
 function renderCard(post) {
+  if (activeFilters.platform === 'LINEスタンププロンプト') return renderPromptCard(post);
   if (post.platform === 'LINEスタンプ') return renderStampCard(post);
 
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
@@ -183,16 +200,6 @@ function renderStampCard(post) {
   const stampEscaped = escapeHtml(post.stamp || '');
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
-  const promptEscaped = escapeHtml(post.prompt || '');
-
-  const promptSection = post.prompt ? `
-      <div class="stamp-prompt-section">
-        <p class="stamp-prompt-label">DALL-E 3 プロンプト</p>
-        <pre class="stamp-prompt-code">${promptEscaped}</pre>
-        <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.prompt)}">プロンプトをコピー</button>
-        </div>
-      </div>` : '';
 
   return `
     <article class="card stamp-card" data-platform="LINEスタンプ">
@@ -212,10 +219,29 @@ function renderStampCard(post) {
         <div class="copy-btn-content">
           <button class="copy-btn" data-copy="${escapeHtml(post.content)}">本文コピー</button>
         </div>
-      </div>${promptSection}
+      </div>
       <div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+      </div>
+    </article>`;
+}
+
+function renderPromptCard(post) {
+  const stampEscaped = escapeHtml(post.stamp || '');
+  const promptEscaped = escapeHtml(post.prompt || '');
+
+  return `
+    <article class="card prompt-card">
+      <div class="prompt-card-header">
+        <span class="platform-badge platform-prompt">DALL-E 3</span>
+        <span class="prompt-stamp-phrase">${stampEscaped}</span>
+      </div>
+      <div class="prompt-card-body">
+        <pre class="prompt-code">${promptEscaped}</pre>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.prompt || '')}">プロンプトをコピー</button>
+        </div>
       </div>
     </article>`;
 }
@@ -229,7 +255,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt');
     });
 
     const platform = btn.dataset.platform;
@@ -238,6 +264,7 @@ function setupPlatformFilter() {
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
+    else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
     else btn.classList.add('active');
 
     renderPosts();
