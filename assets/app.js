@@ -2,6 +2,7 @@
 
 let allPosts = [];
 let allNotes = [];
+let allNoteFunnelPosts = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -24,25 +25,6 @@ function escapeHtml(str) {
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
-}
-
-async function loadNotes() {
-  try {
-    const res = await fetch('./notes/index.json');
-    if (!res.ok) return;
-    const index = await res.json();
-    const noteDataArr = await Promise.all(
-      index.notes.map(async (n) => {
-        const r = await fetch(`./notes/${n.note_id}.json`);
-        if (!r.ok) return n;
-        const full = await r.json();
-        return { ...n, ...full };
-      })
-    );
-    allNotes = noteDataArr.sort((a, b) => b.date.localeCompare(a.date));
-  } catch (e) {
-    allNotes = [];
-  }
 }
 
 async function loadPosts() {
@@ -71,7 +53,49 @@ async function loadPosts() {
       });
 
     renderWeekFilter(weekDataArr.map(w => w.week));
-    await loadNotes();
+
+    try {
+      const notesIndexRes = await fetch('./notes/index.json');
+      if (notesIndexRes.ok) {
+        const notesIndex = await notesIndexRes.json();
+
+        // Load note content cards
+        if (notesIndex.notes) {
+          const noteDataArr = await Promise.all(
+            notesIndex.notes.map(async (n) => {
+              const r = await fetch(`./notes/${n.note_id}.json`);
+              if (!r.ok) return n;
+              const full = await r.json();
+              return { ...n, ...full };
+            })
+          );
+          allNotes = noteDataArr.sort((a, b) => b.date.localeCompare(a.date));
+        }
+
+        // Load note funnel posts
+        if (notesIndex.funnels) {
+          const funnelDataArr = await Promise.all(
+            notesIndex.funnels.map(async (filename) => {
+              const res = await fetch(`./notes/${filename}`);
+              if (!res.ok) return null;
+              return res.json();
+            })
+          );
+          allNoteFunnelPosts = funnelDataArr
+            .filter(Boolean)
+            .flatMap(f =>
+              f.posts.map(p => ({
+                ...p,
+                _type: 'note_funnel',
+                _noteTitle: f.source_note_title,
+                _sourceWeek: f.source_week
+              }))
+            )
+            .sort((a, b) => new Date(`${a.date}T${a.time}:00`) - new Date(`${b.date}T${b.time}:00`));
+        }
+      }
+    } catch (_) {}
+
     renderPosts();
 
   } catch (err) {
@@ -89,9 +113,10 @@ function renderWeekFilter(weeks) {
   all.textContent = '全週';
   row.appendChild(all);
 
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
   weeks.forEach(week => {
-    const hasNonStamp = allPosts.some(p => p.weekId === week && p.platform !== 'LINEスタンプ');
-    if (!hasNonStamp) return;
+    const hasRegular = allPosts.some(p => p.weekId === week && !EXCLUDED.includes(p.platform));
+    if (!hasRegular) return;
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
@@ -112,14 +137,19 @@ function renderWeekFilter(weeks) {
 }
 
 function getFilteredPosts() {
+  const mode = activeFilters.platform;
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+
+  if (mode === 'note') return [];
+
   return allPosts.filter(p => {
     const isStamp = p.platform === 'LINEスタンプ';
-    if (activeFilters.platform === 'LINEスタンプ') {
-      if (!isStamp) return false;
-    } else {
-      if (isStamp) return false;
-      if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
-    }
+
+    if (mode === 'LINEスタンプ') return isStamp;
+    if (mode === 'LINEスタンププロンプト') return isStamp;
+
+    if (EXCLUDED.includes(p.platform)) return false;
+    if (mode !== 'all' && p.platform !== mode) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -149,16 +179,16 @@ function renderNoteCard(note) {
     </div>`).join('');
 
   return `
-    <article class="card note-card" style="margin-bottom:12px;display:block;text-decoration:none;">
+    <article class="card note-card" style="margin-bottom:12px;">
       <div class="note-card-header">
         <div class="card-meta-left">
           <span class="platform-badge platform-note">note</span>
-          <span class="card-date" style="font-size:.72rem;color:var(--text-muted)">${escapeHtml(note.date)}</span>
+          <span class="card-time" style="font-size:.72rem;color:var(--text-muted)">${escapeHtml(note.date)}</span>
         </div>
-        <span class="note-price-badge">¥${escapeHtml(note.price)}</span>
+        <span class="note-price-badge">¥${escapeHtml(String(note.price))}</span>
       </div>
       <div class="note-card-body">
-        <a href="./notes/${escapeHtml(note.filename)}" class="note-card-title" style="display:block;text-decoration:none;color:var(--text-primary);font-size:.95rem;font-weight:600;line-height:1.55;margin-bottom:10px;">${escapeHtml(note.title)}</a>
+        <a href="./notes/${escapeHtml(note.filename)}" style="display:block;text-decoration:none;color:var(--text-primary);font-size:.95rem;font-weight:600;line-height:1.55;margin-bottom:10px;">${escapeHtml(note.title)}</a>
         <p class="note-card-desc">${escapeHtml(note.description)}</p>
         <div class="note-card-tags">${tags}</div>
       </div>
@@ -172,22 +202,39 @@ function renderNoteCard(note) {
 
 function renderPosts() {
   const container = document.getElementById('postsContainer');
-  const noteMode = activeFilters.platform === 'note';
-  if (noteMode) { renderNotes(); return; }
+  const mode = activeFilters.platform;
+
+  if (mode === 'note') { renderNotes(); return; }
 
   const filtered = getFilteredPosts();
-  const stampMode = activeFilters.platform === 'LINEスタンプ';
-  const nonStampTotal = allPosts.filter(p => p.platform !== 'LINEスタンプ').length;
+  const stampMode = mode === 'LINEスタンプ';
+  const promptMode = mode === 'LINEスタンププロンプト';
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform)).length;
 
-  document.getElementById('statsBar').textContent = stampMode
+  document.getElementById('statsBar').textContent = promptMode
+    ? `DALL-E 3 プロンプト ${filtered.length}個`
+    : stampMode
     ? `LINEスタンプ ${filtered.length}個`
-    : `${filtered.length}件 / 全${nonStampTotal}件`;
+    : `${filtered.length}件 / 全${regularTotal}件`;
 
   const weekRow = document.getElementById('weekFilterRow');
-  if (weekRow) weekRow.style.display = stampMode ? 'none' : '';
+  if (weekRow) weekRow.style.display = (stampMode || promptMode) ? 'none' : '';
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
+    return;
+  }
+
+  const seriesHeader = (stampMode || promptMode) ? `
+    <div class="stamp-series-header">
+      <p class="stamp-series-title">きょうも、そのままで ③</p>
+      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
+    </div>` : '';
+
+  if (promptMode) {
+    const cards = filtered.map(renderCard).join('');
+    container.innerHTML = seriesHeader + `<div class="cards-grid prompt-grid">${cards}</div>`;
     return;
   }
 
@@ -197,16 +244,12 @@ function renderPosts() {
     byDate[p.date].push(p);
   });
 
-  const seriesHeader = stampMode ? `
-    <div class="stamp-series-header">
-      <p class="stamp-series-title">きょうも、そのままで ③</p>
-      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
-    </div>` : '';
-
   const html = Object.keys(byDate)
     .sort()
     .map(date => {
-      const cards = byDate[date].map(renderCard).join('');
+      const cards = byDate[date].map(p =>
+        p._type === 'note_funnel' ? renderNoteFunnelCard(p) : renderCard(p)
+      ).join('');
       return `
         <section class="date-group">
           <h2 class="date-heading">${formatDate(date)}</h2>
@@ -219,6 +262,7 @@ function renderPosts() {
 }
 
 function renderCard(post) {
+  if (activeFilters.platform === 'LINEスタンププロンプト') return renderPromptCard(post);
   if (post.platform === 'LINEスタンプ') return renderStampCard(post);
 
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
@@ -252,16 +296,6 @@ function renderStampCard(post) {
   const stampEscaped = escapeHtml(post.stamp || '');
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
-  const promptEscaped = escapeHtml(post.prompt || '');
-
-  const promptSection = post.prompt ? `
-      <div class="stamp-prompt-section">
-        <p class="stamp-prompt-label">DALL-E 3 プロンプト</p>
-        <pre class="stamp-prompt-code">${promptEscaped}</pre>
-        <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.prompt)}">プロンプトをコピー</button>
-        </div>
-      </div>` : '';
 
   return `
     <article class="card stamp-card" data-platform="LINEスタンプ">
@@ -281,10 +315,61 @@ function renderStampCard(post) {
         <div class="copy-btn-content">
           <button class="copy-btn" data-copy="${escapeHtml(post.content)}">本文コピー</button>
         </div>
-      </div>${promptSection}
+      </div>
       <div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+      </div>
+    </article>`;
+}
+
+function renderPromptCard(post) {
+  const stampEscaped = escapeHtml(post.stamp || '');
+  const promptEscaped = escapeHtml(post.prompt || '');
+
+  return `
+    <article class="card prompt-card">
+      <div class="prompt-card-header">
+        <span class="platform-badge platform-prompt">DALL-E 3</span>
+        <span class="prompt-stamp-phrase">${stampEscaped}</span>
+      </div>
+      <div class="prompt-card-body">
+        <pre class="prompt-code">${promptEscaped}</pre>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.prompt || '')}">プロンプトをコピー</button>
+        </div>
+      </div>
+    </article>`;
+}
+
+function renderNoteFunnelCard(post) {
+  const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
+  const contentEscaped = escapeHtml(post.content);
+  const noteTitleEscaped = escapeHtml(post._noteTitle || '');
+
+  return `
+    <article class="card card-note-funnel" data-platform="${post.platform}">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge ${platformClass}">${post.platform}</span>
+          <span class="card-time">${post.time}</span>
+          <span class="note-funnel-label">note宣伝投稿</span>
+        </div>
+        <span class="purpose-badge purpose-note">note導線</span>
+      </div>
+      <div class="card-note-title">
+        <span class="note-title-icon">📝</span>
+        <span class="note-title-text">${noteTitleEscaped}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${contentEscaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote card-note-url">
+        <p class="quote-text note-url-hint">※ URLを末尾に追加して投稿</p>
+        <button class="copy-btn" data-copy="${escapeHtml(post.content + '\n\n[NOTE_URL]')}">URL込みコピー</button>
       </div>
     </article>`;
 }
@@ -298,7 +383,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-note');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -307,6 +392,7 @@ function setupPlatformFilter() {
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
+    else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
     else if (platform === 'note') btn.classList.add('active-note');
     else btn.classList.add('active');
 

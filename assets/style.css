@@ -309,6 +309,72 @@ body {
   color: #f87171;
 }
 
+/* Note funnel */
+:root {
+  --accent-note: #b45309;
+  --accent-note-bg: rgba(180, 83, 9, 0.10);
+  --accent-note-border: rgba(180, 83, 9, 0.28);
+  --accent-note-text: #fbbf24;
+}
+
+.filter-btn.active-note {
+  background: var(--accent-note);
+  border-color: var(--accent-note);
+  color: #fff;
+}
+
+.card-note-funnel {
+  border-color: var(--accent-note-border);
+}
+
+.card-note-funnel:hover {
+  border-color: rgba(180, 83, 9, 0.5);
+}
+
+.note-funnel-label {
+  font-size: 0.68rem;
+  color: var(--accent-note-text);
+  letter-spacing: 0.03em;
+}
+
+.purpose-note {
+  background: var(--accent-note-bg);
+  color: var(--accent-note-text);
+  border-color: var(--accent-note-border);
+}
+
+.card-note-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--accent-note-bg);
+  border-bottom: 1px solid var(--accent-note-border);
+}
+
+.note-title-icon {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.note-title-text {
+  font-size: 0.75rem;
+  color: var(--accent-note-text);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.card-note-url {
+  background: var(--accent-note-bg);
+  border-top-color: var(--accent-note-border);
+}
+
+.note-url-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
@@ -402,33 +468,53 @@ body {
   line-height: 1.8;
 }
 
-/* Prompt section */
-.stamp-prompt-section {
-  border-top: 1px solid var(--border);
-  padding: 10px 14px 4px;
-  background: #111a13;
+/* LINEスタンププロンプト view */
+.platform-prompt {
+  background: rgba(79, 70, 229, 0.15);
+  color: #a5b4fc;
+  border: 1px solid rgba(79, 70, 229, 0.3);
 }
 
-.stamp-prompt-label {
-  font-size: 0.65rem;
-  color: #4ade80;
-  letter-spacing: 0.06em;
+.filter-btn.active-prompt {
+  background: #4f46e5;
+  border-color: #4f46e5;
+  color: #fff;
+}
+
+.prompt-grid {
+  padding-top: 16px;
+}
+
+.prompt-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.prompt-stamp-phrase {
+  font-size: 1rem;
   font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  color: var(--text-primary);
+  letter-spacing: 0.04em;
 }
 
-.stamp-prompt-code {
-  font-size: 0.72rem;
+.prompt-card-body {
+  padding: 12px 14px 10px;
+}
+
+.prompt-code {
+  font-size: 0.73rem;
   color: var(--text-secondary);
   background: var(--bg);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 10px 12px;
+  padding: 12px 14px;
   white-space: pre-wrap;
   word-break: break-word;
-  line-height: 1.65;
-  margin-bottom: 8px;
+  line-height: 1.7;
+  margin-bottom: 10px;
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
@@ -524,12 +610,6 @@ body {
 .note-card-date {
   font-size: 0.72rem;
   color: var(--text-muted);
-}
-
-.note-card-link-label {
-  font-size: 0.72rem;
-  color: #c9a96e;
-  letter-spacing: 0.04em;
 }
 
 .note-hooks {
