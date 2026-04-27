@@ -1,6 +1,8 @@
 'use strict';
 
 let allPosts = [];
+let allNotes = [];
+let allNoteFunnelPosts = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -45,12 +47,38 @@ async function loadPosts() {
     allPosts = weekDataArr
       .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
       .sort((a, b) => {
-        const tA = new Date(`${a.date}T${a.time}:00`);
-        const tB = new Date(`${b.date}T${b.time}:00`);
+        const tA = new Date(`${a.date}T${a.time || '00:00'}:00`);
+        const tB = new Date(`${b.date}T${b.time || '00:00'}:00`);
         return tA - tB;
       });
 
     renderWeekFilter(weekDataArr.map(w => w.week));
+
+    try {
+      const notesIndexRes = await fetch('./notes/index.json');
+      if (notesIndexRes.ok) {
+        const notesIndex = await notesIndexRes.json();
+        if (notesIndex.notes) {
+          const noteDataArr = await Promise.all(notesIndex.notes.map(async (n) => {
+            const r = await fetch(`./notes/${n.note_id}.json`);
+            if (!r.ok) return n;
+            const full = await r.json();
+            return { ...n, ...full };
+          }));
+          allNotes = noteDataArr.sort((a, b) => b.date.localeCompare(a.date));
+        }
+        if (notesIndex.funnels) {
+          const funnelDataArr = await Promise.all(notesIndex.funnels.map(async (fname) => {
+            const r = await fetch(`./notes/${fname}`);
+            if (!r.ok) return [];
+            const data = await r.json();
+            return data.posts || [];
+          }));
+          allNoteFunnelPosts = funnelDataArr.flat();
+        }
+      }
+    } catch (_) {}
+
     renderPosts();
 
   } catch (err) {
@@ -68,7 +96,13 @@ function renderWeekFilter(weeks) {
   all.textContent = '全週';
   row.appendChild(all);
 
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const seen = new Set();
   weeks.forEach(week => {
+    if (seen.has(week)) return;
+    seen.add(week);
+    const hasRegular = allPosts.some(p => p.weekId === week && !EXCLUDED.includes(p.platform) && !p.reply1);
+    if (!hasRegular) return;
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
@@ -89,8 +123,25 @@ function renderWeekFilter(weeks) {
 }
 
 function getFilteredPosts() {
+  const mode = activeFilters.platform;
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+
+  if (mode === 'note') return [];
+
   return allPosts.filter(p => {
-    if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
+    const isStamp = p.platform === 'LINEスタンプ';
+
+    if (mode === 'LINEスタンプ') return isStamp;
+    if (mode === 'LINEスタンププロンプト') return isStamp;
+    if (mode === 'Threads診断') {
+      if (!(p.platform === 'Threads' && p.reply1)) return false;
+      if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
+      return true;
+    }
+
+    if (EXCLUDED.includes(p.platform)) return false;
+    if (p.reply1) return false;
+    if (mode !== 'all' && p.platform !== mode) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -98,13 +149,45 @@ function getFilteredPosts() {
 
 function renderPosts() {
   const container = document.getElementById('postsContainer');
-  const filtered = getFilteredPosts();
+  const mode = activeFilters.platform;
 
-  document.getElementById('statsBar').textContent =
-    `${filtered.length}件 / 全${allPosts.length}件`;
+  if (mode === 'note') {
+    renderNotes();
+    return;
+  }
+
+  const filtered = getFilteredPosts();
+  const stampMode = mode === 'LINEスタンプ';
+  const promptMode = mode === 'LINEスタンププロンプト';
+  const shindanMode = mode === 'Threads診断';
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform) && !p.reply1).length;
+
+  document.getElementById('statsBar').textContent = promptMode
+    ? `DALL-E 3 プロンプト ${filtered.length}個`
+    : stampMode
+    ? `LINEスタンプ ${filtered.length}個`
+    : shindanMode
+    ? `Threads診断 ${filtered.length}投稿`
+    : `${filtered.length}件 / 全${regularTotal}件`;
+
+  const weekRow = document.getElementById('weekFilterRow');
+  if (weekRow) weekRow.style.display = (stampMode || promptMode) ? 'none' : '';
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
+    return;
+  }
+
+  const seriesHeader = (stampMode || promptMode) ? `
+    <div class="stamp-series-header">
+      <p class="stamp-series-title">きょうも、そのままで ④</p>
+      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
+    </div>` : '';
+
+  if (promptMode) {
+    const cards = filtered.map(renderCard).join('');
+    container.innerHTML = seriesHeader + `<div class="cards-grid prompt-grid">${cards}</div>`;
     return;
   }
 
@@ -126,21 +209,95 @@ function renderPosts() {
     })
     .join('');
 
-  container.innerHTML = html;
+  container.innerHTML = seriesHeader + html;
+}
+
+function renderNotes() {
+  const container = document.getElementById('postsContainer');
+  const weekRow = document.getElementById('weekFilterRow');
+  if (weekRow) weekRow.style.display = 'none';
+
+  const totalNotes = allNotes.length;
+  document.getElementById('statsBar').textContent = `note記事 ${totalNotes}件`;
+
+  if (totalNotes === 0) {
+    container.innerHTML = '<p class="empty-state">note記事がありません</p>';
+    return;
+  }
+
+  const cards = allNotes.map(renderNoteCard).join('');
+  container.innerHTML = `<div class="notes-grid">${cards}</div>`;
+}
+
+function renderNoteCard(note) {
+  const title = escapeHtml(note.title || '');
+  const desc = escapeHtml(note.description || '');
+  const date = note.date || '';
+  const price = note.price ? `¥${note.price}` : '無料';
+  const tags = (note.hashtags || []).map(t => `<span class="note-tag">${escapeHtml(t)}</span>`).join('');
+  const url = `./notes/${note.filename || note.note_id + '.html'}`;
+
+  return `
+    <article class="note-card">
+      <div class="note-card-header">
+        <span class="platform-badge platform-note">note</span>
+        <span class="note-price-badge">${price}</span>
+      </div>
+      <div class="note-card-body">
+        <a href="${url}" class="note-card-title" target="_blank">${title}</a>
+        <p class="note-card-desc">${desc}</p>
+      </div>
+      <div class="note-card-tags">${tags}</div>
+      <div class="note-card-footer">
+        <span class="note-card-date">${date}</span>
+        <a href="${url}" class="note-card-link" target="_blank">詳細を見る →</a>
+      </div>
+    </article>`;
+}
+
+function renderExpandable(label, text, copyLabel, isOpen) {
+  const escaped = escapeHtml(text);
+  const openAttr = isOpen ? ' open' : '';
+  return `
+    <details class="card-expandable"${openAttr}>
+      <summary class="expandable-summary">${label}</summary>
+      <div class="expandable-body">
+        <p class="expandable-text">${escaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(text)}">${copyLabel}</button>
+        </div>
+      </div>
+    </details>`;
 }
 
 function renderCard(post) {
+  if (activeFilters.platform === 'LINEスタンププロンプト') return renderPromptCard(post);
+  if (post.platform === 'LINEスタンプ') return renderStampCard(post);
+
+  const isShindan = activeFilters.platform === 'Threads診断';
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
+  const cardClass = isShindan ? 'card card-shindan' : 'card';
+
+  const themeHtml = post.theme
+    ? `<span class="theme-badge">${escapeHtml(post.theme)}</span>`
+    : '';
+
+  const extrasHtml = isShindan ? [
+    post.reply1 ? renderExpandable('返信① 回答・解説', post.reply1, 'コピー', true) : '',
+    post.reply2 ? renderExpandable('返信② note動線', post.reply2, 'コピー', true) : '',
+    post.image_prompt ? renderExpandable('🎨 画像プロンプト（DALL-E 3）', post.image_prompt, 'コピー', true) : '',
+  ].join('') : '';
 
   return `
-    <article class="card" data-platform="${post.platform}">
+    <article class="${cardClass}" data-platform="${post.platform}">
       <div class="card-header">
         <div class="card-meta-left">
           <span class="platform-badge ${platformClass}">${post.platform}</span>
-          <span class="card-time">${post.time}</span>
+          <span class="card-time">${post.time || ''}</span>
           <span class="card-character">${post.character}</span>
+          ${themeHtml}
         </div>
         <span class="purpose-badge">${post.purpose}</span>
       </div>
@@ -154,6 +311,57 @@ function renderCard(post) {
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
       </div>
+      ${extrasHtml}
+    </article>`;
+}
+
+function renderStampCard(post) {
+  const stampEscaped = escapeHtml(post.stamp || '');
+  const contentEscaped = escapeHtml(post.content);
+  const quoteEscaped = escapeHtml(post.quote);
+
+  return `
+    <article class="card stamp-card" data-platform="LINEスタンプ">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-stamp">LINEスタンプ</span>
+          <span class="card-character">${post.character}</span>
+        </div>
+        <span class="purpose-badge">${post.purpose}</span>
+      </div>
+      <div class="stamp-phrase-row">
+        <span class="stamp-phrase-text">${stampEscaped}</span>
+        <button class="copy-btn" data-copy="${escapeHtml(post.stamp || '')}">コピー</button>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${contentEscaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">本文コピー</button>
+        </div>
+      </div>
+      <div class="card-quote">
+        <p class="quote-text">${quoteEscaped}</p>
+        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+      </div>
+    </article>`;
+}
+
+function renderPromptCard(post) {
+  const stampEscaped = escapeHtml(post.stamp || '');
+  const promptEscaped = escapeHtml(post.prompt || '');
+
+  return `
+    <article class="card prompt-card">
+      <div class="prompt-card-header">
+        <span class="platform-badge platform-prompt">DALL-E 3</span>
+        <span class="prompt-stamp-phrase">${stampEscaped}</span>
+      </div>
+      <div class="prompt-card-body">
+        <pre class="prompt-code">${promptEscaped}</pre>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.prompt || '')}">プロンプトをコピー</button>
+        </div>
+      </div>
     </article>`;
 }
 
@@ -166,7 +374,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-shindan', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -174,6 +382,10 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'Threads診断') btn.classList.add('active-shindan');
+    else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
+    else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
+    else if (platform === 'note') btn.classList.add('active-note');
     else btn.classList.add('active');
 
     renderPosts();
@@ -198,7 +410,6 @@ function setupCopyHandler() {
         btn.classList.remove('copied');
       }, 1800);
     } catch {
-      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
