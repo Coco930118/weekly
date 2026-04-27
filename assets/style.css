@@ -16,6 +16,7 @@
   --text-muted: #555555;
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
+  --accent-xshindan: #2ea87e;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -126,6 +127,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-xshindan {
+  background: var(--accent-xshindan);
+  border-color: var(--accent-xshindan);
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -208,6 +215,12 @@ body {
   background: rgba(155, 77, 202, 0.15);
   color: #c084e0;
   border: 1px solid rgba(155, 77, 202, 0.3);
+}
+
+.platform-xshindan {
+  background: rgba(46, 168, 126, 0.15);
+  color: #5cd9a6;
+  border: 1px solid rgba(46, 168, 126, 0.3);
 }
 
 .card-time {
@@ -348,4 +361,35 @@ body {
   .posts-container {
     padding: 0 40px;
   }
+}
+
+/* X診断 card sections */
+.card-theme-label {
+  font-size: 0.7rem;
+  color: var(--accent-xshindan);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.card-section {
+  border-top: 1px solid var(--border);
+  padding: 12px 14px;
+}
+
+.card-section-label {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.card-section-text {
+  font-size: 0.83rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
 }

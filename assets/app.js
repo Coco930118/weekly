@@ -130,6 +130,8 @@ function renderPosts() {
 }
 
 function renderCard(post) {
+  if (post.platform === 'X診断') return renderXshindanCard(post);
+
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
@@ -157,6 +159,53 @@ function renderCard(post) {
     </article>`;
 }
 
+function renderXshindanCard(post) {
+  const e = escapeHtml;
+  return `
+    <article class="card" data-platform="X診断">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-xshindan">X診断</span>
+          <span class="card-time">${post.time}</span>
+          <span class="card-character">${post.character}</span>
+          <span class="card-theme-label">${e(post.theme)}</span>
+        </div>
+        <span class="purpose-badge">${post.purpose}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${e(post.content)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-section">
+        <p class="card-section-label">🎨 画像プロンプト</p>
+        <p class="card-section-text">${e(post.image_prompt)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.image_prompt)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-section">
+        <p class="card-section-label">💬 コメント① 回答・解説</p>
+        <p class="card-section-text">${e(post.comment1)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.comment1)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-section">
+        <p class="card-section-label">📌 コメント② 深掘り・保存補足</p>
+        <p class="card-section-text">${e(post.comment2)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.comment2)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote">
+        <p class="quote-text">${e(post.quote)}</p>
+        <button class="copy-btn" data-copy="${e(post.quote)}">コピー</button>
+      </div>
+    </article>`;
+}
+
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -174,6 +223,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'X診断') btn.classList.add('active-xshindan');
     else btn.classList.add('active');
 
     renderPosts();
