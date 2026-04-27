@@ -1,6 +1,7 @@
 'use strict';
 
 let allPosts = [];
+let allNoteFunnelPosts = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -51,6 +52,32 @@ async function loadPosts() {
       });
 
     renderWeekFilter(weekDataArr.map(w => w.week));
+
+    try {
+      const notesIndexRes = await fetch('./notes/index.json');
+      if (notesIndexRes.ok) {
+        const notesIndex = await notesIndexRes.json();
+        const funnelDataArr = await Promise.all(
+          notesIndex.funnels.map(async (filename) => {
+            const res = await fetch(`./notes/${filename}`);
+            if (!res.ok) return null;
+            return res.json();
+          })
+        );
+        allNoteFunnelPosts = funnelDataArr
+          .filter(Boolean)
+          .flatMap(f =>
+            f.posts.map(p => ({
+              ...p,
+              _type: 'note_funnel',
+              _noteTitle: f.source_note_title,
+              _sourceWeek: f.source_week
+            }))
+          )
+          .sort((a, b) => new Date(`${a.date}T${a.time}:00`) - new Date(`${b.date}T${b.time}:00`));
+      }
+    } catch (_) {}
+
     renderPosts();
 
   } catch (err) {
@@ -95,6 +122,12 @@ function getFilteredPosts() {
   const mode = activeFilters.platform;
   const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
 
+  if (mode === 'note') {
+    return allNoteFunnelPosts.filter(p =>
+      activeFilters.week === 'all' || p._sourceWeek === activeFilters.week
+    );
+  }
+
   return allPosts.filter(p => {
     const isStamp = p.platform === 'LINEスタンプ';
 
@@ -115,6 +148,7 @@ function renderPosts() {
   const mode = activeFilters.platform;
   const stampMode = mode === 'LINEスタンプ';
   const promptMode = mode === 'LINEスタンププロンプト';
+  const noteMode = mode === 'note';
   const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
   const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform)).length;
 
@@ -122,6 +156,8 @@ function renderPosts() {
     ? `DALL-E 3 プロンプト ${filtered.length}個`
     : stampMode
     ? `LINEスタンプ ${filtered.length}個`
+    : noteMode
+    ? `note宣伝投稿 ${filtered.length}件 / 全${allNoteFunnelPosts.length}件`
     : `${filtered.length}件 / 全${regularTotal}件`;
 
   const weekRow = document.getElementById('weekFilterRow');
@@ -153,7 +189,9 @@ function renderPosts() {
   const html = Object.keys(byDate)
     .sort()
     .map(date => {
-      const cards = byDate[date].map(renderCard).join('');
+      const cards = byDate[date].map(p =>
+        p._type === 'note_funnel' ? renderNoteFunnelCard(p) : renderCard(p)
+      ).join('');
       return `
         <section class="date-group">
           <h2 class="date-heading">${formatDate(date)}</h2>
@@ -246,6 +284,38 @@ function renderPromptCard(post) {
     </article>`;
 }
 
+function renderNoteFunnelCard(post) {
+  const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
+  const contentEscaped = escapeHtml(post.content);
+  const noteTitleEscaped = escapeHtml(post._noteTitle || '');
+
+  return `
+    <article class="card card-note-funnel" data-platform="${post.platform}">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge ${platformClass}">${post.platform}</span>
+          <span class="card-time">${post.time}</span>
+          <span class="note-funnel-label">note宣伝投稿</span>
+        </div>
+        <span class="purpose-badge purpose-note">note導線</span>
+      </div>
+      <div class="card-note-title">
+        <span class="note-title-icon">📝</span>
+        <span class="note-title-text">${noteTitleEscaped}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${contentEscaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote card-note-url">
+        <p class="quote-text note-url-hint">※ URLを末尾に追加して投稿</p>
+        <button class="copy-btn" data-copy="${escapeHtml(post.content + '\n\n[NOTE_URL]')}">URL込みコピー</button>
+      </div>
+    </article>`;
+}
+
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -255,7 +325,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -265,6 +335,7 @@ function setupPlatformFilter() {
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
     else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
+    else if (platform === 'note') btn.classList.add('active-note');
     else btn.classList.add('active');
 
     renderPosts();
