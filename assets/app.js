@@ -168,11 +168,15 @@ function renderPosts() {
     return;
   }
 
-  const seriesHeader = (stampMode || promptMode) ? `
-    <div class="stamp-series-header">
-      <p class="stamp-series-title">きょうも、そのままで ③</p>
-      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
-    </div>` : '';
+  let seriesHeader = '';
+  if (stampMode || promptMode) {
+    const uniqueSeries = [...new Set(filtered.map(p => p.series).filter(Boolean))];
+    const titleText = uniqueSeries.length > 0 ? uniqueSeries.join(' · ') : 'きょうも、そのままで';
+    seriesHeader = `<div class="stamp-series-header">
+      <p class="stamp-series-title">${escapeHtml(titleText)}</p>
+      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整えるスタンプシリーズ。</p>
+    </div>`;
+  }
 
   if (promptMode) {
     const cards = filtered.map(renderCard).join('');
