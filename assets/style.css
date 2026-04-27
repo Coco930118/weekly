@@ -126,6 +126,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-shindan {
+  background: linear-gradient(135deg, #9b4dca 0%, #c47a3a 100%);
+  border-color: #b06020;
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -309,72 +315,6 @@ body {
   color: #f87171;
 }
 
-/* Note funnel */
-:root {
-  --accent-note: #b45309;
-  --accent-note-bg: rgba(180, 83, 9, 0.10);
-  --accent-note-border: rgba(180, 83, 9, 0.28);
-  --accent-note-text: #fbbf24;
-}
-
-.filter-btn.active-note {
-  background: var(--accent-note);
-  border-color: var(--accent-note);
-  color: #fff;
-}
-
-.card-note-funnel {
-  border-color: var(--accent-note-border);
-}
-
-.card-note-funnel:hover {
-  border-color: rgba(180, 83, 9, 0.5);
-}
-
-.note-funnel-label {
-  font-size: 0.68rem;
-  color: var(--accent-note-text);
-  letter-spacing: 0.03em;
-}
-
-.purpose-note {
-  background: var(--accent-note-bg);
-  color: var(--accent-note-text);
-  border-color: var(--accent-note-border);
-}
-
-.card-note-title {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: var(--accent-note-bg);
-  border-bottom: 1px solid var(--accent-note-border);
-}
-
-.note-title-icon {
-  font-size: 0.75rem;
-  flex-shrink: 0;
-}
-
-.note-title-text {
-  font-size: 0.75rem;
-  color: var(--accent-note-text);
-  letter-spacing: 0.02em;
-  line-height: 1.4;
-}
-
-.card-note-url {
-  background: var(--accent-note-bg);
-  border-top-color: var(--accent-note-border);
-}
-
-.note-url-hint {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
@@ -516,4 +456,83 @@ body {
   line-height: 1.7;
   margin-bottom: 10px;
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+}
+
+/* Threads診断 カード */
+.card-shindan {
+  border-color: rgba(155, 77, 202, 0.4);
+}
+
+.card-shindan .card-header {
+  background: rgba(155, 77, 202, 0.06);
+}
+
+/* テーマバッジ */
+.theme-badge {
+  font-size: 0.65rem;
+  color: #b07a3e;
+  background: rgba(176, 122, 62, 0.12);
+  border: 1px solid rgba(176, 122, 62, 0.25);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* アコーディオンセクション */
+.card-expandable {
+  border-top: 1px solid var(--border);
+}
+
+.card-shindan .card-expandable {
+  border-top-color: rgba(155, 77, 202, 0.2);
+}
+
+.expandable-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  letter-spacing: 0.03em;
+  transition: color 0.15s ease;
+}
+
+.expandable-summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable-summary::before {
+  content: '▸';
+  font-size: 0.6rem;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.card-expandable[open] > .expandable-summary::before {
+  transform: rotate(90deg);
+}
+
+.expandable-summary:hover {
+  color: var(--text-secondary);
+}
+
+.expandable-body {
+  padding: 0 14px 12px;
+}
+
+.expandable-text {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
 }
