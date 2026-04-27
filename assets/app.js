@@ -90,7 +90,11 @@ function renderWeekFilter(weeks) {
 
 function getFilteredPosts() {
   return allPosts.filter(p => {
-    if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
+    if (activeFilters.platform === 'Threads診断') {
+      if (!(p.platform === 'Threads' && p.reply1)) return false;
+    } else if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) {
+      return false;
+    }
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -129,10 +133,11 @@ function renderPosts() {
   container.innerHTML = html;
 }
 
-function renderExpandable(label, text, copyLabel) {
+function renderExpandable(label, text, copyLabel, isOpen) {
   const escaped = escapeHtml(text);
+  const openAttr = isOpen ? ' open' : '';
   return `
-    <details class="card-expandable">
+    <details class="card-expandable"${openAttr}>
       <summary class="expandable-summary">${label}</summary>
       <div class="expandable-body">
         <p class="expandable-text">${escaped}</p>
@@ -144,22 +149,24 @@ function renderExpandable(label, text, copyLabel) {
 }
 
 function renderCard(post) {
+  const isShindan = activeFilters.platform === 'Threads診断';
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
+  const cardClass = isShindan ? 'card card-shindan' : 'card';
 
   const themeHtml = post.theme
     ? `<span class="theme-badge">${escapeHtml(post.theme)}</span>`
     : '';
 
   const extrasHtml = [
-    post.reply1 ? renderExpandable('返信① 回答・解説', post.reply1, 'コピー') : '',
-    post.reply2 ? renderExpandable('返信② note動線', post.reply2, 'コピー') : '',
-    post.image_prompt ? renderExpandable('🎨 画像プロンプト', post.image_prompt, 'コピー') : '',
+    post.reply1 ? renderExpandable('返信① 回答・解説', post.reply1, 'コピー', isShindan) : '',
+    post.reply2 ? renderExpandable('返信② note動線', post.reply2, 'コピー', isShindan) : '',
+    post.image_prompt ? renderExpandable('🎨 画像プロンプト（DALL-E 3）', post.image_prompt, 'コピー', isShindan) : '',
   ].join('');
 
   return `
-    <article class="card" data-platform="${post.platform}">
+    <article class="${cardClass}" data-platform="${post.platform}">
       <div class="card-header">
         <div class="card-meta-left">
           <span class="platform-badge ${platformClass}">${post.platform}</span>
@@ -192,7 +199,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-shindan');
     });
 
     const platform = btn.dataset.platform;
@@ -200,6 +207,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'Threads診断') btn.classList.add('active-shindan');
     else btn.classList.add('active');
 
     renderPosts();

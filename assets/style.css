@@ -126,6 +126,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-shindan {
+  background: linear-gradient(135deg, #9b4dca 0%, #c47a3a 100%);
+  border-color: #b06020;
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -307,6 +313,27 @@ body {
 
 .error-state {
   color: #f87171;
+}
+
+/* Threads診断カード */
+.card-shindan {
+  border-color: rgba(155, 77, 202, 0.4);
+}
+
+.card-shindan .card-header {
+  background: rgba(155, 77, 202, 0.06);
+}
+
+.card-shindan .card-expandable {
+  border-top-color: rgba(155, 77, 202, 0.2);
+}
+
+.card-shindan .expandable-summary {
+  color: var(--text-secondary);
+}
+
+.card-shindan .expandable-text {
+  color: var(--text-primary);
 }
 
 /* Theme badge */
