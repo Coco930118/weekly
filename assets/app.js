@@ -1,6 +1,8 @@
 'use strict';
 
 let allPosts = [];
+let allNotes = [];
+let allNoteFunnelPosts = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -51,6 +53,32 @@ async function loadPosts() {
       });
 
     renderWeekFilter(weekDataArr.map(w => w.week));
+
+    try {
+      const notesIndexRes = await fetch('./notes/index.json');
+      if (notesIndexRes.ok) {
+        const notesIndex = await notesIndexRes.json();
+        if (notesIndex.notes) {
+          const noteDataArr = await Promise.all(notesIndex.notes.map(async (n) => {
+            const r = await fetch(`./notes/${n.note_id}.json`);
+            if (!r.ok) return n;
+            const full = await r.json();
+            return { ...n, ...full };
+          }));
+          allNotes = noteDataArr.sort((a, b) => b.date.localeCompare(a.date));
+        }
+        if (notesIndex.funnels) {
+          const funnelDataArr = await Promise.all(notesIndex.funnels.map(async (fname) => {
+            const r = await fetch(`./notes/${fname}`);
+            if (!r.ok) return [];
+            const data = await r.json();
+            return data.posts || [];
+          }));
+          allNoteFunnelPosts = funnelDataArr.flat();
+        }
+      }
+    } catch (_) {}
+
     renderPosts();
 
   } catch (err) {
@@ -98,6 +126,8 @@ function getFilteredPosts() {
   const mode = activeFilters.platform;
   const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
 
+  if (mode === 'note') return [];
+
   return allPosts.filter(p => {
     const isStamp = p.platform === 'LINEスタンプ';
 
@@ -119,8 +149,14 @@ function getFilteredPosts() {
 
 function renderPosts() {
   const container = document.getElementById('postsContainer');
-  const filtered = getFilteredPosts();
   const mode = activeFilters.platform;
+
+  if (mode === 'note') {
+    renderNotes();
+    return;
+  }
+
+  const filtered = getFilteredPosts();
   const stampMode = mode === 'LINEスタンプ';
   const promptMode = mode === 'LINEスタンププロンプト';
   const shindanMode = mode === 'Threads診断';
@@ -174,6 +210,49 @@ function renderPosts() {
     .join('');
 
   container.innerHTML = seriesHeader + html;
+}
+
+function renderNotes() {
+  const container = document.getElementById('postsContainer');
+  const weekRow = document.getElementById('weekFilterRow');
+  if (weekRow) weekRow.style.display = 'none';
+
+  const totalNotes = allNotes.length;
+  document.getElementById('statsBar').textContent = `note記事 ${totalNotes}件`;
+
+  if (totalNotes === 0) {
+    container.innerHTML = '<p class="empty-state">note記事がありません</p>';
+    return;
+  }
+
+  const cards = allNotes.map(renderNoteCard).join('');
+  container.innerHTML = `<div class="notes-grid">${cards}</div>`;
+}
+
+function renderNoteCard(note) {
+  const title = escapeHtml(note.title || '');
+  const desc = escapeHtml(note.description || '');
+  const date = note.date || '';
+  const price = note.price ? `¥${note.price}` : '無料';
+  const tags = (note.hashtags || []).map(t => `<span class="note-tag">${escapeHtml(t)}</span>`).join('');
+  const url = `./notes/${note.filename || note.note_id + '.html'}`;
+
+  return `
+    <article class="note-card">
+      <div class="note-card-header">
+        <span class="platform-badge platform-note">note</span>
+        <span class="note-price-badge">${price}</span>
+      </div>
+      <div class="note-card-body">
+        <a href="${url}" class="note-card-title" target="_blank">${title}</a>
+        <p class="note-card-desc">${desc}</p>
+      </div>
+      <div class="note-card-tags">${tags}</div>
+      <div class="note-card-footer">
+        <span class="note-card-date">${date}</span>
+        <a href="${url}" class="note-card-link" target="_blank">詳細を見る →</a>
+      </div>
+    </article>`;
 }
 
 function renderExpandable(label, text, copyLabel, isOpen) {
@@ -295,7 +374,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-shindan');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-shindan', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -306,6 +385,7 @@ function setupPlatformFilter() {
     else if (platform === 'Threads診断') btn.classList.add('active-shindan');
     else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
     else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
+    else if (platform === 'note') btn.classList.add('active-note');
     else btn.classList.add('active');
 
     renderPosts();
