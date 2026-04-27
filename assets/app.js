@@ -128,6 +128,12 @@ function renderPosts() {
     byDate[p.date].push(p);
   });
 
+  const seriesHeader = stampMode ? `
+    <div class="stamp-series-header">
+      <p class="stamp-series-title">きょうも、そのままで ③</p>
+      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
+    </div>` : '';
+
   const html = Object.keys(byDate)
     .sort()
     .map(date => {
@@ -140,7 +146,7 @@ function renderPosts() {
     })
     .join('');
 
-  container.innerHTML = html;
+  container.innerHTML = seriesHeader + html;
 }
 
 function renderCard(post) {
@@ -177,6 +183,16 @@ function renderStampCard(post) {
   const stampEscaped = escapeHtml(post.stamp || '');
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
+  const promptEscaped = escapeHtml(post.prompt || '');
+
+  const promptSection = post.prompt ? `
+      <div class="stamp-prompt-section">
+        <p class="stamp-prompt-label">DALL-E 3 プロンプト</p>
+        <pre class="stamp-prompt-code">${promptEscaped}</pre>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.prompt)}">プロンプトをコピー</button>
+        </div>
+      </div>` : '';
 
   return `
     <article class="card stamp-card" data-platform="LINEスタンプ">
@@ -196,7 +212,7 @@ function renderStampCard(post) {
         <div class="copy-btn-content">
           <button class="copy-btn" data-copy="${escapeHtml(post.content)}">本文コピー</button>
         </div>
-      </div>
+      </div>${promptSection}
       <div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
