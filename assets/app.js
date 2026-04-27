@@ -5,7 +5,8 @@ let allNotes = [];
 let allNoteFunnelPosts = [];
 let activeFilters = {
   platform: 'all',
-  week: 'all'
+  week: 'all',
+  series: 'all'
 };
 
 const DAYS_JA = ['日', '月', '火', '水', '木', '金', '土'];
@@ -79,6 +80,7 @@ async function loadPosts() {
       }
     } catch (_) {}
 
+    renderSeriesButtons();
     renderPosts();
 
   } catch (err) {
@@ -122,6 +124,30 @@ function renderWeekFilter(weeks) {
   });
 }
 
+function renderSeriesButtons() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  const stampPosts = allPosts.filter(p => p.platform === 'LINEスタンプ' && p.series);
+  const uniqueSeries = [...new Set(stampPosts.map(p => p.series))].sort();
+
+  uniqueSeries.forEach(series => {
+    const stampBtn = document.createElement('button');
+    stampBtn.className = 'filter-btn';
+    stampBtn.dataset.platform = 'LINEスタンプ';
+    stampBtn.dataset.series = series;
+    stampBtn.textContent = series;
+    row.appendChild(stampBtn);
+
+    const promptBtn = document.createElement('button');
+    promptBtn.className = 'filter-btn';
+    promptBtn.dataset.platform = 'LINEスタンププロンプト';
+    promptBtn.dataset.series = series;
+    promptBtn.textContent = `${series}（プロンプト）`;
+    row.appendChild(promptBtn);
+  });
+}
+
 function getFilteredPosts() {
   const mode = activeFilters.platform;
   const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
@@ -131,8 +157,8 @@ function getFilteredPosts() {
   return allPosts.filter(p => {
     const isStamp = p.platform === 'LINEスタンプ';
 
-    if (mode === 'LINEスタンプ') return isStamp;
-    if (mode === 'LINEスタンププロンプト') return isStamp;
+    if (mode === 'LINEスタンプ') return isStamp && (activeFilters.series === 'all' || p.series === activeFilters.series);
+    if (mode === 'LINEスタンププロンプト') return isStamp && (activeFilters.series === 'all' || p.series === activeFilters.series);
     if (mode === 'Threads診断') {
       if (!(p.platform === 'Threads' && p.reply1)) return false;
       if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
@@ -179,11 +205,14 @@ function renderPosts() {
     return;
   }
 
-  const seriesHeader = (stampMode || promptMode) ? `
-    <div class="stamp-series-header">
-      <p class="stamp-series-title">きょうも、そのままで ④</p>
-      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
-    </div>` : '';
+  let seriesHeader = '';
+  if (stampMode || promptMode) {
+    const titleText = activeFilters.series !== 'all' ? activeFilters.series : 'きょうも、そのままで';
+    seriesHeader = `<div class="stamp-series-header">
+      <p class="stamp-series-title">${escapeHtml(titleText)}</p>
+      <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整えるスタンプシリーズ。</p>
+    </div>`;
+  }
 
   if (promptMode) {
     const cards = filtered.map(renderCard).join('');
@@ -379,6 +408,7 @@ function setupPlatformFilter() {
 
     const platform = btn.dataset.platform;
     activeFilters.platform = platform;
+    activeFilters.series = btn.dataset.series || 'all';
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
