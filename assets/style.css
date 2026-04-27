@@ -309,6 +309,73 @@ body {
   color: #f87171;
 }
 
+/* Note funnel filter button */
+.filter-btn.active-note {
+  background: var(--accent-note, #c0392b);
+  border-color: var(--accent-note, #c0392b);
+  color: #fff;
+}
+
+/* Note funnel card */
+:root {
+  --accent-note: #b45309;
+  --accent-note-bg: rgba(180, 83, 9, 0.12);
+  --accent-note-border: rgba(180, 83, 9, 0.3);
+  --accent-note-text: #fbbf24;
+}
+
+.card-note-funnel {
+  border-color: var(--accent-note-border);
+}
+
+.card-note-funnel:hover {
+  border-color: rgba(180, 83, 9, 0.5);
+}
+
+.note-funnel-label {
+  font-size: 0.68rem;
+  color: var(--accent-note-text);
+  letter-spacing: 0.03em;
+}
+
+.purpose-note {
+  background: var(--accent-note-bg);
+  color: var(--accent-note-text);
+  border-color: var(--accent-note-border);
+}
+
+.card-note-title {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: var(--accent-note-bg);
+  border-bottom: 1px solid var(--accent-note-border);
+}
+
+.note-title-icon {
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+.note-title-text {
+  font-size: 0.75rem;
+  color: var(--accent-note-text);
+  letter-spacing: 0.02em;
+  line-height: 1.4;
+}
+
+.card-note-url {
+  background: var(--accent-note-bg);
+  border-top-color: var(--accent-note-border);
+}
+
+.note-url-hint {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;

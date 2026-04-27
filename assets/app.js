@@ -1,6 +1,7 @@
 'use strict';
 
 let allPosts = [];
+let allNoteFunnelPosts = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -51,6 +52,39 @@ async function loadPosts() {
       });
 
     renderWeekFilter(weekDataArr.map(w => w.week));
+
+    // Load note funnel posts
+    try {
+      const notesIndexRes = await fetch('./notes/index.json');
+      if (notesIndexRes.ok) {
+        const notesIndex = await notesIndexRes.json();
+        const funnelDataArr = await Promise.all(
+          notesIndex.funnels.map(async (filename) => {
+            const res = await fetch(`./notes/${filename}`);
+            if (!res.ok) return null;
+            return res.json();
+          })
+        );
+        allNoteFunnelPosts = funnelDataArr
+          .filter(Boolean)
+          .flatMap(f =>
+            f.posts.map(p => ({
+              ...p,
+              _type: 'note_funnel',
+              _noteTitle: f.source_note_title,
+              _sourceWeek: f.source_week
+            }))
+          )
+          .sort((a, b) => {
+            const tA = new Date(`${a.date}T${a.time}:00`);
+            const tB = new Date(`${b.date}T${b.time}:00`);
+            return tA - tB;
+          });
+      }
+    } catch (_) {
+      // note funnel load failure is non-fatal
+    }
+
     renderPosts();
 
   } catch (err) {
@@ -89,6 +123,12 @@ function renderWeekFilter(weeks) {
 }
 
 function getFilteredPosts() {
+  if (activeFilters.platform === 'note') {
+    return allNoteFunnelPosts.filter(p => {
+      if (activeFilters.week !== 'all' && p._sourceWeek !== activeFilters.week) return false;
+      return true;
+    });
+  }
   return allPosts.filter(p => {
     if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
@@ -100,8 +140,9 @@ function renderPosts() {
   const container = document.getElementById('postsContainer');
   const filtered = getFilteredPosts();
 
+  const totalCount = activeFilters.platform === 'note' ? allNoteFunnelPosts.length : allPosts.length;
   document.getElementById('statsBar').textContent =
-    `${filtered.length}件 / 全${allPosts.length}件`;
+    `${filtered.length}件 / 全${totalCount}件`;
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
@@ -117,7 +158,9 @@ function renderPosts() {
   const html = Object.keys(byDate)
     .sort()
     .map(date => {
-      const cards = byDate[date].map(renderCard).join('');
+      const cards = byDate[date].map(p =>
+        p._type === 'note_funnel' ? renderNoteFunnelCard(p) : renderCard(p)
+      ).join('');
       return `
         <section class="date-group">
           <h2 class="date-heading">${formatDate(date)}</h2>
@@ -157,6 +200,38 @@ function renderCard(post) {
     </article>`;
 }
 
+function renderNoteFunnelCard(post) {
+  const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
+  const contentEscaped = escapeHtml(post.content);
+  const noteTitleEscaped = escapeHtml(post._noteTitle || '');
+
+  return `
+    <article class="card card-note-funnel" data-platform="${post.platform}">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge ${platformClass}">${post.platform}</span>
+          <span class="card-time">${post.time}</span>
+          <span class="note-funnel-label">note宣伝投稿</span>
+        </div>
+        <span class="purpose-badge purpose-note">note導線</span>
+      </div>
+      <div class="card-note-title">
+        <span class="note-title-icon">📝</span>
+        <span class="note-title-text">${noteTitleEscaped}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${contentEscaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote card-note-url">
+        <p class="quote-text note-url-hint">※ URLを末尾に追加して投稿</p>
+        <button class="copy-btn" data-copy="${escapeHtml(post.content + '\n\n[NOTE_URL]')}">URL込みコピー</button>
+      </div>
+    </article>`;
+}
+
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -166,7 +241,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -174,6 +249,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'note') btn.classList.add('active-note');
     else btn.classList.add('active');
 
     renderPosts();
@@ -198,7 +274,6 @@ function setupCopyHandler() {
         btn.classList.remove('copied');
       }, 1800);
     } catch {
-      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
