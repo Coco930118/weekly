@@ -129,10 +129,34 @@ function renderPosts() {
   container.innerHTML = html;
 }
 
+function renderExpandable(label, text, copyLabel) {
+  const escaped = escapeHtml(text);
+  return `
+    <details class="card-expandable">
+      <summary class="expandable-summary">${label}</summary>
+      <div class="expandable-body">
+        <p class="expandable-text">${escaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(text)}">${copyLabel}</button>
+        </div>
+      </div>
+    </details>`;
+}
+
 function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
+
+  const themeHtml = post.theme
+    ? `<span class="theme-badge">${escapeHtml(post.theme)}</span>`
+    : '';
+
+  const extrasHtml = [
+    post.reply1 ? renderExpandable('返信① 回答・解説', post.reply1, 'コピー') : '',
+    post.reply2 ? renderExpandable('返信② note動線', post.reply2, 'コピー') : '',
+    post.image_prompt ? renderExpandable('🎨 画像プロンプト', post.image_prompt, 'コピー') : '',
+  ].join('');
 
   return `
     <article class="card" data-platform="${post.platform}">
@@ -141,6 +165,7 @@ function renderCard(post) {
           <span class="platform-badge ${platformClass}">${post.platform}</span>
           <span class="card-time">${post.time}</span>
           <span class="card-character">${post.character}</span>
+          ${themeHtml}
         </div>
         <span class="purpose-badge">${post.purpose}</span>
       </div>
@@ -154,6 +179,7 @@ function renderCard(post) {
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
       </div>
+      ${extrasHtml}
     </article>`;
 }
 

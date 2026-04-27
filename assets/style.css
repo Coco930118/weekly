@@ -309,6 +309,72 @@ body {
   color: #f87171;
 }
 
+/* Theme badge */
+.theme-badge {
+  font-size: 0.65rem;
+  color: #b07a3e;
+  background: rgba(176, 122, 62, 0.12);
+  border: 1px solid rgba(176, 122, 62, 0.25);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Expandable sections (reply1, reply2, image_prompt) */
+.card-expandable {
+  border-top: 1px solid var(--border);
+}
+
+.expandable-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  letter-spacing: 0.03em;
+  transition: color 0.15s ease;
+}
+
+.expandable-summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable-summary::before {
+  content: '▸';
+  font-size: 0.6rem;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.card-expandable[open] > .expandable-summary::before {
+  transform: rotate(90deg);
+}
+
+.expandable-summary:hover {
+  color: var(--text-secondary);
+}
+
+.expandable-body {
+  padding: 0 14px 12px;
+}
+
+.expandable-text {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
