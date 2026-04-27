@@ -126,6 +126,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-shindan {
+  background: linear-gradient(135deg, #9b4dca 0%, #c47a3a 100%);
+  border-color: #b06020;
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -309,72 +315,6 @@ body {
   color: #f87171;
 }
 
-/* Note funnel */
-:root {
-  --accent-note: #b45309;
-  --accent-note-bg: rgba(180, 83, 9, 0.10);
-  --accent-note-border: rgba(180, 83, 9, 0.28);
-  --accent-note-text: #fbbf24;
-}
-
-.filter-btn.active-note {
-  background: var(--accent-note);
-  border-color: var(--accent-note);
-  color: #fff;
-}
-
-.card-note-funnel {
-  border-color: var(--accent-note-border);
-}
-
-.card-note-funnel:hover {
-  border-color: rgba(180, 83, 9, 0.5);
-}
-
-.note-funnel-label {
-  font-size: 0.68rem;
-  color: var(--accent-note-text);
-  letter-spacing: 0.03em;
-}
-
-.purpose-note {
-  background: var(--accent-note-bg);
-  color: var(--accent-note-text);
-  border-color: var(--accent-note-border);
-}
-
-.card-note-title {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 14px;
-  background: var(--accent-note-bg);
-  border-bottom: 1px solid var(--accent-note-border);
-}
-
-.note-title-icon {
-  font-size: 0.75rem;
-  flex-shrink: 0;
-}
-
-.note-title-text {
-  font-size: 0.75rem;
-  color: var(--accent-note-text);
-  letter-spacing: 0.02em;
-  line-height: 1.4;
-}
-
-.card-note-url {
-  background: var(--accent-note-bg);
-  border-top-color: var(--accent-note-border);
-}
-
-.note-url-hint {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-  font-style: italic;
-}
-
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
@@ -518,28 +458,113 @@ body {
   font-family: 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
-/* ── note cards ── */
+/* Threads診断 カード */
+.card-shindan {
+  border-color: rgba(155, 77, 202, 0.4);
+}
+
+.card-shindan .card-header {
+  background: rgba(155, 77, 202, 0.06);
+}
+
+/* テーマバッジ */
+.theme-badge {
+  font-size: 0.65rem;
+  color: #b07a3e;
+  background: rgba(176, 122, 62, 0.12);
+  border: 1px solid rgba(176, 122, 62, 0.25);
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* アコーディオンセクション */
+.card-expandable {
+  border-top: 1px solid var(--border);
+}
+
+.card-shindan .card-expandable {
+  border-top-color: rgba(155, 77, 202, 0.2);
+}
+
+.expandable-summary {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 14px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  list-style: none;
+  user-select: none;
+  letter-spacing: 0.03em;
+  transition: color 0.15s ease;
+}
+
+.expandable-summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable-summary::before {
+  content: '▸';
+  font-size: 0.6rem;
+  transition: transform 0.15s ease;
+  flex-shrink: 0;
+}
+
+.card-expandable[open] > .expandable-summary::before {
+  transform: rotate(90deg);
+}
+
+.expandable-summary:hover {
+  color: var(--text-secondary);
+}
+
+.expandable-body {
+  padding: 0 14px 12px;
+}
+
+.expandable-text {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: var(--text-primary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
+
+/* ===== note カード ===== */
 .active-note {
   background: #c9a96e !important;
+  color: #1a1a2e !important;
   border-color: #c9a96e !important;
-  color: #111 !important;
 }
 
 .platform-note {
-  background: rgba(201, 169, 110, 0.15);
-  color: #c9a96e;
-  border: 1px solid rgba(201, 169, 110, 0.35);
+  background: #c9a96e;
+  color: #1a1a2e;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
 .note-card {
-  background: var(--bg-card);
-  border: 1px solid #3a2e1a;
-  border-radius: var(--radius);
-  overflow: hidden;
-  transition: border-color 0.15s ease;
-  display: block;
-  text-decoration: none;
-  color: inherit;
+  background: var(--card-bg);
+  border: 1px solid #c9a96e44;
+  border-radius: 12px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: border-color 0.2s;
 }
 
 .note-card:hover {
@@ -548,102 +573,79 @@ body {
 
 .note-card-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 12px 14px 10px;
-  border-bottom: 1px solid var(--border);
+  justify-content: space-between;
 }
 
 .note-price-badge {
-  font-size: 0.68rem;
+  font-size: 0.85rem;
   font-weight: 700;
   color: #c9a96e;
-  background: rgba(201, 169, 110, 0.12);
-  border: 1px solid rgba(201, 169, 110, 0.3);
-  padding: 2px 8px;
-  border-radius: 4px;
-  letter-spacing: 0.04em;
+  background: #c9a96e1a;
+  border: 1px solid #c9a96e44;
+  border-radius: 6px;
+  padding: 3px 10px;
 }
 
 .note-card-body {
-  padding: 14px 14px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .note-card-title {
-  font-size: 0.95rem;
-  font-weight: 600;
+  font-size: 1rem;
+  font-weight: 700;
   color: var(--text-primary);
-  line-height: 1.55;
-  margin-bottom: 10px;
+  text-decoration: none;
+  line-height: 1.5;
+}
+
+.note-card-title:hover {
+  color: #c9a96e;
 }
 
 .note-card-desc {
   font-size: 0.82rem;
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: 12px;
+  line-height: 1.7;
+  margin: 0;
 }
 
 .note-card-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  margin-bottom: 14px;
 }
 
 .note-tag {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #c9a96e;
+  background: #c9a96e14;
+  border: 1px solid #c9a96e33;
+  border-radius: 4px;
   padding: 2px 8px;
 }
 
 .note-card-footer {
-  border-top: 1px solid var(--border);
-  padding: 10px 14px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .note-card-date {
-  font-size: 0.72rem;
-  color: var(--text-muted);
-}
-
-.note-hooks {
-  background: #0e0c08;
-  border-top: 1px solid var(--border);
-  padding: 12px 14px;
-}
-
-.note-hooks-title {
-  font-size: 0.65rem;
-  color: var(--text-muted);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.note-hook-row {
-  display: flex;
-  align-items: flex-start;
-  gap: 8px;
-  margin-bottom: 6px;
-}
-
-.note-hook-platform {
-  font-size: 0.65rem;
-  color: #c9a96e;
-  min-width: 42px;
-  padding-top: 2px;
-}
-
-.note-hook-text {
   font-size: 0.78rem;
   color: var(--text-secondary);
-  line-height: 1.65;
-  flex: 1;
-  white-space: pre-wrap;
+}
+
+.note-card-link {
+  font-size: 0.82rem;
+  color: #c9a96e;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.note-card-link:hover {
+  text-decoration: underline;
 }

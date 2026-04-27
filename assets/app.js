@@ -47,8 +47,8 @@ async function loadPosts() {
     allPosts = weekDataArr
       .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
       .sort((a, b) => {
-        const tA = new Date(`${a.date}T${a.time}:00`);
-        const tB = new Date(`${b.date}T${b.time}:00`);
+        const tA = new Date(`${a.date}T${a.time || '00:00'}:00`);
+        const tB = new Date(`${b.date}T${b.time || '00:00'}:00`);
         return tA - tB;
       });
 
@@ -58,40 +58,23 @@ async function loadPosts() {
       const notesIndexRes = await fetch('./notes/index.json');
       if (notesIndexRes.ok) {
         const notesIndex = await notesIndexRes.json();
-
-        // Load note content cards
         if (notesIndex.notes) {
-          const noteDataArr = await Promise.all(
-            notesIndex.notes.map(async (n) => {
-              const r = await fetch(`./notes/${n.note_id}.json`);
-              if (!r.ok) return n;
-              const full = await r.json();
-              return { ...n, ...full };
-            })
-          );
+          const noteDataArr = await Promise.all(notesIndex.notes.map(async (n) => {
+            const r = await fetch(`./notes/${n.note_id}.json`);
+            if (!r.ok) return n;
+            const full = await r.json();
+            return { ...n, ...full };
+          }));
           allNotes = noteDataArr.sort((a, b) => b.date.localeCompare(a.date));
         }
-
-        // Load note funnel posts
         if (notesIndex.funnels) {
-          const funnelDataArr = await Promise.all(
-            notesIndex.funnels.map(async (filename) => {
-              const res = await fetch(`./notes/${filename}`);
-              if (!res.ok) return null;
-              return res.json();
-            })
-          );
-          allNoteFunnelPosts = funnelDataArr
-            .filter(Boolean)
-            .flatMap(f =>
-              f.posts.map(p => ({
-                ...p,
-                _type: 'note_funnel',
-                _noteTitle: f.source_note_title,
-                _sourceWeek: f.source_week
-              }))
-            )
-            .sort((a, b) => new Date(`${a.date}T${a.time}:00`) - new Date(`${b.date}T${b.time}:00`));
+          const funnelDataArr = await Promise.all(notesIndex.funnels.map(async (fname) => {
+            const r = await fetch(`./notes/${fname}`);
+            if (!r.ok) return [];
+            const data = await r.json();
+            return data.posts || [];
+          }));
+          allNoteFunnelPosts = funnelDataArr.flat();
         }
       }
     } catch (_) {}
@@ -114,8 +97,11 @@ function renderWeekFilter(weeks) {
   row.appendChild(all);
 
   const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const seen = new Set();
   weeks.forEach(week => {
-    const hasRegular = allPosts.some(p => p.weekId === week && !EXCLUDED.includes(p.platform));
+    if (seen.has(week)) return;
+    seen.add(week);
+    const hasRegular = allPosts.some(p => p.weekId === week && !EXCLUDED.includes(p.platform) && !p.reply1);
     if (!hasRegular) return;
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
@@ -147,75 +133,42 @@ function getFilteredPosts() {
 
     if (mode === 'LINEスタンプ') return isStamp;
     if (mode === 'LINEスタンププロンプト') return isStamp;
+    if (mode === 'Threads診断') {
+      if (!(p.platform === 'Threads' && p.reply1)) return false;
+      if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
+      return true;
+    }
 
     if (EXCLUDED.includes(p.platform)) return false;
+    if (p.reply1) return false;
     if (mode !== 'all' && p.platform !== mode) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
 }
 
-function renderNotes() {
-  const container = document.getElementById('postsContainer');
-  document.getElementById('statsBar').textContent = `note ${allNotes.length}本`;
-  const weekRow = document.getElementById('weekFilterRow');
-  if (weekRow) weekRow.style.display = 'none';
-
-  if (allNotes.length === 0) {
-    container.innerHTML = '<p class="empty-state">noteデータがありません</p>';
-    return;
-  }
-  container.innerHTML = `<div class="cards-grid" style="padding:16px 16px 0;max-width:680px;margin:0 auto;">${allNotes.map(renderNoteCard).join('')}</div>`;
-}
-
-function renderNoteCard(note) {
-  const tags = (note.hashtags || []).map(t => `<span class="note-tag">${escapeHtml(t)}</span>`).join('');
-  const hooks = note.sns_hooks || {};
-  const hooksHtml = Object.entries(hooks).map(([platform, text]) => `
-    <div class="note-hook-row">
-      <span class="note-hook-platform">${escapeHtml(platform)}</span>
-      <span class="note-hook-text">${escapeHtml(text)}</span>
-      <button class="copy-btn" data-copy="${escapeHtml(text)}" style="flex-shrink:0">コピー</button>
-    </div>`).join('');
-
-  return `
-    <article class="card note-card" style="margin-bottom:12px;">
-      <div class="note-card-header">
-        <div class="card-meta-left">
-          <span class="platform-badge platform-note">note</span>
-          <span class="card-time" style="font-size:.72rem;color:var(--text-muted)">${escapeHtml(note.date)}</span>
-        </div>
-        <span class="note-price-badge">¥${escapeHtml(String(note.price))}</span>
-      </div>
-      <div class="note-card-body">
-        <a href="./notes/${escapeHtml(note.filename)}" style="display:block;text-decoration:none;color:var(--text-primary);font-size:.95rem;font-weight:600;line-height:1.55;margin-bottom:10px;">${escapeHtml(note.title)}</a>
-        <p class="note-card-desc">${escapeHtml(note.description)}</p>
-        <div class="note-card-tags">${tags}</div>
-      </div>
-      ${hooksHtml ? `<div class="note-hooks"><p class="note-hooks-title">SNS導線文</p>${hooksHtml}</div>` : ''}
-      <div class="note-card-footer">
-        <span class="note-card-date">参照週: ${escapeHtml(note.source_week || '')}</span>
-        <a href="./notes/${escapeHtml(note.filename)}" style="font-size:.72rem;color:#c9a96e;text-decoration:none;">全文を見る →</a>
-      </div>
-    </article>`;
-}
-
 function renderPosts() {
   const container = document.getElementById('postsContainer');
   const mode = activeFilters.platform;
 
-  if (mode === 'note') { renderNotes(); return; }
+  if (mode === 'note') {
+    renderNotes();
+    return;
+  }
 
   const filtered = getFilteredPosts();
   const stampMode = mode === 'LINEスタンプ';
   const promptMode = mode === 'LINEスタンププロンプト';
+  const shindanMode = mode === 'Threads診断';
   const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
-  const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform)).length;
+  const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform) && !p.reply1).length;
 
   document.getElementById('statsBar').textContent = promptMode
     ? `DALL-E 3 プロンプト ${filtered.length}個`
     : stampMode
     ? `LINEスタンプ ${filtered.length}個`
+    : shindanMode
+    ? `Threads診断 ${filtered.length}投稿`
     : `${filtered.length}件 / 全${regularTotal}件`;
 
   const weekRow = document.getElementById('weekFilterRow');
@@ -228,7 +181,7 @@ function renderPosts() {
 
   const seriesHeader = (stampMode || promptMode) ? `
     <div class="stamp-series-header">
-      <p class="stamp-series-title">きょうも、そのままで ③</p>
+      <p class="stamp-series-title">きょうも、そのままで ④</p>
       <p class="stamp-series-desc">日常のあの気持ちを、もっとやさしく届けるために。「ありがとう」「おはよう」「少しずつでいい」——言いたいけどちょっと照れる言葉を、Cocoが代わりに届けます。関係の温度と距離を整える21枚のスタンプ。</p>
     </div>` : '';
 
@@ -247,9 +200,7 @@ function renderPosts() {
   const html = Object.keys(byDate)
     .sort()
     .map(date => {
-      const cards = byDate[date].map(p =>
-        p._type === 'note_funnel' ? renderNoteFunnelCard(p) : renderCard(p)
-      ).join('');
+      const cards = byDate[date].map(renderCard).join('');
       return `
         <section class="date-group">
           <h2 class="date-heading">${formatDate(date)}</h2>
@@ -261,21 +212,92 @@ function renderPosts() {
   container.innerHTML = seriesHeader + html;
 }
 
+function renderNotes() {
+  const container = document.getElementById('postsContainer');
+  const weekRow = document.getElementById('weekFilterRow');
+  if (weekRow) weekRow.style.display = 'none';
+
+  const totalNotes = allNotes.length;
+  document.getElementById('statsBar').textContent = `note記事 ${totalNotes}件`;
+
+  if (totalNotes === 0) {
+    container.innerHTML = '<p class="empty-state">note記事がありません</p>';
+    return;
+  }
+
+  const cards = allNotes.map(renderNoteCard).join('');
+  container.innerHTML = `<div class="notes-grid">${cards}</div>`;
+}
+
+function renderNoteCard(note) {
+  const title = escapeHtml(note.title || '');
+  const desc = escapeHtml(note.description || '');
+  const date = note.date || '';
+  const price = note.price ? `¥${note.price}` : '無料';
+  const tags = (note.hashtags || []).map(t => `<span class="note-tag">${escapeHtml(t)}</span>`).join('');
+  const url = `./notes/${note.filename || note.note_id + '.html'}`;
+
+  return `
+    <article class="note-card">
+      <div class="note-card-header">
+        <span class="platform-badge platform-note">note</span>
+        <span class="note-price-badge">${price}</span>
+      </div>
+      <div class="note-card-body">
+        <a href="${url}" class="note-card-title" target="_blank">${title}</a>
+        <p class="note-card-desc">${desc}</p>
+      </div>
+      <div class="note-card-tags">${tags}</div>
+      <div class="note-card-footer">
+        <span class="note-card-date">${date}</span>
+        <a href="${url}" class="note-card-link" target="_blank">詳細を見る →</a>
+      </div>
+    </article>`;
+}
+
+function renderExpandable(label, text, copyLabel, isOpen) {
+  const escaped = escapeHtml(text);
+  const openAttr = isOpen ? ' open' : '';
+  return `
+    <details class="card-expandable"${openAttr}>
+      <summary class="expandable-summary">${label}</summary>
+      <div class="expandable-body">
+        <p class="expandable-text">${escaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(text)}">${copyLabel}</button>
+        </div>
+      </div>
+    </details>`;
+}
+
 function renderCard(post) {
   if (activeFilters.platform === 'LINEスタンププロンプト') return renderPromptCard(post);
   if (post.platform === 'LINEスタンプ') return renderStampCard(post);
 
+  const isShindan = activeFilters.platform === 'Threads診断';
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
+  const cardClass = isShindan ? 'card card-shindan' : 'card';
+
+  const themeHtml = post.theme
+    ? `<span class="theme-badge">${escapeHtml(post.theme)}</span>`
+    : '';
+
+  const extrasHtml = isShindan ? [
+    post.reply1 ? renderExpandable('返信① 回答・解説', post.reply1, 'コピー', true) : '',
+    post.reply2 ? renderExpandable('返信② note動線', post.reply2, 'コピー', true) : '',
+    post.image_prompt ? renderExpandable('🎨 画像プロンプト（DALL-E 3）', post.image_prompt, 'コピー', true) : '',
+  ].join('') : '';
 
   return `
-    <article class="card" data-platform="${post.platform}">
+    <article class="${cardClass}" data-platform="${post.platform}">
       <div class="card-header">
         <div class="card-meta-left">
           <span class="platform-badge ${platformClass}">${post.platform}</span>
-          <span class="card-time">${post.time}</span>
+          <span class="card-time">${post.time || ''}</span>
           <span class="card-character">${post.character}</span>
+          ${themeHtml}
         </div>
         <span class="purpose-badge">${post.purpose}</span>
       </div>
@@ -289,6 +311,7 @@ function renderCard(post) {
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
       </div>
+      ${extrasHtml}
     </article>`;
 }
 
@@ -342,38 +365,6 @@ function renderPromptCard(post) {
     </article>`;
 }
 
-function renderNoteFunnelCard(post) {
-  const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
-  const contentEscaped = escapeHtml(post.content);
-  const noteTitleEscaped = escapeHtml(post._noteTitle || '');
-
-  return `
-    <article class="card card-note-funnel" data-platform="${post.platform}">
-      <div class="card-header">
-        <div class="card-meta-left">
-          <span class="platform-badge ${platformClass}">${post.platform}</span>
-          <span class="card-time">${post.time}</span>
-          <span class="note-funnel-label">note宣伝投稿</span>
-        </div>
-        <span class="purpose-badge purpose-note">note導線</span>
-      </div>
-      <div class="card-note-title">
-        <span class="note-title-icon">📝</span>
-        <span class="note-title-text">${noteTitleEscaped}</span>
-      </div>
-      <div class="card-body">
-        <p class="card-content">${contentEscaped}</p>
-        <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
-        </div>
-      </div>
-      <div class="card-quote card-note-url">
-        <p class="quote-text note-url-hint">※ URLを末尾に追加して投稿</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.content + '\n\n[NOTE_URL]')}">URL込みコピー</button>
-      </div>
-    </article>`;
-}
-
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -383,7 +374,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-note');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-shindan', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -391,6 +382,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'Threads診断') btn.classList.add('active-shindan');
     else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
     else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
     else if (platform === 'note') btn.classList.add('active-note');
