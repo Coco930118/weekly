@@ -16,6 +16,7 @@
   --text-muted: #555555;
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
+  --accent-xshindan: #2ea87e;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -130,6 +131,25 @@ body {
   background: linear-gradient(135deg, #9b4dca 0%, #c47a3a 100%);
   border-color: #b06020;
   color: #fff;
+}
+
+.platform-xshindan {
+  background: rgba(46, 168, 126, 0.15);
+  color: #5cd9a6;
+  border: 1px solid rgba(46, 168, 126, 0.3);
+}
+
+.filter-btn.active-xshindan {
+  background: var(--accent-xshindan);
+  border-color: var(--accent-xshindan);
+  color: #fff;
+}
+
+.card-theme-label {
+  font-size: 0.7rem;
+  color: var(--accent-xshindan);
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
 /* Stats bar */

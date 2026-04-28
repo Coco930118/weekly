@@ -150,7 +150,7 @@ function renderSeriesButtons() {
 
 function getFilteredPosts() {
   const mode = activeFilters.platform;
-  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝', 'X診断'];
 
   if (mode === 'note') return [];
 
@@ -161,6 +161,11 @@ function getFilteredPosts() {
     if (mode === 'LINEスタンププロンプト') return isStamp && (activeFilters.series === 'all' || p.series === activeFilters.series);
     if (mode === 'Threads診断') {
       if (!(p.platform === 'Threads' && p.reply1)) return false;
+      if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
+      return true;
+    }
+    if (mode === 'X診断') {
+      if (p.platform !== 'X診断') return false;
       if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
       return true;
     }
@@ -186,7 +191,8 @@ function renderPosts() {
   const stampMode = mode === 'LINEスタンプ';
   const promptMode = mode === 'LINEスタンププロンプト';
   const shindanMode = mode === 'Threads診断';
-  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝'];
+  const xshindanMode = mode === 'X診断';
+  const EXCLUDED = ['LINEスタンプ', 'Threads宣伝', 'X診断'];
   const regularTotal = allPosts.filter(p => !EXCLUDED.includes(p.platform) && !p.reply1).length;
 
   document.getElementById('statsBar').textContent = promptMode
@@ -195,6 +201,8 @@ function renderPosts() {
     ? `LINEスタンプ ${filtered.length}個`
     : shindanMode
     ? `Threads診断 ${filtered.length}投稿`
+    : xshindanMode
+    ? `X診断 ${filtered.length}投稿`
     : `${filtered.length}件 / 全${regularTotal}件`;
 
   const weekRow = document.getElementById('weekFilterRow');
@@ -302,6 +310,7 @@ function renderExpandable(label, text, copyLabel, isOpen) {
 function renderCard(post) {
   if (activeFilters.platform === 'LINEスタンププロンプト') return renderPromptCard(post);
   if (post.platform === 'LINEスタンプ') return renderStampCard(post);
+  if (post.platform === 'X診断') return renderXshindanCard(post);
 
   const isShindan = activeFilters.platform === 'Threads診断';
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
@@ -341,6 +350,35 @@ function renderCard(post) {
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
       </div>
       ${extrasHtml}
+    </article>`;
+}
+
+function renderXshindanCard(post) {
+  const e = escapeHtml;
+  return `
+    <article class="card card-shindan" data-platform="X診断">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-xshindan">X診断</span>
+          <span class="card-time">${post.time || ''}</span>
+          <span class="card-character">${post.character}</span>
+          ${post.theme ? `<span class="card-theme-label">${e(post.theme)}</span>` : ''}
+        </div>
+        <span class="purpose-badge">${post.purpose}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${e(post.content)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote">
+        <p class="quote-text">${e(post.quote)}</p>
+        <button class="copy-btn" data-copy="${e(post.quote)}">コピー</button>
+      </div>
+      ${post.image_prompt ? renderExpandable('🎨 画像プロンプト（DALL-E 3）', post.image_prompt, 'コピー', false) : ''}
+      ${post.comment1 ? renderExpandable('💬 コメント① 回答・解説', post.comment1, 'コピー', false) : ''}
+      ${post.comment2 ? renderExpandable('📌 コメント② 深掘り・保存補足', post.comment2, 'コピー', false) : ''}
     </article>`;
 }
 
@@ -413,6 +451,7 @@ function setupPlatformFilter() {
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform === 'Threads診断') btn.classList.add('active-shindan');
+    else if (platform === 'X診断') btn.classList.add('active-xshindan');
     else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
     else if (platform === 'LINEスタンププロンプト') btn.classList.add('active-prompt');
     else if (platform === 'note') btn.classList.add('active-note');
