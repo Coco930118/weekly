@@ -441,7 +441,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-shindan', 'active-note');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-prompt', 'active-shindan', 'active-xshindan', 'active-note');
     });
 
     const platform = btn.dataset.platform;
