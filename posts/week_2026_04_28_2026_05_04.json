@@ -1,643 +1,162 @@
 {
   "week": "2026-04-28_2026-05-04",
+  "generated_at": "2026-04-26T10:00:00+09:00",
+  "source": "weekly_sns_run",
+  "trend_summary": [
+    "「静かな退職」から「静かな在職」へ——意欲はあるが評価されない人たちの蓄積された倦怠感がXで再燃。GW明けの離職検討が例年より増加傾向",
+    "管理職の孤独——部下にも上司にも本音を言えない「中間の沈黙」への共感がThreadsで広がり、ミドル層の共感投稿が保存数を伸ばす",
+    "GW中の「連絡のペース変化」による関係不安——返信速度が「大切にされてる度」に変換される時代の歪みへの違和感がバズを生む"
+  ],
   "posts": [
     {
+      "id": "x_01",
       "date": "2026-04-28",
       "platform": "X",
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "デスクに戻ったら、昨日より未処理が増えていた\n連休前の最後の平日、「全部終わらせてから休もう」がまた始まる\n全部終わらせようとした結果、結局何も終わらない💎\n「今日もまた詰め込むか」「一つだけ残して退勤するか」——どちらが正しいかは、17時になってもわからない▶",
+      "content": "連休前の最後の火曜日\n「とにかく終わらせてから休もう」が積み重なる\n全部終わらせようとした結果、結局何も終わらない💎\n「詰め込むか」「一つだけ選ぶか」▶",
       "quote": "💎 一つだけ、今週のうちに"
     },
     {
+      "id": "th_01",
       "date": "2026-04-28",
       "platform": "Threads",
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "連休の前の夜に\nやることリストを確認してしまう\n\n休む前に「ちゃんと終わらせてから」って思う気持ち\n\nでも、ちゃんと終わることなんて\nたぶん一度もなかった\n\n「ここまでやった」で、休んでいいのかもしれない",
+      "content": "連休の前の夜に\nやることリストを確認してしまう\n\n休む前に「ちゃんと終わらせてから」って思う気持ち\n\nでも、ちゃんと終わることなんて\nたぶん一度もなかった\n\nだから今年は\n「ここまでやった」で休もうと思う\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
       "quote": "💍 ここまでやった、で休んでいい"
     },
     {
+      "id": "th_02",
       "date": "2026-04-28",
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "「連休は何してるの」って聞かれるのが\n少しだけ苦手だった\n\n「特に何も」って言うと\nなんか負けた気がして\n\nでも「何もしない」を選べる人は\nちゃんと自分のペースを持ってる人だと\n最近、少し思い始めた\n\n「特に何も」って、胸を張って言える日が\n来るのかもしれない",
+      "content": "「連休は何してるの」って聞かれるのが\n少しだけ苦手だった\n\n「特に何も」って言うと\nなんか負けた気がして\n\nでも最近わかった\n「何もしない」を選べる人は\nちゃんと自分のペースを持ってる人だって\n\n何もしないことを、堂々と答えられる日が来た\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
       "quote": "💍 何もしないを、選べる強さ"
     },
     {
+      "id": "th_03",
       "date": "2026-04-28",
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "明日から休みだと思ったら\nなんか急に、誰かに連絡したくなった\n\nずっと会えてない人の顔が浮かんで\n「元気かな」って思って\nでも送らなかった\n\n連休が終わってからにしようって思って\n連休が終わってもたぶん、また後回しにする\n\nそれが続いて\nいつの間にか疎遠になっていく",
+      "content": "明日から休みだと思ったら\nなんか急に、誰かに連絡したくなった\n\nずっと会えてない人の顔が浮かんで\n「元気かな」って思って\nでも送らなかった\n\n連休が終わってからにしようって思って\n連休が終わってもたぶん、また後回しにする\n\nそれが続いて\nいつの間にか疎遠になるんだよな",
       "quote": "💍 後回しの先に、疎遠がある"
     },
     {
+      "id": "x_02",
       "date": "2026-04-28",
       "platform": "X",
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "保存獲得",
-      "content": "退勤のエレベーターで「GW何するの」と聞かれて、少し詰まった\n「仕事以外で、自分って何してたっけ」が5秒で出てこない\n休暇を取る前に、自分を取り戻す方が先かもしれない💎\n「なんとなく休むか」「一つだけ取り戻しに行くか」——正直、どちらも少し怖い▶",
+      "content": "GW前に思う\n「仕事以外で、自分って何してたっけ」\nそれが5秒で答えられない人は\n休暇を取る前に、自分を取り戻す方が先かもしれない💎\n「休むか」「取り戻すか」▶",
       "quote": "💎 仕事の外に、自分がいる"
     },
     {
+      "id": "x_03",
       "date": "2026-04-29",
       "platform": "X",
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "祝日の昼、ソファに座ったまま1時間が過ぎていた\n「何かしなきゃ」と立ち上がろうとして、また座った\n自分を休ませる許可を、まだ自分に出していないサインだ💎\n「また動き続けるか」「今日だけ許可を出すか」——どちらも、少し怖い気がするのはなぜだろう▶",
+      "content": "休日に「何かしなきゃ」と落ち着かない人がいる\nそれは怠け者じゃないという証明じゃなく\n自分を休ませる許可を、まだ自分に出していないサインだ💎\n「動き続けるか」「許可を出すか」▶",
       "quote": "💎 許可は、自分で出せる"
     },
     {
+      "id": "th_04",
       "date": "2026-04-29",
       "platform": "Threads",
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "祝日の朝に、何もしないでいた\nSNSも見ない\n音楽もかけない\nただ、窓から光が入ってくるのを見てた\n\nこんなに静かな朝を\nいつ以来か思い出せなくて\n\nそれが少し悲しくて\n少し、気持ちよかった",
+      "content": "祝日の朝に、何もしないでいた\nSNSも見ない\n音楽もかけない\nただ、窓から光が入ってくるのを見てた\n\nこんなに静かな朝を\nいつ以来か思い出せなくて\n\nそれが少し悲しくて\n少し、気持ちよかった\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
       "quote": "💍 静かな朝を、受け取った"
     },
     {
+      "id": "th_05",
       "date": "2026-04-29",
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "「連休中に頑張ること」を計画していた\n\n本を3冊読んで\n資格の勉強をして\n部屋を片づけて\n\nでも今日は\n何もできなかった\n\n充電には、充電の時間がいる\nそのことを、まだ半分しか信じられていない",
+      "content": "「連休中に頑張ること」を計画していた\n\n本を3冊読んで\n資格の勉強をして\n部屋を片づけて\n\nでも今日は\n何もできなかった\n\nそれが失敗だとは思わないことにした\n充電には、充電の時間がいる\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
       "quote": "💍 充電には、充電の時間"
     },
     {
+      "id": "th_06",
       "date": "2026-04-29",
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "休みの日の夜は\nなぜか仕事の日より孤独を感じることがある\n\n仕事があるときは\n孤独を感じる暇がなかっただけで\n\n休んで初めて気づく\n「自分には、何があるんだろう」って\n\nそれが怖いから\n忙しくしてたのかもしれない",
-      "quote": "💍 忙しさが、孤独を隠してた"
+      "content": "一人の時間を、ちゃんと過ごした日は\n誰かと会ったとき\nなんか、いつもより素直になれる\n\n求めるじゃなく、ただいる\n埋めるじゃなく、ただ話す\n\n自分の時間が充たされてると\n誰かといる時間の質が、変わる気がする\n\n気づかないうちに、そうなってた",
+      "quote": "💍 満ちてると、誰かとも変わる"
     },
     {
+      "id": "x_04",
       "date": "2026-04-29",
       "platform": "X",
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "今日一日、スマホの通知が一度も鳴らなかった\n誰にも必要とされなかった感覚が、静かに怖かった\nでもそれは、ひとりで立てるようになってきた証拠でもある💎\n「孤独を何かで埋めるか」「静けさをそのまま受け取るか」——今夜はまだ、答えが出ない▶",
+      "content": "今日一日、誰にも必要とされなかった\nそれが静かに怖くて\nでもそれは\nひとりで立てるようになってきた証拠でもある💎\n「孤独を埋めるか」「静けさを受け取るか」▶",
       "quote": "💎 静けさが、自立の証"
     },
     {
+      "id": "x_05",
       "date": "2026-04-30",
       "platform": "X",
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "返信獲得",
-      "content": "先週から、Aさんの週次報告が来なくなった\nチームメンバーの報告頻度が落ちたとき、最初に疑うのは「やる気」じゃなく「安全」だ💎\n報告しづらい何かが、静かに積み上がっていないか\n「様子を見るか」「今週一度だけ聞きに行くか」——どちらが正しいかわからないまま、週が終わる▶",
-      "quote": "💎 報告が減ったとき、疑うのは安全"
+      "content": "「連絡のペースが変わった」と気づく関係がある\nそれは関係が終わりかけてるサインじゃない\nお互いの「必要な距離」が変化しただけかもしれない💎\n「確認するか」「そのまま信じるか」▶",
+      "quote": "💎 距離の変化を、責めない"
     },
     {
+      "id": "th_07",
       "date": "2026-04-30",
       "platform": "Threads",
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "連休中に、ふとしたとき\n職場の人のことを考えてしまった\n\n特定の誰か、というより\nあの空気のこと\n\n嫌いだったわけじゃない\nただ、疲弊してた\n\n離れてみてはじめて\n「あれは疲れだったんだ」ってわかる",
-      "quote": "💍 離れて気づく、疲弊の正体"
+      "content": "好きなことをしてる人の話は\nぐいぐい引き込まれる\n\nなにが面白いのかわからなくても\nその人の声のトーンが\nいつもと少し違うから\n\n夢中になれるものを持ってる人は\nそれだけで、そばにいたくなる\n\nどんな場面で、そう感じた\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💍 夢中が、人を引き寄せる"
     },
     {
+      "id": "th_08",
       "date": "2026-04-30",
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "人に会わない日が続くと\n自分の輪郭が少しぼやける感じがする\n\n誰かの反応で\n自分の位置を確認してたんだと気づく\n\nそれが依存かはわからない\nでも「誰かに映してもらわないと見えない部分」が\n自分にはある\n\nそのことを、悪いとは思わなくなった\nたぶん、まだ半分は思ってるけれど",
-      "quote": "💍 映してもらう、それも愛"
+      "content": "以前は、会う前に\n「どんな自分でいようか」考えてた\n\n相手が好きそうな話題\n相手に合わせた自分\n\nそれをやめたとき\nかえって「また会いたい」と言われた\n\n演じてたときより\n演じなくなってからの方が\n関係が深くなった\n\n以前と、何か違う気がしてる\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💍 演じない自分が、人を呼ぶ"
     },
     {
+      "id": "th_09",
       "date": "2026-04-30",
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "プロフィール遷移",
-      "content": "「大型連休、楽しんでる？」\nそう聞かれるのが、少し苦手だ\n\n楽しんでるかどうかより\n整えてる、という感覚が近い\n\n自分のペース\n自分の声\n自分が必要としていること\n\nうまく言葉にならないから\n「そうだね」って答えた",
-      "quote": "💍 連休は、自分に返る時間"
+      "content": "自分の生活を丁寧に過ごしてる人は\n人の話をよく聞く\n\nそれが不思議だった\n自分のことで精一杯そうなのに\n\nたぶん、自分の器が満ちてると\n誰かの話に「自分の欠乏」を持ち込まない\n\nアドバイスじゃなく\nただそこにいてくれる\n\n自分の中で、何が動いてる\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💍 自分が満ちてると、ただいられる"
     },
     {
+      "id": "x_06",
       "date": "2026-04-30",
       "platform": "X",
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "保存獲得",
-      "content": "連休4日目の夜、「まだ足りない」と思っていた\n「もっとゆっくりしたかった」は、まだ疲れが取れていない証拠だ💎\n一週間で回復しきれないほどの疲れは、平日の設計から変えないとまた同じ連休を迎える\n「このまま月曜を待つか」「来週一つだけ平日の設計を変えるか」——どちらにしても、また同じ季節は来る▶",
-      "quote": "💎 疲れの設計を、変える"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "連休の中日、後輩から「正直、この仕事が合ってない気がする」とメッセージが来た\n余白ができたから、やっと聞こえてきた本音だ💎\n平日にはその声を聞く隙間が、チームにも自分にもなかっただけかもしれない\n「今すぐ答えを出そうとするか」「まず一行だけ受け取るか」——どちらが正しいかは、月曜が来てもわからない▶",
-      "quote": "💎 余白に聞こえた声を、一行"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "連休の中日に\n「あれ、自分って何が好きだったっけ」\nと思った\n\n仕事してないと\n自分が何者かわからなくなる感覚\n\n怖いとは違う\nただ、静かに問われてる感じがした\n\n「仕事以外の自分」が\nどこにいるか、まだわからない",
-      "quote": "💍 仕事の外に、自分がいる"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "共感獲得",
-      "content": "「楽しい連休」を演じてしまった\n\n旅行の写真を撮って\n「充実してる」を証明しようとして\n\nでも本当は\n一人でぼーっとしたかっただけで\n\n誰かに「楽しそうだね」と言ってもらうために\n休んでたわけじゃない\n\nそのことに気づいてから\n少し、立ち止まっている",
-      "quote": "💍 演じない連休を、選んでいい"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "連休中に、ひとつだけ\n「ずっと先送りにしてきたこと」に手をつけた\n\n大したことじゃない\n片付けるつもりで放置してたもの\n\nでも終わったとき\nなんか変な達成感があって\n\nこれが「自分のペースで動く」ってことなのかな\nまだよくわからないけれど",
-      "quote": "💍 自分のペースで動いた日"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "先週、1on1を「また来週にしよう」と2週続けて流した\nチームの関係温度が下がるのは、喧嘩の後じゃない\n「また今度ね」が静かに積み重なった後だ💎\n「今週も先送りするか」「一回だけ今に変えるか」——正直、どちらにしても少し億劫だった▶",
-      "quote": "💎 また今度を、今に変える"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "連休4日目に、月曜の朝が怖くなった\n連休明けが怖い感覚は弱さじゃない\n今の職場に何かが「整っていない」という、身体からのサインだ💎\n「その怖さを無視して月曜を迎えるか」「一つだけ整えに行くか」——どちらにしても、月曜は来る▶",
-      "quote": "💎 怖さは、整えのサイン"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "返信獲得",
-      "content": "連休の終わりに\n「また来週からか」と思った\n\n不安というより\n少し飽きた感じ\n\n毎日毎日\n同じサイクルを回してる気がして\n\nでもそれが「飽き」ならまだいい\n麻痺してたら、気づかないから\n\n飽きてる自分に\n少しだけ、安心した",
-      "quote": "💍 飽きは、麻痺じゃない"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "連休中に、誰にも連絡しなかった\n\n寂しいかと思ったら\n意外とそうでもなかった\n\nそれが少し怖くて\nでも少し、誇らしかった\n\n「一人でいられること」は\n孤独耐性じゃなくて\n自分と一緒にいられること\n\nそう思えるようになったのは\nいつからだろう",
-      "quote": "💍 一人でいられること"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "content": "連休の最後の夜は\nなんか全部が「足りなかった気」がする\n\nもっと休めばよかった\nもっと会えばよかった\nもっとやればよかった\n\n「もっと」が出てくるのは\nたぶん欲張りじゃない\n\nでも何なのかは\nまだうまく言葉にならない",
-      "quote": "💍 もっとが、余白の証拠"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "content": "連休最終日の夜、「また同じ連休だった」と思った\n来年も同じ後悔をするかどうかは、この連休が終わってからの設計次第だ💎\n疲れを休暇で回収しようとするのではなく、平日の積み方を変える\n「また来年に先送りするか」「今週一つだけ変えるか」——月曜が来る前に、決めておきたい▶",
-      "quote": "💎 疲れの設計を、変える"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "連休明けの朝、チームメンバーと目が合わなかった\n連休中に距離が縮まりすぎたか、普段隠してた部分が出すぎたか💎\n職場の関係は、連休明けにすぐ修復しようとしなくていい\n「今すぐ謝りに行くか」「少し間を置くか」——どちらが関係を温めるか、正直わからないまま午前が終わる▶",
-      "quote": "💎 間を置けば、大抵は戻る"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "連休明けにどう動くかより\n連休明けにどんな状態でいるか\n\n準備じゃなく、状態\n\n疲れていたら疲れたまま出勤していい\n無理に「切り替えた顔」を作らなくていい\n\nただ、ここまで生き延びたことだけは\n静かに認めておいてもいい",
-      "quote": "💍 状態で、出勤していい"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "共感獲得",
-      "content": "「一年でいちばん気持ちいい季節」と言う人が多い\n\n風の話\n光の話\n\n自分にはよくわからないけれど\n今日の空気は確かに\nすこし特別な感じがした\n\nそれだけでいい\n説明しなくていい",
-      "quote": "💍 説明しなくて、いい"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "長い休みが終わると\n「自分、ちゃんとしてたかな」って思う\n\n休み方も、連絡の仕方も\n人との時間の使い方も\n\n採点してしまう癖がある\n\nでも休みを採点し始めたら\n休んだことにならない気がして\n\n今日は採点をやめた",
-      "quote": "💍 休みを採点しない日"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "連休の夕方、ぼーっとしていたら「なぜ働くのか」が浮かんだ\n答えは出なかった。でも答えが出なくてもいい\n問いが浮かんだ事実を、平日に持ち帰れるかどうかだ💎\n「また月曜には忘れるか」「今夜一行だけ残すか」——後者を選んだ人は、何かが少し変わり始める▶",
-      "quote": "💎 問いを、平日に持ち帰る"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "返信獲得",
-      "content": "みどりの日の朝、「明日から仕事か」と思って少し止まった\n「また月曜か」と思うか「ここから始まる」と思えるかの違いは、能力じゃなく設計の問題だ💎\n「今週も耐えるだけか」「一つだけ月曜の設計を変えるか」——どちらを選ぶかより、選んだかどうかが問われる▶",
-      "quote": "💎 設計が、月曜を変える"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "今日で連休が終わる\n\n「また始まるんだな」と思いながら\n朝ごはんを食べた\n\n特別な気持ちはなかった\nただ、いつもより少しだけ\n丁寧に食べた気がする\n\nなぜそうしたのか\n自分でもよくわからない",
-      "quote": "💍 丁寧な朝が、一日を変える"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "「連休楽しかった？」って\n明日絶対聞かれる\n\nなんて答えようかな、って\nもう考えてる自分がいる\n\n楽しかったかどうかより\n少し、整えられた気がする\n\nそっちの方が本当のことだけど\nうまく言葉にならないから\n「楽しかったよ」って言うと思う",
-      "quote": "💍 整えられた、で十分"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "プロフィール遷移",
-      "content": "1週間が終わる夜に\nまた同じことを思う\n\n「来週こそは」じゃなくていい\n「今週も消えなかった」でいい\n\n生き延びることが\nどれだけの強さを使っているか\n\n誰も知らなくていい\n自分だけ、静かに受け取っていい",
-      "quote": "💍 消えなかった、それだけでいい"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "プロフィール遷移",
-      "content": "連休最後の夜、明日の準備をしながら気持ちが少し軽かった\n新しい自分で始めようとしなくていい💎\nただ、休み前より少し自分の声が聞こえる状態で月曜を迎えられるか\n「その状態でいられるか」「また流されていくか」——今夜の眠り方が、答えになる▶",
-      "quote": "💎 声が聞こえる状態で、始める"
-    },
-    {
-      "date": "2026-04-28",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "日常共感",
-      "stamp": "おはよう",
-      "content": "「おはよう」って送るだけで、\n今日も繋がれてる気がする。\n\nその一言が、関係の扉を開ける。",
-      "quote": "💎 小さな言葉が、関係の温度を保つ",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression in soft pastel morning pajamas, stretching both arms up with a bright smile while a small elegant white fluffy cat with round bright eyes (しらたま) stretches playfully beside her, both greeting the morning together. Soft Japanese watercolor illustration, delicate translucent brushwork, warm peach and soft gold with cream accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, gentle morning warmth.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-28",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "感謝伝達",
-      "stamp": "いつもありがとう",
-      "content": "「いつもありがとう」は、\n特別な日じゃなくていい。\n\nふと思った瞬間が、一番伝わる。",
-      "quote": "💎 感謝は、タイミングより回数",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression in everyday clothes, hands pressed gently together in heartfelt gratitude while a delicate small white dove with bright gentle eyes (ひより) perches softly on her outstretched palm, both radiating warm appreciation. Soft Japanese watercolor illustration, delicate translucent brushwork, soft blush pink and warm cream with gold accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, sincere warm gratitude.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-28",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "日常共感",
-      "stamp": "おやすみ〜",
-      "content": "「おやすみ」が言える相手がいる夜は、\nちょっとだけ安心して眠れる。",
-      "quote": "💎 終わりの言葉が、明日への橋になる",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression in pale lavender cotton pajamas with small floral prints, giving a sleepy gentle wave goodnight while a small elegant white fluffy cat with round bright eyes (しらたま) curls up contentedly beside her, both settling into quiet night. Soft Japanese watercolor illustration, delicate translucent brushwork, deep lavender and moonlight silver with soft navy accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, quiet nocturnal peace.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-29",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "感情共有",
-      "stamp": "楽しみ〜",
-      "content": "「楽しみ〜」って送れる相手がいること、\nそれだけで予定がもっと輝く。",
-      "quote": "💎 期待は、一人より二人で膨らむ",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression with sparkling eyes and hands clasped near her chin in happy anticipation while a delicate small white dove with bright gentle eyes (ひより) flutters wings excitedly beside her, both sharing contagious excitement. Soft Japanese watercolor illustration, delicate translucent brushwork, warm yellow and soft peach with sparkle accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, bright joyful anticipation.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-29",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "祝福伝達",
-      "stamp": "おめでとう",
-      "content": "「おめでとう」のタイミングを\n逃さない人は、関係を大切にしてる人。",
-      "quote": "💎 祝福は、遅れるより早すぎるくらいがいい",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression with arms raised in celebration, surrounded by a small elegant white fluffy cat with round bright eyes (しらたま), a gentle small sea turtle with large thoughtful dark eyes (しずく), and a delicate small white dove with bright gentle eyes (ひより), all celebrating joyfully together with small watercolor confetti and stars. Soft Japanese watercolor illustration, delicate translucent brushwork, festive pastel — wisteria, peach and soft gold, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, shared joyful celebration.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-29",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "愛情表現",
-      "stamp": "大好き",
-      "content": "「大好き」って、\n言い慣れてる人ほど、関係が深い。\n\n照れずに送れるようになったら、それが成長。",
-      "quote": "💎 愛情は、伝えるたびに育つ",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression gently holding a small elegant white fluffy cat with round bright eyes (しらたま) close to her heart with both hands, both with eyes softly closed in mutual deep affection, small floating hearts around them. Soft Japanese watercolor illustration, delicate translucent brushwork, rosy pink and warm cream with soft gold, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, tender devoted love.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-30",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "気遣い伝達",
-      "stamp": "気をつけてね",
-      "content": "「気をつけてね」の一言に、\n心配と愛情が両方入ってる。\n\n短いほど、重い。",
-      "quote": "💎 気遣いは、言葉が短いほど深く届く",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression leaning forward with a gentle protective expression and hands softly together while a gentle small sea turtle with large thoughtful dark eyes (しずく) looks up with equal calm care, both conveying safe passage. Soft Japanese watercolor illustration, delicate translucent brushwork, soft sage green and teal with cream accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, gentle protective care.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-30",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "応援・祈り",
-      "stamp": "今日も素敵ないちにちになりますように",
-      "content": "長い言葉だけど、\nそれだけ丁寧に思ってるってこと。\n\n朝に届くと、一日が変わる。",
-      "quote": "💎 祈りの言葉は、相手の朝を包む",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression hands clasped in a soft morning wish, eyes gently closed, with a small elegant white fluffy cat with round bright eyes (しらたま), a gentle small sea turtle with large thoughtful dark eyes (しずく), and a delicate small white dove with bright gentle eyes (ひより) gathered warmly around her, small watercolor flowers blooming. Soft Japanese watercolor illustration, delicate translucent brushwork, morning gold and wisteria with soft peach, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, graceful morning blessing.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-30",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "励まし・共感",
-      "stamp": "少しずつでいい",
-      "content": "「少しずつでいい」って言える人が、\n本当に相手のペースを尊重してる人。\n\n急かさない愛情がある。",
-      "quote": "💎 寄り添うとは、歩幅を合わせること",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression walking peacefully at a gentle pace while a gentle small sea turtle with large thoughtful dark eyes (しずく) walks contentedly beside her at the same calm rhythm, both smiling softly in reassurance. Soft Japanese watercolor illustration, delicate translucent brushwork, soft mint green and warm ivory with sage accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, gentle reassuring pace.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "背中を押す",
-      "stamp": "やってみよう",
-      "content": "「やってみよう」って言ってくれる人が\n近くにいると、怖さが半分になる。",
-      "quote": "💎 一緒に踏み出す言葉が、勇気をつくる",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression one fist raised in cheerful determination while a delicate small white dove with bright gentle eyes (ひより) flutters wings enthusiastically beside her, both radiating bright forward momentum. Soft Japanese watercolor illustration, delicate translucent brushwork, warm orange and sunny yellow with cream, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, uplifting forward energy.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "承認・称賛",
-      "stamp": "一歩成長だね",
-      "content": "「一歩成長だね」は、\n結果じゃなくて過程を見てる言葉。\n\nそれを言える人に、人は集まる。",
-      "quote": "💎 プロセスを認める人が、関係を育てる",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression pointing gently upward with one finger and smiling warmly while a gentle small sea turtle with large thoughtful dark eyes (しずく) stands with quiet newfound confidence, a small watercolor flower blooming between them. Soft Japanese watercolor illustration, delicate translucent brushwork, soft green and warm gold with cream, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, warm recognition of growth.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "肯定・愛情",
-      "stamp": "そういうところ好き",
-      "content": "「そういうところ好き」って、\n相手のくせや習慣を愛してるってこと。\n\n全体じゃなく、部分を見てる。",
-      "quote": "💎 細部への愛が、深い絆をつくる",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression tilting her head with a warm fond smile toward a small elegant white fluffy cat with round bright eyes (しらたま) who is doing something characteristically charming, small pink hearts floating between them. Soft Japanese watercolor illustration, delicate translucent brushwork, blush pink and warm ivory with rose accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, affectionate recognition.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "受容・緩和",
-      "stamp": "まぁいいんじゃない",
-      "content": "「まぁいいんじゃない」が言える関係は、\n完璧を求めていない。\n\nゆるさが、長続きの秘訣。",
-      "quote": "💎 許容できる幅が、関係の耐久性を決める",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression with a casual easy shrug and soft amused smile while a small elegant white fluffy cat with round bright eyes (しらたま), a gentle small sea turtle with large thoughtful dark eyes (しずく), and a delicate small white dove with bright gentle eyes (ひより) all look on with equally relaxed unbothered expressions, all sharing carefree acceptance energy. Soft Japanese watercolor illustration, delicate translucent brushwork, muted warm neutrals — cream, sand and soft sage, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, gentle carefree acceptance.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "安心伝達",
-      "stamp": "無事に向かってます",
-      "content": "「向かってます」の一言で、\n待ってる人の不安が消える。\n\nその気遣いが、信頼になる。",
-      "quote": "💎 小さな報告が、大きな安心を生む",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression walking briskly with a cheerful reassuring wave while a delicate small white dove with bright gentle eyes (ひより) flies lightly alongside her, both conveying safe purposeful movement. Soft Japanese watercolor illustration, delicate translucent brushwork, light sky blue and cream with soft green, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, bright reassuring movement.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "愛情・肯定",
-      "stamp": "今日も可愛いね",
-      "content": "「今日も可愛いね」は、\n昨日も見ていたってこと。\n\n継続した関心が、最上の愛情表現。",
-      "quote": "💎 毎日の肯定が、自己肯定感をつくる",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression both hands lightly covering her mouth in pleased delighted surprise while a small elegant white fluffy cat with round bright eyes (しらたま) sits proudly looking adorable, both with soft rosy watercolor blush, small sparkle hearts. Soft Japanese watercolor illustration, delicate translucent brushwork, soft rosy pink and cream with sparkle accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, warm delighted admiration.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "丁寧な感謝",
-      "stamp": "ご連絡に感謝",
-      "content": "「ご連絡に感謝」は、\nビジネスの場でも心が伝わる言葉。\n\n丁寧さは、距離を縮める。",
-      "quote": "💎 礼儀は、関係の土台を固める",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression giving a graceful polite bow of professional gratitude while a gentle small sea turtle with large thoughtful dark eyes (しずく) bows beside her with equal formality, both conveying dignified appreciation. Soft Japanese watercolor illustration, delicate translucent brushwork, calm blue-grey and ivory with subtle gold, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, dignified professional warmth.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "丁寧な歓迎",
-      "stamp": "無事にお越しくださいませ",
-      "content": "「無事に」という一言が、\n到着までを気にかけてる気持ちの表れ。\n\nそれだけで、迎えられた感覚になる。",
-      "quote": "💎 迎える言葉が、会う前から関係をつくる",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression arms open in a gracious welcoming gesture while a small elegant white fluffy cat with round bright eyes (しらたま), a gentle small sea turtle with large thoughtful dark eyes (しずく), and a delicate small white dove with bright gentle eyes (ひより) line up warmly beside her in a welcoming formation, all conveying safe collective arrival. Soft Japanese watercolor illustration, delicate translucent brushwork, warm teal and cream with soft gold, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, gracious collective welcome.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "共感・慰め",
-      "stamp": "失敗のない人会ったことないよ",
-      "content": "自分を責めてる人に、\nこの言葉が刺さることがある。\n\n失敗は、共通点。孤独じゃない。",
-      "quote": "💎 失敗を共有できる関係が、本当の安全地帯",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression shaking her head gently with a kind reassuring smile while a gentle small sea turtle with large thoughtful dark eyes (しずく) listens with patient understanding, a small cracked heart mending into tiny flowers between them. Soft Japanese watercolor illustration, delicate translucent brushwork, warm earth tones — amber, sage and soft cream, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, compassionate shared wisdom.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "LINEスタンプ",
-      "character": "🐢しずく",
-      "purpose": "励まし・実践",
-      "stamp": "やってみて修正したらいい",
-      "content": "「やってみて修正したらいい」は、\n完璧主義を優しく溶かす言葉。\n\n動くことへの許可を与えてくれる。",
-      "quote": "💎 修正できる前提が、挑戦を軽くする",
-      "prompt": "An elegant young Japanese woman with short straight dark brown bob at chin length, refined cool composed expression giving a confident thumbs-up while a delicate small white dove with bright gentle eyes (ひより) holds a tiny pencil in its beak, both suggesting practical iteration and forward action. Soft Japanese watercolor illustration, delicate translucent brushwork, bright teal and warm cream with green accents, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, bright practical encouragement.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "LINEスタンプ",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "感謝の溢れ",
-      "stamp": "感謝でいっぱいです",
-      "content": "「感謝でいっぱい」は、\n言葉にしきれないほどありがとう、ってこと。\n\nその溢れが、相手に伝わる。",
-      "quote": "💎 溢れる感謝は、言葉より先に届く",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression both hands over her heart in overflowing gratitude while a small elegant white fluffy cat with round bright eyes (しらたま), a gentle small sea turtle with large thoughtful dark eyes (しずく), and a delicate small white dove with bright gentle eyes (ひより) gather close with warm supportive presence, tiny hearts and watercolor warmth overflowing between them. Soft Japanese watercolor illustration, delicate translucent brushwork, golden warm palette with soft rose and cream, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, overflowing heartfelt gratitude.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "LINEスタンプ",
-      "character": "🕊ひより",
-      "purpose": "成長の承認",
-      "stamp": "語れる人になれたね",
-      "content": "以前は話せなかったことを、\n今は言葉にできる。\n\nその変化を見ていた人が言う言葉。",
-      "quote": "💎 成長を見届けてくれる人が、最高のサポーター",
-      "prompt": "A graceful young Japanese woman with short straight dark brown bob at chin length, soft feminine expression one hand over heart, gazing gently upward with a deep proud smile, while a small elegant white fluffy cat with round bright eyes (しらたま), a gentle small sea turtle with large thoughtful dark eyes (しずく), and a delicate small white dove with bright gentle eyes (ひより) surround her as proud quiet witnesses to her growth, small speech bubbles blooming with watercolor flowers. Soft Japanese watercolor illustration, delicate translucent brushwork, soft lavender and warm gold with cream, 1px fine white outline, subtle 10% drop shadow, centered composition with equal generous margins on all four sides, isolated card-like framing, transparent PNG alpha background, moving recognition of growth.",
-      "series": "きょうも、そのままで③"
-    },
-    {
-      "date": "2026-04-28",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "信頼される上司",
-      "character": "🐢しずく",
-      "purpose": "返信獲得",
-      "content": "「あの人、信頼できる」と言われる上司にある共通点💎\nあなた、または身近な上司に近いのはどれ？\n\nA. できないことを「できない」とはっきり言える\nB. チームの失敗を、上には「自分の責任」として伝える\nC. 約束より少し早く動く癖がある\nD. 部下の前で、別の部下の話をしない\n\n▶ 解説はコメントへ",
-      "quote": "💎 信頼の形は、ひとつじゃない",
-      "image_prompt": "Watercolor painting divided into 4 equal sections by 1px white border lines. Top-left (A): a calm office manager gently declining with an open palm gesture, soft blue-gray wash. Top-right (B): a leader standing in front of their team with a protective posture, warm amber tones. Bottom-left (C): a professional figure quietly glancing at a wristwatch, soft sage green tones. Bottom-right (D): two colleagues in a respectful one-on-one conversation, muted lavender tones. Translucent watercolor style, clean white background, gentle Japanese professional atmosphere.",
-      "comment1": "どれも「信頼される上司」の姿です。あなたが選んだのが、あなたの「信頼の優先軸」かもしれません。\n\nA. できないことを言える人の「できる」は、自然と重みを持つ\nB. 失敗を自分ごとにできる上司がいる場は、部下が安心して挑戦できる\nC. 少し早く動く人は、相手の時間と余裕を守る意識がある\nD. 「この場では言えない」と感じさせない空気が、報連相を生む\n\nどれを選びましたか？ コメントで教えてもらえると嬉しいです。",
-      "comment2": "Coco Methodologyでは、信頼を「積む技術」より「壊さない設計」として捉えている。\n\n大きな裏切りより、小さな不一致の積み重ねが信頼を崩すことが多い。\n「この人は大丈夫」という安心は、派手な行動より日常の一貫性から育つ。\n\n管理職の負荷が増す今、信頼の源は「役職」ではなく「行動の一貫性」にある。💎"
-    },
-    {
-      "date": "2026-04-29",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "現場が動きたくなる伝え方",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "content": "同じ「やってほしい」でも、人が動きたくなる伝え方がある💎\nあなたが一番動けると感じる伝え方はどれ？\n\nA. 「なぜやるか」の理由が先に来る\nB. 「あなたに頼みたい」という一言がある\nC. 期限と優先度が最初に明確に示される\nD. 「どうやるかはあなたに任せる」と言われる\n\n▶ 解説はコメントへ",
-      "quote": "💎 「動きたい」は、言葉で設計できる",
-      "image_prompt": "Watercolor painting in 4 equal quadrants with 1px white border dividers. Top-left (A): a person listening intently with a warm thought bubble 'Why?', soft golden-yellow tones. Top-right (B): two figures facing each other, one extending a warm open-palm gesture, rose-pink tones. Bottom-left (C): a clean desk calendar with clear priority markers, organized cool blue tones. Bottom-right (D): a single figure walking forward confidently in open space, fresh green tones. Transparent watercolor washes, clean white background, Japanese professional atmosphere.",
-      "comment1": "どれも「人が動きたくなる伝え方」として機能します。\n大切なのは、相手に合った伝え方を選べているかどうかです。\n\nA. 理由が先に来ると、相手は自分ごととして動ける\nB. 「あなたに」という一言は、役割への依頼でなく存在への承認になる\nC. 期限と優先度が明確なら、迷わず動ける安心がある\nD. 方法を任せることで、相手の主体性と責任感が育つ\n\nどれが一番響きましたか？",
-      "comment2": "Coco Methodologyでは、「動かない人」より「動けない状況」を先に疑う。\n\n伝え方の問題は、内容よりも「受け取られ方の設計」にあることが多い。\n「なぜ」が先に来ると、指示ではなく方向性の共有になる。\n「あなたに頼みたい」は、関係から生まれる動機を作る言葉になる。\n\n動く気持ちは引き出せる。それは能力でなく、距離感の問題でもある。💎"
-    },
-    {
-      "date": "2026-04-30",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "報連相が止まる理由",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "「最近、報告が来ない」と感じるとき、その原因は部下の側だけじゃないかもしれない💎\n報連相が止まる一番の理由だと思うのはどれ？\n\nA. 「いつ報告すればいいか」がわからない\nB. 「忙しそう」な空気が漂っている\nC. 「言っても変わらない」という経験がある\nD. 「怒られそう」という予感がある\n\n▶ 解説はコメントへ",
-      "quote": "💎 止まった報連相には、設計できる理由がある",
-      "image_prompt": "Watercolor painting divided into 4 equal sections with 1px white border lines. Top-left (A): a figure standing at a fork in a corridor, uncertain about direction, soft gray-blue tones. Top-right (B): a small figure approaching another surrounded by stacked papers, hesitating mid-step, warm gray tones. Bottom-left (C): a figure standing before a bulletin board showing no change, quiet resignation, muted olive-green tones. Bottom-right (D): a small figure looking across a distance toward a taller figure, visible emotional gap, soft amber tones. Transparent watercolor style, quiet and reflective mood.",
-      "comment1": "4つとも、実際に現場で報連相が止まる理由として挙がるものです。\n\nA. ルールが曖昧なまま「察して」を求めてしまっている可能性がある\nB. 「忙しそう」な空気は、意図せず生み出していることが多い\nC. 「言っても変わらない」経験は、報告の意欲を静かに削いでいく\nD. 「怒られそう」という予感は、場の安全性が低いサインかもしれない\n\nどれが一番思い当たりましたか？",
-      "comment2": "Coco Methodologyでは、報連相を「部下のスキル問題」として見ない。\n\n報連相が止まる場所には、必ず「報告したくない理由」がある。\nそれは多くの場合、能力の問題ではなく、場の安全性の問題。\n\n「言いやすい空気」は偶然できない。意図して設計するもの。\n関係の温度と距離を整える技術の出発点は、ここにある。💎"
-    },
-    {
-      "date": "2026-05-01",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "数字が伸びるチームの空気",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "数字が伸びているチームには、KPIより先に「ある空気」がある💎\nあなたのチームに一番近いのはどれ？\n\nA. 失敗の話が、普通にできる\nB. 褒める人より、静かに気づく人が多い\nC. 「私の仕事」と「みんなの仕事」の境界が緩い\nD. リーダーが、チームの中で一番機嫌がいい\n\n▶ 解説はコメントへ",
-      "quote": "💎 空気は、数字に先行する",
-      "image_prompt": "Watercolor painting in 4 equal sections with 1px white dividers. Top-left (A): a small group gathered in a relaxed circle, one person speaking openly while others listen warmly, soft coral-peach tones. Top-right (B): a single figure quietly observing a plant growing, attentive and patient, sage green tones. Bottom-left (C): multiple figures working at overlapping areas in fluid collaboration, golden-amber tones. Bottom-right (D): a calm leader with a genuine relaxed smile, their team naturally nearby, sky blue tones. Transparent watercolor style, energetic yet calm atmosphere.",
-      "comment1": "数字が伸びているチームには、共通してこの「空気」があります。\n\nA. 失敗を話せる場は、改善のサイクルが速く回る\nB. 静かに気づく人は、チーム全体の温度計になっている\nC. 「境界が緩い」チームは、助け合いが自然に起きる\nD. リーダーの機嫌は、チーム全体の心理的安全性に直接影響する\n\nあなたのチームにはいくつ当てはまりましたか？",
-      "comment2": "Coco Methodologyでは、「数字は空気の後についてくる」と見ている。\n\n成果を出しているチームを観察すると、まず「場の温度」が違う。\n「失敗を言える」「弱さを出せる」という積極的な安全性がある。\n\n心理的安全性は理想論ではなく、数字に先行するインフラ。💎"
-    },
-    {
-      "date": "2026-05-02",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "部下が相談しやすい距離感",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "「なぜ相談してくれないんだろう」と感じるとき、距離感を先に見直してみる💎\n部下が「この人なら話せる」と感じるのはどんなとき？\n\nA. 否定より先に「なるほど」が来る\nB. 忙しくても、目を合わせて聞いてくれる\nC. アドバイスより先に、共感が返ってくる\nD. 自分の失敗談を普通に話せる人\n\n▶ 解説はコメントへ",
-      "quote": "💎 相談される距離感は、設計できる",
-      "image_prompt": "Watercolor painting in 4 equal quadrants with 1px white lines. Top-left (A): two figures in conversation, one nodding with a calm open expression, soft pink tones. Top-right (B): a manager looking up from their desk to make warm direct eye contact with a colleague, teal tones. Bottom-left (C): one figure leaning slightly toward another in quiet empathy, soft lavender tones. Bottom-right (D): a senior figure sharing a memory with a relaxed self-deprecating smile, amber-golden tones. Transparent watercolor style, gentle and approachable atmosphere.",
-      "comment1": "どれも「相談される距離感」の作り方として有効です。\n\nA. 「なるほど」は評価でも同意でもなく「ちゃんと聞いている」のサイン\nB. 目を合わせて聞くことは、忙しさより相手を優先しているメッセージ\nC. アドバイスより共感が先だと、人は「もっと話したい」と感じやすい\nD. 自分の失敗を話せる人は、「完璧でなくていい」という許可を与えている\n\nどれが一番難しいと感じましたか？",
-      "comment2": "Coco Methodologyでは、「相談されない」を能力の問題として捉えない。\n\n相談は、安全だと感じた場所にしか起きない。\n「この人には言えない」という判断は、相手への評価ではなく\n「ここでどう受け取られるか」の予測から生まれる。\n\n距離感は意図して設計できる。相談される上司は、偶然じゃない。💎"
-    },
-    {
-      "date": "2026-05-03",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "トップと現場の温度差",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "「方針は決まった。でも現場が動かない」——この状況、思い当たるところはある？💎\nトップと現場に温度差が生まれる一番の原因だと思うのはどれ？\n\nA. トップが現場を見る機会が少ない\nB. 現場の声が、途中でフィルタリングされている\nC. 「建前の報告」が当たり前になっている\nD. 温度差があることを、誰も言い出せない\n\n▶ 解説はコメントへ",
-      "quote": "💎 温度差は、距離から生まれる",
-      "image_prompt": "Watercolor painting in 4 sections with 1px white borders. Top-left (A): a figure at a high office window looking down at small distant workers below, cool blue-gray tones. Top-right (B): an abstract funnel shape where information is partially filtered, muted teal tones. Bottom-left (C): a figure presenting a polished report while complexity is implied beneath, soft gold tones. Bottom-right (D): a group of figures in a meeting circle, all glancing at each other with unspoken thoughts, quiet gray tones. Transparent watercolor style, contemplative mood.",
-      "comment1": "4つとも、実際の組織でよく起きている現象です。\n\nA. 現場を見る機会が少ないと、情報が「加工されて」届くようになる\nB. フィルタリングが起きると、声が届く前に都合の悪い部分が消える\nC. 建前の報告が続くと、正確な現状把握ができなくなる\nD. 誰も言い出せない状態が続くと、温度差が固定化されていく\n\nどれが一番組織への影響が大きいと思いますか？",
-      "comment2": "Coco Methodologyでは、温度差は「悪意」より「距離」から生まれると見ている。\n\nトップが現場を見ていない場合、現場の声は必ず「翻訳」されて届く。\nその翻訳の中に、意図せず歪みが生まれることが多い。\n\n距離を縮めることは、物理的な接触より「声が届く仕組みの設計」にある。\n温度差は、努力より設計で解決できることが多い。💎"
-    },
-    {
-      "date": "2026-05-04",
-      "platform": "X診断",
-      "time": "12:00",
-      "theme": "人が辞めにくい職場の特徴",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "GW明けに「やっぱり辞めたい」と思う人がいる一方、辞めたくならない職場もある💎\n人が辞めにくい職場に共通するのはどれだと思う？\n\nA. 頑張りを、誰かが静かに見ていてくれる\nB. 失敗しても、再挑戦できる空気がある\nC. 自分の意見が、ちゃんと聞いてもらえる\nD. 一緒に働く人が、好きでいられる\n\n▶ 解説はコメントへ",
-      "quote": "💎 辞めにくい職場には、温度がある",
-      "image_prompt": "Watercolor painting in 4 equal sections with 1px white dividers. Top-left (A): a figure working quietly at their desk while another watches with a warm appreciative expression, soft amber tones. Top-right (B): a figure who has stumbled getting back up while others offer gentle encouraging gestures, hopeful green tones. Bottom-left (C): a group circle where one figure speaks and others lean in closely to listen, warm rose tones. Bottom-right (D): colleagues sharing a quiet moment of connection with gentle smiles, soft lavender tones. Transparent watercolor style, warm and welcoming workplace atmosphere.",
-      "comment1": "GW明けに「辞めたい」と思う人が増えるのは、距離を置いて見えてくるものがあるから。\nでも「辞めたくない」と感じさせる職場には、確かな共通点があります。\n\nA. 見てくれる人がいる → 存在を認められている安心感\nB. 再挑戦できる → 失敗を恐れずに動ける環境\nC. 意見を聞いてもらえる → 自分がここに影響を与えているという感覚\nD. 好きでいられる人がいる → 関係性の温度が職場を支える\n\nどれが一番大切だと感じましたか？",
-      "comment2": "Coco Methodologyでは、辞めにくい職場を「辞める理由がない場所」ではなく\n「ここにいたい理由がある場所」として設計する。\n\n退職は突然起きない。じわじわと温度が下がった末の、静かな決断。\n「もう少しいてみよう」と思わせるのは、制度より関係の温度。\n\n職場を辞めにくくするのは、給与より「ここは安全だ」という確信かもしれない。💎"
+      "content": "「もっと早く休んでおけばよかった」と思える連休なら\nそれはちゃんと働きすぎていた証拠だ💎\n休んでやっと見える自分の疲弊を\n平日には見てあげられなかった\n「気づいた今、どう動く？」▶",
+      "quote": "💎 休んで見える、自分の疲れ"
     }
-  ],
-  "series": "きょうも、そのままで③"
+  ]
 }
