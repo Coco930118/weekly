@@ -297,6 +297,38 @@ body {
   padding: 0 0 12px;
 }
 
+/* Theme badge */
+.card-theme {
+  padding: 6px 14px 0;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+/* Extra sections (image prompt, comments) */
+.card-section {
+  border-top: 1px solid var(--border);
+  padding: 12px 14px 4px;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.section-text {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+
 /* Loading / error / empty states */
 .loading, .error-state, .empty-state {
   text-align: center;
