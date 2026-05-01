@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「ちゃんと終わらせてから」がなくなる日 | coconocanvas note</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #111111;
+      --bg-card: #181818;
+      --border: #2a2a2a;
+      --border-light: #333;
+      --text: #e8e8e8;
+      --text-sub: #888;
+      --text-muted: #555;
+      --accent: #c9a96e;
+      --paywall-bg: #1a1510;
+      --paywall-border: #5a3e1a;
+      --free-tag: #1a3a2a;
+      --paid-tag: #3a1a1a;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+    }
+    html { font-size: 16px; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font); line-height: 1.8; padding-bottom: 80px; }
+
+    /* Header */
+    .site-header { padding: 20px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; position: sticky; top: 0; background: rgba(17,17,17,.96); backdrop-filter: blur(8px); z-index: 100; }
+    .back-link { color: var(--text-sub); text-decoration: none; font-size: .8rem; letter-spacing: .04em; }
+    .back-link:hover { color: var(--text); }
+    .site-name { font-size: .85rem; color: var(--text-sub); letter-spacing: .08em; }
+
+    /* Article */
+    .article-wrap { max-width: 660px; margin: 0 auto; padding: 0 20px; }
+
+    .article-header { padding: 40px 0 32px; border-bottom: 1px solid var(--border); }
+    .note-label { font-size: .68rem; letter-spacing: .1em; color: var(--accent); text-transform: uppercase; margin-bottom: 14px; }
+    .article-title { font-size: 1.3rem; font-weight: 600; line-height: 1.55; color: var(--text); margin-bottom: 18px; }
+    .article-meta { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+    .meta-date { font-size: .75rem; color: var(--text-muted); }
+    .meta-price { font-size: .78rem; background: #2a2010; border: 1px solid #5a3e1a; color: var(--accent); padding: 3px 10px; border-radius: 4px; letter-spacing: .04em; }
+    .article-desc { margin-top: 16px; font-size: .88rem; color: var(--text-sub); line-height: 1.75; }
+
+    /* Content */
+    .content { padding: 36px 0; }
+    .free-zone { border-left: 2px solid #1e4a2e; padding-left: 16px; margin-bottom: 4px; }
+    .zone-label { font-size: .65rem; letter-spacing: .1em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 12px; }
+
+    .content p { margin-bottom: 1em; font-size: .95rem; }
+    .content h2 { font-size: 1.05rem; font-weight: 600; color: var(--accent); margin: 2em 0 .8em; padding-bottom: .4em; border-bottom: 1px solid var(--border); }
+    .content h3 { font-size: .88rem; font-weight: 600; color: var(--text-sub); letter-spacing: .06em; margin: 1.4em 0 .6em; text-transform: uppercase; }
+    .content hr { border: none; border-top: 1px solid var(--border); margin: 1.6em 0; }
+    .content strong { color: var(--text); }
+
+    /* Paywall */
+    .paywall { margin: 32px 0; background: var(--paywall-bg); border: 1px solid var(--paywall-border); border-radius: 10px; padding: 24px 20px; }
+    .paywall-title { font-size: .78rem; color: var(--accent); letter-spacing: .08em; margin-bottom: 10px; }
+    .paywall-lead { font-size: .88rem; color: var(--text-sub); margin-bottom: 14px; line-height: 1.7; }
+    .paywall-list { list-style: none; }
+    .paywall-list li { font-size: .85rem; color: var(--text); padding: 4px 0; padding-left: 20px; position: relative; line-height: 1.6; }
+    .paywall-list li::before { content: "✔"; position: absolute; left: 0; color: var(--accent); font-size: .75rem; top: 5px; }
+
+    .paid-zone { border-left: 2px solid #4a1a1a; padding-left: 16px; }
+
+    /* Checklist */
+    .checklist { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px 18px; margin: 1em 0; }
+    .checklist-title { font-size: .72rem; letter-spacing: .08em; color: var(--text-muted); margin-bottom: 10px; text-transform: uppercase; }
+    .checklist li { list-style: none; font-size: .84rem; color: var(--text-sub); padding: 4px 0; padding-left: 22px; position: relative; line-height: 1.6; }
+    .checklist li::before { content: "□"; position: absolute; left: 0; color: var(--text-muted); }
+
+    /* Perspective jump */
+    .jump-box { background: #12181f; border-left: 3px solid #3a6ea8; padding: 16px 18px; margin: 1.4em 0; border-radius: 0 8px 8px 0; }
+    .jump-box p { font-size: .9rem; color: #a8c8e8; line-height: 1.8; margin: 0; }
+
+    /* Ending */
+    .ending { margin-top: 40px; padding-top: 28px; border-top: 1px solid var(--border); }
+    .ending p { font-size: .95rem; margin-bottom: 1em; }
+
+    /* SNS Hooks */
+    .sns-hooks { margin-top: 48px; padding: 24px 20px; background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; }
+    .sns-hooks-title { font-size: .72rem; letter-spacing: .1em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 16px; }
+    .hook-item { margin-bottom: 16px; }
+    .hook-platform { font-size: .7rem; color: var(--accent); letter-spacing: .06em; margin-bottom: 6px; }
+    .hook-text { font-size: .83rem; color: var(--text-sub); line-height: 1.75; white-space: pre-wrap; background: var(--bg); border: 1px solid var(--border); border-radius: 6px; padding: 10px 12px; }
+
+    /* Adjustment notes */
+    .adj-notes { margin-top: 24px; padding: 18px 20px; border: 1px dashed var(--border-light); border-radius: 8px; }
+    .adj-notes-title { font-size: .7rem; color: var(--text-muted); letter-spacing: .08em; text-transform: uppercase; margin-bottom: 10px; }
+    .adj-notes li { font-size: .82rem; color: var(--text-sub); padding: 4px 0 4px 16px; position: relative; line-height: 1.65; }
+    .adj-notes li::before { content: "→"; position: absolute; left: 0; color: var(--text-muted); font-size: .75rem; }
+
+    /* Hashtags */
+    .hashtags { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { font-size: .72rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; letter-spacing: .02em; }
+
+    /* Footer nav */
+    .footer-nav { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); text-align: center; }
+    .footer-nav a { color: var(--text-sub); text-decoration: none; font-size: .8rem; }
+    .footer-nav a:hover { color: var(--text); }
+
+    @media (min-width: 640px) {
+      .article-title { font-size: 1.5rem; }
+      .article-wrap { padding: 0 32px; }
+    }
+  </style>
+</head>
+<body>
+
+<header class="site-header">
+  <a href="../index.html" class="back-link">← 投稿管理</a>
+  <span style="color:var(--border-light)">|</span>
+  <span class="site-name">coconocanvas note</span>
+</header>
+
+<div class="article-wrap">
+
+  <div class="article-header">
+    <p class="note-label">note — 2026.04.27</p>
+    <h1 class="article-title">「ちゃんと終わらせてから」がなくなる日<br>──休む許可を、自分に出すための5つの原理</h1>
+    <div class="article-meta">
+      <span class="meta-date">2026-04-27</span>
+      <span class="meta-price">¥1,200</span>
+      <span class="meta-date">参照週: 2026-04-28 〜 2026-05-04</span>
+    </div>
+    <p class="article-desc">「ちゃんと終わらせてから」が来ない理由。休む許可が自分に出せない人の思考構造と、連休を「採点」してしまう癖の正体。20年で5万人と向き合った現場から見えた、疲れの設計の話。</p>
+  </div>
+
+  <div class="content">
+
+    <!-- 無料エリア -->
+    <div class="free-zone">
+      <p class="zone-label">無料エリア</p>
+      <p>あのね、<br>「ちゃんと終わらせてから」<br>また、始まってた。</p>
+      <p>GW前夜。やることリストを開いて、「せめてここまで」を探してる自分がいた。</p>
+      <p>全部終わったら、ちゃんと休もう。<br>全部終わったら、好きなことをしよう。</p>
+      <p>でも「全部終わった」状態は、20年で一度も来なかった。</p>
+      <hr>
+      <p>20年で延べ5万人超と向き合う中で、「休めない人」には共通点があった。</p>
+      <p>意志が弱いんじゃない。<br>自己管理ができないわけでもない。</p>
+      <p>「ちゃんと終わらせてから」という条件を、休む許可に設定していた。</p>
+      <p>それが、消耗の正体だった。</p>
+    </div>
+
+    <!-- 有料壁 -->
+    <div class="paywall">
+      <p class="paywall-title">ここから先は有料です（¥1,200）</p>
+      <p class="paywall-lead">「連休なのに、ちゃんと休めなかった」<br>そう思いたくないなら、ここから先を読んでください。</p>
+      <ul class="paywall-list">
+        <li>「ちゃんと終わらせてから」が永遠に来ない理由</li>
+        <li>休む許可を自分に出せない人の、共通の思考構造</li>
+        <li>連休を無意識に「採点」してしまう癖の正体</li>
+        <li>忙しさが何を隠していたか──充電が怖い理由</li>
+        <li>疲れを休暇で回収しようとしても、うまくいかない理由</li>
+      </ul>
+    </div>
+
+    <!-- 有料エリア（制作者確認用） -->
+    <div class="paid-zone">
+      <p class="zone-label">有料エリア（制作者確認用）</p>
+
+      <h2>1. 「全部終わらせてから」は、永遠に来ない</h2>
+      <h3>事実</h3>
+      <p>ネイルサロンの現場で長く働く中で、「今日は早く帰れそう」という日は、毎回同じように消えていった。</p>
+      <p>帰ろうとすると、別の何かが出てくる。出てくるのが当たり前になっていた。</p>
+      <p>20年で5万人超と向き合う中で、同じ言葉を何度も聞いた。<br>「全部終わったら、ちゃんとやります」「ちゃんと落ち着いたら、連絡します」</p>
+      <p>「全部終わった」瞬間を、見たことがない。</p>
+      <h3>そこから見えた気づき</h3>
+      <p>「全部終わった」状態は、タスクがなくなる瞬間ではない。タスクは終わらないのではなく、「ここで止める」と決めた瞬間に終わる。</p>
+      <p>「ちゃんと終わらせてから」は、条件ではなく、許可を先延ばしにするための構造だった。</p>
+      <h3>私が変えたこと</h3>
+      <p>「今日はここまで」を先に決めてから動き始めるようにした。退勤時間を先に決める。連休の終わりを先に決める。先に決めると、タスクはそこに収まろうとする。</p>
+      <hr>
+      <p><strong>あなたの場合</strong><br>「全部終わらせてから」と思っているなら、一度だけ逆にしてみてほしい。「今日はここまで」を、先に決める。それだけでいい。</p>
+      <ul class="checklist">
+        <li class="checklist-title" style="list-style:none;padding-left:0;">チェックリスト</li>
+        <li>「全部終わらせてから」という条件を今日の自分に設定していないか確認する</li>
+        <li>「今日はここまで」を、始める前に決めてみる</li>
+        <li>終わらなかったことより「ここまでやった」を先に認める</li>
+        <li>明日の自分にタスクを渡す練習を週に一度する</li>
+        <li>「先に止める」を試した日、どうだったかを記録する</li>
+      </ul>
+
+      <h2>2. 休む許可を、誰に求めていたか</h2>
+      <h3>事実</h3>
+      <p>飲食の現場で店長をしていた頃、スタッフが「今日、少し早く上がっていいですか」と聞いてきた。「別にいいよ」と言った。でも自分は最後まで残っていた。誰も残れとは言っていない。でも残っていた。自分に許可を出せなかった。</p>
+      <h3>そこから見えた気づき</h3>
+      <p>許可を求めていたのは、「全部終わった」という状態からだった。でも「全部終わった」状態は来ない。だから許可は、永遠に来ない。</p>
+      <p>休む許可を自分に出せない人は、「終わったかどうか」ではなく、「自分が休んでいいかどうか」を、外側の何かに決めさせている。</p>
+      <p>「まだみんな働いてる」「まだやることが残ってる」「まだ連休の半分も終わってない」——外側の基準は、いつも厳しい。</p>
+      <h3>私が変えたこと</h3>
+      <p>「今週ここまでやった」という事実を、先に認めるようにした。終わったかどうかではなく、ここまでやった、という積み上げを先に見る。それだけで、許可の扉が少し開く。</p>
+      <hr>
+      <p><strong>あなたの場合</strong><br>今日の自分に、一言だけ言ってみてほしい。「ここまでやった」と。</p>
+      <ul class="checklist">
+        <li class="checklist-title" style="list-style:none;padding-left:0;">チェックリスト</li>
+        <li>「自分が休んでいいかどうか」を外側の何かに決めさせていないか確認する</li>
+        <li>「ここまでやった」を、今日一度だけ声に出す</li>
+        <li>誰かが休んでいるとき、自分だけ残り続けていないか振り返る</li>
+        <li>「許可を出してもらうための条件」を書き出してみる</li>
+        <li>その条件を、自分が設定していることに気づく</li>
+      </ul>
+
+      <h2>3. 連休を「採点」してしまう癖の正体</h2>
+      <h3>事実</h3>
+      <p>20年で5万人超と向き合う中で、GW後に「どうだった？」と聞くと、「まあまあでした」という答えが多い。詳しく聞くと、「もっとこうすればよかった」が出てくる。本を3冊読もうとして1冊しか読めなかった。部屋を片付けようとして半分だった。</p>
+      <p>「楽しかった」ではなく、「達成できたか」で連休を測っている。</p>
+      <h3>そこから見えた気づき</h3>
+      <p>連休に「何かを達成する」課題を設定している人は、連休を採点している。採点が始まると、休みは「テスト」になる。テストは疲れる。</p>
+      <p>「充実してる」を証明しなければいけない連休は、休みではない。誰かに見せるための連休になっている。</p>
+      <h3>私が変えたこと</h3>
+      <p>連休に「何もしない」を一日だけ意図的に入れるようにした。最初はそわそわした。でも繰り返すと、「ただいる」時間が休みの核だとわかった。</p>
+      <hr>
+      <p><strong>あなたの場合</strong><br>今週の連休を「採点」してみてほしい。どんな基準で採点していたか、書き出してみる。その基準は、誰が決めたか。</p>
+      <ul class="checklist">
+        <li class="checklist-title" style="list-style:none;padding-left:0;">チェックリスト</li>
+        <li>「連休の採点基準」を書き出してみる</li>
+        <li>その基準が「自分発」か「外側発」かを確認する</li>
+        <li>「何もしない時間」を意図的に一つ入れてみる</li>
+        <li>連休の感想を「達成度」ではなく「身体の状態」で表現してみる</li>
+        <li>「整えられた」という感覚で連休を終えてみる</li>
+      </ul>
+
+      <h2>4. 忙しさが、孤独を隠していた</h2>
+      <h3>事実</h3>
+      <p>BAR運営の頃、常に忙しかった。でも店が休みの日は、妙に落ち着かなかった。「暇だ」ではなく、「自分に何があるんだろう」という感覚だった。</p>
+      <p>最初は「仕事が好きなんだな」と思っていた。でも違った。仕事がないと、自分の輪郭が少しぼやける気がしていた。</p>
+      <h3>そこから見えた気づき</h3>
+      <p>忙しさは、孤独を感じる隙間を埋めていた。忙しくしている間は、「自分には何があるか」という問いが来ない。休むと問いが来る。だから休むのが、少し怖い。</p>
+      <p>忙しさで埋めてきた問いが、休暇という余白に浮かび上がっただけだ。</p>
+      <div class="jump-box">
+        <p>「仕事以外の自分がいない」感覚は、弱さではなく、やっと問いが来た証拠だ。問いが来るのは、聞ける状態になったから。怖がることではなく、迎えることだ。</p>
+      </div>
+      <h3>私が変えたこと</h3>
+      <p>休んだ日に来る「自分には何があるか」という問いを、答えようとせず、ただ持っておくようにした。一週間、その問いを持ったまま過ごす。それだけで、少しずつ輪郭が戻ってきた。</p>
+      <hr>
+      <p><strong>あなたの場合</strong><br>「仕事以外の自分が何者か」、今すぐ答えなくていい。ただ、その問いを今日だけ持って過ごしてみてほしい。</p>
+      <ul class="checklist">
+        <li class="checklist-title" style="list-style:none;padding-left:0;">チェックリスト</li>
+        <li>「仕事以外の自分」を5秒以内に言えるか試してみる</li>
+        <li>忙しさを「何かを隠す道具」にしていないか振り返る</li>
+        <li>休んだ日に来る落ち着かない感覚を、記録してみる</li>
+        <li>「自分には何があるか」という問いを、一週間持ち歩く</li>
+        <li>答えが出なくてもいい、という前提で問いを持つ</li>
+      </ul>
+
+      <h2>5. 疲れは休暇で回収できない──平日の設計を変える</h2>
+      <h3>事実</h3>
+      <p>40名のスタッフを現場で動かす中で、「また今年も疲れた」と言う人と、「今年は少し違う」と言う人がいた。違いを観察すると、後者は連休明けに「一つだけ変える」を決めていた。</p>
+      <p>大きなことじゃない。「1on1を先送りしない」「定時に退勤する日を週一作る」——それだけで、次の連休の質が変わっていた。</p>
+      <h3>そこから見えた気づき</h3>
+      <p>一週間の休暇で取り戻せる疲れは、一週間分だけ。それ以上の疲れは、平日の積み方から変えないと、毎年同じ連休を迎える。</p>
+      <p>連休の役割は「回収」ではなく「点検」だ。何が積み上がって疲れたのか。どこに無理があったのか。その答えは、休暇中にしか見えない。</p>
+      <h3>私が変えたこと</h3>
+      <p>連休の最後に「来週一つだけ変えること」を決めるようにした。小さな設計変更を一つ、連休明けに持ち帰る。それを繰り返すと、少しずつ平日が変わっていった。</p>
+      <hr>
+      <p><strong>あなたの場合</strong><br>今週の連休、「点検」してみてほしい。何が積み上がって疲れたのか、一行だけ書き出す。その一行が、来週の設計変更のヒントになる。</p>
+      <ul class="checklist">
+        <li class="checklist-title" style="list-style:none;padding-left:0;">チェックリスト</li>
+        <li>「なぜ疲れたか」を一行で書き出してみる</li>
+        <li>「来週一つだけ変えること」を連休の最後に決める</li>
+        <li>大きな変化ではなく、小さな設計変更を選ぶ</li>
+        <li>「連休で回収しようとしていた疲れ」の源を特定する</li>
+        <li>同じ連休を来年も迎えないための、一手を書き留めておく</li>
+      </ul>
+
+    </div><!-- /paid-zone -->
+
+    <!-- おわりに -->
+    <div class="ending">
+      <p>あのね、</p>
+      <p>「ここまでやった」で休んでいい。</p>
+      <p>全部終わらせなくていい。<br>採点しなくていい。<br>充実を証明しなくていい。</p>
+      <p>ちゃんと動いてきた。<br>それだけで、十分なんだ。</p>
+      <hr>
+      <p>読んでくれてありがとう。</p>
+      <p>もしこの記事を読んで、<br>「私も連休ちゃんと休めてなかったな」<br>と思ったなら、</p>
+      <p>来週だけでいい。<br>「今日はここまで」と決めてから退勤してみてください。</p>
+      <p>それだけで、何かが変わります。</p>
+      <hr>
+      <p>感じたこととか、「私も採点してた」みたいなこととか、<br>あったら教えてください。</p>
+      <p>コメントでも、DMでも。<br>あなたの話、ちゃんと聞きます。</p>
+    </div>
+
+    <!-- ハッシュタグ -->
+    <div class="hashtags">
+      <span class="tag">#人間関係</span>
+      <span class="tag">#自己成長</span>
+      <span class="tag">#GW</span>
+      <span class="tag">#疲れた</span>
+      <span class="tag">#休み方</span>
+      <span class="tag">#距離感</span>
+      <span class="tag">#自分との関係</span>
+    </div>
+
+    <!-- SNS導線文 -->
+    <div class="sns-hooks">
+      <p class="sns-hooks-title">SNS導線文（日曜15時投稿用）</p>
+      <div class="hook-item">
+        <p class="hook-platform">X 向け</p>
+        <div class="hook-text">「全部終わらせてから休もう」は、永遠に来ない。
+
+連休が疲れるのは意志の問題じゃない。
+休む許可を「外側の完了」に設定しているから。
+
+その構造のことを、noteに書いた。
+→ [NOTE_URL]</div>
+      </div>
+      <div class="hook-item">
+        <p class="hook-platform">Threads 向け</p>
+        <div class="hook-text">「ちゃんと終わらせてから」って
+また言ってた連休前夜
+
+終わることは一度もなかったのに
+また同じ条件を自分に設定してた
+
+休む許可の話と、連休を採点してしまう癖の話を
+noteに書いた
+→ [NOTE_URL]</div>
+      </div>
+      <div class="hook-item">
+        <p class="hook-platform">Instagram 向け</p>
+        <div class="hook-text">GW明けに「ちゃんと休めた」と思えた人と、「なんか疲れた」で終わった人の違い。休む許可の話、noteに書きました。→ プロフのリンクから</div>
+      </div>
+    </div>
+
+    <!-- 微調整ポイント -->
+    <div class="adj-notes">
+      <p class="adj-notes-title">Coco微調整ポイント（3箇所）</p>
+      <ul>
+        <li>【冒頭】「GW前夜」の場面を、Coco自身の具体的な体験（場所・状況）に差し替えると一人称のリアリティが増す</li>
+        <li>【Section 2実体験】飲食現場エピソードに実際の状況の詳細を1つ加えると信憑性がさらに増す</li>
+        <li>【締め】「あなたの話、ちゃんと聞きます」の前に、Coco自身が初めて「今日はここまで」と言えた日のエピソードを一言入れると感情的な着地になる</li>
+      </ul>
+    </div>
+
+    <div class="footer-nav">
+      <a href="../index.html">← 投稿管理に戻る</a>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /article-wrap -->
+
+</body>
+</html>
