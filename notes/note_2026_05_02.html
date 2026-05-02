@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="毎朝「あの人の機嫌」を読もうとしていた頃の私へ。センサーを手放したら、はじめて関係が楽になった。20年・5万人超の実体験から導いた5つの転換点と実践チェックリスト。">
+  <title>「機嫌がわからない人」に、一生消耗し続けるあなたへ | coconocanvas note</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    /* Note article overrides */
+    body { padding-bottom: 80px; }
+
+    .note-nav {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .note-nav a {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+    .note-nav a:hover { color: var(--text-secondary); }
+    .note-nav-sep { font-size: 0.75rem; color: var(--text-muted); }
+
+    .note-container {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .note-meta {
+      padding: 36px 0 28px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+
+    .note-date {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 14px;
+    }
+
+    .note-title {
+      font-size: 1.35rem;
+      font-weight: 600;
+      line-height: 1.5;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      letter-spacing: 0.01em;
+    }
+
+    .note-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .note-price-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .note-price {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    .note-tag {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+    }
+
+    .note-body {
+      font-size: 0.93rem;
+      line-height: 2;
+      color: var(--text-primary);
+    }
+
+    .note-body p {
+      margin-bottom: 1.4em;
+    }
+
+    .note-body h2 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 2.4em 0 1em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.02em;
+    }
+
+    .note-body h3 {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin: 1.8em 0 0.6em;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .note-body strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    .note-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2em 0;
+    }
+
+    /* Free area */
+    .note-free-area {
+      margin-bottom: 0;
+    }
+
+    /* Paid gate */
+    .note-paid-gate {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      margin: 32px 0;
+    }
+
+    .note-paid-gate p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.8em;
+    }
+
+    .note-paid-gate .gate-title {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .note-paid-gate .gate-lead {
+      font-size: 1rem;
+      color: var(--text-primary);
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    .note-benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .note-benefits li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .note-benefits li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-size: 0.75rem;
+    }
+
+    /* Paid area */
+    .note-paid-area {
+      margin-top: 0;
+    }
+
+    .note-section {
+      margin-bottom: 48px;
+    }
+
+    .note-section-num {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .note-section h2 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .note-fact-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 20px 0 8px;
+    }
+
+    .note-insight-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 24px 0 8px;
+    }
+
+    .note-action-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 24px 0 8px;
+    }
+
+    .note-jump {
+      background: var(--bg-quote);
+      border-left: 3px solid var(--border-light);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px;
+      margin: 24px 0;
+    }
+
+    .note-jump p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.5em;
+    }
+
+    .note-jump p:last-child { margin-bottom: 0; }
+
+    .note-reader-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin: 24px 0 8px;
+    }
+
+    /* Checklist */
+    .note-checklist {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin: 16px 0 0;
+    }
+
+    .note-checklist-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .note-checklist ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .note-checklist li {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      padding: 5px 0;
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .note-checklist li::before {
+      content: '□';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-size: 0.8rem;
+    }
+
+    /* Ending */
+    .note-ending {
+      padding: 32px 0;
+      border-top: 1px solid var(--border);
+      margin-top: 48px;
+    }
+
+    .note-ending p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 1.2em;
+    }
+
+    /* CTA */
+    .note-cta {
+      background: var(--bg-card);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 24px;
+      margin-top: 36px;
+    }
+
+    .note-cta p {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0.8em;
+    }
+
+    .note-cta p:last-child { margin-bottom: 0; }
+
+    /* SNS hooks (management section) */
+    .note-sns-section {
+      margin-top: 48px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+    }
+
+    .note-sns-title {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .sns-hook-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      margin-bottom: 10px;
+    }
+
+    .sns-hook-platform {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .sns-hook-text {
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      white-space: pre-wrap;
+      word-break: break-all;
+    }
+
+    .sns-hook-copy {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 8px;
+    }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .note-container { padding: 0 28px; }
+      .note-title { font-size: 1.5rem; }
+      .note-body { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-title">coconocanvas</p>
+    <p class="site-subtitle">note 管理</p>
+  </header>
+
+  <nav class="note-nav">
+    <a href="../index.html">← SNS投稿</a>
+    <span class="note-nav-sep">/</span>
+    <a href="./index.html">note一覧</a>
+    <span class="note-nav-sep">/</span>
+    <span style="font-size:0.75rem; color:var(--text-secondary);">2026-05-02</span>
+  </nav>
+
+  <main class="note-container">
+
+    <!-- メタ情報 -->
+    <div class="note-meta">
+      <p class="note-date">2026年5月2日（土）｜note</p>
+      <h1 class="note-title">「機嫌がわからない人」に、一生消耗し続けるあなたへ</h1>
+      <p class="note-subtitle">距離をセルフ設計したら、センサーが要らなくなった</p>
+      <div class="note-price-row">
+        <span class="note-price">¥1,200</span>
+        <span class="note-tag">#人間関係 #距離感 #職場の人間関係 #境界線 #自己成長</span>
+      </div>
+    </div>
+
+    <!-- 無料エリア -->
+    <div class="note-free-area note-body">
+
+      <p>あのね、</p>
+
+      <p>毎朝職場に向かう前に、「今日あの人の機嫌はどうかな」って考えてた頃の私へ。</p>
+
+      <p>エレベーターに乗る前に深呼吸して、<br>
+      最初の「おはようございます」の返し方で<br>
+      今日のすべてを判断しようとしてた。</p>
+
+      <p>怒鳴られたわけじゃない。<br>
+      無視されたわけでもない。</p>
+
+      <p>ただ、機嫌がわからなかった。</p>
+
+      <p>職場でいちばん消耗するのは、嫌いな人との関係じゃない。<br>
+      「どう思われてるかわからない人」との関係だ。</p>
+
+      <p>怒鳴る人は怖いけど、パターンがある。<br>
+      無視する人はつらいけど、反応しなければいい。</p>
+
+      <p>でも「機嫌がわからない人」は違う。<br>
+      今日は大丈夫。明日はどうかわからない。<br>
+      そのセンサーを維持するエネルギーが、<br>
+      じわじわと、指先を冷やしていく。</p>
+
+      <p>あのとき私は気づいた。<br>
+      消耗しているのは、相手のせいだけじゃなかった。<br>
+      センサーを手放せない、自分の構造の問題だった。</p>
+
+    </div>
+
+    <!-- 有料ゲート -->
+    <div class="note-paid-gate">
+      <p class="gate-title">ここから先は有料です</p>
+      <p class="gate-lead">「なんでこの人の顔色ばかり読んでしまうんだろう」<br>
+      そう思い続けているなら、ここから先を読んでください。</p>
+      <ul class="note-benefits">
+        <li>なぜ「機嫌がわからない人」に消耗し続けるのか、その構造</li>
+        <li>センサーを維持し続けることが関係をどう壊すか</li>
+        <li>距離を「相手に決めさせない」ための5つの転換点</li>
+        <li>各転換点の実践チェックリスト</li>
+      </ul>
+      <p style="font-size:0.78rem; color:var(--text-muted);">20年・5万人超の実例とチェックリスト付きで解説しています。</p>
+    </div>
+
+    <!-- 有料エリア -->
+    <div class="note-paid-area">
+
+      <!-- 1 -->
+      <div class="note-section">
+        <p class="note-section-num">転換点 01</p>
+        <h2>センサーを張り続ける人は、実は「相手に支配されている」</h2>
+
+        <p class="note-fact-label">事実</p>
+        <div class="note-body">
+          <p>20年で5万人超と向き合う中で、「この人、いつも疲れてる」と感じるスタッフが必ずいた。</p>
+          <p>直接何かされたわけじゃない。怒鳴られた経験があるわけでもない。</p>
+          <p>共通点があった。全員が、特定の誰かの「今日の機嫌」を毎朝測っていた。</p>
+          <p>「あの人が来た。今日の顔、怖くない？」<br>
+          「さっき○○さんが返事してくれなかった。なんかやった？」</p>
+          <p>こういう言葉が出てくる人は、例外なく消耗していた。</p>
+        </div>
+
+        <p class="note-insight-label">そこから見えた気づき</p>
+        <div class="note-body">
+          <p>センサーを張るのは「安全のため」だと思っている。でも実際は、センサーを張ることで、自分から相手に「権力」を渡している。</p>
+          <p>「あの人の今日の機嫌」が、自分の行動を決める基準になっている状態。これは、構造的に「支配されている」と同じだ。</p>
+        </div>
+
+        <p class="note-action-label">私が変えたこと</p>
+        <div class="note-body">
+          <p>あるとき私は、一つだけ決めた。「今日のあの人の機嫌は、私の仕事の品質に関係ない」これだけを、毎朝職場に入る前に確認した。シンプルだけど、これが一番効いた。</p>
+        </div>
+
+        <hr>
+
+        <div class="note-body">
+          <p>センサーが精度を上げるほど、実際に見えているのは相手じゃない。「こうだったら怖い」という、自分の不安だ。</p>
+        </div>
+
+        <hr>
+
+        <p class="note-reader-label">あなたの場合</p>
+        <div class="note-body">
+          <p>今朝、誰かの顔を思い浮かべながら職場に向かいましたか。その人の「今日の機嫌」を予測しようとしましたか。</p>
+          <p>「はい」なら、すでに距離を相手に決めさせている。</p>
+        </div>
+
+        <div class="note-checklist">
+          <p class="note-checklist-title">チェックリスト</p>
+          <ul>
+            <li>朝の行動が「あの人の機嫌予測」から始まっていないか確認する</li>
+            <li>「読んでも変わらない」を朝、声に出して確認する</li>
+            <li>自分の仕事の基準を「相手の今日の反応」から切り離す</li>
+            <li>機嫌の良い日だけ近づくクセを意識的にやめる</li>
+            <li>挨拶のトーンを毎日、相手によらず一定にする</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="note-section">
+        <p class="note-section-num">転換点 02</p>
+        <h2>「温かくしすぎた」が、消耗の始まりだった</h2>
+
+        <p class="note-fact-label">事実</p>
+        <div class="note-body">
+          <p>BAR運営をしていたとき、機嫌のムラが激しいスタッフが一人いた。</p>
+          <p>怒鳴らない。ただ、空気が変わる。その日のシフトに入った全員が、最初の5分で彼の「今日の温度」を測って、それに合わせて自分の距離を調整していた。</p>
+          <p>ある日、私はあえて「変わらない対応」を試した。機嫌が良くても悪くても、同じトーンで話す。最初の3日間は、ぎこちなかった。でも2週間後、彼の方が私に対してだけ、機嫌のムラが消えた。</p>
+        </div>
+
+        <p class="note-insight-label">そこから見えた気づき</p>
+        <div class="note-body">
+          <p>機嫌がわからない人に「合わせすぎる」ことが、相手の機嫌のムラを強化している可能性がある。</p>
+          <p>「合わせてもらえる」と学習した相手は、機嫌のムラを無意識に維持する。真面目に温かく接しようとすることが、逆に振り回される構造を強化していた。</p>
+        </div>
+
+        <p class="note-action-label">私が変えたこと</p>
+        <div class="note-body">
+          <p>「相手の温度」ではなく、「自分の今日の温度」を基準にした。「今日の私は、どう接したいか」を先に決めてから職場に向かう。</p>
+        </div>
+
+        <div class="note-jump">
+          <p><strong>視座のジャンプ</strong></p>
+          <p>関係の温度は、いつも「先に設定した側」が決める。合わせ続けた側は、温度の決定権を相手に渡し続ける。消耗しているのは、温度を相手に渡しているからだ。</p>
+          <p>これは「冷たくなること」とは違う。「動かない基準を持つこと」が、相手への安心になる。</p>
+        </div>
+
+        <p class="note-reader-label">あなたの場合</p>
+        <div class="note-body">
+          <p>誰かの温度に合わせながら、自分の温度を決めていますか。</p>
+          <p>「今日の自分の温度を、自分で決める」<br>
+          明日の朝から、これだけ始めてみてください。</p>
+        </div>
+
+        <div class="note-checklist">
+          <p class="note-checklist-title">チェックリスト</p>
+          <ul>
+            <li>職場に向かう前に「今日の自分の温度」を決める</li>
+            <li>相手の第一声より前に、自分の挨拶のトーンを決めておく</li>
+            <li>「機嫌が良さそうだから近づく」を意識的にやめる</li>
+            <li>相手の態度が変わっても、自分の対応は変えない</li>
+            <li>1週間、温度を一定に保てたか振り返る</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="note-section">
+        <p class="note-section-num">転換点 03</p>
+        <h2>「また様子を見よう」の繰り返しが、距離を固定させる</h2>
+
+        <p class="note-fact-label">事実</p>
+        <div class="note-body">
+          <p>ネイルサロンを運営していた頃、常連客の中に「その日によって関わり方が全然違う人」がいた。</p>
+          <p>機嫌のいい日は長話をしてくれる。機嫌の悪い日は必要最低限の会話だけ。スタッフたちは毎回、最初の5分でそのお客様の「モード」を読んで、それに合わせた対応を取ろうとしていた。</p>
+          <p>ある日、私が担当したとき、意識的に変えた。「今日はどうしますか？」という、いつも同じ入り。相手のモードを読まず、ただ自分のペースで丁寧に進めた。</p>
+          <p>その日、そのお客様は普段より長くいた。帰り際に「今日はなんか楽だった」と言ってくれた。</p>
+        </div>
+
+        <p class="note-insight-label">そこから見えた気づき</p>
+        <div class="note-body">
+          <p>人は「合わせてもらえる」より「ペースが乱れない人」に安心する。</p>
+          <p>「様子を見よう」の繰り返しは、相手の機嫌を読もうとするクセを強化するだけで、距離は一向に近づかない。むしろ「様子を見る」姿勢が続くほど、「この人は自分から動かない」と相手に学習させる。</p>
+        </div>
+
+        <p class="note-action-label">私が変えたこと</p>
+        <div class="note-body">
+          <p>「今日は様子を見よう」ではなく、「今日もこの距離で話す」を先に決めてから向かった。距離は毎日リセットするのではなく、「この人とはここまで」という基準を持ち続けることにした。</p>
+        </div>
+
+        <hr>
+
+        <p class="note-reader-label">あなたの場合</p>
+        <div class="note-body">
+          <p>「今日は様子を見てから近づこう」最近そう思った相手がいますか。その「様子を見る」判断を繰り返すたびに、距離の主導権は相手に渡っていきます。</p>
+        </div>
+
+        <div class="note-checklist">
+          <p class="note-checklist-title">チェックリスト</p>
+          <ul>
+            <li>「今日は様子を見よう」を言葉にした日を振り返る</li>
+            <li>特定の人との「基本の距離感」を先に決めておく</li>
+            <li>相手の機嫌が良い日だけ近づくパターンをやめる</li>
+            <li>「どうせまた戻る」という前提で関わる</li>
+            <li>距離の基準を「相手の今日」ではなく「自分の快適さ」に置く</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 4 -->
+      <div class="note-section">
+        <p class="note-section-num">転換点 04</p>
+        <h2>関係が「じわじわ冷えた」と気づいたとき、すでに手遅れじゃない</h2>
+
+        <p class="note-fact-label">事実</p>
+        <div class="note-body">
+          <p>現場で40名のチームを自走化させる中で、一番難しかったのは「急に壊れた関係」ではなかった。「じわじわ壊れていった関係」の方が、気づくのも修復するのも、ずっと難しかった。</p>
+          <p>関係が壊れる瞬間は、大きな裏切りじゃない。「また今度」が続いた末の小さな諦めが積み重なって、ある日静かに冷える。</p>
+          <p>温度は一気に下がらない。じわじわ下がる。だから気づいたときには、すでに距離ができている。</p>
+        </div>
+
+        <p class="note-insight-label">そこから見えた気づき</p>
+        <div class="note-body">
+          <p>「また今度」と「様子を見よう」は同じ構造を持つ。どちらも「今じゃなくていい」という先送りで、温度の低下を加速させる。</p>
+          <p>関係の温度は、維持しようとしなければ、必ず下がる。上げようとしなくていいが、「下がりすぎる前に気づく」は必要だ。</p>
+        </div>
+
+        <p class="note-action-label">私が変えたこと</p>
+        <div class="note-body">
+          <p>月に一度、「この人との温度、最近どうか」を確認するようにした。特別なことをするわけじゃない。「最近どう？」の一言を、先送りしないだけ。</p>
+        </div>
+
+        <hr>
+
+        <p class="note-reader-label">あなたの場合</p>
+        <div class="note-body">
+          <p>最近、「あの人と少し距離ができたかも」と感じた相手はいますか。</p>
+          <p>焦らなくていい。でも、もし気づいたなら、今日が一番早い日です。</p>
+        </div>
+
+        <div class="note-checklist">
+          <p class="note-checklist-title">チェックリスト</p>
+          <ul>
+            <li>月に一度、気になる関係の「温度確認」をする</li>
+            <li>「最近どう？」を先送りしない</li>
+            <li>「冷えてから温める」より「冷える前に気づく」を優先する</li>
+            <li>急に関係を修復しようとせず、小さな一歩を選ぶ</li>
+            <li>「また今度」と思ったとき、それが何回目かを数える</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 5 -->
+      <div class="note-section">
+        <p class="note-section-num">転換点 05</p>
+        <h2>「一定の温度」を持つ人が、なぜか最後に信頼される</h2>
+
+        <p class="note-fact-label">事実</p>
+        <div class="note-body">
+          <p>20年で5万人超と向き合う中で、「なぜかいつも人に恵まれる人」に共通する特徴があった。</p>
+          <p>感情的でも、淡々としてるわけでもない。誰に対しても、だいたい同じ温度で接していた。</p>
+          <p>機嫌のいい日も悪い日も、体調がいまいちでも、その人の「基本の温度」が大きくブレない。</p>
+        </div>
+
+        <p class="note-insight-label">そこから見えた気づき</p>
+        <div class="note-body">
+          <p>人が安心して近づける人の条件は、「温かさ」より「安定性」だ。</p>
+          <p>熱くなったり冷たくなったりする人より、いつも同じ温度の人の方が、相手はペースを崩さずにいられる。</p>
+          <p>信頼は「温かさ」で積み上げるより、「ブレない安定」で壊さない方が、ずっと強い。</p>
+        </div>
+
+        <p class="note-action-label">私が変えたこと</p>
+        <div class="note-body">
+          <p>自分の「基本の温度」を決めた。「私は誰に対しても、これくらいの温度で接する」というラインを。</p>
+          <p>それは高くなくていい。ただ、ブレない。そのラインを超えて近づく必要はなく、そのラインを下回って遠ざかる必要もない。</p>
+        </div>
+
+        <hr>
+
+        <p class="note-reader-label">あなたの場合</p>
+        <div class="note-body">
+          <p>「この人にはこれくらいの温度」という基準、あなたは持っていますか。</p>
+          <p>もし持っていないなら、今日から「自分の基本の温度」を決めてみてください。言葉にしなくていい。ただ、「私はこの人と、これくらいの距離で接する」を自分の中で決めるだけでいい。</p>
+        </div>
+
+        <div class="note-checklist">
+          <p class="note-checklist-title">チェックリスト</p>
+          <ul>
+            <li>自分の「基本の温度」を言葉または感覚で定義する</li>
+            <li>誰かに合わせてブレたとき、自分の温度に戻す練習をする</li>
+            <li>「今日は機嫌が悪い」を理由に距離を変えない</li>
+            <li>一定の温度を保てた日を意識的に記録する</li>
+            <li>信頼は「温かさ」より「安定性」で積み上がることを思い出す</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /note-paid-area -->
+
+    <!-- おわり -->
+    <div class="note-ending">
+      <p>あのね、</p>
+      <p>センサーを手放すのが怖いのは、当然だと思う。「読まなくなったら、何かやらかすかも」って不安がある。</p>
+      <p>私もそうだった。</p>
+      <p>でも実際にやめてみてわかったのは、センサーで読んでいた「あの人の機嫌」は、ほとんどが自分の不安を投影したものだった。センサーが精度を上げるほど、見えていたのは相手じゃなく、「こうだったら怖い」という自分の恐怖だった。</p>
+      <p>距離は、設計できる。相手の機嫌に合わせるんじゃなく、自分の温度を先に決めることで。</p>
+      <p>「一定の温度を持つ人」が最後に愛されるのは、誰より温かいからじゃない。誰より安定しているから。</p>
+    </div>
+
+    <!-- CTA -->
+    <div class="note-cta">
+      <p>読んでくれてありがとう。</p>
+      <hr style="border:none;border-top:1px solid var(--border);margin:12px 0;">
+      <p>もしこの記事を読んで、「あ、センサー張ってた」と思ったなら、一度、「明日の自分の温度」を今夜決めておいてみてください。</p>
+      <p>「元気よく」でも「静かに」でも「丁寧に」でもなんでもいい。自分で先に決めるだけで、明日の朝の感覚が、少し変わります。</p>
+      <hr style="border:none;border-top:1px solid var(--border);margin:12px 0;">
+      <p>何か感じたこととか、「私もそうだった」とか、「うちの職場のあの人だ」とか、コメントでもDMでも教えてね。あなたの話、聞きたいです。</p>
+    </div>
+
+    <!-- SNS導線文（管理用） -->
+    <div class="note-sns-section">
+      <p class="note-sns-title">SNS 導線文（日曜15時投稿用）</p>
+
+      <div class="sns-hook-card">
+        <p class="sns-hook-platform">X</p>
+        <p class="sns-hook-text">「機嫌がわからない人」に疲弊するのは、弱いからじゃない💎
+相手の顔色を読むほど、距離の主導権を相手に渡してる。
+センサーを手放してから、はじめて関係が楽になった話──
+
+▶ note（全文）</p>
+        <div class="sns-hook-copy">
+          <button class="copy-btn" data-copy="「機嫌がわからない人」に疲弊するのは、弱いからじゃない💎&#10;相手の顔色を読むほど、距離の主導権を相手に渡してる。&#10;センサーを手放してから、はじめて関係が楽になった話──&#10;&#10;▶ note（全文）">コピー</button>
+        </div>
+      </div>
+
+      <div class="sns-hook-card">
+        <p class="sns-hook-platform">Threads</p>
+        <p class="sns-hook-text">毎朝、職場に向かう前に「今日あの人の機嫌はどうかな」って考えてた頃がある
+
+怒鳴られたわけじゃない。ただ、機嫌がわからなかった。
+そのセンサーを維持するエネルギーが、じわじわと指先を冷やしてた💍
+
+消耗してたのは、相手のせいだけじゃなかった。センサーを手放せない、自分の構造の問題だった。
+
+続きはnoteに書きました。</p>
+        <div class="sns-hook-copy">
+          <button class="copy-btn" data-copy="毎朝、職場に向かう前に「今日あの人の機嫌はどうかな」って考えてた頃がある&#10;&#10;怒鳴られたわけじゃない。ただ、機嫌がわからなかった。&#10;そのセンサーを維持するエネルギーが、じわじわと指先を冷やしてた💍&#10;&#10;消耗してたのは、相手のせいだけじゃなかった。センサーを手放せない、自分の構造の問題だった。&#10;&#10;続きはnoteに書きました。">コピー</button>
+        </div>
+      </div>
+
+      <div class="sns-hook-card">
+        <p class="sns-hook-platform">Instagram</p>
+        <p class="sns-hook-text">「機嫌がわからない人」に消耗するのは、あなたが弱いんじゃない。距離を相手に決めさせてるから。自分の温度を先に設計したら、関係が静かに楽になった。5つの転換点、noteにまとめました。</p>
+        <div class="sns-hook-copy">
+          <button class="copy-btn" data-copy="「機嫌がわからない人」に消耗するのは、あなたが弱いんじゃない。距離を相手に決めさせてるから。自分の温度を先に設計したら、関係が静かに楽になった。5つの転換点、noteにまとめました。">コピー</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    document.addEventListener('click', async e => {
+      const btn = e.target.closest('.copy-btn');
+      if (!btn) return;
+      const text = btn.dataset.copy;
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+      } catch {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+      }
+      const original = btn.textContent;
+      btn.textContent = 'コピー完了';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove('copied');
+      }, 1800);
+    });
+  </script>
+
+</body>
+</html>

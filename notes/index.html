@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="coconocanvas note 一覧 — 関係の温度と距離を整える技術">
+  <title>note 一覧 | coconocanvas</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .notes-container {
+      max-width: 660px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .notes-heading {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      padding: 28px 0 16px;
+    }
+
+    .note-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-bottom: 60px;
+    }
+
+    .note-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s ease;
+    }
+
+    .note-card:hover {
+      border-color: var(--border-light);
+    }
+
+    .note-card-date {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+
+    .note-card-title {
+      font-size: 0.97rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 6px;
+      letter-spacing: 0.01em;
+    }
+
+    .note-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: 12px;
+    }
+
+    .note-card-footer {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .note-card-price {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border-light);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    .note-card-tags {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+    }
+
+    .loading, .error-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .note-nav {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .note-nav a {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .note-nav a:hover { color: var(--text-secondary); }
+
+    @media (min-width: 640px) {
+      .notes-container { padding: 0 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <p class="site-title">coconocanvas</p>
+    <p class="site-subtitle">note 一覧</p>
+  </header>
+
+  <nav class="note-nav">
+    <a href="../index.html">← SNS投稿管理</a>
+  </nav>
+
+  <main class="notes-container">
+    <p class="notes-heading">Published Notes</p>
+    <div class="note-list" id="noteList">
+      <p class="loading">読み込み中…</p>
+    </div>
+  </main>
+
+  <script>
+    'use strict';
+
+    const DAYS_JA = ['日', '月', '火', '水', '木', '金', '土'];
+    const MONTHS = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+
+    function formatDate(dateStr) {
+      const d = new Date(dateStr + 'T00:00:00');
+      return `${MONTHS[d.getMonth()]}${d.getDate()}日（${DAYS_JA[d.getDay()]}）`;
+    }
+
+    async function loadNotes() {
+      const list = document.getElementById('noteList');
+      try {
+        const indexRes = await fetch('./index.json');
+        if (!indexRes.ok) throw new Error('notes index not found');
+        const index = await indexRes.json();
+
+        const notes = await Promise.all(
+          index.notes.map(async filename => {
+            const res = await fetch(`./${filename}`);
+            if (!res.ok) throw new Error(`${filename} not found`);
+            return res.json();
+          })
+        );
+
+        notes.sort((a, b) => b.date.localeCompare(a.date));
+
+        if (notes.length === 0) {
+          list.innerHTML = '<p class="loading">まだnoteはありません</p>';
+          return;
+        }
+
+        list.innerHTML = notes.map(note => {
+          const tags = (note.hashtags || []).slice(0, 3).join(' ');
+          return `
+            <a class="note-card" href="./${note.note_id}.html">
+              <p class="note-card-date">${formatDate(note.date)}</p>
+              <p class="note-card-title">${note.title}</p>
+              <p class="note-card-desc">${note.description}</p>
+              <div class="note-card-footer">
+                <span class="note-card-price">¥${parseInt(note.price).toLocaleString()}</span>
+                <span class="note-card-tags">${tags}</span>
+              </div>
+            </a>`;
+        }).join('');
+
+      } catch (err) {
+        list.innerHTML = `<p class="error-state">読み込みに失敗しました<br><small>${err.message}</small></p>`;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadNotes);
+  </script>
+
+</body>
+</html>
