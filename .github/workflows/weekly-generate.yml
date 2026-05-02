@@ -1,0 +1,68 @@
+name: Weekly SNS Post Generation
+
+on:
+  schedule:
+    # Saturday 10:00 JST = Saturday 01:00 UTC
+    - cron: '0 1 * * 6'
+  workflow_dispatch:
+    inputs:
+      target_date:
+        description: 'Override start date (YYYY-MM-DD). Leave blank to use next Tuesday.'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: scripts/package.json
+
+      - name: Install dependencies
+        run: npm install
+        working-directory: scripts
+
+      - name: Generate weekly posts
+        run: node ../scripts/generate.js
+        working-directory: posts
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          TARGET_DATE: ${{ inputs.target_date }}
+
+      - name: Commit and push with retry
+        run: |
+          git config user.email "weekly-bot@coconocanvas"
+          git config user.name "Weekly Generator"
+          git add posts/
+          if git diff --staged --quiet; then
+            echo "Nothing to commit — posts already up to date."
+            exit 0
+          fi
+
+          WEEK_LABEL=$(node -e "
+            const fs = require('fs');
+            const idx = JSON.parse(fs.readFileSync('posts/index.json','utf8'));
+            const latest = idx.weeks[0] || '';
+            console.log(latest.replace('week_','').replace('.json',''));
+          ")
+          git commit -m "auto: weekly posts ${WEEK_LABEL}"
+
+          for i in 1 2 3; do
+            git push -u origin HEAD && echo "Push OK" && break
+            echo "Push attempt $i/3 failed"
+            sleep 5
+          done

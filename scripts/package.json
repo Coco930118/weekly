@@ -1,0 +1,16 @@
+{
+  "name": "weekly-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Weekly SNS post generator for coconocanvas",
+  "main": "generate.js",
+  "scripts": {
+    "generate": "node generate.js"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.39.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
