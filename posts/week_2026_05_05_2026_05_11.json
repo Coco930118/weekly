@@ -3,318 +3,87 @@
   "posts": [
     {
       "date": "2026-05-05",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "「部下が突然辞める」は突然じゃない\nエレベーターで目を合わせなくなったあの朝から、もう始まってた💎\n\n辞意は爆発じゃない、撤退の積み重ねだ\n「また今度」「後で聞く」が続いた先に、人は静かに出口を探す\n\n本人の問題として終わらせるのは簡単だ\nでも設計の問題として捉え直すと、次は変えられる\n\nまだ間に合う人が、今チームの中にいるかもしれない",
-      "quote": "💎 撤退に気づいた今日から、設計は始まる"
-    },
-    {
-      "date": "2026-05-05",
-      "platform": "X",
-      "time": "22:00",
+      "platform": "Threads",
+      "time": "14:00",
       "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "週次の朝会で、誰も最初に発言しなくなった日があった\n「結果を出せ」と言い続けた結果だと、あとで気づいた💎\n\n叱咤激励は短期には効く、でも信頼を消費する\nプレッシャーで動くチームは、プレッシャーがなくなると止まる\n\nでも、それは誰かが悪意でやったわけじゃない\n「このやり方しか知らなかった」だけのことが多い\n\n知った今から変える、それだけでいい",
-      "quote": "💎 消費してきた信頼は、設計で取り戻せる"
-    },
-    {
-      "date": "2026-05-05",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "連休明けの月曜の朝\n\nメッセージを送ろうとして、やめた\n\n大丈夫か聞きたかったけど\n「大丈夫」って返ってきても\n本当のことかどうかわからなくて\n\n聞かないほうが優しいのか\nそれとも聞かないのは、ただ怖いだけなのか\n\nまだわからないまま、今日も出かけた\n\nそれでも、気にかけることをやめていない\nたぶんそれで、いい",
-      "quote": "💍 届かなくても、気にかけていた"
-    },
-    {
-      "date": "2026-05-05",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "「気を使われてる」と気づく瞬間がある\n\n相手がすごく丁寧なとき\nありがたいけど、どこかさびしい\n\n丁寧さの向こうに、壁が見える気がして\n本音が来ない分だけ\nこちらも本音を引っ込める\n\n距離は、どちらかが壁を降ろしたとき\nはじめて縮まるんだと思う\n\n先に降ろすのが怖い気持ちも、わかる\nでも誰かが最初の一歩を踏み出すとき\nたいてい、怖いままやってる",
-      "quote": "💍 怖いまま、壁を降ろせた日がある"
-    },
-    {
-      "date": "2026-05-05",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "眠れない夜に、考えてしまうことがある\n\nあのとき違う言い方をしていたら、と\n\nでもたぶん、違う言い方をしていても\nその人は同じように傷ついたと思う\n\n言葉じゃなくて\nタイミングが、ズレていたんだ\n\nそれが今ごろ、わかった\n\nズレていただけだとわかると\n自分を責める気持ちが、少しだけ静まる",
-      "quote": "💍 ズレていただけ、悪くはなかった"
-    },
-    {
-      "date": "2026-05-06",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "面談室を出た廊下で「いい感じだね、の何がよかったのか」を考えた\n5分たっても答えが出なかった💎\n\n抽象的な承認は動機にならない、不安の保留にしかならない\n部下が次に何をすればいいかわかる承認だけが、信頼になる\n\n「いい感じ」を「ここが具体的によかった」に変えるだけで\n人は、次も動ける",
-      "quote": "💎 言葉の解像度が、信頼の解像度になる"
-    },
-    {
-      "date": "2026-05-06",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "3ヶ月、同じフィードバックをした部下の月報に、また同じミスが並んだ\n月曜の朝にそれを開いたとき、ようやく気づいた💎\n\n成長しない部下に成長しろと言い続けることには構造的な限界がある\n成長は環境が育てる、人格指導では起きない\n\n伝え方を変えても変わらないなら、動く場所を変える設計が必要だ\n場が変わったとき、人は思ったより速く変わることがある",
-      "quote": "💎 場を変えると、人が変わる速さに驚く"
+      "theme": "愛しすぎる人と、適切な距離",
+      "content": "愛しているのに、なんか疲れてる。\nそのしんどさの正体、当てにいきます。\n\nA 🐚  気になって、ついLINEを確認してしまう\nB 🌙  「大丈夫」と言いながら、全然大丈夫じゃない\nC 🌿  相手が冷たくなると、自分が悪いと思い込む\nD 🕯  愛してるはずなのに、一緒にいると消耗する\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 愛は深さより、距離の設計で決まる",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A small cute green turtle looking anxiously at a glowing smartphone screen, nervous wide eyes, soft peach background. Panel B: A white fluffy Persian cat sitting in moonlight, small smile on face but slightly tired sad eyes. Panel C: A white dove with worried expression, tilting its head toward another figure who is turned away. Panel D: A gentle green turtle sitting beside a warm glowing candle lantern, looking slightly drained but still radiating warmth. Soft cream and ivory tones, A/B/C/D labels in rounded corner tags. Cute, emotionally expressive, warm and gentle mood.",
+      "reply_1": "どのタイプを選んでも「愛が重い」んじゃない。\n距離が近すぎるだけ、です。\n\nA🐚 を選んだあなたへ\n「返事がこない5分間」が怖い——その感覚の正体は、「相手への不信」じゃなく「自分が嫌われたかも」という脳の誤作動。送るほど、相手の返信コストが上がる。\n解決策 → 返事を待つあいだ、「今この瞬間、自分は何をしたいか」を一つだけやる。それだけで不安の半分が消える。確認の連投は、相手を遠ざけるだけ。\n\nB🌙 を選んだあなたへ\n「大丈夫」を使い続けると、感情の貯蔵庫がいっぱいになる。ある日突然「もう無理」が出てくるのは、そのせい。\n解決策 → 全部説明しなくていい。「今日ちょっとしんどい」の一言だけで十分。扉を少し開けるだけで、相手との温度が変わる。\n\nC🌿 を選んだあなたへ\n相手の機嫌の悪さを「自分のせいかも」と最初に考えるクセは、関係に消耗しやすい構造をつくる。\n解決策 → 「これは私のせい？」と思ったとき、3秒だけ保留する。「もし私のせいじゃなかったとしたら、相手は今何に疲れてる？」と問い直す。視点が変わると、対処法が変わる。\n\nD🕯 を選んだあなたへ\n消耗してるのは愛情が薄いからじゃない。自分の燃料を使い果たして、誰かを照らし続けているから。\n解決策 → 週に一回「誰の期待にも応えない夜」をつくる。それは逃げじゃなく、愛を長続きさせるための設計。\n\n距離を整えることは、愛を薄めることじゃない。\n愛を、続けられる形にすること。\n\nフォローすると、毎週この話の続きが届きます。"
     },
     {
       "date": "2026-05-06",
       "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "「また連絡するね」と言ったまま\n3ヶ月が過ぎた\n\n嫌いになったわけじゃない\nただ、タイミングが見えなくなった\n\nLINEを開いて、閉じる\nそれを何度かやって\nそのまま今日になった\n\n久しぶりすぎて、何を送ればいいかわからなくなった\n\nでも、送れなかった言葉の数だけ\nその人のことを考えてきた",
-      "quote": "💍 送れなかった言葉の分だけ、想ってた"
-    },
-    {
-      "date": "2026-05-06",
-      "platform": "Threads",
-      "time": "10:00",
+      "time": "14:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "「ありがとう」と「ごめん」をすぐ言う人がいる\n\n最初はいいなと思う\nでも続くと、なんか違う気がしてくる\n\n形式的な感謝や謝罪は\n感情を処理するためのもので\n相手に届けるためのものじゃない\n\n本当に届く言葉は\nちょっと間があって、少しぎこちなくて\nそれでも言おうとしてる、あの感じ\n\nぎこちなくていい\n届けようとしていることが、伝わる",
-      "quote": "💍 ぎこちない言葉の方が、届くことがある"
-    },
-    {
-      "date": "2026-05-06",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "夜になると、昼間は平気だったことが\n急に重くなる\n\n誰かのひとことが\n胸の奥でずっと引っかかってて\n\n怒りじゃない\n悲しみとも少し違う\n\nもう少し違う言い方だったら\nもう少し違う気持ちで今日を終われたのに\n\nと思う夜がある\n\nそういう夜を、あなたも持ってるかもしれない\nだとしたら、今夜は一人じゃない",
-      "quote": "💍 夜に重くなる気持ちを、ここに置いていい"
-    },
-    {
-      "date": "2026-05-07",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "返信獲得",
-      "content": "「なんでもどうぞ」と言った上司ほど、部下が何も言わなくなる\n水曜の1on1、3分で「特にないです」で終わる関係は設計の失敗だ💎\n\n何でも言えると宣言する前に、何も言えない理由を取り除く設計が先\n「最近どう？」より「これについてどう思う？」の方が答えやすい\n\n一つの問いを変えるだけで、場の温度は変わる",
-      "quote": "💎 問いの質が、関係の温度を決める"
-    },
-    {
-      "date": "2026-05-07",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "content": "感情的な上司の下で長く働くと、顔色センサーが異常に発達する\nでもそれは才能じゃない、消耗だ💎\n\nそのセンサーに使っているエネルギーを、仕事に使えていないチームは弱い\n誰かの感情を予測することに、本来使うべき思考力が使われている\n\nセンサーを必要としない環境は、設計できる\nそれをつくることが、リーダーの仕事だ",
-      "quote": "💎 センサーを手放せる場が、本来の力を取り戻す"
+      "theme": "相手を変えたい欲求の正体",
+      "content": "「なんでわかってくれないの」\n何度飲み込んだか、数えたことある？\n\nA 🌸  連絡の頻度を、もっと増やしてほしい\nB 🌧  話してるのに、スマホを見ている\nC 🔔  気遣ってほしいのに、気づいてもらえない\nD 🚪  もう変わらないとわかってる。それでも離れられない\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 変えたいのは相手じゃなく、渇きの正体",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A white fluffy cat holding a smartphone with flower petals floating around it, looking hopeful and a little anxious. Panel B: A white dove talking earnestly to a green turtle who is looking away at a small glowing screen, rain clouds above. Panel C: A small turtle with a tiny bell around its neck, standing alone looking expectant, nobody noticing. Panel D: A white cat standing at an open door, looking out, one paw slightly raised as if to leave but hesitating. Soft lavender and rose watercolor tones, A/B/C/D labels in rounded tags, emotionally expressive characters.",
+      "reply_1": "相手を変えたいと思う夜——\nその奥にある感情を、今日言語化します。\n\nA🌸 を選んだあなたへ\n「もっと連絡して」の本音は「私のことを考えてる？」という確認欲求。でもそれを「もっと連絡して」のかたちで伝えると、相手には「監視」に聞こえることがある。\n解決策 → 「さみしい」より「1日1回だけ連絡ほしい」と、感情でなく仕様として伝える。相手が動きやすい言い方に変えると、結果が変わる。\n\nB🌧 を選んだあなたへ\n話してるのにスマホを見られる、あの「プツン」という瞬間。あれは軽く扱われたというより「私の話が優先されなかった」という体験。\n解決策 → 「スマホ置いてほしい」より先に「これは10分だけ聞いてほしい話なんだけど」と宣言する。相手に「準備する時間」を与えると、聴く姿勢が変わる。\n\nC🔔 を選んだあなたへ\n「気づいてほしい」は、言葉にしない愛のやりとり。でもテレパシーが使えない相手には届かない。\n解決策 → 「さっきのこと、実はちょっと悲しかった」を後からでも一言言ってみる。説明しなくていい。伝えることで、傷の半分が消える。\n\nD🚪 を選んだあなたへ\n変わらないとわかっているのに離れられないのは、「変えられなかった自分」を認めたくないから、ということが多い。\n解決策 → 「この関係から何を学んだか」を一つだけ書き出す。それが出てくると、「変えられなかった」から「終わらせる理由を持てた」に変わる。\n\n相手を変えようとするエネルギーで、\n自分の渇きに気づいたとき——関係はそっと、動き出す。\n\nフォローすると、毎週この話の続きが届きます。"
     },
     {
       "date": "2026-05-07",
       "platform": "Threads",
-      "time": "07:00",
+      "time": "14:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "「察してほしい」と「言葉にしてほしい」は\n同時に存在する\n\n言わなくてもわかってくれる人がいる\nでもそれに甘えすぎると、相手は疲れていく\n\n察してもらえた日は、少し楽になる\nでも察してもらえなかった日に\nどれだけ言葉にできるかが\n関係の深さになっていく気がする\n\n言葉にしようとする、それだけで\n相手に届くものがある",
-      "quote": "💍 うまく言えなくても、言おうとしたことは伝わる"
-    },
-    {
-      "date": "2026-05-07",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "共感獲得",
-      "content": "同い年なのに\nもうそんなにやってるんだ、と思う瞬間がある\n\n焦るわけじゃない\nでもちょっと、胸の辺りが重くなる\n\n比べてるつもりはない\nでも比べてる\n\nそういう自分に気づいて\nまた少し重くなる\n\nその重さを抱えたまま、今日も何かしようとしてる\n重さがある分だけ、見えているものがある",
-      "quote": "💍 重さを持ったまま、動いていい"
-    },
-    {
-      "date": "2026-05-07",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "「大丈夫」って言った夜がある\n\n大丈夫じゃなかったけど\nそう言うしかなかった\n\nその人に心配をかけたくなかったのか\nそれとも心配されても何もできないってわかってたのか\n\nどちらかわからないまま\n「大丈夫」と言い続けた\n\nそういう夜のことをその人は知らない\n\nでも、誰かに知ってほしい夜だった\nということは、わかってる",
-      "quote": "💍 誰かに知ってほしかった夜を、ここに置いておく"
-    },
-    {
-      "date": "2026-05-08",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "「報告が上がってこない」と言う前に\n一度だけ振り返ってほしいことがある\n最後に報告を受けたとき、あなたはどんな顔をしていたか💎\n\n顔の反応が、次の報告の量を決める\n渋い顔をされた翌日から、報告は静かに減っていく\n\n「もっと早く言ってくれれば」より「教えてくれてよかった」が先だ\n受け取る顔を変えるだけで、報告は増える",
-      "quote": "💎 受け取る顔が、次の言葉をつくる"
-    },
-    {
-      "date": "2026-05-08",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "「自分で考えろ」と言って育てようとする管理職は多い\nでも、考えられない状態の人に「考えろ」は指導じゃない、放置だ💎\n\n考えられるようになる手前の「型」を渡す設計が抜けている\n「答えを渡すな」は正しい、でも「型を渡せ」が抜けているだけだ\n\n型があれば、人は自分で考え始める\n考え始めたとき、はじめて育てたと言える",
-      "quote": "💎 型を渡すと、人は自分で考え始める"
+      "theme": "「追いかけない」という技術",
+      "content": "追いかけてはいけないと知ってる。\nでも、手が止まらない。\n\nA 📱  既読スルーされると、もう一度送りたくなる\nB 🧲  距離を置かれると、逆に近づきたくなる\nC 💭  相手が冷たいと「私が何かした？」とループする\nD 🌀  終わりだとわかってても、手が止まらない\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 手を止めた瞬間、自分が見える",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A white fluffy cat staring at an unread message notification on a phone, one paw hovering to tap again. Panel B: A small turtle walking toward another turtle that is slowly moving away, turtle A getting closer while turtle B retreats. Panel C: A white dove sitting inside a thought bubble cloud, looking confused and a little sad, small question marks around it. Panel D: A white cat in a gentle whirlpool made of pastel blue ribbons, trying to swim out but going in circles. Soft blue and sage green watercolor, A/B/C/D labels, serene yet emotionally resonant mood.",
+      "reply_1": "「追いかけない技術」とは、感情を消すことじゃない。\n感情があるまま、行動だけ選べるようになること。\n\nA📱 を選んだあなたへ\nもう一度送りたい衝動の正体は「返事がこない＝嫌われた」という脳の誤作動。送るほどに、相手の返信コストが上がる。\n解決策 → 送る前に「これは確認？それとも不安の解消？」と一秒だけ問う。「不安の解消」が目的なら、送っても解消されない。今日だけ、送らない選択が自分を守る。\n\nB🧲 を選んだあなたへ\n距離を置かれたとき近づきたくなるのは、「捨てられる前に確保したい」という本能。でも近づくほど、相手は引く。\n解決策 → 「距離を置かれた日」は、自分の好きなことを1時間だけやる。その1時間が、追いかける衝動を半分にする。相手ではなく、自分の時間に投資する日にする。\n\nC💭 を選んだあなたへ\n「私が何かした？」のループは、エネルギーの大量消費。相手の機嫌は、ほとんどの場合あなたと無関係の原因。\n解決策 → 「もし私のせいじゃなかったとしたら？」と問い直す。そう問うだけで、脳が別の可能性を探し始め、ループが止まる。\n\nD🌀 を選んだあなたへ\n手が止まらないのは意志が弱いからじゃない。その行動が「まだ可能性がある」という証拠集めになっているから。\n解決策 → 「今日だけ送らない」でいい。一生やめる必要はない、今日だけ。それを繰り返す中で、少しずつ自分の感情の主導権が戻ってくる。\n\n手を止めた瞬間、自分の感情がはっきり見えてくる。\nそれが、距離を整える技術の始まり。\n\nフォローすると、毎週この話の続きが届きます。"
     },
     {
       "date": "2026-05-08",
       "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
+      "time": "14:00",
+      "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "「忙しい」を理由に断ることに\n慣れすぎた気がする\n\n本当に忙しいときもある\nでも「忙しい」は時々\nただ会いたくないときの言葉になっていて\n\nそのことに気づいたとき\n少し自分が嫌になった\n\n断るのは悪くない\nでも「忙しい」で断り続けると\n本当の理由が自分でもわからなくなる\n\n気づいた今が、ちゃんと向き合い直せるタイミングかもしれない",
-      "quote": "💍 本音に気づいた日が、変えはじめる日"
+      "theme": "家族だからこそ必要な「他人」の距離",
+      "content": "家族なのに、会うたびに疲れる。\nそれはあなたが薄情なんじゃない。\n\nA 🔪  悪気のない一言が、何日も刺さったまま残る\nB 🫂  助けようとするたびに、空回りして関係が冷えた\nC 🪟  「家族ならわかるはず」と思って、何も言えなかった\nD 🌫️  距離を置いたら楽になった。でも罪悪感がある\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 家族ほど、距離の設計が必要",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A small turtle with a tiny crack on its shell, a white dove nearby looking apologetic but unaware it caused it. Panel B: A white dove wrapping wings around a turtle who looks slightly uncomfortable, dove expression is earnest but turtle looks a little overwhelmed. Panel C: A white cat sitting alone in a warm room with a frosted window, looking toward the light, many things left unsaid. Panel D: A turtle standing on a hillside at a comfortable distance from a cozy house with warm lights, looking back with a mix of relief and gentle guilt. Warm ochre and soft white watercolor tones, A/B/C/D labels, domestic and introspective mood.",
+      "reply_1": "家族に傷つくのは、愛していないからじゃない。\n距離がゼロだから。\n\nA🔪 を選んだあなたへ\n「そんなつもりじゃなかった」の一言がいちばん刺さる。何日も残るのは、その人に大切にされたいと思っているから。\n解決策 → 「あの言葉、まだ少し気になってる」と翌日一言だけ言ってみる。解決しなくていい。「言えた」だけで、傷の重さが半分になる。\n\nB🫂 を選んだあなたへ\n助けようとして空回りするとき、「この人を助けたい」より「助けたいと思われたい」が混ざっていることがある。\n解決策 → 「何かできることある？」を聞く前に「今どんな気持ち？」を先に聞く。手より先に、気持ちを聞く人が一番頼られる。\n\nC🪟 を選んだあなたへ\n「家族ならわかるはず」は、最も届かない伝え方。近いほど、言葉にしないと伝わらない。\n解決策 → 「これ言っても大丈夫かな」より「言わないとどうなるか」を先に考える。言わないことの方が、長期的にコストが高い。\n\nD🌫️ を選んだあなたへ\n距離を置いて楽になったことを、罪悪感に変えなくていい。\n解決策 → 罪悪感が出てきたとき「私はこの人が嫌いなんじゃなく、距離が必要なだけ」と一言、自分に言ってあげる。距離があることで「次に会ったとき素直になれる」という人はとても多い。\n\n家族に「他人のような距離感」を持つことは、冷たさじゃない。\n関係を長く続けるための、設計。\n\nフォローすると、毎週この話の続きが届きます。"
     },
     {
-      "date": "2026-05-08",
+      "date": "2026-05-09",
       "platform": "Threads",
-      "time": "10:00",
+      "time": "14:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "仲の良い友人と久しぶりに会ったとき\n「変わったね」と言われた\n\n良い意味で、と付け加えてくれた\nでも帰り道、何か引っかかった\n\n変わったことは、自分では当たり前すぎてわからない\nでも誰かの目には、はっきりと映ってる\n\nそういう変化を、自分で一番見落としてるのかもしれない\n\n変わったねと言ってくれる人がいる\nそれだけで、ここまで来たことが少し報われる気がした",
-      "quote": "💍 誰かの目が、自分の変化を教えてくれる"
-    },
-    {
-      "date": "2026-05-08",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "泣きそうになるのを、こらえた夜がある\n\n泣いても良かった\nでも泣き始めたら止まらない気がして\n\nぐっと目を細めて\n深呼吸して、やり過ごした\n\nその後、何事もなかったように眠った\n\n次の朝になって\nこらえたことを誰も知らないまま、一日が始まった\n\n誰も知らなくていい\nこらえた夜があることを、ここだけは知っている",
-      "quote": "💍 誰も知らない夜が、どこかに積もっている"
-    },
-    {
-      "date": "2026-05-09",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "金曜17時の急なミーティング招集は、チームの週末の安心感を削る\n緊急でもないのに緊急を使いすぎると、信頼コストがかかり続ける💎\n\n緊急の基準を共有しない組織は、常に誰かがびくびくしている\nその緊張が、金曜の夕方から月曜の朝まで続いている\n\n「これは緊急か」の基準を一つ決めるだけで\nチームの週末が変わる",
-      "quote": "💎 基準が一つあるだけで、安心して仕事を置ける"
-    },
-    {
-      "date": "2026-05-09",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "content": "週末に仕事のLINEが来ると、月曜が憂鬱になる\nこれはメンタルの問題じゃない、境界線の設計の問題だ💎\n\n「いつでもつながれる」は「いつでも消耗できる」に変わる\n個人が意志力で守る境界線は、必ず崩れる\n\nチームで「ここまでは返信しない」を決めるだけで\n月曜の朝の重さが、変わる",
-      "quote": "💎 チームで決めた境界線が、週末を守る"
-    },
-    {
-      "date": "2026-05-09",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "週末が来ると、なんとなく安心する\n\n平日の自分は少し張り詰めてて\n土日になると、ようやく息が吐ける\n\n誰かに何かを求められない時間\n誰かの役に立たなくていい時間\n\nそれが本当に休息なのか\nそれとも逃げてるだけなのか\n\n正直、わからないまま月曜が来る\n\nでも、息が吐けたことはたしかだ\nわからなくていい、それだけで十分かもしれない",
-      "quote": "💍 息が吐けた土曜は、ちゃんと休めた"
-    },
-    {
-      "date": "2026-05-09",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "「会いたい」と思うのに\n連絡できない人がいる\n\n嫌われたわけじゃない、たぶん\nでも最後に会ったとき\n何かが少しずれた気がして\n\nそのズレを話し合うほど親しいのか\nズレたまま距離を置くほど遠いのか\n\nどちらでもない場所に、その人がいる\n\nそれでも、会いたいと思い続けている\nその気持ちが、何かをまだ残してくれている気がする",
-      "quote": "💍 会いたいという気持ちが、まだ残っている"
-    },
-    {
-      "date": "2026-05-09",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "金曜の夜に、一人でいると\n一週間のことを勝手に振り返り始める\n\nうまくいったこと\n言えなかったこと\n余計なことを言ってしまったこと\n\n「あれで良かったのかな」という問いが\n答えのないまま浮かんでは消える\n\nそれでも土曜の朝は来る\n同じ問いを持ったまま、また始まる\n\n問いを持ち続けていること自体が\nもしかしたら、誠実さの証なのかもしれない",
-      "quote": "💍 答えのない問いを持ったまま、また一週間"
-    },
-    {
-      "date": "2026-05-10",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "「なんであの人は動かないんだ」と3ヶ月思い続け、ある日理由を聞いた\n「報告するたびに詰められるから、動けなかった」と言われた💎\n\n動かないのは意欲の問題より、動いたときのコストが大きすぎる設計の問題が多い\n「詰める」をやめるだけで、人が動き始めることがある\n\n障壁を一つ取り除いた日から、チームの空気が変わることがある",
-      "quote": "💎 障壁を取り除いたとき、人は自分で動き始める"
-    },
-    {
-      "date": "2026-05-10",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "組織の「空気」は誰も作ろうとしていないのに、確かに存在する\nたいてい一人のリーダーの「発言の癖」と「沈黙の使い方」で決まっている💎\n\n空気は管理できない、でも設計できる\n影響力を自覚したとき、空気は設計し直せる\n\n一人の意識が変わるだけで、場の温度は変わることがある",
-      "quote": "💎 気づいたリーダーから、空気は変わる"
+      "theme": "舐められずに愛されるための境界線",
+      "content": "なんか甘く見られてる気がする。\nでも嫌われるのが怖くて言えない。\n\nA 🫥  頼まれると断れなくて、あとで一人で後悔する\nB 😶  本心では嫌なのに、顔では笑ってしまう\nC 🪞  NOと言ったら嫌われると思っている\nD 🌋  限界を超えてから急に爆発して、自分でも驚く\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 優しさと境界線は、共存できる",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A white fluffy cat carrying a tall stack of boxes for other animals, back slightly bent but still accepting more. Panel B: A white dove with a bright smile on its face, but its eyes are looking downward with quiet discomfort, holding something it did not want. Panel C: A small turtle looking into a mirror, rehearsing saying something, looking hesitant and worried. Panel D: A previously calm white cat suddenly surrounded by small sparks, wide eyes, looking surprised at its own reaction. Dusty rose and soft sage green tones, A/B/C/D labels, emotionally honest and grounded mood.",
+      "reply_1": "「優しすぎるから舐められる」は半分だけ正しい。\n正確には——境界線がないから、相手も線引きができない。\n\nA🫥 を選んだあなたへ\n断れないでいると、相手はあなたの「YES」の重さを感じなくなる。\n解決策 → 断るとき「嫌い」じゃなく「今の自分には難しい」を使う。それだけで関係を壊さずNOが言える。「自分の都合で動く人」という印象を与えることで、むしろ関係が対等になる。\n\nB😶 を選んだあなたへ\n笑ってごまかすとき、顔と心がバラバラになる。それが積み重なると、自分でも「本当は何が嫌なのか」わからなくなる。\n解決策 → 嫌だと感じた瞬間、その場で言わなくていいから「これは嫌だった」と心の中で一言だけ言う。感情に名前をつけることが、境界線の出発点。\n\nC🪞 を選んだあなたへ\nNOと言って離れる人は「NOを言わないあなた」しか好きじゃなかった人。本当に大切な関係は、NOを言っても残る。\n解決策 → 一番小さいNOから試す。「今日は少し疲れてるから短めにしてもいい？」これだけで、関係の本質が見える。\n\nD🌋 を選んだあなたへ\n爆発するのは意志が弱いからじゃない。早い段階で「これが嫌だ」を言えていなかったから。\n解決策 → 爆発した後に「何が一番きつかったか」を一文で書いてみる。次からその一文が、事前のNOになる。\n\n境界線は、相手を遠ざける壁じゃない。\n「ここまでは大丈夫」という、愛のある地図。\n\nフォローすると、毎週この話の続きが届きます。"
     },
     {
       "date": "2026-05-10",
       "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "日曜の朝に、やらなきゃいけないことを\nぼんやり思い出す\n\nでも今日は、それを後回しにしてみた\n\n罪悪感みたいなものが浮かんで\nそれを無視して、コーヒーを入れた\n\nたぶん今日くらい、何もしなくていい\nそう思うのに、まだどこかに後ろめたさがある\n\n休むことに、まだ慣れていない\n\nでも、コーヒーを入れた今朝のことは\n悪くなかったと思う",
-      "quote": "💍 休むことを、まだ練習中"
-    },
-    {
-      "date": "2026-05-10",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "「あの人がいるだけで場が明るくなる」\nと言われる人がいる\n\nうらやましいと思ったことがある\nでも同時に、その人は疲れないのかな、とも思った\n\n場を明るくすることを期待されると\n暗い日を持てなくなる\n\n輝かない日があっていい\nそう思える関係の方が、長く続く気がする\n\n輝かない日があるあなたを\n好きでいてくれる人が、きっといる",
-      "quote": "💍 輝かない日のあなたが、好きな人がいる"
-    },
-    {
-      "date": "2026-05-10",
-      "platform": "Threads",
-      "time": "19:00",
+      "time": "14:00",
       "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "「もうここにいなくてもいいかな」と思う日がある\n\n疲れとか、傷ついたとかじゃなく\nただ、ふとそう思う\n\n悪い意味じゃない\n自分の居場所を、もっと自分で選んでいいんだという感覚\n\n誰かに認められてからじゃなく\n自分が「ここにいる」と決めてから、場所になる\n\nまだそれが怖い\n\nでも、怖いと思えるということは\nまだここにいたいということかもしれない",
-      "quote": "💍 「ここにいる」を、自分で決めるのが怖い"
-    },
-    {
-      "date": "2026-05-11",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "「この人は伸びる」と感じる部下には共通点がある\nミスをしたとき、言い訳より先に設計を見直そうとする姿勢だ💎\n\n原因を外に求める人は、成長の主語が「環境」になる\n主語を自分に戻す場の設計が、組織の質を変える\n\n主語を自分に戻せる文化がつくれると\n同じミスが、次への設計図になる",
-      "quote": "💎 主語が変わると、ミスが糧になる"
-    },
-    {
-      "date": "2026-05-11",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "content": "「また来週」という締め方が口癖の上司のもとで、今週動けなかった部下がいる\n今週という区切りが意味を持つには「今週何を終わらせるか」の合意が先に必要だ💎\n\n締め方は文化、文化は設計できる\n「また来週」を「今週これが終わった」に変えるだけで\n月曜の朝の重さが、ずっと軽くなる",
-      "quote": "💎 締め方が変わると、月曜の朝が変わる"
+      "theme": "孤独と自由の、ちょうどいい温度",
+      "content": "一人でいたい。でも孤独は怖い。\nこの矛盾、あなたにも心当たりある？\n\nA 🌿  一人の時間は好きだけど、ふとしたときさみしくなる\nB 🌊  誰かといると安心するが、一人になりたくもある\nC 🕊  一人でいることに、なんとなく罪悪感がある\nD 🌑  自由でいたいのに、孤立が怖くて動けない\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 孤独は欠けてない。自分に帰る時間だ",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A small turtle reading a book alone by a rainy window, peaceful face but one small teardrop nearby. Panel B: A white cat happily sitting in a group of animals, but glancing toward a quiet empty corner with a gentle longing look. Panel C: A white dove sitting alone on a branch looking serene but carrying a small cloud above its head with a tiny guilt symbol. Panel D: A small turtle standing at the edge of a wide open meadow, wanting to run but feet slightly rooted, looking at the horizon. Twilight blue and warm amber watercolor tones, A/B/C/D labels, dreamlike and introspective mood.",
+      "reply_1": "一人でいたい、でも孤独は嫌。\nその矛盾は、おかしくない。\n\nA🌿 を選んだあなたへ\n「好きなのに、さみしい」は矛盾じゃない。一人の時間を大切にする人は、深いところで他者を必要としている。浅いつながりじゃなく、深いつながりを求めているから。\n解決策 → さみしくなったとき、誰かに連絡する前に「今日の一人時間で何が良かったか」を一行メモする。それが積み重なると、孤独が「選んでいる時間」に変わっていく。\n\nB🌊 を選んだあなたへ\n一緒にいると安心するのに一人もほしい——それは「ちょうどいい距離」をまだ作れていないサイン。\n解決策 → 「今日は〇時間一人でいる」と事前に宣言する。宣言することで、罪悪感なく一人になれる。相手にも「戻ってくる見通し」が伝わる。\n\nC🕊 を選んだあなたへ\n一人でいることへの罪悪感は、どこかで「孤独は良くないこと」と学んだ記憶。でも一人の時間は、自分に戻る時間。\n解決策 → 「今日は自分に帰る日」と名前をつける。「孤独」じゃなく「帰宅」と呼ぶだけで、感覚が変わる。\n\nD🌑 を選んだあなたへ\n孤立が怖いのは、孤独と孤立を混同しているから。孤独は選べる。孤立は孤立させられる。全然違う。\n解決策 → 「一人でいても繋がれる場所」を一つだけ持つ。オンラインでも、月一のコミュニティでも。「ここがある」というだけで、孤立の恐怖は薄れる。\n\n孤独を「欠けた状態」から「自分に帰る時間」に変えたとき、\n誰かといる時間の質も変わる。\n\nフォローすると、毎週この話の続きが届きます。"
     },
     {
       "date": "2026-05-11",
       "platform": "Threads",
-      "time": "07:00",
+      "time": "14:00",
       "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "content": "日曜の夜に、少しだけ憂鬱になる\n\n嫌なことがあるわけじゃない\nただ、また明日から始まるという感覚\n\nそれを「弱い」と思ってた時期がある\n\n日曜の憂鬱は\n月曜を真剣に生きてる証拠かもしれない\n\nまだ全然信じてないけど\nそう思うことにしている\n\n同じ夜を抱えている人が\nきっとどこかにいる",
-      "quote": "💍 憂鬱を抱えたまま、月曜が来る"
-    },
-    {
-      "date": "2026-05-11",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "content": "ずっと側にいる人の存在に\n慣れすぎてしまうことがある\n\n毎日LINEが来て\n困ったら助けてもらえて\n\nそれが当たり前になった頃に\nその人がいない一日が来る\n\nそのとき初めて、どれだけの場所を占めていたかがわかる\n\n気づいたときに言葉にすればいい\nまだ遅くない、たぶん\n\n今日、何か一言だけ伝えてみてもいい",
-      "quote": "💍 当たり前の中に、かけがえないがある"
-    },
-    {
-      "date": "2026-05-11",
-      "platform": "Threads",
-      "time": "19:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "日曜の夜、何かを始めようとした\n\n手帳を開いて\n来週のことを書こうとして\n\nでも気づいたら、ぼんやりしてた\n\n計画よりも\n今夜の静けさの方が、今は必要だった\n\nやることリストより\n何もしない夜があっていい\n\nそう決めたら、少しだけ息ができた\n\nあなたの今夜も、そういう夜でいい",
-      "quote": "💍 何もしない夜も、準備のひとつ"
+      "purpose": "プロフィール遷移",
+      "theme": "期待を手放した後に残る、本当の関係",
+      "content": "期待して、裏切られて、また期待して、また疲れる。\nそのループ、今日終わりにしませんか。\n\nA 🎁  「これくらいしてくれるはず」と思って、してもらえなかった\nB 🧊  傷つかないために、最初から期待しないようにしている\nC 🌱  相手に求めるのをやめたら、なぜか関係が楽になった\nD 🌀  期待を手放したいが、それは諦めな気がして怖い\n\nコメントでABCDどれか教えてください💬\n続きは返信欄で解説します↓",
+      "quote": "💍 期待の向こうに、本当の関係がある",
+      "image_prompt": "Soft watercolor 4-panel grid illustration in Japanese LINE sticker anime style. Panel A: A white dove holding a wrapped gift box with a hopeful look, the gift going unopened in front of a turtle looking away. Panel B: A small turtle encased in a transparent ice shell, looking out safely but unable to feel warmth from the sunlight outside. Panel C: A white cat sitting peacefully in a field with a small sprout growing beside it, open paws, relaxed expression. Panel D: A white dove holding the string of a paper lantern balloon, wanting to release it but hesitating, watching it float slightly upward. Soft gold and muted teal watercolor, A/B/C/D labels, tender and releasing atmosphere.",
+      "reply_1": "期待を手放すことは、冷めることじゃない。\n手放した後に残るのが、本当の関係。\n\nA🎁 を選んだあなたへ\n「〜してくれるはず」は、言葉にしていない約束。相手にとっては存在しない約束。\n解決策 → 「してほしいこと」を一つだけ具体的に言葉にする。「察してほしい」をやめると、裏切られる回数が激減する。\n\nB🧊 を選んだあなたへ\n期待しないで傷を防ぐのは、鎧を着て生きるようなもの。守れるけど、温もりも届かない。\n解決策 → 「小さな期待」だけ持つ練習をする。「今日のご飯を一緒に食べる」くらいの期待。大きい期待を小さく分割すると、裏切られにくくなり、喜びの回数が増える。\n\nC🌱 を選んだあなたへ\nそれは諦めじゃない。相手への信頼の形が変わっただけ。「この人はこういう人」とわかった上で一緒にいるのが、最も深い関係性。あなたは一段、静かに成長した。\n\nD🌀 を選んだあなたへ\n「手放す」と「諦める」は感触がまったく違う。諦めは「もうどうでもいい」。手放しは「あなたを、あなたとして見る」。\n解決策 → 今持っている期待を一つだけ書き出して、「これがなくても、この人といたいか？」と問う。YESなら、それが本当の関係の始まり。\n\n期待を手放した後に残るのは、静かで深い愛。\nそれを持てた人が、一番長く続く関係を作れる。\n\nこの一週間、一緒にいてくれてありがとう。\nプロフィールのnoteから、続きが読めます。"
     }
   ]
 }
