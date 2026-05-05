@@ -328,6 +328,34 @@ function renderCard(post) {
     post.image_prompt ? renderExpandable('🎨 画像プロンプト（DALL-E 3）', post.image_prompt, 'コピー', true) : '',
   ].join('') : '';
 
+  const themeSection = post.theme
+    ? `<div class="card-theme">${escapeHtml(post.theme)}</div>`
+    : '';
+
+  const imageSection = !isShindan && post.image_prompt
+    ? `<div class="card-section">
+        <div class="section-label">🖼 画像プロンプト（DALL-E 3）</div>
+        <p class="section-text">${escapeHtml(post.image_prompt)}</p>
+        <div class="copy-btn-content"><button class="copy-btn" data-copy="${escapeHtml(post.image_prompt)}">コピー</button></div>
+      </div>`
+    : '';
+
+  const comment1Section = !isShindan && post.comment1
+    ? `<div class="card-section">
+        <div class="section-label">💬 コメント①（解説）</div>
+        <p class="section-text">${escapeHtml(post.comment1)}</p>
+        <div class="copy-btn-content"><button class="copy-btn" data-copy="${escapeHtml(post.comment1)}">コピー</button></div>
+      </div>`
+    : '';
+
+  const comment2Section = !isShindan && post.comment2
+    ? `<div class="card-section">
+        <div class="section-label">💬 コメント②（深掘り）</div>
+        <p class="section-text">${escapeHtml(post.comment2)}</p>
+        <div class="copy-btn-content"><button class="copy-btn" data-copy="${escapeHtml(post.comment2)}">コピー</button></div>
+      </div>`
+    : '';
+
   return `
     <article class="${cardClass}" data-platform="${post.platform}">
       <div class="card-header">
@@ -339,6 +367,7 @@ function renderCard(post) {
         </div>
         <span class="purpose-badge">${post.purpose}</span>
       </div>
+      ${themeSection}
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
         <div class="copy-btn-content">
@@ -350,6 +379,7 @@ function renderCard(post) {
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
       </div>
       ${extrasHtml}
+      ${imageSection}${comment1Section}${comment2Section}
     </article>`;
 }
 
