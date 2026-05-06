@@ -76,11 +76,7 @@ function renderLineStampSection(stampSets) {
 
   const section = document.createElement('section');
   section.id = 'stampSection';
-
-  const heading = document.createElement('h2');
-  heading.className = 'stamp-section-heading';
-  heading.textContent = '📦 LINEスタンプ';
-  section.appendChild(heading);
+  section.style.display = 'none';
 
   stampSets.forEach(set => {
     const setEl = document.createElement('div');
@@ -121,7 +117,7 @@ function renderLineStampSection(stampSets) {
 
 function renderStampCard(stamp) {
   const charLabel = stamp.character.map(c => {
-    if (c === 'しらたま') return '🐈‍しらたま';
+    if (c === 'しらたま') return '🐈‍⬛しらたま';
     if (c === 'しずく') return '🐢しずく';
     if (c === 'ひより') return '🕊ひより';
     if (c === 'Coco') return '💎Coco';
@@ -260,17 +256,33 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp');
     });
 
     const platform = btn.dataset.platform;
     activeFilters.platform = platform;
 
-    if (platform === 'X') btn.classList.add('active-x');
-    else if (platform === 'Threads') btn.classList.add('active-threads');
-    else btn.classList.add('active');
+    const stampSection = document.getElementById('stampSection');
+    const postsContainer = document.getElementById('postsContainer');
+    const weekFilterRow = document.getElementById('weekFilterRow');
+    const statsBar = document.getElementById('statsBar');
 
-    renderPosts();
+    if (platform === 'LINEスタンプ') {
+      btn.classList.add('active-stamp');
+      if (postsContainer) postsContainer.style.display = 'none';
+      if (stampSection) stampSection.style.display = 'block';
+      if (weekFilterRow) weekFilterRow.style.display = 'none';
+      if (statsBar) statsBar.style.display = 'none';
+    } else {
+      if (platform === 'X') btn.classList.add('active-x');
+      else if (platform === 'Threads') btn.classList.add('active-threads');
+      else btn.classList.add('active');
+      if (postsContainer) postsContainer.style.display = '';
+      if (stampSection) stampSection.style.display = 'none';
+      if (weekFilterRow) weekFilterRow.style.display = '';
+      if (statsBar) statsBar.style.display = '';
+      renderPosts();
+    }
   });
 }
 
