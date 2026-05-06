@@ -132,15 +132,53 @@ function renderPosts() {
 function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
-  const quoteEscaped = escapeHtml(post.quote);
+
+  const isDiagnosis = Boolean(post.image_prompt || post.comment1 || post.comment2);
+
+  const themeHtml = post.theme
+    ? `<span class="theme-badge">${escapeHtml(post.theme)}</span>`
+    : '';
+
+  const extraSections = isDiagnosis
+    ? `
+      ${post.image_prompt ? `
+      <div class="card-section card-section--image">
+        <div class="section-label">🖼 DALL-E 3 プロンプト</div>
+        <p class="card-section-text">${escapeHtml(post.image_prompt)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.image_prompt)}">コピー</button>
+        </div>
+      </div>` : ''}
+      ${post.comment1 ? `
+      <div class="card-section card-section--comment1">
+        <div class="section-label">💬 コメント① 解説</div>
+        <p class="card-section-text">${escapeHtml(post.comment1)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.comment1)}">コピー</button>
+        </div>
+      </div>` : ''}
+      ${post.comment2 ? `
+      <div class="card-section card-section--comment2">
+        <div class="section-label">📌 コメント② 深掘り</div>
+        <p class="card-section-text">${escapeHtml(post.comment2)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(post.comment2)}">コピー</button>
+        </div>
+      </div>` : ''}`
+    : `
+      <div class="card-quote">
+        <p class="quote-text">${escapeHtml(post.quote || '')}</p>
+        <button class="copy-btn" data-copy="${escapeHtml(post.quote || '')}">コピー</button>
+      </div>`;
 
   return `
-    <article class="card" data-platform="${post.platform}">
+    <article class="card ${isDiagnosis ? 'card--diagnosis' : ''}" data-platform="${post.platform}">
       <div class="card-header">
         <div class="card-meta-left">
           <span class="platform-badge ${platformClass}">${post.platform}</span>
           <span class="card-time">${post.time}</span>
           <span class="card-character">${post.character}</span>
+          ${themeHtml}
         </div>
         <span class="purpose-badge">${post.purpose}</span>
       </div>
@@ -150,10 +188,7 @@ function renderCard(post) {
           <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
         </div>
       </div>
-      <div class="card-quote">
-        <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
-      </div>
+      ${extraSections}
     </article>`;
 }
 
