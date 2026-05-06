@@ -210,6 +210,18 @@ body {
   border: 1px solid rgba(155, 77, 202, 0.3);
 }
 
+.platform-stamp {
+  background: rgba(236, 150, 100, 0.15);
+  color: #f4a570;
+  border: 1px solid rgba(236, 150, 100, 0.3);
+}
+
+.filter-btn.active-stamp {
+  background: #ec9664;
+  border-color: #ec9664;
+  color: #fff;
+}
+
 .card-time {
   font-size: 0.72rem;
   color: var(--text-muted);
