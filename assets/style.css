@@ -9,6 +9,8 @@
   --bg-card: #181818;
   --bg-card-hover: #1e1e1e;
   --bg-quote: #141414;
+  --bg-dalle: #131a18;
+  --bg-reply: #14131a;
   --border: #2a2a2a;
   --border-light: #333333;
   --text-primary: #e8e8e8;
@@ -16,6 +18,7 @@
   --text-muted: #555555;
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
+  --accent-threads-shindan: #2d7a6a;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -126,6 +129,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-threads-shindan {
+  background: var(--accent-threads-shindan);
+  border-color: var(--accent-threads-shindan);
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -210,6 +219,12 @@ body {
   border: 1px solid rgba(155, 77, 202, 0.3);
 }
 
+.platform-threads-shindan {
+  background: rgba(45, 122, 106, 0.15);
+  color: #5ecfb8;
+  border: 1px solid rgba(45, 122, 106, 0.35);
+}
+
 .card-time {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -242,6 +257,50 @@ body {
   white-space: pre-wrap;
   word-break: break-all;
   margin-bottom: 12px;
+}
+
+/* Theme label in card header */
+.card-theme {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-style: italic;
+  letter-spacing: 0.02em;
+  max-width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* DALL-E section */
+.card-dalle {
+  background: var(--bg-dalle);
+  border-top: 1px solid var(--border);
+  padding: 12px 14px 10px;
+}
+
+/* Reply section */
+.card-reply {
+  background: var(--bg-reply);
+  border-top: 1px solid var(--border);
+  padding: 12px 14px 10px;
+}
+
+.card-section-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.card-section-content {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
 }
 
 /* Quote section */
