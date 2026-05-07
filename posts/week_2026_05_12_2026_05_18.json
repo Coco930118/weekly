@@ -1,5 +1,7 @@
 {
   "week": "2026-05-12_2026-05-18",
+  "created": "2026-05-07",
+  "trend_notes": "GW明け五月病トレンド・管理職の罰ゲーム化・ハラスメント懸念によるコミュニケーション萎縮・離職防止ニーズの高まりを反映。Threads診断：愛しすぎる距離感・相手を変えたい欲求・境界線テーマが高共感。",
   "posts": [
     {
       "date": "2026-05-12",
@@ -10,8 +12,21 @@
       "theme": "愛しすぎる人と、適切な距離",
       "content": "好きになると、どうなる？\n\nA 🌸 毎日連絡したくなる。会えない日は落ち着かない\nB 🌿 好きだけど、相手のペースを乱したくない\nC 🌙 深く想いながら、静かに距離を保てる\nD ☁️ 好きと言えないから、行動でしか伝えられない\n\n今の自分に一番近いのはどれ？\nコメントで教えてください🌿",
       "dall_e_prompt": "Watercolor illustration, 4-panel grid layout, warm and transparent Japanese style. Top-left (A): a young woman surrounded by floating message bubbles and flowers, longing smile, overwhelmed by her own feelings. Top-right (B): a woman carefully placing flowers in a vase, gentle and measured gestures, quiet consideration. Bottom-left (C): a woman standing across a moonlit room from a bouquet, soft introspective gaze. Bottom-right (D): a woman planting seeds in soil with quiet dedication, hands in earth, no eye contact. Soft cherry blossom pinks, sage green, warm cream tones. Delicate watercolor brushwork, emotional warmth.",
-      "reply_1": "診断結果、こっそり解説します。\n\n🌸 Aのあなた：\n「与えることで愛を証明しようとしてる」サインかもしれない。\n連絡や時間を与えすぎるとき、相手への愛だけじゃなく\n「見捨てられたら怖い」が混ざっていることが多い。\nその怖さをちゃんと見てあげると、少し楽になれる。\n\n🌿 Bのあなた：\n相手に合わせるのが得意な人。でもそれ、我慢じゃないですか？\n本当はもっと会いたい、でも引かれたら怖い。\nそのバランス感覚は美しいけど、\n自分の気持ちも、ちゃんと誰かに届けていい。\n\n🌙 Cのあなた：\n距離感が自然と整っている稀有な人。でもたまに、\n「深く想っていることが伝わっていない」と孤独に感じることも。\n想いを言葉にする練習だけが、あと一歩の課題かもしれない。\n\n☁️ Dのあなた：\n行動で愛を伝えようとする、誠実な人。\nただ、相手には「この人は何を考えてるんだろう」と映ることも。\n言葉をひとつ足すだけで、関係の温度がガラッと変わる。\n\n——\n5万人超の本音を聴いてきてわかったのは、\n「愛しすぎる」ことは欠点じゃないということ。\nただ、与え方に仕組みがないと、自分が先に燃え尽きる。\n\n距離の整え方を、もっと深く知りたい方は\nプロフィールのnoteへ。",
+      "reply_1": "診断結果、こっそり解説します。\n\n🌸 Aのあなた：\n「与えることで愛を証明しようとしてる」サインかもしれない。\n連絡や時間を与えすぎるとき、相手への愛だけじゃなく\n「見捨てられたら怖い」が混ざっていることが多い。\nその怖さをちゃんと見てあげると、少し楽になれる。\n\n🌿 Bのあなた：\n相手に合わせるのが得意な人。でもそれ、我慢じゃないですか？\n本当はもっと会いたい、でも引かれたら怖い。\nそのバランス感覚は美しいけど、\n自分の気持ちも、ちゃんと誰かに届けていい。\n\n🌙 Cのあなた：\n距離感が自然と整っている稀有な人。でもたまに、\n「深く想っていることが伝わっていない」と孤独に感じることも。\n想いを言葉にする練習だけが、あと一歩の課題かもしれない。\n\n☁️ Dのあなた：\n行動で愛を伝えようとする、誠実な人。\nただ、相手には「この人は何を考えてるんだろう」と映ることも。\n言葉をひとつ足すだけで、関係の温度がガラッと変わる。\n\n——\n5万人超の本音を聴いてきてわかったのは、\n「愛しすぎる」ことは欠点じゃないということ。\nただ、与え方に仕組みがないと、自分が先に燃え尽きる。\n\n距離の整え方を、もっと深く知りたい方はプロフィールのnoteへ。",
       "quote": "💍 愛は、距離で深まる"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "信頼される上司",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "GW明け初日。\n部下は「あなたの顔」を確認してから席についている。\n\n信頼される上司は、最初に何をするか——\n\nA ☕ デスクで静かにコーヒーを飲みながら、全体を見渡す\nB 📋「今週のタスク確認させて」と声をかける\nC 💬「休み、どうだった？」と一人ひとりに聞く\nD 🚀「よし、今週も頑張ろう」とチームに声をかける\n\n答えはリプライ欄👇",
+      "quote": "💎 初日の静けさは、リーダーの強さのひとつ",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). Quiet, intelligent Japanese office setting. Panel A (top-left): A calm green turtle character sitting at a tidy desk, holding a coffee cup with gentle steam rising, eyes softly scanning the open office — label 'A'. Panel B (top-right): A focused black-and-white cat character leaning over a document checklist, pen in hand, purposeful expression — label 'B'. Panel C (bottom-left): A warm dove character facing a small round bird colleague, one wing gently extended in a greeting — label 'C'. Panel D (bottom-right): A cheerful rabbit character standing with one arm raised energetically, eyes bright and forward-looking — label 'D'. Soft pastel palette, delicate brushwork, white background with light washes. Each panel separated by thin white lines.",
+      "comment1": "【全選択肢に正解があります】\n\nGW明けの初日、部下は「今日、安全かどうか」を最初の30分で判断している。\n\nA ☕ を選んだあなた：\n先に動かない静けさが、空気の安全を証明する。観察から始められるリーダーは、現場の温度を正確に読める。\n\nB 📋 を選んだあなた：\n仕事への速やかな切り替えが、ルーティンを安定させる。ただし体がまだGWモードの部下には、少しだけ壁に感じさせることがある。\n\nC 💬 を選んだあなた：\n声をかける誠実さは確実に伝わる。全員に同じ聞き方をすると「ルーティン感」が出やすいので、一人ひとりの返答にしっかり反応することが鍵。\n\nD 🚀 を選んだあなた：\nチームの空気を一瞬で変える力がある。ただし、まだ戻りきれていない人には「置いていかれた感」を与えてしまうことがある。\n\nGW明けに必要なのは「やる気注入」より、「戻ってこれる温度」の設計。\n\n続きはリプライ欄で👇\n#管理職 #チームマネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\nGW明けの月曜、社長が「さあ！今週も全力で！」と叫んだ瞬間に、現場の温度が2度下がった——そんな場面を何度も見てきた。\n\n熱量の押しつけは、戻りきれていない人を黙らせる。\n\n信頼される上司が初日にしていること：\n→ 自分の機嫌をニュートラルに保ち、観察から始める\n→ 個別に声をかけるとき「業務と関係ない一言」を混ぜる\n→「また頑張ろう」より「今日はゆっくりペースで」と言える\n\n関係の温度は、最初の一声で週の空気が決まる。\n\n初日の静けさは、リーダーの強さのひとつ。\n\n📌 月曜の朝に読み返してほしい"
     },
     {
       "date": "2026-05-13",
@@ -26,6 +41,19 @@
       "quote": "💍 変えたいのは、相手じゃなく距離だった"
     },
     {
+      "date": "2026-05-13",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "現場が動きたくなる伝え方",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "content": "「なんで動かないの」と思う前に。\n\nその指示、現場に「動けない構造」が埋まっているかもしれない。\n\nあなたの伝え方、どれに近い？——\n\nA 📣「これ、重要だから」と必要性から話す\nB 🗺「ゴールはこうで、そのために〜」と全体像から話す\nC 🤝「一緒に考えたいんだけど」と相談形式で話す\nD ✅「具体的にはこの3つ」とタスクから話す\n\n答えはリプライ欄👇",
+      "quote": "💎 言葉の温度は、順番で変わる",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). A calm meeting room setting, soft morning light. Panel A (top-left): A black cat character standing at a whiteboard with an exclamation mark drawn large, pointing urgently — label 'A'. Panel B (top-right): A wise green turtle character drawing a roadmap diagram with arrows flowing to a destination flag — label 'B'. Panel C (bottom-left): Two characters — a dove and a small round bird — sitting across a table, notebooks open, in warm collaborative discussion — label 'C'. Panel D (bottom-right): A focused rabbit character holding a clipboard with three clear checkboxes, presenting confidently — label 'D'. Soft gray-blue palette, transparent watercolor layers, white separating lines between panels.",
+      "comment1": "【全選択肢に正解があります】\n\n伝え方の型と、現場が動く条件——\n\nA 📣 を選んだあなた：\n「重要」という言葉は受け取る側に判断を委ねる。何が重要かの定義が共有されていると機能するが、定義がズレていると「またか」になる。\n\nB 🗺 を選んだあなた：\n全体像から入るのは論理的に正しい。ただし現場が疲弊しているときは「長い」と感じさせ、結論が遠のくことがある。\n\nC 🤝 を選んだあなた：\n相談形式は信頼を生む。ただし権限の所在が曖昧になると「どっちが決めるの？」と現場が混乱しやすい。\n\nD ✅ を選んだあなた：\nタスクの明確さは動きやすさを生む。「なぜそれをするか」が抜けると、状況が変わったとき自分で判断できなくなる。\n\n現場が動く指示の構造は、「なぜ」→「何を」→「どうやって」の順で体温が乗っているかどうか。\n\n続きはリプライ欄で👇\n#リーダーシップ #伝え方",
+      "comment2": "【Coco Methodologyの視点】\n\n指示を出した後に、部下の目が左上を向いたら黄色信号。記憶を探してるんじゃなく「どう断ろうか」を考えている。\n\n伝え方で現場の温度が変わる3つの技術：\n\n① 「なぜ今、これか」を30秒で言える\n→ 状況の地図を渡すこと。地図なき行軍は疲弊する。\n\n② 相手の仕事文脈に乗せて話す\n→「あなたが担当してる〇〇に繋がる話で」と言うだけで、受け取り方が変わる。\n\n③「わかった？」を「何か確認したいことある？」に変える\n→ 前者は評価、後者は対話。空気が一瞬で変わる。\n\n言葉の温度は、順番で変わる。\n\n📌 明日の指示出しの前に読み返してほしい"
+    },
+    {
       "date": "2026-05-14",
       "platform": "Threads診断",
       "time": "14:00",
@@ -36,6 +64,19 @@
       "dall_e_prompt": "Watercolor illustration, 4-panel grid layout, gentle and airy Japanese style. Top-left (A): a woman running toward a fading silhouette in a misty path, urgent and breathless. Top-right (B): a woman standing at a crossroads holding her phone, conflicted expression, warm golden light. Bottom-left (C): a woman calmly watering plants in a sunlit room, phone face down on a table nearby. Bottom-right (D): a woman releasing paper cranes into a soft breeze, serene and open expression. Mint green, blush, and soft sky tones. Transparent watercolor, quiet emotional depth.",
       "reply_1": "「追いかけたい」衝動、止めなくていい。\nでも、追いかける「前」に知ってほしいことがある。\n\n🏃 Aのあなた：\n追いかけることで安心しようとしてる。\nでもその安心、追いかけた瞬間だけ。\n追いかけるたびに、相手との距離のバランスが崩れていく。\n\n⏳ Bのあなた：\n1日待てるのは、本当はすごい力。\nでも葛藤しながら待つのは消耗する。\n「待つ理由」を自分のために言語化できると、もっと楽になれる。\n\n🌱 Cのあなた：\n自分の時間に戻れる人は強い。\n「冷たい」のではなく、「自分の重心を持っている」ということ。\nその力が、長期的に関係を守る。\n\n🍃 Dのあなた：\n手放せる人は、執着の正体を知っている。\nただ、「手放す」が「諦め」になっていないか、\n時々確認して。本当の手放しは、静かで温かい。\n\n——\n5万人超の本音から見えてきたのは：\n「追いかけない技術」は冷たさじゃない。\n自分を中心に置く、愛の形。\n\n詳しくはプロフィールのnoteへ。",
       "quote": "💍 手放すことが、自分を中心に置くこと"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "報連相が止まる理由",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "content": "「なんで報告してくれなかったの」——\nその言葉を言ったとき、部下の目に一瞬だけ浮かんだ表情を覚えているか。\n\n報連相が止まる理由、どれだと思う？——\n\nA 😓 部下のやる気・責任感の問題\nB 😶 報告したときの上司の反応が、怖い\nC 🌀 何をいつ報告すべきか、基準が不明確\nD 🔕 上司が忙しそうで、声をかけにくい\n\n答えはリプライ欄👇",
+      "quote": "💎 報連相は、上司が設計するもの",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). A quiet Japanese office corridor and meeting space. Panel A (top-left): A small tired bird character slouching at a desk, a to-do list half-finished in front — label 'A'. Panel B (top-right): A wide-eyed dove character pausing mid-step, looking up at a stern shadow looming from an office door — label 'B'. Panel C (bottom-left): A confused green turtle character holding a sticky note with question marks, surrounded by overlapping arrows and clocks — label 'C'. Panel D (bottom-right): A small round bird character standing in the hallway, looking at a manager's closed glass office door with a do-not-disturb sign — label 'D'. Muted warm tones, soft watercolor washes, transparent layering, white grid separators.",
+      "comment1": "【正解は「B・C・D、全部同時に起きている」】\n\nAと答えた方、少し立ち止まってほしい。部下の問題にすると、構造を変える機会を失う。\n\nB 😶 が本質：\n報告したときに「なんで早く言わなかったの」と返ってきた経験が1回あれば、次から報告の閾値が上がる。怖いのは上司じゃなく「また詰められる」という記憶。\n\nC 🌀 が設計の問題：\n「重要なことは報告して」は指示ではない。何が重要かは上司の基準で、部下は毎回それを推測している。推測は消耗する。\n\nD 🔕 が距離の問題：\n「忙しそうで声かけられなかった」は部下の言い訳に聞こえるが、実際は上司が「話しかけられる顔」をしていないことが多い。\n\n報連相は部下のスキルではなく、上司が設計するものだった。\n\n続きはリプライ欄で👇\n#報連相 #マネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\n報告が来なくなったチームには、共通点がある。「報告する意味がない」と部下が学習している。\n\nつまり：\n・報告しても何も変わらなかった\n・報告したら怒られた\n・報告するより先に上司が動いた\n\nどれか一つが積み重なると、報連相は止まる。\n\n温度調整の技術：\n\n① 悪い報告ほど、最初の返しを「ありがとう」にする\n→ 告げやすくする場を先に作る。\n\n②「最近どう？」を週1で先に聞く\n→ 上司から開くことで、部下の報告コストが下がる。\n\n③「いつでも声かけて」より「火・木の10時に5分だけ」\n→ 曖昧な「いつでも」は逆に声をかけにくい。\n\n報告が来ない組織は、報告しやすい構造がないだけ。\n\n📌 保存して明日のミーティングで使ってほしい"
     },
     {
       "date": "2026-05-15",
@@ -50,6 +91,19 @@
       "quote": "💍 家族にも、「他人」の距離が必要だ"
     },
     {
+      "date": "2026-05-15",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "数字が伸びるチームの空気",
+      "character": "🐢しずく",
+      "purpose": "リプライ獲得",
+      "content": "数字が伸びるチームと、伸び悩むチームは——\n会議の最初の5分で、すでに違う。\n\nあなたのチームの会議、どれに近い？——\n\nA 📊 リーダーが数字を報告し、課題を指摘する\nB 💡 メンバーが自分から「こんな仮説があって」と話す\nC 🙋 「先週より改善した」と誰かが自発的に共有する\nD 🤫 数字の話が始まると、だんだん声が小さくなる\n\n正直に答えてほしい👇",
+      "quote": "💎 空気は、設計できる",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). A bright, airy meeting room with a large window. Panel A (top-left): A manager turtle character standing at the head of a table with a bar chart presentation, while other small characters sit silently — label 'A'. Panel B (top-right): An energetic rabbit character standing with one hand raised, presenting a hypothesis on a whiteboard with arrows and light bulbs — label 'B'. Panel C (bottom-left): A smiling dove character holding up a small upward-trending graph, with warm expressions from teammates — label 'C'. Panel D (bottom-right): Several small bird characters around a table, voices shown as diminishing speech bubbles as numbers appear on the screen — label 'D'. Warm morning light palette, transparent watercolor layers, thin white separators.",
+      "comment1": "【数字が伸びる組織の「空気の仕組み」】\n\nA 📊 の組織：\n上司が数字を持っている状態。部下は「見られている」「評価される」モードで聞く。この空気では改善策より言い訳が先に来やすい。\n\nB 💡 の組織：\n仮説を話せる組織は、失敗を隠さない文化ができている。「やってみて、ダメだったら報告する」が当たり前になっている。\n\nC 🙋 の組織（最も数字が伸びる型）：\n「改善した」を自発的に共有できる組織は、数字を「批判の証拠」ではなく「共有の言語」として使っている。\n\nD 🤫 の組織：\n声が小さくなる瞬間、数字が「批判のトリガー」になっている。それは過去の積み重ねが生んだ沈黙。\n\n数字が伸びる組織の空気は、「誰かが勝手に数字の話をしている」状態。\n\n続きはリプライ欄で👇\n#チームビルディング #組織マネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\n数字が伸びない会議には、共通する空気がある。\n\n資料が開かれた瞬間に、部屋の温度が0.5度下がる——。それは数字が「成果の確認」ではなく「失敗の証拠」として扱われてきた歴史の積み重ね。\n\n数字の温度を変える3つの設計：\n\n① 「結果」より「変化量」を称える\n→ 100から120になった20を称える。数字の使い方が変わると、行動が変わる。\n\n② 会議の冒頭1分を「うまくいった話」にする\n→ 先に成功体験を積み上げると、その後の課題を「改善」として話せる。\n\n③ 上司が自分のミスを先に言う\n→「先週の予測、私が外した」と言えるリーダーがいるチームは、情報を隠さなくなる。\n\n空気は設計できる。\n\n📌 今週の数字会議、少しだけ変えてみてほしい"
+    },
+    {
       "date": "2026-05-16",
       "platform": "Threads診断",
       "time": "14:00",
@@ -60,6 +114,19 @@
       "dall_e_prompt": "Watercolor illustration, 4-panel grid layout, soft and dignified Japanese style. Top-left (A): two figures in a handshake scene, one looking disappointed as an implicit promise dissolves. Top-right (B): a woman receiving something she didn't request, polite but strained expression, gentle refusal forming inside. Bottom-left (C): a woman placing her hand up in a calm boundary gesture, serene and clear. Bottom-right (D): a woman working with care while another figure observes with entitlement. Muted lavender, sage green, and warm linen tones. Delicate watercolor, dignified emotional atmosphere.",
       "reply_1": "「舐められる」のは、あなたが弱いからじゃない。\n優しくて、受け入れ上手で、断るのが苦手な人に起きやすいこと。\n\n5万人超の声から見えてきたパターン：\n\n🎭 Aのあなた：\n約束を軽く扱う人は、あなたが怒らないと学習している。\n一度だけ、静かに「それは約束と違う」と言ってみて。\n怒らなくていい。ただ、事実を伝えるだけでいい。\n\n🎁 Bのあなた：\n「あなたならいいでしょ」は、\n境界線のないところに差し込まれる言葉。\n「いいよ」と言い続けることが、\nその人にとっての「あなた像」を作っている。\n\n🚪 Cのあなた：\n断ると態度が変わる人は、\nあなたに「条件付きの関係」を持ちかけている。\nその変化が見えているなら、もう境界線を引くサイン。\n\n🌀 Dのあなた：\n頑張りを当たり前にする人の前では、\n「当たり前じゃない」と可視化することが大事。\n感謝されなくても、まず自分が、自分の努力に気づいてあげて。\n\n——\n境界線は、相手を拒絶するためじゃない。\nあなたが、あなたであり続けるためにある。\n\nそのラインの引き方、プロフィールのnoteに書いています。",
       "quote": "💍 境界線は、愛を守るための輪郭"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "部下が相談しやすい距離感",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "content": "「相談しやすい上司ですか？」——\n聞いたことがない人の方が、多いかもしれない。\n\n部下にとって「相談しやすい距離感」はどれ？——\n\nA 🚪「いつでも来ていいよ」と日頃から声をかけている\nB ☕ 月1回、1on1やランチの時間をとっている\nC 👁 小さな変化に気づいて、先に声をかけてくれる\nD 📩 チャットやLINEで気軽に連絡できる関係感\n\n答えはリプライ欄👇",
+      "quote": "💎 距離は縮めるものじゃなく、設計するもの",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). Soft office hallway and break room setting. Panel A (top-left): A manager cat character standing at an open door with a welcoming gesture, while a small bird peeks from the hallway — label 'A'. Panel B (top-right): A turtle character and a small round bird character sitting across from each other at a cafe table with two coffee cups, notebooks open — label 'B'. Panel C (bottom-left): A perceptive dove character turning gently toward a tired-looking small bird, one wing extended in quiet acknowledgment — label 'C'. Panel D (bottom-right): A rabbit character looking at a phone screen with a chat bubble, while a bird character types a simple reply bubble on the other end — label 'D'. Warm muted tones, soft light, transparent watercolor washes, white panel separators.",
+      "comment1": "【「相談しやすさ」の本体は、どこにある？】\n\nA 🚪 を選んだあなた：\n「いつでも来ていいよ」は、来た人への許可。来られない人への設計にはなっていない。声をかけているのに相談が来ないなら、この構造を疑う。\n\nB ☕ を選んだあなた：\n月1の時間は信頼の基盤になる。ただし「何かありましたか？」の問いは相手に「課題がある」前提を置く。始め方を変えるだけで温度が変わる。\n\nC 👁 を選んだあなた（最も相談が来る型）：\n「最近、なんか元気なさそうだけど」と先に気づいてくれた上司には、人は話す。気づかれる体験が、次の相談への扉を開ける。\n\nD 📩 を選んだあなた：\nツールの距離は近くなる。でも感情の距離は、ツールでは縮まらない。チャットで「大丈夫？」と聞かれても「大丈夫です」と返すのが人間。\n\n相談しやすさの本体は、「先に気づく密度」。\n\n続きはリプライ欄で👇\n#1on1 #マネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\n「うちのチームは相談しやすい雰囲気です」と言う上司の部下が、1年半、誰にも言えずに転職準備をしていた——そういう場面を見てきた。\n\n「相談すると、解決策の押しつけが来る」\n「相談したら、弱く見られる」\n「忙しそうで話しかけるタイミングがない」\n\n相談しやすい距離感の設計：\n\n① 相談を受けたとき、まず「それ大変だったね」を先に言う\n→ 感情を先に受け取ることで、続きが話せるようになる。\n\n②「何かあったら言って」より「今週、気になったことある？」\n→ 問いを具体化すると、答えやすくなる。\n\n③ 自分の失敗を先に話す\n→「実は先週、私もこういう失敗して——」が、相談のハードルを最も下げる。\n\n距離は縮めるものじゃなく、設計するもの。\n\n📌 来週の1on1の前に読み返してほしい"
     },
     {
       "date": "2026-05-17",
@@ -74,6 +141,19 @@
       "quote": "💍 孤独と自由の間に、本当の自分がいる"
     },
     {
+      "date": "2026-05-17",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "トップと現場の温度差",
+      "character": "🕊ひより",
+      "purpose": "リプライ獲得",
+      "content": "経営陣が「この方針で行く」と決めた翌朝——\n現場には、もう別の温度が流れていた。\n\nあなたの組織、どれに近い？——\n\nA 🔥 経営の方針は共有されるが「また変わる」と現場は思っている\nB 🧊 方針の理由が伝わらず、現場は黙って従っている\nC 🌊 管理職が翻訳して伝えるが、その翻訳がズレていることがある\nD 🌡 経営と現場が同じ温度で話し合える場が定期的にある\n\n正直に答えてほしい👇",
+      "quote": "💎 温度差は、聞く構造で変わる",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). A layered corporate setting — boardroom above, open office floor below. Panel A (top-left): A confident cat manager character at a podium with a bold arrow chart, while small bird characters below exchange skeptical glances — label 'A'. Panel B (top-right): A turtle character at the head of a table presenting a document, while bird characters sit in complete silence with blank expressions — label 'B'. Panel C (bottom-left): A dove character standing between two groups, translating with both wings extended — the message bubble subtly changes shape as it crosses — label 'C'. Panel D (bottom-right): A round table scene with both executive-looking and ground-floor characters seated equally, warm conversation visible in shared speech bubbles — label 'D'. Cool blue and warm amber contrast, transparent watercolor layers, white separators.",
+      "comment1": "【温度差が生まれる「構造」】\n\nA 🔥 の組織：\n方針の変更が多いとき、現場は「本気度」を測り始める。本気だと信じてもらうには一貫性ではなく「なぜ変わったか」の説明が必要。\n\nB 🧊 の組織：\n黙って従う現場は、黙って去る準備もしている。異論が出ない組織は健全じゃなく、諦めている可能性が高い。\n\nC 🌊 の組織：\n中間管理職が翻訳者になるとき、最も多いミスは「厳しい現実を柔らかく伝えすぎる」こと。やわらかくした分だけ、現場に届く熱量が下がる。\n\nD 🌡 の組織（最も温度差が小さい型）：\n「話し合える場」があっても、トップが話しすぎる場は実質Bと変わらない。場の設計より、「聞く構造」が鍵。\n\n温度差は情報量の差ではなく、「意図の共有」の差。\n\n続きはリプライ欄で👇\n#組織 #経営 #中間管理職",
+      "comment2": "【Coco Methodologyの視点】\n\n社長が話し始めた瞬間に、現場の空気が5度下がった——そういう組織を見てきた。問題は内容じゃなかった。\n\n「どうせ言っても」という経験の積み重ねが、体温を下げていた。\n\n温度差を縮める3つの設計：\n\n① 方針より先に「なぜ今、この判断をしたか」を話す\n→ 意思決定の背景が見えると、人は動く。理由なき指示は、足を止める。\n\n② 現場の言葉をトップに届ける「翻訳者」を明示的に作る\n→ 中間管理職に橋渡し役を自覚させる。翻訳者がいない組織では、温度差が広がる一方。\n\n③「異論がある人は？」より「現場ではどう見える？」と聞く\n→ 前者はゼロか百か。後者は現場の景色を借りる問い。\n\n温度差は、伝える量ではなく、聞く構造で変わる。\n\n📌 管理職の方、今週の全体会議で試してみてほしい"
+    },
+    {
       "date": "2026-05-18",
       "platform": "Threads診断",
       "time": "14:00",
@@ -84,6 +164,19 @@
       "dall_e_prompt": "Watercolor illustration, 4-panel grid layout, quiet and introspective Japanese style. Top-left (A): empty tea cups on a table, one chair pulled away, a woman standing alone in a bare room. Top-right (B): a woman releasing a folded letter into a gentle breeze, bittersweet expression, lingering backward glance. Bottom-left (C): two figures sitting across from each other in simple presence, no demands, gentle warmth. Bottom-right (D): a woman holding a small seedling in her cupped hands, looking at it with soft new understanding. Dusty blue, soft sage green, and warm cream tones. Delicate Japanese watercolor style, quiet emotional resolution.",
       "reply_1": "「期待しない」と決めることは、諦めじゃない。\nでも、本当に手放せているかどうか、\n実はわからないことの方が多い。\n\n5万人超の声から見えてきた「期待の手放し方」：\n\n🫧 Aのあなた：\n空虚感は、期待していた分だけ深い。\nそれはちゃんと相手を大切にしていた証拠でもある。\n虚しさを「喪失のプロセス」として受け取ってほしい。\n悲しんでいいし、時間をかけていい。\n\n🌙 Bのあなた：\n自由と未練が同時にある状態は、正直で健全。\n完全に手放せなくても、それでいい。\n人の感情はグラデーションで動いているから。\n\n🍵 Cのあなた：\n「こんなもんか」という安堵は、実は深い智慧。\n期待のサイズが、相手ではなく「自分の理想」だったと\n気づいた瞬間。それは成熟した関係の入口。\n\n🌱 Dのあなた：\n「まだ期待してる自分」に気づけるのは、誠実さの証。\n手放すふりをしながら、本当は手放せていない。\nその正直さを、まず自分に向けてあげて。\n\n——\n期待を手放した後に残るもの。\nそれは、相手の「ありのまま」と自分の「ありのまま」が\n静かに向き合う空間。\n\nそれが、本当の関係の始まりかもしれない。\n\nもっと深く整えたい方は、プロフィールのnoteへ。",
       "quote": "💍 期待のない場所に、本物の関係が生まれる"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "人が辞めにくい職場の特徴",
+      "character": "🐢しずく",
+      "purpose": "保存獲得",
+      "content": "「辞めたい」と思う瞬間は、大きな不満からじゃない。\n小さな諦めが、静かに積み重なった先にある。\n\n人が辞めにくい職場——あなたの職場に、どれがある？\n\nA 🏆 頑張りが、誰かの目に届いている\nB 🗣 言いたいことが、言える空気がある\nC 🛤 この先のキャリアが、なんとなく描ける\nD 🤝 困ったとき、助けを求めていい関係がある\n\n正直に答えてほしい👇",
+      "quote": "💎 構造は、設計で変えられる",
+      "image_prompt": "Watercolor style, transparent feel, 1px white outline, 4-panel grid (2x2). Warm, human Japanese workplace scenes. Panel A (top-left): A manager turtle character looking up from a document and nodding warmly at a small bird presenting a completed project — recognition in the manager's eyes — label 'A'. Panel B (top-right): A diverse group of small bird characters around a table, speech bubbles overlapping in animated but respectful discussion — label 'B'. Panel C (bottom-left): A bird character looking at a gentle path drawn on a chalkboard, winding forward toward a soft light — a dove character beside them pointing the way — label 'C'. Panel D (bottom-right): A rabbit character looking stressed at a pile of papers, while a cat colleague quietly places a helping hand on their shoulder — label 'D'. Soft warm tones, golden afternoon light, gentle watercolor textures, white panel separators.",
+      "comment1": "【人が辞めない組織の「温度の正体」】\n\nA 🏆 が当てはまる職場：\n「見られている」より「見てくれている」の違い。評価より承認。頑張りが誰かの目に届く仕組みがある職場は、静かに人が残る。\n\nB 🗣 が当てはまる職場：\n「言える空気」は管理職が意図的に作るもので、自然には生まれない。定例会議で異論を言える人が1人いるだけで、組織の温度が変わる。\n\nC 🛤 が当てはまる職場：\n3年後に自分がどうなっているか「なんとなく」見えるだけでいい。完璧なキャリアプランは不要。「この会社で成長できる気がする」という感覚が定着を支える。\n\nD 🤝 が当てはまる職場（最も離職率が低い型）：\n困ったとき声をかけていい相手がいる職場は、人が踏ん張る。孤立した仕事は、静かに人を消耗させる。\n\n全部当てはまらない職場の特徴：「給与以外に残る理由がなくなった」状態。\n\n続きはリプライ欄で👇\n#離職防止 #職場づくり",
+      "comment2": "【Coco Methodologyの視点】\n\n「うちの職場、別に悪くないんですけど——」と言いながら転職した人の、その「けど」の後ろに辞める理由が全部入っていた。\n\n明確な不満がなくても人は辞める。「このままでいいのか」という、静かな問いに答えられない職場から。\n\n人が辞めにくい職場を作る3つの設計：\n\n① 月1回「最近どう？仕事以外も含めて」と聞く\n→ 業務外の一言が、関係の温度を保つ。初期の離職シグナルを拾える。\n\n②「よくやってくれてる」を、その場で言葉にする\n→ 賞賛は記憶に残らない。だから繰り返す。積み重ねが「見てもらえている感」になる。\n\n③「5年後どうなりたい？」より「来年、こんな仕事してみたいとかある？」\n→ 遠い未来より近い未来。小さな希望が、今日の仕事を続ける理由になる。\n\n人が辞める職場は、人が辞めやすい構造があるだけ。そして構造は、設計で変えられる。\n\n📌 GW明けのこの1週間、チームの温度を確かめてほしい"
     }
   ]
 }

@@ -1,5 +1,9 @@
 {
   "weeks": [
+    "week_2026_05_05_2026_05_11.json",
     "week_2026_05_12_2026_05_18.json"
+  ],
+  "linestamps": [
+    "linestamp_2026_05_06.json"
   ]
 }
