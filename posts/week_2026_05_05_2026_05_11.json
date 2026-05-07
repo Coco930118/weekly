@@ -1,0 +1,33 @@
+{
+  "week": "2026-05-05_2026-05-11",
+  "posts": [
+    {
+      "date": "2026-05-08",
+      "platform": "X",
+      "time": "08:00",
+      "type": "診断",
+      "character": "💎Coco",
+      "purpose": "保存獲得・プロフィール遷移",
+      "title": "X診断 2026-05-08作成",
+      "content": "GW明けの月曜\n\nチームに「火を入れ直す」とき\nあなたの動き方は、どのパターン？\n\nA｜朝イチにミーティングを入れて、空気を締める\nB｜静観して、自然に動き出すのを待つ\nC｜まず一対一で状態を確認してから、集合させる\nD｜特に何もしない。いつも通りが正義\n\n↓ 診断結果はこのスレッドで\n\n💎 チームの再起動力は、仕組み化できる",
+      "quote": "💎 チームの再起動力は、仕組み化できる",
+      "diagnostic": {
+        "theme": "GW明けチーム温度チェック",
+        "question": "GW明けの月曜、チームに『火を入れ直す』とき、あなたの動き方はどのパターン？",
+        "choices": {
+          "A": "朝イチにミーティングを入れて、空気を締める",
+          "B": "静観して、自然に動き出すのを待つ",
+          "C": "まず一対一で状態を確認してから、集合させる",
+          "D": "特に何もしない。いつも通りが正義"
+        },
+        "results": {
+          "A": "【号令型：エンジン全開タイプ】\n\n「さあ、始めよう」の号令はリーダーの熱量を示す。\nでも休み明けの現場は、まだ〝余熱モード〟で動いている。\n\n会議を開いた瞬間、社員が一斉に手元のスマホに目を落とす。\nあの空気を経験したことがある人は、わかるはずだ。\nそれはやる気のなさじゃない。\nエンジンが冷えたまま全開にした結果だ。\n\n経営者の意図をそのまま現場に押しつけると、良かれと思った号令が\n「重すぎる正論」として現場の動きを止める仕組みになる。\n\n【明日から使える温度調整】\n最初の10分を〝雑談モード〟に仕組み化せよ。\n業務の話は11分目から始める。これだけで、会議の立ち上がりが変わる。",
+          "B": "【静観型：距離を保つタイプ】\n\n一見、賢い選択に見える。\nだが「静観」と「放置」の間には、紙一重の違いがある。\n\n「チームが自然に動き出した」ように見えているとき、\n実は誰か一人が代わりに空気を作っているだけかもしれない。\nその人が疲れたとき、チームは止まる。\n\n現場で20年、40名以上のマネジメントを経験して気づいたことがある。\n〝静かなチーム〟には二種類いる。\n自走しているチームと、誰かが一人で回しているチームだ。\n見た目は同じでも、負荷の構造がまったく違う。\n\n【明日から使える温度調整】\n今週、最初に動き出したのは誰かを観察せよ。\nその人があなたのチームの「温度計」だ。\n今夜その人に「助かってる」と一言伝えるだけで、見えていないものが見え始める。",
+          "C": "【翻訳型：現場の温度を先に掴むタイプ】\n\n最も現場の解像度が高い動き方だ。\n\n「集める前に温める」の順序が、組織の摩擦を最小化する仕組みになる。\n経営者の意図を現場に届けるより前に、\n現場の今の温度を掴んでから動く——\nこの翻訳の順序を知っているマネージャーのチームは、\nGW明けでも立ち上がりが早い。\n\n「舐められずに好かれる距離感」は、\n一対一の積み重ねの中にある。\n\n【明日から使える温度調整】\n一対一の最後に「今週、何に一番エネルギーを使いたい？」を加えよ。\nその答えで、個人の温度と組織の方向のズレが即座に見える。",
+          "D": "【現状維持型：いつも通りを選ぶタイプ】\n\n正直な選択だ。否定しない。\n\nただ——「自走しているチーム」と「声を出さなくなったチーム」の\n沈黙は、見た目がまったく同じだ。\n\n20年、40名以上のマネジメントで何度も目にした景色がある。\n静かなチームのある月曜日、突然「ずっと限界でした」が来る。\nその前の週も、その前の週も、いつも通りに見えていた。\n\nトップと現場の温度差が広がるのは、\n〝大きな出来事〟じゃない。\n「また後回しにする」が積み重なった末の、静かな諦めだ。\n\n【明日から使える温度調整】\n「最近どう？」ではなく「今週、何が難しそう？」と聞け。\nこの一言で、チームの本音の温度が見える。"
+        }
+      },
+      "image_prompt": "A vibrant, cheerful watercolor-style illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D).\n\nTop-left (A): A bright, energetic morning office meeting scene — a confident manager standing at the head of a glass-walled meeting room, arms gesturing dynamically, team members seated with coffee mugs on a polished table. Fresh May morning light streams through large windows with soft green foliage visible outside. Warm golden-green tones with a sense of purposeful energy. Slight tension in the air but overall positive.\n\nTop-right (B): A calm, thoughtful manager standing slightly apart near a window, arms loosely folded, watching the open-plan office with gentle attentiveness. Team members are quietly settling into their seats below. Soft blue-mint and ivory tones. The mood is contemplative, patient, and quietly observant.\n\nBottom-left (C): An intimate one-on-one moment in a cozy office corner — manager leaning forward warmly toward a team member across a small round table with two cups of tea. A soft indoor plant nearby. Terracotta and sage green warmth. The atmosphere feels genuinely attentive and connecting.\n\nBottom-right (D): A focused individual at a standing desk, scrolling through emails as if it were any normal Monday. Background shows other team members also quietly working at desks. Neutral cream, warm grey, and muted green tones suggesting routine and calm continuity.\n\nIn the very center where all four quadrants meet, the elegant silhouette of Coco — a sophisticated woman in her early 40s with a neat bob hairstyle, wearing a chic sage-green spring blazer with subtle floral details — serves as the visual anchor connecting all four scenes. Her expression is wise, composed, and warmly observant.\n\nOverall style: Bright, optimistic, luminous Japanese watercolor illustration with delicate pencil-sketch textures. Fresh spring green, soft yellow, and light coral seasonal accents for May post-Golden Week. No heavy shadows. Sophisticated yet approachable. Perfectly consistent watercolor wash technique across all four quadrants. The overall palette should feel like a clear spring morning — uplifting and energising."
+    }
+  ]
+}
