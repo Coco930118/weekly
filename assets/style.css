@@ -439,7 +439,6 @@ body {
   flex: 1;
 }
 
-/* Series header */
 .stamp-series-header {
   padding: 20px 16px 4px;
   max-width: 680px;
@@ -460,7 +459,6 @@ body {
   line-height: 1.8;
 }
 
-/* LINEスタンププロンプト view */
 .platform-prompt {
   background: rgba(79, 70, 229, 0.15);
   color: #a5b4fc;
@@ -517,6 +515,19 @@ body {
 
 .card-shindan .card-header {
   background: rgba(155, 77, 202, 0.06);
+}
+
+/* X診断 カード */
+.card-xshindan {
+  border-color: rgba(46, 168, 126, 0.3);
+}
+
+.card-xshindan .card-header {
+  background: rgba(46, 168, 126, 0.05);
+}
+
+.card-xshindan .card-expandable {
+  border-top-color: rgba(46, 168, 126, 0.15);
 }
 
 /* テーマバッジ */

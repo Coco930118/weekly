@@ -18,6 +18,7 @@ function formatDate(dateStr) {
 }
 
 function escapeHtml(str) {
+  if (!str) return '';
   return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
@@ -51,6 +52,7 @@ async function loadPosts() {
       });
 
     renderWeekFilter(weekDataArr.map(w => w.week));
+    renderXDiagnosisButtons();
     renderPosts();
 
     if (index.linestamps && index.linestamps.length > 0) {
@@ -160,7 +162,7 @@ function renderWeekFilter(weeks) {
 
   weeks.forEach(week => {
     const [from, to] = week.split('_');
-    const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
+    const label = `${from.slice(5).replace('-', '/')}～${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.dataset.week = week;
@@ -178,8 +180,56 @@ function renderWeekFilter(weeks) {
   });
 }
 
+// Dynamically injects dated "X診断 MM/DD～DD" buttons based on loaded data
+function renderXDiagnosisButtons() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  const xDiagWeeks = [...new Set(
+    allPosts.filter(p => p.platform === 'X診断').map(p => p.weekId)
+  )].sort().reverse();
+
+  if (xDiagWeeks.length === 0) return;
+
+  const lineBtn = row.querySelector('[data-platform="LINEスタンプ"]');
+
+  xDiagWeeks.forEach(weekId => {
+    const [from, to] = weekId.split('_');
+    const fromStr = from.slice(5).replace('-', '/'); // "05/12"
+    const toDay = to.slice(8);                        // "18"
+    const label = `X診断 ${fromStr}～${toDay}`;
+
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.platform = 'X診断';
+    btn.dataset.week = weekId;
+    btn.textContent = label;
+
+    if (lineBtn) {
+      row.insertBefore(btn, lineBtn);
+    } else {
+      row.appendChild(btn);
+    }
+  });
+}
+
+function renderExpandable(label, text) {
+  const escaped = escapeHtml(text);
+  return `
+    <details class="card-expandable">
+      <summary class="expandable-summary">${label}</summary>
+      <div class="expandable-body">
+        <p class="expandable-text">${escaped}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${escapeHtml(text)}">コピー</button>
+        </div>
+      </div>
+    </details>`;
+}
+
 function getFilteredPosts() {
   return allPosts.filter(p => {
+    if (activeFilters.platform === 'all' && p.platform === 'X診断') return false;
     if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
@@ -220,9 +270,11 @@ function renderPosts() {
 }
 
 function renderCard(post) {
+  if (post.platform === 'X診断') return renderXDiagCard(post);
+
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
-  const quoteEscaped = escapeHtml(post.quote);
+  const quoteEscaped = escapeHtml(post.quote || '');
 
   return `
     <article class="card" data-platform="${post.platform}">
@@ -242,8 +294,38 @@ function renderCard(post) {
       </div>
       <div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+        <button class="copy-btn" data-copy="${escapeHtml(post.quote || '')}">コピー</button>
       </div>
+    </article>`;
+}
+
+function renderXDiagCard(post) {
+  const e = escapeHtml;
+  const themeHtml = post.theme ? `<span class="card-theme-label">${e(post.theme)}</span>` : '';
+  return `
+    <article class="card card-xshindan" data-platform="X診断">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-xshindan">X診断</span>
+          <span class="card-time">${post.time || ''}</span>
+          <span class="card-character">${post.character || ''}</span>
+          ${themeHtml}
+        </div>
+        <span class="purpose-badge">${post.purpose || ''}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${e(post.content)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote">
+        <p class="quote-text">${e(post.quote || '')}</p>
+        <button class="copy-btn" data-copy="${e(post.quote || '')}">コピー</button>
+      </div>
+      ${post.image_prompt ? renderExpandable('🎨 画像プロンプト（DALL-E 3）', post.image_prompt) : ''}
+      ${post.comment1 ? renderExpandable('💬 コメント① 回答・解説', post.comment1) : ''}
+      ${post.comment2 ? renderExpandable('📌 コメント② 深掘り・保存補足', post.comment2) : ''}
     </article>`;
 }
 
@@ -256,11 +338,13 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-xshindan');
     });
 
     const platform = btn.dataset.platform;
+    const weekId = btn.dataset.week || null;
     activeFilters.platform = platform;
+    activeFilters.week = weekId || 'all';
 
     const stampSection = document.getElementById('stampSection');
     const postsContainer = document.getElementById('postsContainer');
@@ -273,6 +357,13 @@ function setupPlatformFilter() {
       if (stampSection) stampSection.style.display = 'block';
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = 'none';
+    } else if (platform === 'X診断') {
+      btn.classList.add('active-xshindan');
+      if (postsContainer) postsContainer.style.display = '';
+      if (stampSection) stampSection.style.display = 'none';
+      if (weekFilterRow) weekFilterRow.style.display = 'none';
+      if (statsBar) statsBar.style.display = '';
+      renderPosts();
     } else {
       if (platform === 'X') btn.classList.add('active-x');
       else if (platform === 'Threads') btn.classList.add('active-threads');
