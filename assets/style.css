@@ -17,6 +17,7 @@
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
   --accent-xshindan: #2ea87e;
+  --accent-threads-shindan: #c47a8a;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -145,11 +146,27 @@ body {
   color: #fff;
 }
 
+.platform-threads-shindan {
+  background: rgba(196, 122, 138, 0.15);
+  color: #e8a0b0;
+  border: 1px solid rgba(196, 122, 138, 0.3);
+}
+
+.filter-btn.active-threads-shindan {
+  background: var(--accent-threads-shindan);
+  border-color: var(--accent-threads-shindan);
+  color: #fff;
+}
+
 .card-theme-label {
   font-size: 0.7rem;
   color: var(--accent-xshindan);
   font-weight: 600;
   letter-spacing: 0.04em;
+}
+
+.card-theme-threads-shindan {
+  color: var(--accent-threads-shindan);
 }
 
 /* Stats bar */
@@ -528,6 +545,19 @@ body {
 
 .card-xshindan .card-expandable {
   border-top-color: rgba(46, 168, 126, 0.15);
+}
+
+/* Threads診断 カード */
+.card-threads-shindan {
+  border-color: rgba(196, 122, 138, 0.3);
+}
+
+.card-threads-shindan .card-header {
+  background: rgba(196, 122, 138, 0.05);
+}
+
+.card-threads-shindan .card-expandable {
+  border-top-color: rgba(196, 122, 138, 0.15);
 }
 
 /* テーマバッジ */

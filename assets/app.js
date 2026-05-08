@@ -53,6 +53,7 @@ async function loadPosts() {
 
     renderWeekFilter(weekDataArr.map(w => w.week));
     renderXDiagnosisButtons();
+    renderThreadsDiagnosisButtons();
     renderPosts();
 
     if (index.linestamps && index.linestamps.length > 0) {
@@ -180,7 +181,6 @@ function renderWeekFilter(weeks) {
   });
 }
 
-// Dynamically injects dated "X診断 MM/DD～DD" buttons based on loaded data
 function renderXDiagnosisButtons() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -195,13 +195,48 @@ function renderXDiagnosisButtons() {
 
   xDiagWeeks.forEach(weekId => {
     const [from, to] = weekId.split('_');
-    const fromStr = from.slice(5).replace('-', '/'); // "05/12"
-    const toDay = to.slice(8);                        // "18"
+    const fromStr = from.slice(5).replace('-', '/');
+    const toDay = to.slice(8);
     const label = `X診断 ${fromStr}～${toDay}`;
 
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.dataset.platform = 'X診断';
+    btn.dataset.week = weekId;
+    btn.textContent = label;
+
+    if (lineBtn) {
+      row.insertBefore(btn, lineBtn);
+    } else {
+      row.appendChild(btn);
+    }
+  });
+}
+
+function renderThreadsDiagnosisButtons() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  const staticBtn = row.querySelector('[data-platform="Threads診断"]:not([data-week])');
+  if (staticBtn) staticBtn.remove();
+
+  const threadsDiagWeeks = [...new Set(
+    allPosts.filter(p => p.platform === 'Threads診断').map(p => p.weekId)
+  )].sort().reverse();
+
+  if (threadsDiagWeeks.length === 0) return;
+
+  const lineBtn = row.querySelector('[data-platform="LINEスタンプ"]');
+
+  threadsDiagWeeks.forEach(weekId => {
+    const [from, to] = weekId.split('_');
+    const fromStr = from.slice(5).replace('-', '/');
+    const toDay = to.slice(8);
+    const label = `Threads診断 ${fromStr}～${toDay}`;
+
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.platform = 'Threads診断';
     btn.dataset.week = weekId;
     btn.textContent = label;
 
@@ -230,6 +265,7 @@ function renderExpandable(label, text) {
 function getFilteredPosts() {
   return allPosts.filter(p => {
     if (activeFilters.platform === 'all' && p.platform === 'X診断') return false;
+    if (activeFilters.platform === 'all' && p.platform === 'Threads診断') return false;
     if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
@@ -271,6 +307,7 @@ function renderPosts() {
 
 function renderCard(post) {
   if (post.platform === 'X診断') return renderXDiagCard(post);
+  if (post.platform === 'Threads診断') return renderThreadsDiagCard(post);
 
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
   const contentEscaped = escapeHtml(post.content);
@@ -329,6 +366,35 @@ function renderXDiagCard(post) {
     </article>`;
 }
 
+function renderThreadsDiagCard(post) {
+  const e = escapeHtml;
+  const themeHtml = post.theme ? `<span class="card-theme-label card-theme-threads-shindan">${e(post.theme)}</span>` : '';
+  return `
+    <article class="card card-threads-shindan" data-platform="Threads診断">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-threads-shindan">Threads診断</span>
+          <span class="card-time">${post.time || ''}</span>
+          <span class="card-character">${post.character || ''}</span>
+          ${themeHtml}
+        </div>
+        <span class="purpose-badge">${post.purpose || ''}</span>
+      </div>
+      <div class="card-body">
+        <p class="card-content">${e(post.content)}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${e(post.content)}">コピー</button>
+        </div>
+      </div>
+      <div class="card-quote">
+        <p class="quote-text">${e(post.quote || '')}</p>
+        <button class="copy-btn" data-copy="${e(post.quote || '')}">コピー</button>
+      </div>
+      ${post.dall_e_prompt ? renderExpandable('🎨 DALL-E 3 プロンプト', post.dall_e_prompt) : ''}
+      ${post.reply_1 ? renderExpandable('💬 返信欄① 解説', post.reply_1) : ''}
+    </article>`;
+}
+
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -338,7 +404,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-xshindan');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-xshindan', 'active-threads-shindan');
     });
 
     const platform = btn.dataset.platform;
@@ -359,6 +425,13 @@ function setupPlatformFilter() {
       if (statsBar) statsBar.style.display = 'none';
     } else if (platform === 'X診断') {
       btn.classList.add('active-xshindan');
+      if (postsContainer) postsContainer.style.display = '';
+      if (stampSection) stampSection.style.display = 'none';
+      if (weekFilterRow) weekFilterRow.style.display = 'none';
+      if (statsBar) statsBar.style.display = '';
+      renderPosts();
+    } else if (platform === 'Threads診断') {
+      btn.classList.add('active-threads-shindan');
       if (postsContainer) postsContainer.style.display = '';
       if (stampSection) stampSection.style.display = 'none';
       if (weekFilterRow) weekFilterRow.style.display = 'none';
