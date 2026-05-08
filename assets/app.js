@@ -5,6 +5,7 @@ let activeFilters = {
   platform: 'all',
   week: 'all'
 };
+let weekDataMap = {};
 
 const DAYS_JA = ['日', '月', '火', '水', '木', '金', '土'];
 const MONTHS = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
@@ -41,6 +42,10 @@ async function loadPosts() {
         return res.json();
       })
     );
+
+    weekDataArr.forEach(w => {
+      weekDataMap[w.week] = w;
+    });
 
     allPosts = weekDataArr
       .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
@@ -96,6 +101,21 @@ function getFilteredPosts() {
   });
 }
 
+function renderTrendSummary(weekId) {
+  const weekData = weekDataMap[weekId];
+  if (!weekData || !weekData.trend_summary || weekData.trend_summary.length === 0) return '';
+
+  const items = weekData.trend_summary
+    .map(t => `<li class="trend-item">${escapeHtml(t)}</li>`)
+    .join('');
+
+  return `
+    <details class="trend-box">
+      <summary class="trend-summary-toggle">今週のトレンド</summary>
+      <ul class="trend-list">${items}</ul>
+    </details>`;
+}
+
 function renderPosts() {
   const container = document.getElementById('postsContainer');
   const filtered = getFilteredPosts();
@@ -114,7 +134,11 @@ function renderPosts() {
     byDate[p.date].push(p);
   });
 
-  const html = Object.keys(byDate)
+  const trendSection = activeFilters.week !== 'all'
+    ? renderTrendSummary(activeFilters.week)
+    : '';
+
+  const html = trendSection + Object.keys(byDate)
     .sort()
     .map(date => {
       const cards = byDate[date].map(renderCard).join('');
@@ -131,6 +155,7 @@ function renderPosts() {
 
 function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
+  const quoteLabel = post.platform === 'X' ? '名言' : 'お守り言葉';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
 
@@ -140,19 +165,24 @@ function renderCard(post) {
         <div class="card-meta-left">
           <span class="platform-badge ${platformClass}">${post.platform}</span>
           <span class="card-time">${post.time}</span>
-          <span class="card-character">${post.character}</span>
+          <span class="card-character">${escapeHtml(post.character)}</span>
         </div>
-        <span class="purpose-badge">${post.purpose}</span>
+        <span class="purpose-badge">${escapeHtml(post.purpose)}</span>
       </div>
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
         <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">本文をコピー</button>
         </div>
       </div>
       <div class="card-quote">
+        <div class="quote-header-row">
+          <span class="quote-label">${quoteLabel}</span>
+        </div>
         <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+        <div class="quote-copy-row">
+          <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+        </div>
       </div>
     </article>`;
 }
@@ -190,15 +220,8 @@ function setupCopyHandler() {
 
     try {
       await navigator.clipboard.writeText(text);
-      const original = btn.textContent;
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
+      flashCopied(btn);
     } catch {
-      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
@@ -206,14 +229,19 @@ function setupCopyHandler() {
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'コピー';
-        btn.classList.remove('copied');
-      }, 1800);
+      flashCopied(btn);
     }
   });
+}
+
+function flashCopied(btn) {
+  const original = btn.textContent;
+  btn.textContent = 'コピー完了 ✓';
+  btn.classList.add('copied');
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove('copied');
+  }, 1800);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

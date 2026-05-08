@@ -17,9 +17,7 @@
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
   --accent-save: #2d6a4f;
-  --accent-empathy: #8b5e3c;
-  --accent-reply: #4a5568;
-  --accent-profile: #6b4226;
+  --accent-quote: #9b7d4d;
   --copy-btn: #2a2a2a;
   --copy-btn-hover: #383838;
   --copy-success: #2d6a4f;
@@ -141,6 +139,67 @@ body {
   margin: 0 auto;
 }
 
+/* Trend box */
+.trend-box {
+  margin-top: 20px;
+  background: #161616;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.trend-summary-toggle {
+  display: flex;
+  align-items: center;
+  padding: 10px 14px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.trend-summary-toggle::-webkit-details-marker {
+  display: none;
+}
+
+.trend-summary-toggle::before {
+  content: '▶';
+  font-size: 0.6rem;
+  margin-right: 8px;
+  transition: transform 0.2s;
+}
+
+details[open] .trend-summary-toggle::before {
+  transform: rotate(90deg);
+}
+
+.trend-list {
+  padding: 0 14px 12px 14px;
+  list-style: none;
+}
+
+.trend-item {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.trend-item:last-child {
+  border-bottom: none;
+}
+
+.trend-item::before {
+  content: '—';
+  color: var(--text-muted);
+  margin-right: 8px;
+  font-size: 0.7rem;
+}
+
 /* Date group */
 .date-group {
   margin-top: 28px;
@@ -232,35 +291,51 @@ body {
 
 /* Card body */
 .card-body {
-  padding: 14px 14px 10px;
+  padding: 16px 14px 12px;
 }
 
 .card-content {
   font-size: 0.88rem;
-  line-height: 1.85;
+  line-height: 1.9;
   color: var(--text-primary);
   white-space: pre-wrap;
   word-break: break-all;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* Quote section */
 .card-quote {
   background: var(--bg-quote);
   border-top: 1px solid var(--border);
-  padding: 10px 14px;
+  padding: 12px 14px;
+}
+
+.quote-header-row {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.quote-label {
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--accent-quote);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .quote-text {
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: var(--text-secondary);
   letter-spacing: 0.03em;
-  flex: 1;
-  line-height: 1.5;
+  line-height: 1.55;
+  margin-bottom: 10px;
+}
+
+.quote-copy-row {
+  display: flex;
+  justify-content: flex-end;
 }
 
 /* Copy buttons */
@@ -268,14 +343,13 @@ body {
   background: var(--copy-btn);
   border: 1px solid var(--border-light);
   color: var(--text-secondary);
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: var(--radius-sm);
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   font-family: var(--font);
   cursor: pointer;
   transition: all 0.15s ease;
   white-space: nowrap;
-  flex-shrink: 0;
   letter-spacing: 0.02em;
 }
 
@@ -294,7 +368,6 @@ body {
 .copy-btn-content {
   display: flex;
   justify-content: flex-end;
-  padding: 0 0 12px;
 }
 
 /* Loading / error / empty states */
