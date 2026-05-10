@@ -323,6 +323,307 @@ body {
   border-radius: 2px;
 }
 
+/* ============================
+   LINE STAMP SECTION
+   ============================ */
+
+:root {
+  --accent-stamp: #d4a843;
+  --accent-stamp-bg: rgba(212, 168, 67, 0.12);
+  --accent-stamp-border: rgba(212, 168, 67, 0.35);
+  --stamp-coco-cool: #5b7fa6;
+  --stamp-coco-fem: #c2788a;
+  --prompt-bg: #141820;
+  --prompt-border: #252a35;
+}
+
+.filter-btn.active-stamp {
+  background: var(--accent-stamp);
+  border-color: var(--accent-stamp);
+  color: #111;
+}
+
+.stamp-section {
+  padding: 0 16px 80px;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.stamp-section-inner {
+  padding-top: 8px;
+}
+
+/* --- Sales text block --- */
+.stamp-sales-block {
+  background: var(--bg-card);
+  border: 1px solid var(--accent-stamp-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin-bottom: 28px;
+}
+
+.stamp-series-badge {
+  display: inline-block;
+  background: var(--accent-stamp-bg);
+  border: 1px solid var(--accent-stamp-border);
+  color: var(--accent-stamp);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.stamp-theme-tag {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+  padding-left: 2px;
+}
+
+.stamp-sales-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.stamp-sales-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stamp-sales-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.char-count {
+  font-size: 0.65rem;
+  color: var(--accent-stamp);
+  background: var(--accent-stamp-bg);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.stamp-sales-value {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  line-height: 1.7;
+}
+
+/* --- Stamp list heading --- */
+.stamp-list-heading {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+  padding-left: 4px;
+  text-transform: uppercase;
+}
+
+/* --- Stamp cards grid --- */
+.stamp-cards-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* --- Individual stamp card --- */
+.stamp-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+}
+
+.stamp-card:hover {
+  border-color: var(--accent-stamp-border);
+}
+
+.stamp-card-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 14px 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.stamp-number-badge {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  background: var(--accent-stamp-bg);
+  border: 1px solid var(--accent-stamp-border);
+  color: var(--accent-stamp);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.stamp-card-title-area {
+  flex: 1;
+  min-width: 0;
+}
+
+.stamp-text-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+
+.stamp-text-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.02em;
+}
+
+.stamp-text-copy {
+  font-size: 0.65rem !important;
+  padding: 3px 8px !important;
+}
+
+.stamp-chars-line {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stamp-chars {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.coco-type-badge {
+  font-size: 0.62rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.coco-cool {
+  background: rgba(91, 127, 166, 0.15);
+  color: #82acd4;
+  border: 1px solid rgba(91, 127, 166, 0.3);
+}
+
+.coco-fem {
+  background: rgba(194, 120, 138, 0.15);
+  color: #e0a0b2;
+  border: 1px solid rgba(194, 120, 138, 0.3);
+}
+
+/* --- Scene / Outfit / Analysis --- */
+.stamp-scene {
+  padding: 10px 14px;
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  border-bottom: 1px solid var(--border);
+}
+
+.scene-tag {
+  font-size: 0.68rem;
+  color: var(--text-secondary);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.stamp-outfit {
+  padding: 8px 14px;
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.6;
+}
+
+.outfit-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+.stamp-analysis {
+  padding: 10px 14px;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  border-bottom: 1px solid var(--border);
+  background: rgba(212, 168, 67, 0.04);
+}
+
+.analysis-label {
+  font-size: 0.65rem;
+  color: var(--accent-stamp);
+  background: var(--accent-stamp-bg);
+  border: 1px solid var(--accent-stamp-border);
+  padding: 1px 6px;
+  border-radius: 3px;
+  margin-right: 8px;
+}
+
+/* --- Prompt blocks --- */
+.stamp-prompts {
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.prompt-block {
+  background: var(--prompt-bg);
+  border: 1px solid var(--prompt-border);
+  border-radius: var(--radius-sm);
+  padding: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.prompt-block-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.prompt-block-text {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  word-break: break-all;
+  font-family: 'SF Mono', 'Consolas', monospace;
+}
+
+/* ============================
+   END STAMP SECTION
+   ============================ */
+
 /* Responsive: tablet and up */
 @media (min-width: 640px) {
   .site-header {

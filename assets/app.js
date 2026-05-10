@@ -1,6 +1,7 @@
 'use strict';
 
 let allPosts = [];
+let allStamps = null;
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -25,6 +26,15 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+function escapeAttr(str) {
+  return str
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
   container.innerHTML = '<p class="loading">読み込み中…</p>';
@@ -34,13 +44,22 @@ async function loadPosts() {
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
-    const weekDataArr = await Promise.all(
-      index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}`);
-        if (!res.ok) throw new Error(`${filename} not found`);
-        return res.json();
-      })
-    );
+    const [weekDataArr, stampsArr] = await Promise.all([
+      Promise.all(
+        (index.weeks || []).map(async (filename) => {
+          const res = await fetch(`./posts/${filename}`);
+          if (!res.ok) throw new Error(`${filename} not found`);
+          return res.json();
+        })
+      ),
+      Promise.all(
+        (index.stamps || []).map(async (filename) => {
+          const res = await fetch(`./posts/${filename}`);
+          if (!res.ok) throw new Error(`${filename} not found`);
+          return res.json();
+        })
+      )
+    ]);
 
     allPosts = weekDataArr
       .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
@@ -49,6 +68,8 @@ async function loadPosts() {
         const tB = new Date(`${b.date}T${b.time}:00`);
         return tA - tB;
       });
+
+    allStamps = stampsArr.length > 0 ? stampsArr : null;
 
     renderWeekFilter(weekDataArr.map(w => w.week));
     renderPosts();
@@ -97,14 +118,31 @@ function getFilteredPosts() {
 }
 
 function renderPosts() {
-  const container = document.getElementById('postsContainer');
+  const postsContainer = document.getElementById('postsContainer');
+  const stampSection = document.getElementById('stampSection');
+  const weekRow = document.getElementById('weekFilterRow');
+
+  if (activeFilters.platform === 'LINEスタンプ') {
+    postsContainer.style.display = 'none';
+    stampSection.style.display = 'block';
+    if (weekRow) weekRow.style.display = 'none';
+    renderStamps();
+    document.getElementById('statsBar').textContent =
+      allStamps ? `LINEスタンプ ${allStamps.length}シリーズ / 計${allStamps.reduce((s, d) => s + d.stamps.length, 0)}枚` : 'スタンプなし';
+    return;
+  }
+
+  postsContainer.style.display = '';
+  stampSection.style.display = 'none';
+  if (weekRow) weekRow.style.display = '';
+
   const filtered = getFilteredPosts();
 
   document.getElementById('statsBar').textContent =
     `${filtered.length}件 / 全${allPosts.length}件`;
 
   if (filtered.length === 0) {
-    container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
+    postsContainer.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
     return;
   }
 
@@ -126,7 +164,7 @@ function renderPosts() {
     })
     .join('');
 
-  container.innerHTML = html;
+  postsContainer.innerHTML = html;
 }
 
 function renderCard(post) {
@@ -147,12 +185,134 @@ function renderCard(post) {
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
         <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+          <button class="copy-btn" data-copy="${escapeAttr(post.content)}">コピー</button>
         </div>
       </div>
       <div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
+        <button class="copy-btn" data-copy="${escapeAttr(post.quote)}">コピー</button>
+      </div>
+    </article>`;
+}
+
+function renderStamps() {
+  const inner = document.getElementById('stampSectionInner');
+  if (!allStamps || allStamps.length === 0) {
+    inner.innerHTML = '<p class="empty-state">スタンプデータがありません</p>';
+    return;
+  }
+
+  const html = allStamps.map(data => renderStampSet(data)).join('');
+  inner.innerHTML = html;
+}
+
+function renderStampSet(data) {
+  const st = data.sales_text;
+  const charMap = { 'Coco': '👩', 'しらたま': '🐈‍⬛', 'しずく': '🐢', 'ひより': '🕊' };
+
+  const salesHtml = `
+    <div class="stamp-sales-block">
+      <div class="stamp-series-badge">
+        LINEスタンプ ${data.created} 作成分 ／ ${data.series} 第${data.installment}弾
+      </div>
+      <div class="stamp-theme-tag">📌 週テーマ：${data.week_theme}</div>
+      <div class="stamp-sales-grid">
+        <div class="stamp-sales-item">
+          <div class="stamp-sales-label">タイトル（日本語）</div>
+          <div class="stamp-sales-value">${escapeHtml(st.title_ja)}</div>
+          <button class="copy-btn" data-copy="${escapeAttr(st.title_ja)}">コピー</button>
+        </div>
+        <div class="stamp-sales-item">
+          <div class="stamp-sales-label">説明文（日本語）<span class="char-count">${st.description_ja.length}文字</span></div>
+          <div class="stamp-sales-value">${escapeHtml(st.description_ja)}</div>
+          <button class="copy-btn" data-copy="${escapeAttr(st.description_ja)}">コピー</button>
+        </div>
+        <div class="stamp-sales-item">
+          <div class="stamp-sales-label">Title (English)</div>
+          <div class="stamp-sales-value">${escapeHtml(st.title_en)}</div>
+          <button class="copy-btn" data-copy="${escapeAttr(st.title_en)}">コピー</button>
+        </div>
+        <div class="stamp-sales-item">
+          <div class="stamp-sales-label">Description (English)</div>
+          <div class="stamp-sales-value">${escapeHtml(st.description_en)}</div>
+          <button class="copy-btn" data-copy="${escapeAttr(st.description_en)}">コピー</button>
+        </div>
+      </div>
+    </div>`;
+
+  const stampsHtml = data.stamps.map(s => renderStampCard(s)).join('');
+
+  return `
+    <div class="stamp-set">
+      ${salesHtml}
+      <h2 class="stamp-list-heading">スタンプ一覧（${data.stamps.length}枚 / 需要順）</h2>
+      <div class="stamp-cards-grid">
+        ${stampsHtml}
+      </div>
+    </div>`;
+}
+
+function renderStampCard(stamp) {
+  const isCoco = stamp.characters.includes('Coco');
+  const cocoTypeHtml = isCoco
+    ? `<span class="coco-type-badge ${stamp.coco_type === 'クールビューティー' ? 'coco-cool' : 'coco-fem'}">${stamp.coco_type}</span>`
+    : '';
+
+  const sceneHtml = `
+    <div class="stamp-scene">
+      <span class="scene-tag">⏱ ${stamp.scene_timing}</span>
+      <span class="scene-tag">📍 ${stamp.scene_context}</span>
+      <span class="scene-tag">💭 ${stamp.scene_psychology}</span>
+    </div>`;
+
+  const outfitHtml = stamp.outfit
+    ? `<div class="stamp-outfit"><span class="outfit-label">衣装</span>${escapeHtml(stamp.outfit)}</div>`
+    : '';
+
+  const analysisHtml = stamp.analysis
+    ? `<div class="stamp-analysis"><span class="analysis-label">分析反映</span>${escapeHtml(stamp.analysis)}</div>`
+    : '';
+
+  const promptStyleCopy = escapeAttr(stamp.prompt_style);
+  const promptCharCopy = escapeAttr(stamp.prompt_character);
+  const promptTextCopy = escapeAttr(stamp.prompt_text_size);
+
+  return `
+    <article class="stamp-card">
+      <div class="stamp-card-header">
+        <div class="stamp-number-badge">${stamp.number}</div>
+        <div class="stamp-card-title-area">
+          <div class="stamp-text-line">
+            <span class="stamp-text-value">${escapeHtml(stamp.text)}</span>
+            <button class="copy-btn stamp-text-copy" data-copy="${escapeAttr(stamp.text)}">コピー</button>
+          </div>
+          <div class="stamp-chars-line">
+            <span class="stamp-chars">${escapeHtml(stamp.characters)}</span>
+            ${cocoTypeHtml}
+          </div>
+        </div>
+      </div>
+
+      ${sceneHtml}
+      ${outfitHtml}
+      ${analysisHtml}
+
+      <div class="stamp-prompts">
+        <div class="prompt-block">
+          <div class="prompt-block-label">① スタイル指定</div>
+          <p class="prompt-block-text">${escapeHtml(stamp.prompt_style)}</p>
+          <button class="copy-btn" data-copy="${promptStyleCopy}">コピー</button>
+        </div>
+        <div class="prompt-block">
+          <div class="prompt-block-label">② キャラクター・表情指定</div>
+          <p class="prompt-block-text">${escapeHtml(stamp.prompt_character)}</p>
+          <button class="copy-btn" data-copy="${promptCharCopy}">コピー</button>
+        </div>
+        <div class="prompt-block">
+          <div class="prompt-block-label">③ テキスト・サイズ指定</div>
+          <p class="prompt-block-text">${escapeHtml(stamp.prompt_text_size)}</p>
+          <button class="copy-btn" data-copy="${promptTextCopy}">コピー</button>
+        </div>
       </div>
     </article>`;
 }
@@ -166,7 +326,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp');
     });
 
     const platform = btn.dataset.platform;
@@ -174,6 +334,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform === 'LINEスタンプ') btn.classList.add('active-stamp');
     else btn.classList.add('active');
 
     renderPosts();
@@ -198,7 +359,6 @@ function setupCopyHandler() {
         btn.classList.remove('copied');
       }, 1800);
     } catch {
-      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
