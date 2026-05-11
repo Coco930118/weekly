@@ -84,35 +84,72 @@ function renderLineStampSection(stampSets) {
   section.style.display = 'none';
 
   stampSets.forEach(set => {
+    const weekId = set.week || '';
     const setEl = document.createElement('div');
     setEl.className = 'stamp-set';
+    setEl.dataset.week = weekId;
 
-    const setHeading = document.createElement('h3');
-    setHeading.className = 'stamp-set-heading';
-    setHeading.innerHTML = `LINEスタンプ ${escapeHtml(set.week)}作成分 <span class="pattern-badge">パターン${set.pattern}：${escapeHtml(set.pattern_description)}</span>`;
-    setEl.appendChild(setHeading);
+    const seriesName = set.series || `LINEスタンプ ${set.week}`;
+    const e = escapeHtml;
 
-    const grid = document.createElement('div');
-    grid.className = 'stamp-grid';
-    grid.innerHTML = set.stamps.map(renderStampCard).join('');
-    setEl.appendChild(grid);
+    let html = `
+      <h3 class="stamp-set-heading">
+        ${e(seriesName)}
+        <span class="pattern-badge">パターン${set.pattern}：${e(set.pattern_description)}</span>
+      </h3>`;
 
-    const promoHeading = document.createElement('h4');
-    promoHeading.className = 'promo-heading';
-    promoHeading.textContent = '📣 Threads宣伝文（28パターン）';
-    setEl.appendChild(promoHeading);
+    if (set.trend_analysis) {
+      html += `
+      <details class="stamp-section-detail">
+        <summary class="stamp-section-summary">📈 1ヶ月後トレンド分析</summary>
+        <div class="stamp-section-body">${e(set.trend_analysis).replace(/\n/g, '<br>')}</div>
+      </details>`;
+    }
 
-    const promoGrid = document.createElement('div');
-    promoGrid.className = 'promo-grid';
-    promoGrid.innerHTML = set.threads_promo.map(p => `
-      <div class="promo-card">
-        <span class="promo-date">${escapeHtml(p.date)} ${escapeHtml(p.time)}</span>
-        <p class="promo-text">${escapeHtml(p.content)}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(p.content)}">コピー</button>
-      </div>
-    `).join('');
-    setEl.appendChild(promoGrid);
+    if (set.title_ja || set.desc_ja || set.title_en || set.desc_en) {
+      html += `<div class="stamp-sales-block"><h4 class="stamp-subsection-heading">💬 販売テキスト</h4>`;
+      if (set.title_ja) html += `
+        <div class="sales-row">
+          <span class="sales-label">タイトル（日本語）</span>
+          <p class="sales-value">${e(set.title_ja)}</p>
+          <button class="copy-btn" data-copy="${e(set.title_ja)}">コピー</button>
+        </div>`;
+      if (set.desc_ja) html += `
+        <div class="sales-row">
+          <span class="sales-label">説明文（日本語）</span>
+          <p class="sales-value">${e(set.desc_ja)}</p>
+          <button class="copy-btn" data-copy="${e(set.desc_ja)}">コピー</button>
+        </div>`;
+      if (set.title_en) html += `
+        <div class="sales-row">
+          <span class="sales-label">Title (English)</span>
+          <p class="sales-value">${e(set.title_en)}</p>
+          <button class="copy-btn" data-copy="${e(set.title_en)}">コピー</button>
+        </div>`;
+      if (set.desc_en) html += `
+        <div class="sales-row">
+          <span class="sales-label">Description (English)</span>
+          <p class="sales-value">${e(set.desc_en)}</p>
+          <button class="copy-btn" data-copy="${e(set.desc_en)}">コピー</button>
+        </div>`;
+      html += `</div>`;
+    }
 
+    html += `<h4 class="stamp-subsection-heading">🖼 スタンプ一覧（全${set.stamps.length}個）</h4>
+      <div class="stamp-grid">${set.stamps.map(renderStampCard).join('')}</div>`;
+
+    if (set.threads_promo && set.threads_promo.length > 0) {
+      html += `<h4 class="promo-heading">📣 Threads宣伝文（${set.threads_promo.length}パターン）</h4>
+        <div class="promo-grid">${set.threads_promo.map(p => `
+          <div class="promo-card">
+            <span class="promo-date">${e(p.date)} ${e(p.time)}</span>
+            <p class="promo-text">${e(p.content)}</p>
+            <button class="copy-btn" data-copy="${e(p.content)}">コピー</button>
+          </div>`).join('')}
+        </div>`;
+    }
+
+    setEl.innerHTML = html;
     section.appendChild(setEl);
   });
 
@@ -130,23 +167,26 @@ function renderStampCard(stamp) {
   }).join(' + ');
 
   const typeClass = stamp.with_coco ? 'type-coco' : 'type-char';
+  const e = escapeHtml;
 
   return `
     <div class="stamp-card">
       <div class="stamp-card-header">
         <span class="stamp-num">#${stamp.id}</span>
-        <span class="stamp-type-badge ${typeClass}">${escapeHtml(stamp.type)}</span>
+        <span class="stamp-type-badge ${typeClass}">${e(stamp.type)}</span>
       </div>
-      <div class="stamp-characters">${escapeHtml(charLabel)}</div>
-      <div class="stamp-dialogue">${escapeHtml(stamp.dialogue)}</div>
-      <div class="stamp-scene">📍 ${escapeHtml(stamp.scene)}</div>
+      <div class="stamp-characters">${e(charLabel)}</div>
+      <div class="stamp-dialogue">${e(stamp.dialogue)}</div>
+      <div class="stamp-scene">📍 ${e(stamp.scene)}</div>
+      ${stamp.send_timing ? `<div class="stamp-timing">⏰ ${e(stamp.send_timing)}</div>` : ''}
+      ${stamp.send_psychology ? `<div class="stamp-psychology">💭 ${e(stamp.send_psychology)}</div>` : ''}
       <details class="stamp-details">
         <summary>コーデ・プロンプトを見る</summary>
-        <div class="stamp-outfit">👗 ${escapeHtml(stamp.outfit)}</div>
-        <div class="stamp-color">🎨 ${escapeHtml(stamp.color_scheme)}</div>
+        ${stamp.outfit ? `<div class="stamp-outfit">👗 ${e(stamp.outfit)}</div>` : ''}
+        <div class="stamp-color">🎨 ${e(stamp.color_scheme)}</div>
         <div class="stamp-prompt-wrap">
-          <p class="stamp-prompt">${escapeHtml(stamp.image_prompt)}</p>
-          <button class="copy-btn" data-copy="${escapeHtml(stamp.image_prompt)}">プロンプトをコピー</button>
+          <pre class="stamp-prompt">${e(stamp.image_prompt)}</pre>
+          <button class="copy-btn" data-copy="${e(stamp.image_prompt)}">プロンプトをコピー</button>
         </div>
       </details>
     </div>
@@ -261,10 +301,19 @@ function renderLineStampButtons() {
   const staticLineBtn = row.querySelector('[data-platform="LINEスタンプ"]:not([data-week])');
 
   dates.forEach(date => {
-    const m = parseInt(date.slice(5, 7));
-    const d = date.slice(8);
-    const label = `LINEスタンプ ${m}/${d}〜${m}/${d}`;
+    const startM = parseInt(date.slice(5, 7));
+    const startD = date.slice(8);
     const weekId = lineStampPosts.find(p => p.date === date)?.weekId;
+
+    const promoInWeek = allPosts.filter(p => p.platform === 'スタンプ宣伝' && p.weekId === weekId);
+    const promoEndDate = promoInWeek.length > 0
+      ? promoInWeek.map(p => p.date).sort().pop()
+      : date;
+    const endD = promoEndDate.slice(8);
+
+    const label = endD !== startD
+      ? `LINEスタンプ ${startM}/${startD}〜${endD}`
+      : `LINEスタンプ ${startM}/${startD}`;
 
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
@@ -495,16 +544,23 @@ function setupPlatformFilter() {
     if (platform === 'LINEスタンプ' && !weekId) {
       btn.classList.add('active-stamp');
       if (postsContainer) postsContainer.style.display = 'none';
-      if (stampSection) stampSection.style.display = 'block';
+      if (stampSection) {
+        stampSection.querySelectorAll('.stamp-set').forEach(el => { el.style.display = ''; });
+        stampSection.style.display = 'block';
+      }
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = 'none';
     } else if (platform === 'LINEスタンプ' && weekId) {
       btn.classList.add('active-line');
-      if (postsContainer) postsContainer.style.display = '';
-      if (stampSection) stampSection.style.display = 'none';
+      if (postsContainer) postsContainer.style.display = 'none';
+      if (stampSection) {
+        stampSection.querySelectorAll('.stamp-set').forEach(el => {
+          el.style.display = el.dataset.week === weekId ? '' : 'none';
+        });
+        stampSection.style.display = 'block';
+      }
       if (weekFilterRow) weekFilterRow.style.display = 'none';
-      if (statsBar) statsBar.style.display = '';
-      renderPosts();
+      if (statsBar) statsBar.style.display = 'none';
     } else if (platform === 'スタンプ宣伝') {
       btn.classList.add('active-stamp-promo');
       if (postsContainer) postsContainer.style.display = '';

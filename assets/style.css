@@ -986,3 +986,86 @@ body {
   font-weight: 500;
   line-height: 1.5;
 }
+
+/* LINEスタンプ — 販売テキスト・追加セクション */
+.stamp-subsection-heading {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: 20px 0 10px;
+  letter-spacing: 0.04em;
+}
+
+.stamp-sales-block {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  margin-bottom: 16px;
+}
+
+.sales-row {
+  margin-bottom: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sales-label {
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.sales-value {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+.stamp-section-detail {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.stamp-section-summary {
+  cursor: pointer;
+  padding: 10px 14px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  list-style: none;
+  user-select: none;
+}
+
+.stamp-section-summary::-webkit-details-marker { display: none; }
+
+.stamp-section-body {
+  padding: 10px 14px 14px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  border-top: 1px solid var(--border);
+}
+
+/* スタンプカード — timing / psychology */
+.stamp-timing,
+.stamp-psychology {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding: 1px 0;
+}
+
+/* スタンプカード — プロンプト preformat */
+.stamp-prompt {
+  white-space: pre-wrap;
+  font-family: inherit;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  padding: 8px 0 4px;
+}

@@ -1,0 +1,388 @@
+{
+  "week": "2026-05-12_2026-05-18",
+  "series": "きょうも、そのままで ③",
+  "pattern": 3,
+  "pattern_description": "ミックス（キャラのみ12個 ／ Coco込み12個）",
+  "release_date": "2026-05-12",
+  "trend_analysis": "【2026年6月・1ヶ月後トレンド予測】\n梅雨入り・蒸し暑さによる気力低下が顕在化。「6月病」「なんとなく頑張れない」の言語化がSNSで急増。ねぎらい・感謝・そっと寄り添う言葉への需要が高まる時期。\n「お疲れさま」「ありがとう」「そばにいるよ」系スタンプの使用頻度が6月にピーク。梅雨の晴れ間（虹・ぽかぽか）への反応も高く、感情のリセット欲求を後押しする内容が刺さる。\n全員集合のミックス弾は、送る相手を選ばない汎用性の高さで、この時期に最もフィットする構成。",
+  "title_ja": "きょうも、そのままで ③ ─ やさしい気持ちを届けるスタンプ",
+  "desc_ja": "Coco・しらたま・しずく・ひより、全員集合の第3弾。梅雨前の蒸し暑い日も、頑張りすぎた夜も、そのままでいい。あの人に「ありがとう」「お疲れさま」を届けたいとき、このスタンプがそっと代わりに伝えます。",
+  "title_en": "Just as You Are ③ — Sweet Stamp Set for Daily Feelings",
+  "desc_en": "The third set of \"Just as You Are\" — all four characters together. Coco, Shiratama, Shizuku, and Hiyori. For rainy days, tired nights, and the warm feelings you want to send to someone you care about.",
+  "stamps": [
+    {
+      "id": 1,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "お疲れさま、今日もよく頑張ったね",
+      "scene": "残業続きの友人・恋人に夜送る",
+      "send_timing": "21〜23時",
+      "send_psychology": "頑張りをそっと認めたい",
+      "outfit": null,
+      "color_scheme": "muted amber and soft lavender, quiet evening",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, muted amber and soft lavender palette, quiet evening atmosphere\n[Character] black cat Shiratama, seated comfortably with eyes half-closed, warm gentle smile, sparkling warm eyes with soft light reflection, one paw resting on cheek, relaxed and satisfied posture, bust-up front view\n[Text/Format] handwritten-style Japanese text『お疲れさま、今日もよく頑張ったね』naturally placed within the illustration, text in upper area, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 2,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "ありがとう、ちゃんと伝わってるよ",
+      "scene": "助けてもらったとき、言葉にならないとき",
+      "send_timing": "何かしてもらった直後",
+      "send_psychology": "感謝が照れくさいから代わりに",
+      "outfit": null,
+      "color_scheme": "soft sage green and warm cream, sincere mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft sage green and warm cream tones, sincere and earnest mood\n[Character] green-brown turtle Shizuku, standing upright with head bowed slightly in gratitude, sparkling warm eyes with gentle smile, both front legs pressed together in a humble pose, full body front view\n[Text/Format] handwritten-style Japanese text『ありがとう、ちゃんと伝わってるよ』naturally placed within the illustration, text in lower area, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 3,
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "やったー！うれしい！",
+      "scene": "良い知らせを受け取ったとき、一緒に喜びたいとき",
+      "send_timing": "昼〜夕方の明るい時間",
+      "send_psychology": "一緒に喜んでほしい",
+      "outfit": null,
+      "color_scheme": "bright sky blue and sunny yellow, joyful mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, bright sky blue and sunny yellow palette, joyful celebratory mood\n[Character] white dove Hiyori, wings spread wide in mid-air jump pose, beak open with joy, bright and hopeful expression with sparkling warm eyes, feathers slightly ruffled with excitement, dynamic 3/4 angle looking up\n[Text/Format] handwritten-style Japanese text『やったー！うれしい！』naturally placed within the illustration, text on both sides vertically, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 4,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "だいじょうぶ、そっとそばにいるから",
+      "scene": "落ち込んでいる人へ、弱音が来たとき",
+      "send_timing": "相手から弱音が来たとき",
+      "send_psychology": "何もできないけどそばにいる",
+      "outfit": null,
+      "color_scheme": "soft rose and ivory, gentle comforting mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft rose and ivory tones, gentle comforting and reassuring mood\n[Character] black cat Shiratama, side view, curled up close, eyes looking gently sideways with warm expression, sparkling warm eyes, one paw extended forward in a protective gesture, close-up bust-up angle\n[Text/Format] handwritten-style Japanese text『だいじょうぶ、そっとそばにいるから』naturally placed within the illustration, text in lower portion, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 5,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "一緒に考えてもいい？",
+      "scene": "相手が悩んでいるとき、困っているのを察したとき",
+      "send_timing": "相手が困っているのを察したとき",
+      "send_psychology": "解決はできないけど話を聞きたい",
+      "outfit": null,
+      "color_scheme": "muted blue-green and soft peach, thoughtful mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, muted blue-green and soft peach tones, thoughtful and curious atmosphere\n[Character] green-brown turtle Shizuku, tilting head slightly upward in curious pose, sparkling warm eyes, front leg raised to chin in thinking gesture, full body front view, warm and open expression\n[Text/Format] handwritten-style Japanese text『一緒に考えてもいい？』naturally placed within the illustration, text at top center, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 6,
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "なんか今日、いい日な気がする",
+      "scene": "帰り道・ランチ中・ちょっといいことがあった日",
+      "send_timing": "昼〜夕方",
+      "send_psychology": "この気分を誰かと共有したい",
+      "outfit": null,
+      "color_scheme": "breezy peach and light mint, cheerful daytime mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, breezy peach and light mint tones, cheerful and dreamy daytime mood\n[Character] white dove Hiyori, walking lightly with one wing slightly open, beak tilted upward with a dreamy gentle smile, sparkling warm eyes, side view full body, airy and light posture\n[Text/Format] handwritten-style Japanese text『なんか今日、いい日な気がする』naturally placed within the illustration, text at top, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 7,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "おかえり、待ってたよ",
+      "scene": "帰宅した恋人・友達・家族へ",
+      "send_timing": "夜の帰宅タイム",
+      "send_psychology": "来てくれてよかったを自然に伝える",
+      "outfit": null,
+      "color_scheme": "warm amber and cream, welcoming evening atmosphere",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm amber and cream tones, welcoming evening atmosphere\n[Character] black cat Shiratama, standing upright with both paws raised in a welcoming gesture, sparkling warm eyes with a big warm smile, ears perked up, tail raised happily, full body front view\n[Text/Format] handwritten-style Japanese text『おかえり、待ってたよ』naturally placed within the illustration, text in upper area, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 8,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "もう少しだけ、待っててほしい",
+      "scene": "返信が遅れるとき、予定が変わりそうなとき",
+      "send_timing": "即レスできないとき",
+      "send_psychology": "忘れてないよを穏やかに",
+      "outfit": null,
+      "color_scheme": "soft lavender and sage green, patient sincere mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft lavender and sage green tones, patient and sincere mood\n[Character] green-brown turtle Shizuku, looking down slightly with apologetic but earnest expression, sparkling warm eyes, front legs pressed together, full body 3/4 angle, humble and honest posture\n[Text/Format] handwritten-style Japanese text『もう少しだけ、待っててほしい』naturally placed within the illustration, text in lower section, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 9,
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "えいっ、やってみる！",
+      "scene": "背中を押してほしいとき・自分へのエール・決断した朝",
+      "send_timing": "何かを決断した朝",
+      "send_psychology": "怖いけどやる、見ててね",
+      "outfit": null,
+      "color_scheme": "bright coral and warm yellow, energetic decisive mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, bright coral and warm yellow tones, energetic and decisive mood\n[Character] white dove Hiyori, both wings raised as if about to leap forward, eyes squeezed shut with a determined smile, feathers puffed with energy, close-up bust-up view from a slight low angle\n[Text/Format] handwritten-style Japanese text『えいっ、やってみる！』naturally placed within the illustration, text on right side vertically, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 10,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "ねえ、ちょっと休んでいいんだよ",
+      "scene": "頑張りすぎている人へ・梅雨の蒸し暑い夜",
+      "send_timing": "梅雨の蒸し暑い夜",
+      "send_psychology": "休んでが言いにくいから代わりに",
+      "outfit": null,
+      "color_scheme": "soft grey-blue and pale yellow, nurturing gentle mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft grey-blue and pale yellow tones, nurturing and gentle mood\n[Character] black cat Shiratama, sitting beside a small fluffy cushion, patting it gently with one paw, sparkling warm eyes looking sideways with a soft encouraging smile, full body side view\n[Text/Format] handwritten-style Japanese text『ねえ、ちょっと休んでいいんだよ』naturally placed within the illustration, text at top, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 11,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "ゆっくりしていいよ",
+      "scene": "週末・体調不良の人へ・土日の昼",
+      "send_timing": "土日の昼",
+      "send_psychology": "急がなくていいを伝えたい",
+      "outfit": null,
+      "color_scheme": "soft moss green and warm cream, calm restful mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft moss green and warm cream tones, calm and restful mood\n[Character] green-brown turtle Shizuku, lying on back with limbs slightly spread, completely relaxed posture, eyes closed peacefully with a gentle smile, top-down bird's-eye view\n[Text/Format] handwritten-style Japanese text『ゆっくりしていいよ』naturally placed within the illustration, text on both sides vertically, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 12,
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラクターのみ",
+      "dialogue": "また来てね、待ってるから",
+      "scene": "別れ際・帰り際・オンライン会議終わり",
+      "send_timing": "別れの瞬間",
+      "send_psychology": "次も会いたいを照れずに言える",
+      "outfit": null,
+      "color_scheme": "soft periwinkle and warm white, farewell bittersweet mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft periwinkle and warm white tones, farewell and bittersweet mood\n[Character] white dove Hiyori, one wing raised in a gentle wave goodbye, turning slightly with a warm smile over shoulder, sparkling warm eyes with soft light reflection, bust-up 3/4 rear-facing angle\n[Text/Format] handwritten-style Japanese text『また来てね、待ってるから』naturally placed within the illustration, text in lower area, 1:1 square format, transparent background, PNG, no background, isolated character, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 13,
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "一緒にいるよ、ここにいる",
+      "scene": "遠距離・長期入院・つらい知らせを受けた人へ",
+      "send_timing": "深夜・週末の夜",
+      "send_psychology": "物理的にそばにいられないけど",
+      "outfit": "部屋着（クールビューティー）",
+      "color_scheme": "muted rose-grey and warm ivory, quiet late-night comforting mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, muted rose-grey and warm ivory palette, quiet late-night comforting mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, cool beauty expression, wearing comfortable loungewear (soft room wear), seated on floor with knees gently drawn up, black cat Shiratama curled warmly in her arms, both relaxed and at ease, Coco's sparkling warm eyes with composed cool expression, full body side view\n[Text/Format] handwritten-style Japanese text『一緒にいるよ、ここにいる』naturally placed within the illustration, text at top, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 14,
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "考えすぎなくていいんだよ",
+      "scene": "悩みを打ち明けてきた人へ・深夜の相談",
+      "send_timing": "深夜の相談",
+      "send_psychology": "答えを出さなくていいという安心感",
+      "outfit": "普段着（フェミニンビューティー）",
+      "color_scheme": "soft sage green and warm beige, gentle reassuring mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft sage green and warm beige tones, gentle reassuring and empathetic mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, feminine beauty expression, wearing casual everyday clothes (soft blouse and relaxed pants), crouching slightly to turtle Shizuku's eye level, hand gently extended, warm empathetic smile, sparkling warm eyes, 3/4 angle view\n[Text/Format] handwritten-style Japanese text『考えすぎなくていいんだよ』naturally placed within the illustration, text in upper area, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 15,
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "行ってらっしゃい、きっと大丈夫",
+      "scene": "試験前・発表前・転職前の人へ",
+      "send_timing": "前日〜当日朝",
+      "send_psychology": "信じてるを送りたい",
+      "outfit": "お散歩着（クールビューティー）",
+      "color_scheme": "fresh morning blue and clean white, encouraging departure mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, fresh morning blue and clean white tones, encouraging departure mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, cool beauty expression, wearing light walk wear (casual jacket and pants), standing with one hand raised in farewell as white dove Hiyori takes flight from her other arm, slight confident smile, full body front view from slightly below\n[Text/Format] handwritten-style Japanese text『行ってらっしゃい、きっと大丈夫』naturally placed within the illustration, text on both sides vertically, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 16,
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "おはよう、今日も会えてよかった",
+      "scene": "朝の連絡・グループLINEの朝",
+      "send_timing": "6〜8時",
+      "send_psychology": "今日も始まるねを温かく",
+      "outfit": "パジャマ（フェミニンビューティー）",
+      "color_scheme": "soft morning lavender and pale peach, sleepy cozy morning mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft morning lavender and pale peach tones, sleepy cozy morning mood\n[Character] 41-year-old Japanese woman Coco with slightly tousled bob, feminine beauty expression, wearing light pastel pajamas, sitting up from a futon with a soft morning smile, black cat Shiratama beside her looking up brightly, sparkling warm eyes on both, close-up bust-up view\n[Text/Format] handwritten-style Japanese text『おはよう、今日も会えてよかった』naturally placed within the illustration, text at top, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 17,
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "それ、いいと思う",
+      "scene": "相手のアイデア・選択を応援するとき",
+      "send_timing": "提案・相談のあと",
+      "send_psychology": "賛成を確信込みで伝える",
+      "outfit": "オフィスカジュアル（クールビューティー）",
+      "color_scheme": "crisp white and soft navy, confident supportive mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, crisp white and soft navy tones, confident and professional supportive mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, cool beauty expression, wearing office casual attire (neat blouse and tailored trousers), arms lightly crossed with a composed approving nod, turtle Shizuku beside her giving a small thumbs-up, front view slight downward look\n[Text/Format] handwritten-style Japanese text『それ、いいと思う』naturally placed within the illustration, text in upper right, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 18,
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "ぽかぽかしてきた",
+      "scene": "嬉しいことがあったとき・天気がいい日",
+      "send_timing": "晴れた日の昼間",
+      "send_psychology": "あなたのおかげで気持ちが上がった",
+      "outfit": "お出掛け着（フェミニンビューティー）",
+      "color_scheme": "honey yellow and warm cream, sunny cheerful outdoor mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, honey yellow and warm cream tones, sunny cheerful outdoor mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, feminine beauty expression, wearing an elegant outing dress, face slightly tilted upward basking in warmth, eyes closed with a content smile, white dove Hiyori perched on her shoulder also basking, sparkling warm eyes on both, 3/4 side view from slightly below\n[Text/Format] handwritten-style Japanese text『ぽかぽかしてきた』naturally placed within the illustration, text in lower portion, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 19,
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "お疲れさまでした、ゆっくりして",
+      "scene": "同僚・チームへの労い・仕事終わり",
+      "send_timing": "仕事終わり",
+      "send_psychology": "頑張りを見ていたという認証",
+      "outfit": "部屋着（フェミニンビューティー）",
+      "color_scheme": "warm amber and dusty rose, relaxing evening indoor mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm amber and dusty rose tones, relaxing evening indoor mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, feminine beauty expression, wearing soft cozy home clothes, sitting on a sofa with a warm cup in both hands, gentle smile, black cat Shiratama leaning against her leg, side view full body, warm lamp-light atmosphere\n[Text/Format] handwritten-style Japanese text『お疲れさまでした、ゆっくりして』naturally placed within the illustration, text at top, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 20,
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "できた、なんとかなった",
+      "scene": "タスク完了・難しいことを終えたとき",
+      "send_timing": "達成の瞬間",
+      "send_psychology": "自分を祝いたい・報告したい",
+      "outfit": "普段着（クールビューティー）",
+      "color_scheme": "fresh mint and warm white, quiet achievement celebration mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, fresh mint and warm white tones, quiet achievement celebration mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, cool beauty expression, wearing simple casual everyday clothes, fist raised slightly in restrained triumph with a composed satisfied smile, turtle Shizuku beside her doing a small victory pose, 3/4 front view\n[Text/Format] handwritten-style Japanese text『できた、なんとかなった』naturally placed within the illustration, text in lower portion, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 21,
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "あ、虹が出てる",
+      "scene": "雨上がり・梅雨の晴れ間・ほっとした瞬間",
+      "send_timing": "雨上がりの昼",
+      "send_psychology": "この瞬間を誰かに共有したい",
+      "outfit": "お散歩着（フェミニンビューティー）",
+      "color_scheme": "post-rain rainbow tones (soft pink, blue, yellow, green), rainy season clearing mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, fresh post-rain rainbow tones (soft pink, blue, yellow, green), rainy season clearing mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, feminine beauty expression, wearing a light spring walk coat, looking upward with surprised delight, pointing upward with one hand, white dove Hiyori flying beside her also looking up excitedly, full body looking-up angle from below\n[Text/Format] handwritten-style Japanese text『あ、虹が出てる』naturally placed within the illustration, text at bottom, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 22,
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "おやすみ、また明日ね",
+      "scene": "就寝前・深夜のお開き",
+      "send_timing": "22〜24時",
+      "send_psychology": "今日もありがとうをやわらかく",
+      "outfit": "パジャマ（クールビューティー）",
+      "color_scheme": "deep twilight blue and warm ivory, peaceful bedtime mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, deep twilight blue and warm ivory tones, peaceful bedtime mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, cool beauty expression, wearing simple elegant pajamas, lying in bed with sheet gently pulled up, half-closed eyes with a peaceful smile, black cat Shiratama curled up at her feet, top-down bird's-eye view\n[Text/Format] handwritten-style Japanese text『おやすみ、また明日ね』naturally placed within the illustration, text at top center, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 23,
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "with_coco": true,
+      "type": "Coco込み",
+      "dialogue": "大事なこと、忘れてなかったよ",
+      "scene": "大切なことを覚えていた証明・フォローアップ",
+      "send_timing": "フォローアップのとき",
+      "send_psychology": "ちゃんと気にかけてたを伝える",
+      "outfit": "オフィスカジュアル（フェミニンビューティー）",
+      "color_scheme": "warm olive and soft cream, dependable sincere mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm olive and soft cream tones, dependable and sincere mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, feminine beauty expression, wearing feminine office casual (soft knit and A-line skirt), holding a small handwritten note and presenting it gently, caring smile, turtle Shizuku beside her with a relieved expression, 3/4 angle\n[Text/Format] handwritten-style Japanese text『大事なこと、忘れてなかったよ』naturally placed within the illustration, text at top, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    },
+    {
+      "id": 24,
+      "character": [
+        "Coco",
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": true,
+      "type": "Coco込み（全員）",
+      "dialogue": "きょうも、そのままでよかったよ",
+      "scene": "一日の終わり・特別な日の締め・シリーズ総括",
+      "send_timing": "夜・就寝前",
+      "send_psychology": "全部受け入れてるよという温かい肯定",
+      "outfit": "お出掛け着（クールビューティー）",
+      "color_scheme": "warm golden hour tones with soft rainbow light, joyful all-together celebration mood",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm golden hour tones with soft rainbow light, joyful all-together celebration mood\n[Character] 41-year-old Japanese woman Coco with neat bob cut, cool beauty expression, wearing an elegant outing outfit, standing center with arms slightly open in a welcoming embrace gesture, black cat Shiratama on left, green turtle Shizuku on right, white dove Hiyori above — all four together in a warm circle, sparkling warm eyes and gentle cheerful gazes on all characters, full group composition\n[Text/Format] handwritten-style Japanese text『きょうも、そのままでよかったよ』naturally placed within the illustration, text at bottom center, 1:1 square format, transparent background, PNG, no background, isolated characters, 1px white outline, 10% shadow"
+    }
+  ]
+}
