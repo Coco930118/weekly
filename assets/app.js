@@ -309,7 +309,8 @@ function renderCard(post) {
   if (post.platform === 'X診断') return renderXDiagCard(post);
   if (post.platform === 'Threads診断') return renderThreadsDiagCard(post);
 
-  const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
+  const platformClass = post.platform === 'X' ? 'platform-x' :
+                        post.platform === 'Threads' ? 'platform-threads' : 'platform-line';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote || '');
 

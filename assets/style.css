@@ -22,6 +22,7 @@
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
   --accent-profile: #6b4226;
+  --accent-line: #06C755;
   --copy-btn: #2a2a2a;
   --copy-btn-hover: #383838;
   --copy-success: #2d6a4f;
@@ -169,6 +170,13 @@ body {
   color: var(--accent-threads-shindan);
 }
 
+.filter-btn.active-line {
+  background: var(--accent-line);
+  border-color: var(--accent-line);
+  color: #fff;
+}
+
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -251,6 +259,12 @@ body {
   background: rgba(155, 77, 202, 0.15);
   color: #c084e0;
   border: 1px solid rgba(155, 77, 202, 0.3);
+}
+
+.platform-line {
+  background: rgba(6, 199, 85, 0.12);
+  color: #06C755;
+  border: 1px solid rgba(6, 199, 85, 0.3);
 }
 
 .card-time {
