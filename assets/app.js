@@ -287,25 +287,36 @@ function renderStampPromoButtons() {
   const promoPosts = allPosts.filter(p => p.platform === 'スタンプ宣伝');
   if (promoPosts.length === 0) return;
 
-  const dates = promoPosts.map(p => p.date).sort();
-  const fromDate = dates[0];
-  const toDate = dates[dates.length - 1];
-  const fromM = parseInt(fromDate.slice(5, 7));
-  const fromD = fromDate.slice(8);
-  const toD = toDate.slice(8);
-  const label = `スタンプ宣伝 ${fromM}/${fromD}〜${toD}`;
+  const byWeek = {};
+  promoPosts.forEach(p => {
+    const w = p.weekId || 'unknown';
+    if (!byWeek[w]) byWeek[w] = [];
+    byWeek[w].push(p);
+  });
 
   const staticLineBtn = row.querySelector('[data-platform="LINEスタンプ"]:not([data-week])');
-  const btn = document.createElement('button');
-  btn.className = 'filter-btn';
-  btn.dataset.platform = 'スタンプ宣伝';
-  btn.textContent = label;
 
-  if (staticLineBtn) {
-    row.insertBefore(btn, staticLineBtn);
-  } else {
-    row.appendChild(btn);
-  }
+  Object.keys(byWeek).sort().reverse().forEach(weekId => {
+    const dates = byWeek[weekId].map(p => p.date).sort();
+    const fromDate = dates[0];
+    const toDate = dates[dates.length - 1];
+    const fromM = parseInt(fromDate.slice(5, 7));
+    const fromD = fromDate.slice(8);
+    const toD = toDate.slice(8);
+    const label = `スタンプ宣伝 ${fromM}/${fromD}〜${toD}`;
+
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.platform = 'スタンプ宣伝';
+    btn.dataset.week = weekId;
+    btn.textContent = label;
+
+    if (staticLineBtn) {
+      row.insertBefore(btn, staticLineBtn);
+    } else {
+      row.appendChild(btn);
+    }
+  });
 }
 
 function renderExpandable(label, text) {
@@ -496,7 +507,6 @@ function setupPlatformFilter() {
       renderPosts();
     } else if (platform === 'スタンプ宣伝') {
       btn.classList.add('active-stamp-promo');
-      activeFilters.week = 'all';
       if (postsContainer) postsContainer.style.display = '';
       if (stampSection) stampSection.style.display = 'none';
       if (weekFilterRow) weekFilterRow.style.display = 'none';
