@@ -1,5 +1,6 @@
 {
   "week": "2026-05-06",
+  "glow_up_date": "2026-05-11",
   "pattern": 3,
   "pattern_description": "ミックス（キャラのみ＋キャラ+Coco混在）",
   "stamps": [
@@ -12,18 +13,18 @@
       "scene": "GW明けの憂鬱を抱える友達への優しいひとこと",
       "outfit": "ハスの葉の笠、薄緑のあめ玉模様甲羅",
       "color_scheme": "セージグリーン×ミントホワイト",
-      "image_prompt": "Soft watercolor illustration of an adorable small green turtle wearing a delicate lotus-leaf sun hat, sitting calmly with closed eyes and a gentle reassuring smile, surrounded by fresh pale green early-summer leaves. The turtle's shell has a delicate mint white candy dot pattern. Sage green background. Generous copy space at the top reserved for Japanese text (top horizontal layout). Warm brushstroke texture, Studio Ghibli-inspired watercolor aesthetic, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted brushstroke texture. An adorable small green turtle wearing a delicate lotus-leaf sun hat, sitting calmly with closed eyes and a warm reassuring smile, surrounded by fresh pale green early-summer leaves. The turtle's shell has a delicate mint white candy dot pattern. Warm sparkling light in the pupils, hopeful gentle expression. Sage green pastel background. Generous copy space reserved at the top for Japanese text (top horizontal layout). Studio Ghibli-inspired watercolor aesthetic, less digital, more traditional art style. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 2,
       "character": ["しらたま", "Coco"],
       "with_coco": true,
       "type": "キャラ+Coco",
-      "dialogue": "5月、しんどいよね",
+      "dialogue": "5月、また来たね",
       "scene": "GW後の気だるさに、隣でそっと寄り添うとき",
       "outfit": "しらたま：水色ストライプのハーネス、Coco：オフホワイトのリネンシャツ",
       "color_scheme": "ライトブルー×アイボリー",
-      "image_prompt": "Soft watercolor illustration. A fluffy white Persian cat wearing a light blue striped harness sitting close to a gentle young woman with a neat short black bob haircut. The woman wears an off-white linen top. Both have soft, empathetic and slightly tired expressions. Pastel lavender background. Generous copy space at the top for Japanese text. Warm gentle brushstroke, anime watercolor aesthetic, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A fluffy white Persian cat wearing a light blue striped harness sitting close beside a gentle young woman with a neat short black bob haircut. The woman wears an off-white linen top. Both have warmly empathetic expressions with sparkling eyes full of shared understanding and quiet knowing. Pastel lavender background. Generous copy space at the top for Japanese text. Warm watercolor anime aesthetic, pastel tones, hand-painted feel. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 3,
@@ -34,7 +35,7 @@
       "scene": "不安げな相手を直感でそっと励ますとき",
       "outfit": "若草色のスカーフを首元にふわっと",
       "color_scheme": "若草グリーン×ウォームクリーム",
-      "image_prompt": "Soft watercolor illustration of a sweet small white dove wearing a fresh young-grass green scarf loosely around its neck, wings spread slightly with a bright confident and reassuring expression, tiny sparkling stars around it. Warm cream background. Generous copy space at the top for Japanese text. Gentle watercolor brushstroke, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and delicate hand-painted texture. A sweet small white dove wearing a fresh young-grass green scarf loosely around its neck, wings spread slightly with bright confident sparkling eyes and a warm reassuring expression, tiny stars around it. Warm cream background. Generous copy space at the top for Japanese text. Gentle watercolor anime style, pastel tones, soft paint bleeding at edges. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 4,
@@ -45,18 +46,18 @@
       "scene": "焦りを手放して仕切り直したいとき",
       "outfit": "しずく：藍色の幾何学模様甲羅、Coco：デニムブルーのカーディガン",
       "color_scheme": "インディゴブルー×デニム",
-      "image_prompt": "Soft watercolor illustration. A small green turtle with an indigo blue geometric-patterned shell and a young woman with a neat short black bob wearing a denim blue cardigan, both sitting peacefully together with folded hands and calm, composed expressions. Soft blue-gray background. Generous copy space at the top for Japanese text. Watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A small green turtle with an indigo blue geometric-patterned shell and a young woman with a neat short black bob wearing a denim blue cardigan, both sitting peacefully together with folded hands and calm composed expressions with warm steady eyes and gentle light in their pupils. Soft blue-gray background. Generous copy space at the top for Japanese text. Watercolor anime style, pastel tones, less digital. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 5,
       "character": ["しらたま"],
       "with_coco": false,
       "type": "キャラのみ",
-      "dialogue": "ちゃんと覚えてる",
-      "scene": "さりげない気遣いを伝えたいとき",
+      "dialogue": "ぜんぶ、覚えてるから",
+      "scene": "さりげない気遣いを温かく伝えたいとき",
       "outfit": "淡いピンクのリボン付きカチューシャ",
       "color_scheme": "ピーチピンク×ブラッシュ",
-      "image_prompt": "Soft watercolor illustration of an adorable fluffy white Persian cat wearing a delicate pale pink ribbon headband, looking up with sparkling warm eyes and a tender remembering smile. Blush pink background with tiny heart and star motifs. Generous copy space at the top for Japanese text. Sweet watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. An adorable fluffy white Persian cat wearing a delicate pale pink ribbon headband, looking up with warmly sparkling eyes full of gentle care and a tender remembering smile, tiny hearts floating around. Blush pink background with tiny heart and star motifs. Generous copy space at the top for Japanese text. Sweet watercolor anime style, pastel tones, soft edges. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 6,
@@ -67,7 +68,7 @@
       "scene": "辛い時期の相手にただ寄り添いたいとき",
       "outfit": "ひより：さくらピンクのケープ、Coco：クリーム色のニット",
       "color_scheme": "チェリーブロッサム×アイボリーニット",
-      "image_prompt": "Soft watercolor illustration. A gentle white dove draped in a soft cherry blossom pink cape sitting close beside a young woman with a neat short black bob wearing a cream knit sweater. Both have soft, quietly companionable expressions. Warm ivory and pale rose background. Generous copy space at the top for Japanese text. Tender watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A gentle white dove draped in a soft cherry blossom pink cape sitting close beside a young woman with a neat short black bob wearing a cream knit sweater. Both have warmly expressive eyes with gentle sparkle and soft quietly companionable expressions. Warm ivory and pale rose background. Generous copy space at the top for Japanese text. Tender watercolor anime style, pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 7,
@@ -78,7 +79,7 @@
       "scene": "相手の工夫や仕組みを心から褒めるとき",
       "outfit": "金色の甲羅リム、深緑の苔ベレー帽",
       "color_scheme": "ゴールド×ディープモスグリーン",
-      "image_prompt": "Soft watercolor illustration of a cheerful small green turtle with a golden-rimmed shell and a tiny deep green moss beret, giving a small enthusiastic thumbs up gesture with bright proud eyes and a warm smile. Yellow-green background with small leaf motifs. Generous copy space at the top for Japanese text. Playful watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A cheerful small green turtle with a golden-rimmed shell and a tiny deep green moss beret, giving a small enthusiastic thumbs up gesture with bright proud sparkling eyes and a warm beaming smile. Yellow-green background with small leaf motifs. Generous copy space at the top for Japanese text. Playful watercolor anime style, pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 8,
@@ -89,7 +90,7 @@
       "scene": "仲良しグループやチームへ贈る高揚感",
       "outfit": "しらたま：ラベンダーリボン、しずく：オレンジ紐飾り、Coco：白のサマードレス",
       "color_scheme": "ラベンダー×オレンジ×ホワイト",
-      "image_prompt": "Soft watercolor illustration of three cheerful friends: a fluffy white Persian cat with a lavender bow, a small green turtle with an orange ribbon decoration, and a young woman with a neat short black bob in a white summer dress, all posing together with big smiles and victory poses. Soft pastel rainbow gradient background. Generous copy space at the top for Japanese text. Joyful watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. Three cheerful friends: a fluffy white Persian cat with a lavender bow, a small green turtle with an orange ribbon decoration, and a young woman with a neat short black bob in a white summer dress, all posing together with sparkling bright eyes, big joyful smiles and victory poses. Soft pastel rainbow gradient background. Generous copy space at the top for Japanese text. Joyful watercolor anime style, hand-painted feel. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 9,
@@ -100,7 +101,7 @@
       "scene": "感情を正直にでも優しく伝えたいとき",
       "outfit": "グレーのふわもこマフラー",
       "color_scheme": "ミストグレー×ペールブルー",
-      "image_prompt": "Soft watercolor illustration of a fluffy white Persian cat wrapped in a soft gray fluffy scarf, sitting with gently downcast eyes and a small honest sad but calm expression. A tiny rain cloud hovers above. Pale blue-gray background. Generous copy space at the top for Japanese text. Emotionally expressive watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A fluffy white Persian cat wrapped in a soft gray fluffy scarf, sitting with gently downcast eyes showing honest sad-but-calm emotion with a small dignified expression. A tiny soft rain cloud hovers above. Pale blue-gray background. Generous copy space at the top for Japanese text. Emotionally expressive watercolor anime style, pastel tones, soft misty paint bleeding. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 10,
@@ -111,7 +112,7 @@
       "scene": "「やっぱりそうだったか」という静かな納得のとき",
       "outfit": "しずく：深海ブルーの甲羅模様、Coco：ネイビーのロングカーデ",
       "color_scheme": "ディープシーブルー×ネイビー",
-      "image_prompt": "Soft watercolor illustration. A wise small green turtle with a deep sea blue patterned shell and a young woman with a neat short black bob in a navy long cardigan, both nodding knowingly with a quietly confident serene expression, a tiny lightbulb motif. Deep teal and cream background. Generous copy space at the top for Japanese text. Contemplative watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A wise small green turtle with a deep sea blue patterned shell and a young woman with a neat short black bob in a navy long cardigan, both nodding knowingly with warmly confident serene expressions and a quietly satisfied glance, a tiny lightbulb motif nearby. Deep teal and cream background. Generous copy space at the top for Japanese text. Contemplative watercolor anime style, pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 11,
@@ -122,18 +123,18 @@
       "scene": "返事をちょっと待ってほしいとき",
       "outfit": "夕焼けオレンジの小さな傘を持つ",
       "color_scheme": "サンセットオレンジ×ウォームアンバー",
-      "image_prompt": "Soft watercolor illustration of a delicate white dove holding a tiny sunset orange parasol umbrella, looking back with soft patient pleading eyes. Warm amber-orange gradient background. Generous copy space at the top for Japanese text. Gentle watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A delicate white dove holding a tiny sunset orange parasol umbrella, looking back over its shoulder with soft patient and earnestly pleading eyes with a warm glow in the pupils. Warm amber-orange gradient background. Generous copy space at the top for Japanese text. Gentle watercolor anime style, hand-painted feel, soft warm edges. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 12,
       "character": ["ひより", "しらたま", "Coco"],
       "with_coco": true,
       "type": "キャラ+Coco",
-      "dialogue": "直感と感情が、一致した",
+      "dialogue": "全部、正しかったんだ",
       "scene": "「これだ！」という確信が湧いた瞬間に",
       "outfit": "ひより：ミントグリーン羽飾り、しらたま：ゴールドリボン、Coco：ブラウンのタートルネック",
       "color_scheme": "ミントグリーン×ゴールド×チョコレートブラウン",
-      "image_prompt": "Soft watercolor illustration. A white dove with mint green feather trim, a fluffy white Persian cat with a golden ribbon bow, and a young woman with a neat short black bob in a warm chocolate brown turtleneck, all looking bright-eyed and excited together, a small golden lightbulb motif glowing above. Warm golden cream background. Generous copy space at the top for Japanese text. Energetic watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A white dove with mint green feather trim, a fluffy white Persian cat with a golden ribbon bow, and a young woman with a neat short black bob in a warm chocolate brown turtleneck, all looking bright-eyed with sparkling eyes full of joyful excitement and mutual confirmation, a small golden lightbulb motif glowing above them. Warm golden cream background. Generous copy space at the top for Japanese text. Energetic watercolor anime style, hand-painted feel. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 13,
@@ -144,7 +145,7 @@
       "scene": "角を立てずに優しくNoを伝えたいとき",
       "outfit": "紫の小花柄甲羅、白い小手袋",
       "color_scheme": "ラベンダーパープル×ライトグレー",
-      "image_prompt": "Soft watercolor illustration of a thoughtful small green turtle with a purple small-floral-patterned shell and tiny white gloves, holding up one gloved hand gently in a polite refusal gesture, looking calmly assertive but kind. Soft lilac background with tiny flower motifs. Generous copy space at the top for Japanese text. Gentle watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A thoughtful small green turtle with a purple small-floral-patterned shell and tiny white gloves, holding up one gloved hand gently in a polite yet kind refusal gesture, with warmly calm assertive eyes and a gentle expression. Soft lilac background with tiny flower motifs. Generous copy space at the top for Japanese text. Gentle watercolor anime style, pastel tones, soft edges. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 14,
@@ -155,7 +156,7 @@
       "scene": "うまくいかなかったことを前向きに切り替えるとき",
       "outfit": "しらたま：コーラルピンクのバンダナ、Coco：オリーブグリーンのジャケット",
       "color_scheme": "コーラルピンク×オリーブグリーン",
-      "image_prompt": "Soft watercolor illustration. A fluffy white Persian cat with a coral pink bandana around its neck and a young woman with a neat short black bob in an olive green jacket, both with determined but relaxed forward-looking expressions, small gear-shaped motif. Warm sage green background. Generous copy space at the top for Japanese text. Positive watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A fluffy white Persian cat with a coral pink bandana around its neck and a young woman with a neat short black bob in an olive green jacket, both with determined forward-looking expressions and warmly resilient sparkling eyes, a small gear motif nearby. Warm sage green background. Generous copy space at the top for Japanese text. Positive watercolor anime style, hand-painted feel. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 15,
@@ -166,7 +167,7 @@
       "scene": "思いっきり全力で褒めたいとき",
       "outfit": "ゴールドのメダル付きリボン",
       "color_scheme": "サンシャインイエロー×スパークリングゴールド",
-      "image_prompt": "Soft watercolor illustration of an exuberant fluffy white Persian cat wearing a large shining golden medal ribbon, eyes sparkling wide open, both paws raised in joyful celebration, surrounded by colorful confetti and gold stars. Bright sunshine yellow background. Generous copy space at the top for Japanese text. Celebratory watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. An exuberant fluffy white Persian cat wearing a large shining golden medal ribbon, eyes sparkling wide open with pure joyful excitement, both paws raised in celebratory cheer, surrounded by colorful confetti and glittering gold stars. Bright sunshine yellow background. Generous copy space at the top for Japanese text. Celebratory watercolor anime style, vibrant but soft pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 16,
@@ -177,7 +178,7 @@
       "scene": "自分の軸をちゃんと守れたことを一緒に祝うとき",
       "outfit": "しずく：ターコイズの丸メガネ、ひより：白×空色ツートン羽、Coco：シャンパンゴールドのシャツ",
       "color_scheme": "ターコイズ×スカイブルー×シャンパンゴールド",
-      "image_prompt": "Soft watercolor illustration. A small green turtle wearing tiny turquoise round glasses, a white dove with a white and sky blue two-tone feather pattern, and a young woman with a neat short black bob in a champagne gold silk shirt, all three giving each other respectful small nods with quiet proud expressions. Soft pearl white background. Generous copy space at the top for Japanese text. Elegant watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A small green turtle wearing tiny turquoise round glasses, a white dove with a white and sky blue two-tone feather pattern, and a young woman with a neat short black bob in a champagne gold silk shirt, all three giving each other small respectful nods with quietly proud warm expressions and gentle approving eyes with soft sparkle. Soft pearl white background. Generous copy space at the top for Japanese text. Elegant watercolor anime style. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 17,
@@ -188,29 +189,29 @@
       "scene": "話を聞いてほしいと切り出すとき",
       "outfit": "ラズベリーレッドのベレー帽",
       "color_scheme": "ラズベリーレッド×ウォームローズ",
-      "image_prompt": "Soft watercolor illustration of a sweet white dove wearing a raspberry red beret, looking directly forward with big earnest slightly pleading eyes and beak open as if about to start speaking. Rose-tinted warm background. Generous copy space at the top for Japanese text. Expressive watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A sweet white dove wearing a raspberry red beret, looking directly forward with big earnest and warmly pleading eyes with a hopeful light in them and beak open as if about to start speaking. Rose-tinted warm background. Generous copy space at the top for Japanese text. Expressive watercolor anime style, pastel tones, hand-painted feel. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 18,
       "character": ["しずく", "Coco"],
       "with_coco": true,
       "type": "キャラ+Coco",
-      "dialogue": "なるほど、そういう仕組みか",
+      "dialogue": "そっか、仕組みだったんだ",
       "scene": "物事の仕組みや構造にふと気づいた瞬間",
       "outfit": "しずく：ワインレッドのショートケープ、Coco：シナモンブラウンのワイドパンツ",
       "color_scheme": "ワインレッド×シナモンブラウン",
-      "image_prompt": "Soft watercolor illustration. A thoughtful small green turtle wearing a wine red short cape and a young woman with a neat short black bob in cinnamon brown wide pants, both looking contemplative with a gentle aha expression, a small puzzle-piece motif nearby. Warm autumn tone background. Generous copy space at the top for Japanese text. Intellectual watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A thoughtful small green turtle wearing a wine red short cape and a young woman with a neat short black bob in cinnamon brown wide pants, both with a gentle illuminated aha expression and warmly curious sparkling eyes, a small puzzle-piece motif nearby. Warm autumn tone background. Generous copy space at the top for Japanese text. Intellectual watercolor anime style, pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 19,
       "character": ["しらたま", "しずく"],
       "with_coco": false,
       "type": "キャラのみ",
-      "dialogue": "ぜんぶ、わかってるよ",
+      "dialogue": "言わなくても、わかってるから",
       "scene": "全てを受け入れてただそばにいることを伝えるとき",
       "outfit": "しらたま：アイボリーレースの首輪、しずく：エメラルドグリーンの甲羅",
       "color_scheme": "アイボリーレース×エメラルドグリーン",
-      "image_prompt": "Soft watercolor illustration of a fluffy white Persian cat with an ivory lace collar and a small green turtle with a deep emerald green shell, sitting side by side with soft all-knowing warm and accepting expressions. Soft mint green and cream background. Generous copy space at the top for Japanese text. Comforting watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A fluffy white Persian cat with an ivory lace collar and a small green turtle with a deep emerald green shell, sitting side by side with soft all-knowing and deeply accepting warm expressions, gentle warm light in their eyes. Soft mint green and cream background. Generous copy space at the top for Japanese text. Comforting watercolor anime style, pastel tones, soft edges. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 20,
@@ -221,7 +222,7 @@
       "scene": "心の底からの感謝を伝えたいとき",
       "outfit": "しらたま：シルバーのリボン、Coco：淡いローズピンクのワンピース",
       "color_scheme": "シルバー×ソフトローズピンク",
-      "image_prompt": "Soft watercolor illustration. A fluffy white Persian cat with a silver ribbon bow and a young woman with a neat short black bob in a soft rose pink dress, both looking warmly and sincerely grateful toward the viewer, small soft flower petals drifting gently around them. Blush rose background. Generous copy space at the top for Japanese text. Heartfelt watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A fluffy white Persian cat with a silver ribbon bow and a young woman with a neat short black bob in a soft rose pink dress, both looking warmly and sincerely grateful toward the viewer with sparkling heartfelt eyes, soft flower petals drifting gently around them. Blush rose background. Generous copy space at the top for Japanese text. Heartfelt watercolor anime style, pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 21,
@@ -232,7 +233,7 @@
       "scene": "週末に大切な人をねぎらうとき",
       "outfit": "ゴールデンアンバーの甲羅リング、小さなホタルが飛ぶ",
       "color_scheme": "ゴールデンアンバー×ホタルイエロー",
-      "image_prompt": "Soft watercolor illustration of a content small green turtle with a golden amber-rimmed shell, sitting peacefully with eyes gently half-closed and a deeply satisfied small smile, surrounded by warm golden late afternoon light and a tiny glowing firefly. Golden hour warm background. Generous copy space at the top for Japanese text. Peaceful watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A content small green turtle with a golden amber-rimmed shell, sitting peacefully with eyes gently half-closed and a warmly satisfied small smile, surrounded by golden late-afternoon light and a tiny glowing firefly with soft light trails. Golden hour warm background. Generous copy space at the top for Japanese text. Peaceful watercolor anime style, warm pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 22,
@@ -243,18 +244,18 @@
       "scene": "母の日（5/10）に、大切な人への連絡を後押しするとき",
       "outfit": "ひより：カーネーションレッドの小花飾り、Coco：アイボリーのフリルブラウス",
       "color_scheme": "カーネーションレッド×アイボリーフリル",
-      "image_prompt": "Soft watercolor illustration. A white dove wearing a red carnation flower hair decoration and a young woman with a neat short black bob in an ivory frilly blouse, both looking warmly encouraging with gentle knowing smiles, a single red carnation motif nearby. Warm rosy cream background. Generous copy space at the top for Japanese text. Warm watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A white dove wearing a red carnation flower hair decoration and a young woman with a neat short black bob in an ivory frilly blouse, both with warmly encouraging expressions and gentle knowing sparkling eyes, a single red carnation motif nearby. Warm rosy cream background. Generous copy space at the top for Japanese text. Warm watercolor anime style, pastel tones. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 23,
       "character": ["しらたま", "ひより"],
       "with_coco": false,
       "type": "キャラのみ",
-      "dialogue": "ゆっくりでいい",
-      "scene": "焦りを手放してほしい相手へ",
+      "dialogue": "急がなくていい",
+      "scene": "焦りを手放してほしい相手へ。梅雨前の静かな背中押し",
       "outfit": "しらたま：ライムグリーンのニットベスト、ひより：スカイブルーの羽飾り",
       "color_scheme": "ライムグリーン×スカイブルー",
-      "image_prompt": "Soft watercolor illustration of a fluffy white Persian cat wearing a lime green knit vest and a white dove with soft sky blue feather trim, both together looking unhurried and peacefully content, dandelion seeds and soft feathers drifting around them. Fresh early summer sky blue and green background. Generous copy space at the top for Japanese text. Relaxed watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. A fluffy white Persian cat wearing a lime green knit vest and a white dove with soft sky blue feather trim, both together with unhurried peacefully content expressions and warmly reassuring gentle eyes, dandelion seeds and soft feathers drifting around them. Fresh early summer sky blue and green background with a hint of soft misty rainy atmosphere. Generous copy space at the top for Japanese text. Relaxed watercolor anime style, pastel tones, soft edges. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     },
     {
       "id": 24,
@@ -265,31 +266,31 @@
       "scene": "明るく元気よく別れを告げるとき",
       "outfit": "しずく：コバルトブルー甲羅、しらたま：ホットピンクのリボン、ひより：ひまわりイエローの羽飾り、Coco：ブライトコーラルのオーバーオール",
       "color_scheme": "コバルトブルー×ホットピンク×サンフラワーイエロー×コーラル",
-      "image_prompt": "Soft watercolor illustration of all four characters together in one cheerful scene: a small green turtle with a cobalt blue shell pattern, a fluffy white Persian cat with a hot pink ribbon, a white dove with sunflower yellow feather decoration, and a young woman with a neat short black bob in bright coral overalls, all waving enthusiastically with big bright smiles. Joyful celebration confetti all around. Generous copy space at the top for Japanese text. Festive watercolor anime style, no text in image."
+      "image_prompt": "Soft watercolor illustration with gentle paint bleeding and hand-painted texture. All four characters together in one cheerful scene: a small green turtle with a cobalt blue shell pattern, a fluffy white Persian cat with a hot pink ribbon, a white dove with sunflower yellow feather decoration, and a young woman with a neat short black bob in bright coral overalls, all waving enthusiastically with sparkling bright joyful eyes and big warm smiles. Joyful celebration confetti all around. Generous copy space at the top for Japanese text. Festive watercolor anime style, hand-painted feel. Strictly 1:1 square format, fully transparent PNG background with alpha channel, no embedded text, LINE sticker style."
     }
   ],
   "threads_promo": [
-    { "date": "2026-05-06", "time": "07:00", "content": "GW明けに使いたいスタンプ、作りました。" },
+    { "date": "2026-05-06", "time": "07:00", "content": "5月の重さを、言葉にしてくれるスタンプ" },
     { "date": "2026-05-06", "time": "10:00", "content": "5月病に、言葉で寄り添う。" },
     { "date": "2026-05-06", "time": "14:00", "content": "しずくの『まあ、一歩ずつ』を、今日の誰かに送って。" },
     { "date": "2026-05-06", "time": "19:00", "content": "静かに使える、知的なスタンプ24選。" },
-    { "date": "2026-05-07", "time": "07:00", "content": "毎朝の会話に、少しだけ温度を加えるスタンプ。" },
+    { "date": "2026-05-07", "time": "07:00", "content": "今朝の『おはよう』に、温度を乗せられる" },
     { "date": "2026-05-07", "time": "10:00", "content": "ひよりの直感が、あなたの言葉になる。" },
     { "date": "2026-05-07", "time": "14:00", "content": "言いたかったこと、スタンプで言えた。" },
     { "date": "2026-05-07", "time": "19:00", "content": "感情はある。依存はしない。そんなスタンプ。" },
-    { "date": "2026-05-08", "time": "07:00", "content": "木曜の別れ際に使える、ちょうどいい一言。" },
+    { "date": "2026-05-08", "time": "07:00", "content": "木曜夜の『お疲れさま』以上の言葉を、スタンプで" },
     { "date": "2026-05-08", "time": "10:00", "content": "しらたまの『えらい！！！』を、大切な人に。" },
     { "date": "2026-05-08", "time": "14:00", "content": "境界線を、優しく引けるスタンプがある。" },
-    { "date": "2026-05-08", "time": "19:00", "content": "週末前の、ちょうどいい言葉を用意した。" },
-    { "date": "2026-05-09", "time": "07:00", "content": "休日の朝に、ゆっくり使えるスタンプです。" },
+    { "date": "2026-05-08", "time": "19:00", "content": "金曜の前夜、誰かに送りたい一言がある" },
+    { "date": "2026-05-09", "time": "07:00", "content": "土曜の朝に、誰かの名前を思い浮かべたら" },
     { "date": "2026-05-09", "time": "10:00", "content": "3キャラとCocoが揃った、水彩タッチのスタンプ。" },
     { "date": "2026-05-09", "time": "14:00", "content": "『ありがとう、本当に』を、スタンプで。" },
     { "date": "2026-05-09", "time": "19:00", "content": "土曜の夜、大切な人に送りたい一枚がある。" },
     { "date": "2026-05-10", "time": "07:00", "content": "今日は母の日。ひよりから、連絡の後押しを。" },
     { "date": "2026-05-10", "time": "10:00", "content": "『ちゃんとお母さんに連絡した？』がスタンプになった。" },
-    { "date": "2026-05-10", "time": "14:00", "content": "感情の言語化が苦手な人のための、スタンプ。" },
+    { "date": "2026-05-10", "time": "14:00", "content": "言葉にするのが苦手でも、スタンプなら届く" },
     { "date": "2026-05-10", "time": "19:00", "content": "言葉にできなかった『ありがとう』の代わりに。" },
-    { "date": "2026-05-11", "time": "07:00", "content": "月曜日に使いたいスタンプ、揃えました。" },
+    { "date": "2026-05-11", "time": "07:00", "content": "月曜の朝でも、温度のある言葉を" },
     { "date": "2026-05-11", "time": "10:00", "content": "しずくの思考と、ひよりの直感で今週を始める。" },
     { "date": "2026-05-11", "time": "14:00", "content": "新しい週に、新しいスタンプを。" },
     { "date": "2026-05-11", "time": "19:00", "content": "おつかれ、今週もよく動いた。月曜からでも言える。" },
