@@ -54,6 +54,8 @@ async function loadPosts() {
     renderWeekFilter(weekDataArr.map(w => w.week));
     renderXDiagnosisButtons();
     renderThreadsDiagnosisButtons();
+    renderLineStampButtons();
+    renderStampPromoButtons();
     renderPosts();
 
     if (index.linestamps && index.linestamps.length > 0) {
@@ -248,6 +250,64 @@ function renderThreadsDiagnosisButtons() {
   });
 }
 
+function renderLineStampButtons() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  const lineStampPosts = allPosts.filter(p => p.platform === 'LINEスタンプ');
+  if (lineStampPosts.length === 0) return;
+
+  const dates = [...new Set(lineStampPosts.map(p => p.date))].sort().reverse();
+  const staticLineBtn = row.querySelector('[data-platform="LINEスタンプ"]:not([data-week])');
+
+  dates.forEach(date => {
+    const m = parseInt(date.slice(5, 7));
+    const d = date.slice(8);
+    const label = `LINEスタンプ ${m}/${d}〜${m}/${d}`;
+    const weekId = lineStampPosts.find(p => p.date === date)?.weekId;
+
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.platform = 'LINEスタンプ';
+    if (weekId) btn.dataset.week = weekId;
+    btn.textContent = label;
+
+    if (staticLineBtn) {
+      row.insertBefore(btn, staticLineBtn);
+    } else {
+      row.appendChild(btn);
+    }
+  });
+}
+
+function renderStampPromoButtons() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  const promoPosts = allPosts.filter(p => p.platform === 'スタンプ宣伝');
+  if (promoPosts.length === 0) return;
+
+  const dates = promoPosts.map(p => p.date).sort();
+  const fromDate = dates[0];
+  const toDate = dates[dates.length - 1];
+  const fromM = parseInt(fromDate.slice(5, 7));
+  const fromD = fromDate.slice(8);
+  const toD = toDate.slice(8);
+  const label = `スタンプ宣伝 ${fromM}/${fromD}〜${toD}`;
+
+  const staticLineBtn = row.querySelector('[data-platform="LINEスタンプ"]:not([data-week])');
+  const btn = document.createElement('button');
+  btn.className = 'filter-btn';
+  btn.dataset.platform = 'スタンプ宣伝';
+  btn.textContent = label;
+
+  if (staticLineBtn) {
+    row.insertBefore(btn, staticLineBtn);
+  } else {
+    row.appendChild(btn);
+  }
+}
+
 function renderExpandable(label, text) {
   const escaped = escapeHtml(text);
   return `
@@ -266,6 +326,8 @@ function getFilteredPosts() {
   return allPosts.filter(p => {
     if (activeFilters.platform === 'all' && p.platform === 'X診断') return false;
     if (activeFilters.platform === 'all' && p.platform === 'Threads診断') return false;
+    if (activeFilters.platform === 'all' && p.platform === 'LINEスタンプ') return false;
+    if (activeFilters.platform === 'all' && p.platform === 'スタンプ宣伝') return false;
     if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
@@ -310,7 +372,8 @@ function renderCard(post) {
   if (post.platform === 'Threads診断') return renderThreadsDiagCard(post);
 
   const platformClass = post.platform === 'X' ? 'platform-x' :
-                        post.platform === 'Threads' ? 'platform-threads' : 'platform-line';
+                        post.platform === 'Threads' ? 'platform-threads' :
+                        post.platform === 'スタンプ宣伝' ? 'platform-stamp-promo' : 'platform-line';
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote || '');
 
@@ -405,7 +468,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-xshindan', 'active-threads-shindan');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-xshindan', 'active-threads-shindan', 'active-stamp-promo', 'active-line');
     });
 
     const platform = btn.dataset.platform;
@@ -418,12 +481,27 @@ function setupPlatformFilter() {
     const weekFilterRow = document.getElementById('weekFilterRow');
     const statsBar = document.getElementById('statsBar');
 
-    if (platform === 'LINEスタンプ') {
+    if (platform === 'LINEスタンプ' && !weekId) {
       btn.classList.add('active-stamp');
       if (postsContainer) postsContainer.style.display = 'none';
       if (stampSection) stampSection.style.display = 'block';
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = 'none';
+    } else if (platform === 'LINEスタンプ' && weekId) {
+      btn.classList.add('active-line');
+      if (postsContainer) postsContainer.style.display = '';
+      if (stampSection) stampSection.style.display = 'none';
+      if (weekFilterRow) weekFilterRow.style.display = 'none';
+      if (statsBar) statsBar.style.display = '';
+      renderPosts();
+    } else if (platform === 'スタンプ宣伝') {
+      btn.classList.add('active-stamp-promo');
+      activeFilters.week = 'all';
+      if (postsContainer) postsContainer.style.display = '';
+      if (stampSection) stampSection.style.display = 'none';
+      if (weekFilterRow) weekFilterRow.style.display = 'none';
+      if (statsBar) statsBar.style.display = '';
+      renderPosts();
     } else if (platform === 'X診断') {
       btn.classList.add('active-xshindan');
       if (postsContainer) postsContainer.style.display = '';

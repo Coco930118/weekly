@@ -176,6 +176,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-stamp-promo {
+  background: #ff8c42;
+  border-color: #ff8c42;
+  color: #fff;
+}
+
 
 /* Stats bar */
 .stats-bar {
@@ -265,6 +271,12 @@ body {
   background: rgba(6, 199, 85, 0.12);
   color: #06C755;
   border: 1px solid rgba(6, 199, 85, 0.3);
+}
+
+.platform-stamp-promo {
+  background: rgba(255, 140, 66, 0.15);
+  color: #ff8c42;
+  border: 1px solid rgba(255, 140, 66, 0.3);
 }
 
 .card-time {
