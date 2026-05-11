@@ -9,6 +9,7 @@
   --bg-card: #181818;
   --bg-card-hover: #1e1e1e;
   --bg-quote: #141414;
+  --bg-section: #131313;
   --border: #2a2a2a;
   --border-light: #333333;
   --text-primary: #e8e8e8;
@@ -16,6 +17,7 @@
   --text-muted: #555555;
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
+  --accent-xdiag: #d4873a;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -126,6 +128,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-xdiag {
+  background: var(--accent-xdiag);
+  border-color: var(--accent-xdiag);
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -210,6 +218,12 @@ body {
   border: 1px solid rgba(155, 77, 202, 0.3);
 }
 
+.platform-xdiag {
+  background: rgba(212, 135, 58, 0.15);
+  color: #e8a86a;
+  border: 1px solid rgba(212, 135, 58, 0.3);
+}
+
 .card-time {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -242,6 +256,55 @@ body {
   white-space: pre-wrap;
   word-break: break-all;
   margin-bottom: 12px;
+}
+
+/* X診断 collapsible sections */
+.card-section {
+  border-top: 1px solid var(--border);
+}
+
+.card-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.12s ease;
+}
+
+.card-section-header:hover {
+  background: var(--bg-section);
+}
+
+.card-section-title {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.card-section-toggle {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.card-section-body {
+  padding: 0 14px 14px;
+  display: none;
+}
+
+.card-section-body.open {
+  display: block;
+}
+
+.card-section-body p {
+  font-size: 0.83rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
 }
 
 /* Quote section */
