@@ -50,12 +50,34 @@ async function loadPosts() {
         return tA - tB;
       });
 
+    renderDynamicPlatformFilter();
     renderWeekFilter(weekDataArr.map(w => w.week));
     renderPosts();
 
   } catch (err) {
     container.innerHTML = `<p class="error-state">データの読み込みに失敗しました<br><small>${err.message}</small></p>`;
   }
+}
+
+function renderDynamicPlatformFilter() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  row.querySelectorAll('[data-dynamic]').forEach(b => b.remove());
+
+  const knownPlatforms = new Set(['all', 'X', 'Threads']);
+  const extraPlatforms = [...new Set(allPosts.map(p => p.platform))]
+    .filter(p => !knownPlatforms.has(p))
+    .sort();
+
+  extraPlatforms.forEach(platform => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.platform = platform;
+    btn.dataset.dynamic = '1';
+    btn.textContent = platform;
+    row.appendChild(btn);
+  });
 }
 
 function renderWeekFilter(weeks) {
@@ -130,19 +152,57 @@ function renderPosts() {
 }
 
 function renderCard(post) {
-  const platformClass = post.platform === 'X' ? 'platform-x' : 'platform-threads';
+  const platformClass = post.platform === 'X' ? 'platform-x'
+    : post.platform === 'Threads' ? 'platform-threads'
+    : post.platform.startsWith('X診断') ? 'platform-xdiag'
+    : 'platform-other';
+
   const contentEscaped = escapeHtml(post.content);
   const quoteEscaped = escapeHtml(post.quote);
 
+  let extraSections = '';
+  if (post.comment) {
+    const commentEscaped = escapeHtml(post.comment);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説コメント</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${commentEscaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${commentEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.image_prompt) {
+    const promptEscaped = escapeHtml(post.image_prompt);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🖼 画像プロンプト</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${promptEscaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${promptEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
   return `
-    <article class="card" data-platform="${post.platform}">
+    <article class="card" data-platform="${escapeHtml(post.platform)}">
       <div class="card-header">
         <div class="card-meta-left">
-          <span class="platform-badge ${platformClass}">${post.platform}</span>
+          <span class="platform-badge ${platformClass}">${escapeHtml(post.platform)}</span>
           <span class="card-time">${post.time}</span>
-          <span class="card-character">${post.character}</span>
+          <span class="card-character">${escapeHtml(post.character)}</span>
         </div>
-        <span class="purpose-badge">${post.purpose}</span>
+        <span class="purpose-badge">${escapeHtml(post.purpose)}</span>
       </div>
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
@@ -150,6 +210,7 @@ function renderCard(post) {
           <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
         </div>
       </div>
+      ${extraSections}
       <div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
@@ -166,7 +227,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag');
     });
 
     const platform = btn.dataset.platform;
@@ -174,6 +235,7 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
+    else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
     else btn.classList.add('active');
 
     renderPosts();
@@ -216,8 +278,21 @@ function setupCopyHandler() {
   });
 }
 
+function setupSectionToggle() {
+  document.addEventListener('click', e => {
+    const header = e.target.closest('.card-section-header');
+    if (!header) return;
+    const body = header.nextElementSibling;
+    if (!body || !body.classList.contains('card-section-body')) return;
+    body.classList.toggle('open');
+    const toggle = header.querySelector('.card-section-toggle');
+    if (toggle) toggle.textContent = body.classList.contains('open') ? '▲' : '▼';
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   setupPlatformFilter();
+  setupSectionToggle();
   setupCopyHandler();
   loadPosts();
 });
