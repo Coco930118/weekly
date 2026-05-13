@@ -18,6 +18,7 @@
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
   --accent-xdiag: #d4873a;
+  --accent-threadsdiag: #e87aa0;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -134,6 +135,12 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-threadsdiag {
+  background: var(--accent-threadsdiag);
+  border-color: var(--accent-threadsdiag);
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -222,6 +229,12 @@ body {
   background: rgba(212, 135, 58, 0.15);
   color: #e8a86a;
   border: 1px solid rgba(212, 135, 58, 0.3);
+}
+
+.platform-threadsdiag {
+  background: rgba(232, 122, 160, 0.15);
+  color: #e87aa0;
+  border: 1px solid rgba(232, 122, 160, 0.3);
 }
 
 .card-time {

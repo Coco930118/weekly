@@ -155,6 +155,7 @@ function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x'
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
+    : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
@@ -227,7 +228,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag', 'active-threadsdiag');
     });
 
     const platform = btn.dataset.platform;
@@ -236,6 +237,7 @@ function setupPlatformFilter() {
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
+    else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
     else btn.classList.add('active');
 
     renderPosts();
