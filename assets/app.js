@@ -9,6 +9,38 @@ let activeFilters = {
 const DAYS_JA = ['日', '月', '火', '水', '木', '金', '土'];
 const MONTHS = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
 
+// 長い/具体的な型を先に並べること（"X診断" を "X" より前に）
+const PLATFORM_TYPES = ['X診断', 'Threads診断', 'Lineスタンプ', 'スタンプ宣伝', 'note', 'Threads', 'X'];
+
+const PLATFORM_STYLE = {
+  'X':           { cls: 'platform-x',         active: 'active-x' },
+  'Threads':     { cls: 'platform-threads',    active: 'active-threads' },
+  'X診断':       { cls: 'platform-xdiag',      active: 'active-xdiag' },
+  'Threads診断': { cls: 'platform-tdiag',      active: 'active-tdiag' },
+  'Lineスタンプ': { cls: 'platform-linestamp',  active: 'active-linestamp' },
+  'スタンプ宣伝': { cls: 'platform-stamppr',    active: 'active-stamppr' },
+  'note':        { cls: 'platform-note',       active: 'active-note' },
+};
+
+/**
+ * "X診断 5/12〜5/18" → "X診断" のように、
+ * JSONのplatformフィールドからベース媒体名を抽出する
+ */
+function getPlatformType(platform) {
+  for (const type of PLATFORM_TYPES) {
+    if (platform.startsWith(type)) return type;
+  }
+  return platform;
+}
+
+function platformCls(type) {
+  return PLATFORM_STYLE[type]?.cls || 'platform-other';
+}
+
+function platformActiveClass(type) {
+  return PLATFORM_STYLE[type]?.active || 'active';
+}
+
 function formatDate(dateStr) {
   const d = new Date(dateStr + 'T00:00:00');
   const month = MONTHS[d.getMonth()];
@@ -18,7 +50,7 @@ function formatDate(dateStr) {
 }
 
 function escapeHtml(str) {
-  return str
+  return (str || '')
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -50,7 +82,6 @@ async function loadPosts() {
         return tA - tB;
       });
 
-    renderDynamicPlatformFilter();
     renderWeekFilter(weekDataArr.map(w => w.week));
     renderPosts();
 
@@ -59,30 +90,11 @@ async function loadPosts() {
   }
 }
 
-function renderDynamicPlatformFilter() {
-  const row = document.getElementById('platformFilterRow');
-  if (!row) return;
-
-  row.querySelectorAll('[data-dynamic]').forEach(b => b.remove());
-
-  const knownPlatforms = new Set(['all', 'X', 'Threads']);
-  const extraPlatforms = [...new Set(allPosts.map(p => p.platform))]
-    .filter(p => !knownPlatforms.has(p))
-    .sort();
-
-  extraPlatforms.forEach(platform => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.dataset.platform = platform;
-    btn.dataset.dynamic = '1';
-    btn.textContent = platform;
-    row.appendChild(btn);
-  });
-}
-
 function renderWeekFilter(weeks) {
   const row = document.getElementById('weekFilterRow');
   if (!row) return;
+  // ラベル以外のボタンをリセット
+  row.querySelectorAll('button').forEach(b => b.remove());
 
   const all = document.createElement('button');
   all.className = 'filter-btn active';
@@ -112,7 +124,7 @@ function renderWeekFilter(weeks) {
 
 function getFilteredPosts() {
   return allPosts.filter(p => {
-    if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
+    if (activeFilters.platform !== 'all' && getPlatformType(p.platform) !== activeFilters.platform) return false;
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -152,13 +164,10 @@ function renderPosts() {
 }
 
 function renderCard(post) {
-  const platformClass = post.platform === 'X' ? 'platform-x'
-    : post.platform === 'Threads' ? 'platform-threads'
-    : post.platform.startsWith('X診断') ? 'platform-xdiag'
-    : 'platform-other';
-
+  const type = getPlatformType(post.platform);
+  const badgeCls = platformCls(type);
   const contentEscaped = escapeHtml(post.content);
-  const quoteEscaped = escapeHtml(post.quote);
+  const quoteEscaped = escapeHtml(post.quote || '');
 
   let extraSections = '';
   if (post.comment) {
@@ -194,13 +203,19 @@ function renderCard(post) {
       </div>`;
   }
 
+  const quoteSection = quoteEscaped ? `
+    <div class="card-quote">
+      <p class="quote-text">${quoteEscaped}</p>
+      <button class="copy-btn" data-copy="${quoteEscaped}">コピー</button>
+    </div>` : '';
+
   return `
-    <article class="card" data-platform="${escapeHtml(post.platform)}">
+    <article class="card" data-platform="${escapeHtml(type)}">
       <div class="card-header">
         <div class="card-meta-left">
-          <span class="platform-badge ${platformClass}">${escapeHtml(post.platform)}</span>
+          <span class="platform-badge ${badgeCls}">${escapeHtml(type)}</span>
           <span class="card-time">${post.time}</span>
-          <span class="card-character">${escapeHtml(post.character)}</span>
+          <span class="card-character">${escapeHtml(post.character || '')}</span>
         </div>
         <span class="purpose-badge">${escapeHtml(post.purpose)}</span>
       </div>
@@ -211,10 +226,7 @@ function renderCard(post) {
         </div>
       </div>
       ${extraSections}
-      <div class="card-quote">
-        <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
-      </div>
+      ${quoteSection}
     </article>`;
 }
 
@@ -226,17 +238,19 @@ function setupPlatformFilter() {
     const btn = e.target.closest('.filter-btn[data-platform]');
     if (!btn) return;
 
+    // すべてのボタンをリセット
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag');
+      b.className = 'filter-btn';
     });
 
     const platform = btn.dataset.platform;
     activeFilters.platform = platform;
 
-    if (platform === 'X') btn.classList.add('active-x');
-    else if (platform === 'Threads') btn.classList.add('active-threads');
-    else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
-    else btn.classList.add('active');
+    if (platform === 'all') {
+      btn.classList.add('active');
+    } else {
+      btn.classList.add(platformActiveClass(platform));
+    }
 
     renderPosts();
   });
@@ -246,21 +260,12 @@ function setupCopyHandler() {
   document.addEventListener('click', async e => {
     const btn = e.target.closest('.copy-btn');
     if (!btn) return;
-
     const text = btn.dataset.copy;
     if (!text) return;
 
     try {
       await navigator.clipboard.writeText(text);
-      const original = btn.textContent;
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
     } catch {
-      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
@@ -268,13 +273,14 @@ function setupCopyHandler() {
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'コピー';
-        btn.classList.remove('copied');
-      }, 1800);
     }
+    const original = btn.textContent;
+    btn.textContent = 'コピー完了';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = original;
+      btn.classList.remove('copied');
+    }, 1800);
   });
 }
 

@@ -18,10 +18,10 @@
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
   --accent-xdiag: #d4873a;
-  --accent-save: #2d6a4f;
-  --accent-empathy: #8b5e3c;
-  --accent-reply: #4a5568;
-  --accent-profile: #6b4226;
+  --accent-tdiag: #2d8a6b;
+  --accent-linestamp: #06c755;
+  --accent-stamppr: #e94f3a;
+  --accent-note: #41c9a0;
   --copy-btn: #2a2a2a;
   --copy-btn-hover: #383838;
   --copy-success: #2d6a4f;
@@ -110,28 +110,60 @@ body {
   color: var(--text-primary);
 }
 
+/* 全て */
 .filter-btn.active {
   background: var(--text-primary);
   border-color: var(--text-primary);
   color: var(--bg);
 }
 
+/* X */
 .filter-btn.active-x {
   background: var(--accent-x);
   border-color: var(--accent-x);
   color: #fff;
 }
 
+/* Threads */
 .filter-btn.active-threads {
   background: var(--accent-threads);
   border-color: var(--accent-threads);
   color: #fff;
 }
 
+/* X診断 */
 .filter-btn.active-xdiag {
   background: var(--accent-xdiag);
   border-color: var(--accent-xdiag);
   color: #fff;
+}
+
+/* Threads診断 */
+.filter-btn.active-tdiag {
+  background: var(--accent-tdiag);
+  border-color: var(--accent-tdiag);
+  color: #fff;
+}
+
+/* Lineスタンプ */
+.filter-btn.active-linestamp {
+  background: var(--accent-linestamp);
+  border-color: var(--accent-linestamp);
+  color: #fff;
+}
+
+/* スタンプ宣伝 */
+.filter-btn.active-stamppr {
+  background: var(--accent-stamppr);
+  border-color: var(--accent-stamppr);
+  color: #fff;
+}
+
+/* note */
+.filter-btn.active-note {
+  background: var(--accent-note);
+  border-color: var(--accent-note);
+  color: #111;
 }
 
 /* Stats bar */
@@ -198,6 +230,7 @@ body {
   flex-wrap: wrap;
 }
 
+/* Platform badges */
 .platform-badge {
   font-size: 0.65rem;
   font-weight: 700;
@@ -222,6 +255,36 @@ body {
   background: rgba(212, 135, 58, 0.15);
   color: #e8a86a;
   border: 1px solid rgba(212, 135, 58, 0.3);
+}
+
+.platform-tdiag {
+  background: rgba(45, 138, 107, 0.15);
+  color: #4ecba8;
+  border: 1px solid rgba(45, 138, 107, 0.3);
+}
+
+.platform-linestamp {
+  background: rgba(6, 199, 85, 0.15);
+  color: #4ae08a;
+  border: 1px solid rgba(6, 199, 85, 0.3);
+}
+
+.platform-stamppr {
+  background: rgba(233, 79, 58, 0.15);
+  color: #f07868;
+  border: 1px solid rgba(233, 79, 58, 0.3);
+}
+
+.platform-note {
+  background: rgba(65, 201, 160, 0.15);
+  color: #7de0c5;
+  border: 1px solid rgba(65, 201, 160, 0.3);
+}
+
+.platform-other {
+  background: rgba(100, 100, 100, 0.15);
+  color: #aaaaaa;
+  border: 1px solid rgba(100, 100, 100, 0.3);
 }
 
 .card-time {
@@ -258,7 +321,7 @@ body {
   margin-bottom: 12px;
 }
 
-/* X診断 collapsible sections */
+/* Collapsible sections */
 .card-section {
   border-top: 1px solid var(--border);
 }
