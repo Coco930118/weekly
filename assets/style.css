@@ -69,6 +69,25 @@ body {
   letter-spacing: 0.04em;
 }
 
+/* Site Nav */
+.site-nav {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 4px;
+}
+.nav-link {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  padding: 5px 14px;
+  border-radius: 20px;
+  letter-spacing: 0.02em;
+  transition: all 0.15s;
+}
+.nav-link:hover { color: var(--text-secondary); background: var(--bg-card); }
+.nav-link.active { color: var(--text-primary); background: var(--bg-card); border: 1px solid var(--border-light); }
+
 /* Filters */
 .filters {
   padding: 16px 20px 12px;

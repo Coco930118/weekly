@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="「急に辞めた」は存在しない。必ずサインはある。静かで、見落としやすい。でも確実にそこにある。20年・5万人超の実例とチェックリスト付きで解説。">
+  <title>「急に辞めた」は存在しない｜coconocanvas note</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #111111;
+      --bg-card: #181818;
+      --bg-paywall: #141414;
+      --border: #2a2a2a;
+      --border-light: #333333;
+      --text-primary: #e8e8e8;
+      --text-secondary: #888888;
+      --text-muted: #555555;
+      --accent: #d4873a;
+      --accent-light: rgba(212,135,58,0.12);
+      --check: #2d6a4f;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+      --font-serif: 'Hiragino Mincho ProN', 'Yu Mincho', 'Georgia', serif;
+      --radius: 12px;
+    }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      line-height: 1.8;
+      padding-bottom: 80px;
+    }
+
+    /* ---- Site Header ---- */
+    .site-header {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(17,17,17,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .back-link {
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+      transition: color 0.15s;
+      white-space: nowrap;
+    }
+    .back-link:hover { color: var(--text-secondary); }
+    .header-brand {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      letter-spacing: 0.08em;
+    }
+    .header-sep { color: var(--text-muted); font-size: 0.7rem; }
+    .header-section { font-size: 0.75rem; color: var(--text-muted); }
+
+    /* ---- Article ---- */
+    .article-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* Meta strip */
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding: 28px 0 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .meta-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+    }
+    .meta-note { background: var(--accent-light); color: var(--accent); border: 1px solid rgba(212,135,58,0.3); }
+    .meta-date { font-size: 0.72rem; color: var(--text-muted); }
+    .meta-price {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+      padding: 2px 10px;
+      border-radius: 20px;
+    }
+
+    /* Title */
+    .article-title {
+      font-size: 1.45rem;
+      font-weight: 700;
+      line-height: 1.55;
+      letter-spacing: -0.01em;
+      color: var(--text-primary);
+      margin: 24px 0 12px;
+      font-family: var(--font-serif);
+    }
+    .article-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Body prose */
+    .article-body {
+      padding-top: 32px;
+      font-size: 0.95rem;
+      line-height: 2;
+      color: #d4d4d4;
+    }
+
+    .article-body p {
+      margin-bottom: 1.4em;
+    }
+
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2em 0;
+    }
+
+    .article-body h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 2.4em 0 0.9em;
+      padding-left: 14px;
+      border-left: 3px solid var(--accent);
+      letter-spacing: 0.02em;
+      line-height: 1.55;
+    }
+
+    /* Paywall block */
+    .paywall-block {
+      background: var(--bg-paywall);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      padding: 28px 22px;
+      margin: 2em 0;
+    }
+    .paywall-block p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 1em;
+      line-height: 1.9;
+    }
+    .paywall-block p:last-child { margin-bottom: 0; }
+    .paywall-label {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 14px !important;
+    }
+    .paywall-benefits {
+      list-style: none;
+      margin: 12px 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+    .paywall-benefits li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .paywall-benefits li::before {
+      content: "✔";
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* Checklist */
+    .checklist {
+      background: #141414;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 20px;
+      margin: 1.2em 0 1.6em;
+    }
+    .checklist-title {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    .checklist ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .checklist li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      line-height: 1.7;
+    }
+    .checklist li::before {
+      content: "□";
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 1px;
+      font-size: 0.9em;
+    }
+
+    /* Jump box */
+    .jump-box {
+      border-left: 3px solid var(--accent);
+      background: var(--accent-light);
+      padding: 16px 18px;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 1.6em 0;
+    }
+    .jump-box p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      margin-bottom: 0.7em;
+    }
+    .jump-box p:last-child { margin-bottom: 0; }
+    .jump-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 10px !important;
+      font-weight: 700;
+    }
+
+    /* "Your case" heading */
+    .your-case {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin: 1.8em 0 0.5em;
+    }
+
+    /* Italic note */
+    em.soft {
+      font-style: normal;
+      color: var(--text-muted);
+      font-size: 0.87em;
+    }
+
+    /* Closing block */
+    .closing-block {
+      border-top: 1px solid var(--border);
+      padding-top: 2em;
+      margin-top: 2.5em;
+    }
+    .closing-block p { color: var(--text-secondary); }
+
+    /* CTA block */
+    .cta-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 22px;
+      margin: 2.5em 0 2em;
+    }
+    .cta-block p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.9;
+      margin-bottom: 0.8em;
+    }
+    .cta-block p:last-child { margin-bottom: 0; }
+
+    /* Hashtags */
+    .hashtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 2em 0 2.5em;
+    }
+    .hashtag {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 3px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.02em;
+    }
+
+    /* SNS hooks */
+    .sns-hooks {
+      border-top: 1px solid var(--border);
+      padding-top: 2em;
+      margin-top: 0.5em;
+    }
+    .sns-hooks-title {
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-bottom: 1.2em;
+    }
+    .hook-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 16px 12px;
+      margin-bottom: 12px;
+    }
+    .hook-platform {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .hook-x { color: #4db3f0; }
+    .hook-threads { color: #c084e0; }
+    .hook-instagram { color: #d4873a; }
+    .hook-body {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      white-space: pre-wrap;
+      line-height: 1.85;
+    }
+    .copy-hook-btn {
+      margin-top: 10px;
+      background: transparent;
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.68rem;
+      font-family: var(--font);
+      cursor: pointer;
+      letter-spacing: 0.02em;
+      transition: all 0.15s;
+    }
+    .copy-hook-btn:hover { border-color: var(--text-muted); color: var(--text-secondary); }
+    .copy-hook-btn.copied { background: var(--check); border-color: var(--check); color: #9ef0be; }
+
+    @media (min-width: 640px) {
+      .article-wrap { padding: 0 32px; }
+      .article-title { font-size: 1.7rem; }
+      .site-header { padding: 22px 32px 18px; }
+    }
+    @media (min-width: 720px) {
+      .article-wrap { padding: 0 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="back-link">← 投稿管理</a>
+    <span class="header-sep">|</span>
+    <span class="header-brand">coconocanvas</span>
+    <span class="header-sep">|</span>
+    <span class="header-section">note</span>
+  </header>
+
+  <div class="article-wrap">
+
+    <!-- Meta -->
+    <div class="article-meta">
+      <span class="meta-badge meta-note">NOTE</span>
+      <span class="meta-date">2026年5月16日</span>
+      <span class="meta-price">¥1,200</span>
+    </div>
+
+    <!-- Title -->
+    <h1 class="article-title">「急に辞めた」は存在しない<br>優秀な人が黙って離れる前に、職場で必ず起きていること</h1>
+
+    <p class="article-desc">「急に辞めた」は存在しない。必ずサインはある。静かで、地味で、見落としやすい。でも確実にそこにある。20年で5万人超と向き合う中で見てきた「優秀な人が黙って離れる前に起きていること」を、実例とチェックリスト付きで解説する。</p>
+
+    <!-- Body -->
+    <div class="article-body">
+
+      <p>20年で延べ5万人超と向き合う中で、「急に辞めた」という言葉を何度も聞いてきた。</p>
+      <p>でも正直に言う。</p>
+      <p>「急に辞めた人」には、一度も会ったことがない。</p>
+      <p>必ずサインはある。<br>静かで、地味で、見落としやすい。<br>でも、確実にそこにある。</p>
+
+      <hr>
+
+      <p>昔の私は、よく「突然辞めた」と感じていた。</p>
+      <p>ネイルサロンを経営していた頃、ある日突然、信頼していたスタッフが辞表を持ってきた。</p>
+      <p>前日まで普通に仕事をしていたのに、と思った。<br>でも後から振り返ると、見えていなかっただけだった。</p>
+      <p>3週間前から、ランチに来なくなっていた。<br>2週間前から、提案が来なくなっていた。<br>1週間前から、定時ぴったりに帰るようになっていた。</p>
+      <p>私が気づいていなかっただけで、サインはずっとそこにあった。</p>
+
+      <hr>
+
+      <p>人が辞める理由は「他にいい職場が見つかったから」ではない。</p>
+      <p>「ここにいる理由が、なくなったから」だ。</p>
+
+      <!-- Paywall -->
+      <div class="paywall-block">
+        <p class="paywall-label">— ここから先は有料です —</p>
+        <p>「なぜあの人は辞めてしまったのか」<br>そう問い続けているなら、ここから先を読んでください。</p>
+        <ul class="paywall-benefits">
+          <li>優秀な人が「辞めようと決める」前に、職場で必ず起きていること</li>
+          <li>報告・相談・提案が止まる「構造的な理由」と、今すぐできる対処</li>
+          <li>「ここにいる理由」を設計するための、具体的な問いとチェックリスト</li>
+        </ul>
+        <p style="margin-top:16px; font-size:0.78rem; color:var(--text-muted);">20年・5万人超の実例付き。各章にチェックリスト。</p>
+      </div>
+
+      <h2>1. サインは「関係の撤退」から始まる</h2>
+
+      <p>20年で5万人超と向き合う中で気づいたことがある。</p>
+      <p>人が職場から心が離れるとき、まず「関係から撤退」する。</p>
+      <p>ランチや雑談への参加が減る。「最近どう？」と聞かれても「大丈夫です」しか言わなくなる。笑顔はある。業務はこなしている。でも、何かが薄くなっている。</p>
+      <p>これは「コミュニケーション不足」の問題ではない。「この場所に属したい」という気持ちが薄れ始めたサインだ。</p>
+      <hr>
+      <p>昔、BAR運営をしていた頃のこと。毎週活発だったスタッフが、ある時期から飲み会に来なくなった。理由を聞くと「用事があって」と言う。でも「用事」が続いた。</p>
+      <p>その後、3ヶ月で辞めた。</p>
+      <p>後から聞くと「もうここで頑張る気持ちがなくなっていた」と言っていた。「用事」は、心の撤退の代わりの言葉だったのだと、あとになってわかった。</p>
+      <hr>
+      <p>関係性の撤退は「行動の変化」として現れる。それは言葉ではなく、「参加しなくなること」で伝わる。</p>
+      <p><strong>あなたの職場で、最近「なんとなく参加しなくなった人」はいないか？</strong></p>
+
+      <p class="your-case">あなたの場合</p>
+      <p>全員のことを毎日見ることは難しい。でも週に一度、「最近どう？」と聞く人を1人決めるだけで変わる。特定の誰かの変化を「気のせい」で流さないこと。</p>
+
+      <div class="checklist">
+        <div class="checklist-title">チェックリスト</div>
+        <ul>
+          <li>ランチや雑談に参加しなくなった人を把握している</li>
+          <li>「最近どう？」を週1回、誰か1人に言っている</li>
+          <li>行動の変化を「やる気の問題」として片付けていない</li>
+          <li>小さな変化を「気のせい」と流していない</li>
+          <li>「前は来ていたのに」という変化に気づいたら声をかけている</li>
+        </ul>
+      </div>
+
+      <h2>2. 提案が消えたとき、諦めが定着している</h2>
+
+      <p>優秀な人ほど、最初は提案や意見を出す。</p>
+      <p>「こういうやり方はどうですか」「この部分、改善できると思うんですが」</p>
+      <p>でもある時期から、提案が止まる。</p>
+      <p>これは「やる気をなくした」のではない。「どうせ変わらない」という学習が完成した状態だ。</p>
+      <hr>
+      <p>私が約40名の現場を自走化させていく過程で、何度もこの場面を見てきた。</p>
+      <p>提案を出し続けてくれていたスタッフが、ある日を境に静かになった。最初は「疲れているのかな」と思っていた。でも違った。</p>
+      <p>後から聞くと「言っても無駄だと思った」という言葉が返ってきた。</p>
+      <p>正確には「無駄」ではなく、「報われないと学んだ」のだ。採用されなかったとき、理由が伝わらなかった。次に出してみたとき、また流れた。3回目に、提案を出すのをやめた。</p>
+      <hr>
+      <p>提案が止まるとき、人は「ここに投資する意味がない」と決断している。</p>
+      <p>その瞬間まで、どれだけ提案を拾えたかが問われる。</p>
+
+      <p class="your-case">あなたの場合</p>
+      <p>提案が来なくなった人には「最近なにか気になっていることない？」と聞いてみる。採用できなかった提案には、必ず理由を返すこと。</p>
+
+      <div class="checklist">
+        <div class="checklist-title">チェックリスト</div>
+        <ul>
+          <li>提案をもらったとき「ありがとう」を先に言っている</li>
+          <li>採用できなかった提案に、理由を伝えている</li>
+          <li>「前は提案してくれていたのに、最近来なくなった人」を把握している</li>
+          <li>「どうせ変わらない」と思わせた体験を自分が作っていないか振り返っている</li>
+          <li>定期的に「何か改善したいことはある？」と聞く場を設けている</li>
+        </ul>
+      </div>
+
+      <h2>3. 報告が来なくなる職場には、来られない構造がある</h2>
+
+      <p>「なぜ報告してくれないんだ」と言うリーダーに、私はいつも同じ問いを返したくなる。</p>
+      <p>「報告して、何がありましたか？」</p>
+      <p>報連相が止まる職場に「やる気のない部下」はいない。「報告して、損した」と学んだ人たちがいるだけだ。</p>
+      <hr>
+      <p>飲食店の現場改善を手伝っていたとき、店長が「なんで報告が来ないんだ」と嘆いていた。</p>
+      <p>でも現場を見ると、理由はすぐわかった。</p>
+      <p>報告するたびに「それくらい自分で考えろ」と返ってきていた。以前、強く叱責された記憶を持つスタッフが、次から報告を止めていた。「どうせ怒られる」と学んだ人たちが、情報を自分の中に留めていた。</p>
+      <p>これは部下の問題ではない。「報告する理由」が消えている、構造の問題だ。</p>
+
+      <div class="jump-box">
+        <p class="jump-label">視座のジャンプ</p>
+        <p>「報告が来ない職場」は、コミュニケーションの問題ではない。</p>
+        <p>「報告したときに何が起きるか」の学習結果が問題だ。</p>
+        <p>人は「行動の結果」を見て、次の行動を決める。報告したら叱られた経験が1回でもあれば、次の報告のハードルは確実に上がる。報告して「ありがとう、教えてくれて助かった」と言われた経験が積み重なれば、報告は習慣になる。</p>
+        <p>構造を変えなければ、声かけも研修も効かない。</p>
+      </div>
+
+      <p class="your-case">あなたの場合</p>
+      <p>報告を受けたとき、最初の5秒が次の報告を決める。「ありがとう、教えてくれて助かった」から始める習慣を作ること。</p>
+
+      <div class="checklist">
+        <div class="checklist-title">チェックリスト</div>
+        <ul>
+          <li>報告を受けたとき、最初に感謝を言っている</li>
+          <li>「なぜこうなったか」より先に「次にどうするか」を聞いている</li>
+          <li>悪い報告を持ってきた人を、その場で責めていない</li>
+          <li>「いつでも話しかけていい」を言葉だけでなく態度で示している</li>
+          <li>報告してよかった、という体験を意識的に作っている</li>
+        </ul>
+      </div>
+
+      <h2>4. 評価が届いていない職場で、優秀な人は静かに転職サイトを開く</h2>
+
+      <p>「ちゃんと評価している」のに、部下には伝わらない。</p>
+      <p>この現象は「評価の不足」ではなく、「届け方の設計ミス」から生まれる。</p>
+      <p>私も昔、評価を「まとめて面談のタイミングで」渡していた。でも、半年前の行動を今言われても、という顔をよくされた。「あのとき言ってほしかった」という言葉を後から聞いたこともある。</p>
+      <p>評価は「した」かどうかではなく、「届いた」かどうかで決まる。</p>
+      <hr>
+      <p>特に優秀な人は「自分の行動が見られているか」に敏感だ。</p>
+      <p>見られていない、と感じた瞬間から、職場への投資を少しずつ減らしていく。給与が変わらなくても、業務量が変わらなくても、「ここでの自分は見えていない」という感覚が積み重なると、人は静かに「次の場所」を探し始める。</p>
+
+      <p class="your-case">あなたの場合</p>
+      <p>評価は「その場で・具体的に・その行動について」伝えること。「いつ・何が・どうよかったか」の3点を意識するだけで、届き方が変わる。</p>
+
+      <div class="checklist">
+        <div class="checklist-title">チェックリスト</div>
+        <ul>
+          <li>良い行動を見たとき、その日のうちに伝えている</li>
+          <li>「全体的によくやった」ではなく、具体的な行動を指定して伝えている</li>
+          <li>結果だけでなく、プロセスや姿勢も評価の対象にしている</li>
+          <li>評価を伝えるタイミングを意識的に設計している</li>
+          <li>「あなたの〇〇が、チームを助けた」という形で伝えている</li>
+        </ul>
+      </div>
+
+      <h2>5. 「ここにいる理由」がなくなるとき、人は静かに出口を探す</h2>
+
+      <p>最後に、一番大事なことを言う。</p>
+      <p>人が辞める瞬間は「他にいい会社が見つかったとき」だが、辞めようと決めた瞬間は、もっとずっと前にある。</p>
+      <p>それは「ここにいる理由がなくなった」と感じた瞬間だ。</p>
+      <p>やっていることの意味が見えなくなったとき。<br>誰かに認められている感覚が消えたとき。<br>次のステップが見えなくなったとき。<br>話せる人が、いなくなったとき。</p>
+      <p>そのどれか1つが消えた瞬間から、人は静かに出口を探し始める。</p>
+      <hr>
+      <p>「認める」の反対は、批判ではない。</p>
+      <p>無関心だ。</p>
+      <p>人は批判よりも、無関心の方が傷つく。「怒られる」は関心がある証拠だ。でも「見えていない」は、存在を消される感覚だ。</p>
+      <p>「辞めにくい職場」は居心地がいい職場ではない。「ここにいる理由」が、1つでもある職場だ。</p>
+
+      <p class="your-case">あなたの場合</p>
+      <p>まず、今一緒に働いているチームの「ここにいる理由」を、自分が言えるかどうか確認してほしい。一人ひとりの「ここにいる理由」を言えるリーダーは、その人が辞める前に気づける。</p>
+
+      <div class="checklist">
+        <div class="checklist-title">チェックリスト</div>
+        <ul>
+          <li>チームの一人ひとりが「なぜここで働いているか」を知っている</li>
+          <li>最近「やりがいを感じるのはどんなとき？」と聞いたことがある</li>
+          <li>その人の「ここにいる理由」を支援するような動きができている</li>
+          <li>「この先どうなりたいか」を聞く場を設けている</li>
+          <li>定期的に話しやすい関係を、日頃から作っている</li>
+        </ul>
+      </div>
+
+      <!-- Closing -->
+      <div class="closing-block">
+        <p>あのね、</p>
+        <p>「急に辞めた」という言葉を使うたびに、少しだけ立ち止まってほしい。</p>
+        <p>急ではなかった。見えていなかっただけ、かもしれない。</p>
+        <p>でも、それがわかった今日から変えられる。</p>
+        <p>全部を一度に変えなくていい。明日、一人の部下に「最近どう？」と聞くだけでいい。その5秒が、関係の温度を少しだけ変える。</p>
+      </div>
+
+      <!-- CTA -->
+      <div class="cta-block">
+        <p>読んでくれてありがとう。</p>
+        <p>───</p>
+        <p>もしこの記事を読んで、「心当たりがあるかも」と感じたなら、一度、あなたのチームの「ここにいる理由」を書き出してみてください。</p>
+        <p>一人ひとりの名前を書いて、その横に「この人がここにいる理由」を書く。書けない人がいたら、その人に話しかけるタイミングだ。</p>
+        <p>それだけで、関係の温度が変わります。</p>
+        <p>───</p>
+        <p>何か感じたこととか、ちょっとモヤモヤしてることとか、あったら教えてね。コメントでも、DMでも。</p>
+      </div>
+
+      <!-- Hashtags -->
+      <div class="hashtags">
+        <span class="hashtag">#組織</span>
+        <span class="hashtag">#マネジメント</span>
+        <span class="hashtag">#人材育成</span>
+        <span class="hashtag">#リーダーシップ</span>
+        <span class="hashtag">#離職防止</span>
+        <span class="hashtag">#人間関係</span>
+      </div>
+
+      <!-- SNS Hooks -->
+      <div class="sns-hooks">
+        <div class="sns-hooks-title">SNS 導線文（日曜15時投稿用）</div>
+
+        <div class="hook-card">
+          <div class="hook-platform hook-x">X（構造の違和感 → note接続）</div>
+          <div class="hook-body" id="hook-x">「急に辞めた」という言葉を使う上司がいる。
+
+でも「急に辞めた人」には、一度も会ったことがない。
+
+必ずサインはある。
+静かで、見落としやすい。
+でも確実にそこにある。
+
+サインの正体と、「ここにいる理由」の作り方を書いた。
+
+▼ note</div>
+          <button class="copy-hook-btn" onclick="copyHook('hook-x', this)">コピー</button>
+        </div>
+
+        <div class="hook-card">
+          <div class="hook-platform hook-threads">Threads（感情の余白 → note接続）</div>
+          <div class="hook-body" id="hook-threads">「急に辞めた」は存在しない。
+
+ランチに来なくなる。
+提案が止まる。
+定時ぴったりに帰る。
+
+これは全部、サインだ。
+
+人が辞める瞬間は「他にいい職場が見つかったとき」。
+でも、辞めようと決めた瞬間は、もっとずっと前にある。
+
+その話を、noteに書いた。</div>
+          <button class="copy-hook-btn" onclick="copyHook('hook-threads', this)">コピー</button>
+        </div>
+
+        <div class="hook-card">
+          <div class="hook-platform hook-instagram">Instagram（日常感 → note接続）</div>
+          <div class="hook-body" id="hook-instagram">「急に辞めた」という言葉を使うたびに、少しだけ立ち止まってほしい。
+
+急ではなかった。
+見えていなかっただけ、かもしれない。
+
+────
+
+優秀な人が黙って離れる前に、職場で必ず起きていることを書いたnoteを更新しました。プロフのリンクから。</div>
+          <button class="copy-hook-btn" onclick="copyHook('hook-instagram', this)">コピー</button>
+        </div>
+      </div>
+
+    </div><!-- /article-body -->
+  </div><!-- /article-wrap -->
+
+  <script>
+    function copyHook(id, btn) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'コピー済み ✓';
+        btn.classList.add('copied');
+        setTimeout(() => {
+          btn.textContent = 'コピー';
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+
+</body>
+</html>
