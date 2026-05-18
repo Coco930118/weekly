@@ -158,36 +158,49 @@ function renderLineStampSection(stampSets) {
 }
 
 function renderStampCard(stamp) {
-  const charLabel = stamp.character.map(c => {
-    if (c === 'しらたま') return '🐈‍⬛しらたま';
-    if (c === 'しずく') return '🐢しずく';
-    if (c === 'ひより') return '🕊ひより';
-    if (c === 'Coco') return '💎Coco';
-    return c;
-  }).join(' + ');
+  const charLabel = Array.isArray(stamp.character)
+    ? stamp.character.map(c => {
+        if (c === 'しらたま') return '🐈‍⬛しらたま';
+        if (c === 'しずく') return '🐢しずく';
+        if (c === 'ひより') return '🕊ひより';
+        if (c === 'Coco') return '💎Coco';
+        return c;
+      }).join(' + ')
+    : (stamp.character || '');
 
   const typeClass = stamp.with_coco ? 'type-coco' : 'type-char';
   const e = escapeHtml;
 
+  const idLabel = stamp.id != null ? stamp.id : (stamp.purpose || '');
+  const typeLabel = stamp.type || (stamp.with_coco ? 'Coco参加' : 'キャラのみ');
+  const dialogue = stamp.dialogue || '';
+  const scene = stamp.scene || '';
+  const imagePrompt = stamp.image_prompt || '';
+  const colorScheme = stamp.color_scheme || '';
+
   return `
     <div class="stamp-card">
       <div class="stamp-card-header">
-        <span class="stamp-num">#${stamp.id}</span>
-        <span class="stamp-type-badge ${typeClass}">${e(stamp.type)}</span>
+        <span class="stamp-num">#${e(String(idLabel))}</span>
+        <span class="stamp-type-badge ${typeClass}">${e(typeLabel)}</span>
       </div>
       <div class="stamp-characters">${e(charLabel)}</div>
-      <div class="stamp-dialogue">${e(stamp.dialogue)}</div>
-      <div class="stamp-scene">📍 ${e(stamp.scene)}</div>
+      ${dialogue ? `<div class="stamp-dialogue">${e(dialogue)}</div>` : ''}
+      ${scene ? `<div class="stamp-scene">📍 ${e(scene)}</div>` : ''}
       ${stamp.send_timing ? `<div class="stamp-timing">⏰ ${e(stamp.send_timing)}</div>` : ''}
       ${stamp.send_psychology ? `<div class="stamp-psychology">💭 ${e(stamp.send_psychology)}</div>` : ''}
       <details class="stamp-details">
         <summary>コーデ・プロンプトを見る</summary>
         ${stamp.outfit ? `<div class="stamp-outfit">👗 ${e(stamp.outfit)}</div>` : ''}
-        <div class="stamp-color">🎨 ${e(stamp.color_scheme)}</div>
-        <div class="stamp-prompt-wrap">
-          <pre class="stamp-prompt">${e(stamp.image_prompt)}</pre>
-          <button class="copy-btn" data-copy="${e(stamp.image_prompt)}">プロンプトをコピー</button>
-        </div>
+        ${colorScheme ? `<div class="stamp-color">🎨 ${e(colorScheme)}</div>` : ''}
+        ${imagePrompt ? `<div class="stamp-prompt-wrap">
+          <pre class="stamp-prompt">${e(imagePrompt)}</pre>
+          <button class="copy-btn" data-copy="${e(imagePrompt)}">プロンプトをコピー</button>
+        </div>` : ''}
+        ${stamp.content ? `<div class="stamp-prompt-wrap">
+          <pre class="stamp-prompt">${e(stamp.content)}</pre>
+          <button class="copy-btn" data-copy="${e(stamp.content)}">コンテンツをコピー</button>
+        </div>` : ''}
       </details>
     </div>
   `;
