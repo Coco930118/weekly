@@ -17,268 +17,387 @@
   "desc_en": "Three animal friends — a cat, a turtle, and a bird — for the small words that matter most. 24 soft watercolor stamps to share everyday warmth, quiet gratitude, and gentle encouragement with the people you care about.",
   "stamps": [
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:01",
-      "purpose": "④-01 おはよう",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：おはよう\n\n【シーン設計】\n・使用タイミング：朝\n・使用シーン：日常・恋愛\n・送る心理：気遣い・元気づけ\n\n【構図】下部集合、上部大きなCopy Space（横書き）",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, bright morning eyes, one paw raised in cheerful wave, joyful smile), Shizuku (small turtle with flower on shell, peering upward with hopeful morning expression), and Hiyori (white bird with wings lightly spread, chirping cheerfully) gathered near a rain-streaked window with soft blue hydrangea blossoms pressing against the glass outside; muted early morning light through clouds. Full body group in lower 55% of frame, generous empty copy space at top 40%. Sparkling warm eyes, soft light reflection, bright hopeful expression. Handwritten-style Japanese text「おはよう」naturally placed at top center. Front view gentle group composition.",
-      "comment": "【分析反映】梅雨の朝の定番挨拶。3匹全員登場でにぎやか感と温かさを演出。紫陽花を窓に配し季節感を付与。\n【シーン設計】朝の最初のメッセージとして、恋人・友人・家族への使用を想定。",
-      "quote": "朝のひとことを、3匹でお届けします"
+      "id": 1,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "おはよう",
+      "scene": "日常・恋愛",
+      "send_timing": "朝",
+      "send_psychology": "気遣い・元気づけ",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, bright morning eyes, one paw raised in cheerful wave, joyful smile), Shizuku (small turtle with flower on shell, peering upward with hopeful morning expression), and Hiyori (white bird with wings lightly spread, chirping cheerfully) gathered near a rain-streaked window with soft blue hydrangea blossoms pressing against the glass outside; muted early morning light through clouds. Full body group in lower 55% of frame, generous empty copy space at top 40%. Sparkling warm eyes, soft light reflection, bright hopeful expression. Handwritten-style Japanese text「おはよう」naturally placed at top center. Front view gentle group composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:02",
-      "purpose": "④-02 おやすみ〜",
-      "character": "🐈‍⬛しらたま",
-      "content": "セリフ：おやすみ〜\n\n【シーン設計】\n・使用タイミング：夜\n・使用シーン：日常・恋愛\n・送る心理：温かさ・親密さ\n\n【構図】バストアップ、眠そうなしらたま、右上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, eyes blissfully half-closed in sleepy contentment, tiny adorable yawn with one paw raised in gentle goodnight wave, soft pillow tucked beside); warm lamp glow, lavender hydrangeas softly visible through rainy window behind. Bust-up in lower-left 55%, generous copy space at upper right. Sparkling warm sleepy eyes, soft light reflection. Handwritten-style Japanese text「おやすみ〜」naturally placed at upper right. Three-quarter angle, looking slightly downward sleepily.",
-      "comment": "【分析反映】夜の需要は日中に次ぐ高頻度。しらたま1匹で「かわいい眠気」を前面に。ラベンダー紫陽花で梅雨の夜の雰囲気を演出。\n【シーン設計】就寝前のひとこととして、恋人や友人に送る温かいおやすみ。",
-      "quote": "夜の終わりを、そっと飾るスタンプ"
+      "id": 2,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "おやすみ〜",
+      "scene": "日常・恋愛",
+      "send_timing": "夜",
+      "send_psychology": "温かさ・親密さ",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, eyes blissfully half-closed in sleepy contentment, tiny adorable yawn with one paw raised in gentle goodnight wave, soft pillow tucked beside); warm lamp glow, lavender hydrangeas softly visible through rainy window behind. Bust-up in lower-left 55%, generous copy space at upper right. Sparkling warm sleepy eyes, soft light reflection. Handwritten-style Japanese text「おやすみ〜」naturally placed at upper right. Three-quarter angle, looking slightly downward sleepily."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:03",
-      "purpose": "④-03 いつもありがとう",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "セリフ：いつもありがとう\n\n【シーン設計】\n・使用タイミング：昼・夜\n・使用シーン：日常・恋愛・仕事\n・送る心理：感謝・温かさ\n\n【構図】バストアップ横並び、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, both front flippers pressed together in heartfelt gratitude, warm sincere eyes) and Hiyori (gentle white bird with wings gently folded to chest in a moved thankful gesture, soft appreciative expression); glass vase with blue hydrangeas in warm indoor light, gentle rain outside window. Side-by-side bust-up in lower 55%, generous text space at top. Sparkling warm eyes, genuine gratitude gaze. Handwritten-style Japanese text「いつもありがとう」naturally placed at top center. Eye-level angle, warm depth.",
-      "comment": "【分析反映】感謝系スタンプは全年齢・全シーン需要が高い。しずく×ひよりで誠実さと直感の両面から感謝を表現。室内花瓶に紫陽花を添え初夏感を演出。\n【シーン設計】仕事相手・恋人・家族への日常的感謝として万能。",
-      "quote": "感謝の気持ちを、2匹でそっと添えて"
+      "id": 3,
+      "character": [
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "いつもありがとう",
+      "scene": "日常・恋愛・仕事",
+      "send_timing": "昼・夜",
+      "send_psychology": "感謝・温かさ",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, both front flippers pressed together in heartfelt gratitude, warm sincere eyes) and Hiyori (gentle white bird with wings gently folded to chest in a moved thankful gesture, soft appreciative expression); glass vase with blue hydrangeas in warm indoor light, gentle rain outside window. Side-by-side bust-up in lower 55%, generous text space at top. Sparkling warm eyes, genuine gratitude gaze. Handwritten-style Japanese text「いつもありがとう」naturally placed at top center. Eye-level angle, warm depth."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:04",
-      "purpose": "④-04 大好き",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "セリフ：大好き\n\n【シーン設計】\n・使用タイミング：夜・昼\n・使用シーン：恋愛・家族\n・送る心理：愛情・距離を縮める\n\n【構図】超密着クローズアップ2ショット、左上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, gazing at Hiyori with pure warm sideways affection, tiny tender smile) and Hiyori (gentle white bird with feathers softly puffed in pleased warmth, happy expression meeting Shirotsuma's gaze); very close together, soft pink and lavender watercolor with tiny scattered petals, cozy lamp glow. Very close-up intimate composition in lower-right 55%, generous text space at upper left. Sparkling warm eyes, genuine tender affection. Handwritten-style Japanese text「大好き」naturally placed at upper left. Extremely close side-to-side intimate angle.",
-      "comment": "【分析反映】「大好き」は恋愛・家族向けで需要が高く、季節問わず人気。しらたま（感情）×ひより（直感）の密着ショットで「心から好き」の温度を表現。\n【シーン設計】恋人への就寝前メッセージや、子どもへの愛情表現として。",
-      "quote": "言葉より先に、気持ちが届く"
+      "id": 4,
+      "character": [
+        "しらたま",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "大好き",
+      "scene": "恋愛・家族",
+      "send_timing": "夜・昼",
+      "send_psychology": "愛情・距離を縮める",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, gazing at Hiyori with pure warm sideways affection, tiny tender smile) and Hiyori (gentle white bird with feathers softly puffed in pleased warmth, happy expression meeting Shirotsuma's gaze); very close together, soft pink and lavender watercolor with tiny scattered petals, cozy lamp glow. Very close-up intimate composition in lower-right 55%, generous text space at upper left. Sparkling warm eyes, genuine tender affection. Handwritten-style Japanese text「大好き」naturally placed at upper left. Extremely close side-to-side intimate angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:05",
-      "purpose": "④-05 今日も素敵ないちにちになりますように",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：今日も素敵ないちにちになりますように\n\n【シーン設計】\n・使用タイミング：朝\n・使用シーン：日常・仕事\n・送る心理：気遣い・祈り・温かい応援\n\n【構図】横並びおさんぽ、上部大きなCopy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, walking briskly with bright forward-looking morning energy), Shizuku (small turtle with earnest tiny steps, flower on shell glowing) and Hiyori (white bird flying lightly ahead, wings spread in gentle blessing) along a dewy garden path with soft blue hydrangea garden suggested in background; diffused morning light breaking through clouds. Full body group in lower 45%, generous text space at top 50%. Sparkling warm eyes, bright hopeful expression. Handwritten-style Japanese text「今日も素敵ないちにちになりますように」naturally placed at top. Side profile gentle walking composition.",
-      "comment": "【分析反映】朝の挨拶スタンプは職場・友人間で高需要。3匹でのおさんぽ構図でシリーズの世界観を表現。梅雨の晴れ間のような朝の光と紫陽花で季節感。\n【シーン設計】月曜朝の送り出し、友人への朝の挨拶など。",
-      "quote": "今日も、きっとうまくいく"
+      "id": 5,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "今日も素敵ないちにちになりますように",
+      "scene": "日常・仕事",
+      "send_timing": "朝",
+      "send_psychology": "気遣い・祈り・温かい応援",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, walking briskly with bright forward-looking morning energy), Shizuku (small turtle with earnest tiny steps, flower on shell glowing) and Hiyori (white bird flying lightly ahead, wings spread in gentle blessing) along a dewy garden path with soft blue hydrangea garden suggested in background; diffused morning light breaking through clouds. Full body group in lower 45%, generous text space at top 50%. Sparkling warm eyes, bright hopeful expression. Handwritten-style Japanese text「今日も素敵ないちにちになりますように」naturally placed at top. Side profile gentle walking composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:06",
-      "purpose": "④-06 元気？",
-      "character": "🐢しずく",
-      "content": "セリフ：元気？\n\n【シーン設計】\n・使用タイミング：夜・昼\n・使用シーン：日常・恋愛\n・送る心理：気遣い・確認・距離調整\n\n【構図】バストアップ、しずくが正面から問いかける",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, head gently tilted with caring inquisitive expression, warm curious eyes looking directly up at viewer, slight concerned warmth); cozy evening lamp glow, soft rain drops visible on window behind. Centered bust-up in lower 55%, generous text space at top. Sparkling warm eyes, gentle inquiring gaze. Handwritten-style Japanese text「元気？」naturally placed at top center. Slight looking-up-at-viewer angle, intimate frontal composition.",
-      "comment": "【分析反映】「元気？」は短くて使いやすく、しばらく連絡していない相手にも送りやすいスタンプ。しずくのきょとんとした表情で「心配してるよ」ニュアンスを出す。\n【シーン設計】久しぶりの連絡、体調が心配な友人への気遣い。",
-      "quote": "ひとことが、誰かの心にそっと届く"
+      "id": 6,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "元気？",
+      "scene": "日常・恋愛",
+      "send_timing": "夜・昼",
+      "send_psychology": "気遣い・確認・距離調整",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, head gently tilted with caring inquisitive expression, warm curious eyes looking directly up at viewer, slight concerned warmth); cozy evening lamp glow, soft rain drops visible on window behind. Centered bust-up in lower 55%, generous text space at top. Sparkling warm eyes, gentle inquiring gaze. Handwritten-style Japanese text「元気？」naturally placed at top center. Slight looking-up-at-viewer angle, intimate frontal composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:07",
-      "purpose": "④-07 楽しみ〜",
-      "character": "🐈‍⬛しらたま + 🐢しずく",
-      "content": "セリフ：楽しみ〜\n\n【シーン設計】\n・使用タイミング：昼・夕\n・使用シーン：日常・恋愛\n・送る心理：期待・ワクワク・共感\n\n【構図】ダイナミック2ショット、右上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, tail raised excitedly, paws together in joyful anticipation, bright eager eyes) and Shizuku (small turtle with wide happy eyes, flower on shell bright, pulling a tiny pastel mint umbrella ready for a rainy adventure); warm playful palette of mint and butter yellow, tiny rain drops suggested. Dynamic lively duo in lower-left 55%, generous copy space at upper right. Sparkling warm excited eyes. Handwritten-style Japanese text「楽しみ〜」naturally placed at upper right. Angled dynamic composition.",
-      "comment": "【分析反映】梅雨の時期にも「楽しみ」の感情は需要が高い。傘の小物で季節感を付与しつつ、ワクワク感を前面に。しらたま×しずくのコンビで「友だち感」を演出。\n【シーン設計】デートの約束、週末の計画、旅行前日など。",
-      "quote": "ワクワクが、そのまま飛び出してくるスタンプ"
+      "id": 7,
+      "character": [
+        "しらたま",
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "楽しみ〜",
+      "scene": "日常・恋愛",
+      "send_timing": "昼・夕",
+      "send_psychology": "期待・ワクワク・共感",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, tail raised excitedly, paws together in joyful anticipation, bright eager eyes) and Shizuku (small turtle with wide happy eyes, flower on shell bright, pulling a tiny pastel mint umbrella ready for a rainy adventure); warm playful palette of mint and butter yellow, tiny rain drops suggested. Dynamic lively duo in lower-left 55%, generous copy space at upper right. Sparkling warm excited eyes. Handwritten-style Japanese text「楽しみ〜」naturally placed at upper right. Angled dynamic composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:08",
-      "purpose": "④-08 やってみよう",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：やってみよう\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：仕事・日常\n・送る心理：背中を押す・励まし・共感\n\n【構図】フルボディ、下部配置、下部Copy Space（横書き）",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, looking determined with tiny fist raised, bright forward gaze), Shizuku (small turtle with focused earnest forward lean, tiny determined expression) and Hiyori (white bird with wings slightly spread in encouraging forward energy, bright eyes); fresh motivated morning atmosphere, small potted succulent nearby. Full body group in upper 55%, generous copy space at bottom 40%. Sparkling warm eyes, energetic hopeful gaze. Handwritten-style Japanese text「やってみよう」naturally placed at bottom. Three-quarter view from slightly below, empowering upward angle.",
-      "comment": "【分析反映】梅雨のブルーな気分を前向きにする励ましスタンプ。3匹の異なる個性（感情・思考・直感）が揃って背中を押す構成で説得力を増す。\n【シーン設計】仕事の挑戦前、新しいことを始める友人への応援。",
-      "quote": "「まずやってみる」を、3匹で後押しします"
+      "id": 8,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "やってみよう",
+      "scene": "仕事・日常",
+      "send_timing": "昼",
+      "send_psychology": "背中を押す・励まし・共感",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, looking determined with tiny fist raised, bright forward gaze), Shizuku (small turtle with focused earnest forward lean, tiny determined expression) and Hiyori (white bird with wings slightly spread in encouraging forward energy, bright eyes); fresh motivated morning atmosphere, small potted succulent nearby. Full body group in upper 55%, generous copy space at bottom 40%. Sparkling warm eyes, energetic hopeful gaze. Handwritten-style Japanese text「やってみよう」naturally placed at bottom. Three-quarter view from slightly below, empowering upward angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:09",
-      "purpose": "④-09 少しずつでいい",
-      "character": "🕊ひより",
-      "content": "セリフ：少しずつでいい\n\n【シーン設計】\n・使用タイミング：夜\n・使用シーン：日常・仕事\n・送る心理：共感・やさしい励まし\n\n【構図】センター縦構図、両脇縦書きCopy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Hiyori (gentle white bird with soft blue-tipped wing feathers, compassionate expression, one wing lightly raised in quiet reassurance, warm understanding eyes gazing gently forward); diffused soft rainy-day light, tiny lavender hydrangeas and gentle rain drops in background, sage and lavender palette. Centered in lower-middle 50%, generous vertical text space on both sides. Sparkling warm eyes with compassionate gaze, soft light reflection. Handwritten-style Japanese text「少しずつでいい」naturally placed vertically on both sides. Quiet intimate frontal composition.",
-      "comment": "【分析反映】梅雨の体力消耗・梅雨バテの時期に響く「やさしい許可」の言葉。ひより1匹のシンプルな構図で「静かな共感」を演出。\n【シーン設計】頑張りすぎている友人・自分自身を慰める夜に。",
-      "quote": "焦らなくていい、を代わりに言ってくれるスタンプ"
+      "id": 9,
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "少しずつでいい",
+      "scene": "日常・仕事",
+      "send_timing": "夜",
+      "send_psychology": "共感・やさしい励まし",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Hiyori (gentle white bird with soft blue-tipped wing feathers, compassionate expression, one wing lightly raised in quiet reassurance, warm understanding eyes gazing gently forward); diffused soft rainy-day light, tiny lavender hydrangeas and gentle rain drops in background, sage and lavender palette. Centered in lower-middle 50%, generous vertical text space on both sides. Sparkling warm eyes with compassionate gaze, soft light reflection. Handwritten-style Japanese text「少しずつでいい」naturally placed vertically on both sides. Quiet intimate frontal composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:10",
-      "purpose": "④-10 まぁいいんじゃない",
-      "character": "🐈‍⬛しらたま",
-      "content": "セリフ：まぁいいんじゃない\n\n【シーン設計】\n・使用タイミング：夜・夕\n・使用シーン：日常\n・送る心理：受容・気持ちを軽くする・ユーモア\n\n【構図】バストアップ脱力ポーズ、左上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, completely relaxed accepting expression with a tiny amused smile, one shoulder raised in a carefree shrug, paws loosely dangling in front, eyes with a gentle unbothered glow); cozy evening setting, soft warm lamp, muted rainy night outside window. Casual bust-up in lower-right 55%, generous copy space at upper left. Sparkling warm eyes with relaxed gentle amusement. Handwritten-style Japanese text「まぁいいんじゃない」naturally placed at upper left. Slightly looking upward casual relaxed angle.",
-      "comment": "【分析反映】「まぁいいんじゃない」は現代人の自己受容ニーズにマッチ。しらたま1匹の脱力感で夜のリラックスした許容感を演出。梅雨の雨に諦め混じりの笑顔で向き合うイメージ。\n【シーン設計】クヨクヨしている友人を軽くする、自分への許可として。",
-      "quote": "「もういいか」って笑える、その一言"
+      "id": 10,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "まぁいいんじゃない",
+      "scene": "日常",
+      "send_timing": "夜・夕",
+      "send_psychology": "受容・気持ちを軽くする・ユーモア",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, completely relaxed accepting expression with a tiny amused smile, one shoulder raised in a carefree shrug, paws loosely dangling in front, eyes with a gentle unbothered glow); cozy evening setting, soft warm lamp, muted rainy night outside window. Casual bust-up in lower-right 55%, generous copy space at upper left. Sparkling warm eyes with relaxed gentle amusement. Handwritten-style Japanese text「まぁいいんじゃない」naturally placed at upper left. Slightly looking upward casual relaxed angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:11",
-      "purpose": "④-11 気をつけてね",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "セリフ：気をつけてね\n\n【シーン設計】\n・使用タイミング：昼・夕\n・使用シーン：日常\n・送る心理：気遣い・見送り・温かさ\n\n【構図】見送り2ショット、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with caring eyes looking up, flower on shell bright, one flipper gently raised in warm farewell) and Hiyori (gentle white bird with wings slightly open in a caring send-off gesture, soft worried-but-warm expression) near a rain-streaked window with a small pastel mint umbrella leaning beside them; warm caring gentle light. Characters in lower 50%, generous text space at top. Sparkling warm caring eyes, soft light reflection. Handwritten-style Japanese text「気をつけてね」naturally placed at top center. Slightly looking-down warm farewell perspective.",
-      "comment": "【分析反映】梅雨の外出シーズンに「気をつけてね」は特に刺さる。傘を小物に添えることで季節感と実用感を両立。しずく×ひよりで「思いやり×直感的な心配」を表現。\n【シーン設計】雨の日の外出、長距離移動する相手への気遣い。",
-      "quote": "雨の日にこそ、送りたい一言"
+      "id": 11,
+      "character": [
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "気をつけてね",
+      "scene": "日常",
+      "send_timing": "昼・夕",
+      "send_psychology": "気遣い・見送り・温かさ",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with caring eyes looking up, flower on shell bright, one flipper gently raised in warm farewell) and Hiyori (gentle white bird with wings slightly open in a caring send-off gesture, soft worried-but-warm expression) near a rain-streaked window with a small pastel mint umbrella leaning beside them; warm caring gentle light. Characters in lower 50%, generous text space at top. Sparkling warm caring eyes, soft light reflection. Handwritten-style Japanese text「気をつけてね」naturally placed at top center. Slightly looking-down warm farewell perspective."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:12",
-      "purpose": "④-12 おめでとう",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "セリフ：おめでとう\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：日常・記念日\n・送る心理：祝福・喜び・分かち合い\n\n【構図】バストアップ祝福ポーズ、右上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, clapping paws together joyfully with radiant smile, bright eyes sparkling) and Hiyori (gentle white bird dancing with wings fully spread in pure celebration, tiny joyful chirp); soft confetti-like hydrangea petals and tiny stars floating around them; festive delicate palette of mint, soft pink, ivory. Bust-up joyful composition in lower-left 55%, generous text at upper right. Sparkling warm eyes, genuine joy. Handwritten-style Japanese text「おめでとう」naturally placed at upper right. Upward-looking celebratory angle.",
-      "comment": "【分析反映】6月は誕生日・父の日・記念日需要が高まるシーズン。しらたま×ひよりのシンプル祝福スタンプ。ひよりの翼を広げた喜び表現で躍動感。\n【シーン設計】試験合格・昇進・嬉しいお知らせなどへの反応に。",
-      "quote": "喜びを、2匹で分かち合います"
+      "id": 12,
+      "character": [
+        "しらたま",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "おめでとう",
+      "scene": "日常・記念日",
+      "send_timing": "昼",
+      "send_psychology": "祝福・喜び・分かち合い",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, clapping paws together joyfully with radiant smile, bright eyes sparkling) and Hiyori (gentle white bird dancing with wings fully spread in pure celebration, tiny joyful chirp); soft confetti-like hydrangea petals and tiny stars floating around them; festive delicate palette of mint, soft pink, ivory. Bust-up joyful composition in lower-left 55%, generous text at upper right. Sparkling warm eyes, genuine joy. Handwritten-style Japanese text「おめでとう」naturally placed at upper right. Upward-looking celebratory angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:13",
-      "purpose": "④-13 ご連絡ありがとうございます",
-      "character": "🐢しずく",
-      "content": "セリフ：ご連絡ありがとうございます\n\n【シーン設計】\n・使用タイミング：昼・午前\n・使用シーン：仕事\n・送る心理：丁寧な感謝・礼儀・距離を保ちつつ温かく\n\n【構図】フォーマルバストアップ、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle, sitting formally upright with dignified composed posture, respectful slight bow of head, shell flower neat and prominent, polite warm expression); clean minimal background, soft cool-warm professional morning light, tiny hint of blue hydrangea in corner. Centered formal bust-up in lower 55%, generous text space at top. Sparkling warm eyes with polite professional expression. Handwritten-style Japanese text「ご連絡ありがとうございます」naturally placed at top center. Symmetrical front view, dignified but warm composition.",
-      "comment": "【分析反映】ビジネス系スタンプは大人女子層に高需要。しずくの誠実キャラで「堅苦しくない丁寧さ」を表現。1匹で整った構図を作ることで品の良さを演出。\n【シーン設計】仕事メール代わり、取引先・上司への返信として。",
-      "quote": "ビジネスも、ちょっとやさしく"
+      "id": 13,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "ご連絡ありがとうございます",
+      "scene": "仕事",
+      "send_timing": "昼・午前",
+      "send_psychology": "丁寧な感謝・礼儀・距離を保ちつつ温かく",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle, sitting formally upright with dignified composed posture, respectful slight bow of head, shell flower neat and prominent, polite warm expression); clean minimal background, soft cool-warm professional morning light, tiny hint of blue hydrangea in corner. Centered formal bust-up in lower 55%, generous text space at top. Sparkling warm eyes with polite professional expression. Handwritten-style Japanese text「ご連絡ありがとうございます」naturally placed at top center. Symmetrical front view, dignified but warm composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:14",
-      "purpose": "④-14 よろしくお願いいたします",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：よろしくお願いいたします\n\n【シーン設計】\n・使用タイミング：朝・午前\n・使用シーン：仕事\n・送る心理：丁寧さ・信頼構築・スタート感\n\n【構図】3者横並び一礼、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (white cat with small respectful bow, earnest expression), Shizuku (turtle with dignified head bow, shell flower neat) and Hiyori (white bird with graceful bow, wings neatly folded) in a warm formal lineup; clean professional morning light, soft clean background. Full formal lineup in lower 45%, generous text space above. Sparkling warm eyes with polite sincere expression. Handwritten-style Japanese text「よろしくお願いいたします」naturally placed at top center. Slight looking-up angle, respectful warm composition.",
-      "comment": "【分析反映】3匹全員登場でシリーズの顔として機能。ビジネス敬語系で需要が高く、キャラのみでも品の高さを維持。\n【シーン設計】プロジェクト開始時、新しい仕事仲間への挨拶など。",
-      "quote": "3匹揃って、丁寧にご挨拶"
+      "id": 14,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "よろしくお願いいたします",
+      "scene": "仕事",
+      "send_timing": "朝・午前",
+      "send_psychology": "丁寧さ・信頼構築・スタート感",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (white cat with small respectful bow, earnest expression), Shizuku (turtle with dignified head bow, shell flower neat) and Hiyori (white bird with graceful bow, wings neatly folded) in a warm formal lineup; clean professional morning light, soft clean background. Full formal lineup in lower 45%, generous text space above. Sparkling warm eyes with polite sincere expression. Handwritten-style Japanese text「よろしくお願いいたします」naturally placed at top center. Slight looking-up angle, respectful warm composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:15",
-      "purpose": "④-15 嬉しいです",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "セリフ：嬉しいです\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：日常・仕事\n・送る心理：喜び表現・感謝・距離を縮める\n\n【構図】クローズアップ2ショット、左上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, eyes wide with genuine delight, tiny paws pressed together in pure joy, vibrating with happiness) and Hiyori (gentle white bird with wings slightly spread in happy surprise, genuine warm emotion, feathers puffed with joy); soft warm golden light, tiny hydrangea petals floating gently. Close-up duo in lower-right 55%, generous text space at upper left. Sparkling warm eyes, bright hopeful expression, genuine emotion. Handwritten-style Japanese text「嬉しいです」naturally placed at upper left. Close-up slightly upward-looking angle.",
-      "comment": "【分析反映】シンプルな喜び表現スタンプは汎用性が高い。しらたま（感情）×ひより（直感）の組み合わせで「素直な喜び」を表現。\n【シーン設計】嬉しいお知らせをもらったとき、仕事のお礼へのリアクションとして。",
-      "quote": "素直な嬉しさを、そのまま届けて"
+      "id": 15,
+      "character": [
+        "しらたま",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "嬉しいです",
+      "scene": "日常・仕事",
+      "send_timing": "昼",
+      "send_psychology": "喜び表現・感謝・距離を縮める",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, eyes wide with genuine delight, tiny paws pressed together in pure joy, vibrating with happiness) and Hiyori (gentle white bird with wings slightly spread in happy surprise, genuine warm emotion, feathers puffed with joy); soft warm golden light, tiny hydrangea petals floating gently. Close-up duo in lower-right 55%, generous text space at upper left. Sparkling warm eyes, bright hopeful expression, genuine emotion. Handwritten-style Japanese text「嬉しいです」naturally placed at upper left. Close-up slightly upward-looking angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:16",
-      "purpose": "④-16 お待ちしております",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "セリフ：お待ちしております\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：仕事・日常\n・送る心理：丁寧な期待・おもてなし感\n\n【構図】テーブル横、右側Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, seated with calm welcoming expression, looking forward with gentle anticipation) and Hiyori (white bird perched on table edge nearby, wings neatly folded, looking forward with quiet readiness); two small white porcelain teacups on the table, warm afternoon light through linen curtains, soft rain outside. Three-quarter composition in left 55%, generous text space at right. Sparkling warm eyes with gentle anticipation. Handwritten-style Japanese text「お待ちしております」naturally placed at right side. Elegant side angle composition.",
-      "comment": "【分析反映】ビジネス敬語でも温かみのある「お待ちしております」。しずく（誠実）×ひより（直感）で「心から楽しみにしてる」感を表現。梅雨の午後のティータイム設定。\n【シーン設計】来客前・待ち合わせ前の丁寧な確認として。",
-      "quote": "心を込めて、お待ちしています"
+      "id": 16,
+      "character": [
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "お待ちしております",
+      "scene": "仕事・日常",
+      "send_timing": "昼",
+      "send_psychology": "丁寧な期待・おもてなし感",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, seated with calm welcoming expression, looking forward with gentle anticipation) and Hiyori (white bird perched on table edge nearby, wings neatly folded, looking forward with quiet readiness); two small white porcelain teacups on the table, warm afternoon light through linen curtains, soft rain outside. Three-quarter composition in left 55%, generous text space at right. Sparkling warm eyes with gentle anticipation. Handwritten-style Japanese text「お待ちしております」naturally placed at right side. Elegant side angle composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:17",
-      "purpose": "④-17 思い出してくださり、嬉しいです",
-      "character": "🐈‍⬛しらたま",
-      "content": "セリフ：思い出してくださり、嬉しいです\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：日常\n・送る心理：感動・じんわりとした喜び\n\n【構図】バストアップ情感豊か、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, genuinely moved expression, eyes glistening warmly with tiny shimmer of emotion, paw softly pressed to chest in overwhelmed gratitude); soft diffused rainy-day indoor light, muted warm watercolor with soft blurred hydrangea tones background. Centered bust-up in lower 55%, generous text space at top. Sparkling warm eyes with genuine touched emotion, soft light reflection. Handwritten-style Japanese text「思い出してくださり、嬉しいです」naturally placed at top. Eye-level intimate angle, emotional warmth.",
-      "comment": "【分析反映】久しぶりの連絡に使える希少なスタンプ。梅雨のしっとりとした情感と合う。しらたまの感情表現キャラで「静かな感動」を表現。\n【シーン設計】しばらく会っていない人からの連絡、昔の知人への返信として。",
-      "quote": "久しぶりの連絡に、ぴったりの言葉"
+      "id": 17,
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "思い出してくださり、嬉しいです",
+      "scene": "日常",
+      "send_timing": "昼",
+      "send_psychology": "感動・じんわりとした喜び",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, genuinely moved expression, eyes glistening warmly with tiny shimmer of emotion, paw softly pressed to chest in overwhelmed gratitude); soft diffused rainy-day indoor light, muted warm watercolor with soft blurred hydrangea tones background. Centered bust-up in lower 55%, generous text space at top. Sparkling warm eyes with genuine touched emotion, soft light reflection. Handwritten-style Japanese text「思い出してくださり、嬉しいです」naturally placed at top. Eye-level intimate angle, emotional warmth."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:18",
-      "purpose": "④-18 一歩成長だね",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "セリフ：一歩成長だね\n\n【シーン設計】\n・使用タイミング：夜\n・使用シーン：日常・仕事\n・送る心理：認める・励ます・温かい観察\n\n【構図】しずくがひよりを見守る2ショット、下部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, looking toward Hiyori with gentle proud encouraging expression, warm observant eyes slightly elevated) and Hiyori (white bird sitting tall with growing confidence, bright eyes, tiny chest puffed with pride); warm evening lamp light, small hydrangea in glass jar nearby. Bust-up composition in upper 55%, generous copy space at bottom. Sparkling warm eyes, gentle proud encouraging gaze. Handwritten-style Japanese text「一歩成長だね」naturally placed at bottom center. Shizuku slightly higher looking warmly at Hiyori, gentle intimate angle.",
-      "comment": "【分析反映】梅雨の閉塞感の中での「小さな成長を認める」言葉は特に刺さる。しずく（思考・誠実）がひよりを認めるシーンで「観察してくれている安心感」を表現。\n【シーン設計】子どもへの褒め言葉、部下・友人の成長を認める言葉として。",
-      "quote": "小さな一歩を、ちゃんと見ています"
+      "id": 18,
+      "character": [
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "一歩成長だね",
+      "scene": "日常・仕事",
+      "send_timing": "夜",
+      "send_psychology": "認める・励ます・温かい観察",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, looking toward Hiyori with gentle proud encouraging expression, warm observant eyes slightly elevated) and Hiyori (white bird sitting tall with growing confidence, bright eyes, tiny chest puffed with pride); warm evening lamp light, small hydrangea in glass jar nearby. Bust-up composition in upper 55%, generous copy space at bottom. Sparkling warm eyes, gentle proud encouraging gaze. Handwritten-style Japanese text「一歩成長だね」naturally placed at bottom center. Shizuku slightly higher looking warmly at Hiyori, gentle intimate angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:19",
-      "purpose": "④-19 そういうところ好き",
-      "character": "🐈‍⬛しらたま + 🐢しずく",
-      "content": "セリフ：そういうところ好き\n\n【シーン設計】\n・使用タイミング：夕・昼\n・使用シーン：恋愛・日常\n・送る心理：愛情・観察・距離を縮める\n\n【構図】密着2ショット横並び、左上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, warm sideways gaze at Shizuku with pure affectionate expression, tiny knowing smile) and Shizuku (small turtle with flower on shell, looking slightly upward with a pleased shy expression, flower glowing warmly); very close together, soft rose and sage watercolor atmosphere with tiny scattered petals, gentle afternoon light. Close-up intimate composition in lower-right 55%, text space at upper left. Sparkling warm eyes with genuine tender affection. Handwritten-style Japanese text「そういうところ好き」naturally placed at upper left. Close side-to-side intimate angle.",
-      "comment": "【分析反映】恋愛系スタンプの中でも「具体的な好き」を表現する珍しい言葉。しらたま（感情）×しずく（思考）の組み合わせで「気づいていた好き」を表現。\n【シーン設計】恋人への愛情表現、友人の好きなところを伝える場面。",
-      "quote": "「好き」に、もう少し温度をのせて"
+      "id": 19,
+      "character": [
+        "しらたま",
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "そういうところ好き",
+      "scene": "恋愛・日常",
+      "send_timing": "夕・昼",
+      "send_psychology": "愛情・観察・距離を縮める",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, warm sideways gaze at Shizuku with pure affectionate expression, tiny knowing smile) and Shizuku (small turtle with flower on shell, looking slightly upward with a pleased shy expression, flower glowing warmly); very close together, soft rose and sage watercolor atmosphere with tiny scattered petals, gentle afternoon light. Close-up intimate composition in lower-right 55%, text space at upper left. Sparkling warm eyes with genuine tender affection. Handwritten-style Japanese text「そういうところ好き」naturally placed at upper left. Close side-to-side intimate angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:20",
-      "purpose": "④-20 笑顔溢れるいちにちになりますように",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：笑顔溢れるいちにちになりますように\n\n【シーン設計】\n・使用タイミング：朝\n・使用シーン：日常\n・送る心理：祝福・優しい応援\n\n【構図】3者集合、両脇縦書きCopy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, eyes bright with warm morning energy, open gentle arms in a soft welcoming gesture), Shizuku (small turtle with flower on shell, looking upward hopefully with earnest morning smile) and Hiyori (white bird with wings softly spread upward as if blessing the day, gentle radiant gaze); soft morning garden with blue hydrangeas, morning light breaking through clouds. Full body group in lower center, generous vertical text space on both sides. Sparkling warm eyes, bright hopeful expression. Handwritten-style Japanese text「笑顔溢れるいちにちになりますように」naturally placed vertically on both sides. Front view blessing group composition.",
-      "comment": "【分析反映】朝の挨拶スタンプで需要が高く、梅雨の「いってらっしゃい」感にぴったり。全員でのおさんぽ構図でシリーズの世界観を表現。\n【シーン設計】朝の送り出し、特別な人への祝福メッセージとして。",
-      "quote": "3匹で贈る、朝の祝福"
+      "id": 20,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "笑顔溢れるいちにちになりますように",
+      "scene": "日常",
+      "send_timing": "朝",
+      "send_psychology": "祝福・優しい応援",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, eyes bright with warm morning energy, open gentle arms in a soft welcoming gesture), Shizuku (small turtle with flower on shell, looking upward hopefully with earnest morning smile) and Hiyori (white bird with wings softly spread upward as if blessing the day, gentle radiant gaze); soft morning garden with blue hydrangeas, morning light breaking through clouds. Full body group in lower center, generous vertical text space on both sides. Sparkling warm eyes, bright hopeful expression. Handwritten-style Japanese text「笑顔溢れるいちにちになりますように」naturally placed vertically on both sides. Front view blessing group composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:21",
-      "purpose": "④-21 やってみて修正したらいい",
-      "character": "🐢しずく",
-      "content": "セリフ：やってみて修正したらいい\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：仕事・日常\n・送る心理：前向きな許可・実践的励まし\n\n【構図】作業中バストアップ、右側Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, calm practical expression radiating quiet confidence, looking at a tiny open notebook with a small pencil, thoughtful forward lean); quiet workspace afternoon light, small green plant nearby, subtle rain outside. Bust-up in lower-left 55%, generous text space at right. Sparkling warm eyes with practical wisdom and warmth. Handwritten-style Japanese text「やってみて修正したらいい」naturally placed at right side. Slightly overhead productive working angle.",
-      "comment": "【分析反映】完璧主義への処方箋的な言葉。しずくの思考キャラで「論理から背中を押す」表現。梅雨の籠もった時期に働く人の心に刺さる。\n【シーン設計】迷っている友人・部下への背中押し、自分自身への言葉として。",
-      "quote": "「まず動く」を、静かに許可するスタンプ"
+      "id": 21,
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "やってみて修正したらいい",
+      "scene": "仕事・日常",
+      "send_timing": "昼",
+      "send_psychology": "前向きな許可・実践的励まし",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shizuku (small turtle with flower on shell, calm practical expression radiating quiet confidence, looking at a tiny open notebook with a small pencil, thoughtful forward lean); quiet workspace afternoon light, small green plant nearby, subtle rain outside. Bust-up in lower-left 55%, generous text space at right. Sparkling warm eyes with practical wisdom and warmth. Handwritten-style Japanese text「やってみて修正したらいい」naturally placed at right side. Slightly overhead productive working angle."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:22",
-      "purpose": "④-22 おはようございます",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：おはようございます\n\n【シーン設計】\n・使用タイミング：朝\n・使用シーン：仕事\n・送る心理：丁寧な挨拶・礼儀・信頼構築\n\n【構図】バストアップ三者一礼、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, gentle formal morning bow, earnest expression), Shizuku (small turtle with upright dignified posture, shell flower bright, formal morning bow) and Hiyori (white bird with graceful morning bow, wings neatly folded, warm polite eyes); fresh morning light, soft blue hydrangeas outside window. Bust-up formal trio in lower 55%, generous text space at top. Sparkling warm eyes with polite morning warmth. Handwritten-style Japanese text「おはようございます」naturally placed at top center. Slight upward respectful angle, warm polite composition.",
-      "comment": "【分析反映】仕事用の丁寧な朝挨拶として需要が高い。3匹で「全員でごあいさつ」感を演出。品のある礼儀と愛らしさを両立させる。\n【シーン設計】仕事のグループLINEへの朝一番の挨拶、上司・取引先への連絡として。",
-      "quote": "丁寧な朝の挨拶を、3匹でお届けします"
+      "id": 22,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "おはようございます",
+      "scene": "仕事",
+      "send_timing": "朝",
+      "send_psychology": "丁寧な挨拶・礼儀・信頼構築",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat, gentle formal morning bow, earnest expression), Shizuku (small turtle with upright dignified posture, shell flower bright, formal morning bow) and Hiyori (white bird with graceful morning bow, wings neatly folded, warm polite eyes); fresh morning light, soft blue hydrangeas outside window. Bust-up formal trio in lower 55%, generous text space at top. Sparkling warm eyes with polite morning warmth. Handwritten-style Japanese text「おはようございます」naturally placed at top center. Slight upward respectful angle, warm polite composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:23",
-      "purpose": "④-23 お誕生日おめでとう",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "セリフ：お誕生日おめでとう\n\n【シーン設計】\n・使用タイミング：昼\n・使用シーン：記念日\n・送る心理：祝福・喜び・特別感\n\n【構図】フルボディ誕生日パーティ、右上Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat wearing a tiny flower crown of blue hydrangeas, both paws raised high in joyful birthday celebration), Shizuku (small turtle with a decorative hydrangea bloom placed on shell, bright joyful birthday expression, tiny party smile) and Hiyori (white bird with wings fully spread in maximum celebration, tiny confetti petals swirling around); small wrapped gift box with ribbon and delicate floral petals floating, festive pastel palette. Full body celebration group in lower-left 55%, generous text at upper right. Sparkling warm excited eyes, bright joyful expression. Handwritten-style Japanese text「お誕生日おめでとう」naturally placed at upper right. Looking-up angle, full celebratory composition.",
-      "comment": "【分析反映】誕生日スタンプは購入・使用頻度が高く定番需要がある。3匹全員でお祝いすることで「盛大感」を演出。紫陽花の花冠で梅雨シーズンの誕生日感を演出。\n【シーン設計】友人・家族・恋人の誕生日、記念日のお祝いとして。",
-      "quote": "大切な人の誕生日を、3匹で祝います"
+      "id": 23,
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "お誕生日おめでとう",
+      "scene": "記念日",
+      "send_timing": "昼",
+      "send_psychology": "祝福・喜び・特別感",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Shirotsuma (fluffy white cat wearing a tiny flower crown of blue hydrangeas, both paws raised high in joyful birthday celebration), Shizuku (small turtle with a decorative hydrangea bloom placed on shell, bright joyful birthday expression, tiny party smile) and Hiyori (white bird with wings fully spread in maximum celebration, tiny confetti petals swirling around); small wrapped gift box with ribbon and delicate floral petals floating, festive pastel palette. Full body celebration group in lower-left 55%, generous text at upper right. Sparkling warm excited eyes, bright joyful expression. Handwritten-style Japanese text「お誕生日おめでとう」naturally placed at upper right. Looking-up angle, full celebratory composition."
     },
     {
-      "date": "2026-05-17",
-      "platform": "Lineスタンプ 5/17〜5/17",
-      "time": "10:24",
-      "purpose": "④-24 元気をいただきました",
-      "character": "🕊ひより",
-      "content": "セリフ：元気をいただきました\n\n【シーン設計】\n・使用タイミング：昼・夕\n・使用シーン：日常\n・送る心理：感謝・エネルギーをもらった喜び\n\n【構図】生き生きフルボディ、上部Copy Space",
-      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Hiyori (white bird with soft blue-tipped wing feathers, fully energized joyful expression, wings spread wide in grateful happy burst of energy, looking upward forward with bright gleaming eyes, tiny sparkles around wings suggesting received energy); warm gold and sage light breaking through rain clouds behind. Full body centered in lower 50%, generous text space at top. Sparkling warm eyes, bright hopeful expression, genuine gratitude and vibrant energy. Handwritten-style Japanese text「元気をいただきました」naturally placed at top center. Looking-up full-body energized composition.",
-      "comment": "【分析反映】梅雨バテが続く時期に「元気をもらった」という感謝は特別な温度を持つ。ひより1匹の羽を広げた躍動感で「素直なエネルギーの受け取り」を表現。\n【シーン設計】元気づけてくれた人への感謝、パワーをもらった後の返信として。",
-      "quote": "あなたのおかげで、今日も羽ばたけます"
+      "id": 24,
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "dialogue": "元気をいただきました",
+      "scene": "日常",
+      "send_timing": "昼・夕",
+      "send_psychology": "感謝・エネルギーをもらった喜び",
+      "outfit": "",
+      "color_scheme": "",
+      "image_prompt": "Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. 1:1 square format, transparent background PNG, no background, isolated characters. Hiyori (white bird with soft blue-tipped wing feathers, fully energized joyful expression, wings spread wide in grateful happy burst of energy, looking upward forward with bright gleaming eyes, tiny sparkles around wings suggesting received energy); warm gold and sage light breaking through rain clouds behind. Full body centered in lower 50%, generous text space at top. Sparkling warm eyes, bright hopeful expression, genuine gratitude and vibrant energy. Handwritten-style Japanese text「元気をいただきました」naturally placed at top center. Looking-up full-body energized composition."
     }
   ]
 }
