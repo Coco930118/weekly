@@ -3,80 +3,758 @@
   "posts": [
     {
       "date": "2026-05-12",
-      "platform": "X診断 5/12〜5/18",
+      "platform": "LINEスタンプ",
+      "time": "00:00",
+      "character": "💎Coco・🐈‍⬛しらたま・🐢しずく・🕊ひより",
+      "purpose": "第3弾公開",
+      "content": "【きょうも、そのままで ③】\n\nシリーズ第3弾、本日公開🌿\n\nパターン3：ミックス（キャラのみ12個 ／ Coco込み12個）\n全員集合。梅雨前のやわらかな空気を、24個のスタンプに込めました。\n\n━━━━━━━━━━━\n📌 セリフ一覧（全24個）\n━━━━━━━━━━━\n\n🐈‍⬛しらたま・🐢しずく・🕊ひより（キャラのみ）× 12個\n1. お疲れさま、今日もよく頑張ったね（🐈‍⬛）\n2. ありがとう、ちゃんと伝わってるよ（🐢）\n3. やったー！うれしい！（🕊）\n4. だいじょうぶ、そっとそばにいるから（🐈‍⬛）\n5. 一緒に考えてもいい？（🐢）\n6. なんか今日、いい日な気がする（🕊）\n7. おかえり、待ってたよ（🐈‍⬛）\n8. もう少しだけ、待っててほしい（🐢）\n9. えいっ、やってみる！（🕊）\n10. ねえ、ちょっと休んでいいんだよ（🐈‍⬛）\n11. ゆっくりしていいよ（🐢）\n12. また来てね、待ってるから（🕊）\n\n💎Coco込み × 12個\n13. 一緒にいるよ、ここにいる（Coco＋🐈‍⬛）\n14. 考えすぎなくていいんだよ（Coco＋🐢）\n15. 行ってらっしゃい、きっと大丈夫（Coco＋🕊）\n16. おはよう、今日も会えてよかった（Coco＋🐈‍⬛）\n17. それ、いいと思う（Coco＋🐢）\n18. ぽかぽかしてきた（Coco＋🕊）\n19. お疲れさまでした、ゆっくりして（Coco＋🐈‍⬛）\n20. できた、なんとかなった（Coco＋🐢）\n21. あ、虹が出てる（Coco＋🕊）\n22. おやすみ、また明日ね（Coco＋🐈‍⬛）\n23. 大事なこと、忘れてなかったよ（Coco＋🐢）\n24. きょうも、そのままでよかったよ（Coco＋全員）",
+      "quote": "💌 第3弾 ｜ パターン3ミックス ｜ 24個 ｜ 2026.05.12"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "月曜の朝こそ、「おはよう」を丁寧に届けたい気がする。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "言葉が出なかった夜に、スタンプがそっと代わりに届けてくれる。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "信頼される上司",
-      "character": "Coco + 🐈‍⬛しらたま",
-      "content": "「部下から本音を言ってもらえない上司」に共通すること。\n\nあなたが部下に「大事な話」をされるとき、どこが多い？\n\nA　自分のデスクで仕事しながら聞く\nB　会議室に呼び、向かい合わせで聞く\nC　廊下を歩きながら、並んで聞く\nD　ランチや食事の場で聞く\n\n→ 選んだ答えをリプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration divided into four equal panels, each with delicate transparent washes and a fine 1px white border. Early summer atmosphere with soft natural light. Panel 1: Coco (a calm refined young woman with warm features, wearing a light sage linen blouse) sits at a neat wooden desk in morning light; an elegant fluffy white cat (Shirotsuma) sits beside her on the desk looking toward her attentively, sunlight casting soft leaf shadows through the window. Panel 2: Coco and Shirotsuma face each other across a small round meeting table; a slender glass vase with a single white hydrangea blossom sits between them; late morning light streams in from tall windows. Panel 3: Coco and Shirotsuma walk side by side down a sunlit corridor; fresh green leaves are visible through full-length windows; both figures relaxed and turned slightly toward each other. Panel 4: Coco and Shirotsuma sit together at a quiet cafe table; two porcelain cups of tea are set before them; a small pot of early summer herbs sits nearby. Refined palette of sage, ivory, and warm cream. No text, no letters, no signage.",
-      "comment": "どれが正解かより、「選んでいる場所」の設計に意味があります。\n\n【A：デスクで聞く】\n「忙しそうで声がかけにくい」と感じる部下が出やすい。\n重要な報告が後回しになる構造。\n\n【B：会議室で向かい合わせ】\n対面の圧力が生まれやすい。\n「また呼ばれた、責められるのかも」と身構える人がいる。\n内容によっては最適だが、「常にB」は部下を消耗させる。\n\n【C：廊下や移動中に並んで聞く】\n実は最も本音が出やすい。\n目が合わない状態は「直視しなくていい安心感」を生む。\n問題を正面から直視させないから、人は言いやすくなる。\n\n【D：食事の場で聞く】\n場の温度は上がるが、「公式な話じゃないかも」と相手が軽視することも。\n\n「聞く技術」より先に、「聞ける場の設計」が信頼を作る。\n信頼される上司は、問いかけるより先に、場を整えている。\n\n📌 明日から使える一手\n重要なフィードバックは、並走か移動中に引き出せ。\nその5分が、1時間の会議より深い情報を運んでくる。",
-      "quote": "💎 聞く場所が、本音の温度を決める"
+      "theme": "信頼される上司",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "GW明け初日。\n部下は「あなたの顔」を確認してから席についている。\n\n信頼される上司は、最初に何をするか——\n\nA ☕ デスクで静かにコーヒーを飲みながら、全体を見渡す\nB 📋「今週のタスク確認させて」と声をかける\nC 💬「休み、どうだった？」と一人ひとりに聞く\nD 🚀「よし、今週も頑張ろう」とチームに声をかける\n\n答えはリプライ欄👇",
+      "quote": "💎 初日の静けさは、リーダーの強さのひとつ",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A serene Japanese office on a fresh May morning — soft morning light through large windows, early summer green visible outside. Top-left: Coco (41-year-old woman, elegant bob haircut, navy tailored jacket, off-white blouse, pearl earrings) sitting at a tidy desk with a ceramic coffee cup, composed eyes quietly scanning the open office — calm authority, unhurried presence. Top-right: A white fluffy cat in a small meeting nook, leaning over a structured checklist with a pen, focused and purposeful expression. Bottom-left: A small white dove in a hallway, one wing gently extended toward a passing figure in a warm, unhurried greeting. Bottom-right: An energetic green turtle standing with one arm raised, bright-eyed and forward-facing, momentum slightly ahead of the room's energy. Transparent watercolor, soft early summer pastels, delicate unified brushwork. No text, no letters, no signage.",
+      "comment1": "【全選択肢に正解があります】\n\nGW明けの初日、部下は「今日、安全かどうか」を最初の30分で判断している。\n\nA ☕ を選んだあなた：\n先に動かない静けさが、空気の安全を証明する。観察から始められるリーダーは、現場の温度を正確に読める。\n\nB 📋 を選んだあなた：\n仕事への速やかな切り替えが、ルーティンを安定させる。ただし体がまだGWモードの部下には、少しだけ壁に感じさせることがある。\n\nC 💬 を選んだあなた：\n声をかける誠実さは確実に伝わる。全員に同じ聞き方をすると「ルーティン感」が出やすいので、一人ひとりの返答にしっかり反応することが鍵。\n\nD 🚀 を選んだあなた：\nチームの空気を一瞬で変える力がある。ただし、まだ戻りきれていない人には「置いていかれた感」を与えてしまうことがある。\n\nGW明けに必要なのは「やる気注入」より、「戻ってこれる温度」の仕組みづくり。\n\n続きはリプライ欄で👇\n#管理職 #チームマネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\nGW明けの月曜、社長が「さあ！今週も全力で！」と叫んだ瞬間に、現場の温度が2度下がった——そんな場面を何度も見てきた。\n\n熱量の押しつけは、戻りきれていない人を黙らせる。\n\n信頼される上司が初日にしていること：\n→ 自分の機嫌をニュートラルに保ち、観察から始める\n→ 個別に声をかけるとき「業務と関係ない一言」を混ぜる\n→「また頑張ろう」より「今日はゆっくりペースで」と言える\n\n関係の温度は、最初の一声で週の空気が決まる。\n\n初日の静けさは、リーダーの強さのひとつ。\n\n📌 月曜の朝に読み返してほしい"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "愛しすぎる人と、適切な距離",
+      "character": "Coco + 🐢しずく + 🐈しらたま",
+      "content": "好きになると、どうなる？\n\n月曜の朝、出勤途中にまたスマホを開いてしまう——あの人からのメッセージを確認するために。\n\nA　毎日連絡したくなる。既読がつかないと落ち着かなくなる\nB　好きだけど、相手のペースを乱したくなくて引いてしまう\nC　深く想いながら、なぜか言葉にできないまま静かにいる\nD　「好き」とは言えないから、行動でしか伝えられない\n\n今の自分に一番近いのはどれ？\nコメントで教えてください",
+      "quote": "💎 愛しすぎて疲れるとき、見直すのは量より距離の仕組み",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Monday morning atmosphere with warm hopeful light. Top-left (A): Coco (a composed young woman in a cream ribbed knit cardigan with olive wide-leg linen trousers) holds a phone with a subtly anxious expression while a small wise turtle (Shizuku, with delicate white flowers on its shell) and a fluffy white cat (Shirotsuma) watch her with gentle patient eyes; warm morning light. Top-right (B): Coco stands by a window with arms slightly pulled close; Shizuku extends a flipper gently toward her but Coco looks away with a restrained expression; morning light filters through curtains. Bottom-left (C): Coco sits quietly on a chair looking at something off-frame; Shirotsuma sits beside her looking in the same direction; a mood of still, unspoken feeling. Bottom-right (D): Coco places a small thoughtful gift on a table; Shizuku watches from nearby with steady eyes; Shirotsuma sits close; Coco's expression is earnest but words seem to stay inside. Refined palette of warm ivory, sage green, and pale gold. No text, no letters, no signage.",
+      "reply_1": "5万人以上の本音を聴いてきた中で、「好きになると止まらなくなる」という声は、最も多い悩みのひとつです。\n\n【A：既読がつかないと落ち着かなくなる】\n「与えることで愛を証明しようとしている」サインかもしれない。\n連絡や時間を与えすぎるとき、相手への愛だけじゃなく「見捨てられたら怖い」が混ざっていることが多い。\n感情はある。でも依存はしない。\nその立ち位置を持つと、連絡できない時間が「自分の時間」に変わっていく。\n\n【B：相手のペースを乱したくなくて引いてしまう】\n相手に合わせるのが得意な人。でもそれ、我慢じゃないですか？\n本当はもっと会いたい、でも引かれたら怖い。\nそのバランス感覚は美しいけど、自分の気持ちも、ちゃんと誰かに届けていい。\nフラットなパートナーシップは、我慢の上には成り立ちません。\n\n【C：言葉にできないまま静かにいる】\n距離感が自然と整っている稀有な人。\nでもたまに、「深く想っていることが伝わっていない」と孤独に感じることも。\n想いを言葉にする仕組みだけが、あと一歩の課題かもしれない。\n\n【D：行動でしか伝えられない】\n行動で愛を伝えようとする、誠実な人。\nただ、相手には「この人は何を考えてるんだろう」と映ることも。\n言葉をひとつ足すだけで、関係の温度がガラッと変わる。\n\n「愛しすぎる」ことは欠点じゃない。\nただ、距離の仕組みがないと、自分が先に燃え尽きる。\n感情はある。依存はしない——その軸を持つことが、追いかけない恋愛の入口です。"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "「えいっ、やってみる！」が言えると、月曜が少し軽くなる。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "今日も一日、ちゃんと帰ってきたね。お疲れさまを届けたい。",
+      "quote": "💌 きょうも、そのままで ③"
     },
     {
       "date": "2026-05-13",
-      "platform": "X診断 5/12〜5/18",
-      "time": "12:00",
-      "purpose": "伝え方の設計",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
       "character": "🐢しずく",
-      "content": "熱心に説明しても、現場が動かない。\nその原因は「伝え方の設計ミス」にある。\n\n重要な方針をチームに伝えるとき、あなたはどのタイミングで話す？\n\nA　朝礼や全体会議で、全員まとめて話す\nB　個別に呼んで、一対一で伝える\nC　メール・チャットで文章にして共有する\nD　気づいたときに、そのつど話しかける\n\n→ 選んだ答えとチームの反応を、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Early summer light. Panel 1: A small wise turtle (Shizuku) with a calm attentive expression stands before a row of neatly arranged empty wooden chairs in a bright morning meeting room; pale green leaves visible through large windows. Panel 2: Shizuku sits across from a single empty chair at a small round table; a simple white ceramic mug of tea rests on the table; the room has a quiet focused atmosphere. Panel 3: Shizuku holds a neatly sealed envelope in its front flippers; golden morning light streams in from the side; a small hydrangea plant sits on a nearby windowsill. Panel 4: Shizuku moves gently past several tidy workstations in a quiet office; small green plants are placed on each desk; soft dappled light filters through sheer curtains. Refined palette of pale green, ivory, and warm sand. No text, no letters, no signage.",
-      "comment": "どれが正解かより、「組み合わせ」と「順番」の話をしたい。\n\n【A：全体周知】\n情報は届くが「自分ごと」になりにくい。\n全員向けの言葉は、誰にも刺さらないことがある。\n\n【B：一対一】\n最も個人の反応を拾える方法。\nただし時間がかかる。全員分をやり切れるリーダーは少ない。\n\n【C：テキスト共有】\n記録には残るが、温度が届かない。\n大事なことをテキストだけで終わらせると、相手は「そこまで重要じゃないのかも」と感じる。\n\n【D：そのつど話しかける】\n現場感覚には近いが、「聞いていない人」が出やすい。\n\n現場が動く伝え方の設計は「誰に・何を・どの順番で届けるか」のフローを持つことから始まる。\n温度の高い言葉を、温度が上がりやすい場所で、動ける人から先に届ける。\n全体より先に「キーマン1人への先行共有」が、組織を動かす起点になる。\n\n📌 明日から使える一手\n全体周知の前に、影響力のある1人に先行で共有せよ。\nその人が動くと、組織は自然と動き始める。",
-      "quote": "💎 伝える順番が、現場の温度を作る"
+      "purpose": "スタンプ宣伝",
+      "content": "「ありがとう」がうまく言えなかった日のために、スタンプがある。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "そばにいたくて、でも言葉が見つからなかった——そんな気持ちにぴったり。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "X診断",
+      "time": "12:00",
+      "theme": "現場が動きたくなる伝え方",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "content": "「なんで動かないの」と思う前に。\n\nその指示、現場に「動けない構造」が埋まっているかもしれない。\n\nあなたの伝え方、どれに近い？——\n\nA 📣「これ、重要だから」と必要性から話す\nB 🗺「ゴールはこうで、そのために〜」と全体像から話す\nC 🤝「一緒に考えたいんだけど」と相談形式で話す\nD ✅「具体的にはこの3つ」とタスクから話す\n\n答えはリプライ欄👇",
+      "quote": "💎 言葉の温度は、順番で変わる",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A calm Japanese meeting room, soft May morning light and fresh green visible through windows. Top-left: Coco (41-year-old woman, elegant bob, sage green turtleneck knit, ivory wide-leg trousers) standing beside a whiteboard, underlining key words with a calm, direct expression — earnest and grounded. Top-right: A green turtle drawing a flowing roadmap with arrows guiding toward a destination flag, purposeful and clear. Bottom-left: A small white dove and a round bird sitting across a table with notebooks open in warm collaborative discussion. Bottom-right: A white fluffy cat holding a clipboard with three clear items, presenting with quiet confidence. Transparent watercolor, soft sage and cream palette, early summer morning light, unified brushwork. No text, no letters, no signage.",
+      "comment1": "【全選択肢に正解があります】\n\n伝え方の型と、現場が動く条件——\n\nA 📣 を選んだあなた：\n「重要」という言葉は受け取る側に判断を委ねる。何が重要かの定義が共有されていると機能するが、定義がズレていると「またか」になる。\n\nB 🗺 を選んだあなた：\n全体像から入るのは論理的に正しい。ただし現場が疲弊しているときは「長い」と感じさせ、結論が遠のくことがある。\n\nC 🤝 を選んだあなた：\n相談形式は信頼を生む。ただし権限の所在が曖昧になると「どっちが決めるの？」と現場が混乱しやすい。\n\nD ✅ を選んだあなた：\nタスクの明確さは動きやすさを生む。「なぜそれをするか」が抜けると、状況が変わったとき自分で判断できなくなる。\n\n現場が動く指示の仕組みは、「なぜ」→「何を」→「どうやって」の順で体温が乗っているかどうか。\n\n続きはリプライ欄で👇\n#リーダーシップ #伝え方",
+      "comment2": "【Coco Methodologyの視点】\n\n指示を出した後に、部下の目が左上を向いたら黄色信号。記憶を探してるんじゃなく「どう断ろうか」を考えている。\n\n伝え方で現場の温度が変わる3つの技術：\n\n① 「なぜ今、これか」を30秒で言える\n→ 状況の地図を渡すこと。地図なき行軍は疲弊する。\n\n② 相手の仕事文脈に乗せて話す\n→「あなたが担当してる〇〇に繋がる話で」と言うだけで、受け取り方が変わる。\n\n③「わかった？」を「何か確認したいことある？」に変える\n→ 前者は評価、後者は対話。空気が一瞬で変わる。\n\n言葉の温度は、順番で変わる。\n\n📌 明日の指示出しの前に読み返してほしい"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "相手を変えたい欲求の正体",
+      "character": "Coco + 🕊ひより",
+      "content": "「なんでわかってくれないの」\nそのモヤモヤ、どう処理してる？\n\n火曜の夜、またパートナーに同じことを言ってしまった。3回目なのに、また変わらなかった——。\n\nA　同じことを繰り返し言い続ける（変わってほしくて）\nB　疲れて、結局自分が合わせてしまう\nC　なぜ伝わらないか、一歩引いて考えてみる\nD　黙り込んで、自分の中に閉じ込める\n\nあなたのパターン、どれですか？\nコメントで教えてください",
+      "quote": "💎 「変わってほしい」の奥には、「わかってほしい」が眠っている",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Tuesday evening atmosphere with warm indoor light. Top-left (A): Coco (a calm young woman in a soft terracotta linen blouse with white wide-leg trousers) speaks earnestly to a gentle white bird (Hiyori, with soft blue-tipped wing feathers) who tilts its head with patient steady eyes; a warm but slightly tense indoor atmosphere. Top-right (B): Coco sits with slightly rounded shoulders, hands folded in her lap; Hiyori sits beside her with eyes gently forward; Coco's posture suggests quiet accommodation; evening light. Bottom-left (C): Coco stands slightly back from Hiyori with one hand raised thoughtfully to her chin; Hiyori watches her with curious attentive eyes; a calm, analytical mood. Bottom-right (D): Coco sits turned slightly away from Hiyori; Hiyori looks toward her quietly from a small distance; a mood of interior silence and unspoken weight. Refined palette of soft terracotta, ivory, and sage green. No text, no letters, no signage.",
+      "reply_1": "「相手を変えたい」という気持ちは、悪いものではありません。\nでも、その奥には必ず「自分の何か」が隠れています。\n5万人以上の声から見えてきたパターンを共有します。\n\n【A：同じことを繰り返し言い続ける】\n繰り返すほど、相手の耳は閉じていく。\n「伝え方」の問題じゃなく、「安全な空気」が足りていないサイン。\n言葉を変える前に、関係の温度を先に確認してほしい。\nフラットなパートナーシップは、繰り返しの中には生まれない。\n\n【B：自分が合わせてしまう】\n合わせ続けると、ある日突然「もう無理」と感じる瞬間が来る。\nそれは我慢の蓄積が臨界点を超えた瞬間。\n感情はある。でも依存はしない。\n「合わせること」と「消えること」は、全く違います。\n\n【C：一歩引いて考えてみる】\n「なぜ伝わらないか」を考えられる人は、本当に強い。\n相手を変えることより、自分との対話を先にしている。\nその姿勢が「距離を整える仕組み」の核心です。\n\n【D：黙り込んで閉じ込める】\n黙ることは時に賢い選択。でも、「伝えなかった言葉」が積もると、関係を静かに、じわじわ冷やしていく。\n\n「相手を変えたい」欲求の正体は、実は「自分をわかってほしい」という叫びだったりする。\n変えたいのは、相手じゃなく距離の仕組みだったということに、気づいたとき——関係は変わり始めます。"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "「なんか今日、いい日な気がする」って思えた火曜日に送りたい。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "「一緒に考えてもいい？」が言えると、関係が少し深まった気がする。",
+      "quote": "💌 きょうも、そのままで ③"
     },
     {
       "date": "2026-05-14",
-      "platform": "X診断 5/12〜5/18",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "週の真ん中に、「おはよう、今日も会えてよかった」をそっと届けたい。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "「待ってたよ」のひとことが、疲れた水曜日を少し変えてくれた。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "報連相の構造",
+      "theme": "報連相が止まる理由",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "content": "「なんで報告してくれなかったの」——\nその言葉を言ったとき、部下の目に一瞬だけ浮かんだ表情を覚えているか。\n\n報連相が止まる理由、どれだと思う？——\n\nA 😓 部下のやる気・責任感の問題\nB 😶 報告したときの上司の反応が、怖い\nC 🌀 何をいつ報告すべきか、基準が不明確\nD 🔕 上司が忙しそうで、声をかけにくい\n\n答えはリプライ欄👇",
+      "quote": "💎 報連相は、上司が仕組むもの",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A quiet Japanese office corridor and meeting space, warm early summer afternoon light filtering through windows. Top-left: Coco (41-year-old woman, elegant bob, dusty rose blazer, white shirt, thin gold necklace) seated at her desk, glancing empathetically toward the hallway — perceptive and warm. Top-right: A wide-eyed white dove pausing mid-step in a corridor, looking toward a shadowed figure in an office doorway — hesitation and apprehension visible. Bottom-left: A green turtle holding a sticky note with question marks, surrounded by overlapping arrows and clocks, looking perplexed. Bottom-right: A small round bird standing in a hallway, eyes on a manager's closed glass office door — respectful distance, unsure whether to approach. Transparent watercolor, warm muted tones, early summer afternoon atmosphere. No text, no letters, no signage.",
+      "comment1": "【正解は「B・C・D、全部同時に起きている」】\n\nAと答えた方、少し立ち止まってほしい。部下の問題にすると、仕組みを変える機会を失う。\n\nB 😶 が本質：\n報告したときに「なんで早く言わなかったの」と返ってきた経験が1回あれば、次から報告の閾値が上がる。怖いのは上司じゃなく「また詰められる」という記憶。\n\nC 🌀 が仕組みの問題：\n「重要なことは報告して」は指示ではない。何が重要かは上司の基準で、部下は毎回それを推測している。推測は消耗する。\n\nD 🔕 が距離の問題：\n「忙しそうで声かけられなかった」は部下の言い訳に聞こえるが、実際は上司が「話しかけられる顔」をしていないことが多い。\n\n報連相は部下のスキルではなく、上司が仕組むもの。\n\n続きはリプライ欄で👇\n#報連相 #マネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\n報告が来なくなったチームには、共通点がある。「報告する意味がない」と部下が学習している。\n\nつまり：\n・報告しても何も変わらなかった\n・報告したら怒られた\n・報告するより先に上司が動いた\n\nどれか一つが積み重なると、報連相は止まる。\n\n温度調整の技術：\n\n① 悪い報告ほど、最初の返しを「ありがとう」にする\n→ 告げやすくする場を先に作る。\n\n②「最近どう？」を週1で先に聞く\n→ 上司から開くことで、部下の報告コストが下がる。\n\n③「いつでも声かけて」より「火・木の10時に5分だけ」\n→ 曖昧な「いつでも」は逆に声をかけにくい。\n\n報告が来ない組織は、報告しやすい仕組みがないだけ。\n\n📌 保存して明日のミーティングで使ってほしい"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "「追いかけない」という技術",
       "character": "Coco + 🐢しずく + 🕊ひより",
-      "content": "「なぜ報告が来なくなるのか」\n実は上司側の問題を、正直に診断する。\n\n部下が「報告しにくい」と感じる状況、あなたの職場に近いのはどれ？\n\nA　忙しそうで、声をかけるタイミングがわからない\nB　以前、報告したとき強く責められた経験がある\nC　「それくらい自分で考えろ」と言われたことがある\nD　報告しても毎回「で、どうするの？」と返ってくる\n\n→ 自分の職場に重なるものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Early summer office atmosphere. Panel 1: Coco (a composed young woman in a soft pale blue linen blouse with delicate pintuck details) stands near her desk with a slightly preoccupied expression while a small wise turtle (Shizuku) and a gentle white bird (Hiyori) wait quietly nearby looking hesitant to approach; filtered morning light. Panel 2: Shizuku looks up with a worried expression toward Coco who stands with a subtle serious look; Hiyori perches on the corner of a bookshelf turned slightly away. Panel 3: Coco gestures warmly with open hands while Shizuku and Hiyori listen; the atmosphere is warmer late morning light; a small succulent plant is on the desk. Panel 4: All three sit together in a small comfortable circle of chairs; warm sunlight fills the room; a tray with three small cups of green tea sits in the center. Refined palette of pale blue, sage green, and warm cream. No text, no letters, no signage.",
-      "comment": "4つの選択肢は、すべて「報連相が止まる構造」の話です。\n\n【A：声をかけるタイミングがわからない】\n上司の「忙しいオーラ」は、報告の入口を閉じる。\n「いつでも話しかけていい」は、言葉だけでは届かない。\n\n【B：報告したら責められた】\n一度の強いフィードバックで、その後の報告頻度は激減する。\n「また叱られるかも」という記憶が、次の報告を止める。\n\n【C：自分で考えろ、と言われた】\n自律を促すつもりが「報告すると怒られる」という学習を生む。\nやがて「判断→実行→事後報告」か「黙って動く」に移行する。\n\n【D：毎回「で、どうするの？」と返ってくる】\n解決策を持たない報告を受け付けない姿勢は、「準備できないなら黙っておこう」という選択を誘発する。\n\n報連相が止まる職場に「やる気のない部下」はいない。\n「報告して、損した」と学んだ人たちがいるだけ。\n\n構造を変えなければ、声かけも研修も効かない。\nまず「報告して、よかった」という経験を1回作ることから始めよ。\n\n📌 明日から使える一手\n小さな報告を受けた最初の5秒を「ありがとう、教えてくれて助かった」から始めよ。\nその積み重ねが、報告が届く組織を作る。",
-      "quote": "💎 報告が来ない職場は、来られない構造がある"
+      "content": "連絡が途絶えたとき、あなたはどうしてる？\n\n水曜の夜、昨日から既読がつかないままになっている。\n「何かしてしまったかな」とスマホを見てしまう——。\n\nA　すぐ追いかけて連絡する（止まれない）\nB　気になるけど、1日は待つ（葛藤しながら）\nC　待ちながら、自分のことをする\nD　「来たら返す」と決めて、手放す\n\n正直に、今の自分に近いのはどれ？\nコメントで教えてください",
+      "quote": "💎 「追いかけない」とは、相手ではなく自分の時間を取り戻すこと",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Wednesday evening atmosphere with warm indoor light. Top-left (A): Coco (a composed young woman in a pale mint silk blouse with cream tapered trousers) walks urgently along a corridor holding her phone; a small wise turtle (Shizuku, with delicate white flowers on its shell) watches from behind with a steady patient expression. Top-right (B): Coco stands at a window with her phone in hand and a conflicted expression; a gentle white bird (Hiyori, with soft blue-tipped wing feathers) perches on the window ledge beside her; warm evening light. Bottom-left (C): Coco sits at a desk reading a book; Shizuku rests nearby with calm eyes; Hiyori perches on a shelf looking peacefully out the window; the atmosphere is settled and self-contained. Bottom-right (D): Coco places her phone face-down on a table; Shizuku and Hiyori are nearby; Coco's hands are open in her lap; a quiet serene evening light. Refined palette of pale mint, warm ivory, and soft sage. No text, no letters, no signage.",
+      "reply_1": "「追いかけたい」衝動、止めなくていい。\nでも、追いかける「前」に知ってほしいことがある。\n\n【A：すぐ追いかけてしまう】\n追いかけることで安心しようとしてる。\nでもその安心、追いかけた瞬間だけ。\n追いかけるたびに、相手との距離のバランスが崩れていく。\n「感情はある。依存はしない。」——この軸があると、動き出す前に一度立ち止まれます。\n\n【B：葛藤しながら1日待つ】\n1日待てるのは、本当はすごい力。\nでも葛藤しながら待つのは消耗する。\n「待つ理由」を自分のために言語化できると、もっと楽になれる。\n「この時間は、自分を育てる時間だ」と決めると、待つことが変わります。\n\n【C：待ちながら自分のことをする】\n自分の時間に戻れる人は強い。\n「冷たい」のではなく、「自分の重心を持っている」ということ。\nその力が、追いかけない恋愛の実践そのものです。\n\n【D：手放す】\n手放せる人は、執着の正体を知っている。\nただ、「手放す」が「諦め」になっていないか、時々確認して。\n本当の手放しは、静かで温かい。\n\n「追いかけない技術」は冷たさじゃない。\n自分を中心に置く、愛の仕組みです。\nその空白に、あなた自身が戻ってくる。"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "「ごめんね」が言えなかった分、スタンプが頭を下げてくれた。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "虹を見た日に、あの人のことを思い出した。それで十分。",
+      "quote": "💌 きょうも、そのままで ③"
     },
     {
       "date": "2026-05-15",
-      "platform": "X診断 5/12〜5/18",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "うまく言えなかった気持ちが、ちゃんとスタンプになっていた。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "「もう少しだけ、待っててほしい」が言えると、つながりが続く。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "チームの空気",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "「結果を出し続けるチーム」と「出せないチーム」、\nたった一つの空気の違い。\n\nあなたのチームに近いのはどれ？\n\nA　失敗を報告すると、原因追及が始まる\nB　失敗を報告すると、次の手を一緒に考えてくれる\nC　失敗しても報告しない人がいる（見て見ぬふり）\nD　そもそも「失敗」の基準が曖昧で、共有されていない\n\n→ 今のチームの空気を、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Early summer Friday afternoon light. Panel 1: A fluffy white cat (Shirotsuma) sits at a desk with papers scattered around while a gentle white bird (Hiyori) stands nearby with a questioning look; the atmosphere feels tense; pale morning light with subtle shadows. Panel 2: Shirotsuma and Hiyori sit facing each other at a small table with a shared open notebook between them; both look engaged and collaborative; warm afternoon light filtering through a window. Panel 3: Shirotsuma works alone at a desk while Hiyori gazes toward the window; a small pile of unsorted papers sits between them; soft hazy light. Panel 4: Shirotsuma and Hiyori stand before a whiteboard together; the board is completely blank; both look slightly puzzled; soft even light fills the room. Refined palette of soft white, pale lavender, and sage green. No text, no letters, no signage.",
-      "comment": "この4択で選んだ答えは、チームの「情報の流れ方」を映している。\n\n【A：原因追及が始まる】\n責任の所在を明確にする文化。\n短期的には締まるが、長期では「失敗を隠す空気」を育てる。\n隠れた問題が積み重なり、ある日突然、大きく崩れる。\n\n【B：次の手を一緒に考える】\n数字が伸びるチームの典型。\n失敗の報告が、次の戦略の入力データになっている。\n「ミスの量」ではなく「学びの速度」で勝っているチーム。\n\n【C：見て見ぬふり】\n最も危険な状態。\n問題が経営に届かず、現場が「なかったこと」として処理する。\n気づいたときには、修正不能になっていることがある。\n\n【D：基準が曖昧】\n「何が失敗か」が共有されていないチームは、成功の再現もできない。\n振り返りが機能せず、同じミスが繰り返される。\n\n成果を出し続けるチームは、「失敗の扱い方」が上手い。\nミスを責める場ではなく、学びを取り出す場として機能している。\n「失敗が言えた」という経験が、次の「挑戦できた」を生む。\n数字は戦略より先に、チームの空気に左右される。\n\n📌 明日から使える一手\n失敗報告を受けたとき「で、どうする？」の前に「教えてくれてありがとう」を先に言え。\nその順番を変えるだけで、チームの空気は変わり始める。",
-      "quote": "💎 失敗が言える空気が、数字を動かす"
+      "theme": "数字が伸びるチームの空気",
+      "character": "🐢しずく",
+      "purpose": "リプライ獲得",
+      "content": "数字が伸びるチームと、伸び悩むチームは——\n会議の最初の5分で、すでに違う。\n\nあなたのチームの会議、どれに近い？——\n\nA 📊 リーダーが数字を報告し、課題を指摘する\nB 💡 メンバーが自分から「こんな仮説があって」と話す\nC 🙋 「先週より改善した」と誰かが自発的に共有する\nD 🤫 数字の話が始まると、だんだん声が小さくなる\n\n正直に答えてほしい👇",
+      "quote": "💎 空気は、仕組みで変わる",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A bright airy meeting room with large windows showing fresh May greenery outside. Top-left: Coco (41-year-old woman, elegant bob, pale blue linen shirt, light grey tapered trousers) seated at the head of the table with a chart visible, while small bird figures sit attentively — the weight of evaluation in the air. Top-right: A green turtle standing with one hand raised at a whiteboard, presenting a hypothesis with arrows and sketched ideas — ownership and enthusiasm. Bottom-left: A small white dove holding up a small upward-trending graph, teammates leaning forward with warm expressions — shared pride in progress. Bottom-right: A white fluffy cat and a small bird at a table, their speech bubbles visibly shrinking as numbers appear on a screen — energy quietly draining from the room. Transparent watercolor, warm morning light, early summer palette, unified brushwork. No text, no letters, no signage.",
+      "comment1": "【数字が伸びる組織の「空気の仕組み」】\n\nA 📊 の組織：\n上司が数字を持っている状態。部下は「見られている」「評価される」モードで聞く。この空気では改善策より言い訳が先に来やすい。\n\nB 💡 の組織：\n仮説を話せる組織は、失敗を隠さない文化ができている。「やってみて、ダメだったら報告する」が当たり前になっている。\n\nC 🙋 の組織（最も数字が伸びる型）：\n「改善した」を自発的に共有できる組織は、数字を「批判の証拠」ではなく「共有の言語」として使っている。\n\nD 🤫 の組織：\n声が小さくなる瞬間、数字が「批判のトリガー」になっている。それは過去の積み重ねが生んだ沈黙。\n\n数字が伸びる組織の空気は、「誰かが勝手に数字の話をしている」状態。\n\n続きはリプライ欄で👇\n#チームビルディング #組織マネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\n数字が伸びない会議には、共通する空気がある。\n\n資料が開かれた瞬間に、部屋の温度が0.5度下がる——。それは数字が「成果の確認」ではなく「失敗の証拠」として扱われてきた歴史の積み重ね。\n\n数字の温度を変える3つの仕組み：\n\n① 「結果」より「変化量」を称える\n→ 100から120になった20を称える。数字の使い方が変わると、行動が変わる。\n\n② 会議の冒頭1分を「うまくいった話」にする\n→ 先に成功体験を積み上げると、その後の課題を「改善」として話せる。\n\n③ 上司が自分のミスを先に言う\n→「先週の予測、私が外した」と言えるリーダーがいるチームは、情報を隠さなくなる。\n\n空気は、仕組みで変わる。\n\n📌 今週の数字会議、少しだけ変えてみてほしい"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "家族だからこそ必要な「他人」の距離",
+      "character": "Coco + 🐢しずく + 🐈しらたま + 🕊ひより",
+      "content": "家族との関係で、じわじわ消耗するのはどれ？\n\n木曜の夜、実家から「最近どう？」の電話が来た。\nほっとしながら、少し重くもなる——そんな経験ありませんか。\n\nA　「なんで話してくれないの」という期待をぶつけてくる\nB　頼んでいないのに、手を出してくる（干渉）\nC　愛情のつもりの言葉が、なぜか重く感じる\nD　「家族だからわかり合える」という思い込みで近づきすぎる\n\nうちの家族、これだ。というのはありますか？\nコメントで教えてください",
+      "quote": "💎 家族にも、「他人」の距離が必要だ",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Thursday evening warm family atmosphere. Top-left (A): Coco (a warm young woman in a warm amber cotton dress with a delicate button placket) sits across from a small wise turtle (Shizuku, with delicate white flowers on its shell) at a dining table; Shizuku gestures forward with questioning eyes; Coco looks slightly away with a gently pained expression; a fluffy white cat (Shirotsuma) and a gentle white bird (Hiyori, with soft blue-tipped wing feathers) sit nearby observing. Top-right (B): Shirotsuma reaches toward something Coco is already holding; Coco pauses with a surprised but polite expression; Shizuku and Hiyori watch; the gesture is well-meaning but unwanted. Bottom-left (C): Shizuku offers Coco a small bouquet; Coco receives it with a strained smile; Hiyori watches quietly; the weight of the gift visible in Coco's posture. Bottom-right (D): All four sit very close together at a low table; the atmosphere is warm but slightly cramped; each figure leans slightly inward; a sense of too-close intimacy. Refined palette of warm amber, dusty rose, and sage green. No text, no letters, no signage.",
+      "reply_1": "「家族だからわかり合える」は、ときに最も危険な思い込みになる。\n5万人以上の声の中で特に多かったのが、この「家族の距離感」のモヤモヤです。\n\n【A：「なんで話してくれないの」という期待】\n「話してくれない」と嘆く前に、「話しやすい空気があったか」を問い直してほしい。\n家族が黙るのは能力の問題じゃなく、「安全じゃない」と感じているサイン。\n子どもとのちょうどいい距離は、「聞ける空気の仕組み」から生まれます。\n\n【B：頼んでいないのに手を出してくる】\n干渉は「愛情の表現」だと思っている。\nでも受け取る側は「信頼されていない」と感じている。\n助ける前に「必要？」と聞く仕組みだけで、関係は変わる。\n\n【C：愛情のつもりの言葉が重く感じる】\n「あなたのために言ってる」という言葉の後に疲弊感が来るなら、それは愛に見せかけた支配に近い。\nあなたが感じる「重さ」は、正直な感覚。信じていい。\n感情はある。でも依存はしない——その距離が、家族関係を守ります。\n\n【D：「わかり合える」という思い込みで近づきすぎる】\n「家族なのに分かり合えない」という絶望より、「家族でも、他人である部分がある」と認めた瞬間、関係は不思議と、楽になる。\n\n家族の距離感を整えることは、逃げじゃない。\n関係を長持ちさせる、静かな技術です。\n家族だからこそ、「他人のような礼儀」が関係を守ることがある。"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "「えいっ」の勢いで送れる一言が、木曜の気持ちを動かす。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "「大事なこと、忘れてなかったよ」を自分に送る木曜の夜があってもいい。",
+      "quote": "💌 きょうも、そのままで ③"
     },
     {
       "date": "2026-05-16",
-      "platform": "X診断 5/12〜5/18",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "金曜の朝、「行ってきます、今日もきっと大丈夫」を届けたい人がいる。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "「なんとかなった」のひとことが、金曜の入口になった。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "距離感の設計",
-      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「相談されないリーダー」がやってしまっていること。\n\n部下から相談を受けたとき、あなたはどう反応しがち？\n\nA　解決策をすぐに提示する\nB　「それは自分で考えてみて」と返す\nC　最後まで聞いてから、一緒に考える\nD　忙しくて「後で」と言ってしまうことがある\n\n→ 正直に選んで、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Quiet Saturday morning atmosphere. Panel 1: Coco (a warm refined young woman in an elegant pale rose summer dress with delicate embroidery) immediately points to a plan on a notebook while a small turtle (Shizuku), a fluffy white cat (Shirotsuma), and a gentle white bird (Hiyori) stand before her with slightly surprised expressions. Panel 2: Coco stands with one hand gently raised while Shizuku, Shirotsuma, and Hiyori look at each other with uncertain expressions; soft morning light. Panel 3: All four sit together in a comfortable circle; Coco leans forward gently listening while Shizuku speaks; Shirotsuma and Hiyori listen quietly nearby; a small pot of blooming white jasmine sits at the center; warm early summer sunlight. Panel 4: Coco sits at a desk absorbed in work while Shizuku, Shirotsuma, and Hiyori wait patiently nearby; a quiet slightly wistful mood. Refined palette of soft rose, ivory, and sage green. No text, no letters, no signage.",
-      "comment": "どれが正解・不正解ではなく、それぞれが「どういう距離感を作るか」の話。\n\n【A：すぐに解決策を出す】\n頼りになるが、「答えをもらう場所」として定着すると、部下の思考が育たない。\n「どうせ答えをもらえる」と思われると、相談前に自分で考えることをやめる。\n\n【B：自分で考えろ】\n自立を促す意図は正しい。\nただしタイミングを間違えると「相談したら迷惑そうだった」という記憶になる。\n\n【C：聞いてから一緒に考える】\n最も相談しやすい距離を作る。\n「聞いてもらえた」という体験が、次の相談を引き寄せる。\n聞く行為そのものが、部下の思考整理を手伝っている。\n\n【D：後で、と言ってしまう】\n悪意はない。でも、「後で」が積み重なると、部下の中で「あの人には言わなくていい」が定着する。\n「後で」が5回続くと、もう来ない。\n\n相談しやすいリーダーは「いつでも来い」とは言わない。\nただ、「来たときに、ちゃんといる」人だ。\n\n距離感は言葉より先に、反応で伝わる。\n「相談された瞬間の最初の5秒」が、次の相談が来るかどうかを決める。\n\n📌 明日から使える一手\n相談された最初の30秒、解決策を言わず「うん、聞かせて」だけ言え。\nそれだけで、部下のあなたへの距離が変わる。",
-      "quote": "💎 相談が来る人は、来たときにちゃんといる"
+      "theme": "部下が相談しやすい距離感",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "content": "「相談しやすい上司ですか？」——\n聞いたことがない人の方が、多いかもしれない。\n\n部下にとって「相談しやすい距離感」はどれ？——\n\nA 🚪「いつでも来ていいよ」と日頃から声をかけている\nB ☕ 月1回、1on1やランチの時間をとっている\nC 👁 小さな変化に気づいて、先に声をかけてくれる\nD 📩 チャットやLINEで気軽に連絡できる関係感\n\n答えはリプライ欄👇",
+      "quote": "💎 距離は縮めるものじゃなく、仕組みで整えるもの",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Soft Japanese office hallway and break room, warm Saturday morning light, early summer air. Top-left: A white fluffy cat standing at an open door with a welcoming gesture, while a small green turtle peeks hesitantly from the hallway — the invitation offered, but the gap still present. Top-right: A green turtle and a small round bird sitting across from each other at a cafe table with two coffee cups, notebooks open — a scheduled moment of connection. Bottom-left: A perceptive white dove turning gently toward a tired-looking small bird, one wing extended in quiet acknowledgment — the noticing that asks nothing in return. Bottom-right: A white cat looking at a phone screen with a chat bubble, while a bird character types a reply — digital proximity, but emotional warmth not quite crossing the screen. Transparent watercolor, warm muted tones, soft early summer light. No text, no letters, no signage.",
+      "comment1": "【「相談しやすさ」の本体は、どこにある？】\n\nA 🚪 を選んだあなた：\n「いつでも来ていいよ」は、来た人への許可。来られない人への仕組みにはなっていない。声をかけているのに相談が来ないなら、この構造を疑う。\n\nB ☕ を選んだあなた：\n月1の時間は信頼の基盤になる。ただし「何かありましたか？」の問いは相手に「課題がある」前提を置く。始め方を変えるだけで温度が変わる。\n\nC 👁 を選んだあなた（最も相談が来る型）：\n「最近、なんか元気なさそうだけど」と先に気づいてくれた上司には、人は話す。気づかれる体験が、次の相談への扉を開ける。\n\nD 📩 を選んだあなた：\nツールの距離は近くなる。でも感情の距離は、ツールでは縮まらない。チャットで「大丈夫？」と聞かれても「大丈夫です」と返すのが人間。\n\n相談しやすさの本体は、「先に気づく密度」。\n\n続きはリプライ欄で👇\n#1on1 #マネジメント",
+      "comment2": "【Coco Methodologyの視点】\n\n「うちのチームは相談しやすい雰囲気です」と言う上司の部下が、1年半、誰にも言えずに転職準備をしていた——そういう場面を見てきた。\n\n「相談すると、解決策の押しつけが来る」\n「相談したら、弱く見られる」\n「忙しそうで話しかけるタイミングがない」\n\n相談しやすい距離感の仕組み：\n\n① 相談を受けたとき、まず「それ大変だったね」を先に言う\n→ 感情を先に受け取ることで、続きが話せるようになる。\n\n②「何かあったら言って」より「今週、気になったことある？」\n→ 問いを具体化すると、答えやすくなる。\n\n③ 自分の失敗を先に話す\n→「実は先週、私もこういう失敗して——」が、相談のハードルを最も下げる。\n\n距離は縮めるものじゃなく、仕組みで整えるもの。\n\n📌 来週の1on1の前に読み返してほしい"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "舐められずに愛されるための境界線",
+      "character": "Coco + 🐈しらたま + 🕊ひより",
+      "content": "「あれ、舐められてる？」と気づくのって、どんな瞬間？\n\n金曜の夜、また断れなかった——\n「あなたならいいでしょ」のひとことに、またYESと言ってしまった。\n\nA　約束が軽く扱われるとき\nB　「あなたならいいでしょ」と言われるとき\nC　断ると、露骨に態度が変わるとき\nD　頑張りを当たり前にされるとき\n\n当てはまるものが多い人は、ぜひコメントを",
+      "quote": "💎 NOが言える人ほど、YESが本物の愛になる",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Friday evening atmosphere with clear warm light. Top-left (A): Coco (a graceful young woman in a soft lavender linen blouse with ivory wide-leg trousers) stands across from a fluffy white cat (Shirotsuma) and a gentle white bird (Hiyori, with soft blue-tipped wing feathers); Shirotsuma holds a small broken promise object with a casual expression; Coco's expression shows quiet disappointment. Top-right (B): Shirotsuma extends a paw toward Coco with a requesting gesture and a casual air; Coco stands with a politely strained expression; Hiyori watches from nearby with attentive eyes. Bottom-left (C): Coco stands with a composed refusal gesture; Shirotsuma's posture shifts to distant and stiff; Hiyori observes quietly from a step; Coco's expression is calm and clear. Bottom-right (D): Coco works carefully at a table; Shirotsuma observes with an entitled air; Hiyori sits close to Coco protectively; Coco's effort visible, unacknowledged. Refined palette of soft lavender, ivory, and sage green. No text, no letters, no signage.",
+      "reply_1": "「舐められる」のは、あなたが弱いからじゃない。\n優しくて、受け入れ上手で、断るのが苦手な人に起きやすいことです。\n\n【A：約束が軽く扱われるとき】\n約束を軽く扱う人は、あなたが怒らないと学習している。\n一度だけ、静かに「それは約束と違う」と言ってみて。\n怒らなくていい。ただ、事実を伝えるだけでいい。\nそれが境界線の仕組みの第一歩です。\n\n【B：「あなたならいいでしょ」と言われるとき】\n「あなたならいいでしょ」は、境界線のないところに差し込まれる言葉。\n「いいよ」と言い続けることが、その人にとっての「あなた像」を作っている。\n感情はある。でも依存はしない——その軸が、NOを言う力になります。\n\n【C：断ると態度が変わるとき】\n断ると態度が変わる人は、あなたに「条件付きの関係」を持ちかけている。\nその変化が見えているなら、もう境界線を引くサイン。\n\n【D：頑張りを当たり前にされるとき】\n頑張りを当たり前にする人の前では、「当たり前じゃない」と可視化することが大事。\nまず自分が、自分の努力に気づいてあげて。\n\n境界線は、相手を拒絶するためじゃない。\nあなたが、あなたであり続けるための仕組みです。\nNOが言える人は、YESが本物の重みを持ちます。"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "「それ、いいと思う」——背中を押す一言が、スタンプになってる。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "なんか今日、いい日だったな。そのまま「ぽかぽかしてきた」を送りたい。",
+      "quote": "💌 きょうも、そのままで ③"
     },
     {
       "date": "2026-05-17",
-      "platform": "X診断 5/12〜5/18",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "土曜の朝は「ゆっくりしていいよ」が似合う。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🕊ひより",
+      "purpose": "スタンプ宣伝",
+      "content": "ぽかぽかする日に、ぽかぽかするスタンプを送りたくなる。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "温度差の正体",
-      "character": "🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「社長が話し始めた途端、現場の温度が下がる」\nこの現象、なぜ起きるのか。\n\nトップが大きな方針を発表したとき、現場の反応に近いのは？\n\nA　「それ、どう動けばいい？」と戸惑いが広がる\nB　「また変わった」と、誰かがため息をつく\nC　「とりあえずやってみよう」と動き始める人がいる\nD　聞こえなかったふりをして、これまで通りに動く\n\n→ あなたの組織のリアルを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Quiet Sunday atmosphere with cool natural light. Panel 1: A small wise turtle (Shizuku), a fluffy white cat (Shirotsuma), and a gentle white bird (Hiyori) stand together in a large airy meeting room; they gaze toward an empty podium at the far end with slightly puzzled expressions; cool light from high windows. Panel 2: Shizuku, Shirotsuma, and Hiyori are seated; Shirotsuma sits next to a small slightly drooping flower with a subdued expression; the room feels heavy and still. Panel 3: Hiyori moves purposefully toward a door while Shizuku and Shirotsuma watch with tentative considering expressions; late afternoon light. Panel 4: Shizuku, Shirotsuma, and Hiyori each sit quietly at their own small desks; each works independently as before; the atmosphere is unchanged. Refined palette of cool grey-blue, pale sage, and ivory. No text, no letters, no signage.",
-      "comment": "4つの反応は、組織の「翻訳機能」の状態を教えてくれる。\n\n【A：戸惑いが広がる】\nビジョンは届いているが「自分の仕事への落とし込み」が見えない。\n「何を・どう変えればいいか」が翻訳されていない状態。\n\n【B：また変わった、とため息】\n変化疲労の蓄積。\n方針が変わるたびにリソースが奪われてきた経験が積み重なると、新しい言葉への反応が「また？」になる。\nこれは部下の問題ではなく、実行されなかった前の方針が残した傷。\n\n【C：動き始める人がいる】\nこれがあるチームは強い。\nただし、全員がCになる必要はない。\nCがいるからA・Bが動ける。キーマンへの翻訳が機能している証拠。\n\n【D：聞こえなかったふりで動かない】\n最もリスクが高い。\n現場が自律的に「やらない選択」をしている。\n問題が経営に届かず、乖離が静かに拡大する。\n\nトップと現場の温度差は「コミュニケーション不足」ではない。\n「翻訳する人と場」が設計されていないことで生まれる。\n\n経営の言葉を現場の言葉に変えるのが、ミドルの本当の仕事。\n翻訳なき言葉は、正しくても、動かない命令になる。\n\n📌 明日から使える一手\n方針を伝えるとき「あなたにとっては、◯◯が変わるということ」と個別変換せよ。\n抽象を具体に落とした瞬間、現場は動き始める。",
-      "quote": "💎 温度差の正体は、翻訳されていない言葉"
+      "theme": "トップと現場の温度差",
+      "character": "🕊ひより",
+      "purpose": "リプライ獲得",
+      "content": "経営陣が「この方針で行く」と決めた翌朝——\n現場には、もう別の温度が流れていた。\n\nあなたの組織、どれに近い？——\n\nA 🔥 経営の方針は共有されるが「また変わる」と現場は思っている\nB 🧊 方針の理由が伝わらず、現場は黙って従っている\nC 🌊 管理職が翻訳して伝えるが、その翻訳がズレていることがある\nD 🌡 経営と現場が同じ温度で話し合える場が定期的にある\n\n正直に答えてほしい👇",
+      "quote": "💎 温度差は、聞く仕組みで変わる",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A layered corporate setting — boardroom above, open office floor below, early summer Sunday morning light. Top-left: Coco (41-year-old woman, elegant bob, ivory cashmere cardigan, terracotta flare skirt) at a podium with a bold directional chart, while small bird characters below exchange quiet sidelong glances — words reaching the room but not landing. Top-right: A green turtle at the head of a table presenting a document, while bird characters sit in complete silence with blank expressions — a gap between message and meaning. Bottom-left: A white dove standing between two groups with both wings extended — the speech bubble subtly changes shape as it passes from one side to the other — translation in motion, imperfect. Bottom-right: A round table with Coco and a mix of executive-looking and ground-floor bird characters seated equally, warm conversation visible in shared speech bubbles — genuine temperature alignment. Transparent watercolor, cool blue and warm amber contrast, early summer morning. No text, no letters, no signage.",
+      "comment1": "【温度差が生まれる「構造」】\n\nA 🔥 の組織：\n方針の変更が多いとき、現場は「本気度」を測り始める。本気だと信じてもらうには一貫性ではなく「なぜ変わったか」の説明が必要。\n\nB 🧊 の組織：\n黙って従う現場は、黙って去る準備もしている。異論が出ない組織は健全じゃなく、諦めている可能性が高い。\n\nC 🌊 の組織：\n中間管理職が翻訳者になるとき、最も多いミスは「厳しい現実を柔らかく伝えすぎる」こと。やわらかくした分だけ、現場に届く熱量が下がる。\n\nD 🌡 の組織（最も温度差が小さい型）：\n「話し合える場」があっても、トップが話しすぎる場は実質Bと変わらない。場を作るより、「聞く仕組み」が鍵。\n\n温度差は情報量の差ではなく、「意図の共有」の差。\n\n続きはリプライ欄で👇\n#組織 #経営 #中間管理職",
+      "comment2": "【Coco Methodologyの視点】\n\n社長が話し始めた瞬間に、現場の空気が5度下がった——そういう組織を見てきた。問題は内容じゃなかった。\n\n「どうせ言っても」という経験の積み重ねが、体温を下げていた。\n\n温度差を縮める3つの仕組み：\n\n① 方針より先に「なぜ今、この判断をしたか」を話す\n→ 意思決定の背景が見えると、人は動く。理由なき指示は、足を止める。\n\n② 現場の言葉をトップに届ける「翻訳者」を明示的に作る\n→ 中間管理職に橋渡し役を自覚させる。翻訳者がいない組織では、温度差が広がる一方。\n\n③「異論がある人は？」より「現場ではどう見える？」と聞く\n→ 前者はゼロか百か。後者は現場の景色を借りる問い。\n\n温度差は、伝える量ではなく、聞く仕組みで変わる。\n\n📌 管理職の方、今週の全体会議で試してみてほしい"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "孤独と自由の、ちょうどいい温度",
+      "character": "Coco + 🐢しずく + 🐈しらたま + 🕊ひより",
+      "content": "「ひとりの時間」。正直どんな感じですか？\n\n土曜日の午後、特に予定がない。\nその静けさが、心地よいときと、少し怖いときがある——。\n\nA　寂しい。誰かそばにいてほしい\nB　好きだけど、長いと少し不安になる\nC　ちょうどいい。自分に戻れる感じがする\nD　普通。ひとりが基本の状態だから\n\n「土曜日の午後」が来るとき、あなたはどのタイプ？\nコメントで教えてください",
+      "quote": "💎 一人の時間と上手につき合える人は、誰かといるときも豊かになる",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Saturday afternoon with warm golden light and a quiet free atmosphere. Top-left (A): Coco (a warm young woman in a denim chambray shirt dress with a thin belt) sits by a window with a slightly wistful expression; a small wise turtle (Shizuku, with delicate white flowers on its shell) sits close beside her offering quiet company; a fluffy white cat (Shirotsuma) and a gentle white bird (Hiyori, with soft blue-tipped wing feathers) watch from nearby. Top-right (B): Coco reads a book in a soft chair but glances toward the door now and then; Shizuku watches her with calm patient eyes; the atmosphere is pleasant but with a subtle undercurrent of mild unease; golden afternoon light. Bottom-left (C): Coco sits on a sunlit terrace with hands open and relaxed in her lap; Shirotsuma and Hiyori rest nearby in peaceful stillness; all faces are softly content; warm Saturday afternoon light through leaves. Bottom-right (D): Coco stands alone on a balcony in the late afternoon; Shizuku, Shirotsuma, and Hiyori each occupy their own corner of the space in ease; the overall atmosphere is naturally settled and self-contained. Refined palette of warm denim blue, gold, and soft ivory. No text, no letters, no signage.",
+      "reply_1": "孤独と、ひとりは、違う。\n\nひとりでいるのに「孤独」を感じるとき、それは「自分との関係」が整っていないサインかもしれない。\n\n【A：寂しい。誰かそばにいてほしい】\n誰かそばにいてほしい感覚は、正直な感情。\nでも「人がいないと落ち着かない」が続くとき、「ひとりでいられる土台」がまだ薄い可能性がある。\n感情はある。でも依存はしない。\n自分が好きな小さなことをひとつ持つだけで、その土台は育ち始めます。\n\n【B：好きだけど長いと不安になる】\nひとりが好きなのに不安になる。\nその揺れは、「自分と向き合う深さ」への怖さかもしれない。\n怖さの中に、自分の本音が隠れていることが多い。\n\n【C：ちょうどいい。自分に戻れる】\nひとりの時間で「自分に戻れる」人は、他者と深くつながれる。\n誰かに依存しなくていいから。\nその強さを、大切にしてほしい。\n\n【D：普通。ひとりが基本の状態だから】\nひとりが「基本」の人は、孤独に慣れすぎて、人との温度を忘れていないか、ときどき確認してほしい。\n「受け取る」練習も、静かな勇気が必要だから。\n\n孤独は欠如じゃない。整えるものです。\n孤独とうまく付き合える仕組みを持つ人ほど、誰かといるときの温度も、ちょうどよくなる。"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "「ねえ、ちょっと休んでいいんだよ」って言える人が近くにいてほしい。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "おやすみ、また明日ね——夜はやさしい言葉で終わりにしたい。",
+      "quote": "💌 きょうも、そのままで ③"
     },
     {
       "date": "2026-05-18",
-      "platform": "X診断 5/12〜5/18",
+      "platform": "スタンプ宣伝",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "日曜の朝、「おはよう」の温度が少しやわらかい気がする。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "スタンプ宣伝",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "スタンプ宣伝",
+      "content": "「また来てね、待ってるから」が言える関係を、大切にしていたい。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "辞めない職場",
+      "theme": "人が辞めにくい職場の特徴",
+      "character": "🐢しずく",
+      "purpose": "保存獲得",
+      "content": "「辞めたい」と思う瞬間は、大きな不満からじゃない。\n小さな諦めが、静かに積み重なった先にある。\n\n人が辞めにくい職場——あなたの職場に、どれがある？\n\nA 🏆 頑張りが、誰かの目に届いている\nB 🗣 言いたいことが、言える空気がある\nC 🛤 この先のキャリアが、なんとなく描ける\nD 🤝 困ったとき、助けを求めていい関係がある\n\n正直に答えてほしい👇",
+      "quote": "💎 仕組みは、変えられる",
+      "image_prompt": "Watercolor illustration. The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Warm human Japanese workplace scenes on a May Monday morning, golden early summer light. Top-left: Coco (41-year-old woman, elegant bob, stone-grey structured blouse, moss-green pencil skirt) sitting beside a green turtle colleague — Coco looking up from a document and nodding warmly as the turtle presents a completed project, genuine recognition in her expression. Top-right: A white fluffy cat, a small white dove, and a green turtle around a round table — speech bubbles overlapping in animated, respectful discussion, each character's voice given equal space. Bottom-left: A small bird looking at a gentle winding path drawn on a chalkboard, leading toward soft light — a white dove beside them, one wing kindly indicating the way forward. Bottom-right: A white fluffy cat looking overwhelmed at a stack of files, while a small green turtle quietly places a helping hand on its shoulder — solidarity offered without being asked. Transparent watercolor, warm afternoon light, unified early summer harmony. No text, no letters, no signage.",
+      "comment1": "【人が辞めない組織の「温度の正体」】\n\nA 🏆 が当てはまる職場：\n「見られている」より「見てくれている」の違い。評価より承認。頑張りが誰かの目に届く仕組みがある職場は、静かに人が残る。\n\nB 🗣 が当てはまる職場：\n「言える空気」は管理職が意図的に作るもので、自然には生まれない。定例会議で異論を言える人が1人いるだけで、組織の温度が変わる。\n\nC 🛤 が当てはまる職場：\n3年後に自分がどうなっているか「なんとなく」見えるだけでいい。完璧なキャリアプランは不要。「この会社で成長できる気がする」という感覚が定着を支える。\n\nD 🤝 が当てはまる職場（最も離職率が低い型）：\n困ったとき声をかけていい相手がいる職場は、人が踏ん張る。孤立した仕事は、静かに人を消耗させる。\n\n全部当てはまらない職場の特徴：「給与以外に残る理由がなくなった」状態。\n\n続きはリプライ欄で👇\n#離職防止 #職場づくり",
+      "comment2": "【Coco Methodologyの視点】\n\n「うちの職場、別に悪くないんですけど——」と言いながら転職した人の、その「けど」の後ろに辞める理由が全部入っていた。\n\n明確な不満がなくても人は辞める。「このままでいいのか」という、静かな問いに答えられない職場から。\n\n人が辞めにくい職場を作る3つの仕組み：\n\n① 月1回「最近どう？仕事以外も含めて」と聞く\n→ 業務外の一言が、関係の温度を保つ。初期の離職シグナルを拾える。\n\n②「よくやってくれてる」を、その場で言葉にする\n→ 賞賛は記憶に残らない。だから繰り返す。積み重ねが「見てもらえている感」になる。\n\n③「5年後どうなりたい？」より「来年、こんな仕事してみたいとかある？」\n→ 遠い未来より近い未来。小さな希望が、今日の仕事を続ける理由になる。\n\n人が辞める職場は、人が辞めやすい構造があるだけ。そして構造は、仕組みで変えられる。\n\n📌 GW明けのこの1週間、チームの温度を確かめてほしい"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "期待を手放した後に残る、本当の関係",
+      "character": "Coco + 🐈しらたま",
+      "content": "「もう期待しない」と思ったことがある。\nそのとき、何が残りましたか？\n\n日曜の夕方——「こうしてくれると思っていた」が、また裏切られた。\nそんな記憶が、ふとよみがえる。\n\nA　静かな空虚感（虚しかった）\nB　少しの自由と、まだ残る未練\nC　「なんだ、こんなもんか」という安堵\nD　まだ期待している自分に気づいた\n\nあなたはどのタイプ？\nコメントで教えてください",
+      "quote": "💎 期待を手放した先に残るものが、本当の関係",
+      "dall_e_prompt": "A refined watercolor illustration in four equal panels (top-left A, top-right B, bottom-left C, bottom-right D), each with delicate transparent washes and a fine 1px white border. Late May Sunday evening with soft reflective light. Top-left (A): Coco (a composed young woman in a sage green silk camisole with wide-leg ivory linen trousers) stands in a simply furnished room; a fluffy white cat (Shirotsuma) sits at a distance looking toward her; empty tea cups on the table; a quiet hollow atmosphere. Top-right (B): Coco stands at an open window releasing a folded note into a gentle breeze; Shirotsuma watches from behind with a soft expression; a bittersweet goodbye and lingering backward glance. Bottom-left (C): Coco and Shirotsuma sit together at a small table in simple warm presence; both look forward with calm open expressions; no demands in the atmosphere; a quietly contented Sunday mood. Bottom-right (D): Coco holds a small seedling gently in cupped hands; Shirotsuma sits beside her looking at it with curious bright eyes; soft new understanding in both their expressions; warm Sunday evening light. Refined palette of sage green, dusty blue, and warm cream. No text, no letters, no signage.",
+      "reply_1": "「期待しない」と決めることは、諦めじゃない。\nでも、本当に手放せているかどうか、実はわからないことの方が多い。\n\n【A：空虚感（虚しかった）】\n空虚感は、期待していた分だけ深い。\nそれはちゃんと相手を大切にしていた証拠でもある。\n虚しさを「喪失のプロセス」として受け取ってほしい。\n悲しんでいいし、時間をかけていい。\n\n【B：自由と未練が同時にある】\n自由と未練が同時にある状態は、正直で健全。\n完全に手放せなくても、それでいい。\n人の感情はグラデーションで動いているから。\n感情はある。でも依存はしない——そのバランスを探している途中にいるだけです。\n\n【C：「こんなもんか」という安堵】\n「こんなもんか」という安堵は、実は深い智慧。\n期待のサイズが、相手ではなく「自分の理想」だったと気づいた瞬間。\nそれは成熟した関係の入口です。\n期待の仕組みを「こうあるべき」から「今のこの人」に変えるとき、関係は軽くなる。\n\n【D：まだ期待してる自分に気づいた】\n「まだ期待してる自分」に気づけるのは、誠実さの証。\nその正直さを、まず自分に向けてあげて。\n\n期待を手放した後に残るもの。\nそれは、相手の「ありのまま」と自分の「ありのまま」が静かに向き合う空間。\nそれが、本当の関係の始まりかもしれない。"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "スタンプ宣伝",
+      "time": "14:00",
       "character": "🕊ひより",
-      "content": "「人が辞めない職場」は、居心地がいいわけじゃない。\nでは何があるのか。\n\nあなたが「ここにいてもいいかな」と思える職場に近いのは？\n\nA　自分がやっていることの意味がわかる\nB　誰かに認められている実感がある\nC　次のステップが見えている\nD　話せる人が1人いる\n\n→ 今いる場所に、これはある？リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Early summer Monday morning light. Panel 1: A gentle white bird (Hiyori) perches quietly on the edge of a warm wooden desk; morning sunlight comes through sheer linen curtains; a small potted plant with fresh green leaves sits beside the desk; a calm purposeful atmosphere. Panel 2: Hiyori is surrounded by softly glowing small paper notes arranged in a gentle arc; one note bears a delicate star mark; the bird regards them with quiet satisfaction. Panel 3: Hiyori stands at the bottom of a gentle wooden staircase; warm golden light fills the top of the stairs; the bird looks upward with a calm forward-looking expression; small potted plants line the staircase railing. Panel 4: Hiyori sits near a sunlit window beside a small empty chair; two small porcelain cups of tea rest on a low table; early summer garden greenery visible softly outside. Refined palette of warm ivory, pale gold, and soft green. No text, no letters, no signage.",
-      "comment": "4つとも「辞めにくい職場の要素」として、すべて正解です。\n選んだ理由が、あなたの職場の課題を教えてくれる。\n\n【A：やっていることの意味がわかる】\n「何のためにやっているか」が見えている人は、多少しんどくても踏ん張れる。\n意味を見失った瞬間、人は静かに転職サイトを開く。\n\n【B：認められている実感がある】\n給与より先に「見てもらえている」という感覚が定着につながる。\n評価制度がなくても「気づいてもらえた」という一言が、職場を繋ぎ止める。\n\n【C：次のステップが見えている】\n「この先どうなるか」が見えない職場では、優秀な人から先に離れる。\n成長の道筋が見えると、今日の苦労が「積み上げ」に変わる。\n\n【D：話せる人が1人いる】\n環境ではなく「人」で残る判断をしている人は、思いのほか多い。\n1人の上司や同僚の存在が、離職の決断を何年も遅らせることがある。\n\n人が辞める瞬間は「別の仕事が決まったとき」だが、\n辞めようと思った瞬間は、もっとずっと前にある。\n\n辞めにくい職場は「楽な職場」じゃない。\n「ここにいる理由」が、1つでもある職場だ。\n\n📌 明日から使える一手\n部下に「今の仕事で、一番やりがいを感じるのはどんなとき？」と聞いてみよ。\nその答えの中に、その人が辞める・残る理由の両方が入っている。",
-      "quote": "💎 人が残る職場には、「ここにいる理由」が1つある"
+      "purpose": "スタンプ宣伝",
+      "content": "来週の自分に「きょうも、そのままでよかったよ」を送っておく。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "スタンプ宣伝",
+      "time": "19:00",
+      "character": "🐢しずく",
+      "purpose": "スタンプ宣伝",
+      "content": "今週も、そのままでいてくれてありがとう。",
+      "quote": "💌 きょうも、そのままで ③"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "意味の翻訳",
+      "content": "「頑張っているのに何も変わっていない気がする」\n\nその感覚が火曜に出やすいのは、動き始めた後の「意味の霞み」が原因のことが多い。\n\n手順を変える前に確認したい。\n「今やっていることの意味を、全員が自分の言葉で言えるか？」\n\n言えなければ、意味が届いていない。\n届いていなければ、人は「やらされている」モードに入る。\n\n意味を翻訳するのは、リーダーの最初の仕事だ。",
+      "quote": "💎 手順より先に、意味を届ける"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "怒りと正当性の分離",
+      "content": "怒りの声が大きいほど、正しいとは限らない。\n\n感情の強さと事実の正確さは、別のものだ。\n\nクレームや摩擦に直面したとき、感情の温度を受け止めながら、事実を別の場所に置く習慣がある。\n\n「この怒りはどこから来ているか」と「この主張に根拠はあるか」を、同時に処理しない。\n片方ずつ、静かに整理する。\n\n感情と事実を混ぜると、どちらも正確に扱えなくなる。",
+      "quote": "💎 怒りは感情として、正当性は事実として扱う"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "火曜の朝。\n\n先週動き始めたことが、まだ形になっていない。\n当然なのに、少し焦る。\n\n変化は、見ているときには現れない。\nある日気づいたらそうなっていた、という形でやってくる。\n\n今はまだ、その途中にいる。\n\nそういう時期、最近あった？",
+      "quote": "💍 変化は、気づいたときにはもう起きている"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "「なんでこれ、伝わってないんだろう」って思うとき。\n\nたいてい、伝えた側は「言ったはず」で、受け取った側は「聞いていない」になってる。\n\nどちらも嘘をついていない。\nただ、意味が途中で変わっていっただけ。\n\n言葉は、届いた場所で形を変える。",
+      "quote": "💍 伝えたことと、届いたことは、別のことだ"
+    },
+    {
+      "date": "2026-05-12",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白・共感",
+      "content": "今日、誰かに怒ったり、呆れたりした？\n\nその前に、自分が何を期待していたか、ちゃんと伝えていたかな、とふと思う。\n\n期待は、言わなくても伝わるものじゃない。\nでも、「言えばよかった」と後から気づくのも、よくあることで。\n\n今日の「伝えられなかったこと」、何かあった？",
+      "quote": "💍 期待は、声に出して初めて共有できる"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "構造分析",
+      "content": "水曜の朝。週の真ん中にいる。\n\n「なんで毎回こうなるんだろう」と感じるチームには、共通の仕組みがある。\n問題が起きるたびに対処する。でも仕組みを変えない。\n\n対処と改善は違う。\n対処は今日を凌ぐ。\n改善は来週を変える。\n\n疲れているのに変わらないのは、意志の問題より仕組みの問題であることが多い。",
+      "quote": "💎 対処を繰り返すより、仕組みを一つ変える"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "振り返り促進",
+      "content": "週の折り返し地点。\n\n今週、一番「ズレていた」と感じた瞬間はどこだったか。\n\nズレに気づけることは、組織の体力だ。\n気づかないまま動き続けると、後でずっと大きなコストになる。\n\n今夜、5分だけ「今週のズレ」を言語化してみる価値がある。",
+      "quote": "💎 ズレを言葉にする習慣が、チームを強くする"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "週の真ん中。\n\n「頑張っている」のに、何か手ごたえが薄い感じがするとき。\n\nそれは、頑張り方が間違っているんじゃなくて、\n向いている方向が少しだけずれているのかもしれない。\n\n方向のズレは、量でカバーできない。",
+      "quote": "💍 頑張る前に、向きを確認する"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "「疲れた」って言える相手が、いるといいな。\n\n弱音を言える関係って、信頼の証拠だと思う。\n\nいつも「大丈夫」しか言えない関係は、少し緊張している。\n本当に近い人の前でだけ、少し力が抜けた気がする。\n\n今、力を抜ける場所、ある？",
+      "quote": "💍 「大丈夫」だけじゃない関係が、人を支える"
+    },
+    {
+      "date": "2026-05-13",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白",
+      "content": "折り返しを過ぎると、何かが軽くなる。\n\nあと2日、という感覚は、ちゃんと人を動かす。\n\nでも急がなくていい。\n今日できたことが、今日の分だ。\n\n今週の残り、何を大事にしたいと思ってる？",
+      "quote": "💍 今日できたことが、今日の全部でいい"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "摩擦の仕組み化",
+      "content": "木曜は、人間関係の摩擦が表に出やすい日だと感じている。\n\n疲れが蓄積して、少しのズレが大きく見える。\n\nそういうとき、「この人が問題だ」と思いたくなるが、多くの場合、仕組みが問題だ。\n\n誰が悪いかより、何がずれているかを問う。\nそこに答えがある。\n\n摩擦は、組織のどこかがズレているサインだ。",
+      "quote": "💎 摩擦は悪ではなく、ズレの信号だ"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "踏ん張りの言語化",
+      "content": "木曜の夜。\n\n「もう少しだから」と自分を励ます日がある。\n\nその「もう少し」が何のためかを、ちゃんと知っているか。\n\n目的を見失ったまま踏ん張り続けると、どこかで力が切れる。\n今夜、一度「なんのために頑張っているか」を言葉にしてみる。",
+      "quote": "💎 踏ん張る前に、なんのためかを確かめる"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "木曜の朝。\n\nなんとなく、誰かのことが引っかかっている。\n\nその引っかかりは、相手への苛立ちじゃなくて、\n「何かを言えていない」自分への違和感だったりする。\n\n言えていないことが、ずっとそこにいる。",
+      "quote": "💍 引っかかりの正体は、言えていない自分だった"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "「なんで分かってくれないんだろう」って思う瞬間、ある。\n\nでも、分かってほしいことを言葉にしていたかな、と考えると、\nどこかで「察してほしかった」になっていることもある。\n\n察してもらえるのは、嬉しいこと。\nでも、言葉にした方が、ちゃんと届く。\n\n言葉にするの、難しかった？",
+      "quote": "💍 察してもらうより、言葉にした方が届く"
+    },
+    {
+      "date": "2026-05-14",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白",
+      "content": "明日で一週間が終わる。\n\n今週、誰かに「ありがとう」を言えた？\n\nそれって、意外と照れくさくて、タイミングを逃すこともある。\n\n言えなかったとき、次に会ったときに言えるといい。\n遅れた「ありがとう」でも、ちゃんと届く。\n\n今週、誰かに言えずにいることあった？",
+      "quote": "💍 遅れた「ありがとう」でも、ちゃんと届く"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "振り返りの仕組み",
+      "content": "金曜の朝。週末前に一つ確かめたいことがある。\n\n「今週、何か一つでも仕組みが変わったか？」\n\n毎週同じことで詰まっているなら、改善ではなく対処を繰り返している可能性が高い。\n\n問題を処理するだけでなく、再発しない仕組みを一つ残す。\nそれが「週の終わりに組織が少し強くなる」ための習慣だ。",
+      "quote": "💎 問題を処理したら、再発しない仕組みを一つ残す"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "週末の解放感",
+      "content": "今週も、よく動いた。\n\n週末の入口に立つと、「あれはどうすればよかった」より「今週何ができたか」を先に見たくなる。\n\n批判より発見。反省より観察。\n\n来週のためにではなく、今日の夜のために、今週の「できた」を一つ思い出してみる。",
+      "quote": "💎 今週の「できた」を、今夜先に拾う"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "金曜の朝。\n\n今週、「伝えてよかった」と思った瞬間があった。\n\n言いにくかったのに、言えた。\nそして、思ったより相手に届いた。\n\n言葉にすることの力を、改めて感じた週だった。",
+      "quote": "💍 言えた言葉が、その後の関係を変える"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "週末の気配がしてくると、少し力が抜ける。\n\nその「抜け方」の違いで、今週がどんな週だったかが分かる気がする。\n\nゆっくり抜ける人は、よく動いた人。\nすとんと落ちる人は、ちょっと頑張りすぎた人。\n\n今日の自分、どっちかな？",
+      "quote": "💍 力の抜け方で、今週の濃さが分かる"
+    },
+    {
+      "date": "2026-05-15",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白・共犯感",
+      "content": "今週の自分に、なんか声をかけるとしたら。\n\n「よくやった」でも「もう少しだったな」でも、なんでもいい。\n\n自分への言葉は、誰にも見えないし、正解もない。\n\nこっそり心の中で言ってみると、なんか楽になったりする。\n\n今週の自分に、なんて言いたい？",
+      "quote": "💍 自分への言葉は、静かに力になる"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "充電と仕組み",
+      "content": "週末に入った。\n\n「休まないと良い判断ができない」は分かっている。\nでも、休むことへの罪悪感は消えない、という人は多い。\n\nそれは意志の問題ではなく、「休むことが許される仕組みがない」ことの問題だ。\n\n個人の忍耐で解決しようとすると、いつか全員が限界を超える。\n休む権利を仕組みで守る組織は、長く続く。",
+      "quote": "💎 休む権利は、意志ではなく仕組みで守る"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "土曜の充電",
+      "content": "今日、何もしない時間があったか。\n\n「何もしない」は、怠けじゃない。\n脳が整理をして、次の動きの準備をしている時間だ。\n\n予定を詰め込んだ週末より、少し余白のある週末の方が、月曜に力がある、という話をよく聞く。\n\n今夜は、明日の予定を一つ減らすことを考えてもいいかもしれない。",
+      "quote": "💎 余白は怠けではなく、次のための準備だ"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "土曜の朝。\n\n久しぶりに、急がない朝だ。\n\n「急がない」だけで、世界の見え方が少し変わる。\n同じ空なのに、ゆっくり見える。\n\nこういう朝を、もう少し増やしたいと思っている。",
+      "quote": "💍 急がない朝が、自分を取り戻す"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "週末に一人でいると、ふと「孤独かな」と感じることがある。\n\nでもそれって、孤独じゃなくて「静けさ」に近い気がする。\n\n誰かといなくても、満たされていることがある。\n静けさを、一人でいることの豊かさとして受け取れる瞬間が、ある。\n\n今日の「一人の時間」、どう過ごしてる？",
+      "quote": "💍 静けさは、豊かな一人の時間だ"
+    },
+    {
+      "date": "2026-05-16",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白",
+      "content": "今日、誰かと過ごした時間で、ほっとした瞬間はあった？\n\nそれとも、一人でいることで、ほっとした瞬間？\n\nどっちが「自分を充電する時間」かは、人によって違う。\n\n自分に合った充電の仕方、なんとなくわかってきた気がする。\n\nあなたはどっち派？",
+      "quote": "💍 自分を充電する方法を、自分で知っていると強い"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "来週の準備",
+      "content": "日曜の朝。静かな問いが浮かびやすい時間だ。\n\n「来週、最初にやることを一つだけ決める」\nそれだけで、月曜の朝の動き出しが変わる。\n\n人は選択肢が多いほど動けなくなる。\n「何でもできる」より「これをやる」の方が、実際には動きやすい。\n\n今日の10分が、来週の最初の一歩を作る。",
+      "quote": "💎 来週の最初の一手を、今日の静けさの中で決める"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "手放し",
+      "content": "今週引きずっていたことを、今夜手放す。\n\n「あれはどうすればよかったか」は、学びとして残す。\n「でもあの人が」「あの状況が」という部分は、今夜で手放す。\n\n来週また新しく始めるために、今夜何かを置いていく。\n\n置いていくのは、逃げではなく、前を向くための選択だ。",
+      "quote": "💎 手放すことは、前を向くための選択だ"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "日曜の朝。\n\n来週のことを考えると、少し重くなる瞬間がある。\n\nでも、その重さは「まだ準備できていない」のではなくて、\n「ちゃんと受け取ろうとしている」から来るのかもしれない。\n\n重さを感じる人が、丁寧に動く。",
+      "quote": "💍 重さを感じる人が、丁寧に動く"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "日曜の午前中。\n\n今週の「よかったこと」を一つ思い出してみる。\n\n大きいことじゃなくていい。\nちょっとした「うまくいった瞬間」でいい。\n\nそれを、ちゃんと自分で受け取ると、来週がすこし楽になる。\n\n今週の「よかったこと」、一つだけ教えて？",
+      "quote": "💍 自分の「よかった」を、自分で受け取る"
+    },
+    {
+      "date": "2026-05-17",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白・共犯感",
+      "content": "日曜の夜。\n\n「また一週間が始まる」という感覚、少し分かる。\n\n来週のことを考えながら、でも今夜はまだ日曜だ、という気持ちの間にいる。\n\nその間の時間が、意外と好きだったりする。\n\n今夜は、どんな気持ちでいる？",
+      "quote": "💍 日曜の夜は、二つの時間の間にある"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "再スタートの仕組み",
+      "content": "月曜の朝。動き出しの重さを感じている人に。\n\n「また一週間が始まる」という感覚が重いとき、それは意志が足りないのではない。\n\n先週の未完了が、今週の入口を重くしている。\n\n未完了を明示し、「今週これを完了させる」と決めるだけで、動き出しが変わる。\n仕組みで始めると、モチベーションに頼らなくてよくなる。",
+      "quote": "💎 未完了を明示することが、月曜を軽くする"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "月曜の振り返り",
+      "content": "月曜、どうだったか。\n\n思い通りにいかなかった部分もある。でも動いた。それでいい。\n\n月曜に「完璧なスタート」を求めると、だいたい疲れる。\n「動き出した」だけを今日の成果にしてもいい。\n\n今夜は、今日動いたことを、静かに認めてみる。",
+      "quote": "💎 月曜に「動き出した」だけで十分な理由がある"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "content": "月曜の朝。\n\n週末から切り替わる感覚って、ゆっくりくる人と、ぱっとくる人がいる。\n\nどちらでも、動き始めた時点でその人はもうちゃんと動いている。\n\nペースは、その人のもの。",
+      "quote": "💍 ペースは、その人のものでいい"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "共感獲得",
+      "content": "月曜の朝、誰かに声をかけてもらった？\n\nちょっとした「今週もよろしく」が、\nなんか嬉しかったりする。\n\n声をかけることって、力がいるけど、受け取った側はちゃんと力になっている。\n\n今朝、誰かに声をかけた？",
+      "quote": "💍 小さな声かけが、その日の空気を変える"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "余白",
+      "content": "一日の終わり。\n\n月曜って、なんか長く感じることがある。\n\nそれだけ、いろんなことが動いた一日だったんだと思う。\n\n今日を生き切った、それで十分だ。\n\n今日の「ちょっとよかったこと」、何かあった？",
+      "quote": "💍 月曜を生き切った、それで十分だ"
+    },
+    {
+      "date": "2026-05-18",
+      "platform": "LINEスタンプ",
+      "time": "00:00",
+      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
+      "purpose": "第5弾 スタンプサマリー",
+      "content": "タイトル（日本語）：きょうも、そのままで⑤\n説明文（日本語）：梅雨の朝も、父の日も、Cocoとしずく・しらたま・ひよりが一緒。雨粒みたいに柔らかな水彩タッチで、大切な人への「ありがとう」「大好き」「おはよう」を24種。毎日使える温かいひとことを届けます。\nTitle (English): As You Are, Always ⑤\nDescription (English): Even on rainy days, Coco and three little friends are by your side. 24 soft watercolor stamps — warm greetings, quiet gratitude, gentle encouragement — for the people who matter most this rainy season and beyond.",
+      "image_prompt": "",
+      "comment": "【パターン】②キャラクター＋Coco（全員参加）",
+      "quote": "きょうも、そのままで⑤ — 2026年5月18日リリース"
     }
   ]
 }
