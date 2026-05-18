@@ -85,7 +85,7 @@
       "purpose": "No.1 ｜ 共感したとき",
       "character": "🐈‍⬛しらたまのみ",
       "content": "わかる〜",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) nodding vigorously with wide sparkling empathetic eyes; both round paws raised expressively; gentle pink blush marks on cheeks; warm hand-painted pastel style with soft ink outline; delicate watercolor paint bleeding effect; white, cream, and blush pink tones; completely transparent background; 1:1 square format; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, delicate watercolor paint bleeding effect\n[Character] fluffy white cat (Shirotsuma) nodding vigorously in the center-lower area, sparkling warm eyes curved in happy crescents, soft light reflection in eyes, gentle and cheerful gaze, both round paws raised expressively, gentle pink blush marks on cheeks, white and cream tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『わかる〜』naturally placed at the top with generous copy space above the character; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：誰かの投稿や話にうんうんしたいとき"
     },
     {
@@ -95,7 +95,7 @@
       "purpose": "No.2 ｜ 少し待ってほしいとき",
       "character": "🐢しずくのみ",
       "content": "ちょっと待ってね",
-      "image_prompt": "Soft watercolor LINE sticker of a small wise turtle (Shizuku) raising one front flipper in a gentle patient wait gesture with a calm warm smile; shell decorated with delicate soft watercolor flower motifs; hand-painted pastel style with ink outline; sage green and warm ivory tones; gentle paint bleeding; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small wise turtle (Shizuku) raising one front flipper in a gentle patient wait gesture in center-lower, calm warm smile, sparkling warm eyes, soft light reflection in eyes, shell with delicate watercolor flower motifs, sage green and warm ivory tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ちょっと待ってね』naturally placed at the top with copy space; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：返信の前に少し時間が必要なとき"
     },
     {
@@ -105,7 +105,7 @@
       "purpose": "No.3 ｜ 励ましたいとき",
       "character": "🕊ひよりのみ",
       "content": "なんとかなる！",
-      "image_prompt": "Soft watercolor LINE sticker of a gentle white bird (Hiyori) with wings spread wide in an uplifting joyful pose; bright optimistic eyes with sparkling star-shaped light reflections; tiny soft watercolor flowers floating around; hand-painted pastel style with ink outline; white and warm gold tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) with wings spread wide in an uplifting joyful pose in lower-center, bright optimistic sparkling warm eyes with star-shaped light reflections, bright and hopeful expression, tiny soft watercolor flowers floating around, white and warm gold tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『なんとかなる！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：落ち込んでいる相手の背中を押したいとき"
     },
     {
@@ -115,7 +115,7 @@
       "purpose": "No.4 ｜ 労いたいとき",
       "character": "🐈‍⬛しらたま + 🐢しずく",
       "content": "お疲れさま",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) and small turtle (Shizuku) sitting cozily side by side with warm tired-but-content smiles; Shirotsuma tail curling gently around Shizuku; small soft watercolor stars above; hand-painted pastel style; white and sage green tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and small turtle (Shizuku) sitting cozily side by side in lower-center, warm tired-but-content smiles, sparkling warm eyes with soft light reflections, gentle and cheerful gaze, Shirotsuma tail curling gently around Shizuku, small soft watercolor stars above, white and sage green tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『お疲れさま』naturally placed at the top with copy space; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：一緒に頑張った相手を労いたいとき"
     },
     {
@@ -125,7 +125,7 @@
       "purpose": "No.5 ｜ 一緒に喜ぶとき",
       "character": "🐈‍⬛しらたま + 🕊ひより",
       "content": "やったね！",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) and a gentle white bird (Hiyori) celebrating joyfully together; Shirotsuma paw raised high meeting Hiyori wing in a happy high-five; big sparkling joyful eyes; soft watercolor confetti dots; hand-painted pastel style; white, pale yellow, and soft pink tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and gentle white bird (Hiyori) celebrating joyfully together in lower-center, Shirotsuma paw raised high meeting Hiyori wing in a happy high-five, big sparkling warm eyes with bright light reflections, bright and hopeful expression, soft watercolor confetti dots, white, pale yellow, and soft pink tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『やったね！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：相手のよい知らせに一緒に喜ぶとき"
     },
     {
@@ -135,7 +135,7 @@
       "purpose": "No.6 ｜ 頼もしさを伝えるとき",
       "character": "🐢しずく + 🕊ひより",
       "content": "まかせて！",
-      "image_prompt": "Soft watercolor LINE sticker of a small turtle (Shizuku) standing confidently with chest slightly puffed and one flipper raised in a leave-it-to-me pose; a white bird (Hiyori) beside with wings slightly spread showing readiness; both with determined bright sparkling eyes; hand-painted pastel style; sage green and white tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) standing confidently with chest slightly puffed and one flipper raised in center-lower, white bird (Hiyori) beside with wings slightly spread showing readiness, both with determined sparkling warm eyes and soft light reflections, gentle and cheerful gaze, sage green and white tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『まかせて！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：頼まれごとを引き受けるとき"
     },
     {
@@ -145,7 +145,7 @@
       "purpose": "No.7 ｜ 強共感を示すとき",
       "character": "🐈‍⬛しらたまのみ",
       "content": "それな〜",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) in a totally relatable lounging pose with one paw lazily raised; half-lidded deeply knowing empathetic eyes; chubby warm silhouette; gentle blush marks; hand-painted pastel style with soft ink outline; white, cream, and lavender tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) in a totally relatable lounging pose in center-lower, half-lidded knowing empathetic eyes with warm sparkle and soft light reflection, gentle and cheerful gaze, chubby warm silhouette, gentle blush marks, white, cream, and lavender tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『それな〜』placed at the top with natural copy space; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：めちゃくちゃわかる！という強い共感を伝えるとき"
     },
     {
@@ -155,7 +155,7 @@
       "purpose": "No.8 ｜ 少し待ってほしいとき（考え中）",
       "character": "🐢しずくのみ",
       "content": "考え中…",
-      "image_prompt": "Soft watercolor LINE sticker of a small wise turtle (Shizuku) in deep adorable thought; one flipper raised to chin in a classic thinking pose; small soft watercolor thought-bubble dots floating above head; slightly furrowed brow in a cute endearing way; hand-painted pastel style; sage green, pale blue, and ivory tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small wise turtle (Shizuku) in deep adorable thought in center-lower, one flipper raised to chin in classic thinking pose, sparkling warm eyes with soft light reflection, gentle and cheerful expression, small soft watercolor thought-bubble dots floating above head, sage green, pale blue, and ivory tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『考え中…』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：今考えているよと伝えたいとき"
     },
     {
@@ -165,7 +165,7 @@
       "purpose": "No.9 ｜ 出発・出勤のとき",
       "character": "🕊ひよりのみ",
       "content": "いってきます！",
-      "image_prompt": "Soft watercolor LINE sticker of a gentle white bird (Hiyori) in a cheerful departing pose with wings slightly raised ready to fly; wearing a tiny soft watercolor scarf suited for the approaching rainy season; bright optimistic eyes with light sparkle; small watercolor motion lines; hand-painted pastel style; white and soft yellow tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) in a cheerful departing pose in center-lower, wings slightly raised ready to fly, wearing a tiny soft watercolor scarf for the approaching rainy season, bright optimistic sparkling warm eyes with light sparkle, bright and hopeful expression, small watercolor motion lines, white and soft yellow tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『いってきます！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：朝の挨拶・行ってきますを可愛く送るとき"
     },
     {
@@ -175,7 +175,7 @@
       "purpose": "No.10 ｜ チームワークのとき",
       "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
       "content": "一緒にがんばろ",
-      "image_prompt": "Soft watercolor LINE sticker of all three friends — a fluffy white cat (Shirotsuma), small turtle (Shizuku), and white bird (Hiyori) — huddled close in a warm tight group with expressions of solidarity and cheerful determination; Shirotsuma tail wrapping gently around the group; small watercolor stars above; hand-painted pastel style; white, sage green, and warm gold tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] all three friends — fluffy white cat (Shirotsuma), small turtle (Shizuku), and white bird (Hiyori) — huddled close in a warm tight group in lower-center, expressions of solidarity and cheerful determination, sparkling warm eyes all around with soft light reflections, bright and hopeful expressions, Shirotsuma tail wrapping gently around the group, small watercolor stars above, white, sage green, and warm gold tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『一緒にがんばろ』naturally placed at the top with copy space; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：一緒に頑張ろうの気持ちをひとつにしたいとき"
     },
     {
@@ -185,7 +185,7 @@
       "purpose": "No.11 ｜ 眠いとき・だるいとき",
       "character": "🐈‍⬛しらたまのみ",
       "content": "ねむ〜い",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) adorably drooping with half-closed extremely sleepy heavy eyelids; lying in a cozy puddle-like sprawl with paws dangling off an edge; tiny soft watercolor z marks floating above; rainy-season cozy morning mood; hand-painted pastel style; white, lavender, and pale blue tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) adorably drooping with half-closed extremely sleepy heavy eyelids in center-lower, sparkling warm eyes barely visible through sleepy lids, lying in a cozy puddle-like sprawl with paws dangling, soft watercolor z marks floating above, rainy-season cozy morning mood, white, lavender, and pale blue tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ねむ〜い』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：眠い・だるいを可愛く伝えるとき・梅雨の朝に"
     },
     {
@@ -195,7 +195,7 @@
       "purpose": "No.12 ｜ 安心させたいとき",
       "character": "🐢しずく + 🕊ひより",
       "content": "大丈夫だよ",
-      "image_prompt": "Soft watercolor LINE sticker of a small turtle (Shizuku) gently placing a flipper on a white bird (Hiyori) in a warm comforting gesture; Hiyori looking relieved with soft grateful sparkling eyes; warm reassuring atmosphere; delicate watercolor warm glow around them; hand-painted pastel style; sage green, white, and warm ivory tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) gently placing a flipper on white bird (Hiyori) in a warm comforting gesture in lower-center, Hiyori looking relieved with soft grateful sparkling warm eyes and light reflections, bright and hopeful expression, warm reassuring atmosphere, delicate watercolor warm glow around them, sage green, white, and warm ivory tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『大丈夫だよ』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：心配している相手に大丈夫を伝えたいとき"
     },
     {
@@ -205,7 +205,7 @@
       "purpose": "No.13 ｜ 了承したとき",
       "character": "🐈‍⬛しらたまのみ",
       "content": "了解！",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) giving a cheerful energetic thumbs-up with a bright agreeable expression; sparkling enthusiastic eyes curved into happy crescents; small soft watercolor stars nearby; hand-painted pastel style; white, warm cream, and soft mint tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) giving a cheerful energetic thumbs-up in lower-center, bright agreeable expression, sparkling warm eyes curved into happy crescents with soft light reflection, gentle and cheerful gaze, small soft watercolor stars nearby, white, warm cream, and soft mint tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『了解！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：わかった！をパッと返したいとき"
     },
     {
@@ -215,7 +215,7 @@
       "purpose": "No.14 ｜ 落ち着いて進むとき",
       "character": "🐢しずくのみ",
       "content": "じっくりいこ",
-      "image_prompt": "Soft watercolor LINE sticker of a small wise turtle (Shizuku) in a calm settled comfortable pose with a slow and steady peaceful expression; gentle warm smile; one flipper making a soft reassuring take-it-easy gesture; hand-painted pastel style; sage green and warm ivory tones; gentle watercolor wash; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small wise turtle (Shizuku) in a calm settled comfortable pose in center-lower, slow and steady peaceful expression, gentle warm smile, sparkling warm eyes with soft light reflection, one flipper making a soft reassuring take-it-easy gesture, sage green and warm ivory tones, gentle watercolor wash, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『じっくりいこ』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：焦らずゆっくり進もうと伝えたいとき"
     },
     {
@@ -225,7 +225,7 @@
       "purpose": "No.15 ｜ 強く背中を押すとき",
       "character": "🕊ひよりのみ",
       "content": "ぜったい大丈夫",
-      "image_prompt": "Soft watercolor LINE sticker of a gentle white bird (Hiyori) with both wings spread wide in a bold confident reassuring pose; bright determined sparkling eyes; warm hopeful expression; soft watercolor glow radiating outward; hand-painted pastel style; white, pale gold, and soft blue tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) with both wings spread wide in a bold confident reassuring pose in center-lower, bright determined sparkling warm eyes with soft light reflection, bright and hopeful expression, soft watercolor glow radiating outward, white, pale gold, and soft blue tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ぜったい大丈夫』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：なんとかなる！より強く、絶対いける！と伝えたいとき"
     },
     {
@@ -235,7 +235,7 @@
       "purpose": "No.16 ｜ 理解したとき",
       "character": "🐈‍⬛しらたま + 🐢しずく",
       "content": "なるほどね〜",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) and small turtle (Shizuku) both in a synchronized gentle nodding pose of understanding; both with knowing warm expressions; Shirotsuma ear tilted thoughtfully; hand-painted pastel style; white and sage green tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and small turtle (Shizuku) both in a synchronized gentle nodding pose of understanding in lower-center, both with sparkling warm knowing eyes and soft light reflections, gentle and cheerful expressions, Shirotsuma ear tilted thoughtfully, white and sage green tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『なるほどね〜』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：相手の話を聞いて納得したとき"
     },
     {
@@ -245,7 +245,7 @@
       "purpose": "No.17 ｜ 追い込みの背中押し",
       "character": "🐈‍⬛しらたま + 🕊ひより",
       "content": "もうひとふんばり！",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) and white bird (Hiyori) both in an energetic encouraging pose; Shirotsuma raising a paw high; Hiyori wings spread with excitement; both with bright determined sparkling eyes; hand-painted pastel style; white, soft orange, and sage tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and white bird (Hiyori) both in an energetic encouraging pose in lower-center, Shirotsuma raising a paw high, Hiyori wings spread with excitement, both with bright determined sparkling warm eyes and hopeful expressions, white, soft orange, and sage tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『もうひとふんばり！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：あと少し！の追い込みを一緒に乗り越えたいとき"
     },
     {
@@ -255,7 +255,7 @@
       "purpose": "No.18 ｜ ちゃんと聞いているとき",
       "character": "🐢しずくのみ",
       "content": "ちゃんと聞いてる",
-      "image_prompt": "Soft watercolor LINE sticker of a small turtle (Shizuku) leaning forward attentively with both front flippers slightly forward in an I-am-listening pose; warm focused caring eyes; calm sincere expression; gentle watercolor glow; hand-painted pastel style; sage green and warm ivory tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) leaning forward attentively in center-lower, both front flippers slightly forward in an I-am-listening pose, warm focused sparkling eyes with soft light reflection, gentle and cheerful gaze, calm sincere expression, sage green and warm ivory tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ちゃんと聞いてる』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：相手の話をしっかり聞いていると伝えたいとき"
     },
     {
@@ -265,7 +265,7 @@
       "purpose": "No.19 ｜ 直感を信じてほしいとき",
       "character": "🕊ひよりのみ",
       "content": "感じたままで！",
-      "image_prompt": "Soft watercolor LINE sticker of a gentle white bird (Hiyori) with wings slightly raised in a freeing liberating pose; eyes closed in peaceful confident bliss; small soft watercolor flowers and breeze lines around; hand-painted pastel style; white, pale pink, and soft gold tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) with wings slightly raised in a freeing liberating pose in center-lower, eyes shining peacefully with sparkling warm light reflection, bright and hopeful expression, small soft watercolor flowers and breeze lines around, white, pale pink, and soft gold tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『感じたままで！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：迷っている相手に直感を信じてと伝えたいとき"
     },
     {
@@ -275,7 +275,7 @@
       "purpose": "No.20 ｜ 週末の挨拶",
       "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
       "content": "今週もお疲れさま！",
-      "image_prompt": "Soft watercolor LINE sticker of all three friends — fluffy white cat (Shirotsuma), small turtle (Shizuku), and white bird (Hiyori) — in a cheerful relaxed end-of-week celebration pose; small watercolor stars and tiny flowers scattered around; warm bright group energy; hand-painted pastel style; white, sage green, pale rose, and warm gold tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] all three friends — fluffy white cat (Shirotsuma), small turtle (Shizuku), and white bird (Hiyori) — in a cheerful relaxed celebration pose in lower-center, small watercolor stars and tiny flowers scattered around, warm bright group energy, sparkling warm eyes all around with soft light reflections, white, sage green, pale rose, and warm gold tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『今週もお疲れさま！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：週末に一週間お疲れさまを届けるとき"
     },
     {
@@ -285,7 +285,7 @@
       "purpose": "No.21 ｜ ほっとしたとき",
       "character": "🐈‍⬛しらたまのみ",
       "content": "ほっとして〜",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) in a relieved melting pose with eyes curved into happy peaceful crescents; paws spread out softly with total relief; gentle watercolor steam wisps floating above suggesting a sigh of relief; hand-painted pastel style; white, warm cream, and soft lavender tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) in a relieved melting pose in center-lower, eyes curved into happy peaceful crescents with sparkling warm light reflection, bright and hopeful expression, paws spread out softly with total relief, gentle watercolor steam wisps floating suggesting a sigh of relief, white, warm cream, and soft lavender tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ほっとして〜』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：緊張が解けてほっとした気持ちを伝えるとき"
     },
     {
@@ -295,7 +295,7 @@
       "purpose": "No.22 ｜ 一緒に考えるとき",
       "character": "🐢しずく + 🕊ひより",
       "content": "一緒に考えよ",
-      "image_prompt": "Soft watercolor LINE sticker of a small turtle (Shizuku) and white bird (Hiyori) sitting close together looking at the same imaginary point ahead with thoughtful engaged expressions; both leaning gently toward each other; hand-painted pastel style; sage green, white, and pale blue tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) and white bird (Hiyori) sitting close together in lower-center, looking at the same imaginary point ahead with thoughtful engaged expressions, sparkling warm eyes with soft light reflections, gentle and cheerful gaze, both leaning gently toward each other, sage green, white, and pale blue tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『一緒に考えよ』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：一人で悩まず一緒に考えようと伝えたいとき"
     },
     {
@@ -305,7 +305,7 @@
       "purpose": "No.23 ｜ 帰宅した人を迎えるとき",
       "character": "🐈‍⬛しらたまのみ",
       "content": "おかえり〜",
-      "image_prompt": "Soft watercolor LINE sticker of a fluffy white cat (Shirotsuma) in a warm welcoming stretch-up greeting pose; big happy welcoming eyes; tail curling upward in joyful welcome; warm soft amber indoor evening light quality; hand-painted pastel style; white, warm cream, and soft amber tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) in a warm welcoming stretch-up greeting pose in center-lower, big happy sparkling warm eyes with soft light reflection, bright and hopeful expression, tail curling upward in joyful welcome, warm soft amber indoor evening light quality, white, warm cream, and soft amber tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『おかえり〜』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：帰ってきた相手を温かく迎えるとき"
     },
     {
@@ -315,260 +315,8 @@
       "purpose": "No.24 ｜ すごいと思ったとき",
       "character": "🐢しずく + 🕊ひより",
       "content": "すごいね！",
-      "image_prompt": "Soft watercolor LINE sticker of a small turtle (Shizuku) and white bird (Hiyori) both looking genuinely impressed and amazed; Shizuku eyes wide open in admiration; Hiyori wings slightly raised in excited recognition; bright watercolor sparkle stars scattered around; hand-painted pastel style; sage green, white, and warm gold tones; transparent background; 1:1 square; no text; no letters",
+      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) and white bird (Hiyori) both looking genuinely impressed and amazed in lower-center, Shizuku eyes wide open with sparkling warm light reflections, bright and hopeful expression, Hiyori wings slightly raised in excited recognition, bright watercolor sparkle stars scattered around, sage green, white, and warm gold tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『すごいね！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
       "quote": "💡 使うシーン：相手の行動や成果を心から称えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "月曜の朝、言いたいことが言えないときに。しらたまたちが代わりに届けてくれます。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "気持ちに言葉がついてこない日に。三匹のひとことが、温度を運ぶ。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "照れて言えない『お疲れさま』を、しらたまとしずくが言ってくれる。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🕊ひより",
-      "content": "週のはじまり、誰かに一言届けてみて。スタンプひとつで空気が変わる。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🕊ひより",
-      "content": "『なんとかなる！』をひよりから送ってみて。それだけで、朝が少し軽くなる。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "しらたまの『それな〜』は、万能です。使いどころを選ばない共感スタンプ。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "重たい言葉が必要ないとき、スタンプひとつで伝わることがある。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "今日もよく動いた。誰かにその言葉を送ってほしい。三匹が代わりに言います。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "水曜の朝、いちばん声が必要な日。しずくの『大丈夫だよ』が届きますように。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "梅雨が来る前に、少し笑えると違う。しらたまのねむ〜いが、ちょうどいい。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "考え中のしずく、飛び立つひより、ほっとするしらたま。あなたの気持ち、全部ある。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🕊ひより",
-      "content": "大切な人に、一言だけ送ってみて。今夜、それだけで十分。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🕊ひより",
-      "content": "ひよりの『いってきます！』を朝に送ったら、その日一日が変わったと言われました。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "グループに『一緒にがんばろ』をひとつ。三匹の力を借りて、場の温度を上げて。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "木曜の午後、もうひとふんばりのお守りを。しらたまとひよりが一緒にいます。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "『まかせて！』が言えると、関係が変わる。しずくとひよりに、その一言を乗せて。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "金曜の朝、先に週末の『お疲れさま』を送っておく。その仕組みが、関係を温める。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "週末前の『もうひとふんばり！』を三匹と一緒に。最後まで走りきれる。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "『なるほどね〜』ひとことで、相手の話をちゃんと聞いていることが伝わる。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "今週も動いたあなたへ。しらたまたちから、金曜の夜のお疲れさまを。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "土曜の朝、ゆっくり起きた日に。しらたまのねむ〜いが、完璧に気持ちを代弁します。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🕊ひより",
-      "content": "休日に届く『お疲れ！』は、平日よりじんわり深く届く。今日、誰かに送ってみて。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "『ちゃんと聞いてる』を態度で示したいとき、しずくのスタンプがちょうどいい。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "夜に届く『おかえり〜』で、帰る場所に温度が生まれる。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🕊ひより",
-      "content": "日曜の朝、今週お世話になった人へ。ひとことの感謝が、次の一週間をやわらかくする。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐈‍⬛しらたま",
-      "content": "『ありがとう』を打つより早く、温度が届くことがある。そのための仕組みを作りました。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "今週もお疲れさまを、しらたまとしずくとひよりと一緒に届けて。",
-      "quote": "💌 きょうも、そのままで ④"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "purpose": "スタンプ宣伝",
-      "character": "🐢しずく",
-      "content": "一週間の終わりに、ちゃんと締めくくる仕組みをひとつ。LINEスタンプ、好評発売中。",
-      "quote": "💌 きょうも、そのままで ④"
     },
     {
       "date": "2026-05-19",
@@ -576,7 +324,7 @@
       "time": "07:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "雨の日、ひとことで温度が変わる。梅雨の朝に送りたいスタンプ、出てます。",
+      "content": "火曜の朝、言いたかった一言を、三匹に乗せて届けてみて。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -648,7 +396,7 @@
       "time": "07:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "梅雨の木曜、踏ん張り続けてる誰かに「うん、前に進んでるね」って送ってみて。",
+      "content": "木曜の朝、いちばん声が必要な日。しずくの『大丈夫だよ』が届きますように。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -702,7 +450,7 @@
       "time": "14:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "水彩タッチの温かみ、一度使ったら戻れなくなるやつです。",
+      "content": "金曜の午後、もうひとふんばりのお守りを。しらたまとひよりが一緒にいます。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -720,7 +468,7 @@
       "time": "07:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "土曜の朝、「今日も素敵ないちにちになりますように」って送れる人でいたい。",
+      "content": "土曜の朝、ゆっくり動き出す日に。しずくの『じっくりいこ』が似合う朝がある。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -729,7 +477,7 @@
       "time": "10:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "しらたまのぷにぷにした感じ、しずくの誠実な目、ひよりの自由な羽。全部、好き。",
+      "content": "週末の午前中、誰かに『おはよう』を届けてみて。三匹が温度を運んでくれる。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -747,7 +495,7 @@
       "time": "19:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "傘を差したCocoと、雨をものともしないひより。梅雨の日の「無事に向かってます」。",
+      "content": "今週も動いたあなたへ。しらたまたちから、土曜の夜のお疲れさまを。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -756,7 +504,7 @@
       "time": "07:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "日曜の夜、「おやすみなさい」が言えると、なぜか明日がちょっと軽くなる。",
+      "content": "日曜の朝、ゆっくり起きた日に。しらたまのねむ〜いが、完璧に気持ちを代弁します。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -792,7 +540,7 @@
       "time": "07:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "月曜の朝、「やってみよう」のひとことで動き出せる人がいる。そのひとことをどうぞ。",
+      "content": "月曜の朝、今週もよろしくを届けてみて。ひとことで、その日の空気が変わる。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -810,7 +558,7 @@
       "time": "14:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "しずくがゆっくり歩いてる。急がなくていい。「一歩成長だね」って、今日の自分にも。",
+      "content": "月曜の午後、新しい一週間の中で。しずくたちのひとことが、背中を押します。",
       "quote": "きょうも、そのままで⑤"
     },
     {
@@ -819,7 +567,7 @@
       "time": "19:00",
       "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
       "purpose": "スタンプ宣伝",
-      "content": "Cocoとしらたまとしずくとひより。この4人、梅雨の間ずっと一緒にいます。",
+      "content": "月曜の夜、よく動いた。しらたまとしずくとひよりから、今日のお疲れさまを。",
       "quote": "きょうも、そのままで⑤"
     }
   ]
