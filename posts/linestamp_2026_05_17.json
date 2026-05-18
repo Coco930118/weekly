@@ -1,14 +1,20 @@
 {
   "release_date": "2026-05-17",
+  "week": "2026-05-19_2026-05-25",
   "series": "きょうも、そのままで",
   "edition": 4,
   "pattern": 1,
   "pattern_label": "キャラクターのみ（Coco不参加）",
+  "pattern_description": "キャラクターのみ（Coco不参加）",
   "characters": [
     "🐈‍⬛しらたま",
     "🐢しずく",
     "🕊ひより"
   ],
+  "title_ja": "きょうも、そのままで④",
+  "desc_ja": "しらたま・しずく・ひよりの3匹だけで贈る、やさしい日常のひとこと。梅雨のじめっとした朝も、七夕の夜も、「おはよう」「大好き」「いつもありがとう」が水彩イラストで届く。大切な人へ、気持ちがすっと伝わる24種。",
+  "title_en": "As You Are, Always ④",
+  "desc_en": "Three animal friends — a cat, a turtle, and a bird — for the small words that matter most. 24 soft watercolor stamps to share everyday warmth, quiet gratitude, and gentle encouragement with the people you care about.",
   "stamps": [
     {
       "date": "2026-05-17",
@@ -274,7 +280,5 @@
       "comment": "【分析反映】梅雨バテが続く時期に「元気をもらった」という感謝は特別な温度を持つ。ひより1匹の羽を広げた躍動感で「素直なエネルギーの受け取り」を表現。\n【シーン設計】元気づけてくれた人への感謝、パワーをもらった後の返信として。",
       "quote": "あなたのおかげで、今日も羽ばたけます"
     }
-  ],
-  "week": "2026-05-19_2026-05-25",
-  "pattern_description": "キャラクターのみ（Coco不参加）"
+  ]
 }
