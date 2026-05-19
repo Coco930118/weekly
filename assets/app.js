@@ -31,13 +31,14 @@ async function loadPosts() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json');
+    const bust = `?t=${Date.now()}`;
+    const indexRes = await fetch(`./posts/index.json${bust}`);
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}`);
+        const res = await fetch(`./posts/${filename}${bust}`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -61,7 +62,7 @@ async function loadPosts() {
     if (index.linestamps && index.linestamps.length > 0) {
       const stampSets = await Promise.all(
         index.linestamps.map(async (filename) => {
-          const res = await fetch(`./posts/${filename}`);
+          const res = await fetch(`./posts/${filename}${bust}`);
           if (!res.ok) return null;
           return res.json();
         })
