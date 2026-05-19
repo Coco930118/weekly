@@ -251,9 +251,12 @@ function renderXDiagnosisButtons() {
 
   xDiagWeeks.forEach(weekId => {
     const [from, to] = weekId.split('_');
-    const fromStr = from.slice(5).replace('-', '/');
-    const toDay = to.slice(8);
-    const label = `X診断 ${fromStr}～${toDay}`;
+    const fromM = parseInt(from.slice(5, 7));
+    const fromD = parseInt(from.slice(8));
+    const toM = parseInt(to.slice(5, 7));
+    const toD = parseInt(to.slice(8));
+    const toStr = toM !== fromM ? `${toM}/${toD}` : String(toD);
+    const label = `X診断 ${fromM}/${fromD}〜${toStr}`;
 
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
@@ -286,9 +289,12 @@ function renderThreadsDiagnosisButtons() {
 
   threadsDiagWeeks.forEach(weekId => {
     const [from, to] = weekId.split('_');
-    const fromStr = from.slice(5).replace('-', '/');
-    const toDay = to.slice(8);
-    const label = `Threads診断 ${fromStr}～${toDay}`;
+    const fromM = parseInt(from.slice(5, 7));
+    const fromD = parseInt(from.slice(8));
+    const toM = parseInt(to.slice(5, 7));
+    const toD = parseInt(to.slice(8));
+    const toStr = toM !== fromM ? `${toM}/${toD}` : String(toD);
+    const label = `Threads診断 ${fromM}/${fromD}〜${toStr}`;
 
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
