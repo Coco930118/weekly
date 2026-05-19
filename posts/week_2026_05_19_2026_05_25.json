@@ -355,9 +355,8 @@
       "date": "2026-05-22",
       "platform": "X診断",
       "time": "12:00",
-      "purpose": "叱り方の温度",
-      "character": "🐢しずく + 🕊ひより",
       "purpose": "保存獲得",
+      "character": "🐢しずく + 🕊ひより",
       "content": "「叱る」と「詰める」は似ているが、全く別物だ。\nその違いは「何を見ているか」にある。\n\nあなたが部下のミスを指摘するとき、何から話し始める？\n\nA　「なぜこうなったか」と原因を問い詰める\nB　「次にどうするか」から一緒に考える\nC　「これがどう影響するか」を説明する\nD　まず自分の感情を落ち着かせて、翌日に話す\n\n→ 選んだ答えをリプライ欄へ",
       "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May Friday atmosphere. Panel 1: A small wise turtle (Shizuku) faces a gentle white bird (Hiyori) across a small table; Shizuku leans forward with a firm but questioning expression; Hiyori looks down slightly. Panel 2: Shizuku and Hiyori sit side by side at a small desk looking at a shared notebook; both lean in constructively. Panel 3: Shizuku gestures with one flipper toward a small simple diagram; Hiyori listens with attentive eyes. Panel 4: Shizuku and Hiyori are separated by a small plant on the table; each faces slightly away; the atmosphere is quiet and reflective. Refined palette of soft blue-green, warm ivory, and pale gold. No text, no letters, no signage.",
       "comment": "「叱ること」の目的は「行動を変えること」であり、「反省させること」ではない。\n\n【A：なぜこうなったかを問い詰める】\n出発点にするのは危険。\n「詰められる」と感じた瞬間、部下の思考は防衛モードに入る。\n\n【B：次にどうするかから考える】\n最も建設的なアプローチ。\n「これからどうするか」から入ることで、部下の思考が前に向く。\n\n【C：影響を説明する】\n「自分の行動がつながっている」という自覚が生まれる。\n責める前に「なぜ重要か」を伝えることが、次の行動を変える。\n\n【D：翌日に話す】\n感情が高ぶった状態での指摘は、言葉が相手の心に傷として残りやすい。\n\n📌 明日から使える一手\nミスを指摘するとき、最初の一言を「なぜ？」から「次どうする？」に変えよ。",
@@ -378,9 +377,8 @@
       "date": "2026-05-24",
       "platform": "X診断",
       "time": "12:00",
-      "purpose": "動く言葉の仕組み",
-      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
       "purpose": "保存獲得",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
       "content": "「伝えたのに動かない」\nその指示は「動く言葉」だったか、問い直してみる。\n\nあなたが指示を出すとき、どんな言い方が多い？\n\nA　「なるべく早めに対応しておいて」\nB　「明日の午前中までにこれをやっておいて」\nC　「このプロジェクトの成功のために、◯◯をやってほしい」\nD　「あなたなら任せられると思って頼んでいる」\n\n→ 自分の指示に近いものを、リプライ欄へ",
       "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May Sunday afternoon light. Panel 1: Coco gestures vaguely with one hand; a small turtle (Shizuku), a white cat (Shirotsuma), and a white bird (Hiyori) look at each other with slightly uncertain expressions. Panel 2: Coco points clearly to a small calendar and clock on the wall while all three animals look in the same direction with attentive expressions. Panel 3: Coco gestures toward a simple goal chart while all three animals look engaged and forward-focused. Panel 4: Coco places one hand gently on the desk near where all three sit; a warm trusting atmosphere; late afternoon golden light. Refined palette of warm ivory, pale amber, and sage green. No text, no letters, no signage.",
       "comment": "言葉の「動力」は、情報量ではなく「解像度と温度」で決まります。\n\n【A：なるべく早めに】\n「なるべく」「早めに」は受け手によって解釈が異なる。\n曖昧な指示は、行動を曖昧にする。\n\n【B：明日の午前中までに◯◯を】\n最も実行率が高い指示の形。\n「いつ・何を・どこまで」の3点が明確になると、部下は迷わず動ける。\n\n【C：成功のために◯◯をやってほしい】\n「なぜやるか」が加わることで、部下が主体性を持ちやすくなる。\n\n【D：あなたなら任せられる】\n信頼の言葉は動力になる。\nただし、BまたはCと組み合わせると効果が高い。\n\n最も動く指示は「B＋D」の組み合わせ。\n\n📌 明日から使える一手\n次に指示を出すとき、「いつ・何を・なぜあなたに」の3点を意識せよ。",
@@ -889,6 +887,83 @@
       "purpose": "スタンプ宣伝",
       "content": "月曜の夜、よく動いた。しらたまとしずくとひよりから、今日のお疲れさまを。",
       "quote": "きょうも、そのままで⑤"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "距離が開いたとき、最初にすること",
+      "character": "🐈‍⬛しらたま + 🕊ひより",
+      "content": "誰かとの間に、ふと距離を感じるとき。\nあなたが最初にすることは？\n\nA. 相手からの連絡をじっと待つ\nB. 理由を考えてから、動くかどうか決める\nC. 気晴らしして、感情を落ち着かせる\nD. そのまま自然に任せてしまう",
+      "quote": "💎 距離は問題じゃない。気づいたとき動けるかどうかが、問題。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small fluffy black cat sitting quietly by a rainy window, looking outside, sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze. Panel B: a white dove perched on a branch, head tilted, contemplating. Panel C: the cat stretching with a hopeful look. Panel D: the dove lifting wings softly toward open sky. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：「来てほしい」という気持ちが強い。待つことで相手の優先度を確かめているのかもしれない。ただ、待ち続けることで距離はじわじわ開いていく。\n\nBを選んだあなた：冷静に原因を探る力がある。ただ「分析」で動くタイミングを逃すことも。考えすぎる前に、一歩だけ動いてみると見える景色が変わる。\n\nCを選んだあなた：感情に振り回されないようにしている。賢さでもある。ただ、落ち着いてから動こうとすると、気持ちごと薄れてしまうことがある。\n\nDを選んだあなた：流れに委ねる信頼がある。でも「自然に任せる」は、時に「見て見ぬふり」になっていないか。距離はそっと整えるものでもある。\n\n──どれが正解というわけじゃない。距離が開いたと感じた瞬間に「何かをしようとした自分」がいたこと。それだけで十分、関係への誠実さがある。"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "疲れているとき、誰かに本音が言えるか",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "content": "週の真ん中、少し疲れたとき。\n誰かに本音が言えてる？\n\nA. 言える人が一人はいる\nB. 言いたいけど、迷惑かけたくくて言えない\nC. 本音が何かよくわからなくなってる\nD. 基本的に自分で処理する",
+      "quote": "💎 「言えない」じゃなく、「言っていい人」がいるかどうかの話。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a graceful woman (41 years old, bob haircut, calm and elegant, wearing soft home wear) sitting at a low table with tea, looking warmly at a small black fluffy cat who looks up at her, sparkling warm eyes, soft light reflection in eyes. Panel B: the woman leaning forward slightly, listening. Panel C: the cat resting its chin on the woman's knee, eyes half-closed in trust. Panel D: both of them in quiet, comfortable silence together by a window. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：関係の中に「安全な場所」が育っている。それは意識してもなくても、あなたが誠実に関わってきた結果だと思う。\n\nBを選んだあなた：「迷惑をかけたくない」という気遣いが、自分を孤独にしていることがある。本音を言うことは、甘えじゃなく、関係への信頼を示すこと。\n\nCを選んだあなた：疲れると「自分の感覚」がぼやける。まず自分が何を感じているかに気づくことが先かもしれない。言葉より先に、感覚を拾いにいく時間が必要。\n\nDを選んだあなた：自己完結できる強さがある。ただ、処理し続けていると、誰かと一緒にいても「ひとりのまま」になっていくことがある。\n\n──本音を言う相手がいることは、弱さじゃない。関係の温度が保たれているサインだと、私は思う。"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "「なんかズレてる」に気づいたときの動き方",
+      "character": "🐢しずく",
+      "content": "大事な人との間に、なんとなくズレを感じる。\nあなたはどう動く？\n\nA. 相手に直接「最近どう？」と聞く\nB. ズレた原因を自分の中で先に整理する\nC. しばらく様子を見て、向こうの出方を待つ\nD. いつもより少しだけ優しくして、雰囲気を変える",
+      "quote": "💎 ズレに気づいた人が、整える側に回れる。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small thoughtful turtle sitting quietly on a mossy stone, looking gently forward, sparkling warm eyes, soft light reflection in eyes. Panel B: the turtle with a tiny notepad, writing slowly and carefully. Panel C: the turtle waiting patiently by a small pond, watching ripples. Panel D: the turtle offering a tiny leaf to an unseen figure, expression soft and warm. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：関係への誠実さがある。「最近どう？」という一言は、ズレを放置しない意志表示。ただ、急に聞かれる側が身構えることもあるので、タイミングと温度感を少し意識してみて。\n\nBを選んだあなた：行動の前に内側を整える人。それは慎重さでもある。ただ、考えすぎて動けないまま、ズレが広がることもある。「7割整ったら動く」くらいでいい。\n\nCを選んだあなた：関係を壊したくないという気持ちが強い。「待つ」は戦略にもなるが、両方が待っていると、ズレはいつまでも埋まらない。\n\nDを選んだあなた：空気を変える力がある。言葉にしなくても、温度で伝えようとしている。ただ、根本のズレが残ったままだと、また同じ感覚がぶり返してくることがある。\n\n──ズレは悪いことじゃない。気づけた、ということ自体が、関係が生きている証拠だと思う。"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "週末、「会いたい」と思える人はいるか",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま",
+      "content": "金曜の夜。週末が来た。\n「会いたい」と思う人は？\n\nA. 特定の人の顔がすぐ浮かんだ\nB. 誰かと会いたいけど、誰がいいかわからない\nC. ひとりでいるほうが今は楽\nD. 特に誰も思い浮かばなかった",
+      "quote": "💎 すぐ顔が浮かぶ人の数より、その人と会ったあとの感覚が大事。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a graceful woman (41 years old, bob haircut, calm and elegant, wearing casual weekend outfit) walking lightly along a street at dusk, sparkling warm eyes. Panel B: a small turtle and a fluffy black cat sitting side by side on a bench, looking at the evening sky together. Panel C: the woman sitting alone in a café window, quietly content. Panel D: the turtle, cat, and woman gathered around a low table with snacks, soft warm lighting, comfortable and easy. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：その人との関係が、あなたの中で「安全な場所」になっている。顔がすぐ浮かぶということは、その人のそばで自分でいられているということ。大切にしてほしい。\n\nBを選んだあなた：「誰かといたい」という感覚はある。ただ、今の自分が何を求めているのかが少しぼやけている。会う相手より、自分がどんな夜を過ごしたいかを先に決めると、見えてくるものがある。\n\nCを選んだあなた：ひとりを選べることは、自分との関係が整っているサイン。無理に誰かに会う必要はない。ただ、「楽」の裏に「疲れ果てている」がないか、少し確認してみて。\n\nDを選んだあなた：今、人との距離が全体的に開いているのかもしれない。孤独より、少し無感覚な感じがあるなら、その「なんともない感覚」を誰かと話してみることが、整えの入り口になる。\n\n──会いたい人がいること、ひとりでいたいこと、どちらも正直な感覚。どちらが正解かより、今夜を自分に正直に過ごすことのほうが大切だと思う。"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "ひとりの時間、何をしているか",
+      "character": "🕊ひより",
+      "content": "ひとりの時間、何をしてる？\n\nA. 何もせず、ぼーっとしていることが多い\nB. 好きなことに集中して過ごす\nC. 人のことを考えて、気づくと時間が経っている\nD. 次にやることを考えて、頭が休まらない",
+      "quote": "💎 ひとりの時間に何をするかより、誰の顔も思い浮かばない時間があるかどうか。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small white dove resting on a window ledge in soft sunlight, eyes half-closed, peaceful. Panel B: the dove preening its feathers with focus and contentment. Panel C: the dove gazing into the distance, expression dreamy and gentle, sparkling warm eyes. Panel D: the dove with eyes closed, head slightly bowed, in a moment of quiet stillness. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：ぼーっとできる、というのは実は高度なこと。頭が休める状態でいられるなら、その時間はちゃんと「充電」になっている。\n\nBを選んだあなた：ひとりの時間に自分が戻れる場所を知っている。それは強さ。「好きなこと」が、あなたにとっての根っこになっている。\n\nCを選んだあなた：誰かを想う時間が多い人。それは愛情が深い証拠でもある。ただ、「自分に戻る時間」が少なすぎると、じわじわ消耗する。ひとりの時間に「自分だけを感じる瞬間」を意識してみて。\n\nDを選んだあなた：休むことへの罪悪感や、「やること」で安心する習慣があるのかもしれない。何もしないことを「許す」のが、今の課題かもしれない。\n\n──ひとりの時間の質は、関係の質に出てくる。自分が自分に戻れる時間を持てているかどうか、今夜少しだけ確かめてみてほしい。"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "「手放す」と「続ける」の選び方",
+      "character": "Coco + 🐢しずく + 🕊ひより",
+      "content": "関係を「手放す」か「続ける」か迷うとき、\nあなたは何を基準にしている？\n\nA. 相手が変わるかどうか\nB. 自分が変わっていけそうかどうか\nC. 一緒にいるときの「体の感覚」\nD. 続けることで得られるものと失うもの",
+      "quote": "💎 手放す理由より、続けたいと思える瞬間がまだあるかどうか。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a graceful woman (41 years old, bob haircut, calm and elegant, wearing soft Sunday home wear) standing at a window looking at a quiet garden, sparkling warm eyes. Panel B: a small turtle carefully holding a single leaf, looking at it thoughtfully. Panel C: a white dove perched on the woman's shoulder, both looking forward together. Panel D: the woman, turtle, and dove gathered in a quiet corner, soft golden light, a sense of gentle resolve. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：相手の変化を待っている。それは希望でもある。ただ、「相手が変わること」を基準にすると、自分の判断のタイミングが相手に依存し続ける。\n\nBを選んだあなた：自分の成長を軸に考えている。関係の中で「自分が育てるか」という問いを持てている人は、実は少ない。その視点は大切にしていい。\n\nCを選んだあなた：体の感覚は正直だ。緊張するか、ほっとするか。重くなるか、軽くなるか。頭で考えるより先に、体が答えを知っていることが多い。\n\nDを選んだあなた：損得で考えているように見えて、実は「今の自分にとって何が必要か」を真剣に考えている。その冷静さは、感情に流されない強さだと思う。\n\n──「手放す」と「続ける」に正解はない。ただ、どちらを選んでも、「自分が選んだ」という感覚だけは手放さないでほしい。"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "月曜の重さを、誰かのせいにしてない？",
+      "character": "🐢しずく + 🐈‍⬛しらたま",
+      "content": "月曜の朝、また重い。\nその重さ、何から来てる？\n\nA. 職場の人間関係が気になって、気が重い\nB. やりたくないことが積み重なっている\nC. 週末に自分を充電できなかった\nD. 特に理由はないけど、なんとなく重い",
+      "quote": "💎 重さの正体に気づいた朝は、もうその重さに振り回されていない。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small turtle looking up at a slightly overcast morning sky with gentle, curious eyes, sparkling warm eyes, soft light. Panel B: a fluffy black cat sitting hunched by the door, tail curled around feet, expression a little reluctant. Panel C: the turtle nudging the cat gently with one foot, expression warm and encouraging. Panel D: both of them stepping forward together into soft morning light, gentle determination. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：人間関係の摩擦が、あなたの週の重心になっている。誰か特定の人の顔が浮かぶなら、その人との距離の整え方を、今週少しだけ変えてみることを考えてみて。\n\nBを選んだあなた：「やりたくないことリスト」が積み上がっている。全部やらなくていい。今週、ひとつだけ「やめていいもの」を選んでみると、少し軽くなる。\n\nCを選んだあなた：週末の自分へのケアが足りなかった。充電は努力じゃなく、「やめること」から始まる。来週末、まず何かをやめることを先に決めてみて。\n\nDを選んだあなた：「なんとなく」は実は、「気づきたくない何か」が隠れていることが多い。今すぐ掘り下げなくていい。ただ、「なんとなく」と言えたこと自体を、少しだけ大切にしてみて。\n\n──月曜の重さに気づいた瞬間、もうあなたはその重さを見えている。見えているなら、少しだけ整えることができる。"
     }
   ]
 }
