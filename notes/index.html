@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="coconocanvas note一覧 — 関係の温度と距離を整える技術">
+  <title>coconocanvas | note一覧</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0e0e0e;
+      --bg-card: #161616;
+      --bg-card-hover: #1c1c1c;
+      --border: #252525;
+      --border-light: #2e2e2e;
+      --text-primary: #e4e4e4;
+      --text-secondary: #8a8a8a;
+      --text-muted: #4e4e4e;
+      --accent: #c49b6b;
+      --radius: 10px;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+      --font-serif: 'Hiragino Mincho ProN', 'Yu Mincho', 'Georgia', serif;
+    }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    .site-header {
+      padding: 20px 20px 16px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      background: rgba(14, 14, 14, 0.95);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+
+    .site-logo {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-decoration: none;
+    }
+
+    .site-logo:hover { color: var(--text-secondary); }
+
+    .back-link {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+    }
+
+    .back-link:hover { color: var(--text-secondary); }
+
+    .page-intro {
+      padding: 36px 20px 28px;
+      max-width: 680px;
+      margin: 0 auto;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .page-title {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .page-desc {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    .notes-container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 24px 20px;
+    }
+
+    .note-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px;
+      margin-bottom: 12px;
+      text-decoration: none;
+      display: block;
+      transition: border-color 0.15s, background 0.15s;
+    }
+
+    .note-card:hover {
+      border-color: var(--border-light);
+      background: var(--bg-card-hover);
+    }
+
+    .note-card-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .note-card-date {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      letter-spacing: 0.05em;
+    }
+
+    .note-card-price {
+      font-size: 0.68rem;
+      color: var(--accent);
+      border: 1px solid rgba(196, 155, 107, 0.3);
+      padding: 1px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.03em;
+    }
+
+    .note-card-title {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.6;
+      margin-bottom: 10px;
+      letter-spacing: 0.01em;
+    }
+
+    .note-card-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 12px;
+    }
+
+    .note-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .note-tag {
+      font-size: 0.62rem;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      padding: 1px 7px;
+      border-radius: 3px;
+    }
+
+    .stats-bar {
+      padding: 10px 20px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 20px;
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .site-footer p { font-size: 0.72rem; color: var(--text-muted); letter-spacing: 0.04em; }
+
+    @media (min-width: 640px) {
+      .page-intro, .notes-container, .stats-bar { padding-left: 32px; padding-right: 32px; }
+    }
+
+    @media (min-width: 720px) {
+      .page-intro, .notes-container, .stats-bar { padding-left: 48px; padding-right: 48px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <a href="../index.html" class="site-logo">coconocanvas</a>
+    <a href="../index.html" class="back-link">← 投稿カレンダー</a>
+  </header>
+
+  <div class="page-intro">
+    <p class="page-title">note 一覧</p>
+    <p class="page-desc">「関係の温度と距離を整える技術」を体系化したnote。読むことで、考え方・距離感・判断基準が静かに変わる。</p>
+  </div>
+
+  <div class="stats-bar" id="statsBar">1本</div>
+
+  <div class="notes-container" id="notesContainer">
+
+    <a href="./note_2026_05_22.html" class="note-card">
+      <div class="note-card-meta">
+        <span class="note-card-date">2026.05.22</span>
+        <span class="note-card-price">¥ 1,500</span>
+      </div>
+      <h2 class="note-card-title">「急に辞めた」は存在しない｜優秀な人が静かに去る前の5つのサイン</h2>
+      <p class="note-card-desc">「また急に辞めた」と思うたびに、どこかで自分を責めてきた。でも「急に辞めた」は存在しない。必ずサインがある。ただ静かすぎて、見えていないだけだ。20年・5万人超と向き合った現場で気づいた離職前の5つのサインと、その前に動くための設計を渡す。</p>
+      <div class="note-card-tags">
+        <span class="note-tag">#人間関係</span>
+        <span class="note-tag">#マネジメント</span>
+        <span class="note-tag">#組織</span>
+        <span class="note-tag">#離職</span>
+        <span class="note-tag">#リーダーシップ</span>
+        <span class="note-tag">#人材育成</span>
+        <span class="note-tag">#距離感</span>
+      </div>
+    </a>
+
+  </div>
+
+  <footer class="site-footer">
+    <p>coconocanvas — 関係の温度と距離を整える技術</p>
+  </footer>
+
+</body>
+</html>
