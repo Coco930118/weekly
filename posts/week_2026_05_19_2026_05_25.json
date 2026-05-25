@@ -318,498 +318,6 @@
     },
     {
       "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:01",
-      "purpose": "No.1 ｜ 共感したとき",
-      "character": "🐈‍⬛しらたまのみ",
-      "content": "わかる〜",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, delicate watercolor paint bleeding effect\n[Character] fluffy white cat (Shirotsuma) nodding vigorously in the center-lower area, sparkling warm eyes curved in happy crescents, soft light reflection in eyes, gentle and cheerful gaze, both round paws raised expressively, gentle pink blush marks on cheeks, white and cream tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『わかる〜』naturally placed at the top with generous copy space above the character; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：誰かの投稿や話にうんうんしたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:02",
-      "purpose": "No.2 ｜ 少し待ってほしいとき",
-      "character": "🐢しずくのみ",
-      "content": "ちょっと待ってね",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small wise turtle (Shizuku) raising one front flipper in a gentle patient wait gesture in center-lower, calm warm smile, sparkling warm eyes, soft light reflection in eyes, shell with delicate watercolor flower motifs, sage green and warm ivory tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ちょっと待ってね』naturally placed at the top with copy space; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：返信の前に少し時間が必要なとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:03",
-      "purpose": "No.3 ｜ 励ましたいとき",
-      "character": "🕊ひよりのみ",
-      "content": "なんとかなる！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) with wings spread wide in an uplifting joyful pose in lower-center, bright optimistic sparkling warm eyes with star-shaped light reflections, bright and hopeful expression, tiny soft watercolor flowers floating around, white and warm gold tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『なんとかなる！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：落ち込んでいる相手の背中を押したいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:04",
-      "purpose": "No.4 ｜ 労いたいとき",
-      "character": "🐈‍⬛しらたま + 🐢しずく",
-      "content": "お疲れさま",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and small turtle (Shizuku) sitting cozily side by side in lower-center, warm tired-but-content smiles, sparkling warm eyes with soft light reflections, gentle and cheerful gaze, Shirotsuma tail curling gently around Shizuku, small soft watercolor stars above, white and sage green tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『お疲れさま』naturally placed at the top with copy space; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：一緒に頑張った相手を労いたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:05",
-      "purpose": "No.5 ｜ 一緒に喜ぶとき",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "やったね！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and gentle white bird (Hiyori) celebrating joyfully together in lower-center, Shirotsuma paw raised high meeting Hiyori wing in a happy high-five, big sparkling warm eyes with bright light reflections, bright and hopeful expression, soft watercolor confetti dots, white, pale yellow, and soft pink tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『やったね！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：相手のよい知らせに一緒に喜ぶとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:06",
-      "purpose": "No.6 ｜ 頼もしさを伝えるとき",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "まかせて！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) standing confidently with chest slightly puffed and one flipper raised in center-lower, white bird (Hiyori) beside with wings slightly spread showing readiness, both with determined sparkling warm eyes and soft light reflections, gentle and cheerful gaze, sage green and white tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『まかせて！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：頼まれごとを引き受けるとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:07",
-      "purpose": "No.7 ｜ 強共感を示すとき",
-      "character": "🐈‍⬛しらたまのみ",
-      "content": "それな〜",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) in a totally relatable lounging pose in center-lower, half-lidded knowing empathetic eyes with warm sparkle and soft light reflection, gentle and cheerful gaze, chubby warm silhouette, gentle blush marks, white, cream, and lavender tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『それな〜』placed at the top with natural copy space; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：めちゃくちゃわかる！という強い共感を伝えるとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:08",
-      "purpose": "No.8 ｜ 少し待ってほしいとき（考え中）",
-      "character": "🐢しずくのみ",
-      "content": "考え中…",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small wise turtle (Shizuku) in deep adorable thought in center-lower, one flipper raised to chin in classic thinking pose, sparkling warm eyes with soft light reflection, gentle and cheerful expression, small soft watercolor thought-bubble dots floating above head, sage green, pale blue, and ivory tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『考え中…』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：今考えているよと伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:09",
-      "purpose": "No.9 ｜ 出発・出勤のとき",
-      "character": "🕊ひよりのみ",
-      "content": "いってきます！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) in a cheerful departing pose in center-lower, wings slightly raised ready to fly, wearing a tiny soft watercolor scarf for the approaching rainy season, bright optimistic sparkling warm eyes with light sparkle, bright and hopeful expression, small watercolor motion lines, white and soft yellow tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『いってきます！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：朝の挨拶・行ってきますを可愛く送るとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:10",
-      "purpose": "No.10 ｜ チームワークのとき",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "一緒にがんばろ",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] all three friends — fluffy white cat (Shirotsuma), small turtle (Shizuku), and white bird (Hiyori) — huddled close in a warm tight group in lower-center, expressions of solidarity and cheerful determination, sparkling warm eyes all around with soft light reflections, bright and hopeful expressions, Shirotsuma tail wrapping gently around the group, small watercolor stars above, white, sage green, and warm gold tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『一緒にがんばろ』naturally placed at the top with copy space; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：一緒に頑張ろうの気持ちをひとつにしたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:11",
-      "purpose": "No.11 ｜ 眠いとき・だるいとき",
-      "character": "🐈‍⬛しらたまのみ",
-      "content": "ねむ〜い",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) adorably drooping with half-closed extremely sleepy heavy eyelids in center-lower, sparkling warm eyes barely visible through sleepy lids, lying in a cozy puddle-like sprawl with paws dangling, soft watercolor z marks floating above, rainy-season cozy morning mood, white, lavender, and pale blue tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ねむ〜い』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：眠い・だるいを可愛く伝えるとき・梅雨の朝に"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:12",
-      "purpose": "No.12 ｜ 安心させたいとき",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "大丈夫だよ",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) gently placing a flipper on white bird (Hiyori) in a warm comforting gesture in lower-center, Hiyori looking relieved with soft grateful sparkling warm eyes and light reflections, bright and hopeful expression, warm reassuring atmosphere, delicate watercolor warm glow around them, sage green, white, and warm ivory tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『大丈夫だよ』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：心配している相手に大丈夫を伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:13",
-      "purpose": "No.13 ｜ 了承したとき",
-      "character": "🐈‍⬛しらたまのみ",
-      "content": "了解！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) giving a cheerful energetic thumbs-up in lower-center, bright agreeable expression, sparkling warm eyes curved into happy crescents with soft light reflection, gentle and cheerful gaze, small soft watercolor stars nearby, white, warm cream, and soft mint tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『了解！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：わかった！をパッと返したいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:14",
-      "purpose": "No.14 ｜ 落ち着いて進むとき",
-      "character": "🐢しずくのみ",
-      "content": "じっくりいこ",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small wise turtle (Shizuku) in a calm settled comfortable pose in center-lower, slow and steady peaceful expression, gentle warm smile, sparkling warm eyes with soft light reflection, one flipper making a soft reassuring take-it-easy gesture, sage green and warm ivory tones, gentle watercolor wash, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『じっくりいこ』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：焦らずゆっくり進もうと伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:15",
-      "purpose": "No.15 ｜ 強く背中を押すとき",
-      "character": "🕊ひよりのみ",
-      "content": "ぜったい大丈夫",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) with both wings spread wide in a bold confident reassuring pose in center-lower, bright determined sparkling warm eyes with soft light reflection, bright and hopeful expression, soft watercolor glow radiating outward, white, pale gold, and soft blue tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ぜったい大丈夫』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：なんとかなる！より強く、絶対いける！と伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:16",
-      "purpose": "No.16 ｜ 理解したとき",
-      "character": "🐈‍⬛しらたま + 🐢しずく",
-      "content": "なるほどね〜",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and small turtle (Shizuku) both in a synchronized gentle nodding pose of understanding in lower-center, both with sparkling warm knowing eyes and soft light reflections, gentle and cheerful expressions, Shirotsuma ear tilted thoughtfully, white and sage green tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『なるほどね〜』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：相手の話を聞いて納得したとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:17",
-      "purpose": "No.17 ｜ 追い込みの背中押し",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "もうひとふんばり！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) and white bird (Hiyori) both in an energetic encouraging pose in lower-center, Shirotsuma raising a paw high, Hiyori wings spread with excitement, both with bright determined sparkling warm eyes and hopeful expressions, white, soft orange, and sage tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『もうひとふんばり！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：あと少し！の追い込みを一緒に乗り越えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:18",
-      "purpose": "No.18 ｜ ちゃんと聞いているとき",
-      "character": "🐢しずくのみ",
-      "content": "ちゃんと聞いてる",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) leaning forward attentively in center-lower, both front flippers slightly forward in an I-am-listening pose, warm focused sparkling eyes with soft light reflection, gentle and cheerful gaze, calm sincere expression, sage green and warm ivory tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ちゃんと聞いてる』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：相手の話をしっかり聞いていると伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:19",
-      "purpose": "No.19 ｜ 直感を信じてほしいとき",
-      "character": "🕊ひよりのみ",
-      "content": "感じたままで！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] gentle white bird (Hiyori) with wings slightly raised in a freeing liberating pose in center-lower, eyes shining peacefully with sparkling warm light reflection, bright and hopeful expression, small soft watercolor flowers and breeze lines around, white, pale pink, and soft gold tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『感じたままで！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：迷っている相手に直感を信じてと伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:20",
-      "purpose": "No.20 ｜ 週末の挨拶",
-      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
-      "content": "今週もお疲れさま！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] all three friends — fluffy white cat (Shirotsuma), small turtle (Shizuku), and white bird (Hiyori) — in a cheerful relaxed celebration pose in lower-center, small watercolor stars and tiny flowers scattered around, warm bright group energy, sparkling warm eyes all around with soft light reflections, white, sage green, pale rose, and warm gold tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『今週もお疲れさま！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：週末に一週間お疲れさまを届けるとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:21",
-      "purpose": "No.21 ｜ ほっとしたとき",
-      "character": "🐈‍⬛しらたまのみ",
-      "content": "ほっとして〜",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) in a relieved melting pose in center-lower, eyes curved into happy peaceful crescents with sparkling warm light reflection, bright and hopeful expression, paws spread out softly with total relief, gentle watercolor steam wisps floating suggesting a sigh of relief, white, warm cream, and soft lavender tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『ほっとして〜』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：緊張が解けてほっとした気持ちを伝えるとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:22",
-      "purpose": "No.22 ｜ 一緒に考えるとき",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "一緒に考えよ",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) and white bird (Hiyori) sitting close together in lower-center, looking at the same imaginary point ahead with thoughtful engaged expressions, sparkling warm eyes with soft light reflections, gentle and cheerful gaze, both leaning gently toward each other, sage green, white, and pale blue tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『一緒に考えよ』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：一人で悩まず一緒に考えようと伝えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:23",
-      "purpose": "No.23 ｜ 帰宅した人を迎えるとき",
-      "character": "🐈‍⬛しらたまのみ",
-      "content": "おかえり〜",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] fluffy white cat (Shirotsuma) in a warm welcoming stretch-up greeting pose in center-lower, big happy sparkling warm eyes with soft light reflection, bright and hopeful expression, tail curling upward in joyful welcome, warm soft amber indoor evening light quality, white, warm cream, and soft amber tones, transparent background, isolated character\n[Text/Format] handwritten-style Japanese text『おかえり〜』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：帰ってきた相手を温かく迎えるとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "LINEスタンプ",
-      "time": "09:24",
-      "purpose": "No.24 ｜ すごいと思ったとき",
-      "character": "🐢しずく + 🕊ひより",
-      "content": "すごいね！",
-      "image_prompt": "[Style] soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling\n[Character] small turtle (Shizuku) and white bird (Hiyori) both looking genuinely impressed and amazed in lower-center, Shizuku eyes wide open with sparkling warm light reflections, bright and hopeful expression, Hiyori wings slightly raised in excited recognition, bright watercolor sparkle stars scattered around, sage green, white, and warm gold tones, transparent background, isolated characters\n[Text/Format] handwritten-style Japanese text『すごいね！』naturally placed at the top; 1:1 square format, transparent background, PNG, no background",
-      "quote": "💡 使うシーン：相手の行動や成果を心から称えたいとき"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "火曜の朝、言いたかった一言を、三匹に乗せて届けてみて。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「おはよう」って打つより、しらたまに言ってもらった方が100倍かわいい。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "父の日の前に、「いつもありがとう」が言いにくいあなたへ。これで届けて。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-19",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "Cocoと3匹の水彩スタンプ。梅雨でも気持ちが晴れるって、こういうことだよ。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "じめじめした週の折り返し。「少しずつでいい」って、今日一番必要な言葉かも。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "連絡の返し方がわからない時、「ご連絡ありがとうございます」がそっと助けてくれる。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "しずく・しらたま・ひより＋Coco。雨の日の4人組、LINEに来たよ。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-20",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「大好き」をうまく言えない人ほど、このスタンプを使ってみてほしい。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "木曜の朝、いちばん声が必要な日。しずくの『大丈夫だよ』が届きますように。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "24種全部、Cocoと動物たちが一緒。一人じゃないって感じの温かさ、全部入り。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「で、どうする？」が言えると、関係が一歩動く。雨の日にこそ使いたい一言。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-21",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "仕事のLINEも、恋愛のLINEも、全部ここから選べる。きょうも、そのままで⑤。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "週末前の金曜、「楽しみ〜」って送ってくれる人がいたら、その日が少し明るくなる。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「出逢ってくれてありがとう」って、普通はなかなか言えない。スタンプなら言える。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "金曜の午後、もうひとふんばりのお守りを。しらたまとひよりが一緒にいます。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-22",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "父の日まであと少し。「感謝でいっぱいです」、ちゃんと届けられますか。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "土曜の朝、ゆっくり動き出す日に。しずくの『じっくりいこ』が似合う朝がある。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "週末の午前中、誰かに『おはよう』を届けてみて。三匹が温度を運んでくれる。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「まぁいいんじゃない」って言える関係、大事にしてる？それを伝えるスタンプある。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-23",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "今週も動いたあなたへ。しらたまたちから、土曜の夜のお疲れさまを。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "日曜の朝、ゆっくり起きた日に。しらたまのねむ〜いが、完璧に気持ちを代弁します。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「そういうところ好き」って、LINEで打つのは照れくさい。でもスタンプなら送れる。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "今週もお疲れ様でした。「いつもありがとう」を、今日こそ伝えてみて。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-24",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "梅雨の7日間を一緒に乗り越える24種。きょうも、そのままで。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "07:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "月曜の朝、今週もよろしくを届けてみて。ひとことで、その日の空気が変わる。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "10:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "「今日も大好き」を毎日言える人と言えない人、どっちでいたいですか。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "14:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "月曜の午後、新しい一週間の中で。しずくたちのひとことが、背中を押します。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-25",
-      "platform": "スタンプ宣伝",
-      "time": "19:00",
-      "character": "Coco＋🐈‍⬛しらたま＋🐢しずく＋🕊ひより",
-      "purpose": "スタンプ宣伝",
-      "content": "月曜の夜、よく動いた。しらたまとしずくとひよりから、今日のお疲れさまを。",
-      "quote": "きょうも、そのままで⑤"
-    },
-    {
-      "date": "2026-05-19",
       "platform": "Threads診断",
       "time": "14:00",
       "theme": "距離が開いたとき、最初にすること",
@@ -961,6 +469,533 @@
       "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Monday morning hopeful early summer light, warm and energizing.\n\nTop-left (A): Coco (a warm refined woman in an elegant pale champagne linen dress with early summer embroidery detail) stands at a window with a gentle white bird (Hiyori) perched on the sill beside her; a small award plaque sits on the desk behind them; bright hopeful morning light.\n\nTop-right (B): Coco crouches gently to Hiyori's level on the desk; she gestures warmly toward a series of small everyday actions depicted softly nearby; her expression is attentive and specific; warm morning light.\n\nBottom-left (C): Coco sits with one hand raised slightly as if searching for words; Hiyori looks up at her with patient bright eyes; a thoughtful quiet pause; soft warm indoor light.\n\nBottom-right (D): Coco looks slightly away with a warm shy smile; Hiyori watches her with a gentle curious tilt; the atmosphere is tender and slightly playful; early summer garden visible softly through the window.\n\nUnified watercolor palette of soft champagne, ivory, and warm sage. No text, no letters, no signage.",
       "comment1": "「認める」ことは技術であり、習慣だ。\nどれを選んでも、その先に磨く余地がある。\n\n月曜日の朝、今週誰かを認める瞬間を意識的に作れるか。\nそれが、組織の体温を左右する。\n\n【A：結果が出たときだけ認める】\n公平に見える。でも、結果が出るまでの過程で人は一番頑張り、一番不安を感じている。\n「結果を出すまで見てもらえない」と感じた人は、挑戦を避けるようになる。\n\n【B：プロセスや姿勢を見て認める】\n最も効果的な承認。\n「あなたの行動を見ている」というメッセージが、部下の自己効力感を育てる。\n結果が出なくても「あなたの努力は見えている」が人を動かす。\n\n【C：認めたいけど言葉が出ない】\n言葉より先に「観察」を磨こ。\n「あのとき○○をしていたね」と具体的に言えることが、言葉の出発点になる。\n\n【D：照れくさくて言えない】\nこれは最も多いパターン。\n「照れくさい」は「自分が大切に思っている」の裏返しでもある。\n習慣にするために、最初は「ちゃんとやってくれてありがとう」から始めよ。\n\n「認める」の反対は「批判する」ではない。「無関心」だ。\n人は批判より無関心の方が傷つく。\n\n現場の努力を経営の言語に変えるのが翻訳の仕事なら、\n個人の行動を「見ている」と伝えることが、その最初の一歩だ。\n\n📌 明日から使える一手\n今日1人の部下に「最近のあの仕事、よかったよ」と具体的に言え。\nその一言が、その人の職場への気持ちを変えることがある。",
       "quote": "💎 「認める」の反対は批判じゃない、無関心だ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:00",
+      "purpose": "セット販売テキスト",
+      "character": "🐈‍⬛しらたま・🐢しずく・🕊ひより・Coco",
+      "content": "しらたま・しずく・ひよりとCocoが、初夏の毎日に寄り添う24枚のスタンプ。\n挨拶から共感、励ましまで、毎日使えるひとことを水彩タッチで丁寧に描きました。\n梅雨前のあたたかな季節感とともに、気持ちを届けてください。",
+      "image_prompt": "Soft watercolor illustration, 1:1 square format, transparent background, PNG with alpha channel. Title card style featuring all four characters together: Coco (young woman with warm features and black bob hair in soft ivory summer dress with embroidered wildflowers), fluffy dark cat Shirotsuma (pale sage ribbon at ear), small turtle Shizuku (flower-patterned shell with coral pink accents), and white bird Hiyori (soft golden yellow wing tips). All gathered in a warm early summer garden with soft hydrangea blossoms blooming in pastel purple and blue around them. Gentle watercolor bleeding at edges, soft pastel tones throughout, hand-painted traditional art feel. Copy space reserved at top of frame for text. Warm sparkling eyes on all characters. No text in image.",
+      "comment": "■ スタンプセット概要\nタイトル：しらたま・しずく・ひよりとCoco｜初夏の毎日スタンプ\n個数：24個\nスタイル：水彩タッチ / 色鉛筆画 / パステル系\n\n■ キャラクター\n・しらたま（猫）：感情担当。喜怒哀楽が豊か\n・しずく（亀）：思考担当。ゆっくりでも確実\n・ひより（鳥）：直感担当。軽やかにポジティブ\n・Coco：みんなをつなぐ存在\n\n■ 使えるシーン\n朝の挨拶・仕事の返事・友人への共感・家族への労い・雨の日の励まし・夜の挨拶\n\n■ 今週のパターン：ミックス（キャラのみ＋キャラ＋Coco）",
+      "quote": "24枚それぞれに、気持ちを込めて"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:01",
+      "purpose": "No.1 共感・あいづち",
+      "character": "🐈‍⬛しらたま",
+      "content": "わかるわかる",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Fluffy dark cat (Shirotsuma) sitting upright with both front paws gently pressed over chest in empathy gesture, head tilted slightly with warm nodding expression, eyes with bright sparkling light reflection. Wearing tiny pale lavender satin ribbon bow clipped at right ear. Background: hint of fresh early summer green leaves, softly blurred. Gentle watercolor bleeding at fur edges, pastel lavender and cream tones, hand-painted traditional art feel. Copy space reserved at top for handwritten text. No text in image.",
+      "comment": "使い方：友人・家族の話に共感するとき。「わかる〜！」の気持ちをさらっと伝えたいとき。\n梅雨の憂鬱や、週明けのしんどさを分かち合うのにぴったり。",
+      "quote": "わかる、の一言が一番の共感"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:02",
+      "purpose": "No.2 励まし・リラックス",
+      "character": "🐢しずく",
+      "content": "ゆっくりいこう",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Small wise turtle (Shizuku) walking slowly with eyes half-closed in peaceful serene expression, wearing a tiny straw hat with a single white daisy tucked at the brim. Shell patterned with soft sage green geometric tiles and small white flower accents. Background: gentle early morning warm light wash, pale ivory. Watercolor bleeding at shell edges, soft pastel sage and warm ivory tones, traditional hand-painted art feel. Copy space at top for text. Warm gentle eyes visible beneath hat. No text in image.",
+      "comment": "使い方：急ぎすぎている友人や自分へ。「焦らなくていいよ」の気持ちをそっと届けるとき。\n週の中ごろ、疲れが出てきたときの励ましスタンプ。",
+      "quote": "急がなくていい日も、ある"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:03",
+      "purpose": "No.3 ポジティブ・直感",
+      "character": "🕊ひより",
+      "content": "なんかいい予感！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Gentle white bird (Hiyori) standing with wings spread slightly open in excited upward-reaching pose, eyes wide and bright with joyful expectation, sparkle stars in pupils. Wearing a tiny soft yellow knit scarf loosely looped around neck. Background: soft blue sky watercolor wash, small white cloud shapes barely visible. Delicate paint-bleeding at wing feathers, pastel yellow and white tones, hand-painted feel. Copy space at top of frame. No text in image.",
+      "comment": "使い方：何かよいことが起きそうな朝に。直感で「今日はいける！」と感じたとき。\n月曜の朝や、大事な予定の前日に送るスタンプ。",
+      "quote": "直感は、一番正直なナビ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:04",
+      "purpose": "No.4 労い・おつかれ",
+      "character": "🐈‍⬛しらたま + 🐢しずく",
+      "content": "お疲れ様！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Fluffy dark cat (Shirotsuma) handing a tiny paper cup with straw to small turtle (Shizuku), Shirotsuma wearing a light blue sun visor with a small star charm, Shizuku receiving the drink with grateful flipper-wave expression. Both with warm smiling sparkling eyes. Background: soft aqua and cream watercolor wash suggesting a breezy summer afternoon. Gentle watercolor bleeding, pastel aqua and coral peach tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：仕事終わりに同僚・友人へ。疲れた相手に一言声をかけたいとき。\n週末前の金曜夜や、忙しい週明けの夜に活躍するスタンプ。",
+      "quote": "一杯の労いが、疲れを溶かす"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:05",
+      "purpose": "No.5 応援・朝の一押し",
+      "character": "🕊ひより",
+      "content": "今日もきっとうまくいく",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Gentle white bird (Hiyori) standing tall with wings slightly raised at sides in confident pose, eyes bright and upward-gazing with warm hopeful expression, tiny round coral pink pin badge at chest. Sparkle light reflection in pupils. Background: soft golden morning glow watercolor wash, barely visible. Delicate paint-bleeding at feather tips, pastel coral and ivory tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：大事な日の朝、緊張している相手へ。「絶対大丈夫！」を言葉より先に伝えるとき。\n試験・プレゼン・面接など、頑張る人へのスタンプ。",
+      "quote": "今日の朝の予感を、信じてみて"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:06",
+      "purpose": "No.6 継続・粘り",
+      "character": "🐢しずく",
+      "content": "もう少しだけ",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Small turtle (Shizuku) reaching one flipper gently forward in encouraging gesture, wearing a pale sage green small apron with a front pocket holding a tiny clover. Shell features warm tan base with small red clover pattern painted on. Eyes warm and encouraging with soft sparkle. Background: soft sage and warm cream watercolor wash. Gentle watercolor texture, pastel sage and warm tan tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：もう少しで目標に届くとき。「諦めないで」を優しく伝えたいとき。\n週の後半、踏ん張りどきに送るスタンプ。",
+      "quote": "もう少しの先に、きっとある"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:07",
+      "purpose": "No.7 感謝・友情",
+      "character": "🐈‍⬛しらたま + 🕊ひより",
+      "content": "いつもありがとう",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Fluffy dark cat (Shirotsuma) and white bird (Hiyori) leaning warmly toward each other and toward viewer. Shirotsuma holding a tiny red strawberry-pattern handkerchief in one paw. Hiyori wearing a delicate white lace mini hat perched on head. Both with soft happy warm expressions and sparkling eyes. Background: early summer garden suggestion, soft green and blush pink watercolor wash. Delicate bleeding watercolor, blush pink and sage green palette, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：いつもお世話になっている相手へ感謝を伝えるとき。「ありがとうね」を素直に言いたいとき。\n友人・家族・仲間へ日常的に使えるスタンプ。",
+      "quote": "ありがとうは、いつ送っても遅くない"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:08",
+      "purpose": "No.8 安堵・ほっと一息",
+      "character": "🐢しずく",
+      "content": "ほっとした〜",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Small turtle (Shizuku) with eyes softly closed and mouth in gentle relieved smile, exhaling gently, wearing a mint green tiny shell-shaped accessory as necklace. A miniature cup of warm tea placed beside with faint steam swirling. Background: soft warm cream and mint watercolor wash, gentle and calming. Gentle watercolor bleeding, pastel mint and warm ivory tones, traditional hand-painted art feel. Copy space at top. No text in image.",
+      "comment": "使い方：心配事が解決したとき。「よかった〜！」の安心感を伝えるとき。\n試験結果・仕事の完了・良い知らせを受けたときのリアクションスタンプ。",
+      "quote": "ほっとした瞬間も、大切な一コマ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:09",
+      "purpose": "No.9 季節感・雨の日",
+      "character": "🐈‍⬛しらたま",
+      "content": "梅雨もへっちゃら！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Fluffy dark cat (Shirotsuma) in a cheerful defiant pose holding a tiny umbrella decorated with hydrangea flower pattern in soft purple and blue, wearing a mint green mini raincoat with small round buttons. Soft watercolor raindrops depicted as tiny circles around the character. Eyes bright and happy despite the rain. Background: soft purple and mint watercolor wash. Gentle watercolor texture, pastel mint green and soft purple tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：梅雨の雨の日に気持ちを明るく保ちたいとき。「雨でも元気！」を伝えるとき。\n6月の梅雨シーズンや、雨続きの週に活躍するスタンプ。",
+      "quote": "雨の日も、明るく行こう"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:10",
+      "purpose": "No.10 誘い・仲良し",
+      "character": "🕊ひより + 🐢しずく",
+      "content": "一緒に行こう！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. White bird (Hiyori) and small turtle (Shizuku) standing side by side facing the same direction excitedly. Hiyori wearing a light purple fluffy pompom attached to tail feathers. Shizuku carrying a small neon yellow miniature backpack on shell. Both with eager forward-looking expressions and sparkling eyes. Background: soft early summer path suggestion, green and purple watercolor wash. Gentle bleeding watercolor, pastel purple and yellow tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：遊びや外出に誘うとき。「一緒に行こうよ！」の楽しい気持ちを伝えるとき。\n週末の予定を立てるときや、旅行・イベントの誘いに使えるスタンプ。",
+      "quote": "二人なら、どこでもちょっと楽しい"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:11",
+      "purpose": "No.11 出発・朝の挨拶",
+      "character": "🐈‍⬛しらたま",
+      "content": "行ってきます！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Fluffy dark cat (Shirotsuma) waving one paw high in departure, tail held up cheerfully and energetically. A small bag with sunflower pattern strap visible at shoulder. Eyes bright and alert with morning energy sparkle. Background: warm golden morning light watercolor wash, soft and energizing. Delicate watercolor bleeding, golden yellow and warm cream tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：出かける前に家族や友人へ。「行ってくるね！」をかわいく送るとき。\n毎朝の定番スタンプとして、元気な一日のスタートを伝えられる。",
+      "quote": "出発の朝は、もう半分成功してる"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:12",
+      "purpose": "No.12 週始め・挨拶",
+      "character": "🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "今週もよろしく！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Turtle (Shizuku), cat (Shirotsuma), and bird (Hiyori) standing together in a cheerful row waving enthusiastically toward viewer. Shizuku wearing a pale orange soft scarf. Shirotsuma with a light blue thin-striped shirt pattern suggestion on chest area. Hiyori wearing a tiny white frill apron tied around belly. All three with bright sparkling eyes and welcoming smiles. Background: fresh early summer green leaves watercolor wash, bright and hopeful. Gentle bleeding watercolor, warm orange and sky blue and white palette, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：月曜日の朝に職場・グループへ。「今週もよろしく！」をみんなに送るとき。\nチームや家族のグループLINEで毎週月曜に送れる定番スタンプ。",
+      "quote": "月曜の「よろしく」が、週のはじまりを変える"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:13",
+      "purpose": "No.13 朝の挨拶・丁寧",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "content": "おはようございます",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with warm features and black bob hair) wearing a pale blue fine linen dress with small pearl buttons, standing beside fluffy dark cat (Shirotsuma) who wears a lime green thin fabric headband. Both bowing slightly in morning greeting with warm gentle smiles. A small single hydrangea blossom in a thin glass vase visible nearby. Background: soft cream and pale blue watercolor morning wash. Gentle watercolor bleeding, pale blue and lime green and cream tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：仕事・学校の朝の挨拶として。少し丁寧に「おはようございます」を伝えたいとき。\n職場のグループLINEや目上の人への朝の挨拶スタンプ。",
+      "quote": "朝のあいさつが、一日の仕込みになる"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:14",
+      "purpose": "No.14 感謝・丁寧",
+      "character": "Coco + 🐢しずく",
+      "content": "ありがとうございます",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a soft ivory linen top and holding a small cherry blossom pink woven pouch, bowing with both hands gently joined. Small turtle (Shizuku) beside her mirroring the grateful gesture with flippers together. Shell rim decorated with a coral pink flower detail. Background: soft ivory and cherry blossom pink watercolor wash. Delicate watercolor bleeding, ivory and coral pink tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：お礼を伝えたいとき。「本当にありがとうございます」の気持ちをきちんと届けたいとき。\nお礼・御礼・感謝の言葉として仕事でも日常でも使えるスタンプ。",
+      "quote": "ありがとうは、伝えた回数だけ積み重なる"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:15",
+      "purpose": "No.15 返事・承諾",
+      "character": "Coco + 🕊ひより",
+      "content": "了解です！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a sage green blouse with subtle navy border trim, giving a confident thumbs up with bright determined eyes. White bird (Hiyori) beside her with wings spread in affirmation, wearing a tiny marine blue cap on head. Both with sparkling eyes and energetic expressions. Background: soft sage and white watercolor wash. Delicate watercolor bleeding, sage green and marine blue and white tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：依頼・指示を受けたとき。「承知しました！」をかわいく、かつ明るく返したいとき。\n仕事のやりとりに使えるお仕事系スタンプ。",
+      "quote": "「了解」の一言に、信頼を込めて"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:16",
+      "purpose": "No.16 依頼・お願い",
+      "character": "Coco + 🐈‍⬛しらたま + 🐢しずく",
+      "content": "よろしくお願いします",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a warm cream-tone knit-texture top with small embroidered detail, hands clasped in earnest request. Fluffy cat (Shirotsuma) beside her wearing a small lilac-colored garden apron. Turtle (Shizuku) wearing a tiny cream knit hat. All three with warm earnest bowing gestures and sincere expressions. Background: cream and lilac soft watercolor wash. Gentle bleeding watercolor, cream and lilac warm tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：仕事を頼むとき。何かをお願いする場面で「よろしくね」の気持ちを明るく届けるとき。\nビジネスから日常まで使える定番の依頼スタンプ。",
+      "quote": "一緒にやろう、の気持ちをまず届けて"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:17",
+      "purpose": "No.17 応援",
+      "character": "Coco + 🕊ひより",
+      "content": "がんばれ！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a pale peach summer blouse with small embroidered flower detail, raising both fists in enthusiastic cheer pose with bright encouraging expression. White bird (Hiyori) flying energetically beside her, trailing tiny colorful paper streamers from wing tips. Both with sparkling eyes full of energy. Background: soft peach and white watercolor wash, light streaming effect. Delicate watercolor bleeding, peach and white and soft pink tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：頑張っている相手を応援するとき。大会・試験・発表前に「全力で応援してるよ！」と伝えたいとき。\nスポーツ観戦・受験・仕事の勝負どきに送るスタンプ。",
+      "quote": "応援の言葉は、翼になる"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:18",
+      "purpose": "No.18 退社・別れの挨拶",
+      "character": "Coco + 🐢しずく",
+      "content": "お先に失礼します",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a refined lavender linen blazer with small pearl button detail, bowing lightly near a doorway threshold with graceful expression. Small turtle (Shizuku) waving one flipper in warm goodbye, wearing a tiny navy blue border-pattern scarf. Golden late afternoon light illuminating the scene gently. Background: lavender and soft gold evening watercolor wash. Gentle watercolor bleeding, lavender and gold and navy tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：退社・帰宅するとき。仕事終わりに「お先に失礼します」をさらっとかわいく送るとき。\n職場グループLINEで退社報告をするときに使えるスタンプ。",
+      "quote": "今日もよく動いた。また明日"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:19",
+      "purpose": "No.19 期待・ワクワク",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "楽しみにしてます！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a mint aqua summer dress with small ruffle at hem, clasping hands together in excitement with bright sparkling eyes. Fluffy cat (Shirotsuma) beside her with a tiny sunflower hair clip at ear, sharing the excitement. White bird (Hiyori) with a star-shaped sparkle reflected in pupil, looking equally excited. All three with warm glowing expressions. Background: mint and sunflower yellow soft watercolor wash. Delicate bleeding watercolor, mint aqua and sunflower yellow tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：約束や予定が楽しみなとき。「待ってます！」「すごく楽しみ！」を明るく伝えるとき。\nイベント・旅行・再会の予定を喜ぶときのスタンプ。",
+      "quote": "楽しみができた日は、良い日だ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:20",
+      "purpose": "No.20 心配・見守り",
+      "character": "Coco + 🐢しずく + 🕊ひより",
+      "content": "気をつけてね",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a soft rose-pink cotton blouse with delicate pintuck detail, one hand raised gently in a caring protective gesture, expression warm and slightly concerned. Turtle (Shizuku) beside her with a small pale pink plum blossom petal resting on shell. Bird (Hiyori) with a gentle lavender ribbon at wing joint, both echoing warmth. All three with tender caring expressions. Background: rose pink and lavender soft watercolor wash. Gentle bleeding watercolor, rose and lavender and pale pink tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：出かける相手への気遣いとして。体調が悪い友人・旅行中の家族へ「気をつけて」を伝えるとき。\n天気の悪い日・夜遅い外出・遠出する相手への思いやりスタンプ。",
+      "quote": "気にかける気持ちが、人を動かす"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:21",
+      "purpose": "No.21 労い・丁寧",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "content": "お疲れ様でした！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a warm amber-toned linen tunic top, clapping hands together warmly with bright appreciative smile. Fluffy dark cat (Shirotsuma) beside her stretching both paws wide up in the air in relieved completion expression, wearing a golden-orange sunset-color silk scarf at neck. Late afternoon warm golden light illuminating both. Background: amber and warm cream golden watercolor wash. Gentle bleeding watercolor, amber and golden orange and warm cream tones, hand-painted traditional art style. Copy space at top. No text in image.",
+      "comment": "使い方：仕事終わりに同僚・部下へ。「今日もお疲れ様でした」をきちんと丁寧に伝えるとき。\n職場グループや個人への1日の終わりの定番スタンプ。",
+      "quote": "労いは、その日中に届けよ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:22",
+      "purpose": "No.22 ラストスパート・励まし",
+      "character": "Coco + 🕊ひより",
+      "content": "もうひとがんばり！",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a sky blue athletic-style clean summer top, one fist pumped forward in energetic encouragement with fierce bright expression. White bird (Hiyori) flapping upward energetically beside her, a tiny bold red star emblem visible on inner wing surface. Both with intense sparkling eyes full of drive. Background: bright sky blue and white watercolor wash with slight energy-movement effect. Delicate watercolor bleeding, sky blue and white and red accent tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：ゴールが近い相手に最後の一押しを。「もう少し！絶対できる！」の気持ちを全力で届けるとき。\n締め切り前・ゴール直前・追い込み時期のスタンプ。",
+      "quote": "ラストスパートも、一緒に走れる"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:23",
+      "purpose": "No.23 就寝・夜の挨拶",
+      "character": "Coco + 🐢しずく",
+      "content": "おやすみなさい",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with black bob hair) wearing a pale silver-grey night robe with tiny scattered star print, eyes gently drowsy with warm sleepy smile, hands pressed together at cheek in sleep gesture. Small turtle (Shizuku) curled softly into shell beside her, a tiny crescent moon-shaped charm resting on shell top. Background: soft indigo and silver moonlight watercolor wash, dreamy night atmosphere. Gentle watercolor bleeding, pale grey and indigo and silver tones, hand-painted feel. Copy space at top. No text in image.",
+      "comment": "使い方：夜の挨拶として。「もう寝るね」「おやすみ」をほっこり優しく送るとき。\n夜の家族や友人への定番スタンプ。就寝前のLINEのしめくくりに。",
+      "quote": "おやすみが言える夜は、いい夜だ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "LINEスタンプ 5/19〜5/25",
+      "time": "09:24",
+      "purpose": "No.24 温かみ・安心・特別",
+      "character": "Coco + 🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "いつもそばにいるよ",
+      "image_prompt": "Soft watercolor illustration, 1:1 square, transparent background. Coco (young woman with warm features and black bob hair) wearing a soft ivory summer dress with delicate hand-embroidered wildflowers at neckline, arms open warmly with tender gentle expression and sparkling warm eyes. Fluffy dark cat (Shirotsuma) nestled warmly at left side with soft sage green natural fur glow. Small turtle (Shizuku) at right with a warm coral-pink flower accent freshly bloomed on shell. White bird (Hiyori) perched at shoulder with soft golden-yellow wing tip feathers. All four with tender warm expressions full of care. Background: early summer garden light suggestion with soft dappled green and ivory glow. Watercolor bleeding at all edges, ivory and soft sage and coral and golden yellow rainbow pastel tones, hand-painted traditional art feel. Copy space at top. No text in image.",
+      "comment": "使い方：大切な人に「そばにいるよ」を伝えるとき。落ち込んでいる相手・孤独を感じている相手へ。\nセットで最もあたたかいスタンプ。特別な場面にとっておきたい一枚。",
+      "quote": "そばにいる、それだけで十分なときがある"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "月曜朝・週明け告知",
+      "character": "🐈‍⬛しらたま",
+      "content": "週明けの月曜日、返信はスタンプで。",
+      "quote": "#CocoStamps #LINEスタンプ新着"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "月曜午前・キャラ紹介",
+      "character": "🐈‍⬛しらたま",
+      "content": "「お疲れ様」より、しらたまに言わせたほうが伝わる。",
+      "quote": "#しらたまスタンプ #LINEスタンプ"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "月曜午後・季節感訴求",
+      "character": "🐢しずく",
+      "content": "月曜の午後、しずくのゆっくりペースで乗り越えて。",
+      "quote": "#しずくスタンプ #初夏スタンプ"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "月曜夜・労い訴求",
+      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "今日も一日よく頑張った。夜は言葉を節約して。",
+      "quote": "#CocoStamps #お疲れスタンプ"
+    },
+    {
+      "date": "2026-05-26",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "火曜朝・ひより紹介",
+      "character": "🕊ひより",
+      "content": "火曜日の朝、ひよりと一緒にスタートしよう。",
+      "quote": "#ひよりスタンプ #朝の一枚"
+    },
+    {
+      "date": "2026-05-26",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "火曜午前・使い方訴求",
+      "character": "🕊ひより",
+      "content": "返事に迷ったとき、このスタンプが助けてくれる。",
+      "quote": "#LINEスタンプ #返事スタンプ"
+    },
+    {
+      "date": "2026-05-26",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "火曜午後・梅雨前訴求",
+      "character": "🐈‍⬛しらたま",
+      "content": "梅雨前のもやっとした気持ち、スタンプならさらっと。",
+      "quote": "#梅雨スタンプ #初夏LINEスタンプ"
+    },
+    {
+      "date": "2026-05-26",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "火曜夜・温かみ訴求",
+      "character": "🐈‍⬛しらたま + 🐢しずく",
+      "content": "帰り道の「お疲れ」、もっと温かく届けたい夜。",
+      "quote": "#CocoStamps #おつかれスタンプ"
+    },
+    {
+      "date": "2026-05-27",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "水曜朝・踏ん張り訴求",
+      "character": "🐢しずく",
+      "content": "水曜日の踏ん張り、しずくと一緒に乗り越えて。",
+      "quote": "#しずくスタンプ #水曜日"
+    },
+    {
+      "date": "2026-05-27",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "水曜午前・温度訴求",
+      "character": "Coco + 🕊ひより",
+      "content": "「了解です」の一言にも、気持ちの温度が出せる。",
+      "quote": "#LINEスタンプ #仕事スタンプ"
+    },
+    {
+      "date": "2026-05-27",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "水曜午後・雨の日訴求",
+      "character": "🐈‍⬛しらたま",
+      "content": "雨の予報の初夏も、しらたまなら梅雨もへっちゃら。",
+      "quote": "#雨の日スタンプ #梅雨LINEスタンプ"
+    },
+    {
+      "date": "2026-05-27",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "水曜夜・ひより応援訴求",
+      "character": "🕊ひより",
+      "content": "ひよりが「大丈夫だよ」って今日も言ってる。",
+      "quote": "#ひよりスタンプ #CocoStamps"
+    },
+    {
+      "date": "2026-05-28",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "木曜朝・週末カウントダウン",
+      "character": "🐈‍⬛しらたま",
+      "content": "木曜日、週末がもう見えてきた。",
+      "quote": "#CocoStamps #木曜日"
+    },
+    {
+      "date": "2026-05-28",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "木曜午前・かわいさ訴求",
+      "character": "Coco + 🐢しずく + 🕊ひより",
+      "content": "仕事のやりとりに、少しかわいさを足すだけで変わる。",
+      "quote": "#LINEスタンプ #ビジネススタンプ"
+    },
+    {
+      "date": "2026-05-28",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "木曜午後・期待感訴求",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「楽しみにしてます」が伝わるスタンプ、あります。",
+      "quote": "#CocoStamps #初夏スタンプ"
+    },
+    {
+      "date": "2026-05-28",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "木曜夜・自分を褒める訴求",
+      "character": "🐢しずく",
+      "content": "今日もよく頑張った。しずくに認めてもらおう。",
+      "quote": "#しずくスタンプ #お疲れ様"
+    },
+    {
+      "date": "2026-05-29",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "金曜朝・テンションアップ",
+      "character": "🐈‍⬛しらたま",
+      "content": "金曜日！しらたまも「よしっ！」ってなってる。",
+      "quote": "#金曜日 #しらたまスタンプ"
+    },
+    {
+      "date": "2026-05-29",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "金曜午前・週末連絡訴求",
+      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "週末前の連絡は、全部このスタンプに任せて。",
+      "quote": "#LINEスタンプ #週末スタンプ"
+    },
+    {
+      "date": "2026-05-29",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "金曜午後・気遣い訴求",
+      "character": "Coco + 🐢しずく + 🕊ひより",
+      "content": "「気をつけてね」がひよりとしずくから届く。",
+      "quote": "#CocoStamps #気遣いスタンプ"
+    },
+    {
+      "date": "2026-05-29",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "金曜夜・週末気分訴求",
+      "character": "🐈‍⬛しらたま + 🕊ひより",
+      "content": "週末の夜は、言葉よりスタンプが似合う。",
+      "quote": "#金曜夜 #CocoStamps"
+    },
+    {
+      "date": "2026-05-30",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "土曜朝・ゆっくりスタート",
+      "character": "🐢しずく",
+      "content": "土曜日の朝、しずくのテンポでゆっくり始めよう。",
+      "quote": "#土曜日 #しずくスタンプ"
+    },
+    {
+      "date": "2026-05-30",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "土曜午前・休日連絡訴求",
+      "character": "🐢しずく + 🕊ひより",
+      "content": "休日の連絡は、スタンプでさらっと済ませて。",
+      "quote": "#LINEスタンプ #休日スタンプ"
+    },
+    {
+      "date": "2026-05-30",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "土曜午後・季節感・労い",
+      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "あじさい揺れる初夏、今週の自分を労う一枚を。",
+      "quote": "#初夏スタンプ #あじさい #CocoStamps"
+    },
+    {
+      "date": "2026-05-30",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "土曜夜・ひより感謝訴求",
+      "character": "🕊ひより",
+      "content": "夕暮れ時の「ありがとう」を、ひよりに乗せて届けて。",
+      "quote": "#ひよりスタンプ #ありがとうスタンプ"
+    },
+    {
+      "date": "2026-05-31",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "07:00",
+      "purpose": "日曜朝・のんびり訴求",
+      "character": "🐢しずく",
+      "content": "日曜日の朝、しずくとのんびり過ごして。",
+      "quote": "#日曜日 #しずくスタンプ"
+    },
+    {
+      "date": "2026-05-31",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "10:00",
+      "purpose": "日曜午前・来週への準備",
+      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "5月最後の日、来週への「よろしく」を送ろう。",
+      "quote": "#CocoStamps #5月おわり"
+    },
+    {
+      "date": "2026-05-31",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "14:00",
+      "purpose": "日曜午後・全員集合訴求",
+      "character": "Coco + 🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "しらたまもひよりもしずくも、ずっとそばにいるよ。",
+      "quote": "#CocoStamps #LINEスタンプ新着"
+    },
+    {
+      "date": "2026-05-31",
+      "platform": "スタンプ宣伝 5/19〜5/25",
+      "time": "19:00",
+      "purpose": "日曜夜・来週への応援",
+      "character": "🐈‍⬛しらたま + 🐢しずく + 🕊ひより",
+      "content": "また月曜日から。三匹が背中を押してくれてる。",
+      "quote": "#CocoStamps #月曜からも頑張れる"
     }
   ]
 }
