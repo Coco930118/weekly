@@ -3,79 +3,471 @@
   "posts": [
     {
       "date": "2026-05-19",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "ハリボテ上司の見分け方",
+      "content": "ハリボテの上司には、共通点がある。\n一人では動けない。\n群れることでしか、自分の存在を証明できない。\n\n本物は逆だ。\n火中に飛び込んで、先頭で動く。\nそのあとについてきた人間が、信頼になる。\n\n肩書きで動かす人間か、背中で動かす人間か。\n部下は、ちゃんと見ている。",
+      "quote": "💎 ハリボテは群れ、本物は先頭を歩く"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "継続のファクト",
+      "content": "一瞬だけ輝いた人は、記憶に残る。\nでも、信頼されるのは静かに続けた人だ。\n\n「あの人、最近どこにいるんだろう」\nそう思われた時点で、積み上げは崩れている。\n\n続けることは戦略だ。\n感情が乗らない日にも、手を動かした数が、最後に物を言う。",
+      "quote": "💎 継続は才能を超える、唯一の戦略だ"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "戦略的沈黙",
+      "content": "言い返さなかった理由を、弱さだと思っている人がいる。\n\n違う。\n黙って圧倒的な数字を出す。\nそれが、唯一本物の返し方だ。\n\n口で証明しようとするのは、まだ余裕がある証拠だ。\n本当に自信がある人間は、結果で黙らせる。",
+      "quote": "💎 戦略的沈黙は、最強のカウンターだ"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "いつでも席を立てる覚悟",
+      "content": "「辞めたいけど辞められない」という状態には、必ず理由がある。\n生活費、人間関係、次が見えない恐怖。\n\nでも本当に強い人間の共通点は、いつでも席を立てる状態でいること。\nこれが、最大のカードになる。\n\n依存している間は、交渉できない。\n自立している状態が、対等な関係を作る足場だ。",
+      "quote": "💎 いつでも立てる覚悟が、最強の足場になる"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "自分の物差しの限界",
+      "content": "自分の物差しでしか、他者を測れない人がいる。\n\n「なんであんな動き方をするんだろう」\n「普通はこうするでしょ」\n\nその「普通」は、あなたの経験と価値観が作った基準だ。\n相手には、相手の文脈がある。\n\n測れないなら、聞けばいい。\nそれだけのことが、できない人が多い。",
+      "quote": "💎 「普通」は自分だけの物差しだ、忘れるな"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "視座のカウンター",
+      "content": "「若い頃につるまないのはおかしい」と言われたことがある。\n\n「わたし若い頃はつるんでましたよ。ガッツリ。」\n\nそう返したとき、相手の顔が変わった。\n前提が崩れたから。\n\nマウントには、マウントで返さない。\n事実で、静かに崩す。\nそれが視座のカウンターだ。",
+      "quote": "💎 前提を崩す一言が、関係の温度を変える"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "前提の解体",
+      "content": "「この業界の単価で、売上日本一なんか無理でしょ」\n\nそう言われたことがある。\n前提として、限界を定義されていた。\n\nでもその前提、誰が決めたんだろう。\n業界の平均ではなく、自分の最高値で動けばいい。\n\n人の「無理」は、その人の経験の範囲の話だ。\n自分の天井を、他人に決めさせない。",
+      "quote": "💎 「無理」は相手の天井、あなたの天井じゃない"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "異業種での再現性",
+      "content": "「業界が違うから参考にならない」という人がいる。\n\nでも、再現性のある仕組みは、業界を超える。\nロジックが本物なら、どこでも動く。\n\nむしろ異業種の視点が、その業界の常識を壊す。\n染まっていないことが、武器になる。",
+      "quote": "💎 本物のロジックは、業界の壁を越える"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "背中で動かすリーダーシップ",
+      "content": "部下が動かない、と言う上司に聞いてみたい。\n\nあなたが先頭を歩いたのは、いつが最後ですか？\n\n指示は出せる。\nでも、最初に飛び込む姿を見せられる人間は少ない。\n\n背中で動かすか、肩書きで動かすか。\n部下は、その違いを静かに見ている。",
+      "quote": "💎 先頭に立つ背中が、部下を動かす"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "静かな継続の差",
+      "content": "「あの人はすごい」と言われる人の話を聞くと、共通することがある。\n\n人が見ていない時間に、続けていた。\n\n特別な才能ではなく、特別な継続だ。\n感情が乗らない日に手を動かした数が、差になる。\n\n静かに積み上げた人間が、最後に圧倒的な数字を持っている。",
+      "quote": "💎 誰も見ていない時間の継続が、圧倒的な差になる"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "選べる状態の強さ",
+      "content": "働き続ける理由が「辞められないから」になった時点で、\n何かが壊れ始めている。\n\n本当の強さは、選べる状態でいることだ。\nいつでも立てる人間は、依存しない。\n依存しない人間は、対等に交渉できる。\n\n環境に縛られているのか、選んでいるのか。\nその違いが、毎日の温度を作る。",
+      "quote": "💎 選べる状態でいることが、自由の定義だ"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "結果が返事になる",
+      "content": "誰かに何か言われて、すぐ反論したくなる気持ちはわかる。\n\nでも、黙って結果を出した後の景色を知っている人は、\n急いで言い返さない。\n\n言葉は消える。\n数字は残る。\n\n自滅させるのが最も静かで、最も確実な返し方だ。",
+      "quote": "💎 言葉より数字が語る、それが戦略的沈黙だ"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "経験と前提を疑う",
+      "content": "経験豊富な人ほど、若い頃の自分を正解にしたがる。\n\n「わたしはこうしてきた」\n「昔はこれで通用した」\n\nでも時代も、人も、文脈も変わっている。\n過去の自分は参考にはなるが、現在の他者の正解にはならない。\n\n経験は武器だが、前提は毎回疑え。",
+      "quote": "💎 経験は武器、でも過去の正解を他者に押しつけない"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "仕組みを疑う",
+      "content": "「なんでこんなことができないんだ」と思う前に、\n一度だけ聞いてみてほしい。\n\n「何が邪魔していると思う？」\n\n詰めると防衛する。\n聞くと考える。\n\n人が動かない理由は、能力の問題より、\n仕組みの問題であることの方が多い。",
+      "quote": "💎 動かない人を責める前に、仕組みを疑え"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "ハリボテ上司の見分け方",
+      "content": "火曜の朝、少しだけ話させてほしい。\n\nハリボテの上司と、本物の上司。\n見た目は同じに見えることがある。\n\nでも、火中に飛び込む場面が来たとき、どっちかがわかる。\n\nハリボテは、誰かに指示を出す。\n本物は、自分が先頭を歩く。\n\nそれだけのことが、部下には全部見えている。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 ハリボテは指示する、本物は先頭を歩く"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "肩書きより背中",
+      "content": "しらたまだよ〜。\n\n「なんで動いてくれないんだろう」って悩む人、多い。\n\nでもね、正直に言うと、\n動かない理由の大半は「この人についていきたいか」だと思う。\n\n肩書きは人を動かさない。\n背中が人を動かす。\n\n先頭に立った回数が、信頼の残高になっていく。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 信頼は先頭に立った回数の積み上げだ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "継続という静かな戦略",
+      "content": "火曜の夜、こっそりひとりごと。\n\n一瞬だけ輝いた人は記憶に残る。\nでも、信頼されるのは静かに続けた人だ。\n\n感情が乗らない日に、それでも手を動かした数。\nそれが、1年後2年後の圧倒的な差になっている。\n\n継続は才能じゃない。仕組みだ。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 継続は才能じゃない、仕組みだ"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "戦略的沈黙の使い方",
+      "content": "水曜の朝。\n\n言い返したい場面で、黙れる人がいる。\n\nそれ、弱さじゃない。\n黙って圧倒的な数字を出すことで、相手を自滅させる戦略だ。\n\n口で証明しようとするのは、まだ余裕がある証拠。\n本当に自信がある人間は、結果で黙らせる。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 黙って数字を出す、それが本物の返し方だ"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "席を立てる覚悟",
+      "content": "おはよう〜しらたまだよ。\n\n「辞めたいけど辞められない」って思ってる人に伝えたい。\n\nその状態、一番危ない。\n依存してる間は、交渉もできないし、自分の軸も見えない。\n\nいつでも席を立てる状態でいること。\nこれが、最大のカードになる。\n\n縛られてるのか、選んでいるのか。その違い、ちゃんと問いかけてみてね。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 いつでも立てる状態が、最強のカードになる"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "自分の物差しの話",
+      "content": "水曜の夜、ひとりごと。\n\n「なんであんな動き方するんだろう」\n「普通はこうでしょ」\n\nその「普通」、誰が決めた？\n\n自分の物差しでしか他者を測れない人は、\nずっと「普通じゃない人」に囲まれ続ける。\n\n相手には相手の文脈がある。\n測れないなら、聞けばいい。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 「普通」は自分の文脈が作った基準に過ぎない"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "視座のカウンター",
+      "content": "木曜の朝。\n\n「若い頃につるまないのはおかしい」そう言われたことがある。\n\nわたしの答えは、「わたし若い頃はつるんでましたよ。ガッツリ。」だった。\n\n相手の前提を、静かに崩す。\n反論じゃなく、事実で。\n\nこれが、視座のカウンターだ。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 前提は反論じゃなく、事実で崩す"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "前提の解体",
+      "content": "しらたまだよ〜。\n\n「この業界の単価で、売上日本一は無理でしょ」\nそう言われたとき、どう返す？\n\nその前提、誰が決めた？\n\n業界の平均値は、その業界の平均の話だ。\nあなたの最高値じゃない。\n\n人の「無理」は、その人の経験の範囲の話。\n自分の天井を、他人に決めさせない。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 自分の天井を、他人に決めさせない"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "異業種の視点が武器になる",
+      "content": "木曜の夜。\n\n「業界が違うから参考にならない」という話をよく聞く。\n\nでも、本当に再現性があるロジックは、業界を超える。\n\nむしろ、染まっていないことが武器になる。\n異業種だから見える視点が、その業界の常識を壊すことがある。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 染まっていない視点が、その業界の常識を壊す"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "群れることでしか存在証明できない人",
+      "content": "金曜の朝。\n\n一人では何も決められない上司がいる。\n必ず誰かを巻き込んで、多数決で動こうとする。\n\nそれ、群れることでしか存在を証明できない状態だ。\n\n本物は、一人で判断して、一人で責任を取る。\nそのあとに、ついてくる人が出てくる。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 群れて決める人と、一人で責任を取る人"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "静かに続けた人が最後に勝つ",
+      "content": "しらたまだよ〜。\n\n「あの人はすごい」ってなる人、\n共通してることがあると思う。\n\n人が見てない時間に、続けていた。\n\n特別な才能じゃなくて、特別な継続。\n感情が乗らない日に手を動かした数が、差になってる。\n\n静かに積み上げた人が、最後に圧倒的な数字を持ってる。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 見えない時間の継続が、最後の差になる"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "数字が言葉より残る",
+      "content": "金曜の夜。\n\n誰かに何か言われたとき、すぐ言い返したくなる気持ちはわかる。\n\nでも、黙って結果を出した後の景色を知っている人は、\n急がない。\n\n言葉は消える。数字は残る。\n\n自滅させるのが、最も静かで最も確実な返し方だ。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 言葉は消える、数字は残る"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "いつでも立てる状態の強さ",
+      "content": "土曜の朝。\n\n働き続ける理由が「辞められないから」になってきたら、\n少し立ち止まってほしい。\n\n本当の強さは、選べる状態でいることだ。\nいつでも立てる人間は、依存しない。\n依存しない人間は、対等に話せる。\n\n環境に縛られてるのか、選んでいるのか。\nその違いが、毎日の温度を作る。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 選べる状態でいることが、対等な関係の土台だ"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "測れないなら聞く",
+      "content": "しらたまだよ〜。\n\n「なんでこの人はこうなんだろう」って思うとき、\nその感情の中身、少し解いてみてほしい。\n\n「普通はこうじゃない？」という感覚、\nそれ、あなたの物差しだよ。\n\n相手は相手の文脈の中で生きてる。\nわからなければ、聞けばいい。\n\nたったそれだけで、関係の温度が変わることがある。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 わからなければ聞く、それが関係の温度を変える"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "経験の前提を疑う",
+      "content": "土曜の夜。\n\n経験豊富な人ほど、若い頃の自分を正解にしたがる。\n\nでも時代も、人も、文脈も変わっている。\n「わたしの経験ではこうだった」は参考にはなるが、\n現在の他者の正解にはならない。\n\n経験は武器。\nでも、その経験が「前提」になった瞬間、視野が狭くなる。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 経験が「前提」になった瞬間、視野が狭くなる"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "「無理」という前提を疑う",
+      "content": "日曜の朝。\n\n「それは無理でしょ」という言葉、\n相手の経験の話であることが多い。\n\nその業界の平均値じゃなく、自分の最高値で動けばいい。\n\n人の「無理」を、自分の天井にしない。\nそれだけで、動ける範囲が変わってくる。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 「無理」は他人の経験の範囲、あなたの天井じゃない"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "染まっていないことが強さ",
+      "content": "しらたまだよ〜。日曜の朝！\n\n異業種の人と話してて、面白いと思うのは、\n「え、そんな当たり前じゃないの？」が飛んでくること。\n\n染まっていないから見える視点がある。\n業界の常識に慣れすぎてると、その外側が見えなくなる。\n\n違う世界のロジックを持ち込むことが、一番のイノベーションだったりする。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 染まっていないから見える、その視点が武器だ"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "背中で動かす人の話",
+      "content": "日曜の夜。\n\n「動いてくれない」と悩む前に、一度だけ確認してほしいことがある。\n\nあなたが先頭を歩いた場面、最近ありましたか？\n\n指示は出せる。\nでも、最初に飛び込む姿を見せた回数が、\n信頼の残高になっている。\n\n背中で動かす人間は、言葉が少なくても、人が動く。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 背中で動かす人は、言葉が少なくても人が動く"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "仕組みを疑う習慣",
+      "content": "月曜の朝。\n\n「なんでこの人は動かないんだ」と思う前に、\n一つだけ聞いてみてほしい。\n\n「何が邪魔してると思う？」\n\n詰めると防衛する。\n聞くと考える。\n\n人が動かない理由は、能力より仕組みの問題であることの方が多い。\n仕組みを変えると、人が変わることがある。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 動かない理由は能力より仕組みにある"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "距離の整え方の話",
+      "content": "しらたまだよ〜。月曜の朝！\n\n「感情はある。依存はしない。」\n\nこれ、すごく難しい仕組みだと思ってる。\n\n好きだから離れたくない。\nでも、依存すると、相手を縛る。\n縛ると、関係の温度が下がる。\n\n感情を持ちながら、距離を選ぶ。\nそれが、関係が長く続く理由だと思う。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 感情を持ちながら、距離を選ぶ"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "今週の総括",
+      "content": "月曜の夜。\n\n今週も、ここに来てくれた人へ。\n\nハリボテじゃなく、本物でいること。\n続けることを、戦略にすること。\nいつでも立てる状態でいること。\n\n全部、関係の温度を守るための仕組みだ。\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
+      "quote": "💎 全部、関係の温度を守るための仕組みだ"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "距離が開いたとき、最初にすること",
+      "character": "🐈‍⬛しらたま + 🕊ひより",
+      "content": "誰かとの間に、ふと距離を感じるとき。\nあなたが最初にすることは？\n\nA. 相手からの連絡をじっと待つ\nB. 理由を考えてから、動くかどうか決める\nC. 気晴らしして、感情を落ち着かせる\nD. そのまま自然に任せてしまう",
+      "quote": "💎 距離は問題じゃない。気づいたとき動けるかどうかが、問題。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small fluffy black cat sitting quietly by a rainy window, looking outside, sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze. Panel B: a white dove perched on a branch, head tilted, contemplating. Panel C: the cat stretching with a hopeful look. Panel D: the dove lifting wings softly toward open sky. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：「来てほしい」という気持ちが強い。待つことで相手の優先度を確かめているのかもしれない。ただ、待ち続けることで距離はじわじわ開いていく。\n\nBを選んだあなた：冷静に原因を探る力がある。ただ「分析」で動くタイミングを逃すことも。考えすぎる前に、一歩だけ動いてみると見える景色が変わる。\n\nCを選んだあなた：感情に振り回されないようにしている。賢さでもある。ただ、落ち着いてから動こうとすると、気持ちごと薄れてしまうことがある。\n\nDを選んだあなた：流れに委ねる信頼がある。でも「自然に任せる」は、時に「見て見ぬふり」になっていないか。距離はそっと整えるものでもある。\n\n──どれが正解というわけじゃない。距離が開いたと感じた瞬間に「何かをしようとした自分」がいたこと。それだけで十分、関係への誠実さがある。"
+    },
+    {
+      "date": "2026-05-20",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "疲れているとき、誰かに本音が言えるか",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "content": "週の真ん中、少し疲れたとき。\n誰かに本音が言えてる？\n\nA. 言える人が一人はいる\nB. 言いたいけど、迷惑かけたくくて言えない\nC. 本音が何かよくわからなくなってる\nD. 基本的に自分で処理する",
+      "quote": "💎 「言えない」じゃなく、「言っていい人」がいるかどうかの話。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a graceful woman (41 years old, bob haircut, calm and elegant, wearing soft home wear) sitting at a low table with tea, looking warmly at a small black fluffy cat who looks up at her, sparkling warm eyes, soft light reflection in eyes. Panel B: the woman leaning forward slightly, listening. Panel C: the cat resting its chin on the woman's knee, eyes half-closed in trust. Panel D: both of them in quiet, comfortable silence together by a window. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：関係の中に「安全な場所」が育っている。それは意識してもなくても、あなたが誠実に関わってきた結果だと思う。\n\nBを選んだあなた：「迷惑をかけたくない」という気遣いが、自分を孤独にしていることがある。本音を言うことは、甘えじゃなく、関係への信頼を示すこと。\n\nCを選んだあなた：疲れると「自分の感覚」がぼやける。まず自分が何を感じているかに気づくことが先かもしれない。言葉より先に、感覚を拾いにいく時間が必要。\n\nDを選んだあなた：自己完結できる強さがある。ただ、処理し続けていると、誰かと一緒にいても「ひとりのまま」になっていくことがある。\n\n──本音を言う相手がいることは、弱さじゃない。関係の温度が保たれているサインだと、私は思う。"
+    },
+    {
+      "date": "2026-05-21",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "「なんかズレてる」に気づいたときの動き方",
+      "character": "🐢しずく",
+      "content": "大事な人との間に、なんとなくズレを感じる。\nあなたはどう動く？\n\nA. 相手に直接「最近どう？」と聞く\nB. ズレた原因を自分の中で先に整理する\nC. しばらく様子を見て、向こうの出方を待つ\nD. いつもより少しだけ優しくして、雰囲気を変える",
+      "quote": "💎 ズレに気づいた人が、整える側に回れる。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small thoughtful turtle sitting quietly on a mossy stone, looking gently forward, sparkling warm eyes, soft light reflection in eyes. Panel B: the turtle with a tiny notepad, writing slowly and carefully. Panel C: the turtle waiting patiently by a small pond, watching ripples. Panel D: the turtle offering a tiny leaf to an unseen figure, expression soft and warm. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：関係への誠実さがある。「最近どう？」という一言は、ズレを放置しない意志表示。ただ、急に聞かれる側が身構えることもあるので、タイミングと温度感を少し意識してみて。\n\nBを選んだあなた：行動の前に内側を整える人。それは慎重さでもある。ただ、考えすぎて動けないまま、ズレが広がることもある。「7割整ったら動く」くらいでいい。\n\nCを選んだあなた：関係を壊したくないという気持ちが強い。「待つ」は戦略にもなるが、両方が待っていると、ズレはいつまでも埋まらない。\n\nDを選んだあなた：空気を変える力がある。言葉にしなくても、温度で伝えようとしている。ただ、根本のズレが残ったままだと、また同じ感覚がぶり返してくることがある。\n\n──ズレは悪いことじゃない。気づけた、ということ自体が、関係が生きている証拠だと思う。"
+    },
+    {
+      "date": "2026-05-22",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "週末、「会いたい」と思える人はいるか",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま",
+      "content": "金曜の夜。週末が来た。\n「会いたい」と思う人は？\n\nA. 特定の人の顔がすぐ浮かんだ\nB. 誰かと会いたいけど、誰がいいかわからない\nC. ひとりでいるほうが今は楽\nD. 特に誰も思い浮かばなかった",
+      "quote": "💎 すぐ顔が浮かぶ人の数より、その人と会ったあとの感覚が大事。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a graceful woman (41 years old, bob haircut, calm and elegant, wearing casual weekend outfit) walking lightly along a street at dusk, sparkling warm eyes. Panel B: a small turtle and a fluffy black cat sitting side by side on a bench, looking at the evening sky together. Panel C: the woman sitting alone in a café window, quietly content. Panel D: the turtle, cat, and woman gathered around a low table with snacks, soft warm lighting, comfortable and easy. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：その人との関係が、あなたの中で「安全な場所」になっている。顔がすぐ浮かぶということは、その人のそばで自分でいられているということ。大切にしてほしい。\n\nBを選んだあなた：「誰かといたい」という感覚はある。ただ、今の自分が何を求めているのかが少しぼやけている。会う相手より、自分がどんな夜を過ごしたいかを先に決めると、見えてくるものがある。\n\nCを選んだあなた：ひとりを選べることは、自分との関係が整っているサイン。無理に誰かに会う必要はない。ただ、「楽」の裏に「疲れ果てている」がないか、少し確認してみて。\n\nDを選んだあなた：今、人との距離が全体的に開いているのかもしれない。孤独より、少し無感覚な感じがあるなら、その「なんともない感覚」を誰かと話してみることが、整えの入り口になる。\n\n──会いたい人がいること、ひとりでいたいこと、どちらも正直な感覚。どちらが正解かより、今夜を自分に正直に過ごすことのほうが大切だと思う。"
+    },
+    {
+      "date": "2026-05-23",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "ひとりの時間、何をしているか",
+      "character": "🕊ひより",
+      "content": "ひとりの時間、何をしてる？\n\nA. 何もせず、ぼーっとしていることが多い\nB. 好きなことに集中して過ごす\nC. 人のことを考えて、気づくと時間が経っている\nD. 次にやることを考えて、頭が休まらない",
+      "quote": "💎 ひとりの時間に何をするかより、誰の顔も思い浮かばない時間があるかどうか。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small white dove resting on a window ledge in soft sunlight, eyes half-closed, peaceful. Panel B: the dove preening its feathers with focus and contentment. Panel C: the dove gazing into the distance, expression dreamy and gentle, sparkling warm eyes. Panel D: the dove with eyes closed, head slightly bowed, in a moment of quiet stillness. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：ぼーっとできる、というのは実は高度なこと。頭が休める状態でいられるなら、その時間はちゃんと「充電」になっている。\n\nBを選んだあなた：ひとりの時間に自分が戻れる場所を知っている。それは強さ。「好きなこと」が、あなたにとっての根っこになっている。\n\nCを選んだあなた：誰かを想う時間が多い人。それは愛情が深い証拠でもある。ただ、「自分に戻る時間」が少なすぎると、じわじわ消耗する。ひとりの時間に「自分だけを感じる瞬間」を意識してみて。\n\nDを選んだあなた：休むことへの罪悪感や、「やること」で安心する習慣があるのかもしれない。何もしないことを「許す」のが、今の課題かもしれない。\n\n──ひとりの時間の質は、関係の質に出てくる。自分が自分に戻れる時間を持てているかどうか、今夜少しだけ確かめてみてほしい。"
+    },
+    {
+      "date": "2026-05-24",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "「手放す」と「続ける」の選び方",
+      "character": "Coco + 🐢しずく + 🕊ひより",
+      "content": "関係を「手放す」か「続ける」か迷うとき、\nあなたは何を基準にしている？\n\nA. 相手が変わるかどうか\nB. 自分が変わっていけそうかどうか\nC. 一緒にいるときの「体の感覚」\nD. 続けることで得られるものと失うもの",
+      "quote": "💎 手放す理由より、続けたいと思える瞬間がまだあるかどうか。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a graceful woman (41 years old, bob haircut, calm and elegant, wearing soft Sunday home wear) standing at a window looking at a quiet garden, sparkling warm eyes. Panel B: a small turtle carefully holding a single leaf, looking at it thoughtfully. Panel C: a white dove perched on the woman's shoulder, both looking forward together. Panel D: the woman, turtle, and dove gathered in a quiet corner, soft golden light, a sense of gentle resolve. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：相手の変化を待っている。それは希望でもある。ただ、「相手が変わること」を基準にすると、自分の判断のタイミングが相手に依存し続ける。\n\nBを選んだあなた：自分の成長を軸に考えている。関係の中で「自分が育てるか」という問いを持てている人は、実は少ない。その視点は大切にしていい。\n\nCを選んだあなた：体の感覚は正直だ。緊張するか、ほっとするか。重くなるか、軽くなるか。頭で考えるより先に、体が答えを知っていることが多い。\n\nDを選んだあなた：損得で考えているように見えて、実は「今の自分にとって何が必要か」を真剣に考えている。その冷静さは、感情に流されない強さだと思う。\n\n──「手放す」と「続ける」に正解はない。ただ、どちらを選んでも、「自分が選んだ」という感覚だけは手放さないでほしい。"
+    },
+    {
+      "date": "2026-05-25",
+      "platform": "Threads診断",
+      "time": "14:00",
+      "theme": "月曜の重さを、誰かのせいにしてない？",
+      "character": "🐢しずく + 🐈‍⬛しらたま",
+      "content": "月曜の朝、また重い。\nその重さ、何から来てる？\n\nA. 職場の人間関係が気になって、気が重い\nB. やりたくないことが積み重なっている\nC. 週末に自分を充電できなかった\nD. 特に理由はないけど、なんとなく重い",
+      "quote": "💎 重さの正体に気づいた朝は、もうその重さに振り回されていない。",
+      "dall_e_prompt": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling. Four-panel grid. Panel A: a small turtle looking up at a slightly overcast morning sky with gentle, curious eyes, sparkling warm eyes, soft light. Panel B: a fluffy black cat sitting hunched by the door, tail curled around feet, expression a little reluctant. Panel C: the turtle nudging the cat gently with one foot, expression warm and encouraging. Panel D: both of them stepping forward together into soft morning light, gentle determination. 1:1 square format, transparent background, PNG, no background, isolated character. No text, no letters, no signage.",
+      "reply_1": "Aを選んだあなた：人間関係の摩擦が、あなたの週の重心になっている。誰か特定の人の顔が浮かぶなら、その人との距離の整え方を、今週少しだけ変えてみることを考えてみて。\n\nBを選んだあなた：「やりたくないことリスト」が積み上がっている。全部やらなくていい。今週、ひとつだけ「やめていいもの」を選んでみると、少し軽くなる。\n\nCを選んだあなた：週末の自分へのケアが足りなかった。充電は努力じゃなく、「やめること」から始まる。来週末、まず何かをやめることを先に決めてみて。\n\nDを選んだあなた：「なんとなく」は実は、「気づきたくない何か」が隠れていることが多い。今すぐ掘り下げなくていい。ただ、「なんとなく」と言えたこと自体を、少しだけ大切にしてみて。\n\n──月曜の重さに気づいた瞬間、もうあなたはその重さを見えている。見えているなら、少しだけ整えることができる。"
+    },
+    {
+      "date": "2026-05-19",
+      "platform": "X診断",
       "time": "12:00",
       "purpose": "評価が届かない理由",
       "character": "Coco + 🐢しずく",
-      "content": "「ちゃんと評価してる」のに、部下には伝わらない。\nこの現象、なぜ起きるのか。\n\nあなたが部下を評価するとき、伝え方に近いのはどれ？\n\nA　査定や面談のタイミングで、まとめて伝える\nB　成果が出たとき、その場ですぐ伝える\nC　チーム全体の場で、名前を出して伝える\nD　具体的な行動より「全体的によくやった」と伝える\n\n→ 選んだ答えをリプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May early summer atmosphere with warm golden light. Panel 1: Coco (a calm young woman in a pale ivory linen dress with delicate pearl buttons) sits across from a small turtle (Shizuku) at a desk; documents are spread between them; late afternoon light; a slight formality in the air. Panel 2: Coco kneels down to Shizuku's level outdoors on a sunny garden terrace; she gestures warmly and directly to Shizuku; a moment of immediate recognition; fresh green leaves in the background. Panel 3: Coco stands at a small gathering and gestures toward Shizuku with a gentle smile; other warm presences suggested by soft shapes in the background. Panel 4: Coco speaks gently with a vague open-handed gesture while Shizuku looks slightly puzzled; the interaction feels diffuse and indirect. Refined palette of warm ivory, gold, and sage. No text, no letters, no signage.",
-      "comment": "「評価されていない」と感じる部下の多くは、「見てもらえていない」ではなく「伝わっていない」状態にいます。\n\n【A：面談でまとめて伝える】\n情報量が多すぎて、何が最重要か伝わらない。\nタイムラグがあると「今さら言われても」という反応が出やすい。\n\n【B：その場ですぐ伝える】\n最も効果が高い。行動と評価がセットになることで「何が認められたか」が明確になる。\n部下の脳は「何をしたらいいか」を学習する。\n\n【C：チームの場で名前を出す】\n効果的だが、本人の性格によっては逆効果になることも。\n全員の前で褒められると居心地が悪い、という人もいる。\n\n【D：「全体的によくやった」】\nこれが最も伝わらない評価の典型。\n「全体的に」は、どの行動も評価していないのと同じ。\n\n評価は「した」かどうかではなく「届いた」かどうかで決まる。\n具体的な行動＋その場＋その人の言葉で届けて初めて、評価は動力になる。\n\n📌 明日から使える一手\n部下を評価するとき、「何が・いつ・どう良かったか」の3点セットで伝えよ。\n「よかった」の一言より、3点の具体が人を動かす。",
+      "content": "「ちゃんと評価している」のに、部下の表情が変わらない。\n\n5月、この感覚がリーダーを静かに消耗させる。\n\nあなたが部下を評価するとき、伝え方に近いのはどれ？\n\nA　査定や面談のタイミングで、まとめて伝える\nB　成果が出たとき、その場ですぐ伝える\nC　チーム全体の場で、名前を出して伝える\nD　具体的な行動より「全体的によくやった」と伝える\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Early summer Japanese atmosphere, warm Tuesday morning light.\n\nTop-left (A): Coco (a refined 41-year-old woman with elegant bob hair, wearing a pale ivory linen dress with delicate pearl buttons) sits across from a small wise turtle (Shizuku) at a formal desk; stacks of evaluation documents and a wall calendar showing May between them; formal late-afternoon light.\n\nTop-right (B): Coco crouches gently beside Shizuku on a sunlit garden terrace; she gestures warmly with a specific open hand toward Shizuku; a moment of immediate recognition; fresh early-summer green leaves in the background.\n\nBottom-left (C): Coco stands at a small gathering, gesturing gently toward Shizuku who sits slightly highlighted among soft warm silhouettes; warm grouping atmosphere; early summer indoor light.\n\nBottom-right (D): Coco speaks with a broad open-handed vague gesture while Shizuku tilts its head with a slightly puzzled expression; the interaction feels diffuse; pale afternoon light.\n\nUnified watercolor palette of warm ivory, sage, and pale gold. No text, no letters, no signage.",
+      "comment1": "「評価されていない」と感じる部下の多くは、「見てもらえていない」ではなく「伝わっていない」状態にいる。\n\n4月に着任したメンバーが2ヶ月目に入るこの時期、「自分はここで必要とされているのか」を、誰も口に出さないまま静かに測っている。\n\n【A：面談でまとめて伝える】\n情報は届く。でも行動から3ヶ月経った言葉は、半分の重さしかない。\n「今さら言われても」という反応が出やすいのは、タイムラグが温度を奪うからだ。\n\n【B：その場ですぐ伝える】\n最も効果が高い。行動と評価がセットになることで「何が認められたか」が明確になる。\n部下の脳は「何をしたらいいか」をリアルタイムで学習する。\n\n【C：チームの場で名前を出す】\n効果的だが、本人の性格によっては逆効果になることも。\n「全員の前で褒められると居心地が悪い」という人は、思いのほか多い。\n\n【D：「全体的によくやった」】\nこれが最も届かない評価の典型。\n「全体的に」は、どの行動も見ていないのと同じだ。\n\n評価は「した」かどうかではなく「届いた」かどうかで決まる。\n経営者の評価意図を、目の前の一人が受け取れる言葉に変換する。\nそれが、組織と個人をつなぐ、ミドルの本当の仕事だ。\n\n📌 明日から使える一手\n部下を評価するとき、「何が・いつ・どう良かったか」の3点セットで伝えよ。\n「よかった」の一言より、3点の具体が人を動かす。",
       "quote": "💎 評価は「した」より「届いた」かどうかが全て"
     },
     {
       "date": "2026-05-20",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X診断",
       "time": "12:00",
       "purpose": "会議を変える一言",
       "character": "🐈‍⬛しらたま",
-      "content": "「また意見が出なかった会議」\n問題は参加者ではなく、会議の仕組みにある。\n\nあなたの会議で、意見が出やすいのはどんなとき？\n\nA　「何かありますか？」と聞いたとき\nB　特定の人に「あなたはどう思う？」と聞いたとき\nC　最初に「正解なし、思ったことを話してほしい」と言ったとき\nD　資料なしで口頭だけで話し合うとき\n\n→ 選んだ答えとチームの様子を、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May meeting room atmosphere with clear morning light. Panel 1: A fluffy white cat (Shirotsuma) sits at the head of a meeting table before several empty chairs; its paw raised in a broad open gesture toward the group; a long silence is implied. Panel 2: Shirotsuma leans forward and points a paw gently toward one specific empty chair; a warm focused moment; afternoon light with soft shadows. Panel 3: Shirotsuma stands before the group with both paws open wide, head tilted warmly; the chairs now show gentle warm silhouettes suggesting engaged participants; late morning light. Panel 4: Shirotsuma perches on a windowsill with no papers or materials; looking out at the bright early summer garden; relaxed and open. Refined palette of soft white, sage green, and warm beige. No text, no letters, no signage.",
-      "comment": "会議で意見が出ない原因は「発言する気がない参加者」ではなく「発言しにくい仕組み」にあります。\n\n【A：「何かありますか？」】\nこれは意見を引き出す質問ではなく「なければ終わる」を示すサイン。\n多くの場合、沈黙で終わる。\n\n【B：特定の人に聞く】\n名指しは発言の責任を限定する。\nその人が話した後「では次に」と続けると、自然と波及することがある。\n\n【C：「正解なし」を先に言う】\n最も効果的。\n「間違えたら恥ずかしい」という恐怖を先に解除することで、発言のハードルが下がる。\n\n【D：資料なしで口頭のみ】\n事前準備がなくなることで思考がリアルタイムになる。\nメモを取る義務もなくなり、会話が生まれやすくなる。\n\n会議の沈黙は「やる気のなさ」ではなく「安全じゃない」というサインだ。\n発言した後に何が起きるかを、参加者は無意識に計算している。\n\n📌 明日から使える一手\n次の会議の冒頭に「今日は正解なしで話しましょう。思ったことをそのまま言ってください」と言え。\nその一言が、会議の空気を変える。",
+      "content": "「また意見が出なかった会議」\n問題は参加者ではなく、会議の仕組みにある。\n\n水曜日、今週何度目かの会議が終わった後、あなたはどんな言葉で始めていた？\n\nあなたの会議で、意見が出やすいのはどんなとき？\n\nA　「何かありますか？」と聞いたとき\nB　特定の人に「あなたはどう思う？」と聞いたとき\nC　最初に「正解なし、思ったことを話してほしい」と言ったとき\nD　資料なしで口頭だけで話し合うとき\n\n→ 選んだ答えとチームの様子を、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Midweek meeting room atmosphere, clear Wednesday morning light.\n\nTop-left (A): A fluffy white cat (Shirotsuma) sits at the head of a meeting table before neatly arranged empty chairs; one paw raised in a broad open gesture toward the empty group; a weighted silence implied; pale morning light and fresh green visible outside the window.\n\nTop-right (B): Shirotsuma leans forward and points a focused gentle paw toward one specific chair; the other chairs softly blurred; warm attentive focused light.\n\nBottom-left (C): Shirotsuma stands at a small whiteboard with both paws open wide; the chairs now show warm gentle silhouettes of engaged participants; lighter more open atmosphere; early summer sunlight streams in.\n\nBottom-right (D): Shirotsuma perches casually on a windowsill with no documents or materials; gazing at a bright early summer garden; papers are absent; relaxed and open.\n\nUnified watercolor palette of soft white, sage green, and warm beige. No text, no letters, no signage.",
+      "comment1": "会議で意見が出ない原因は「発言する気がない参加者」ではなく「発言しにくい仕組み」にある。\n\n「何かありますか？」と聞いた瞬間、参加者の目が一斉に手元の資料やスマホへ落ちる。\nあの空気の正体は、やる気のなさではない。\n「発言して、何かを失うリスク」を無意識に計算しているだけだ。\n\n【A：「何かありますか？」】\nこれは意見を引き出す問いではなく「なければ終わる」を合図するサイン。\n多くの場合、沈黙で終わる。\n\n【B：特定の人に聞く】\n名指しは発言の責任を限定する。\nその人が話した後「では次に」と続けると、自然と波及することがある。\n\n【C：「正解なし」を先に言う】\n最も効果的。\n「間違えたら恥ずかしい」という恐怖を先に解除することで、発言のハードルが下がる。\n\n【D：資料なしで口頭のみ】\n「メモを取らなくていい」という状態が、思考の速度を上げ、会話が生まれやすくなる。\n\n会議の沈黙は「無関心」ではない。\n「発言して損をした経験」が静かに積み重なった結果だ。\n\n翻訳すべきは言葉ではなく、発言することへの「安全の仕組み」。\nそれを最初の一言で作れる人が、会議を動かすリーダーだ。\n\n📌 明日から使える一手\n次の会議の冒頭に「今日は正解なしで話しましょう。思ったことをそのまま言ってください」と言え。\nその一言が、会議の空気を変える。",
       "quote": "💎 沈黙は無関心じゃない、発言できない仕組みだ"
     },
     {
       "date": "2026-05-21",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X診断",
       "time": "12:00",
       "purpose": "優秀な人が辞めるサイン",
       "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「急に辞めた」は存在しない。\n必ずサインがある。気づかれていないだけ。\n\n優秀な部下が「辞めることを考え始めた」とき、\nあなたの職場に近いのはどれ？\n\nA　ランチや雑談に参加しなくなった\nB　提案や意見を出さなくなった\nC　定時ぴったりに帰るようになった\nD　急に「有給を使いたい」と言い出した\n\n→ 思い当たるものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May atmosphere with a slightly cooler quiet mood. Panel 1: Coco (a composed young woman in a refined sage blazer) glances toward the doorway; a fluffy white cat (Shirotsuma) sits alone at a small table with an untouched lunch; a gentle white bird (Hiyori) watches quietly from a windowsill; muted warm light. Panel 2: Coco holds an open notebook during a quiet meeting; Shirotsuma sits with paws folded saying nothing; Hiyori perches quietly at the edge of the table looking toward the window. Panel 3: Shirotsuma steps toward the exit with a small bag; a clock visible in the background shows exactly 5pm; Hiyori watches from the desk; Coco looks up with a slight expression of concern. Panel 4: Shirotsuma holds a small envelope; Hiyori looks at it curiously; Coco stands nearby with a thoughtful expression; late afternoon golden light. Refined palette of sage, warm ivory, and muted blue. No text, no letters, no signage.",
-      "comment": "4つとも「離職の前兆サイン」として、すべて実在します。\nただし、原因と対処は選んだものによって変わります。\n\n【A：雑談・ランチに参加しなくなった】\n関係性の撤退が始まっている。\n「この場所に属したい」という感覚が薄れ、エネルギーを社外に向け始めた状態。\n\n【B：提案・意見を出さなくなった】\n「どうせ変わらない」という諦めが定着したサイン。\nかつて積極的だった人が静かになるほど、職場への投資を止めている。\n\n【C：定時ぴったりに帰るようになった】\n残業をやめたのではなく「この職場に使う時間を最小化する」という選択。\n転職活動のための時間を確保している場合が多い。\n\n【D：有給を急に使い始めた】\n面接や書類手続きなど、転職活動が具体化したサイン。\nここまで来ると、引き留めは難しい。\n\n優秀な人が辞める理由は「他にいい会社が見つかったから」ではない。\n「ここにいる理由が見つからなくなったから」だ。\n\nサインを見つけてから動くのでは遅い。\n「今、この人にとってここに居続ける理由があるか」を、常に問い続けよ。\n\n📌 明日から使える一手\n最近静かになった部下に「最近どう？正直に聞かせてほしいんだけど」と声をかけよ。\nその3秒の勇気が、離職を防ぐことがある。",
+      "content": "「急に辞めた」は存在しない。\n必ずサインがある。気づかれていないだけ。\n\n木曜日の今日、チームに思い当たる人はいないか。\n\n優秀な部下が「辞めることを考え始めた」とき、\nあなたの職場に近いのはどれ？\n\nA　ランチや雑談に参加しなくなった\nB　提案や意見を出さなくなった\nC　定時ぴったりに帰るようになった\nD　急に「有給を使いたい」と言い出した\n\n→ 思い当たるものを、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Late May Thursday atmosphere with a quietly cool and reflective mood.\n\nTop-left (A): Coco (a composed woman in a refined sage-green linen blazer) glances toward a doorway; a fluffy white cat (Shirotsuma) sits alone at a small table with an untouched lunch; a gentle white bird (Hiyori) watches quietly from a windowsill; muted warm light with fresh early summer leaves outside.\n\nTop-right (B): Coco holds an open notebook during a quiet meeting; Shirotsuma sits with paws folded saying nothing; Hiyori perches quietly at the edge of the table looking toward the window; a still and withdrawn atmosphere.\n\nBottom-left (C): Shirotsuma steps toward the exit with a small bag; a clock in the background shows exactly 5pm; Hiyori watches from the desk; Coco looks up with a slight concerned expression; late afternoon golden light.\n\nBottom-right (D): Shirotsuma holds a small sealed envelope; Hiyori looks at it curiously; Coco stands nearby with a thoughtful expression; late afternoon golden light filtering through sheer curtains.\n\nUnified watercolor palette of sage, warm ivory, and muted blue. No text, no letters, no signage.",
+      "comment1": "4つとも「離職の前兆サイン」として、すべて実在する。\nただし、原因と対処は選んだものによって変わる。\n\n【A：雑談・ランチに参加しなくなった】\n関係性の撤退が始まっている。\n「この場所に属したい」という感覚が薄れ、エネルギーを社外に向け始めた状態。\n今のタイミングで声をかけるかどうかが、最後の分岐点になることがある。\n\n【B：提案・意見を出さなくなった】\n「どうせ変わらない」という確信が定着したサイン。\nかつて積極的だった人が静かになるほど、この職場への投資をやめている。\n管理職への期待を、静かに手放した状態だ。\n\n【C：定時ぴったりに帰るようになった】\n残業をやめたのではなく「この職場に使う時間を最小化する」という選択。\n転職活動のための時間を確保している場合が多い。\n\n【D：有給を急に使い始めた】\n面接や書類手続きなど、転職活動が具体化したサイン。\nここまで来ると、引き留めは難しい。\n\n優秀な人が辞める理由は「他にいい会社が見つかったから」ではない。\n「ここにいる理由が見つからなくなったから」だ。\n\n現場のサインを経営に届ける。それがミドルに求められる「翻訳」の仕事。\nサインを見つけてから動くのでは、もう遅い。\n\n📌 明日から使える一手\n最近静かになった部下に「最近どう？正直に聞かせてほしいんだけど」と声をかけよ。\nその3秒の勇気が、離職を防ぐことがある。",
       "quote": "💎 「急に辞めた」の前には、必ず静かなサインがある"
     },
     {
       "date": "2026-05-22",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "叱り方の温度",
+      "purpose": "叱り方の温度の仕組み",
       "character": "🐢しずく + 🕊ひより",
-      "content": "「叱る」と「詰める」は似ているが、全く別物だ。\nその違いは「何を見ているか」にある。\n\nあなたが部下のミスを指摘するとき、何から話し始める？\n\nA　「なぜこうなったか」と原因を問い詰める\nB　「次にどうするか」から一緒に考える\nC　「これがどう影響するか」を説明する\nD　まず自分の感情を落ち着かせて、翌日に話す\n\n→ 選んだ答えをリプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May Friday atmosphere with clear but slightly intense light. Panel 1: A small wise turtle (Shizuku) faces a gentle white bird (Hiyori) across a small table; Shizuku leans forward with a firm but questioning expression; Hiyori looks down slightly; morning light. Panel 2: Shizuku and Hiyori sit side by side at a small desk looking at a shared notebook; both lean in constructively; warm late morning light. Panel 3: Shizuku gestures with one flipper toward a simple diagram; Hiyori listens with attentive eyes; a calm explanatory atmosphere. Panel 4: Shizuku and Hiyori are separated by a small plant on the table; each faces slightly away; the atmosphere is quiet and reflective; late afternoon light through the window. Refined palette of soft blue-green, warm ivory, and pale gold. No text, no letters, no signage.",
-      "comment": "「叱ること」の目的は「行動を変えること」であり、「反省させること」ではない。\n\n【A：なぜこうなったかを問い詰める】\n原因追及は必要だが、出発点にするのは危険。\n「詰められる」と感じた瞬間、部下の思考は防衛モードに入り、本質的な振り返りができなくなる。\n\n【B：次にどうするかから考える】\n最も建設的なアプローチ。\n「これからどうするか」から入ることで、部下の思考が前に向く。\n原因は後からでも話せる。\n\n【C：影響を説明する】\n影響を伝えることで「自分の行動がつながっている」という自覚が生まれる。\n責める前に「なぜ重要か」を伝えることが、次の行動を変える。\n\n【D：翌日に話す】\n感情が高ぶった状態での指摘は、言葉が相手の心に傷として残りやすい。\n24時間後に話すと、同じ内容でも受け取り方が変わる。\n\n叱ることの本質は「この人をもっとよくしたい」という意図だ。\nその温度が伝われば、叱られることは成長の燃料になる。\n温度が消えると、叱りは「詰め」になる。\n\n📌 明日から使える一手\nミスを指摘するとき、最初の一言を「なぜ？」から「次どうする？」に変えよ。\n出発点が変わるだけで、会話の流れが変わる。",
+      "content": "「叱る」と「詰める」は似ているが、全く別物だ。\nその違いは「何を見ているか」にある。\n\n金曜日の今日、今週の自分の指摘を振り返ってみる。\n\nあなたが部下のミスを指摘するとき、何から話し始める？\n\nA　「なぜこうなったか」と原因を問い詰める\nB　「次にどうするか」から一緒に考える\nC　「これがどう影響するか」を説明する\nD　まず自分の感情を落ち着かせて、翌日に話す\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Friday late afternoon atmosphere with a reflective and clear light.\n\nTop-left (A): A small wise turtle (Shizuku) faces a gentle white bird (Hiyori) across a small table; Shizuku leans forward with a firm questioning expression; Hiyori looks down slightly; the atmosphere feels direct and tense; clear morning light.\n\nTop-right (B): Shizuku and Hiyori sit side by side at a small desk looking at a shared open notebook; both lean in constructively; a collaborative warm energy; late morning light.\n\nBottom-left (C): Shizuku gestures with one flipper toward a simple small diagram on a nearby board; Hiyori listens with attentive forward-facing eyes; calm explanatory atmosphere; clear light.\n\nBottom-right (D): Shizuku and Hiyori are separated by a small potted plant on the table; each faces slightly away; the atmosphere is quiet and reflective; late afternoon light through the window.\n\nUnified watercolor palette of soft blue-green, warm ivory, and pale gold. No text, no letters, no signage.",
+      "comment1": "「叱ること」の目的は「行動を変えること」であり、「反省させること」ではない。\n\n金曜日の終わり、感情が残ったまま指摘した言葉が、週明けの月曜日に部下の心に傷として再燃することがある。\n\n【A：なぜこうなったかを問い詰める】\n原因追及は必要だが、出発点にするのは危険。\n「なぜ？」と言った瞬間、部下の思考は防衛モードに入り、本質的な振り返りができなくなる。\n\n【B：次にどうするかから考える】\n最も建設的なアプローチ。\n「これからどうするか」から入ることで、部下の思考が前に向く。\n原因は後からでも話せる。\n\n【C：影響を説明する】\n影響を伝えることで「自分の行動がつながっている」という自覚が生まれる。\n責める前に「なぜ重要か」を伝えることが、次の行動を変える。\n\n【D：翌日に話す】\n感情が高ぶった状態での指摘は、言葉が相手の心に傷として残りやすい。\n24時間後に話すと、同じ内容でも受け取り方が変わる。\n\n叱ることの本質は「この人をもっとよくしたい」という意図だ。\nその温度が伝われば、叱られることは成長の燃料になる。\n温度が消えると、叱りは「詰め」になる。\n\n経営の期待を現場の言葉に変換するのが翻訳の仕事なら、\n指摘の意図を相手が受け取れる温度に変換するのも、同じ技術だ。\n\n📌 明日から使える一手\nミスを指摘するとき、最初の一言を「なぜ？」から「次どうする？」に変えよ。\n出発点が変わるだけで、会話の流れが変わる。",
       "quote": "💎 叱りの温度は、相手を見ているかどうかが決める"
     },
     {
       "date": "2026-05-23",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "1on1の仕組み",
+      "purpose": "1on1の仕組みづくり",
       "character": "🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「1on1、何を話せばいいかわからない」\nその悩み、実は話す「テーマの仕組み」の問題。\n\nあなたが1on1で最もよく話すのは、どれ？\n\nA　業務の進捗報告や問題共有\nB　部下の悩みや人間関係の相談\nC　キャリアや将来についての話\nD　特に決まっていない（その場の流れで）\n\n→ 今の1on1に近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May Saturday morning light with relaxed atmosphere. Panel 1: A small wise turtle (Shizuku) faces a fluffy white cat (Shirotsuma) across a small round table; documents and a laptop are open between them; a formal but slightly tense atmosphere; morning light. Panel 2: Shizuku and Shirotsuma sit close together; a gentle white bird (Hiyori) leans in from a nearby perch; the atmosphere is warmer and more personal; a small box of tissues sits nearby. Panel 3: All three sit in a comfortable triangle; Shizuku speaks with a thoughtful expression; Shirotsuma and Hiyori listen with genuine interest; a world map and a calendar are pinned softly in the background; warm light. Panel 4: Shizuku, Shirotsuma, and Hiyori sit somewhat scattered; no clear focus; a slightly meandering comfortable scene with afternoon sunlight. Refined palette of warm amber, sage green, and cream. No text, no letters, no signage.",
-      "comment": "1on1で何を話すかより、「何のための時間か」を仕組み化することが先です。\n\n【A：業務進捗・問題共有】\n情報収集の場としては機能しているが、「1on1ならではの価値」が薄い。\n進捗は別の場でも取れる。1on1でないと取れないものは何か、を問い直してほしい。\n\n【B：悩みや人間関係の相談】\n部下が話してくれていれば、信頼関係はある。\nただし「問題が起きたときだけ話す場所」になると、部下は「相談＝問題あり」と感じ始める。\n\n【C：キャリア・将来の話】\n最も離職予防に効く話題。\n「この先どうなりたいか」を聞くことで、部下の「ここにいる理由」が見え、支援の方向が定まる。\n\n【D：その場の流れで】\n準備のない1on1は、進捗報告かただの雑談になりやすい。\n30分を「なんとなく」使うと、双方に「意味のない時間」という印象が残る。\n\n1on1で最も有効なのは「今の仕事の外の話」。\n現状ではなく、その人の視野を広げる問いを持つことで、1on1は「待ち遠しい時間」になる。\n\n📌 明日から使える一手\n次の1on1で「最近、仕事以外で気になっていることって何かある？」と聞いてみよ。\nその一問が、思わぬ本音を引き出す。",
+      "content": "「1on1、何を話せばいいかわからない」\nその悩み、実は話すテーマの仕組みの問題。\n\n週末の今日、来週の1on1を見直してみる価値がある。\n\nあなたが1on1で最もよく話すのは、どれ？\n\nA　業務の進捗報告や問題共有\nB　部下の悩みや人間関係の相談\nC　キャリアや将来についての話\nD　特に決まっていない（その場の流れで）\n\n→ 今の1on1に近いものを、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Relaxed Saturday morning light, soft and warm.\n\nTop-left (A): A small wise turtle (Shizuku) faces a fluffy white cat (Shirotsuma) across a small round table; documents and a laptop open between them; a formal but slightly tense atmosphere; clear morning light.\n\nTop-right (B): Shizuku and Shirotsuma sit close together; a gentle white bird (Hiyori) leans in from a nearby perch; the atmosphere is warmer and more personal; a small plant and a soft tissue box sit nearby.\n\nBottom-left (C): All three sit in a comfortable loose triangle; Shizuku speaks with a thoughtful expression; Shirotsuma and Hiyori listen with genuine interest; a soft world map and calendar pinned in the background; warm golden light.\n\nBottom-right (D): Shizuku, Shirotsuma, and Hiyori sit somewhat scattered; no clear focus point; a meandering comfortable yet purposeless scene; afternoon sunlight.\n\nUnified watercolor palette of warm amber, sage green, and cream. No text, no letters, no signage.",
+      "comment1": "1on1で何を話すかより、「何のための時間か」を仕組み化することが先だ。\n\n【A：業務進捗・問題共有】\n情報収集の場としては機能しているが、「1on1ならではの価値」が薄い。\n進捗は別の場でも取れる。1on1でないと取れないものは何か、を問い直してほしい。\n\n【B：悩みや人間関係の相談】\n部下が話してくれていれば、信頼関係はある。\nただし「問題が起きたときだけ話す場所」になると、部下は「相談＝問題あり」と感じ始める。\n\n【C：キャリア・将来の話】\n最も離職予防に効く話題。\n「この先どうなりたいか」を聞くことで、部下の「ここにいる理由」が見え、支援の方向が定まる。\n\n【D：その場の流れで】\n準備のない1on1は、進捗報告かただの雑談になりやすい。\n30分を「なんとなく」使うと、双方に「意味のない時間」という印象が残る。\n\n1on1で最も有効なのは「今の仕事の外の話」。\n現状ではなく、その人の視野を広げる問いを持つことで、1on1は「待ち遠しい時間」になる。\n\n経営と現場をつなぐ翻訳者として、1on1は「現場のリアルを引き出す最小単位の場」だ。\nそこで何を聞くかが、組織の体温を決める。\n\n📌 明日から使える一手\n次の1on1で「最近、仕事以外で気になっていることって何かある？」と聞いてみよ。\nその一問が、思わぬ本音を引き出す。",
       "quote": "💎 1on1は「報告の場」ではなく「関係を育てる場」だ"
     },
     {
       "date": "2026-05-24",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X診断",
       "time": "12:00",
       "purpose": "動く言葉の仕組み",
       "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「伝えたのに動かない」\nその指示は「動く言葉」だったか、問い直してみる。\n\nあなたが指示を出すとき、どんな言い方が多い？\n\nA　「なるべく早めに対応しておいて」\nB　「明日の午前中までにこれをやっておいて」\nC　「このプロジェクトの成功のために、◯◯をやってほしい」\nD　「あなたなら任せられると思って頼んでいる」\n\n→ 自分の指示に近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May Sunday afternoon light with a thoughtful mood. Panel 1: Coco (a refined young woman in a soft linen suit with early summer details) gestures vaguely with one hand; a small turtle (Shizuku), a white cat (Shirotsuma), and a white bird (Hiyori) look at each other with slightly uncertain expressions. Panel 2: Coco points clearly to a small calendar and clock visible on the wall while Shizuku, Shirotsuma, and Hiyori all look in the same direction with attentive expressions; clear purposeful atmosphere. Panel 3: Coco gestures broadly toward a simple goal chart while all three animals look engaged and forward-focused; afternoon light. Panel 4: Coco places one hand gently on the desk near where Shizuku, Shirotsuma, and Hiyori sit; a warm close trusting atmosphere; late afternoon golden light. Refined palette of warm ivory, pale amber, and sage green. No text, no letters, no signage.",
-      "comment": "言葉の動力は、情報量ではなく「具体さと温度」で決まります。\n\n【A：なるべく早めに】\n「なるべく」「早めに」は受け手によって解釈が異なる。\n「3日後でいい」と思う人と「今日中」と思う人が同じ言葉を受け取る。\n曖昧な指示は、行動を曖昧にする。\n\n【B：明日の午前中までに◯◯を】\n最も実行率が高い指示の形。\n「いつ・何を・どこまで」の3点が明確になると、部下は「迷わず動ける」状態になる。\n\n【C：成功のために◯◯をやってほしい】\n「なぜやるか」が加わることで、部下が主体性を持ちやすくなる。\nただし「成功のため」が漠然としていると、やはり動きが曖昧になる。\n\n【D：あなたなら任せられる】\n信頼の言葉は動力になる。\nただし、これだけでは「何を・どう」が不明なため、BまたはCと組み合わせると効果が高い。\n\n最も動く指示は「B＋D」の組み合わせ。\n「明日の午前中までに◯◯をやってほしい。あなたならできると思って頼んでいる」\n\n具体さと温度の両方を持つ言葉が、人を動かす。\n\n📌 明日から使える一手\n次に指示を出すとき、「いつ・何を・なぜあなたに」の3点を意識せよ。\nその3点が揃ったとき、言葉は「命令」から「依頼」に変わる。",
-      "quote": "💎 動く言葉は「具体さ」と「温度」でできている"
+      "content": "「伝えたのに動かない」\nその指示は「動く言葉」だったか、問い直してみる。\n\n日曜の今日、来週の指示の言葉を整えておく価値がある。\n\nあなたが指示を出すとき、どんな言い方が多い？\n\nA　「なるべく早めに対応しておいて」\nB　「明日の午前中までにこれをやっておいて」\nC　「このプロジェクトの成功のために、◯◯をやってほしい」\nD　「あなたなら任せられると思って頼んでいる」\n\n→ 自分の指示に近いものを、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Thoughtful Sunday afternoon preparation atmosphere, warm golden light.\n\nTop-left (A): Coco (a refined woman in a soft pale linen jacket with early summer fabric details) gestures vaguely with one hand; a small turtle (Shizuku), a white cat (Shirotsuma), and a white bird (Hiyori) look at each other with slightly uncertain expressions; a loose and undefined atmosphere.\n\nTop-right (B): Coco points clearly toward a small calendar and clock on a nearby wall; all three animals look in the same direction with attentive focused expressions; clear purposeful Sunday afternoon light.\n\nBottom-left (C): Coco gestures broadly toward a simple goal visual while all three animals look engaged and forward-focused; warm afternoon light and a sense of shared direction.\n\nBottom-right (D): Coco places one hand gently on the desk near where Shizuku, Shirotsuma, and Hiyori sit together; a warm close trusting atmosphere; late afternoon golden light through sheer curtains.\n\nUnified watercolor palette of warm ivory, pale amber, and sage green. No text, no letters, no signage.",
+      "comment1": "言葉の「動力」は、情報量ではなく「解像度と温度」で決まる。\n\n【A：なるべく早めに】\n「なるべく」「早めに」は受け手によって解釈が異なる。\n「3日後でいい」と思う人と「今日中」と思う人が同じ言葉を受け取る。\n曖昧な言葉は、曖昧な行動を生む。\n\n【B：明日の午前中までに◯◯を】\n最も実行率が高い指示の形。\n「いつ・何を・どこまで」の3点が明確になると、部下は「迷わず動ける」状態になる。\n\n【C：成功のために◯◯をやってほしい】\n「なぜやるか」が加わることで、部下が主体性を持ちやすくなる。\nただし「成功のため」が漠然としていると、やはり動きが曖昧になる。\n\n【D：あなたなら任せられる】\n信頼の言葉は動力になる。\nただし、これだけでは「何を・どう」が不明なため、BまたはCと組み合わせると効果が高い。\n\n最も動く指示は「B＋D」の組み合わせ。\n「明日の午前中までに◯◯をやってほしい。あなたならできると思って頼んでいる」\n\n経営の意図を現場に届けるのが翻訳の仕事なら、\nその翻訳に「解像度」と「温度」の両方が必要だ。\n\n📌 明日から使える一手\n次に指示を出すとき、「いつ・何を・なぜあなたに」の3点を意識せよ。\nその3点が揃ったとき、言葉は「命令」から「依頼」に変わる。",
+      "quote": "💎 動く言葉は「解像度」と「温度」でできている"
     },
     {
       "date": "2026-05-25",
-      "platform": "X診断 5/19〜5/25",
+      "platform": "X診断",
       "time": "12:00",
-      "purpose": "認めることの仕組み",
+      "purpose": "認めることの技術",
       "character": "Coco + 🕊ひより",
-      "content": "「部下を褒めるのが苦手」\nその背後にあるのは、何だろう。\n\nあなたが部下を「認める」とき、どれに一番近い？\n\nA　結果が出たときだけ、認める\nB　プロセスや姿勢を見て、認める\nC　認めたいけど、言葉が出てこない\nD　照れくさくて、言えないことがある\n\n→ 正直に選んで、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Late May Monday morning with warm hopeful light. Panel 1: Coco (a warm refined young woman in an elegant pale yellow linen dress) stands at a window with a gentle white bird (Hiyori) perched on the sill beside her; both look toward something in the distance; a trophy or small award sits on the desk behind them. Panel 2: Coco crouches gently to Hiyori's level on the desk; she gestures toward a series of small actions depicted nearby; her expression is warm and attentive; morning light. Panel 3: Coco sits with one hand raised slightly as if searching for words; Hiyori looks up at her with patient bright eyes; a thoughtful quiet atmosphere; warm indoor light. Panel 4: Coco looks slightly away with a warm shy smile; Hiyori watches her with a gentle curious tilt; the atmosphere is tender and slightly playful; early summer garden visible through the window. Refined palette of soft yellow, ivory, and warm sage. No text, no letters, no signage.",
-      "comment": "「認める」ことは仕組みであり、習慣だ。\nどれを選んでも、その先に磨く余地がある。\n\n【A：結果が出たときだけ認める】\n公平に見える。でも、結果が出るまでの過程で人は一番頑張り、一番不安を感じている。\nプロセスへの承認がないと、部下は「結果を出すまで見てもらえない」と感じ、挑戦を避けるようになる。\n\n【B：プロセスや姿勢を見て認める】\n最も効果的な承認。\n「あなたの行動を見ている」というメッセージが、部下の自己効力感を育てる。\n結果が出なくても「あなたの努力は見えている」が人を動かす。\n\n【C：認めたいけど言葉が出ない】\n言葉より先に「観察」を磨こ。\n「あのとき○○をしていたね」と具体的に言えることが、言葉の出発点になる。\n\n【D：照れくさくて言えない】\nこれは最も多いパターン。\n「照れくさい」は「自分が大切に思っている」の裏返しでもある。\n習慣にするために、最初は「ちゃんとやってくれてありがとう」から始めよ。\n\n「認める」の反対は「批判する」ではない。「無関心」だ。\n人は批判より無関心の方が傷つく。\n\n📌 明日から使える一手\n今日1人の部下に「最近のあの仕事、よかったよ」と具体的に言え。\nその一言が、その人の職場への気持ちを変えることがある。",
+      "content": "「部下を褒めるのが苦手」\nその背後にあるのは、何だろう。\n\n月曜日の朝、先週のチームを思い返してみる。\n\nあなたが部下を「認める」とき、どれに一番近い？\n\nA　結果が出たときだけ、認める\nB　プロセスや姿勢を見て、認める\nC　認めたいけど、言葉が出てこない\nD　照れくさくて、言えないことがある\n\n→ 正直に選んで、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). Delicate transparent washes with 1px white dividing lines. Monday morning hopeful early summer light, warm and energizing.\n\nTop-left (A): Coco (a warm refined woman in an elegant pale champagne linen dress with early summer embroidery detail) stands at a window with a gentle white bird (Hiyori) perched on the sill beside her; a small award plaque sits on the desk behind them; bright hopeful morning light.\n\nTop-right (B): Coco crouches gently to Hiyori's level on the desk; she gestures warmly toward a series of small everyday actions depicted softly nearby; her expression is attentive and specific; warm morning light.\n\nBottom-left (C): Coco sits with one hand raised slightly as if searching for words; Hiyori looks up at her with patient bright eyes; a thoughtful quiet pause; soft warm indoor light.\n\nBottom-right (D): Coco looks slightly away with a warm shy smile; Hiyori watches her with a gentle curious tilt; the atmosphere is tender and slightly playful; early summer garden visible softly through the window.\n\nUnified watercolor palette of soft champagne, ivory, and warm sage. No text, no letters, no signage.",
+      "comment1": "「認める」ことは技術であり、習慣だ。\nどれを選んでも、その先に磨く余地がある。\n\n月曜日の朝、今週誰かを認める瞬間を意識的に作れるか。\nそれが、組織の体温を左右する。\n\n【A：結果が出たときだけ認める】\n公平に見える。でも、結果が出るまでの過程で人は一番頑張り、一番不安を感じている。\n「結果を出すまで見てもらえない」と感じた人は、挑戦を避けるようになる。\n\n【B：プロセスや姿勢を見て認める】\n最も効果的な承認。\n「あなたの行動を見ている」というメッセージが、部下の自己効力感を育てる。\n結果が出なくても「あなたの努力は見えている」が人を動かす。\n\n【C：認めたいけど言葉が出ない】\n言葉より先に「観察」を磨こ。\n「あのとき○○をしていたね」と具体的に言えることが、言葉の出発点になる。\n\n【D：照れくさくて言えない】\nこれは最も多いパターン。\n「照れくさい」は「自分が大切に思っている」の裏返しでもある。\n習慣にするために、最初は「ちゃんとやってくれてありがとう」から始めよ。\n\n「認める」の反対は「批判する」ではない。「無関心」だ。\n人は批判より無関心の方が傷つく。\n\n現場の努力を経営の言語に変えるのが翻訳の仕事なら、\n個人の行動を「見ている」と伝えることが、その最初の一歩だ。\n\n📌 明日から使える一手\n今日1人の部下に「最近のあの仕事、よかったよ」と具体的に言え。\nその一言が、その人の職場への気持ちを変えることがある。",
       "quote": "💎 「認める」の反対は批判じゃない、無関心だ"
     },
     {
