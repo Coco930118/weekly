@@ -155,10 +155,11 @@ function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x'
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
+    : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
-  const quoteEscaped = escapeHtml(post.quote);
+  const quoteEscaped = post.quote ? escapeHtml(post.quote) : '';
 
   let extraSections = '';
   if (post.comment) {
@@ -211,10 +212,10 @@ function renderCard(post) {
         </div>
       </div>
       ${extraSections}
-      <div class="card-quote">
+      ${quoteEscaped ? `<div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
-      </div>
+        <button class="copy-btn" data-copy="${quoteEscaped}">コピー</button>
+      </div>` : ''}
     </article>`;
 }
 
@@ -236,6 +237,7 @@ function setupPlatformFilter() {
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
+    else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
     else btn.classList.add('active');
 
     renderPosts();
