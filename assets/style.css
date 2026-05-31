@@ -18,6 +18,8 @@
   --accent-x: #1a8cd8;
   --accent-threads: #9b4dca;
   --accent-xdiag: #d4873a;
+  --accent-stamp: #b07090;
+  --accent-promo: #4a9c7e;
   --accent-save: #2d6a4f;
   --accent-empathy: #8b5e3c;
   --accent-reply: #4a5568;
@@ -134,6 +136,18 @@ body {
   color: #fff;
 }
 
+.filter-btn.active-stamp {
+  background: var(--accent-stamp);
+  border-color: var(--accent-stamp);
+  color: #fff;
+}
+
+.filter-btn.active-promo {
+  background: var(--accent-promo);
+  border-color: var(--accent-promo);
+  color: #fff;
+}
+
 /* Stats bar */
 .stats-bar {
   padding: 10px 20px;
@@ -222,6 +236,18 @@ body {
   background: rgba(212, 135, 58, 0.15);
   color: #e8a86a;
   border: 1px solid rgba(212, 135, 58, 0.3);
+}
+
+.platform-stamp {
+  background: rgba(176, 112, 144, 0.15);
+  color: #d4a0be;
+  border: 1px solid rgba(176, 112, 144, 0.3);
+}
+
+.platform-promo {
+  background: rgba(74, 156, 126, 0.15);
+  color: #7eceb0;
+  border: 1px solid rgba(74, 156, 126, 0.3);
 }
 
 .card-time {

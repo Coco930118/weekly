@@ -155,6 +155,8 @@ function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x'
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
+    : post.platform.startsWith('Lineスタンプ') ? 'platform-stamp'
+    : post.platform.startsWith('スタンプ宣伝') ? 'platform-promo'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
@@ -236,6 +238,8 @@ function setupPlatformFilter() {
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
+    else if (platform.startsWith('Lineスタンプ')) btn.classList.add('active-stamp');
+    else if (platform.startsWith('スタンプ宣伝')) btn.classList.add('active-promo');
     else btn.classList.add('active');
 
     renderPosts();
