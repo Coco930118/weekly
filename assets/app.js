@@ -65,9 +65,14 @@ function renderDynamicPlatformFilter() {
 
   row.querySelectorAll('[data-dynamic]').forEach(b => b.remove());
 
-  const knownPlatforms = new Set(['all', 'X', 'Threads']);
+  const knownPlatforms = new Set(['all', 'X', 'Threads', 'X診断', 'Threads診断']);
+  const groupPrefixes = ['X診断', 'Threads診断'];
   const extraPlatforms = [...new Set(allPosts.map(p => p.platform))]
-    .filter(p => !knownPlatforms.has(p))
+    .filter(p => {
+      if (knownPlatforms.has(p)) return false;
+      if (groupPrefixes.some(prefix => p.startsWith(prefix))) return false;
+      return true;
+    })
     .sort();
 
   extraPlatforms.forEach(platform => {
@@ -112,7 +117,11 @@ function renderWeekFilter(weeks) {
 
 function getFilteredPosts() {
   return allPosts.filter(p => {
-    if (activeFilters.platform !== 'all' && p.platform !== activeFilters.platform) return false;
+    if (activeFilters.platform !== 'all') {
+      const pf = activeFilters.platform;
+      const match = p.platform === pf || p.platform.startsWith(pf + ' ') || p.platform.startsWith(pf + '　');
+      if (!match) return false;
+    }
     if (activeFilters.week !== 'all' && p.weekId !== activeFilters.week) return false;
     return true;
   });
@@ -155,6 +164,7 @@ function renderCard(post) {
   const platformClass = post.platform === 'X' ? 'platform-x'
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
+    : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
@@ -227,7 +237,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag', 'active-threadsdiag');
     });
 
     const platform = btn.dataset.platform;
@@ -235,7 +245,8 @@ function setupPlatformFilter() {
 
     if (platform === 'X') btn.classList.add('active-x');
     else if (platform === 'Threads') btn.classList.add('active-threads');
-    else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
+    else if (platform === 'X診断' || platform.startsWith('X診断')) btn.classList.add('active-xdiag');
+    else if (platform === 'Threads診断' || platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
     else btn.classList.add('active');
 
     renderPosts();
