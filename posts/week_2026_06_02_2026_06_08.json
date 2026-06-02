@@ -3,430 +3,80 @@
   "posts": [
     {
       "date": "2026-06-02",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "正論が現場を止める構造",
-      "character": "Coco",
-      "content": "正論が、現場を固める。\n\n反論できない言葉は、相手の逃げ場を奪う。\n追い詰められた人は、動くんじゃなく——固まる。\n\n正しいだけでは、人は動かない。\n20年の現場で、それが答えだった。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Tuesday pre-dawn, cool blue-grey first light. A single chess piece standing alone on a board, perfectly upright but surrounded by empty squares; the correctness of its position is evident, yet nothing moves around it; quiet, still composition. No text, no letters, no signage.",
-      "quote": "💎 正しさは、人を黙らせる。動かすのは、その手前にある何か。"
-    },
-    {
-      "date": "2026-06-02",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "追いかけるほど遠ざかる",
-      "character": "Coco",
-      "content": "5万人の本音を聴いて分かった。\n追いかけるほど、人は遠ざかる。\n\n好きな人に、つい連絡を重ねてしまう夜ってあるよね。\n返事がないと、もっと送りたくなる。\n\nでも、追いかける手は、たいてい相手の背中を押してしまう。\n\n愛が足りないんじゃない。\n距離が、近すぎるだけ。\n\nちょうどいい距離って、どこにあると思いますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Tuesday gentle morning light. A person reaching forward toward a figure who is just slightly turning away; the gesture is tender but the gap quietly widens; soft, unforced morning. No text, no letters, no signage.",
-      "quote": "💎 追いかける手が、相手の背中を押してしまう。"
-    },
-    {
-      "date": "2026-06-02",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "相手を変えようとした瞬間に壊れる",
-      "character": "Coco",
-      "content": "愛が壊れ始めるのは、相手を「変えよう」とした瞬間なんだ。\n\n「もっとこうしてほしい」。\nその気持ちは、ちゃんと愛から来ている。\n\nでも、変えようとした時点で、\n見ているのは目の前の相手じゃなく——理想の相手のほう。\n\n変えたくなるのは、距離が近すぎて、\n相手の輪郭が見えなくなっているからかもしれない。\n\nそのままの相手と、どう一緒にいるか。\nあなたは今、そのままの相手を見られていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Tuesday mid-morning, clear settled light. Two cups on a table, one slightly out of reach; a person looking at the other's empty chair with a soft, thoughtful expression; quiet domestic calm. No text, no letters, no signage.",
-      "quote": "💎 変えようとした瞬間、見ているのは相手ではなく理想。"
-    },
-    {
-      "date": "2026-06-02",
       "platform": "X診断 6/2〜6/8",
       "time": "12:00",
-      "purpose": "あなたの集客戦略の重心はどこか",
+      "purpose": "目標の自分ごと化",
       "character": "Coco + 🐢しずく",
-      "content": "「お客様が来ない」という悩みの多くは、\n集客の問題ではなく「何を軸に売っているか」の問題だ。\n\nあなたの集客アプローチに最も近いのは？\n\nA　数・規模・価格などのスペックで訴求する\nB　「あなたにとってのメリット」を前面に出す\nC　商品やサービスの背景・哲学・ストーリーを語る\nD　特定の顧客との関係性を深めることに集中する\n\n→ 今のアプローチに近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Tuesday noon, clear summer light. Panel 1: Coco holds up a large bold price tag while Shizuku looks at it with mild uncertainty; a crowd implied softly behind. Panel 2: Coco speaks warmly to Shizuku with a gesture toward something beneficial; Shizuku nods, slightly more engaged; midday light. Panel 3: Coco holds a small notebook open to a story and gestures toward it with quiet conviction; Shizuku leans in with genuine interest; warm light. Panel 4: Coco and Shizuku sit across from a single implied guest; the atmosphere is intimate and focused; afternoon light. Refined palette of warm ivory, pale amber, sage. No text, no letters, no signage.",
-      "comment": "4つは「集客のアプローチの重心」を表しています。どれが正解かではなく、「どの客層に届いているか」で効果が変わります。\n\n【A：スペック・価格で訴求する】\n最も広く届く。しかし価格競争に引き込まれやすく、同じスペックの競合が現れた瞬間に差別化が崩れる。\n量を取る戦略だが、利益率の圧迫と顧客の定着率の低さがリスクになる。\n\n【B：ベネフィット訴求】\n「あなたにとって何がいいか」を届けるアプローチ。Aより刺さりが深いが、「共感できる相手」に限定される。\n顧客の悩みをどれだけ言語化できるかが精度を決める。\n\n【C：背景・哲学・ストーリーを語る】\n最も届く客層が絞られるが、最もロイヤリティが高い。\n「この人から買いたい」という関係性の上に購買が生まれるため、価格競争と無縁の顧客が集まる。\n売り込まないことが最大の差別化になる。ただし結果が出るまでの時間軸が長く、忍耐が必要だ。\n\n【D：特定顧客との関係性深耕】\nリピートと紹介が最大化される仕組み。新規は少なくとも、長期的な顧客価値が最も高くなる。\n\n集客の「量」と「質」は、戦略の重心によって決まる。\n「どんな客に来てほしいか」を先に決めることが、アプローチを定める。\n\n📌 明日から使える一手\n次の発信で「数字・スペック・価格」以外の言葉だけで伝えてみよ。\n「これがいくら」ではなく「なぜこれなのか」だけを語ると、刺さる客層が変わる。",
-      "quote": "💎 売り込まないことで、本当に来てほしい人が来る"
-    },
-    {
-      "date": "2026-06-02",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "期待は信頼ではなく自分の不安",
-      "character": "Coco",
-      "content": "期待は、相手を信じることじゃない。\n自分の不安を、相手に預けることだ。\n\n「これくらいしてくれるはず」。\n叶わないと、裏切られた気がする。\n\nでも、約束していないことに勝手に期待して、\n勝手に傷ついていたのは——たぶん、自分のほうだったりするよね。\n\n期待を少し手放すと、相手との距離が、ふっと楽になる。\n\n信じることと、期待することの違い。\nあなたは今、信じているのか、期待しているのか——どっちに近いですか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Tuesday late afternoon, warm golden light softening. A person setting down a heavy bag by a window, shoulders easing; the room is calm; a sense of quietly releasing something held too tightly. No text, no letters, no signage.",
-      "quote": "💎 期待は、自分の不安を相手に預けること。"
-    },
-    {
-      "date": "2026-06-02",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "本音が上がってこない構造",
-      "character": "Coco",
-      "content": "「報告が上がってこない」は、部下の問題じゃない。\n\n情報は温度の低い方向へは流れない。\n「言っても無駄」を学習した現場は、本音をしまう。\n\n上司が見ているのは、現場じゃなく——その影だ。\n\n本音が集まるか、影しか集まらないか。\nその差は、役職には関係ない。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Tuesday late night, a single desk lamp. A stack of neat reports on a desk, but their shadows on the wall behind are faint and hollow; the contrast between the tidy surface and the empty shadow; quiet office stillness. No text, no letters, no signage.",
-      "quote": "💎 本音は、温度の高いほうへしか流れない。"
-    },
-    {
-      "date": "2026-06-03",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "感情で動く人と事実で動く人",
-      "character": "Coco",
-      "content": "感情で詰める人ほど、崩しやすい。\n\n感情には、反論の余地がある。\n事実には、ない。\n\nこちらは喚かない。\n静かに記録と日付を揃えるだけ。\n\n気づけば、外堀は相手自身が埋めている。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Wednesday pre-dawn, cool first light. A hand calmly arranging small document cards into an irrefutable sequence on a table; unhurried, deliberate; one card slightly catching the early light. No text, no letters, no signage.",
-      "quote": "💎 大義名分が100%のとき、声を荒げる必要がない。"
-    },
-    {
-      "date": "2026-06-03",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "「察してほしい」は距離を縮めない",
-      "character": "Coco",
-      "content": "「察してほしい」は、優しさのようで、距離を遠ざける。\n\n言わなくても分かってほしい。\nその気持ち、すごくよく分かる。\n\nでも、言葉にしなかった想いは、\nたいてい届かないまま、静かにすれ違いになるんだよね。\n\n近い相手ほど、「言わなくても分かる」が、一番危ない。\n\n伝えることは、甘えじゃなくて——たぶん、その逆だ。\n\nあなたは今、誰かに「察してほしい」と思っていることはありますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Wednesday gentle morning light. Two people at a breakfast table, each looking slightly aside, an unspoken word hanging softly in the air between them; tender, quiet. No text, no letters, no signage.",
-      "quote": "💎 言葉にしなかった想いは、たいてい届かない。"
-    },
-    {
-      "date": "2026-06-03",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "夫婦の沈黙には二種類ある",
-      "character": "Coco",
-      "content": "沈黙には、二種類ある。\n冷えた沈黙と、安心した沈黙。\n\n何も話さない夜が、いつも不仲とは限らない。\n言葉がなくても穏やかでいられる関係は、むしろ深いよね。\n\n問題は、沈黙そのものじゃなく——その沈黙の温度。\n\n黙っていても心地いい距離は、長い時間でしか作れない。\n\nあなたの隣の沈黙は、どちらの温度ですか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Wednesday mid-morning, warm clear light. Two people sitting comfortably in the same room, each absorbed in something quiet, at ease in the shared silence; gentle, settled warmth. No text, no letters, no signage.",
-      "quote": "💎 沈黙が不仲とは限らない。問われるのは、その温度。"
+      "content": "「目標を伝えた。でも動かない」\nこの状況、じつは部下の問題ではない。\n\nあなたが部下に目標を伝えるとき、最も近いのはどれ？\n\nA　数字と期限を明確に伝える\nB　「なぜこの目標か」を先に話す\nC　目標の設定段階から、部下と一緒に決める\nD　目標よりも、まず「今週何をするか」に落とす\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with delicate transparent washes and fine 1px white borders between sections. Early June rainy season ambiance with soft diffused light through rain-streaked windows. Top-left: Coco (composed young woman in a crisp white linen blazer over a navy silk blouse, pearl earrings) points decisively to clear numbers on a whiteboard while a small wise turtle (Shizuku) watches with a slightly empty expression; structured morning light. Top-right: Coco crouches to Shizuku's level with open hands speaking warmly; Shizuku listens with bright attentive eyes; soft purple and blue hydrangea blossoms visible through rain-touched window. Bottom-left: Coco and Shizuku sit side by side at a round table both holding pencils working on a shared notebook together; collaborative warm atmosphere; small green plant on table. Bottom-right: Coco and Shizuku stand together looking at a small calendar with today circled; a single clear action step sketched beside it; calm purposeful early morning light. Refined palette of navy, ivory, hydrangea purple, and warm sage. No text, no letters, no signage.",
+      "comment": "目標が「自分ごと」になるかどうかは、渡し方の仕組み次第で決まる。\n\n【A：数字と期限だけ伝える】\n情報は届くが、「なぜ自分がやるのか」が不在のまま。\n数字が一人歩きすると、部下は目標を「こなすもの」として扱い始める。\nやがて「言われたことをやる」に変わる。\n\n【B：「なぜ」を先に話す】\n「この数字の背景には◯◯がある」という文脈が加わると、\n部下の中で目標が「仕事の意味」と接続される。\n同じ数字でも、持ち方が変わる。\n\n【C：設定段階から一緒に決める】\n最も強い自走を生む仕組み。\n「自分が決めた」という感覚は、目標へのエネルギーの質を根本から変える。\n難易度が高いほど、自分で決めたかどうかが踏ん張りの差になる。\n\n【D：今週の行動に落とす】\n目標を「遠い未来」から「今日のタスク」に変換することで、\n動けない部下が動き出すことがある。\n大きな目標に圧倒されているとき、まず「明日一つできること」が出発点になる。\n\n「目標を自分ごとにしてほしい」と思うなら、渡し方を変えることが先だ。\n伝えた側は「渡した」と思っているが、\n受け取った側は「押しつけられた」と感じていることがある。\n\n📌 明日から使える一手\n次に目標を伝えるとき、「この数字、なぜこれかわかる？」と一度聞いてみよ。\n部下の理解度と関与度が、その一問で見える。",
+      "quote": "💎 目標が「自分ごと」になる瞬間は、渡し方の仕組みの中にある"
     },
     {
       "date": "2026-06-03",
       "platform": "X診断 6/2〜6/8",
       "time": "12:00",
-      "purpose": "上司の誤情報に気づいた時、あなたはどう動くか",
+      "purpose": "指示待ちを生む習慣",
+      "character": "🐈‍⬛しらたま",
+      "content": "「うちのチーム、指示待ちが多くて」\nその言葉が出るとき、確認してほしいことがある。\n\n上司として、次のどれかに心当たりはある？\n\nA　「これやっといて」と渡して、やり方は任せる\nB　「なぜやるか」は省いて、「何を・いつまで」だけ伝える\nC　「困ったら言ってね」を口ぐせにしている\nD　完成度が低いと、自分でやり直してしまう\n\n→ 正直に選んで、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with soft transparent washes and 1px white borders. Wednesday midweek office ambiance with overcast rainy-season light through tall windows. Top-left: A fluffy white cat (Shirotsuma) places a small task card at a tidy workspace; an empty chair faces the desk with no occupant; quiet waiting atmosphere in soft diffused light. Top-right: Shirotsuma stands before a small blank surface gesturing toward a simple arrow; the cat tilts its head slightly in mild uncertainty; overcast morning light. Bottom-left: Shirotsuma sits at a small desk with a warm lamp; a second chair nearby holds a small hesitant figure looking uncertain; muted overcast light. Bottom-right: Shirotsuma carefully rearranges a set of small items previously arranged by another; stepping in to redo the work; soft reflective morning atmosphere. Refined palette of soft white, warm beige, and overcast grey-blue. No text, no letters, no signage.",
+      "comment": "「指示待ち」の部下を作るのは、部下の性格じゃない。\n上司の仕組みが、待つ姿勢を育てている。\n\n【A：やり方は任せる】\n一見、自律を促している。でも「なぜやるか」が見えないと、\n部下は「どうせ正解があるんだろう」と最小リスクの行動を選ぶ。\n任せると思っていても、受け手は「指示不足」と感じていることがある。\n\n【B：「何を・いつまで」だけ伝える】\n情報として正確でも、動力が弱い。\n「なぜ」がないと、部下は「言われたこと以外はやってはいけない」という解釈になる。\n範囲外への挑戦が怖くなる。\n\n【C：「困ったら言ってね」】\n善意の一言。でも実際に「困った」と言える部下は少ない。\n「これくらいで相談していいのか」という判断をし続けると、\n小さな詰まりが積み上がって、どこかで止まる。\n\n【D：完成度が低いと自分でやり直す】\nこれが最も大きな要因。\n「任せたが、やり直した」が繰り返されると、\n部下の中に「どうせ直される」という学習が生まれ、\n次第に「やり方を聞かないと動けない」状態になる。\n\n部下を自走させたいなら、\n自分の「介入するタイミング」を先に仕組み化せよ。\n\n📌 明日から使える一手\n仕事を渡すとき「途中で一度だけ確認するタイミング」を先に決めて伝えよ。\n「渡しきり」でも「頻繁な確認」でもない第三の選択肢が、部下の自走を育てる。",
+      "quote": "💎 指示待ちは部下の性格じゃない、上司の仕組みが作っている"
+    },
+    {
+      "date": "2026-06-04",
+      "platform": "X診断 6/2〜6/8",
+      "time": "12:00",
+      "purpose": "プレイングマネージャーの盲点",
       "character": "🐢しずく + 🕊ひより",
-      "content": "「上司が伝えた情報が事実と違う」という状況、現場では珍しくない。\nそのとき、どう動くかが長期的な自分の安全と信頼を作る。\n\nあなたはどう動く？\n\nA　直接指摘する。波風が立ってもはっきり言う\nB　波風を立てたくないので、黙って様子を見る\nC　証拠・事実を整理して、正しいルートで静かに届ける\nD　信頼できる別の上位職に相談する\n\n→ 今の自分の行動に近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Wednesday noon, soft light. Panel 1: Shizuku stands directly before Hiyori with a clear direct gesture; both face each other squarely; morning light. Panel 2: Shizuku sits quietly aside while the situation unfolds; watching but not engaging; a careful stillness. Panel 3: Shizuku carefully places a neat stack of small organized cards on a table; the gesture is methodical and deliberate; a composed expression. Panel 4: Shizuku moves toward a separate trusted figure in the background; the scene is quiet and discreet. Refined palette of cool blue, sage, ivory. No text, no letters, no signage.",
-      "comment": "どれが正しいかより、「どの選択が長期的に自分の安全と信頼を守るか」の問題です。\n\n【A：直接指摘する】\n正しいことを正面から言える姿勢は誠実。ただし組織の文化・関係性によっては「問題を起こす人」と見られるリスクがある。\n感情が乗ると「感情的な人」として処理されやすい。\n\n【B：黙って様子を見る】\n短期の安全を守るが、長期的に「それを知っていて黙っていた人」という立ち位置を作るリスクがある。\n嘘が大きくなった時、同じ問題の一部として見られることがある。\n\n【C：事実を整理して正しいルートで届ける】\n最も長期的な安全を確保できるアプローチ。感情を排除し、事実だけを持ってしかるべき場所に届ける。\n大義名分が100%正しければ、誰も反論できない。\n準備と冷静さが必要だが、これができる人は組織の中で信頼の土台が最も固い。\n現場で実際にこれを見た時、「静かで、強い」と思った。\n\n【D：別の上位職に相談する】\n状況によっては最善の判断。ただし「誰に・何を・どのタイミングで」を間違えると、情報が漏れる。\n\n組織の中では「感情的に正しいこと」より「構造的に正しい動き方」の方が、長期的に自分を守る。\nファクトだけを武器にすると、感情論でのすり替えが不可能になる。\n\n📌 明日から使える一手\n事実確認が必要な状況では、感情での返しの前に「スクリーンショット・記録・日付」の3点を先に確保せよ。\nそれだけで、動ける選択肢の幅が広がる。",
-      "quote": "💎 大義名分が100%のとき、声を荒げる必要がない"
-    },
-    {
-      "date": "2026-06-03",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "手をかけすぎると距離を学べない",
-      "character": "Coco",
-      "content": "手をかけすぎる愛は、子どもから「距離を学ぶ機会」を奪う。\n\n転ぶ前に手を出し、失敗する前に正してしまう。\nよかれと思って。\n\nでも、自分でつまずいて、自分で立つ経験がないと、\n人との距離の取り方は、身につかないままになるんだよね。\n\n見守ることは、突き放すことじゃない。\nちょうどいい距離で、信じること。\n\nどこまで手を出して、どこから見守るか——\nあなたはどこで線を引いていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Wednesday late afternoon, warm golden light. A child taking small unsteady steps ahead while a parent watches from a half-step back, hands ready but not reaching; loving restraint. No text, no letters, no signage.",
-      "quote": "💎 手をかけすぎる愛が、距離を学ぶ機会を奪う。"
-    },
-    {
-      "date": "2026-06-03",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "「同じ条件」という完封",
-      "character": "Coco",
-      "content": "言い訳を黙らせるのに、怒る必要はない。\n\n「この状況は大変だ」と言う相手に、ひとこと。\n「それ、こちらも同じ条件ですよ」\n\n同じ環境で、片方は言い訳、片方は数字。\n\nどちらがリーダーか——もう全員が知っている。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Wednesday late night, quiet lamp. Two identical small objects placed symmetrically on a table, the perfect balance making any excuse impossible; calm, settled night. No text, no letters, no signage.",
-      "quote": "💎 「同じ条件です」——逃げ道を塞ぐのは、怒りではなく事実。"
-    },
-    {
-      "date": "2026-06-04",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "数字が良い≠構造が健全",
-      "character": "Coco",
-      "content": "「数字が良い」と「組織が健全」は、別の話だ。\n\n客数は減っている。でも単価で売上は維持。\n表面は無事。根は、静かに崩れている。\n\n良い数字を見た時こそ、「なぜ」を掘れる人が組織を守る。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Thursday pre-dawn, cool first light. A transparent rising chart on the surface, but beneath it a faint declining line is visible through the layers; a hand tracing the deeper line; focused, quiet. No text, no letters, no signage.",
-      "quote": "💎 良い数字ほど、「なぜ」を掘れ。"
-    },
-    {
-      "date": "2026-06-04",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "依存と愛情の見分け方",
-      "character": "Coco",
-      "content": "依存と愛情は、似ているけれど、向きが逆だ。\n\n「あなたがいないとダメ」は、重さで相手を縛る。\n「あなたがいると、私はもっと私でいられる」は、軽さで相手を自由にする。\n\n同じ「好き」でも、相手の呼吸の深さが違う。\n\n愛情は、距離があっても保てる。\n依存は、距離があると不安になる。\n\nあなたの「好き」は、どちらの向きに近いですか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Thursday gentle morning light. Two plants in separate pots growing toward the same window, roots their own, leaves nearly touching; a quiet image of closeness without entanglement. No text, no letters, no signage.",
-      "quote": "💎 愛情は距離があっても保てる。依存は、距離を怖がる。"
-    },
-    {
-      "date": "2026-06-04",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "連絡の頻度は愛の量ではない",
-      "character": "Coco",
-      "content": "連絡の多さは、愛の深さじゃない。\n不安の大きさの、こともある。\n\n既読がつかないと落ち着かない。\nすぐ返さないと、嫌われる気がする。\n\nでも、その忙しなさは、愛じゃなくて、\n不安が動かしていることがあるんだよね。\n\n信頼のある関係は、少し連絡が空いても、揺れない。\n\n頻度で測れないものを、何で測るか——\nあなたは何を信頼の証だと思いますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Thursday mid-morning, settled clear light. A phone resting face-down on a calm table beside a cup of tea; the person nearby is relaxed, unhurried, not waiting; peaceful stillness. No text, no letters, no signage.",
-      "quote": "💎 連絡の多さは、愛ではなく不安の大きさのこともある。"
-    },
-    {
-      "date": "2026-06-04",
-      "platform": "X診断 6/2〜6/8",
-      "time": "12:00",
-      "purpose": "あなたはどこまで数字を読んでいるか",
-      "character": "🐢しずく + 🐈‍⬛しらたま",
-      "content": "「数字を見ている」と言えるか、診断する。\n\nチームの業績を確認するとき、どこまで掘り下げている？\n\nA　売上・利益の合計数字を確認する\nB　前月・前年比で増減を確認する\nC　数字の増減の「原因」まで確認する\nD　数字の背景にある「顧客の行動変化」まで読む\n\n→ 今の自分に近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Thursday noon, warm bright light. Panel 1: Shizuku looks at a single number on a card; stops there; midday light. Panel 2: Shizuku places two cards side by side and compares them; the movement between the numbers is noted. Panel 3: Shizuku traces a sequence of cards back to a root cause; a small connecting line drawn in the air. Panel 4: Shizuku holds a card up to the light and sees, beneath the number, the implied movement of small figures representing customers; the deepest reading. Refined palette of warm amber, ivory, sage. No text, no letters, no signage.",
-      "comment": "どのレベルまで数字を読むかが、「問題発見の速さ」と「対処の質」を決めます。\n\n【A：合計数字を確認する】\nスナップショットとしては必要。しかし「現在地」しか見えておらず、「向かっている方向」が見えない。\n合計が良くても、構造が悪化していることは珍しくない。\n\n【B：前月・前年比を確認する】\nトレンドが見えるようになる。増減の「事実」は見えているが、「なぜそうなったか」は見えていない状態。\n\n【C：増減の原因まで確認する】\n「何が変わって、この数字になったのか」を追うことで、再現性と予防が生まれる。\n同じ成功を繰り返せるし、同じ失敗を防げる。\n\n【D：顧客の行動変化まで読む】\n最も質の高い数字の読み方。\n「客数は減っているが単価が上がっているから売上は維持」の場合、客数減少という根本的な衰退を見落とすことがある。\n数字の背後にある「人の行動変化」まで読む人は、問題が顕在化する前に動ける。\n現場でこれができる人が一人いるだけで、組織の課題発見の速度が変わる。\n\n数字は「過去の事実の記録」ではなく「現在の組織の健康診断」。\n表面の数字に安心している間に、根本の構造が崩れていることがある。\n\n📌 明日から使える一手\n良い数字を見た時こそ、「なぜ良いのか」を掘れ。\n「棚ぼた」か「仕組みの力」かを分けて理解できると、次の手が変わる。",
-      "quote": "💎 数字は「現在地」ではなく「向かっている方向」を読むためにある"
-    },
-    {
-      "date": "2026-06-04",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "「私がいないとダメ」は愛ではない",
-      "character": "Coco",
-      "content": "「私がいないと、この人はダメ」。\nそれは愛ではなく、役割への執着かもしれない。\n\n尽くすほど、必要とされる。\n必要とされるほど、安心する。\n\nでも、その安心は、相手の自立を、少しずつ奪っているんだよね。\n\n本当に大切なら、相手が自分の足で立てるように、\n半歩引く勇気がいる。\n\n支えることと、奪うことの境目——\nあなたにとって、どこにあると思いますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Thursday late afternoon, warm golden light. A person gently letting go of another's hand so they can walk a few steps alone; the release is tender, not abandoning; soft warmth. No text, no letters, no signage.",
-      "quote": "💎 尽くしすぎる愛は、相手の足を静かに奪う。"
-    },
-    {
-      "date": "2026-06-04",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "環境のせいにする人の言葉が軽い理由",
-      "character": "Coco",
-      "content": "環境のせいにした瞬間、言葉から重みが消える。\n\n「条件が悪い」——わかる。\nでも、同じ条件で結果を出した人間が、すぐ隣にいる。\n\nやった人の言葉と、降りた人の言葉は、\n同じ日本語でも、重さが違うんですよね。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Thursday late night, a single lamp. A person standing grounded in a quiet room while, through the window, a difficult landscape is implied; the inner steadiness contrasts the harsh outside; self-contained posture. No text, no letters, no signage.",
-      "quote": "💎 言葉の重みは、肩書きではなく、引き受けた時間から来る。"
-    },
-    {
-      "date": "2026-06-05",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "権力で動かす人と背中で動かす人",
-      "character": "Coco",
-      "content": "「俺は上司だ」で動いた現場は、命令がなければ止まる。\n\n誰も見ていない時間に現場で汗をかいた人の周りには、\n何も言わなくても動く人が残る。\n\n敬意は、要求するものじゃなく——積み上がるものだ。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Friday pre-dawn, cool first light. A quiet figure working among small tasks while others naturally gravitate toward them; no command given, yet movement follows; understated, warm. No text, no letters, no signage.",
-      "quote": "💎 敬意は、要求するものではなく、積み上がるもの。"
-    },
-    {
-      "date": "2026-06-05",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "嫌われたくないが一番嫌われる",
-      "character": "Coco",
-      "content": "嫌われたくない、が一番、人を遠ざけるんだよね。\n\n相手に合わせ、NOを飲み込み、機嫌を取る。\n嫌われないために。\n\nでも、自分を消した関係は、\n相手にとっても、だんだん物足りなくなる。\n\n嫌われる勇気のない関係は、\n近いようで、本当の距離は遠い。\n\n好かれることと、舐められないことは、たぶん別の話。\n\nあなたは今、自分を消していない関係が、いくつありますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Friday gentle morning light. A person quietly fading slightly into the background of a scene while trying to please others; the softness has a faint loneliness; tender, honest. No text, no letters, no signage.",
-      "quote": "💎 自分を消して保った関係は、近いようで遠い。"
-    },
-    {
-      "date": "2026-06-05",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "NOと言える関係だけが続く",
-      "character": "Coco",
-      "content": "NOと言える関係だけが、長く続く。\n\n何でもYESと言う関係は、優しく見えて、もろい。\n本音を飲み込んだ分が、いつか静かに溜まっていくよね。\n\nNOを言える相手とは、無理をしなくていいから、長くいられる。\n\nNOは、関係を壊す刃じゃない。\nちょうどいい距離を保つ、一本の線だ。\n\n言えるNOが、関係を守ることもある。\n\nあなたの大切な人に、ちゃんとNOを言えていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Friday mid-morning, clear bright light. A person calmly drawing a small clear line on a table between two cups; the gesture is gentle, not defensive; quiet clarity. No text, no letters, no signage.",
-      "quote": "💎 NOは、関係を壊す刃ではなく、距離を守る線。"
+      "content": "「自分が動いた方が早い」\nこの感覚が続くとき、何かが起きている。\n\nプレイングマネージャーとして、自分に近いものを選んでほしい。\n\nA　部下の仕事より、自分の案件を優先する時間が多い\nB　部下のミスをカバーするために、自分が動くことがある\nC　管理者として動くか、担当者として動くか、迷う場面がある\nD　現場感覚を保つために、意識的に自分でもやるようにしている\n\n→ 今の自分に近いものを、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with soft transparent washes and 1px white borders. Thursday late morning early summer light with fresh greenery through rain-touched windows. Top-left: A small wise turtle (Shizuku) sits absorbed at a large desk stacked with its own papers while a gentle white bird (Hiyori) waits nearby with a small unfinished task on a tray; Shizuku doesn't notice; overcast morning light. Top-right: Shizuku rushes in to rearrange something that Hiyori had carefully started; Hiyori steps back with a slightly surprised expression; early morning soft light. Bottom-left: Shizuku stands at a fork between two doorways — one suggesting broad overview one suggesting hands-on work; the turtle pauses in thought; soft diffused light. Bottom-right: Shizuku works deliberately at a small focused task while Hiyori observes nearby; both calm and purposeful; early summer garden light through sheer curtains. Refined palette of warm sage, ivory, and pale gold. No text, no letters, no signage.",
+      "comment": "プレイングマネージャーは、「二つの役割を持つ人」ではない。\n実は「どちらの役割も中途半端になるリスクを抱えた人」だ。\n\n【A：自分の案件が多い】\n本質的にはまだ「現場のプロ」として機能している状態。\n管理に割く時間が少ないと、チームの問題は「自分で動けば解決する」という仕組みで回り続ける。\nやがてその人がいないと動けないチームになる。\n\n【B：部下のミスをカバーする】\n善意の介入が、部下の成長の機会を奪っている。\n「なんとかなった」という経験は、部下ではなく自分に蓄積される。\n結果として「任せられる人がいない」という感覚が、さらに自分を動かし続けさせる。\n\n【C：どちらで動くか迷う】\n最もリアルなプレイングマネージャーの日常。\nこの迷いを放置すると、「どちらにも集中できない」という消耗が続く。\n迷いを減らすために「今この時間は管理者として動く」という切り替えの仕組みが必要。\n\n【D：意識的にやっている】\n最も健全な状態。\n現場感覚を保つための「やる量と種類の仕組み化」ができている。\n「やるべきことをやっている」と「やらざるを得ないからやっている」は、全く別物。\n\nプレイングマネージャーが消耗するのは、「やること」が多いからじゃない。\n「誰として動くか」が定まっていないからだ。\n\n📌 明日から使える一手\n今週、「管理者として使う時間」と「現場として動く時間」を分けて書き出してみよ。\n比率が見えた瞬間、何を変えるべきかが明確になる。",
+      "quote": "💎 プレイングマネージャーの限界は、役割が定まっていないところから来る"
     },
     {
       "date": "2026-06-05",
       "platform": "X診断 6/2〜6/8",
       "time": "12:00",
-      "purpose": "キャリアの岐路で、あなたは何を基準に選ぶか",
+      "purpose": "権限委譲の落とし穴",
       "character": "Coco + 🕊ひより",
-      "content": "「楽な道」と「自分の力で上がる道」。\nその分かれ目で何を基準にするかが、長期のキャリアを決める。\n\nあなたがキャリアの選択で最も大切にしているのはどれ？\n\nA　結果が出るなら、プロセスは問わない\nB　誰かのサポートを活用しながら前に進む\nC　自分の力だけで出した結果に、最も価値があると思う\nD　状況に応じて柔軟に使い分ける\n\n→ 一番近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Friday noon, clear bright light. Panel 1: Coco moves quickly along a shortcut path supported by an implied external hand; the destination is close but the means feel borrowed. Panel 2: Coco walks with a supportive companion (Hiyori beside her); the path is collaborative; warm light. Panel 3: Coco climbs a path alone; the way is longer but her posture shows unambiguous ownership of each step; golden light. Panel 4: Coco surveys both paths with a calm expression, weighing; the choice is still open. Refined palette of warm amber, ivory, sage. No text, no letters, no signage.",
-      "comment": "どれが正しいかよりも、「自分が何を大切にしているか」と「その選択がどんな自分を作るか」を知ることが目的です。\n\n【A：プロセスより結果】\n結果への執着は強い動力になる。ただし「手段を選ばない」が習慣化すると、自分の実力の純度が下がる。\n「誰かのおかげ」で出た結果と「自分の力」で出た結果は、外から見た数字が同じでも、再現性が全く違う。\n\n【B：サポートを活用する】\n周囲の力を活用することはそれ自体は合理的。問題は「誰の・どんな支援を・どのタイミングで使うか」。\n自分の実力を削がない形でのサポートの使い方を持っている人は、長期的に強い。\n\n【C：自分の力だけで出した結果に価値がある】\n最も純度が高い選択。リスクは「孤立」と「効率の低下」。\nただし、この選択を続けた人間の実績は「言い訳ができない」という絶対的な重みを持つ。\n批判や邪推を「構造的に不可能」にする最強のバリアになる。\n男性中心の組織の中で、実力だけで登った人の言葉に誰も文句を言えなくなる理由は、ここにある。\n\n【D：状況に応じて使い分ける】\n最も現実的に見える。ただし「使い分け」の基準が自分の中に明確にないと、「状況に流されているだけ」になる。\n\nキャリアの「実力の純度」をどこに置くかという問いは、長期で見た時に「誰に・どんな顔で・何を語れるか」に直結する。\n\n📌 明日から使える一手\n自分の実績を一つ取り出して「これは100%自分の力で出したか？」と問いを立てよ。\nその問いに答える過程で、自分のキャリアの軸が見えてくる。",
-      "quote": "💎 言い訳ができない実績だけが、構造的に静かな最強の盾になる"
-    },
-    {
-      "date": "2026-06-05",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "心地よい距離は放置とは違う",
-      "character": "Coco",
-      "content": "「ちょうどいい距離」は、放っておくことじゃない。\n\n干渉しないことと、関心がないことは、まるで違う。\n\n心地よい距離は、相手を見ていないようで、ちゃんと見ている。\n必要なときに、ちゃんと手が届く。\n\n離れているのに、つながっている。\nその塩梅が、たぶん一番むずかしいよね。\n\n放置と尊重を分けるものは、何だと思いますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Friday late afternoon, warm golden light. Two people sitting a comfortable distance apart in the same room, each at peace, yet quietly aware of each other; warm, unforced. No text, no letters, no signage.",
-      "quote": "💎 心地よい距離は、無関心とは違う。見ているのに、縛らない。"
-    },
-    {
-      "date": "2026-06-05",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "服従と選択は見た目が同じ",
-      "character": "Coco",
-      "content": "「従順」と「主体的」は、外からは見分けがつかない。\n\n一方は「逆らえないから」。\nもう一方は「今はこれが最適だから、選んでいる」。\n\nYESも、選べる人のYESだけが、信頼になる。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Friday late night, quiet lamp. A person sitting upright and self-possessed while an authority figure is implied in the background; the inner freedom visible in the bearing; composed stillness. No text, no letters, no signage.",
-      "quote": "💎 NOと言える土台がある人だけが、YESも主体的に選べる。"
-    },
-    {
-      "date": "2026-06-06",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "「敬え」と叫ぶ人に敬意が集まらない構造",
-      "character": "Coco",
-      "content": "「なぜ敬わないんだ」と叫んだ瞬間、敬意は最も遠ざかる。\n\n要求した時点で、敬意は服従の請求書になる。\n\n本当に人がついてくるリーダーは、一度も「敬え」と言わない。\n言う必要が、ないからだ。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday pre-dawn, cool first light. One figure raised and demanding acknowledgment while small figures quietly drift toward a different, calmer presence nearby; the contrast is gentle but decisive. No text, no letters, no signage.",
-      "quote": "💎 敬意を要求した瞬間、それは敬意ではなくなる。"
-    },
-    {
-      "date": "2026-06-06",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "子どもは親の背中で距離を学ぶ",
-      "character": "Coco",
-      "content": "子どもは、親の言葉ではなく、親の距離の取り方を見て育つ。\n\n「人を大切にしなさい」と百回言うより、\n親自身が、誰かと心地よい距離でいる姿を一度見せるほうが伝わる。\n\n子どもは、教えられた言葉より、見た背中を覚えているんだよね。\n\n親が自分の機嫌を自分で取れていると、\n子どもも、安心して離れていける。\n\n何を教えるかより、どう在るか。\n\nあなたは今、子どもに見せたい在り方でいられていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday gentle morning light. A child watching a parent interact warmly and calmly with someone else; the child absorbs the scene quietly; soft, observational warmth. No text, no letters, no signage.",
-      "quote": "💎 子どもは、教えられた言葉より、見た背中を覚えている。"
-    },
-    {
-      "date": "2026-06-06",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "「ちょうどいい」は人によって違う",
-      "character": "Coco",
-      "content": "「ちょうどいい距離」に、正解はない。\n人の数だけ、ある。\n\n自分にとって心地よい距離が、\n相手には遠すぎたり、近すぎたりする。\n\nだから距離は、決めるものじゃなく、\n二人で測り直し続けるもの。\n\nずれたら、また調整する。\nその手間を惜しまないことが、たぶん愛に近いんだよね。\n\nあなたと相手の「ちょうどいい」は、今、合っていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday mid-morning, warm clear light. Two people gently adjusting where they sit, finding a comfortable spacing between them; a small, careful negotiation; tender and light. No text, no letters, no signage.",
-      "quote": "💎 距離は決めるものではなく、二人で測り直し続けるもの。"
+      "content": "「任せる」のが苦手なリーダーに共通すること。\nそれは「任せたつもりが任せていない」という状態。\n\nあなたが仕事を部下に任せるとき、どれに近い？\n\nA　任せた後も、こまめに進捗を確認する\nB　「やり方は自由」と言いながら、途中でやり方を指定する\nC　失敗が怖くて、結局信頼できる人にしか任せない\nD　「任せた」と言い切り、結果だけ見る\n\n→ 正直に選んで、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with soft transparent washes and 1px white borders. Friday afternoon early summer warmth with soft golden light filtering through tall windows. Top-left: Coco (refined young woman in a soft sage green silk blouse and warm beige linen trousers, small gold stud earrings) leans forward frequently to check on a gentle white bird (Hiyori) working at a small desk; Hiyori looks slightly tense under the attentive gaze. Top-right: Coco opens her hands in a free open gesture then reaches over to rearrange what Hiyori had just placed; Hiyori pauses mid-task with a subtle puzzled expression. Bottom-left: Coco stands before two small wrapped items holding one back carefully while Hiyori waits; only one trusted item is handed over; late afternoon golden light. Bottom-right: Coco steps back with a graceful open gesture toward Hiyori who works independently at a small round desk; Coco watches from a comfortable warm distance with a confident serene expression; golden late afternoon light through sheer curtains. Refined palette of sage green, ivory, warm gold, and pale terracotta. No text, no letters, no signage.",
+      "comment": "権限委譲が機能しないのは、「任せる技術」の問題じゃない。\n「任せた後の自分の行動」の仕組みが定まっていないことが原因だ。\n\n【A：こまめに進捗確認】\n善意の関与が、部下の思考を奪う。\n「また確認が来た」が続くと、部下は「言われる前にやっておこう」という守りの姿勢になる。\n自分で考える前に、上司の顔色を読む動きになる。\n\n【B：やり方を途中で指定する】\n最も部下を消耗させるパターン。\n「任せた」という言葉と「でもこうして」という介入のギャップが、部下の中に矛盾を生む。\n「どうすれば正解か」ではなく「上司が何を望むか」を探す動きに変わる。\n\n【C：信頼できる人にしか任せない】\n組織の成長が止まる仕組み。\n経験がないから任せられない、でも任せないから経験できない、のループに入る。\n任せることは「信頼」ではなく「育成の機会」として捉えなければ、広がらない。\n\n【D：結果だけ見る】\n最も健全だが、フォローなしでは部下を孤立させるリスクがある。\n「任せきり」と「任せる」は別物。\n途中の学びに触れる機会を作ることで、部下が「任されている」を「育てられている」に変えられる。\n\n権限委譲の成功は「任せた瞬間」ではなく「任せた後の関わり方の仕組み」で決まる。\n\n📌 明日から使える一手\n仕事を任せるとき「中間点で1回だけ一緒に振り返る日」を先に決めよ。\nその約束が、部下に「見守られている」という安心と自由を同時に与える。",
+      "quote": "💎 権限委譲の成否は「任せた後」の仕組みで決まる"
     },
     {
       "date": "2026-06-06",
       "platform": "X診断 6/2〜6/8",
       "time": "12:00",
-      "purpose": "あなたのチームに「裸の王様」はいるか",
-      "character": "🐈‍⬛しらたま + 🕊ひより",
-      "content": "「裸の王様」は自分では気づかない。\nだからこそ、兆候を見つける目が必要だ。\n\n上位職（または自分自身）に当てはまるのは？\n\nA　現場に降りず、情報は部下からの報告だけ\nB　「俺はわかっている」という前提で話を聞く\nC　指摘されると感情的になり、改善しない\nD　部下は従っているが、主体的に動かない\n\n→ 当てはまるものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Saturday noon, warm clear light. Panel 1: Shirotsuma sits at an elevated position receiving scrolls of reports; the floor below is unseen; information arrives filtered. Panel 2: Shirotsuma listens to Hiyori but its posture suggests the outcome is predetermined; a subtle closed quality to the listening. Panel 3: Hiyori offers a gentle correction; Shirotsuma's ears go back; the feedback does not land well. Panel 4: Several small figures follow Shirotsuma's direction obediently but look at each other with sideways glances; compliance without engagement. Refined palette of soft white, sage, warm ivory. No text, no letters, no signage.",
-      "comment": "「裸の王様」は自分では気づけない。だから、組織の中で「これが出始めたら危険信号」を知っておくことが大切です。\n\n【A：現場に降りず、報告だけ】\n判断の質が「報告の質」に完全依存する状態。現場の「温度・空気・本音」は報告書に乗らない。\n問題が可視化した時点で、手遅れになっていることがある。\n\n【B：「俺はわかっている」という前提】\n最も学習を止める態度。「わかっている」という前提は、新しい情報を処理する入口を塞ぐ。\n現場が「この人に言っても無駄」と感じ始めると、本当に重要な情報が届かなくなる。\n\n【C：指摘に感情的になり改善しない】\n周囲は「言うと怒られる」を学習し、沈黙が増えていく。\n最終的に、批判的な目を持つ人から順番に去っていく。\n気づいた時には、イエスマンだけが残っている。\n\n【D：部下は従うが主体的に動かない】\n表面は従順に見えても、内側では「どうせ変わらない」が定着している状態。\n指示には動くが、自分からは動かない。組織に頭が一つしかない状態。\n\n裸の王様は「周りが教えてくれなくなった時」に完成する。\n逆に言えば、周囲が指摘や本音を言い続けてくれている間は、まだ間に合う。\n\n📌 明日から使える一手\n最近「部下から本音の反論が来たか」を確認せよ。\n反論が全くない職場は「安全」なのではなく、「言えない状態」になっている可能性がある。",
-      "quote": "💎 周りが教えてくれなくなった時、裸の王様は完成する"
-    },
-    {
-      "date": "2026-06-06",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "与えすぎる愛が相手の足を奪う",
-      "character": "Coco",
-      "content": "与えすぎる愛は、優しさの顔をして、相手の力を奪う。\n\n全部やってあげたくなる。\nそれが愛だと、思っていた。\n\nでも、相手が自分でできることまで奪うと、\n相手は「自分でできない人」になっていくんだよね。\n\n待つことも、信じることも、愛の一部。\n手を出さない優しさが、ある。\n\nどこまで与えて、どこから委ねるか——\nあなたはどこで線を引いていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday late afternoon, warm golden light. A person holding back from helping while another quietly manages something on their own; the restraint is loving, patient; soft warmth. No text, no letters, no signage.",
-      "quote": "💎 手を出さない優しさが、相手の力を育てる。"
-    },
-    {
-      "date": "2026-06-06",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "現場に降りない管理職が失うもの",
-      "character": "Coco",
-      "content": "現場に降りない管理職が失うのは、情報じゃなく——温度だ。\n\n報告書に数字は乗る。\nでも現場の空気と本音は、乗らない。\n\n距離は楽だ。\nでも、思っているより、ずっと高くつく。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday late night, quiet lamp. A figure seated high and apart behind a glass partition, distant from the active warmth of a workspace below; the separation is quiet but evident. No text, no letters, no signage.",
-      "quote": "💎 距離を取りすぎた人は、問題が数字に出てから気づく。"
-    },
-    {
-      "date": "2026-06-07",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "見えないところの努力は誰かが見ている",
-      "character": "Coco",
-      "content": "「誰も見ていない」は、たいてい思い込みだ。\n\n現場は、特等席で全部見ている。\n誰が手を抜き、誰が踏ん張ったか。\n\n見せるための努力より、\n見られていないところでの姿が、正確に伝わる。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday pre-dawn, the first blue light. A person working steadily and unaware, while soft warm presences in the background watch with quiet, genuine attention; no performance, just work. No text, no letters, no signage.",
-      "quote": "💎 見せるための努力より、見られていないところの姿が伝わる。"
-    },
-    {
-      "date": "2026-06-07",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "見返りを求めた瞬間取引になる",
-      "character": "Coco",
-      "content": "「これだけしたのに」と思った瞬間、愛は取引に変わる。\n\n尽くした分だけ、返してほしくなる。\nその気持ちは、自然だよね。\n\nでも、見返りを数え始めると、\n関係は損得の計算になり、温度が静かに下がっていく。\n\n見返りを手放せると、相手との距離が、ふっと軽くなる。\n\n与えることと、貸すことの違い。\n\nあなたは今、誰かに「返してほしい」と思っていることはありますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday gentle morning light. A pair of open hands offering something freely, palms up and relaxed; nothing is being counted or held back; a quiet, generous warmth. No text, no letters, no signage.",
-      "quote": "💎 「これだけしたのに」が芽生えた瞬間、愛は取引になる。"
-    },
-    {
-      "date": "2026-06-07",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "過去の関係も今の自分の伏線",
-      "character": "Coco",
-      "content": "うまくいかなかった関係も、今の自分の距離感を、ちゃんと作っている。\n\n近づきすぎて壊した恋も、\n依存して苦しかった日々も、\nその時は、ただの失敗だった。\n\nでも、ちょうどいい距離を知っている今の自分は、\nその全部の上に、立っているんだよね。\n\n痛かった距離の記憶が、次の関係を守ってくれる。\n\n過去は、消すものじゃなくて——\nあなたの「過去の失敗」は、今の自分にどんな力をくれていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday mid-morning, warm clear light. A person looking back over a quiet path of past moments that lead to where they now sit; a settled, connected expression; gentle continuity. No text, no letters, no signage.",
-      "quote": "💎 痛かった距離の記憶が、次の関係を守ってくれる。"
+      "purpose": "正論が組織を静かに壊す仕組み",
+      "character": "🐢しずく + 🐈‍⬛しらたま",
+      "content": "「正しいことを言っているのに、なぜ現場が動かないのか」\nこの問いを持つリーダーへ。\n\nあなたの組織に、次のどれかはある？\n\nA　正論で指摘すると、その場は納得するが後で動かない\nB　強く言った後、その部下がだんだん意見を言わなくなった\nC　改善提案をしたら「でも◯◯があるから無理」と返ってきた\nD　退職面談で、普段は言わなかった本音が一気に出てきた\n\n→ 自分の現場で起きていることを、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with delicate transparent washes and 1px white borders. Saturday introspective morning light with soft overcast June atmosphere. Top-left: A small wise turtle (Shizuku) speaks with a clear logical gesture while a fluffy white cat (Shirotsuma) nods slowly with a slightly closed expression; in the next moment Shirotsuma remains still without moving forward; quiet morning stillness. Top-right: Shizuku addresses Shirotsuma with firm conviction; Shirotsuma has turned slightly inward and become quieter; the space between them feels subtly wider; soft grey-green morning light. Bottom-left: Shizuku holds out a clearly mapped path while Shirotsuma points gently to a small cluster of obstacles; both pause in understated tension. Bottom-right: Shizuku and Shirotsuma sit across a small table; Shirotsuma speaks earnestly with many words; Shizuku listens with genuine careful attention; warm overcast light. Refined palette of grey-blue, ivory, and warm cream. No text, no letters, no signage.",
+      "comment": "正論は正しい。でも正論だけでは、現場は動かない。\nなぜか。\n\n「正しさ」は相手の頭を動かすが、「体」は動かさないからだ。\n\n【A：納得するが動かない】\n部下は「正しい」と思っている。でも「自分ごとではない」から動かない。\n正論に足りないのは、「この人ならできる」という温度と、「次に何をすればいいか」の具体性。\n\n【B：強く言った後、意見が出なくなった】\n「社長が話し始めた瞬間に、部下が一斉に手元の資料へ目を落とす空気」\nこれは無関心ではない。「発言して損した」という経験の蓄積だ。\n一度の強い正論が、その後の意見を年単位で止めることがある。\n\n【C：「でも無理」が返ってくる】\n「良かれと思ったアドバイスが、現場では重すぎる正論として停滞を生んでいる構造」\n変化の余力がない現場に正論を投げると、防衛反応が返ってくる。\n「何から変えるか」を一緒に決めることが先。\n\n【D：退職面談で本音が出る】\n正論が届かなかった終着点。\n在職中に言えなかったことが最後に出るのは、「言える場がなかった」ことの証拠。\n言える場の仕組み化が、本音を早期に引き出す。\n\n正論を武器にするのをやめ、「共に考える問い」に変えること。\nそれが、現場を動かす温度の始まりだ。\n\n📌 明日から使える一手\n正論を言いたくなったとき、まず「あなたはどう思う？」を先に聞け。\n相手が自分で気づいた言葉は、あなたの正論より10倍強く現場を動かす。",
+      "quote": "💎 正論は頭を動かすが、現場の体は動かさない"
     },
     {
       "date": "2026-06-07",
       "platform": "X診断 6/2〜6/8",
       "time": "12:00",
-      "purpose": "あなたは部下の「見えないところ」を見ているか",
-      "character": "Coco + 🐢しずく + 🕊ひより",
-      "content": "「頑張っているつもりだが評価されていない」という部下の声を聞くことがある。\nその多くは「見ていない」のではなく「見え方」の問題だ。\n\nあなたは部下のどこを評価している？\n\nA　目に見える成果・数字\nB　会議での発言や積極性\nC　誰も見ていないところでの努力・姿勢\nD　チームへの影響・場の空気への貢献\n\n→ 今の自分に近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Sunday noon, warm clear light. Panel 1: Coco looks at a score sheet; numbers are visible; Shizuku's effort is behind the numbers but Coco sees only the surface. Panel 2: Coco watches Hiyori speaking actively in a meeting; the visible engagement is what registers. Panel 3: Coco catches Shizuku doing something small and careful when no one is watching; she notices; Shizuku is surprised to be seen; warm light. Panel 4: Coco observes the whole group; she notices how Hiyori's presence affects the atmosphere of the room; the subtlest form of contribution. Refined palette of warm amber, sage, ivory. No text, no letters, no signage.",
-      "comment": "「見えないところ」を見る人と見ない人の差は、評価の深さと部下のモチベーションに直結します。\n\n【A：目に見える成果・数字】\n最も客観的で公正に見える。しかし「見えにくい貢献」が評価されない文化では、陰の貢献者が静かに去っていく。\n成果だけを評価すると、プロセスへの投資が止まる。\n\n【B：会議での発言・積極性】\n可視性の高い行動が評価される。しかし「見せ方が上手い人」が有利になるリスクがある。\n会議で発言しない人が、実は最も質の高い仕事をしていることがある。\n\n【C：誰も見ていないところでの努力・姿勢】\n最も評価が難しいが、最も本物を評価できる。\n「誰も見ていないところでの姿を見ている上司がいる」という事実が伝わった時、チームの質が全体で上がる。\n泥臭く足掻いていた人間が、このタイプの上司に出会った時の信頼の深さは、他では作れない。\n\n【D：チームへの影響・場の空気】\n数字に出にくい貢献を評価する最高難度の観察眼。\n場の空気を作る人、チームの心理的安全を守る人への評価が見えると、組織の文化が変わる。\n\n「見えるところしか評価しない」組織は、「見えないところで頑張らない」文化を育てる。\n\n📌 明日から使える一手\n今日、誰かが「誰も見ていないところでやってくれていること」を一つ名指しで言葉にせよ。\nその一言が、その人の職場への信頼を変える。",
-      "quote": "💎 「見えないところを見ている」上司がいる職場が、最強のチームを作る"
-    },
-    {
-      "date": "2026-06-07",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "黙って見守ることも愛の形",
-      "character": "Coco",
-      "content": "何もしないで見守ることが、一番むずかしい愛の形だ。\n\n手を出したくなる。\n声をかけたくなる。\n\nでも、相手が自分で乗り越えようとしているとき、\n黙っていることが、一番の信頼になるんだよね。\n\n見守る距離は、放置とは違う。\nいつでも手が届く場所で、ただ、待つ。\n\n信じて待つことの、静かな強さ。\n\nあなたは今、誰かのことを、黙って信じて待てていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday late afternoon, warm golden light. A person watching quietly from a doorway as another works through something alone; present but not intervening; a patient, loving stillness. No text, no letters, no signage.",
-      "quote": "💎 黙って見守る距離は、いちばん深い信頼の形。"
-    },
-    {
-      "date": "2026-06-07",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "「頑張った」と言わなくていい強さ",
-      "character": "Coco",
-      "content": "本当に結果を出した人は、「頑張った」と言わない。\n\nアピールが必要なのは、結果が足りない時だ。\n\n数字と現場が語るなら、自分の口は黙っていい。\n沈黙が、一番雄弁な証明になる。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday late night, quiet lamp. A person standing calmly before implied results, saying nothing; the result speaks entirely; the night is still and complete. No text, no letters, no signage.",
-      "quote": "💎 結果が語るとき、自分の口は黙っていい。"
-    },
-    {
-      "date": "2026-06-08",
-      "platform": "X",
-      "time": "06:00",
-      "purpose": "環境を選んでいるのは自分だ",
-      "character": "Coco",
-      "content": "「耐えている」と「選んでいる」は、同じ状況の別の名前だ。\n\n環境は変えられないことが多い。\nでも、その中で何を選ぶかは、いつも自分の手にある。\n\n「選んでいる」と言えた瞬間、被害者じゃなくなる。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday pre-dawn, cool first light at the start of a new week. A figure standing at the beginning of an open path, posture radiating chosen presence rather than resignation; clear forward gaze. No text, no letters, no signage.",
-      "quote": "💎 「選んでいる」と言えた瞬間、被害者ではなくなる。"
-    },
-    {
-      "date": "2026-06-08",
-      "platform": "Threads",
-      "time": "07:00",
-      "purpose": "自分の機嫌は自分で取る",
-      "character": "Coco",
-      "content": "自分の機嫌を、誰かに取らせている限り、対等な関係は作れない。\n\n相手の一言で、一日が決まってしまう。\nそれは、自分の機嫌のハンドルを、相手に渡しているということ。\n\n渡された相手も、いつかは、その重さに疲れるんだよね。\n\n自分で自分を整えられる人は、\n相手に寄りかからずに、隣にいられる。\n\n依存しない土台は、どこから作るんだろう。\n\nあなたは今日、自分の機嫌を自分で取れていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday gentle morning light at the start of a new week. A person calmly preparing their own morning tea, centered and self-contained; a quiet, grounded beginning to the day. No text, no letters, no signage.",
-      "quote": "💎 自分の機嫌を預けた相手は、いつか、その重さに疲れる。"
-    },
-    {
-      "date": "2026-06-08",
-      "platform": "Threads",
-      "time": "10:00",
-      "purpose": "自分の足で立つ人だけが対等に愛せる",
-      "character": "Coco",
-      "content": "自分の足で立っている人だけが、誰かを、対等に愛せる。\n\n寂しさを埋めるための恋は、\n相手を「穴を埋める道具」にしてしまう。\n\n一人でも立てる人が誰かを選ぶとき、\nその「好き」は、必要じゃなく——純粋な願いになる。\n\n寄りかからずに、隣にいる。\nそれが、いちばん心地いい距離なんだよね。\n\n一人で立つことと、誰かを愛すること——\nあなたにとって、この二つはつながっていますか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday mid-morning, settled warm light. Two people standing side by side, each steady on their own, shoulders not leaning but close; balanced, peaceful togetherness. No text, no letters, no signage.",
-      "quote": "💎 一人で立てる人の「好き」は、必要ではなく、願いになる。"
+      "purpose": "「なぜ」を省いたマネジメントの代償",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「なぜ」を伝えないまま指示し続けると、\n組織に何が起きるのか。\n\nあなた自身に、次のどれかはある？\n\nA　「何を・いつまで」は伝えるが、「なぜ」は省くことが多い\nB　理由を説明すると反論が来そうで、つい省いてしまう\nC　「なぜ？」と聞かれると、即答できない場面がある\nD　「言わなくてもわかるはず」と思って、説明しないことがある\n\n→ 正直に選んで、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with soft transparent washes and 1px white borders. Sunday evening pre-week reflective atmosphere with warm indoor light and rain visible on dark windows. Top-left: Coco (composed young woman in a soft lavender linen wrap dress, small pearl necklace) holds a list and gestures to it clearly for a fluffy white cat (Shirotsuma) and gentle white bird (Hiyori); both listen attentively but the space after their listening is quiet and undirected; warm evening light. Top-right: Coco opens her mouth to speak then pauses with a slightly held-back expression; Shirotsuma and Hiyori lean forward expectantly; the moment hangs softly in warm indoor light. Bottom-left: Shirotsuma looks up at Coco with a gentle questioning expression; Coco pauses and looks slightly inward; Hiyori tilts its head gently; a warm reflective atmosphere. Bottom-right: Coco gestures with quiet certainty toward something unseen; Shirotsuma and Hiyori exchange a gentle glance as if sharing a small misunderstanding; soft evening light through rain-touched window. Refined palette of lavender, ivory, and warm amber. No text, no letters, no signage.",
+      "comment": "「なぜ」は指示に体温を与える部分だ。\n省いた瞬間、指示は「命令」に変わる。\n\n【A：「何を・いつまで」だけ伝える】\n指示の精度は高い。でも部下の中に「自分がやる意味」が生まれない。\n「なぜ自分がこれをやるのか」が見えない仕事は、義務感で動く。\nやがて「最低限のことしかやらない」という状態に落ち着く。\n\n【B：反論が怖くて省く】\nこの行動パターンが続くと、チームに「納得感のない決定」が積み上がる。\n部下の「どうせ聞いてもムダ」という感覚の根は、ここにある。\n説明への恐れが、対話を止める仕組みになっている。\n\n【C：即答できない場面がある】\n「なぜ」を言えないとき、本当は自分もよくわかっていないサインかもしれない。\n上から降りてきた指示をそのまま下に渡している状態。\n「自分が納得していないことを、部下に納得させることはできない」。\n\n【D：言わなくてもわかるはず】\n「これくらいわかるだろう」は、上下の常識の差を無視している。\n部下にとっての「当然」と、上司の「当然」は違う。\nこの前提のズレが、温度差と停滞の始まりになる。\n\n「なぜ」を言うのは、弱さではない。\n部下を主体として扱う、最初の一言だ。\n\n📌 明日から使える一手\n明日の指示に、「なぜこれをお願いするか」の一文を足してみよ。\nその一文が、指示を依頼に変える。",
+      "quote": "💎 「なぜ」を省いた指示は、命令と区別がつかない"
     },
     {
       "date": "2026-06-08",
       "platform": "X診断 6/2〜6/8",
       "time": "12:00",
-      "purpose": "あなたは今、どこに立っているか",
+      "purpose": "月曜の温度の作り方",
       "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「どこに立っているか」は、仕事の姿勢に正直に出る。\n\nあなたの今の立ち方に最も近いのは？\n\nA　上が決めることを待って、動く\nB　周囲の状況を見ながら、合わせて動く\nC　自分で判断して動き、必要に応じて報告する\nD　仕組みを作って、チームが動ける状態を作る\n\n→ 正直に、今の自分に近いものを、リプライ欄へ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels, each with soft transparent washes and a 1px white border. Monday noon light. Panel 1: Shizuku waits at a desk, looking toward an unseen door; motion awaits an external signal; clear light. Panel 2: Shirotsuma watches the group and adjusts its position accordingly; responsive, not initiating. Panel 3: Coco makes a clear decision, acts, then writes a note to report; the sequence is internal then outward; warm light. Panel 4: Hiyori builds a small clear system that allows the others to move independently; she steps back from the center; afternoon light. Refined palette of warm ivory, pale amber, sage. No text, no letters, no signage.",
-      "comment": "どれが正しいかではなく、「今の自分はどこに立っているか」を正直に見ることで、次の一手が見えます。\n\n【A：上が決めることを待って動く】\n組織の秩序を守る姿勢は大切。しかし「待つことが習慣化した」状態は、判断力の停滞を生む。\n「上が何を求めているか」に敏感になれるが、「自分が何を判断できるか」が見えにくくなる。\n\n【B：周囲を見ながら合わせて動く】\n空気を読む能力は高い。ただし「自分の立場」が外部の状況によって変動し続ける。\n環境が変わるたびにリセットが必要で、自分の軸が育ちにくい。\n\n【C：自分で判断して動き、報告する】\n自律的な動きができている状態。「判断の質」と「報告のタイミング」が精度を決める。\n「自分で動ける」という経験が積み重なると、環境が変わっても機能できる人材になる。\n泥船の中で自分のエリアだけを守った人が持っていた姿勢は、ここに近い。\n\n【D：仕組みを作ってチームが動ける状態にする】\n最も高い視座での貢献。「自分が動く」ではなく「チームが動ける状態を作る」に移行できている。\nただし、ここまで到達するには「自分で動ける」を経由していることが前提になる。\n\nどのステージに「今いるか」より、「次に向かっているか」が重要。\n「今どこか」を正直に見ることが、次の移動の出発点になる。\n\n📌 明日から使える一手\n今日一つの判断を「上に確認してから」ではなく「自分で判断してから報告」に変えてみよ。\nその小さな変化が、自律の筋肉を育て始める。",
-      "quote": "💎 「今どこにいるか」を正直に見ることが、次の移動の出発点になる"
-    },
-    {
-      "date": "2026-06-08",
-      "platform": "Threads",
-      "time": "18:00",
-      "purpose": "一週間の距離をふりかえる",
-      "character": "Coco",
-      "content": "一週間の終わりに、自分の距離を、そっと測り直す。\n\n誰かに近づきすぎなかったか。\n追いかけすぎなかったか。\n\n感情はあったか。\nでも、依存はしなかったか。\n\n全部に丸がつかなくていい。\n気づけたなら、それで十分だよね。\n\n距離は、いつでも測り直せる。\n来週は、どんな距離でいたいですか？",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday evening, the week's end settling. A person sitting by a window with a small notebook, looking back on the week with a calm, honest expression; golden gentle light; a quiet close. No text, no letters, no signage.",
-      "quote": "💎 距離は、いつでも測り直せる。気づけた今が、その始まり。"
-    },
-    {
-      "date": "2026-06-08",
-      "platform": "X",
-      "time": "22:00",
-      "purpose": "理不尽が伏線に変わる瞬間",
-      "character": "Coco",
-      "content": "過去の理不尽は、消えない。\nでも、意味は後から変えられる。\n\n自分の足で結果を出した時、\nあの日の傷が全部「伏線」に変わる。\n\n一番エレガントな逆転は、怒りじゃなく——圧倒的な事実だ。",
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday late night, the week complete. A person standing before an implied achievement; faint background shapes of past doubters, unlooked-at; the figure faces forward; the result speaks for itself. No text, no letters, no signage.",
-      "quote": "💎 足掻いた時間は、いつか伏線になって返ってくる。"
+      "content": "月曜の朝、チームの空気はリーダーが作る。\nその始め方で、週全体の温度が決まる。\n\nあなたが月曜の朝にやりがちなのはどれ？\n\nA　「今週も頑張ろう！」と気合いを入れる言葉から始める\nB　先週の振り返りや反省から入る\nC　今週の目標・優先順位をシェアしてから始める\nD　特に何もせず、すぐ業務モードに入る\n\n→ 今の自分の月曜を、リプライ欄へ",
+      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D), with soft transparent washes and 1px white borders. Monday morning fresh start with clear early summer light after rain; dew visible on green leaves through the window. Top-left: Coco (elegant young woman in a pale turquoise wrap-style shirt dress with subtle linen texture, small gold hairpin) raises her hands with warmth toward a small wise turtle (Shizuku), fluffy white cat (Shirotsuma), and gentle white bird (Hiyori); all three look slightly uncertain what to do with the energy; bright morning light. Top-right: All four sit together while Coco speaks with a slightly retrospective tone; Shizuku, Shirotsuma, and Hiyori look down with thoughtful but subtly weighted expressions; early morning atmosphere. Bottom-left: Coco draws a single clear direction on a small shared surface; Shizuku, Shirotsuma, and Hiyori all look forward together with alert aligned expressions; fresh clear morning light streams in from a dew-touched window. Bottom-right: Coco sits at her desk focused on her own work; Shizuku at one corner, Shirotsuma at another, Hiyori at a third; each independent but unconnected; bright morning with no shared focal point. Refined palette of pale turquoise, ivory, warm cream, and fresh pale green. No text, no letters, no signage.",
+      "comment": "月曜の朝のリーダーの一言は、\n「今週はどんな一週間になるか」を無意識に定義している。\n\n【A：「頑張ろう！」から始める】\n悪くはないが、根拠のない気合いは続かない。\n「頑張る対象」が見えないと、部下は「何を頑張れば？」という宙ぶらりん状態になる。\n熱量が空回りしやすい。\n\n【B：先週の振り返り・反省から始める】\n月曜の朝に「先週の失敗」から入ると、チームの空気が重くなる。\n振り返りは重要だが、月曜の朝にやると「また一週間が始まった」ではなく\n「また先週の話が始まった」になる。\n振り返りは水曜か木曜の方が機能しやすい。\n\n【C：今週の目標・優先順位をシェア】\n最もチームを動かしやすい月曜の始め方。\n「今週、何に向かって動くか」が揃っていると、個々の判断に統一感が生まれる。\n月曜に「今週の北極星」を立てることが、自走するチームを作る仕組みになる。\n\n【D：何もせずすぐ業務へ】\nシンプルで効率的に見えるが、チームの「今週のトーン」が作られない。\n共有なしに始まる週は、個々がバラバラの温度で動き出す。\n週の中盤になって「あれ、方向がずれてた」が起きやすくなる。\n\n月曜の朝10分の使い方が、金曜の達成感を作っている。\n\n📌 明日から使える一手\n毎週月曜、「今週の最重要タスクを1つだけ全員で共有する5分」を作れ。\nその5分が、チーム全員の週の起点になる。",
+      "quote": "💎 月曜の空気はリーダーが作る。週の温度は月曜の朝に決まる"
     }
   ]
 }
