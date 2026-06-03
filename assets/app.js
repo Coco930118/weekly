@@ -1,6 +1,7 @@
 'use strict';
 
 let allPosts = [];
+let allNotes = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -26,6 +27,7 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+// ─── SNS投稿 読み込み ──────────────────────────────────────────────
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
   container.innerHTML = '<p class="loading">読み込み中…</p>';
@@ -75,6 +77,128 @@ async function loadPosts() {
   }
 }
 
+// ─── note 読み込み ─────────────────────────────────────────────────
+async function loadNotes() {
+  try {
+    const bust = `?t=${Date.now()}`;
+    const res = await fetch(`./notes/index.json${bust}`);
+    if (!res.ok) return;
+    const idx = await res.json();
+    allNotes = idx.notes || [];
+    renderNoteDateButtons();
+  } catch (_) {}
+}
+
+function renderNoteDateButtons() {
+  const row = document.getElementById('platformFilterRow');
+  if (!row) return;
+
+  // 既存の note ボタンをすべて削除（静的・動的問わず）
+  row.querySelectorAll('[data-platform="note"]').forEach(b => b.remove());
+
+  const lineBtn = row.querySelector('[data-platform="LINEスタンプ"]');
+
+  // 最新日付が先（降順）
+  const sorted = [...allNotes].sort((a, b) => b.date.localeCompare(a.date));
+
+  sorted.forEach(note => {
+    const d = note.date; // "2026-05-29"
+    const m = parseInt(d.slice(5, 7));
+    const day = parseInt(d.slice(8));
+
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.platform = 'note';
+    btn.dataset.date = d;
+    btn.textContent = `note[${m}/${day}]`;
+
+    if (lineBtn) row.insertBefore(btn, lineBtn);
+    else row.appendChild(btn);
+  });
+}
+
+function renderNoteCard(note) {
+  const e = escapeHtml;
+  const filename = note.filename || `${note.note_id}.html`;
+  const price = note.price ? `¥${parseInt(note.price).toLocaleString()}` : '';
+  const tagsHtml = (note.hashtags || []).slice(0, 5)
+    .map(t => `<span class="note-tag-inline">${e(t)}</span>`).join('');
+
+  const hooks = note.sns_hooks || {};
+  const hookItems = [
+    ['X', hooks.x],
+    ['Threads', hooks.threads],
+    ['Instagram', hooks.instagram],
+  ].filter(([, v]) => v);
+
+  const hooksHtml = hookItems.map(([label, text]) => `
+    <div class="note-hook-block">
+      <span class="note-hook-label">${e(label)}</span>
+      <p class="expandable-text">${e(text)}</p>
+      <div class="copy-btn-content">
+        <button class="copy-btn" data-copy="${e(text)}">コピー</button>
+      </div>
+    </div>`).join('');
+
+  return `
+    <article class="card card-note" data-platform="note">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-note">note</span>
+          <span class="card-time">${e(note.date || '')}</span>
+        </div>
+        ${price ? `<span class="purpose-badge">${e(price)}</span>` : ''}
+      </div>
+      <div class="card-body">
+        <a class="note-inline-title" href="./notes/${filename}" target="_blank">${e(note.title)}</a>
+        <p class="card-content note-inline-desc">${e(note.description || '')}</p>
+        ${tagsHtml ? `<div class="note-inline-tags">${tagsHtml}</div>` : ''}
+        <div class="copy-btn-content" style="padding-top:10px;">
+          <a href="./notes/${filename}" target="_blank" class="note-read-link">note全文を読む →</a>
+        </div>
+      </div>
+      ${hooksHtml ? `
+      <details class="card-expandable">
+        <summary class="expandable-summary">📢 SNS導線文（日曜15時用）</summary>
+        <div class="expandable-body">${hooksHtml}</div>
+      </details>` : ''}
+    </article>`;
+}
+
+async function renderNoteDisplay(noteDate) {
+  const container = document.getElementById('postsContainer');
+  const statsBar = document.getElementById('statsBar');
+
+  const entry = allNotes.find(n => n.date === noteDate);
+  if (!entry) {
+    container.innerHTML = '<p class="empty-state">noteデータがありません</p>';
+    return;
+  }
+
+  container.innerHTML = '<p class="loading">読み込み中…</p>';
+
+  let noteData = { ...entry };
+  try {
+    const noteId = entry.note_id || (entry.filename || '').replace('.html', '');
+    if (noteId) {
+      const res = await fetch(`./notes/${noteId}.json?t=${Date.now()}`);
+      if (res.ok) {
+        const full = await res.json();
+        noteData = { ...entry, ...full };
+      }
+    }
+  } catch (_) {}
+
+  if (statsBar) statsBar.textContent = '1件';
+
+  container.innerHTML = `
+    <section class="date-group">
+      <h2 class="date-heading">${formatDate(noteDate)}</h2>
+      <div class="cards-grid">${renderNoteCard(noteData)}</div>
+    </section>`;
+}
+
+// ─── LINEスタンプセクション ────────────────────────────────────────
 function renderLineStampSection(stampSets) {
   const existing = document.getElementById('stampSection');
   if (existing) existing.remove();
@@ -264,11 +388,8 @@ function renderXDiagnosisButtons() {
     btn.dataset.week = weekId;
     btn.textContent = label;
 
-    if (lineBtn) {
-      row.insertBefore(btn, lineBtn);
-    } else {
-      row.appendChild(btn);
-    }
+    if (lineBtn) row.insertBefore(btn, lineBtn);
+    else row.appendChild(btn);
   });
 }
 
@@ -302,11 +423,8 @@ function renderThreadsDiagnosisButtons() {
     btn.dataset.week = weekId;
     btn.textContent = label;
 
-    if (lineBtn) {
-      row.insertBefore(btn, lineBtn);
-    } else {
-      row.appendChild(btn);
-    }
+    if (lineBtn) row.insertBefore(btn, lineBtn);
+    else row.appendChild(btn);
   });
 }
 
@@ -341,11 +459,8 @@ function renderLineStampButtons() {
     if (weekId) btn.dataset.week = weekId;
     btn.textContent = label;
 
-    if (staticLineBtn) {
-      row.insertBefore(btn, staticLineBtn);
-    } else {
-      row.appendChild(btn);
-    }
+    if (staticLineBtn) row.insertBefore(btn, staticLineBtn);
+    else row.appendChild(btn);
   });
 }
 
@@ -380,11 +495,8 @@ function renderStampPromoButtons() {
     btn.dataset.week = weekId;
     btn.textContent = label;
 
-    if (staticLineBtn) {
-      row.insertBefore(btn, staticLineBtn);
-    } else {
-      row.appendChild(btn);
-    }
+    if (staticLineBtn) row.insertBefore(btn, staticLineBtn);
+    else row.appendChild(btn);
   });
 }
 
@@ -548,7 +660,9 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp', 'active-xshindan', 'active-threads-shindan', 'active-stamp-promo', 'active-line');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-stamp',
+        'active-xshindan', 'active-threads-shindan', 'active-stamp-promo',
+        'active-line', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -561,7 +675,15 @@ function setupPlatformFilter() {
     const weekFilterRow = document.getElementById('weekFilterRow');
     const statsBar = document.getElementById('statsBar');
 
-    if (platform === 'LINEスタンプ' && !weekId) {
+    if (platform === 'note') {
+      btn.classList.add('active-note');
+      if (postsContainer) postsContainer.style.display = '';
+      if (stampSection) stampSection.style.display = 'none';
+      if (weekFilterRow) weekFilterRow.style.display = 'none';
+      if (statsBar) statsBar.style.display = '';
+      renderNoteDisplay(btn.dataset.date);
+
+    } else if (platform === 'LINEスタンプ' && !weekId) {
       btn.classList.add('active-stamp');
       if (postsContainer) postsContainer.style.display = 'none';
       if (stampSection) {
@@ -570,6 +692,7 @@ function setupPlatformFilter() {
       }
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = 'none';
+
     } else if (platform === 'LINEスタンプ' && weekId) {
       btn.classList.add('active-line');
       if (postsContainer) postsContainer.style.display = 'none';
@@ -581,6 +704,7 @@ function setupPlatformFilter() {
       }
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = 'none';
+
     } else if (platform === 'スタンプ宣伝') {
       btn.classList.add('active-stamp-promo');
       if (postsContainer) postsContainer.style.display = '';
@@ -588,6 +712,7 @@ function setupPlatformFilter() {
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = '';
       renderPosts();
+
     } else if (platform === 'X診断') {
       btn.classList.add('active-xshindan');
       if (postsContainer) postsContainer.style.display = '';
@@ -595,6 +720,7 @@ function setupPlatformFilter() {
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = '';
       renderPosts();
+
     } else if (platform === 'Threads診断') {
       btn.classList.add('active-threads-shindan');
       if (postsContainer) postsContainer.style.display = '';
@@ -602,6 +728,7 @@ function setupPlatformFilter() {
       if (weekFilterRow) weekFilterRow.style.display = 'none';
       if (statsBar) statsBar.style.display = '';
       renderPosts();
+
     } else {
       if (platform === 'X') btn.classList.add('active-x');
       else if (platform === 'Threads') btn.classList.add('active-threads');
@@ -654,4 +781,5 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPlatformFilter();
   setupCopyHandler();
   loadPosts();
+  loadNotes();
 });
