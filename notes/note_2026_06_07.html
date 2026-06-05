@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="「優しくしているのに、なぜか軽く扱われる。」その答えは、優しさの量ではなく「輪郭があるかどうか」にある。20年・5万人超と向き合った現場から見えた、愛のある境界線の設計図。">
+  <title>「優しい人ほど、舐められる」——境界線は壁ではなく、愛の設計図だった | Coco</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #161616;
+      --border: #272727;
+      --border-light: #333;
+      --text-primary: #e6e6e6;
+      --text-secondary: #999;
+      --text-muted: #555;
+      --accent: #b07d62;
+      --accent-light: #c9967a;
+      --accent-dim: rgba(176, 125, 98, 0.12);
+      --paid-border: rgba(176, 125, 98, 0.3);
+      --checklist-bg: #131313;
+      --jump-bg: #141414;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', sans-serif;
+      --max-w: 680px;
+    }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      line-height: 1.9;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      background: rgba(15,15,15,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em; text-decoration: none; }
+    .nav-back { font-size: 0.75rem; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-back:hover { color: var(--text-secondary); }
+
+    /* ── Hero ── */
+    .hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-meta {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+    .badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .badge-note {
+      background: var(--accent-dim);
+      color: var(--accent-light);
+      border: 1px solid var(--paid-border);
+    }
+    .badge-price {
+      background: rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+    }
+    .badge-date {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+
+    .hero-title {
+      font-size: clamp(1.2rem, 4vw, 1.6rem);
+      font-weight: 600;
+      line-height: 1.5;
+      letter-spacing: 0.01em;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .hashtags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .hashtag {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+
+    /* ── Article ── */
+    .article {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 40px 24px 0;
+    }
+
+    /* Free zone */
+    .free-zone { margin-bottom: 0; }
+
+    .prose p {
+      font-size: 0.95rem;
+      line-height: 2;
+      color: var(--text-primary);
+      margin-bottom: 1.2em;
+    }
+    .prose p:last-child { margin-bottom: 0; }
+
+    .prose .indent {
+      padding-left: 1em;
+      color: var(--text-secondary);
+    }
+
+    .divider {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.2em;
+      margin: 32px 0;
+    }
+
+    /* Paid gate */
+    .paid-gate {
+      background: var(--accent-dim);
+      border: 1px solid var(--paid-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 40px 0;
+    }
+    .paid-gate-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .paid-gate-hook {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.85;
+      margin-bottom: 16px;
+      white-space: pre-line;
+    }
+    .paid-gate-benefits {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .paid-gate-benefits li {
+      font-size: 0.83rem;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+    .paid-gate-benefits li::before {
+      content: '✔';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 0.75rem;
+    }
+
+    /* Paid zone */
+    .paid-zone { position: relative; }
+
+    /* Chapter */
+    .chapter {
+      margin: 48px 0 0;
+    }
+    .chapter + .chapter { margin-top: 56px; }
+
+    .chapter-num {
+      font-size: 0.65rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+    .chapter-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+      margin-bottom: 24px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* Fact / Insight / Action blocks */
+    .block {
+      margin-bottom: 24px;
+    }
+    .block-label {
+      font-size: 0.68rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .block-body {
+      font-size: 0.9rem;
+      line-height: 1.95;
+      color: var(--text-primary);
+      white-space: pre-line;
+    }
+
+    /* Jump */
+    .jump-block {
+      background: var(--jump-bg);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin: 24px 0;
+    }
+    .jump-label {
+      font-size: 0.65rem;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+    }
+    .jump-body {
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      white-space: pre-line;
+    }
+
+    /* Checklist */
+    .checklist {
+      background: var(--checklist-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 20px;
+    }
+    .checklist-title {
+      font-size: 0.68rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 12px;
+    }
+    .checklist ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .checklist li {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      padding-left: 24px;
+      position: relative;
+      line-height: 1.65;
+    }
+    .checklist li::before {
+      content: '□';
+      position: absolute;
+      left: 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Chapter sep */
+    .chapter-sep {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0 0;
+    }
+
+    /* Outro */
+    .outro {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .outro-body {
+      font-size: 0.92rem;
+      line-height: 2.1;
+      color: var(--text-primary);
+      white-space: pre-line;
+      margin-bottom: 32px;
+    }
+    .cta-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      margin-top: 24px;
+    }
+    .cta-label {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 10px;
+    }
+    .cta-body {
+      font-size: 0.88rem;
+      line-height: 1.9;
+      color: var(--text-secondary);
+      white-space: pre-line;
+    }
+
+    /* SNS hooks */
+    .sns-hooks {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+    }
+    .sns-hooks-title {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      margin-bottom: 20px;
+    }
+    .hook-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      margin-bottom: 12px;
+    }
+    .hook-platform {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.06em;
+      margin-bottom: 8px;
+    }
+    .hook-text {
+      font-size: 0.85rem;
+      line-height: 1.85;
+      color: var(--text-secondary);
+      white-space: pre-line;
+    }
+    .hook-copy {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 10px;
+    }
+    .copy-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border-light);
+      color: var(--text-muted);
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.7rem;
+      font-family: var(--font);
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .copy-btn:hover { background: rgba(255,255,255,0.09); color: var(--text-secondary); }
+    .copy-btn.copied { background: rgba(45,106,79,0.3); border-color: rgba(45,106,79,0.6); color: #9ef0be; }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+    /* Responsive */
+    @media (min-width: 640px) {
+      .hero { padding: 56px 32px 40px; }
+      .article { padding: 48px 32px 0; }
+      .prose p { font-size: 0.98rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-brand">coconocanvas</a>
+    <a href="../notes.html" class="nav-back">← note一覧</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-meta">
+      <span class="badge badge-note">note</span>
+      <span class="badge badge-price">¥1,500</span>
+      <span class="badge-date">2026.06.07</span>
+    </div>
+    <h1 class="hero-title">「優しい人ほど、舐められる」<br>——境界線は壁ではなく、愛の設計図だった</h1>
+    <p class="hero-desc">「優しくしているのに、なぜか軽く扱われる。」その答えは、優しさの量ではなく「輪郭があるかどうか」にある。20年・5万人超と向き合った現場から見えた、愛のある境界線の設計図。</p>
+    <div class="hashtags">
+      <span class="hashtag">#人間関係</span>
+      <span class="hashtag">#境界線</span>
+      <span class="hashtag">#距離感</span>
+      <span class="hashtag">#自己成長</span>
+      <span class="hashtag">#恋愛</span>
+      <span class="hashtag">#パートナーシップ</span>
+    </div>
+  </header>
+
+  <article class="article">
+
+    <!-- ── 無料エリア ── -->
+    <section class="free-zone prose">
+      <p>あのね、</p>
+      <p>昔の私へ。</p>
+      <p>「優しくしているのに、なぜか軽く扱われる。」</p>
+      <p>そう感じながら、それでも優しくし続けていた頃の私へ。</p>
+      <p>それは、あなたが優しすぎるからじゃない。</p>
+      <p>「輪郭」が、なかったから。</p>
+
+      <div class="divider">──────────</div>
+
+      <p>20年で延べ5万人超と向き合ってきた。</p>
+      <p>ネイルサロン、飲食、BAR。</p>
+      <p>業種は違っても、見えてきたことがある。</p>
+      <p>「軽く扱われる人」と「大切にされる人」の違いは、優しさの量ではない。</p>
+      <p>「自分の輪郭があるかどうか」だ。</p>
+      <p>軽く扱われていた頃の私は、断れなかった。不満を言えなかった。怒ることが「関係の終わり」だと思っていた。</p>
+      <p>だから相手は、私が「何でも受け入れる人」だと学習した。</p>
+      <p>そして私は、優しいまま消耗していった。</p>
+
+      <div class="divider">──────────</div>
+
+      <p>気づいたのは、ずっと後だった。</p>
+      <p>「優しい」と「輪郭がない」は、見た目がそっくりだということ。</p>
+      <p>でも、まったく別物だということ。</p>
+      <p>境界線を引くことが「冷たくなること」だと思っていた。</p>
+      <p>本当は違った。</p>
+      <p>境界線は、愛の設計図だった。</p>
+    </section>
+
+    <!-- ── 有料ゲート ── -->
+    <div class="paid-gate">
+      <p class="paid-gate-label">ここから先は有料です</p>
+      <p class="paid-gate-hook">「優しくしているのに、なぜか軽く扱われる。」
+「断れないから、どんどん頼まれる。」
+「怒ったら嫌われそうで、不満が言えない。」
+
+そう感じているなら、ここから先を読んでください。</p>
+      <ul class="paid-gate-benefits">
+        <li>「断れない」の本当の正体と、断れる人になるための考え方</li>
+        <li>不満を溜め込まず、でも感情的にもならない言葉の作り方</li>
+        <li>「優しい人」から「信頼される人」へ移行するための設計</li>
+        <li>20年・5万人超の現場から見えた、本当に大切にされる人の構造</li>
+        <li>今日からできる「輪郭の設計チェックリスト」</li>
+      </ul>
+    </div>
+
+    <!-- ── 有料エリア ── -->
+    <section class="paid-zone">
+
+      <!-- 1 -->
+      <div class="chapter">
+        <p class="chapter-num">01</p>
+        <h2 class="chapter-title">「断れない」は優しさではなく、恐怖の管理だった</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">BAR運営をしていた頃、常連のお客さんに困ったことがあった。
+
+営業時間外に「ちょっと相談がある」と来店を求めてくる。他のスタッフへの要求がどんどんエスカレートしていく。
+
+私は断れなかった。
+
+「大事なお客さんだから」という理由をつけていたが、本当の理由は「嫌われたくなかった」からだ。
+
+その結果、断れないとわかった相手は、その後も際限なく要求してきた。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">「断れない」とき、人は何をしているのか。
+
+相手のためではない。
+
+「相手に嫌われる恐怖」を、引き受けることで静めている。
+
+つまり、断れないのは優しさではなく、自分の不安の管理だ。
+
+断れない人が「YES」と言うとき、相手はそれを「選ばれた」とは受け取らない。「また言えた」と受け取る。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【私が変えたこと】</p>
+          <p class="block-body">「断る言葉」を探すより、「断る理由を持つこと」を変えた。
+
+「私には、私が大切にしたいルールがある。」
+
+それを静かに、でもはっきりと見せるようにした。
+
+初めは怖かった。でも嫌われなかった。むしろ「この人には誠実でいなければ」という空気が生まれた。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今、本当は断りたいのに断れていることがあるとしたら、まず「何が怖くて断れないのか」を一つ書き出してみてほしい。
+
+その答えの中に、あなたの輪郭の手がかりがある。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>「断る＝嫌われる」という等式を持っていないか確認する</li>
+            <li>断るとき「申し訳ない」ではなく「これが私の選択です」と言えているか</li>
+            <li>先週、断れなかった場面を一つ思い出す</li>
+            <li>その場面で「断っていたら何が起きたか」を具体的に書き出してみる</li>
+            <li>「断られた相手」として逆の立場になったとき何を感じるか考えてみる</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 2 -->
+      <div class="chapter">
+        <p class="chapter-num">02</p>
+        <h2 class="chapter-title">不満を言えない人が「安全な標的」になる理由</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">ネイルサロンで働いていた頃、スタッフに一人、何でも引き受けながら笑顔が曇っていく子がいた。
+
+不満を言わない。怒らない。でも目が死んでいく。
+
+ある日、その子は突然退職した。後から聞くと、ずっと不満が積み重なっていたという。
+
+私が後悔したのは「なぜ早く気づいてあげられなかったのか」ではない。
+
+「なぜ彼女が言えない環境にしていたのか」だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">感情を見せない人は、「何をしても大丈夫な人」に映る。
+
+怒らない人は優しいのではなく、「安全な標的」になりやすい。
+
+不満を言わない人の周囲には、「この人は何でも許してくれる」という認識が静かに広がっていく。
+
+不満を言わないことは、関係を守ることではない。自分を消耗させながら、気づかれないまま関係が壊れていくプロセスだ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【私が変えたこと】</p>
+          <p class="block-body">不満を「言う練習」ではなく、「不満を持っていいと思う練習」から始めた。
+
+長年、「不満を持つこと」を罪悪のように感じていた。「感謝しなきゃ」「これくらい我慢しなきゃ」という思考が、感情を先に殺していた。
+
+まず、「不満を持っていい」と自分に許可した。
+
+そこから、「言葉にするかどうか」を選べるようになった。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">「不満を言ったら、関係が壊れる」と思っているとしたら、もう少し考えてみてほしい。
+
+不満を言わない関係は、壊れないのではない。あなたが一方的に消耗しているだけだ。
+
+本当の関係は、本音が通れる道があってこそ育つ。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>先週、不満を飲み込んだ場面が3回以上あれば要確認</li>
+            <li>「これくらい言わなくていいか」と思うとき、本当に小さいことか確認する</li>
+            <li>不満を「私が〇〇と感じた」という形で言う練習を一度やってみる</li>
+            <li>「言える関係」と「言えない関係」を今の人間関係の中で分類してみる</li>
+            <li>不満を言った後に関係が深まった経験を一つ思い出す</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 3 -->
+      <div class="chapter">
+        <p class="chapter-num">03</p>
+        <h2 class="chapter-title">溜め込んで爆発するループから抜ける</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">20年の現場で最も多く見てきたパターンがある。
+
+「溜めて、爆発して、後悔して、また溜める」
+
+このループにいる人は、自分を「感情的な人間だ」と思っている。
+
+違う。感情的すぎるのではない。境界線が遅れて出てくるだけだ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">爆発は、溜め込みが限界に達したサインだ。
+
+早期に「NO」が言えていれば、爆発はいらない。
+
+爆発するのは、言葉にする練習ができていないからではなく、「言っていい」という許可が自分の中にないからだ。</p>
+        </div>
+
+        <div class="jump-block">
+          <p class="jump-label">── 視座のジャンプ ①</p>
+          <p class="jump-body">爆発の後に後悔するループにいる人は、感情が強いのではなく、境界線が遅れているだけだ。
+
+「感情的な自分」を変えようとするのではなく、「境界線を早く出す練習」に切り替えると、爆発は自然に減っていく。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【私が変えたこと】</p>
+          <p class="block-body">「爆発する前に言う」ではなく、「不快感が出た瞬間に小さく言う」に変えた。
+
+「それ、ちょっと気になる。」「そこは私には難しい。」
+
+大きな感情ではなく、小さな事実を、その都度言う。
+
+最初はぎこちなかった。でも続けると、爆発が来なくなった。そして爆発がなくなると、関係の空気がずっと軽くなった。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">最後に感情的になったとき、その前にいくつ「NO」を飲み込んでいたか思い出してみてほしい。
+
+おそらく3つ以上あるはずだ。
+
+次回、最初の「NO」を飲み込みそうになったとき、代わりに小さく言ってみてほしい。「それは、少し難しいな」とだけ。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>最後に感情的になった場面で、その前に飲み込んだ不満の数を数えてみる</li>
+            <li>「小さく言う練習」を今週一度だけ試してみる</li>
+            <li>爆発後に謝り癖がある場合は「事前発言」を習慣にするよう意識する</li>
+            <li>爆発を「感情的な自分」として責めるのをやめる（それは遅れた境界線だ）</li>
+            <li>不快な瞬間を日記に一行だけ書く習慣を1週間試す</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 4 -->
+      <div class="chapter">
+        <p class="chapter-num">04</p>
+        <h2 class="chapter-title">「優しい人でいること」を自分の価値にすると何が起きるか</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">20年で5万人超と向き合う中で、気づいたことがある。
+
+「優しい人でいることが自分の価値」になっている人は、境界線を引いた瞬間に関係が壊れる体験をしやすい。
+
+それは境界線が悪いのではない。「優しいキャラクター」で関係を成立させていたから、輪郭を見せた瞬間に相手が「変わった」と感じるからだ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">「優しさ」を武器にしている間は、「優しさを下げた瞬間」に価値が下がるように感じる。
+
+でも本当の価値は、優しさの量ではない。「誠実さ」だ。
+
+断るときも、不満を言うときも、誠実にやる。
+
+それを続けていると、「優しい人」という評価よりも深い「信頼できる人」という評価が生まれる。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【私が変えたこと】</p>
+          <p class="block-body">「優しい人でいること」をやめた。「誠実な人でいること」に切り替えた。
+
+誠実とは、自分にも相手にも正直でいること。相手の期待に応えるためではなく、自分が誠実だと思う選択をすること。
+
+そこから、軽く扱われることが減っていった。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">「優しくしているのに、なぜか報われない」と感じているなら、一度問い直してみてほしい。
+
+「今、相手のために優しくしているのか。それとも、嫌われたくないから優しくしているのか。」
+
+その答えが、今の関係の温度を映している。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>「優しくした」後に「なぜか消耗する」ことが多い場合は動機を確認する</li>
+            <li>「これをしなかったら嫌われるかも」という恐怖から動いていないか問い直す</li>
+            <li>「断ったことで関係が深まった経験」を一つ思い出す（必ずある）</li>
+            <li>「誠実な自分」と「優しい自分」の違いを言語化してみる</li>
+            <li>今週、「優しさではなく誠実さ」から動く機会を一つ作る</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 5 -->
+      <div class="chapter">
+        <p class="chapter-num">05</p>
+        <h2 class="chapter-title">一番近い人に、一番丁寧な言葉を</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">家族や長年のパートナーとの関係で、最も多く見てきたことがある。
+
+外では整えた言葉を使うのに、一番近い人には雑な言い方になる。「安全だから」という無意識が、一番近い人を傷つける言い方にしてしまう。
+
+私も昔、それをやっていた。
+
+一番大切にしたい人に、一番雑な言葉を使っていた。「甘えているから大丈夫」と思っていたが、本当は、一番近い人が一番消耗していた。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">「甘え」と「雑さ」は、見た目が似ているが重さがまったく違う。
+
+本当の甘えは、相手の存在に安心することだ。相手のリソースを当然のように使うことではない。
+
+境界線は、外の人間関係だけに必要なものではない。一番近い人との関係にこそ、丁寧な輪郭が必要だ。</p>
+        </div>
+
+        <div class="jump-block">
+          <p class="jump-label">── 視座のジャンプ ②</p>
+          <p class="jump-body">一番近い人との関係に「境界線が必要ない」と思っている人は多い。
+
+でも本当は逆だ。
+
+一番近い人には、一番意識的に「丁寧さ」を選ぶ必要がある。
+
+「安全だから何でも言える」と「安全だから何でも言っていい」は、まったく別の話だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今、一番近い人への言葉を一度振り返ってみてほしい。
+
+「この言い方で、外の人に言えるか」を基準に確認すると、気づくことがある。
+
+外の人への言葉と、一番近い人への言葉が大きく違うなら、そこに調整の余地がある。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>今週、一番近い人への言い方で「外の人には言えない」ものがあったか確認する</li>
+            <li>「言わなくてもわかるでしょ」という思考が出た場面を思い出す</li>
+            <li>「ありがとう」「ごめんね」を言うとき、言葉を端折っていないか確認する</li>
+            <li>一番近い人への最初の一言を、今日から10%だけ丁寧にする</li>
+            <li>「安全だから雑でいい」という思い込みを意識的に手放してみる</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 6 -->
+      <div class="chapter">
+        <p class="chapter-num">06</p>
+        <h2 class="chapter-title">期待を言葉にできない人が損をする理由</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">5万人超の本音を聴いてきた中で、最も多く見てきた傷つき方がある。
+
+「これくらいはしてくれるはず」という無意識の期待が「裏切られる」こと。
+
+言葉にしていない期待は、相手に届いていない。
+
+届いていない期待が裏切られても、相手には何が問題だったかが見えない。ズレは伝えないと、永遠にズレたままになる。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">「期待を言葉にする」ことは、支配ではない。誠実なコミュニケーションだ。
+
+言葉にした期待は、相手が「応えるか、断るか」を選べる。
+
+言わない期待は、相手の選択肢を奪い、気づかないまま裏切らせてしまう。
+
+「言ったら重い人だと思われる」という恐怖があるとすれば、言わずに傷つき続ける方がずっと重い結果を生む。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">「また裏切られた」と感じる関係があるなら、一度問い直してみてほしい。
+
+「私はその期待を、言葉で伝えていたか。」
+
+言っていないなら、裏切りではなく「ズレ」だ。そのズレを埋めるのは、言葉だ。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>最近「また裏切られた」と感じた場面で、期待を言葉にしていたか確認する</li>
+            <li>「これくらいはわかるはず」という思考が出た場面を思い出す</li>
+            <li>期待を「お願い」の形で言葉にする練習を今週一回やってみる</li>
+            <li>言葉にした期待と言わなかった期待を、それぞれ一つずつ書き出す</li>
+            <li>「期待を言う＝重い人」という思い込みを手放してみる</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 7 -->
+      <div class="chapter">
+        <p class="chapter-num">07</p>
+        <h2 class="chapter-title">境界線は壁ではなく、愛の設計図</h2>
+
+        <div class="block">
+          <p class="block-label">【事実と原理】</p>
+          <p class="block-body">20年の現場で、最も大切にされている人に共通することがある。
+
+「この人には、これはできない」とはっきり思わせる何かがある。
+
+怖くはない。でも、軽く扱えない。
+
+その「軽く扱えない感」の正体が、輪郭だ。
+
+境界線と聞くと「壁を作ること」「冷たくなること」と思う人が多い。
+
+でも本当の境界線は、壁とは全然違う。
+
+「ここまではOK、ここからはNO」という輪郭を、静かに相手に知らせること。
+
+輪郭がある人は、尊重される。輪郭がない人は、便利に扱われる。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【原理】</p>
+          <p class="block-body">本当の愛は、境界線があってこそ育つ。
+
+「あなたのためなら何でも」は、愛ではなく依存の始まりだ。
+
+「あなたのことが大切だから、私の輪郭を大切にする。」
+
+これが、対等な愛の形だ。
+
+輪郭を持つことは、冷たくなることではない。自分を大切にしながら、相手を大切にする技術だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今の自分の「輪郭」を、言葉で説明できるだろうか。
+
+「ここまではOK、ここからはNO」を、一つの関係で言語化してみてほしい。
+
+言語化できたとき、それがあなたの境界線の始まりだ。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>今の自分の「輪郭」を言葉で説明できるか確認する</li>
+            <li>「ここまではOK、ここからはNO」を一つの関係で言語化してみる</li>
+            <li>自分の輪郭を相手に見せることを「壁を作ること」ではなく「自己紹介の続き」と捉え直す</li>
+            <li>今週、「これは私には難しい」を静かに言う機会を一つ作る</li>
+            <li>境界線を引いた後に関係が深まった体験を一つ思い出す</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ── おわり ── -->
+    <section class="outro">
+      <p class="outro-body">あのね、
+
+この7つ、全部一気にやらなくていい。
+
+私も、最初から全部できていたわけじゃない。
+
+1つずつ、少しずつ変わっていった。
+
+──────────
+
+「優しくしているのに、なぜか軽く扱われる。」
+
+その痛みは、本物だ。
+
+でもその原因は、あなたが優しすぎることじゃない。
+
+輪郭がなかっただけ。
+
+──────────
+
+輪郭を作ることは、あなたが変わることではない。
+
+「本当のあなた」を、ようやく相手に見せることだ。
+
+読んでくれてありがとう。</p>
+
+      <div class="cta-box">
+        <p class="cta-label">おわりに</p>
+        <p class="cta-body">もしこの記事を読んで、
+
+「断れない場面、あるかも」
+
+と思ったなら、
+
+一度、その場面を一つだけ書き出してみてください。
+
+「何が怖くて、断れないのか」を書くだけで、
+
+境界線が少しだけ見えてきます。
+
+──────────
+
+何か感じたこととか、
+
+「この場面でどう言えばいいか」とか、
+
+あったら教えてね。
+
+コメントでも、DMでも。</p>
+      </div>
+    </section>
+
+    <!-- ── SNS導線 ── -->
+    <section class="sns-hooks">
+      <p class="sns-hooks-title">【日曜導線投稿】</p>
+
+      <div class="hook-card">
+        <p class="hook-platform">X（旧Twitter）向け</p>
+        <p class="hook-text" id="hook-x">「優しくしているのに、なぜか軽く扱われる。」
+
+その答えは、優しさの量ではない。
+「輪郭があるかどうか」だ。
+
+20年・5万人超と向き合って気づいた、境界線の本当の意味。
+
+→ note で書いています。</p>
+        <div class="hook-copy"><button class="copy-btn" onclick="copyHook('hook-x', this)">コピー</button></div>
+      </div>
+
+      <div class="hook-card">
+        <p class="hook-platform">Threads向け</p>
+        <p class="hook-text" id="hook-threads">「境界線を引くこと」が「冷たくなること」だと、ずっと思っていた。
+
+本当は違った。
+
+境界線は、壁じゃなくて、愛の設計図だった。
+
+「優しい人ほど、なぜか軽く扱われる理由」を、noteに書きました。</p>
+        <div class="hook-copy"><button class="copy-btn" onclick="copyHook('hook-threads', this)">コピー</button></div>
+      </div>
+
+      <div class="hook-card">
+        <p class="hook-platform">Instagram向け</p>
+        <p class="hook-text" id="hook-ig">優しさと、輪郭のなさは、見た目がそっくり。
+
+でも、まったく別物。
+
+境界線は壁ではなく、愛の設計図。
+
+詳しくはnoteへ。プロフィールのリンクから。</p>
+        <div class="hook-copy"><button class="copy-btn" onclick="copyHook('hook-ig', this)">コピー</button></div>
+      </div>
+    </section>
+
+  </article>
+
+  <script>
+    function copyHook(id, btn) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.textContent;
+        btn.textContent = 'コピー完了';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1800);
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        btn.textContent = 'コピー完了';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>

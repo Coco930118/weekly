@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="coconocanvas note一覧 — 関係の温度と距離を整える技術">
+  <title>coconocanvas | note一覧</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #111111;
+      --bg-card: #181818;
+      --bg-card-hover: #1e1e1e;
+      --border: #2a2a2a;
+      --border-light: #333;
+      --text-primary: #e8e8e8;
+      --text-secondary: #888;
+      --text-muted: #555;
+      --accent: #b07d62;
+      --accent-light: #c9967a;
+      --accent-dim: rgba(176,125,98,0.1);
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+      --max-w: 680px;
+    }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      line-height: 1.7;
+      min-height: 100vh;
+      padding-bottom: 60px;
+    }
+
+    .site-header {
+      padding: 28px 20px 20px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(17,17,17,0.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header-left {}
+    .site-title { font-size: 1rem; font-weight: 500; letter-spacing: 0.08em; color: var(--text-secondary); margin-bottom: 2px; }
+    .site-subtitle { font-size: 0.75rem; color: var(--text-muted); letter-spacing: 0.04em; }
+    .nav-link { font-size: 0.75rem; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-link:hover { color: var(--text-secondary); }
+
+    .page-heading {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 32px 20px 16px;
+    }
+    .page-heading h1 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .notes-container {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .note-card {
+      display: block;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+    }
+    .note-card:hover {
+      border-color: var(--border-light);
+      background: var(--bg-card-hover);
+    }
+
+    .note-card-meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .badge {
+      font-size: 0.63rem;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+    }
+    .badge-note {
+      background: var(--accent-dim);
+      color: var(--accent-light);
+      border: 1px solid rgba(176,125,98,0.25);
+    }
+    .badge-price {
+      background: rgba(255,255,255,0.05);
+      color: var(--text-secondary);
+      border: 1px solid var(--border-light);
+      font-size: 0.63rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .note-date { font-size: 0.65rem; color: var(--text-muted); }
+
+    .note-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.55;
+      margin-bottom: 8px;
+    }
+
+    .note-desc {
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.75;
+      margin-bottom: 12px;
+    }
+
+    .note-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .note-tag {
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 20px;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+    @media (min-width: 640px) {
+      .site-header { padding: 32px 28px 22px; }
+      .page-heading { padding: 40px 28px 20px; }
+      .notes-container { padding: 0 28px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-left">
+      <p class="site-title">coconocanvas</p>
+      <p class="site-subtitle">@coconocanvas — note一覧</p>
+    </div>
+    <a href="./index.html" class="nav-link">← 投稿カレンダー</a>
+  </header>
+
+  <div class="page-heading">
+    <h1>note archive</h1>
+  </div>
+
+  <main class="notes-container" id="notesContainer">
+    <!-- 最新順に表示 -->
+    <a href="./notes/note_2026_06_07.html" class="note-card">
+      <div class="note-card-meta">
+        <span class="badge badge-note">note</span>
+        <span class="badge-price">¥1,500</span>
+        <span class="note-date">2026.06.07</span>
+      </div>
+      <h2 class="note-title">「優しい人ほど、舐められる」——境界線は壁ではなく、愛の設計図だった</h2>
+      <p class="note-desc">「優しくしているのに、なぜか軽く扱われる。」その答えは、優しさの量ではなく「輪郭があるかどうか」にある。20年・5万人超と向き合った現場から見えた、愛のある境界線の設計図。</p>
+      <div class="note-tags">
+        <span class="note-tag">#人間関係</span>
+        <span class="note-tag">#境界線</span>
+        <span class="note-tag">#距離感</span>
+        <span class="note-tag">#自己成長</span>
+        <span class="note-tag">#恋愛</span>
+        <span class="note-tag">#パートナーシップ</span>
+      </div>
+    </a>
+  </main>
+
+</body>
+</html>
