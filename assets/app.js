@@ -178,6 +178,38 @@ function renderCard(post) {
         </div>
       </div>`;
   }
+  if (post.comment1) {
+    const c1Escaped = escapeHtml(post.comment1);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説コメント①</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c1Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment2) {
+    const c2Escaped = escapeHtml(post.comment2);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説コメント②</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c2Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c2Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
   if (post.reply_1) {
     const r1Escaped = escapeHtml(post.reply_1);
     extraSections += `
