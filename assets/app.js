@@ -42,16 +42,45 @@ async function loadPosts() {
       })
     );
 
-    allPosts = weekDataArr
-      .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
-      .sort((a, b) => {
+    const charMap = { 'Coco': 'Coco', 'しらたま': '🐈‍⬛しらたま', 'しずく': '🐢しずく', 'ひより': '🕊ひより' };
+    let stickerPosts = [];
+    if (index.linestamps && index.linestamps.length > 0) {
+      const stickerDataArr = await Promise.all(
+        index.linestamps.map(async (filename) => {
+          const res = await fetch(`./posts/${filename}`);
+          if (!res.ok) return null;
+          return res.json();
+        })
+      ).then(r => r.filter(Boolean));
+
+      const [yw, ym] = ['week', 'release_date'];
+      stickerPosts = stickerDataArr.flatMap(s => {
+        const [from, to] = s.week.split('_');
+        const label = `Lineスタンプ (${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')})`;
+        return s.stamps.map(stamp => ({
+          date: s.release_date,
+          platform: label,
+          time: '00:00',
+          purpose: stamp.scene,
+          character: (stamp.character || []).map(c => charMap[c] || c).join(' + '),
+          content: stamp.dialogue,
+          image_prompt: stamp.image_prompt,
+          weekId: s.week
+        }));
+      });
+    }
+
+    allPosts = [
+      ...weekDataArr.flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week }))),
+      ...stickerPosts
+    ].sort((a, b) => {
         const tA = new Date(`${a.date}T${a.time}:00`);
         const tB = new Date(`${b.date}T${b.time}:00`);
         return tA - tB;
       });
 
     renderDynamicPlatformFilter();
-    renderWeekFilter(weekDataArr.map(w => w.week));
+    renderWeekFilter([...weekDataArr.map(w => w.week), ...(index.linestamps ? stickerPosts.map(p => p.weekId) : []).filter((v, i, a) => a.indexOf(v) === i)]);
     renderPosts();
 
   } catch (err) {
@@ -156,6 +185,8 @@ function renderCard(post) {
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
     : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
+    : post.platform.startsWith('Lineスタンプ') ? 'platform-line'
+    : post.platform.startsWith('スタンプ宣伝') ? 'platform-stamp-promo'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
@@ -286,6 +317,8 @@ function setupPlatformFilter() {
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
     else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
+    else if (platform.startsWith('Lineスタンプ')) btn.classList.add('active-line');
+    else if (platform.startsWith('スタンプ宣伝')) btn.classList.add('active-stamp-promo');
     else btn.classList.add('active');
 
     renderPosts();
