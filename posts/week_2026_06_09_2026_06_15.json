@@ -1,14 +1,44 @@
 {
   "week": "2026-06-09_2026-06-15",
-  "generated_at": "2026-06-07T09:00:00+09:00",
-  "source": "weekly_sns_run",
-  "reference_episode_date": "2026.5.17",
-  "trend_summary": [
-    "職場の「敬意と敬われる差」— 肩書きへの依存 vs 背中で示すリーダーシップへの共感が増加",
-    "「怒りを燃料にする技術」— 感情で返した瞬間に相手の物語が正しくなることへの気づき投稿が保存を集めている",
-    "「被害者意識の手放し方」— 主体的選択として状況を再定義することで自由を取り戻す視点の投稿が広がっている"
-  ],
   "posts": [
+    {
+      "date": "2026-06-09",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "比較から自由になる技術",
+      "character": "Coco + 🐢しずく",
+      "content": "比べてくる人の「物差し」は、\n最初からあなたのサイズじゃないんですよね。\n\n合わない物差しで測られても、\n小さく感じる必要は1ミリもない。\n\nその人が使っているのは、\n「あなたを評価するもの」じゃなくて、\n「自分の不安を静めるもの」だから。",
+      "quote": "💎 比べてくる人の物差しは、あなたのサイズに作られていない"
+    },
+    {
+      "date": "2026-06-09",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "比較から自由になる技術",
+      "character": "Coco + 🐢しずく",
+      "content": "誰かと比べられて、\n「また始まった」と思ったことはありませんか？\n\n「あなたは○○さんと違って」\nその一言で、朝から気持ちがズンとする。\n\nあの感じ、よくわかるんですよね。\n\n比べてくる人には、たいてい理由があって。\nそれは「あなたを評価したい」のではなく、\n「自分の現在地を確認したい」から。\n\nつまり、その物差しはもともと、\nあなたのサイズに作られていない。\n\nあなたのチームや職場に、\n比べてくる人はいますか？",
+      "quote": "💎 比べてくる人は、自分の不安を物差しにしている"
+    },
+    {
+      "date": "2026-06-09",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "比較から自由になる技術",
+      "character": "🐢しずく",
+      "content": "「比べる」って、人間の本能みたいなものだよね。\n\nでも「比べられる側」になったとき、\nほとんどの人が同じ間違いをする。\n\n比べた「結果」を、そのまま受け取ってしまう。\n\n「○○さんより劣っている」という評価を、\n事実として飲み込んでしまう。\n\nでも待って。\nその比較、誰の軸で行われた？\n\n100メートル走が速い人と水泳が速い人を並べて\n「こっちが劣る」とは言えないよね。\n\nあなたが戦っているフィールドは、\n比べられた相手と同じだっただろうか？\n\nあなたは今、誰かと比べて落ち込むことがある？",
+      "quote": "💎 比べた結果は事実じゃない。誰の軸かが問題だ"
+    },
+    {
+      "date": "2026-06-09",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "経営者の言葉が現場に届かない理由",
+      "character": "Coco + 🐢しずく",
+      "content": "「社長が話し始めた途端、現場の温度が下がる。\nその構造を言語化できるか。」\n\n全社朝礼・方針説明の場で、現場の反応に一番近いのはどれ？\n\nA　うなずいているが、目が「早く終わらないかな」と言っている\n\nB　「大事なことを言っているはずだが、自分には関係ない」と感じている\n\nC　内容は理解できるが「で、私は何をすればいいか」が見えない\n\nD　大切さはわかるが、言葉が多すぎて「何が最優先か」が摑めない\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June rainy season Tuesday with misty morning light and hydrangeas visible outside. Top-left: Coco (a calm refined young woman in a soft pale grey linen blazer with subtle lapel detail) stands at the front of a small meeting; a small wise turtle (Shizuku) sits among the listeners with closed eyes and nodding head but slightly distant expression; misty morning light through rain-streaked windows. Top-right: Shizuku sits further back from Coco; its attention has drifted sideways toward the window; Coco gestures forward earnestly but the distance between them is visible. Bottom-left: Coco holds a document with broad strokes; Shizuku holds a question-shaped leaf it has found; both look at each other with a genuine gap of understanding; soft rainy indoor light. Bottom-right: Coco holds up five fingers listing items; Shizuku looks overwhelmed and slightly frozen; hydrangeas in full bloom outside the window. Refined palette of soft grey-blue, warm ivory, and sage green. No text, no letters, no signage.",
+      "comment": "経営者の言葉が現場に届かないのは、内容の問題ではなく「着地点の問題」だ。\n\n組織の温度を見てきた経験から言える。\nこの4択のどれを選んだかで、「翻訳コスト」がどこに発生しているかが見えてくる。\n\n──────────────\nA｜うなずいているが目が「早く終わらないかな」と言っている\n\nこの状態の現場は「聴く気がない」のではない。\n「聴いても何も変わらない」という過去の経験が積み重なっている。\n言葉が届いていないのは現場のせいではなく、言葉が行動に変わった実績がなかった歴史が原因だ。\n\n──────────────\nB｜「自分には関係ない」と感じている\n\n経営者の「全員への言葉」が、現場では「誰かへの言葉」に聞こえている。\n「あなたに何を期待しているか」が個別に届いていないとき、人は自分ごとにできない。\n全体への言葉と、個への言葉は別の仕組みが必要だ。\n\n──────────────\nC｜内容はわかるが「自分は何をすればいいか」が見えない\n\nこれが最も多い形。経営者の言葉が「概念」で止まっている。\n「現場での第一アクション」まで翻訳されないと、言葉は熱量を持ったまま地面に落ちる。\n意図を納得に変えるには、「明日の行動」への翻訳が欠かせない。\n\n──────────────\nD｜言葉が多すぎて「最優先」が摑めない\n\n情報量が多いほど、受け手は優先順位をつけられなくなる。\n「3つのことを言えば、3つとも伝わらない」という原則がある。\n経営者の言葉が長いほど、現場が覚えているのは最初の10秒だけになる。\n\n──────────────\n\n経営者の意図を現場の納得へ届けるとは、「同じ言葉を繰り返すこと」ではない。\n現場の言語に翻訳し、明日の行動に落とし込む仕組みを持つことだ。\n\n📌 明日から使える一手\n全体発信の後に「この話から、あなたは明日何をするか」を1人に聞け。\nその答えが、言葉が届いているかどうかの温度計になる。\n\n組織の温度の整え方を、noteで書いています。",
+      "quote": "💎 経営者の言葉が長いほど、現場が覚えているのは最初の10秒だけだ"
+    },
     {
       "date": "2026-06-09",
       "platform": "Threads診断 6/9〜6/15",
@@ -19,6 +49,62 @@
       "image_prompt": "A high-quality watercolor illustration in four equal panels with soft transparent washes and a delicate 1px white border. Mid-June rainy season atmosphere with soft misty morning light and lush green outside. Panel 1: Coco (a calm refined young woman in a soft pale lavender linen blouse, early rainy season style) sits at a table while an unseen force seems to place two small objects beside her for comparison; she observes with a composed untroubled expression; a small wise turtle (Shizuku) stands next to her equally calm; hydrangeas in the window. Panel 2: Shizuku stands before a row of measuring rulers of different sizes; the turtle regards them with quiet steady eyes rather than anxiety; soft misty morning light. Panel 3: Coco and Shizuku walk side by side in their own direction; the comparison scene is left behind them; their posture is upright and self-possessed; fresh rain-washed garden path. Panel 4: Coco gestures gently toward a single clear path ahead; Shizuku looks up with a calm forward-looking expression; the mist clears to reveal soft golden-green light. Refined palette of soft lavender, sage green, and warm ivory. No text, no letters, no signage.",
       "comment": "5万人の本音から見えてきた、「比べる行為」の正体。\n\n「あなたは○○と違って」と言葉を投げてくる人は、たいていの場合、自分の何かを守ろうとしている。\n比べることは相手を評価する行為ではなく、自分の現在地が不安な人間が使う「自己防衛の言語」だ。\n\n──────────────\nA｜言い返せなくて、後悔する\n\nその場で言い返せなかったのは、敗北ではない。\n反射的に戦わない冷静さがあるということ。\n言い返さなかったことが、実は「格の違い」を最も雄弁に見せる場合がある。\n言葉を持ちながら使わない人間の静けさは、それ自体が強さになる。\n\n──────────────\nB｜比べられた相手がすごい人に見えて、自分が小さく感じる\n\n比べられた対象の「すごさ」は、あなたの「なさ」ではない。\n100メートル走が速い人と水泳が速い人は、別の軸の話。\nあなたが勝負しているフィールドと、比べられた相手のフィールドは、そもそも違うかもしれない。\n\n──────────────\nC｜理由もわからずモヤっとする\n\nそのモヤモヤの正体は「自分の価値が他者との比較で決まると思わされた不快感」。\nあなたの直感は正しい。\n比較は、あなたの絶対的な価値を測る道具にはならない。\n\n──────────────\nD｜比べてくる相手への怒りより、自分への落胆が先にくる\n\nこれが最も根深い形。\n相手の質より、比べられた自分への「なぜもっとできないのか」が先に来る。\nでも相手が使った「物差し」は、あなたのサイズに合った物差しではない。\n\n──────────────\n\n比べてくる人は、比べることでしか自分の居場所を確認できない状態にいる。\nそれは、その人自身の「現在地への不安」の告白だ。\n\nだからこそ、その物差しに乗る必要は1ミリもない。\n自分がすでに歩いてきた道を、静かに指さすだけでいい。\n\n「比較から自由になる技術」を、noteで書いています。",
       "quote": "💎 比べてくる人の物差しは、あなたのサイズに合っていない"
+    },
+    {
+      "date": "2026-06-09",
+      "platform": "Threads",
+      "time": "18:00",
+      "purpose": "比較から自由になる技術",
+      "character": "Coco + 🐢しずく",
+      "content": "比べることをやめた人の話を聞くと、\nみんな同じことを言うんですよね。\n\n「やめたわけじゃなくて、\nどうでもよくなった」と。\n\n比べなくなったのは、強くなったからじゃない。\n\n「この人の物差しは、私には関係ない」と\n静かに気づいたから。\n\n他者の物差しを借りて自分を測ることをやめた日から、\nなぜか毎日が少し軽くなるんだよね。\n\nあなたが「どうでもよくなった」と感じた瞬間、\nどんなときでしたか？",
+      "quote": "💎 どうでもよくなった日から、自由が始まった"
+    },
+    {
+      "date": "2026-06-09",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "比較から自由になる技術",
+      "character": "🐢しずく",
+      "content": "「あの人の方が上」と感じた瞬間、\nそこで止まらなくていい。\n\n比べたくなる気持ちは、\n本当は「もっとこうなりたい」というサイン。\n\n敵じゃなくて、羅針盤なんですよね。",
+      "quote": "💎 嫉妬は敵じゃない。自分の本音への羅針盤だ"
+    },
+    {
+      "date": "2026-06-10",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "本音が言えない関係の構造",
+      "character": "🐈‍⬛しらたま",
+      "content": "本音が言えないのは、\n関係が深いからじゃない。\n\n「重いと思われたくない」\nその恐怖が先に走ってるだけ。\n\n言わない本音は、\nじわじわと関係を侵食していくんですよね。",
+      "quote": "💎 言わない本音が、関係を静かに削っていく"
+    },
+    {
+      "date": "2026-06-10",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "本音が言えない関係の構造",
+      "character": "🐈‍⬛しらたま",
+      "content": "「言いたいことがあるんだけど、言えない」\n\nそんな夜、ありますよね。\n\n言えない理由って、意外と「嫌いだから」じゃなくて、\n「大切だから」なんですよね。\n\n傷つけたくない。\n重いと思われたくない。\n壊れるのが怖い。\n\nでも飲み込み続けると、\n相手が付き合っているのは「本当のあなた」じゃなくて、\n「気を遣い続けるあなた」になっていく。\n\n近しい人に、言えていない本音がある。\nあなたは今、そういう状況にいますか？",
+      "quote": "💎 「大切だから言えない」が、関係を薄くしていく"
+    },
+    {
+      "date": "2026-06-10",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "本音が言えない関係の構造",
+      "character": "🐈‍⬛しらたま",
+      "content": "「言ってもどうせ変わらない」\n\nこの感覚、一度でも持ったことのある人、\nけっこう多いんじゃないかな。\n\nすごく自然な感覚なんですよね。\n過去に正直に言って、何も変わらなかった経験があるから。\n\nでも気をつけたいのは、\n「諦め」って省エネに見えて、\n関係を「なんとなく続くもの」に格下げしていくこと。\n\n諦めた後、その関係はどうなっていった？\nあなたの経験、聞かせてもらえますか？",
+      "quote": "💎 諦めは省エネに見えて、関係を格下げしていく"
+    },
+    {
+      "date": "2026-06-10",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "現場が動かない本当の理由",
+      "character": "🐈‍⬛しらたま",
+      "content": "「現場が動かない本当の理由、上司は気づいていない。」\n\n指示を出したのに動かない。\nその沈黙の正体に、一番近いのはどれ？\n\nA　「なぜやるか」が伝わっていないから、何を優先すればいいかわからない\n\nB　「失敗したらどうなるか」が見えすぎていて、動く前にリスク計算が始まる\n\nC　「誰が最終的に決めるのか」が曖昧で、一歩目を踏み出せない\n\nD　やる気はあるが、目の前の仕事が多すぎて新しいことに手が出ない\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June rainy season Wednesday with grey-blue indoor light and steady rain outside. Top-left: A fluffy white cat (Shirotsuma) stands at a fork in a path holding a map; the map has destinations but no reason written; the cat looks left and right with a genuinely uncertain expression; rain falls softly outside the window. Top-right: Shirotsuma peers carefully over the edge of a small step before stepping; its paw hovers mid-air in extended hesitation; a small warning sign is visible nearby; grey rainy light. Bottom-left: Shirotsuma looks at a door with three different name plates; none of them clearly marked; the cat sits back with paws folded waiting; hydrangeas outside the rain-streaked window. Bottom-right: Shirotsuma faces a tall stack of tasks represented as small parcels; a new parcel sits to one side still wrapped; the cat looks at it with willing but exhausted eyes; warm indoor lamp glows. Refined palette of soft grey-blue, warm ivory, and pale sage. No text, no letters, no signage.",
+      "comment": "現場が動かないのは「やる気の問題」ではなく「構造の問題」だ。\n\n組織の動きを見てきた経験から言える。\n4択のどれが近かったか。そこに「動かない構造」の正体がある。\n\n──────────────\nA｜「なぜやるか」が伝わっていない\n\n「何をするか」だけ伝えられた人間は、優先順位をつけられない。\nなぜなら「なぜ」がわからないと、何が重要かが判断できないからだ。\n指示に「なぜ」を加えるだけで、現場の動き方が変わる。\n\n──────────────\nB｜失敗のリスクが見えすぎている\n\n組織の中で「失敗した人がどう扱われたか」は、全員が見ている。\n「失敗しても次がある」という実績が組織にないと、現場は動く前に止まる。\nこれは個人のメンタルの問題ではなく、組織の記憶の問題だ。\n\n──────────────\nC｜「誰が決めるか」が曖昧\n\n決裁権の所在が不明な組織では、誰も「最初の一歩」を踏み出さない。\n「報告してから動く」と「動いてから報告する」では、スピードが10倍変わる。\n権限の所在を明示するだけで、現場の体温が上がる。\n\n──────────────\nD｜目の前が多すぎる\n\nこれが最も見落とされる原因。「動かない」ではなく「動けない」状態だ。\n何かを新しく動かすには、何かを止める許可が必要だ。\n「やらなくていいこと」を決めるのは、マネジメントの仕事だ。\n\n──────────────\n\n現場の沈黙を「やる気のなさ」と読む前に、問え。\n「動けない構造を、私たちが作っていないか。」\n\n📌 明日から使える一手\n最近動きが止まっている仕事に「誰が判断すれば次に進めるか」を確認せよ。\nその一問が、詰まった現場を動かす。\n\n現場の解像度の上げ方を、noteで書いています。",
+      "quote": "💎 現場の沈黙は無気力ではない。動けない構造への、静かな適応だ"
     },
     {
       "date": "2026-06-10",
@@ -32,6 +118,62 @@
       "quote": "💎 本音が言えないのは、関係が深いからではない"
     },
     {
+      "date": "2026-06-10",
+      "platform": "Threads",
+      "time": "18:00",
+      "purpose": "本音が言えない関係の構造",
+      "character": "🐈‍⬛しらたま",
+      "content": "本音を言えるかどうかって、\n「関係の深さ」より「安全を感じているか」の問題だよね。\n\n何を言っても笑ってくれる人と過ごした、あの空気。\n失敗を話しても「それで？」と続きを聞いてくれた、あの感じ。\n\nああいう場所では、自然と言葉が出てくる。\n\n安全を感じている場所では、人は本音を話す。\n怖い場所では、どんなに深い関係でも飲み込む。\n\nあなたの周りに、本音を話せる場所はありますか？",
+      "quote": "💎 本音が出るのは、関係の深さではなく安全の深さ"
+    },
+    {
+      "date": "2026-06-10",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "本音が言えない関係の構造",
+      "character": "🐈‍⬛しらたま",
+      "content": "「言いたいことが言えた」と感じる関係、\n最後にいつあった？\n\n本音を飲み込み続けると、\nいつの間にか「本当の自分」がいない場所になる。\n\n怖くて言えないより、\n言えない関係にいることの方が、\nずっと消耗するよな。",
+      "quote": "💎 言えない関係にいることが、一番消耗する"
+    },
+    {
+      "date": "2026-06-11",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "わかってくれないの正体",
+      "character": "🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「なんでわかってくれないの」の下に、\n本当に求めているものがある。\n\n言葉にできていないのに「わかってほしい」は、\n相手には届かない。\n\n伝えてほしいのは「気持ち」より、まず「言葉」だよな。",
+      "quote": "💎 わかってほしいなら、まず言葉にすることから"
+    },
+    {
+      "date": "2026-06-11",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "わかってくれないの正体",
+      "character": "🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「なんでわかってくれないんだろう」\n\nそう思いながら眠れなかった夜、ありますよね。\n\nこの言葉、よく分解してみると、\n4種類のまったく違うメッセージが隠れているんですよね。\n\n「言葉にできていないのに、わかってほしい」なのか、\n「察してほしい」なのか、\n「同じパターンが繰り返されている」なのか、\n「行動で示してほしい」なのか。\n\n自分がどれなのかを知るだけで、\n伝え方が変わるんです。\n\n「わかってくれない」と感じるとき、\nあなたは本当に何を求めているんだろう？",
+      "quote": "💎 「わかってくれない」の下にある本当の欲求を知ること"
+    },
+    {
+      "date": "2026-06-11",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "わかってくれないの正体",
+      "character": "🐢しずく",
+      "content": "「察してほしい」って、実はけっこう難しいお願いだよね。\n\n察する力って、「愛情の大きさ」じゃなくて、\n「過去の経験の共有量」に比例するから。\n\n長く一緒にいれば察せるわけじゃなくて、\n「どんな場面で何を感じるか」を積み重ねて初めて育つもの。\n\nだから察してもらえなかったとき、\n「愛されていない証拠」じゃなくて、\n「まだ経験値が足りていない」だけかもしれない。\n\nあなたのパートナーや大切な人に、\n一番「察してほしかった」瞬間はいつでしたか？",
+      "quote": "💎 察する力は愛情ではなく、経験の共有量に比例する"
+    },
+    {
+      "date": "2026-06-11",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "なぜか舐められるリーダーの行動パターン",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「なぜか舐められるリーダーの、行動パターン。」\n\n「尊重される上司」と「なめられる上司」。\n見た目の差は小さいが、現場への影響は大きい。\n\nあなたのリーダーとしての行動に、一番近いのはどれ？\n\nA　意見が変わることを「柔軟さ」だと思い、しょっちゅう方針を変える\n\nB　「考えておく」「確認する」と言って、答えを後回しにし続ける\n\nC　部下のミスを責めず、代わりに自分でやってしまう\n\nD　「みんなはどう思う？」と聞いて、自分の意見を最後まで言わない\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June rainy season Thursday with warm indoor light and gentle rain outside. Top-left: Coco (a composed young woman in a soft blue-grey linen blazer, mid-June style) stands at a whiteboard erasing and redrawing; a fluffy white cat (Shirotsuma) and a gentle white bird (Hiyori) watch with slightly puzzled expressions; hydrangeas outside the window. Top-right: Coco holds a small notebook marked with question marks; Shirotsuma and Hiyori sit facing her with patient but slightly weary expressions; a waiting atmosphere; rainy indoor light. Bottom-left: Coco rolls up her sleeves and takes over a task from Shirotsuma's desk; Shirotsuma steps back with folded paws watching; Hiyori perches nearby observing quietly. Bottom-right: Coco gestures broadly toward Shirotsuma and Hiyori with an open expression; both animals look at each other then back at her; a moment of collective uncertainty; soft rainy window light. Refined palette of soft grey-blue, warm amber, and ivory. No text, no letters, no signage.",
+      "comment": "「舐められる」という現象に、悪意はほとんどない。\n現場は「この人の言葉はどこまで本気か」を、日々の行動から無意識に読み取っている。\n\n──────────────\nA｜しょっちゅう方針を変える\n\n「柔軟」と「ブレる」の違いは、「なぜ変えるか」を説明できるかどうかだ。\n説明なく変えるたびに、現場は「この方針も変わるかもしれない」と学習する。\n学習した現場は、次から「言われるまで動かない」になる。\n\n──────────────\nB｜答えを後回しにし続ける\n\n決定が遅いリーダーのもとでは、現場が「上を待たずに動く」か「上を待って止まる」かの2択になる。\nどちらも、リーダーの存在感が薄まる。\n「今すぐ決められないが、○日までに決める」と言えるだけで、信頼の温度が変わる。\n\n──────────────\nC｜自分でやってしまう\n\n部下を助けているつもりが、「ミスしてもリーダーがやってくれる」という学習を生んでいる。\n優しさが、現場の自律を奪う。\n「あなたにやってほしい。一緒に考えよう」が、任せることの本質だ。\n\n──────────────\nD｜自分の意見を言わない\n\nリーダーが意見を言わないと、現場は「空気を読む」ことに全エネルギーを使い始める。\n「上が正解を持っているはずだが、言ってくれない」という環境では、提案は生まれない。\nリーダーの意見は、答えではなく「考え方の出発点」として機能する。\n\n──────────────\n\n尊重されるリーダーは、「強さ」ではなく「一貫性」を持っている。\n言ったことをやる。変えるなら説明する。決める。任せる。\nその積み重ねが、現場の信頼を育てる。\n\n📌 明日から使える一手\n「みんなはどう思う？」と聞く前に、「私はこう思うが、みんなはどうだ？」に変えよ。\nリーダーの意見が先に出ると、現場の安心感と発言量が変わる。\n\n組織の一貫性の仕組み化を、noteで書いています。",
+      "quote": "💎 舐められるリーダーは悪人ではない。一貫性のない、善意の人だ"
+    },
+    {
       "date": "2026-06-11",
       "platform": "Threads診断 6/9〜6/15",
       "time": "14:00",
@@ -43,15 +185,127 @@
       "quote": "💎 「わかってくれない」は、物差しが違うというサイン"
     },
     {
+      "date": "2026-06-11",
+      "platform": "Threads",
+      "time": "18:00",
+      "purpose": "わかってくれないの正体",
+      "character": "🕊ひより",
+      "content": "「わかり合えた」と感じた瞬間って、\n何があったとき？\n\n言葉をかけてもらったとき？\nただそこにいてもらったとき？\n何かを一緒にやったとき？\n\n実は人それぞれ、「わかってもらった」と感じる瞬間が違うんですよね。\n\n自分がどのタイプかを知るだけで、\n求め方も変わってくる。\n\n伝え方より先に、「自分は何で満たされるか」を知ることが大事なんだよね。\n\nあなたが「わかってもらえた」と感じるのは、\nどんな瞬間が多いですか？",
+      "quote": "💎 「わかり合う」前に、自分が何で満たされるかを知ること"
+    },
+    {
+      "date": "2026-06-11",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "わかってくれないの正体",
+      "character": "🐢しずく",
+      "content": "人はそれぞれ、違う物差しを持って生きている。\n\n「なんでわかってくれないの」は、\n「私の物差しで測ってくれない」という嘆き。\n\nその前提を知ると、\n怒りではなく、「伝え方を変えよう」という静かなサインに変わる。",
+      "quote": "💎 わかり合えないのではなく、物差しが違うだけ"
+    },
+    {
+      "date": "2026-06-12",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "怒りの正体",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "怒りは、二次感情だ。\n\n強い怒りの裏側には、必ず別の感情がある。\n傷ついた。悲しかった。後ろめたかった。\n\n怒鳴る量は、\n自分が正しいことの証明にはならない。",
+      "quote": "💎 怒りの大きさは、正当性の大きさではない"
+    },
+    {
+      "date": "2026-06-12",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "怒りの正体",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "怒っているとき、\n本当に怒っているわけじゃないことって、ありますよね。\n\n「なんでそんなことするの！」と声を荒げながら、\n本当は「傷ついた」って言いたかった。\n\n「あなたって信じられない」と言いながら、\n本当は「大切にしてほしかった」んですよね。\n\n怒りは、弱さを隠しながら「強い側」に立てる方法。\nだから傷ついたと言う代わりに、怒ることを選ぶ。\n\n最近、誰かに怒りを感じたとき、\nその下には何がありましたか？",
+      "quote": "💎 怒りの仮面の下に「傷ついた」がある"
+    },
+    {
+      "date": "2026-06-12",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "怒りの正体",
+      "character": "Coco + 🕊ひより",
+      "content": "「怒鳴る人が正しい」わけじゃないよね。\n\nでも怒っているとき、\n声が大きい方が正義に見える瞬間がある。\n\nこれが「怒りの錯覚」。\n\n怒りの大きさは、正当性の大きさじゃない。\n怒りの強さは、痛みの深さを表しているだけ。\n\n誰かが強く怒ってくるとき、\nその人の中でいちばん痛いのはどこなんだろう。\n\nそう考えると、少し見え方が変わるんですよね。\n\nあなたの周りで、怒りが多い人の「下にあるもの」、\n見えてくることはありますか？",
+      "quote": "💎 強い怒りほど、深い痛みを隠している"
+    },
+    {
+      "date": "2026-06-12",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "組織の温度の測り方",
+      "character": "🐢しずく + 🕊ひより",
+      "content": "「部下が言い訳を始める瞬間の目線、読めているか。」\n\n組織の温度が下がっているとき、\n現場には必ず「先行サイン」が出ている。\n\nあなたの職場で、一番起きているのはどれ？\n\nA　問題が起きてから報告が上がってくる。起きる前には誰も言わない\n\nB　会議で発言するのは、いつも同じ顔ぶれだけ\n\nC　「何でも言ってください」と言うと、全員が沈黙する\n\nD　成果を褒めても「ありがとうございます」で終わり、次の行動が変わらない\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June rainy season Friday with clear but cool indoor light and the sound of rain outside. Top-left: A small wise turtle (Shizuku) holds a small report envelope and waits outside a closed door; a gentle white bird (Hiyori) watches from a perch nearby; the report is late; soft rainy light through a window. Top-right: Shizuku sits at a round table; Hiyori raises a wing to speak; the other chairs are occupied by soft warm shapes; Shizuku and Hiyori are the only ones clearly engaged; grey-blue indoor light. Bottom-left: Hiyori opens its wings slightly as if to speak; Shizuku looks forward with an open flipper gesture; the space around them is very quiet; a rain-streaked window in the background. Bottom-right: Shizuku holds out a small commendation ribbon toward Hiyori; Hiyori accepts it politely with a small bow but then settles back to its previous position unchanged; warm indoor lamp glows. Refined palette of cool grey-blue, warm ivory, and sage green. No text, no letters, no signage.",
+      "comment": "組織の温度は「空気」ではなく「行動のパターン」で測れる。\n\n現場の解像度を磨いてきた経験から言える。\n4択のどれが近かったか。それが、今の組織の温度計だ。\n\n──────────────\nA｜問題が起きてから報告が上がってくる\n\nこれは「報告しない文化」ではなく「報告すると何かが起きる文化」のサインだ。\n「なぜ早く言わなかったのか」の追及が先に来る組織では、現場は「解決してから報告」を学習する。\n情報が遅れるほど、経営の判断は後手に回る。\n\n──────────────\nB｜会議で発言するのは常に同じ人\n\n沈黙している人は「意見がない」のではなく「発言のコストが高い」と感じている。\n過去に発言して否定された、または発言しても何も変わらなかった経験が積み重なっている。\nこの状態を「参加意欲の低さ」と診断するのは間違いだ。\n\n──────────────\nC｜「何でも言ってください」で全員が沈黙する\n\n「何でも」は最も何も引き出さない言葉だ。\n本音を言った部下がその後どう扱われたか——現場はそれを見ている。\n「何でも」の代わりに、具体的な問いが組織の温度を上げる。\n\n──────────────\nD｜褒めても次の行動が変わらない\n\n「ありがとうございます」で止まる承認は、行動変容につながっていない。\n「何が良かったのか」が具体的に伝わっていないか、または承認と「次にどうしてほしいか」がセットになっていない。\n承認は「感情」ではなく「情報」として届けることで、行動が変わる。\n\n──────────────\n\n組織の温度を上げるとは、「熱量を注入すること」ではない。\n「下がる仕組みをなくすること」だ。\n\n📌 明日から使える一手\n次の会議で「今日の議題について、発言しなかった人に後で聞く」と宣言せよ。\nその一言が、沈黙の意味を変える。\n\n組織の温度の仕組み化を、noteで書いています。",
+      "quote": "💎 組織の温度は熱量で上げるものではない。下がる仕組みをなくすものだ"
+    },
+    {
       "date": "2026-06-12",
       "platform": "Threads診断 6/9〜6/15",
       "time": "14:00",
-      "purpose": "やさしさと甘えの線引き",
+      "purpose": "怒りの正体",
       "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
-      "content": "「やさしくしたい。でも、消耗したくない。」\nその矛盾の答えは、一本の線にある。\n\n近しい人に対して、一番近いのはどれ？\n\nA　頼まれると断れなくて、あとから「なんで引き受けたんだろう」と思う\n\nB　相手が困っていると聞くと、自分のことより先に動いてしまう\n\nC　「助けてあげたい」という気持ちと「また私だ」という気持ちが同時にある\n\nD　やさしくした後に「ありがとう」がないと、モヤっとする\n\n→ A〜D、コメントへ",
-      "image_prompt": "A high-quality watercolor illustration in four equal panels with soft transparent washes and a delicate 1px white border. Mid-June rainy season Thursday with warm lamp light inside and steady rain outside. Panel 1: Coco (a composed young woman in a soft grey-green cotton knit over a white blouse, mid-rainy season layering) holds out a bowl that is clearly full and overflowing; a fluffy white cat (Shirotsuma) and a gentle white bird (Hiyori) receive from it gratefully; the giving comes from abundance. Panel 2: Shirotsuma holds out a small nearly empty bowl; the cat's posture is slightly strained; Hiyori watches with concern; the giving comes from depletion. Panel 3: Coco draws a gentle clear line in the air between herself and Shirotsuma; Hiyori watches from the side; the line is not a wall but a boundary; both sides of it are warm. Panel 4: All three sit comfortably at a small table each with their own full bowl; the rain patters on the window; they share from abundance rather than obligation; warm lamp glow. Refined palette of warm sage green, cream, and soft amber. No text, no letters, no signage.",
-      "comment": "やさしさと自己消耗の間には、一本の線がある。\nその線の名前は「課題の分離」。\n\n5万人の本音から見えてきた、やさしさが消耗に変わる瞬間。\n\n──────────────\nA｜断れなくて、あとから後悔する\n\n「断れない」のは優しさではなく「引き受けた後の軽さ」を選んでいる回避行動。\n断ることは相手を傷つけることではない。\n「断られる経験」を持てないまま成長するのを止めてしまうこと——それがやさしさの名を借りた依存の温床になる。\n\n──────────────\nB｜自分のことより先に動いてしまう\n\nこれ自体は美しい資質。\nでも「自分より先に」が習慣になると、自分の困り事は誰が拾うのかという問いが残る。\n飛行機の酸素マスクは「まず自分に」だ。自分が整っていないと、他者を助ける力も枯れる。\n\n──────────────\nC｜「助けたい」と「また私だ」が同時にある\n\nこれが最も正直な感覚。\n「また私だ」という感覚は、「やさしさの予算が赤字になってきた」というサイン。\nそのサインを無視し続けると、やがてやさしさそのものが、相手への恨みに変わる。\n\n──────────────\nD｜「ありがとう」がないとモヤっとする\n\nこれはやさしさが「対価を求める取引」になりかけているサイン。\n「ありがとう」を求めることは悪くない。\nでも「与えたい」から動くのか、「認められたい」から動くのか、自分に問うてみる。\n\n──────────────\n\n課題の分離とは、冷たくなることではない。\n\n「あなたの問題はあなたのもの。\n私はあなたを応援するが、あなたの代わりに問題を解決しない。」\n\nこの線引きが、やさしさを消耗から守る。\nそして、その線を引くからこそ、本当に必要なときに全力で隣に立てる。\n\n「やさしさの温度の整え方」を、noteに書いています。",
-      "quote": "💎 やさしさを守るのは、課題の分離という静かな線"
+      "content": "「腹が立つとき、たいていの場合、\n怒り以外の感情が、怒りに化けている。」\n\n近しい人への強い怒りを感じたとき、\n一番近いのはどれ？\n\nA　相手が正しいと、どこかで感じていた。\n　 でも認めたくなくて、怒りにした\n\nB　本当は傷ついていたのに、\n　 傷ついたと言えなくて、怒りになった\n\nC　自分にも少し後ろめたさがあるのに、\n　 「相手も悪い」という怒りで打ち消した\n\nD　大切にされたかった、という悲しみが先にあって、\n　 それがいつの間にか怒りに変わった\n\n→ A〜D、コメントへ",
+      "image_prompt": "A high-quality watercolor illustration in four equal panels with soft transparent washes and a delicate 1px white border. Mid-June rainy season Thursday with warm indoor light and steady rain outside. Panel 1: Coco (a composed young woman in a soft grey-blue linen jacket with delicate lapel detail, mid-rainy season style) stands very still as an invisible wave of tension seems to dissolve around her; she looks inward with a calm questioning expression; a fluffy white cat (Shirotsuma) watches quietly nearby; rain on the window. Panel 2: Shirotsuma holds a small hand mirror in its paws; behind the tense expression reflected in the mirror a softer sadness is visible beneath; a gentle white bird (Hiyori) sits beside it looking with quiet understanding; grey rainy light. Panel 3: Coco sits with both hands open on the table in a gesture of honest inquiry; Shirotsuma and Hiyori are across from her; the atmosphere is reflective and still; a rainy-day hydrangea outside the window. Panel 4: All three sit in calm proximity; the cloud of tension is replaced by quiet clarity; Coco's expression is steady and knowing; the room feels cleared by understanding. Refined palette of soft grey-blue, warm amber, and muted ivory. No text, no letters, no signage.",
+      "comment": "怒りは、二次感情だ。\n\n5万人の本音を聴いてきた経験から言える。\n強い怒りの裏側には、必ず別の感情がある。\n\n──────────────\nA｜相手が正しいと感じていたのに、認めたくなくて怒りにした\n\n「後ろめたさが怒りに変換される」メカニズム。\n\n自分に非があると心のどこかで気づいているとき、人は2択に迫られる。\n「自分の非を認める」か、「相手を攻撃して逃げる」か。\n\n攻撃は、後ろめたさの逃げ場だ。\n怒りが大きいほど、その下に深い後ろめたさがある場合がある。\n\n──────────────\nB｜傷ついていたのに、言えなくて怒りになった\n\n「怒る」のは「傷ついた」より簡単。\n傷ついたと言うには、弱さを見せる勇気がいる。\n怒りは、弱さを隠しながら「強い側」に立てる方法だ。\n\n「怒り」の仮面の下に「傷つきたくなかった」がある。\nそれを知ると、自分の怒りも、相手の怒りも、少し違った形で見えてくる。\n\n──────────────\nC｜後ろめたさを「相手も悪い」で打ち消した\n\nこれが最もコストの高い怒り方。\n相手を攻撃することで、自分の後ろめたさをゼロにしようとしている。\n\n「私も悪かったかもしれないけど、相手の方がもっと悪い」\nこの計算は、後ろめたさを消すためだけに使われる感情の演算だ。\n怒りが落ち着いた後、ふと「自分も少し悪かった」と気づく——それがCの怒りを選んでいた証拠。\n\n──────────────\nD｜悲しみが先にあって、怒りに変わった\n\n「大切にされたかった」「見てほしかった」「わかってほしかった」\nこの悲しみが十分に扱われないまま時間が経つと、怒りになる。\n\n怒りを向けてくる人の中に、悲しんでいる人がいる。\nあなた自身が怒っているとき、本当は悲しんでいる場合もある。\n\n──────────────\n\n怒りの大きさは、正当性の大きさではない。\n怒鳴る量は、自分が正しいことの証明にはならない。\n\n「自分は今、本当は何を感じているのか」\nこの問いを持てると、怒りは関係を壊す武器ではなく、\n自分の気持ちを知るための手がかりになる。\n\n「怒りの正体を知る技術」を、noteで書いています。",
+      "quote": "💎 怒りの大きさは、正当性の大きさではない。その下にある感情が、本当のメッセージだ"
+    },
+    {
+      "date": "2026-06-12",
+      "platform": "Threads",
+      "time": "18:00",
+      "purpose": "怒りの正体",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "content": "怒りを上手に扱えるようになって変わったこと、\n聞いてみると面白いんですよね。\n\n「謝るのが早くなった」\n「言いたいことが言えるようになった」\n「怒らなくていい場面がわかった」\n\n全員が言うのは、\n「怒る回数が減ったのに、伝わることが増えた」こと。\n\n怒りを使わない方が、なぜか伝わる。\n\n怒りを感じたとき、\nあなたはどう対処することが多いですか？",
+      "quote": "💎 怒る回数が減ると、伝わることが増える"
+    },
+    {
+      "date": "2026-06-12",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "怒りの正体",
+      "character": "🐈‍⬛しらたま",
+      "content": "感情で返した瞬間、相手の勝ち。\n\n怒りたくなる気持ちはわかる。\nでもその怒りの下に、本当は何がある？\n\n「怒りを静める」より、\n「怒りの正体を知る」方が、\nずっと関係を変えるんですよね。",
+      "quote": "💎 怒りの正体を知る人は、関係を壊さない"
+    },
+    {
+      "date": "2026-06-13",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "嫉妬の使い方",
+      "character": "🐢しずく + 🕊ひより",
+      "content": "嫉妬は、恥ずかしいものじゃない。\n\n使い方がある。\n\n羨ましいと感じた相手を下げることに使うか、\n「自分が本当に望んでいるもの」を知るために使うか。\n\nその差が、じわじわと人生を分けるんですよね。",
+      "quote": "💎 嫉妬の使い方が、人生の方向を分ける"
+    },
+    {
+      "date": "2026-06-13",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "嫉妬の使い方",
+      "character": "🐢しずく + 🕊ひより",
+      "content": "仲のいい友達が昇進した。\nフォロワーが急増した。\nいつも隣にいた人が輝き始めた。\n\n「おめでとう」と言いながら、\nどこかがチクっとした経験、ありませんか？\n\nその「チクっと」は、あなたが小さいわけじゃない。\n\nむしろ「自分もそうなりたい」という欲求が、\nちゃんと生きている証拠なんですよね。\n\n嫉妬を感じたとき、\nその相手の「何が」羨ましかったですか？",
+      "quote": "💎 「チクっと」したとき、あなたの本音が動いている"
+    },
+    {
+      "date": "2026-06-13",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "嫉妬の使い方",
+      "character": "🐢しずく",
+      "content": "「どうせあの人は恵まれてるだけ」\n「運が良かっただけだよ」\n\n嫉妬を相手を下げることで処理する気持ち、\nわかるんですよね。\n\nでもこれ、すごくコストが高い方法で。\n\n相手を下げても、自分は上がらない。\n\nそのエネルギーを「相手の何が羨ましいのか」の観察に使うと、\n学べることが見つかる。\n\n「羨ましい」の正体を知ると、\n自分が本当に目指したい方向が見えてくるんですよね。\n\nあなたが最近「羨ましいな」と感じた相手の、\nどんな部分が気になりましたか？",
+      "quote": "💎 「羨ましい」の正体を知ると、自分の方向が見える"
+    },
+    {
+      "date": "2026-06-13",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "現場の自走化を阻むもの",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「自走するチームを作りたいのに、なぜか依存が止まらない。\nその原因は、リーダー側にある。」\n\n部下の「自走」を阻んでいる行動に、一番近いのはどれ？\n\nA　部下が相談に来るたびに、答えを教えてしまう\n\nB　「任せる」と言いながら、途中で確認や修正を入れてしまう\n\nC　部下が判断を間違えたとき、次から判断させなくなる\n\nD　良い仕事をした部下を褒めるとき、「もっとこうすれば」を付け加えてしまう\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June rainy season Saturday with soft warm indoor light and rain clearing outside. Top-left: Coco (a warm refined young woman in a soft sage linen blouse, mid-June style) sits across from a small wise turtle (Shizuku); Shizuku holds a question; Coco immediately hands over an answer card; Shizuku takes it without thinking; a gentle white bird (Hiyori) watches from the side. Top-right: Coco gestures broadly toward a fluffy white cat (Shirotsuma) with an open-handed trust expression; then in the same panel her hand reaches forward to adjust something Shirotsuma is working on; Shirotsuma looks back with a slightly deflated expression. Bottom-left: Shizuku carries a small parcel then stumbles; Coco immediately takes the parcel; Shizuku stands empty-handed looking at its own flippers; Hiyori watches from above. Bottom-right: Coco places a small gold star beside Shirotsuma's work; then immediately points to a small error nearby; Shirotsuma's ears droop slightly despite the gold star. Refined palette of warm sage, soft gold, and ivory. No text, no letters, no signage.",
+      "comment": "「なぜうちの現場は自走しないのか」——この問いは、リーダー自身に向けられるべきだ。\n\n組織の自律を見てきた経験から言える。\n4択のどれを選んだかで、「依存を育てている仕組み」が見えてくる。\n\n──────────────\nA｜相談に来るたびに答えを教えてしまう\n\n答えを教えることは「今日の問題を解決する」が、「明日の依存を育てる」。\n「どう思う？」「あなたならどうする？」を先に聞くだけで、部下の思考力が育ち始める。\nリーダーの仕事は「答えること」ではなく「考えさせること」だ。\n\n──────────────\nB｜「任せる」と言って途中で確認・修正を入れる\n\n部下は「任せる」という言葉より、その後の行動で「本当に任されているか」を判断する。\n途中での介入は「やっぱり信頼されていない」というメッセージになる。\n任せるなら、結果を見るまで待てる準備をしてから任せよ。\n\n──────────────\nC｜間違えたら次から判断させなくなる\n\n「失敗させない」ことは「成長させない」ことと同義だ。\n部下が判断を間違えたとき、「なぜそう判断したのか」を聞かずに取り上げると、\n次から部下は「判断しない」ではなく「判断できない」になる。\n\n──────────────\nD｜褒めた後に「もっとこうすれば」を付け加える\n\n「褒め」と「改善提案」を同時に届けると、人間の脳は改善提案だけを記憶する。\n褒めるなら褒めるだけ。改善を伝えるなら、日を分けるか、まず承認を完結させてから。\n良い仕事への純粋な承認が、次の挑戦の動力になる。\n\n──────────────\n\n現場の自走化は、部下の能力より先に「自走できる仕組み」の問題だ。\nリーダーが動きやすくなるほど、現場は動けなくなる。\n\n📌 明日から使える一手\n次に部下から相談が来たとき、答える前に「あなたはどうしたいと思っている？」と聞け。\nその一問が、依存から自走への最初の一歩になる。\n\n自走するチームの仕組み化を、noteで書いています。",
+      "quote": "💎 現場が動かないのは部下の問題ではない。動けない仕組みを、誰が作ったかを問え"
     },
     {
       "date": "2026-06-13",
@@ -65,6 +319,62 @@
       "quote": "💎 嫉妬は羅針盤になる。向ける先さえ、間違えなければ"
     },
     {
+      "date": "2026-06-13",
+      "platform": "Threads",
+      "time": "18:00",
+      "purpose": "嫉妬の使い方",
+      "character": "🕊ひより",
+      "content": "嫉妬を「感じないふり」をすると、\n感情は消えない。地下に潜るだけ。\n\n地下に潜った嫉妬は、\nやがて「無気力」や「あの人とは距離を置こう」として出てくる。\n\n認めることが、実は一番ラク。\n\n「あー、羨ましいな、自分もそうなりたいな」\n\n声に出してみると、\n意外と笑えてくるんだよね。\n\n嫉妬していることを正直に認められた経験、\nあなたにはありますか？",
+      "quote": "💎 認めることが、嫉妬を解放する第一歩"
+    },
+    {
+      "date": "2026-06-13",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "嫉妬の使い方",
+      "character": "🐢しずく",
+      "content": "嫉妬の正体は、\n「自分の中に眠っている欲求の可視化」だ。\n\n「私なんて」の代わりに、\n「どうすれば近づけるか」に問いを変えると、\n\n嫉妬は羅針盤になる。",
+      "quote": "💎 嫉妬は羅針盤になる。向ける先さえ間違えなければ"
+    },
+    {
+      "date": "2026-06-14",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "惰性と安定の温度差",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "「特に不満はない。でも、特に喜びもない。」\n\nそれが惰性の温度。\n\n「ありがとう」が消えた場所から、\n惰性は静かに始まる。",
+      "quote": "💎 「ありがとう」が消えた場所から、惰性は始まる"
+    },
+    {
+      "date": "2026-06-14",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "惰性と安定の温度差",
+      "character": "Coco + 🐢しずく",
+      "content": "「特に喧嘩もしてない。\nでも、前みたいな感じじゃなくなってきた気がする」\n\nその感覚、言葉にするのが難しいですよね。\n\n惰性と安定は、見た目がすごく似ている。\n\nでも「一緒にいて当然」と「一緒にいたい」は、\n温度が全然違う。\n\n「ありがとう」を言えなくなった頃から、\nたいてい関係の温度が下がり始めるんですよね。\n\nあなたの大切な関係、今どんな温度ですか？",
+      "quote": "💎 「ありがとう」がある関係と、ない関係の温度差"
+    },
+    {
+      "date": "2026-06-14",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "惰性と安定の温度差",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "content": "長い関係の中で、\n「変えることへの不安」が「不満」より大きくなる瞬間がある。\n\n「今が嫌なわけじゃない。でも変化が怖い。」\n\nこの状態が一番長く続くんですよね。\n\n安全な不快と、\n不安な自由の間で立ち止まっている状態。\n\nどちらが正解というより、\n「今、自分はどちらを選んでいるか」に気づくことが先だと思うんですよね。\n\nあなたは今の関係について、\n変えたい部分がありますか？\nそれとも今のまま続けたいですか？",
+      "quote": "💎 どちらを選ぶかより、「今何を選んでいるか」に気づくこと"
+    },
+    {
+      "date": "2026-06-14",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "報告が上がってこない組織の構造",
+      "character": "Coco + 🐢しずく",
+      "content": "「『なぜ報告しなかった』と言う前に、問え。\n報告したくなる組織になっているか。」\n\n報告が遅い・上がってこない原因に、一番近いのはどれ？\n\nA　報告したとき、「なぜそうなった」の追及が先にくる\n\nB　報告しても「わかった」の一言で終わり、何も動かない\n\nC　小さな相談を「それくらい自分で判断して」と返したことがある\n\nD　報告のタイミングや量のルールが、明確に決まっていない\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June rainy season Sunday with the first clear break in the clouds and soft golden afternoon light. Top-left: A small wise turtle (Shizuku) holds a small report letter and approaches Coco (a warm refined young woman in a soft ivory linen dress); Coco receives it but immediately points at the letter with a questioning expression; Shizuku takes a small step back; a window shows clearing rain. Top-right: Shizuku places a report on Coco's desk; Coco glances at it and says understood in gesture; Shizuku waits; nothing happens; Shizuku walks away quietly with its flippers slightly downcast. Bottom-left: Shizuku opens its mouth to say something small; Coco makes a small handle-it-yourself gesture without looking up from her work; Shizuku closes its mouth and turns away. Bottom-right: Shizuku stands at a fork with many small signs pointing different directions; none of them clearly marked for reporting; Coco stands at the far end watching; both seem unsure; warm clearing afternoon light through the window. Refined palette of warm ivory, pale gold, and sage green. No text, no letters, no signage.",
+      "comment": "「報告が上がらない」のは、部下の問題ではなく「報告したくない仕組み」の問題だ。\n\n経営の判断が遅れる原因の多くは、情報が届かないことにある。\n情報が届かない原因は、現場の悪意ではなく、報告を阻む構造にある。\n\n──────────────\nA｜報告したとき「なぜそうなった」の追及が先にくる\n\n現場は「報告＝詰められる」を学習している。\n詰められることがわかっているなら、人間は「解決してから報告する」か「黙っている」を選ぶ。\n「まず教えてくれてありがとう」の一言が、報告文化の入口になる。\n\n──────────────\nB｜報告しても「わかった」で終わり何も動かない\n\n「報告したのに何も変わらなかった」という経験が積み重なると、人は報告する意味を失う。\n「受け取った。○日までに判断する」が、報告を続ける理由を与える。\n報告を「受け取ること」と「応答すること」は、セットでなければならない。\n\n──────────────\nC｜小さな相談を「自分で判断して」と返した\n\nこれが最も静かに報告を殺す行動だ。\n「小さなことで来るな」と言われた人間は、次から「大きくなるまで言わない」を選ぶ。\n「いつでも来ていい」という実績が、早期発見の仕組みになる。\n\n──────────────\nD｜報告のルールが曖昧\n\n「何を・いつ・どのくらいの粒度で報告するか」が決まっていないと、判断は部下に委ねられる。\n判断を委ねると、リスクの高い情報ほど「伝えていいのか迷う」になる。\n報告の仕組みは、明示することで初めて機能する。\n\n──────────────\n\n経営のリアルは、現場のリアルから作られる。\n現場のリアルが届かない経営は、正確な判断ができない。\n報告は「礼儀」ではなく、経営の「神経」だ。\n\n📌 明日から使える一手\n今週「悪い報告」をしてきた部下に「教えてくれてありがとう」と言え。\nその一言が、次の早期報告を生む。\n\n報告が上がる組織の仕組み化を、noteで書いています。",
+      "quote": "💎 報告が遅い現場には、報告を阻む仕組みが必ずある"
+    },
+    {
       "date": "2026-06-14",
       "platform": "Threads診断 6/9〜6/15",
       "time": "14:00",
@@ -74,6 +384,62 @@
       "image_prompt": "A high-quality watercolor illustration in four equal panels with soft transparent washes and a delicate 1px white border. Mid-June rainy season Saturday with the warm soft light of a break between showers. Panel 1: Coco (a refined young woman in a soft blue-grey linen dress with delicate collar detail), a small wise turtle (Shizuku), a fluffy white cat (Shirotsuma), and a gentle white bird (Hiyori) all sit together in the same room; each is absorbed in their own small activity; physically close but emotionally distant; quiet comfortable but slightly disconnected. Panel 2: Coco lifts a cup of morning tea toward Shizuku with a small genuine smile; Shizuku receives it with both flippers; Shirotsuma and Hiyori watch the moment with soft warmth; an active choice of warmth. Panel 3: Shirotsuma discovers a small unexpected bloom on the potted plant and calls the others over; all four gather with soft curiosity and delight; the surprise renews their shared attention. Panel 4: All four sit together in the garden in the clearing after rain; the choice to stay together is visible in their posture; facing inward toward each other; fresh post-rain gold light. Refined palette of soft blue-grey, warm gold, and fresh green. No text, no letters, no signage.",
       "comment": "「惰性」と「安定」は、見た目が似ているが、温度が違う。\n\n5万人の本音から見えてきた、関係の温度の測り方。\n\n──────────────\nA｜「好き」かどうか考えなくなった\n\n考えなくなること自体は、必ずしも悪いことではない。\nでも「考えなくなった理由」が「慣れ」なのか「諦め」なのかで、意味が変わる。\n慣れた安心感と、諦めた無関心を、混同しないこと。\n\n──────────────\nB｜「当たり前」になりすぎた\n\n「当たり前」は、関係の深さの証明でもあり、関係の劣化の始まりでもある。\n当たり前のことに「ありがとう」が言えている関係は、温度が保たれている。\n「ありがとう」が消えた場所から、惰性は始まる。\n\n──────────────\nC｜変えることへの不安が不満より大きい\n\nこれが最も多いパターン。\n「今が嫌」ではなく「変化が怖い」から続いている関係。\n安全な不快と、不安な自由の間で立ち止まっている状態。\nどちらを選ぶかより、「今、どちらを選んでいるか」に気づくことが先。\n\n──────────────\nD｜「このままでいいのか」と思いながら何もしない\n\n問いを持ちながら行動しないことは、「続ける選択」とも「変える選択」とも違う、第三の状態。\n問いは消えない。消えない問いを持ったまま時間が経つと、やがて「どちらでもいい」になる。\nそれが最も深い惰性の形。\n\n──────────────\n\n一瞬の盛り上がりで始まった関係より、\n毎日の小さな選択で「今日もこの人と一緒にいたい」と思い続けた関係の方が、深く続く。\n\n関係は「感情」ではなく「行動」で育てるものだ。\n\n「関係の温度の保ち方」を、noteで書いています。",
       "quote": "💎 「ありがとう」が消えた場所から、惰性は静かに始まる"
+    },
+    {
+      "date": "2026-06-14",
+      "platform": "Threads",
+      "time": "18:00",
+      "purpose": "惰性と安定の温度差",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "content": "惰性から抜け出した人の話を聞くと、\n大きなことをしたわけじゃないことが多い。\n\n「久しぶりに一緒に料理した」\n「ありがとう、って言ってみた」\n「なんでもない日に、花を買って帰った」\n\n関係を変えるのは、一回の劇的な出来事じゃなくて、\n毎日の小さな選択の積み重ね。\n\n「今日もこの人と一緒にいたい」と思って選ぶこと。\n\nあなたが大切な関係のために、\n最後にした「小さな行動」は何でしたか？",
+      "quote": "💎 関係を変えるのは、毎日の小さな選択の積み重ね"
+    },
+    {
+      "date": "2026-06-14",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "惰性と安定の温度差",
+      "character": "Coco",
+      "content": "安定と惰性は、見た目が似ているけど温度が違う。\n\n毎日の小さな選択で\n「今日もこの人と一緒にいたい」と思い続けた関係と、\n「まあ別にいいか」と続けている関係は、\n5年後に全然違う場所にいる。\n\n関係は感情じゃなくて、行動で育てるものだよな。",
+      "quote": "💎 関係は感情ではなく、毎日の小さな選択で育つ"
+    },
+    {
+      "date": "2026-06-15",
+      "platform": "X",
+      "time": "06:00",
+      "purpose": "自分を大切にする技術",
+      "character": "Coco + 🕊ひより",
+      "content": "自分を犠牲にするほど、愛されるわけじゃない。\n\n「私はこう扱われる人間だ」という無言のメッセージを、\n日々の行動で伝えている。\n\n自分への扱い方が、他者への扱われ方を決める。",
+      "quote": "💎 自分への扱い方が、他者への扱われ方を決める"
+    },
+    {
+      "date": "2026-06-15",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "自分を大切にする技術",
+      "character": "Coco + 🕊ひより",
+      "content": "「自分を大切にしなさい」\n\nよく聞く言葉だけど、\n「じゃあ具体的に何をすれば？」ってなりますよね。\n\n実はシンプルで、\n\n疲れているのに「大丈夫」と言わないこと。\n嫌なことを「いいよ」と言わないこと。\n\nその小さな積み重ねが、\n自分という存在への信頼になっていく。\n\nあなたが今日、「大丈夫じゃない」と\n正直に言えた場面は、ありましたか？",
+      "quote": "💎 「大丈夫」と言わないことが、自分への信頼を積む"
+    },
+    {
+      "date": "2026-06-15",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "自分を大切にする技術",
+      "character": "Coco",
+      "content": "「わがまま」と「自分を大切にすること」の違いって、\n何だと思いますか？\n\nわがままとは「他者の迷惑を顧みない行動」。\n自分を大切にすることは、他者を傷つける行動じゃない。\n\nこの二つを混同しているとき、\n自己犠牲を「美しいもの」と錯覚してしまうんですよね。\n\n消耗しても与え続けた後に来るのは、\n感謝じゃなくて「当たり前」化なんだよね。\n\n「NO」と言うことへの罪悪感、\nあなたは感じる方ですか？",
+      "quote": "💎 自己犠牲は献身ではなく「当たり前」化の始まり"
+    },
+    {
+      "date": "2026-06-15",
+      "platform": "X診断 6/9〜6/15",
+      "time": "12:00",
+      "purpose": "経営判断に使える現場情報の取り方",
+      "character": "🐈‍⬛しらたま + 🕊ひより",
+      "content": "「経営者が持っている情報と、現場が持っている情報が、全然違う。\nその構造を放置するな。」\n\n「現場の実態」を経営判断に使えていない原因に、一番近いのはどれ？\n\nA　現場の情報は、管理職のフィルターを通じてしか入ってこない\n\nB　「現場はどう思っているか」を聞くと、管理職が答える\n\nC　課題を聞くと「特にありません」「うまくいっています」と返ってくる\n\nD　数字は見えているが、その数字の「温度」が見えていない\n\n→ 選んだ答えをリプライ欄へ",
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A high-quality watercolor illustration with soft transparent washes and a delicate 1px white border. Mid-June Monday morning after the rainy week with fresh clear light and renewed energy. Top-left: A fluffy white cat (Shirotsuma) carries a small message from one side of the image toward a gentle white bird (Hiyori) on the other; a subtle filtering action is visible as the message changes slightly in transit; clear morning light and hydrangeas still glistening with rain. Top-right: Hiyori asks a question with an open wing gesture; Shirotsuma sits between Hiyori and a group of soft background shapes representing the field; Shirotsuma answers instead of passing the question along; fresh morning garden light. Bottom-left: Hiyori perches on a branch with its wings spread in an open question; Shirotsuma sits with a calm all-is-fine gesture; but a small hidden problem is visible tucked under the branch out of sight; post-rain green garden. Bottom-right: Shirotsuma and Hiyori look at a clear glass jar with numbers visible inside; both can see the numbers but neither can read the temperature of what is inside; the jar feels important but slightly opaque; warm clear morning light. Refined palette of fresh sage, warm ivory, and pale morning gold. No text, no letters, no signage.",
+      "comment": "経営者が「現場のリアル」と思っているものは、多くの場合「整理された現場のリアル」だ。\n\n組織の情報の流れを見てきた経験から言える。\n現場の温度は、フィルターを通ると必ず変わる。\n\n──────────────\nA｜管理職フィルターを通じてしか情報が入らない\n\n管理職は「経営に伝えていい情報」と「止めるべき情報」を無意識に選別している。\n悪い情報ほど削られ、良い情報ほど残る。\nこれは管理職の悪意ではなく、構造が生む結果だ。\n経営と現場をつなぐ直接の接点を、定期的に持つことが情報の温度を保つ。\n\n──────────────\nB｜「現場はどう思っているか」を管理職が答える\n\nこれが最も見落とされる情報のズレだ。\n管理職が答えることで、「管理職が思っている現場の状態」が経営に届く。\n現場の声は、現場から直接取るしかない。\n「一人に直接聞く」が、何十件の報告書より実態を教えてくれることがある。\n\n──────────────\nC｜課題を聞くと「特にありません」と返ってくる\n\n「特にありません」は「問題がない」ではなく「言っても意味がない」か「言うと問題になる」のサインだ。\n本当に課題がない組織は存在しない。\n「ありません」が続くとき、情報を取る仕組みそのものを見直す必要がある。\n\n──────────────\nD｜数字は見えているが「温度」が見えていない\n\n数字は「結果」を見せるが、「現場がどんな状態でその数字を出しているか」は見せない。\n限界を超えた頑張りで出した数字と、余裕のある状態で出した数字は、持続性が全く違う。\n数字の裏にある現場の温度を、定期的に取ることが経営判断の精度を上げる。\n\n──────────────\n\n「経営者の意図を現場の納得へ。現場のリアルを経営の判断へ。」\nこの往復が止まったとき、組織は少しずつ正確さを失っていく。\n\n📌 明日から使える一手\n今週、管理職を通さずに現場の誰か1人に「正直に聞かせてほしい」と声をかけよ。\nその会話が、経営の解像度を一段上げる。\n\n経営と現場をつなぐ仕組み化を、noteで書いています。",
+      "quote": "💎 経営者の持つ情報が古い。それは現場の怠慢ではなく、情報を取る仕組みの問題だ"
     },
     {
       "date": "2026-06-15",
@@ -87,389 +453,22 @@
       "quote": "💎 自分への扱い方が、他者への扱われ方を決める"
     },
     {
-      "id": "x_01",
-      "date": "2026-06-09",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "episode_id": "E5",
-      "content": "「敬えよ」と言わなきゃいけなくなった時点で\nもう答えは出てる\n\n本当に人望があるリーダーは\nなんで勝手についてくるんだろうと、思う側にいる\n\n敬意は求めた瞬間、それじゃなくなる",
-      "quote": "💎 敬意は、求めた瞬間に消えていく"
-    },
-    {
-      "id": "x_02",
-      "date": "2026-06-09",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E11",
-      "content": "「勝ちたい」を手放した瞬間と\n「わかってほしい」を手放した瞬間が重なった日\n\n誰にも崩せない場所に立てた気がした\n\n引っ張ろうとしても\nもう取っ手がどこにもなくて",
-      "quote": "💎 取っ手のない人間は、誰にも揺らせない"
-    },
-    {
-      "id": "x_03",
-      "date": "2026-06-10",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E1",
-      "content": "感情で動いた瞬間、相手の物語が正しくなる\n\n夜中に一人で記録を整理した\n手が震えた。でも感情は全部、紙の外に置いた\n\n大義名分が100%ある時\n声を荒げる必要がない\nファクトが、勝手にチェックメイトする",
-      "quote": "💎 怒らなかった側が、記録の最後に残る"
-    },
-    {
-      "id": "x_04",
-      "date": "2026-06-10",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "episode_id": "E32",
-      "content": "「あなたは人とつるむのが苦手なんだ」と言われた\n\n笑いを堪えるのに一秒かかった\n\n若い頃はガッツリつるんでましたよ\nそれしかしてなかったくらい\n\n「今はしない」と「できない」は\n全然ちがう",
-      "quote": "💎 今しないことと、できないことは別の話"
-    },
-    {
-      "id": "x_05",
-      "date": "2026-06-11",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E2",
-      "content": "「数字が良い」と「構造が健全」は別の話\n\n良い数字ほど\n「なぜ良いのか」を掘らないといけない\n\n補填で黒字なのか、本物の黒字なのか\n同じ条件で、同じ言い訳を使って\n片方だけがマイナスになっていく",
-      "quote": "💎 良い数字こそ、疑いながら読む"
-    },
-    {
-      "id": "x_06",
-      "date": "2026-06-11",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "episode_id": "E19",
-      "content": "怒りを刃にした瞬間、相手の思うつぼ\n\n「やっぱりあの人は感情的だ」という\n相手の物語が正しくなってしまうから\n\n怒りは動くための燃料にしていい\nでも振り下ろす刃にしたら、負け\n\n冷静でいること自体が\nいちばん効く反論になる",
-      "quote": "💎 刃にしない怒りが、一番怖い"
-    },
-    {
-      "id": "x_07",
-      "date": "2026-06-12",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E4",
-      "content": "正しいことをやっているのに\n悪者に仕立て上げられそうになっていた時期があった\n\n夜中にデータを整理して\n翌朝また現場に立って\n表情だけは作り続けた\n\n泥臭い足掻きを\n周りは特等席で見てる",
-      "quote": "💎 理不尽は、回収される日まで伏線になる"
-    },
-    {
-      "id": "x_08",
-      "date": "2026-06-12",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E31",
-      "content": "感情的に愚痴を言うより\n引いた一線の向こうで\n淡々と結果を出し続ける方が\n遥かに強い\n\n「嫌になったら静かにこの席を立つ」\nその覚悟があるからこそ\n誰もあなたの核心を傷つけられない",
-      "quote": "💎 静かに去れる覚悟が、最強の主導権になる"
-    },
-    {
-      "id": "x_09",
-      "date": "2026-06-13",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E15",
-      "content": "「倒すべき敵」として見ているあいだ\nずっとその人に縛られていた\n\nある日、ただの天気だと思った\n\n晴れても雨でも、自分の方向は変わらない\n標的でも審判でもない、ただの天気\n\nその瞬間から、肩の力が抜けた",
-      "quote": "💎 敵を天気にした瞬間が、自由の入口"
-    },
-    {
-      "id": "x_10",
-      "date": "2026-06-13",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "episode_id": "E33",
-      "content": "肩書きをなくした瞬間に誰もいなくなる人と\n肩書きをなくしても人がついてくる人\n\nその差は何十年もの「背中の積み重ね」にある\n\n「俺についてこい」と言う必要がある時点で\nもう答えは出てますよね",
-      "quote": "💎 背中で動かす言葉は、正論より深く届く"
-    },
-    {
-      "id": "x_11",
-      "date": "2026-06-14",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E12",
-      "content": "相手の力は全部\n「好き嫌いと承認」でできていた\n\nラベルを貼る、輪から外す、認めない\n\nでも気づいたら\n自分はもうその通貨を集めていなかった\n\n目的が変わると\n相手の人質がただの紙切れになる",
-      "quote": "💎 集める通貨が変わると、脅しが脅しでなくなる"
-    },
-    {
-      "id": "x_12",
-      "date": "2026-06-14",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E25",
-      "content": "切り札は\n怒りの中じゃなく\n静けさの中で切る\n\n感情のピークじゃなく\nいちばん落ち着いた瞬間に\n\n「いつでも切れる」と知っているだけで\nもうそれ自体が、自由なんですよね",
-      "quote": "💎 いつでも切れると知ること自体が、自由になる"
-    },
-    {
-      "id": "x_13",
-      "date": "2026-06-15",
-      "platform": "X",
-      "time": "06:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E34",
-      "content": "感情的な愚痴より\n引いた一線の向こうで\n同じ環境、同じ条件で\n淡々と圧倒的な結果を出し続けること\n\nそれだけで\n相手の「無能さ」が\n最もエレガントに炙り出されていく",
-      "quote": "💎 結果だけで語る人間が、最後に残る"
-    },
-    {
-      "id": "x_14",
-      "date": "2026-06-15",
-      "platform": "X",
-      "time": "22:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "episode_id": "E26",
-      "content": "全部どうでもよくなる日がある\nもう何も考えたくない夜がある\n\nでもそれは投げ出したんじゃなく\nちゃんと向き合ってきた人の\n自然な消耗なんですよね\n\n「相手の騒ぎ」を手放すことと\n「自分」を手放すことは、別",
-      "quote": "💎 疲れたのは、逃げた証拠じゃなく向き合った証拠"
-    },
-    {
-      "id": "th_01",
-      "date": "2026-06-09",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "episode_id": "E17",
-      "content": "素行より人気が上に来た時点で\nもうマネジメントが終わっているんだよね。\n\n「あの人は受けがいいから」\nその一言で、現場のルールが静かに崩れていく。\n\nみんな全部見てる。\nこのチームで何が優先されているかを。\n\nそしてそれは、いつか必ず数字に出る。\n\nあなたの職場で、「順番」がおかしいと感じた瞬間はありますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "素行より人気が先に来た時点で、基準が逆さまになっている"
-    },
-    {
-      "id": "th_02",
-      "date": "2026-06-09",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "episode_id": "E18",
-      "content": "現場のすべての責任は自分にある。\nでも、それを動かす権限は\n現場をほとんど見ない人の手にある。\n\n決める人が現場を見ず\n見ている人が決められない。\n\nこのねじれの正体が見えた時\n少し楽になった。\n「おかしいのは、私じゃない」って。\n\nあなたの組織の責任と権限、同じ場所にありますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "ねじれが見えただけで、対処の半分はできてる"
-    },
-    {
-      "id": "th_03",
-      "date": "2026-06-09",
-      "platform": "Threads",
-      "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E29",
-      "content": "いちばん苦しい瞬間に\n事実と、一滴の温かさを同時に渡せる人がいる。\n\n「だから、あなたのことが大事なんだよ」\nその言葉が出てくるのに\n夜中まで残って向き合い続けた。\n\n怒鳴っていない。でも一番伝わっている。\nそのあとに出てくる言葉が\n「ごめんなさい」じゃなく「ありがとう」に変わる瞬間。\n\nあなたには、そういう人が周りにいますか？",
-      "quote": "厳しさと温かさが重なった夜の言葉は、脳に刻まれる"
-    },
-    {
-      "id": "th_04",
-      "date": "2026-06-10",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E8",
-      "content": "ある時期から、こちらへの返事が\n別の人を通して届くようになった。\n\n最初は「忙しいのかな」と思った。\nでも、直接くると都合の悪い話だけ仲介になってた。\n\n一対一を避けるのは、強さじゃない。\n同じ土俵に上がれば負けるとわかっている人が\n静かに白旗を上げているサインなんだよね。\n\nあなたの周りで、「仲介」が増えた人はいますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "一対一を避ける人は、すでに白旗を上げている"
-    },
-    {
-      "id": "th_05",
-      "date": "2026-06-10",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "共感獲得",
-      "episode_id": "E6",
-      "content": "先月は「感情的」、その前は「反抗的」\n今月は「変化に弱い」。\n\n同じことを言っているのに\nラベルだけが毎回変わってた。\n\nラベルがコロコロ変わるなら\n問題は私じゃなくて\nその時いちばん却下しやすい言い方を選んでいる側にある。\n\n貼られたラベルで、自分を測ったことある？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "変わり続けるラベルは、貼る側の問題"
-    },
-    {
-      "id": "th_06",
-      "date": "2026-06-10",
-      "platform": "Threads",
-      "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E27",
-      "content": "問題行動を、人格として責めなかった。\n「それをすると、一緒に働けなくなる」\nという条件として、整理して伝えた。\n\n同時に、成長している部分はちゃんと認めた。\n\n「条件は明確に。でも可能性は閉じない」\n\n厳しいことを伝えながら\n相手の可能性に正直でいること。\nその両方が同時に、本当はできるんだよね。\n\nあなたは誰かに、条件と承認を同時に渡せてますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "条件は明確に。可能性は閉じない"
-    },
-    {
-      "id": "th_07",
-      "date": "2026-06-11",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "episode_id": "E14",
-      "content": "気づいたら「結果のため」が\nいつのまにか「嫌われないため」になっていた。\n\n境目が、全然わからなかった。\nすごく自然に、静かにすり替わっていて。\n\n間違った目的って\n謙虚そうな顔で、優しそうな顔でやってくる。\n\n難しいのは\n正しい目的を知ることより\nそのすり替わりに気づくことだと思う。\n\nあなたの「〜のため」は今も最初と同じですか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "間違った目的は、いい顔でやってくる"
-    },
-    {
-      "id": "th_08",
-      "date": "2026-06-11",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "episode_id": "E9",
-      "content": "チームの部下たちのところへ\nわざわざ出向いて\n「あの人は本当はこうなんだよ」と話して回っていた人がいた。\n後で知った。\n\n毎日そばで働いている人たちへ\nたまに来て言う悪口。\n\nみんなちゃんとわかるんだよね。\n「毎日見てる本物」と「たまに来て言う噂」の違いを。\n\nあなたは今、どちらを信頼してる？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "毎日の信頼に、又聞きの悪口は勝てない"
-    },
-    {
-      "id": "th_09",
-      "date": "2026-06-11",
-      "platform": "Threads",
-      "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "episode_id": "E13",
-      "content": "自分が関わっていない指示が\n後から「準備不足」として咎められた。\n\n関係ない、と言えばよかった。\nでも、チームへの影響を考えると\nすぐにはそう言えなくて。\n\nでも今はわかる。\n責任は、自分が選んだ裁量のぶんだけついてくる。\n選んでいないことまで背負う必要はない。\n\nあなたは今、どこまで背負ってる？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "自分が選んでいないことを、背負わなくていい"
-    },
-    {
-      "id": "th_10",
-      "date": "2026-06-12",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "episode_id": "E10",
-      "content": "一番大変な夜に\n上から降ってきた施策のトラブルが現場を直撃した。\n\nでも誰も潰れなかった。\nみんながそれぞれ、勝手に連携を組んでいた。\n\n報告書には「チームの連携が素晴らしかった」と書いた。\n自分の名前は一文字も入れなかった。\n\n現場を救うのは、良い施策じゃない。\n良いチームなんだよね。\n\nあなたのチームに、「勝手に動ける人」はいますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "現場を救うのは、施策じゃなく、チームの信頼"
-    },
-    {
-      "id": "th_11",
-      "date": "2026-06-12",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "episode_id": "E30",
-      "content": "厳しいことをたくさん伝えた後で\n「ごめんなさい」じゃなくて\n「ありがとうございます」という言葉が出てきた瞬間があった。\n\nその言葉は、受け取った人より先に\n言った本人を癒してくれると思う。\n\n「ありがとう」という言葉を\n自分から使えるようになった時\n何かが変わった気がするんだよね。\n\nあなたは最近、「ありがとう」を言えてますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "ありがとうは、言った本人が最初に癒される"
-    },
-    {
-      "id": "th_12",
-      "date": "2026-06-12",
-      "platform": "Threads",
-      "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "episode_id": "E22",
-      "content": "「認められたい」という気持ちは\n正しいんだよね。\n\nでも、認める気のない人から\n認めてもらおうとするほど\n苦しくなっていった。\n\n受け取る相手を間違えてた。\n\n認められたい気持ちを\n今、どこへ持っていってる？コメントで聞かせて。",
-      "quote": "認められたい気持ちは、受け取る相手が全て"
-    },
-    {
-      "id": "th_13",
-      "date": "2026-06-13",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "episode_id": "E23",
-      "content": "気づかないうちに\n見えないコストが自分のエリアの数字に乗っていた。\n知らされないまま。\n\nそれでも、その重りを背負って黒字だった。\n\n数字は化粧できるんだよね。\n配り方次第で、どうにでも見せられる。\n\nだから化粧前の「素顔の数字」を\n自分の手元に残しておくことが大事だと思う。\n\n現実は、化粧の下にちゃんとある。\n\nあなたは自分の「素顔の数字」を手元に持っていますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "数字は化粧できる。だから素顔を手元に残す"
-    },
-    {
-      "id": "th_14",
-      "date": "2026-06-13",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "episode_id": "E50",
-      "content": "こちらのことを繰り返し引き合いに出している人がいた。\n\n最初は気になった。\nでも途中で気づいた。\n\n繰り返しあなたのことを引用している人は\nあなたのことで頭がいっぱいなんだよね。\n\n囚われているのは、どっちかって話で。\n\nあなたを「気にする人」のことを\nあなたはどれだけ気にしてますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "繰り返し引用する人は、あなたに囚われてる"
-    },
-    {
-      "id": "th_15",
-      "date": "2026-06-13",
-      "platform": "Threads",
-      "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "共感獲得",
-      "episode_id": "E21",
-      "content": "準備に必要な情報を\n最後まで知らされなかった。\n\nなのに後から「準備不足」として咎められた。\n\n足りなかったのは\n自分の準備じゃなくて\n渡されなかった情報のほうだったんだよね。\n\n教えてもらえなかったことを\n「準備不足」とは呼ばせない。\n\nいつ・何を訊いて・どう返ってこなかったかを\n淡々と残しておくだけでいい。\n\nあなたは今、「もらえなかった情報」の記録を残せていますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "教えてもらえなかったことを、準備不足とは呼ばせない"
-    },
-    {
-      "id": "th_16",
-      "date": "2026-06-14",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "episode_id": "E53",
-      "content": "厳しいことを伝えながら\n相手のことを思い続けること。\n\nその二つが矛盾しているように感じる時がある。\n\nでも本当は\n固さと温かさは、両立する。\n\nむしろ、本当に相手のことを思っているから\n厳しいことが言える。\n\nいい顔をするのが「優しさ」じゃないとわかった時\n関係がすごく楽になった気がした。\n\nあなたが「厳しく言えた」のは、誰に対してですか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "固さと温かさは、矛盾しない"
-    },
-    {
-      "id": "th_17",
-      "date": "2026-06-14",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "返信獲得",
-      "episode_id": "E16",
-      "content": "「上司に好かれるため」と\n「好きな人に選ばれるため」\n\n構造が全く同じだと気づいた時\n少しぞっとした。\n\nどちらも、相手の「選ぶ/選ばない」が\n自分を動かす人質になってる。\n\n「自分が幸せかどうか」を目的にした瞬間\nその人質は効かなくなる。\n\nあなたは今、誰かに「選ばれるため」を目的にしてるところ、ありますか？",
-      "quote": "選ばれるためをやめると、人質が効かなくなる"
-    },
-    {
-      "id": "th_18",
-      "date": "2026-06-14",
-      "platform": "Threads",
-      "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E24",
-      "content": "ある状況を、いったん受け入れた。\n\n抗い続けてすり減るより\nまず受け止めようと思って。\n\nでも、受け入れた＝「これが正しい」と認めた\nではなかった。\n\n今でも「おかしい」と見えているなら\nまだ飲み込まれていない。\n\n受け入れることと、正しいと認めることは、違う。\n\nあなたは今、どちらの状態ですか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "受け入れても、おかしいと思っていていい"
-    },
-    {
-      "id": "th_19",
-      "date": "2026-06-15",
-      "platform": "Threads",
-      "time": "07:00",
-      "character": "🐢しずく",
-      "purpose": "共感獲得",
-      "episode_id": "E3",
-      "content": "組織の中で圧倒的な力を持つ人が近くにいた。\nその庇護を利用すれば、楽な道があった。\n\nでも、自分の主体的な選択を阻む振る舞いをされた時\nNOを伝えて、距離を置いた。\n\n「仕方なく耐えていたんじゃない。\n自分でその環境を選んでいただけ」\n\nその一言が言えるようになった時\n被害者の視点が、静かに消えた。\n\nあなたは今、自分で選んでいますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "主体的選択が、被害者意識を消してくれる"
-    },
-    {
-      "id": "th_20",
-      "date": "2026-06-15",
-      "platform": "Threads",
-      "time": "10:00",
-      "character": "🐈‍⬛しらたま",
-      "purpose": "保存獲得",
-      "episode_id": "E49",
-      "content": "攻撃を攻撃として見分けられるようになったのは\n温かさをどこに向けるかを学んだから、だと思う。\n\n怒りを感じなくなったんじゃない。\n向け先が変わっただけ。\n\n冷たくなったんじゃなく\n温かさを向けるべき人を、ちゃんと選べるようになった。\n\nあなたの温かさ、今どこへ向いてますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "温かさを向ける先を選べると、攻撃に揺れなくなる"
-    },
-    {
-      "id": "th_21",
       "date": "2026-06-15",
       "platform": "Threads",
       "time": "18:00",
-      "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "episode_id": "E56",
-      "content": "全部自分でできる人だけが\n「委ねる」という選択を持てる。\n\n任せられない人は、手放す怖さを持っている。\n任せられる人は、握らなくても回ると知っている。\n\n委ねることは、力のなさじゃなく\n力がある証明なんだと気づいた時\nチームとの関係が、変わった気がした。\n\nあなたは今、誰かに委ねられてますか？\n\n感情はある。依存はしない。そんな距離の整え方を、ここに残していく💍",
-      "quote": "委ねられることは、力がある証明"
+      "purpose": "自分を大切にする技術",
+      "character": "Coco + 🕊ひより",
+      "content": "自分を大切にしている人のそばにいると、\n「あ、そうしていいんだ」と気づける瞬間があるんですよね。\n\n誰かに必要とされないと不安になる夜の、あの感じ。\nそこから少しずつ自由になっていく人を、見てきた。\n\n軸がある人は、依存されない。\n依存されないから、対等に愛される。\n\nあなたの周りに「この人を見ると背筋が伸びる」と感じる人、\nいますか？",
+      "quote": "💎 軸のある人のそばにいると「そうしていいんだ」と気づける"
+    },
+    {
+      "date": "2026-06-15",
+      "platform": "X",
+      "time": "22:00",
+      "purpose": "自分を大切にする技術",
+      "character": "Coco + 🕊ひより",
+      "content": "自分を大切にしている人は、\n他者に「大切にされ方」を教えている。\n\n軸がある人は、依存されない。\nだから対等に愛される。\n\n疲れているのに「大丈夫」と言い続けた日々、\nそろそろ終わりにしていいんだよな。",
+      "quote": "💎 軸がある人は依存されない。だから対等に愛される"
     }
   ]
 }
