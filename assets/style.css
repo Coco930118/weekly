@@ -248,6 +248,16 @@ body {
   color: var(--text-secondary);
 }
 
+.card-episode-ref {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
 .purpose-badge {
   font-size: 0.65rem;
   color: var(--text-muted);

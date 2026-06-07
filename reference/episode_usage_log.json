@@ -1,0 +1,11 @@
+{
+  "log": [
+    { "episode_id": "E_S_01", "post_date": "2026-06-09", "type": "X診断", "theme": "信頼される上司の条件" },
+    { "episode_id": "E_S_02", "post_date": "2026-06-10", "type": "X診断", "theme": "報連相が止まる本当の理由" },
+    { "episode_id": "E_S_03", "post_date": "2026-06-11", "type": "X診断", "theme": "現場が動きたくなる伝え方" },
+    { "episode_id": "E_S_04", "post_date": "2026-06-12", "type": "X診断", "theme": "部下が相談しやすい距離感" },
+    { "episode_id": "E_S_05", "post_date": "2026-06-13", "type": "X診断", "theme": "数字が伸びるチームの空気" },
+    { "episode_id": "E_S_06", "post_date": "2026-06-14", "type": "X診断", "theme": "トップと現場の温度差" },
+    { "episode_id": "E_S_07", "post_date": "2026-06-15", "type": "X診断", "theme": "人が辞めにくい職場の特徴" }
+  ]
+}

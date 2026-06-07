@@ -90,7 +90,10 @@ function renderWeekFilter(weeks) {
   all.textContent = '全週';
   row.appendChild(all);
 
+  const seen = new Set();
   weeks.forEach(week => {
+    if (seen.has(week)) return;
+    seen.add(week);
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
@@ -158,8 +161,8 @@ function renderCard(post) {
     : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
     : 'platform-other';
 
-  const contentEscaped = escapeHtml(post.content);
-  const quoteEscaped = escapeHtml(post.quote);
+  const contentEscaped = escapeHtml(post.content || '');
+  const quoteEscaped = escapeHtml(post.quote || '');
 
   let extraSections = '';
   if (post.comment) {
@@ -174,6 +177,38 @@ function renderCard(post) {
           <p>${commentEscaped}</p>
           <div class="copy-btn-content">
             <button class="copy-btn" data-copy="${commentEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment_1) {
+    const c1Escaped = escapeHtml(post.comment_1);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 コメント①解説</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c1Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment_2) {
+    const c2Escaped = escapeHtml(post.comment_2);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">💡 コメント②深掘り</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c2Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c2Escaped}">コピー</button>
           </div>
         </div>
       </div>`;
@@ -195,6 +230,17 @@ function renderCard(post) {
       </div>`;
   }
 
+  const episodeRef = post.episode_ref
+    ? `<span class="card-episode-ref">${escapeHtml(post.episode_ref)}</span>`
+    : '';
+
+  const quoteSection = post.quote
+    ? `<div class="card-quote">
+        <p class="quote-text">${quoteEscaped}</p>
+        <button class="copy-btn" data-copy="${quoteEscaped}">コピー</button>
+      </div>`
+    : '';
+
   return `
     <article class="card" data-platform="${escapeHtml(post.platform)}">
       <div class="card-header">
@@ -202,20 +248,18 @@ function renderCard(post) {
           <span class="platform-badge ${platformClass}">${escapeHtml(post.platform)}</span>
           <span class="card-time">${post.time}</span>
           <span class="card-character">${escapeHtml(post.character)}</span>
+          ${episodeRef}
         </div>
         <span class="purpose-badge">${escapeHtml(post.purpose)}</span>
       </div>
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
         <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+          <button class="copy-btn" data-copy="${contentEscaped}">コピー</button>
         </div>
       </div>
       ${extraSections}
-      <div class="card-quote">
-        <p class="quote-text">${quoteEscaped}</p>
-        <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
-      </div>
+      ${quoteSection}
     </article>`;
 }
 
