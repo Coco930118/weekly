@@ -1,0 +1,53 @@
+{
+  "log": [
+    {
+      "episode_ref": "E_001",
+      "date": "2026-06-09",
+      "theme": "比較から自由になる技術",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_002",
+      "date": "2026-06-10",
+      "theme": "本音が言えない関係の構造",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_003",
+      "date": "2026-06-11",
+      "theme": "わかってくれないの正体",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_004",
+      "date": "2026-06-12",
+      "theme": "怒りの正体",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_005",
+      "date": "2026-06-13",
+      "theme": "嫉妬の使い方",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_006",
+      "date": "2026-06-14",
+      "theme": "惰性と安定の温度差",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_007",
+      "date": "2026-06-15",
+      "theme": "自分を大切にする技術",
+      "platform": "Threads診断",
+      "week": "2026-06-09_2026-06-15"
+    }
+  ]
+}
