@@ -1,0 +1,83 @@
+{
+  "week": "2026-06-16_2026-06-22",
+  "platform": "X診断",
+  "posts": [
+    {
+      "date": "2026-06-16",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "優秀な部下が孤独になる構造",
+      "character": "Coco + ひより",
+      "content": "あなたのチームの「できる人」は、どの状態ですか？\n\nA=仕事が自然と集まり続けている\nB=助けを求めないまま一人で抱えている\nC=「自分がやるしかない」と思い込んでいる\nD=業務量が他のメンバーの2〜3倍になっている",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A Japanese office scene. A professional Japanese woman in her early 40s with an elegant bob hairstyle, wearing a white blouse with navy horizontal stripes and a no-collar design, paired with light grey wide-leg trousers. She stands at her desk, surrounded by multiple stacked files and papers, while a graceful white bird with blue-tipped wings perches on a stack of folders nearby. The scene conveys quiet overload, soft morning light through windows. Top-right (B): The same woman sits alone at her desk late in the afternoon, posture slightly tense, working on a laptop without asking for help. The white bird with blue wingtips sits silently at a distance on a windowsill, watching. Muted office lighting, sense of quiet isolation. Bottom-left (C): A close-up of the woman at her desk, surrounded by sticky notes and task lists, expression one of quiet resignation. The white bird with blue wingtips stands on the desk edge, head tilted. Warm light, intimate framing. Bottom-right (D): A bird's-eye view of two desks side by side — one covered in towering files, the other nearly empty. The white bird with blue wingtips stands on the overloaded desk, looking toward the empty one. Clean overhead composition, cool office light. No text, no letters, no signage.",
+      "comment": "A: 仕事が集まること自体は優秀さの証明です。ただ、その状態が続くと「断れない空気」が生まれます。📌 月に一度、担当案件の棚卸しを本人と一緒に行う仕組みをつくりましょう。\n\nB: 「助けを求めない」のは能力ではなく、「頼んだら評価が下がる」という誤った学習の結果です。📌 上司から先に「手伝えることある？」と聞く習慣が、組織の空気を変えます。\n\nC: 「自分がやるしかない」という思い込みは、役割の境界線が曖昧なチームで生まれます。📌 業務の担当マトリクスを可視化し、属人化のリスクを仕組みとして示しましょう。\n\nD: 仕事量が2〜3倍というのは、もはや個人の問題ではなく組織の仕組みの問題です。📌 今週中に、その人の業務リストを一緒に見直す時間を30分設けてください。",
+      "quote": "💎 優秀な人が孤独になるのは、仕組みが孤立させているからだ"
+    },
+    {
+      "date": "2026-06-17",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "聞き方が変わると情報の質が変わる",
+      "character": "しずく + しらたま + ひより",
+      "content": "あなたは部下やメンバーの話を聞くとき、どのパターンに近いですか？\n\nA=「で、結論は？」と途中で促してしまう\nB=話し終わるまで口を挟まずに聞く\nC=聞きながら自分の意見や反論を考えている\nD=要約して「こういうこと？」と確認しながら聞く",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A cozy Japanese indoor cafe-style meeting corner. A small green turtle with white flower patterns on its shell sits on a low table, looking up. A fluffy white cat sits across from it, partially turned away as if distracted. A white bird with blue-tipped wings watches from a perch above. Warm ambient light, autumn-toned cushions. Top-right (B): The same three animals — the turtle with white flowers, the white fluffy cat, and the white bird with blue wingtips — sit in a circle on a soft rug. The cat and bird are both facing the turtle, which is mid-gesture (shell slightly lifted as if speaking). Peaceful, attentive atmosphere, soft afternoon light. Bottom-left (C): The white fluffy cat sits with its back half-turned, looking into the distance while the turtle with white flower patterns speaks (shell animated). The white bird with blue wingtips watches from the side. Slight tension in the body language. Muted light, neutral tones. Bottom-right (D): All three animals are gathered close on a wooden floor. The turtle with white flowers is speaking, and the fluffy white cat leans forward, nodding gently. The white bird with blue wingtips tilts its head, attentive and curious. Warm light from a nearby window, intimate composition. No text, no letters, no signage.",
+      "comment": "A: スピードを重視するあまり、相手が「本当に言いたいこと」を遮っている可能性があります。📌 1日1回、最後まで黙って聞く練習を意識的に取り入れてみてください。\n\nB: 話し終わるまで聞けるのは、信頼関係の土台になる力です。ただし、聞いた後の返しの質を高めることで、さらに情報の深みが増します。📌 聞いた後に「その中で、一番困っているのはどこ？」と聞いてみましょう。\n\nC: 聞きながら自分の意見を考えるのは自然なことです。ただ、それが顔や態度に出ると相手は「聞いてもらえていない」と感じます。📌 まずうなずきだけに集中し、判断は後回しにする練習をしましょう。\n\nD: 要約しながら確認する聞き方は、情報の精度を上げる最も効果的な習慣です。📌 要約した後に「他に気になっていることはある？」と添えると、隠れた情報も引き出せます。",
+      "quote": "💎 聞き方が変わると、届く情報の質と量が変わる"
+    },
+    {
+      "date": "2026-06-18",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "マネージャーが疲れを見せないことのリスク",
+      "character": "Coco + しずく",
+      "content": "あなたは疲れているとき、チームの前でどう振る舞いますか？\n\nA=自分が先に帰りにくい空気になっている\nB=「元気に見せなければ」と意識して振る舞っている\nC=「大丈夫です」と聞かれると反射的に答えてしまう\nD=疲れを適切に表現し、助けを求めることができる",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A softly lit Japanese office in the evening. A professional Japanese woman in her early 40s with an elegant bob hairstyle, wearing a pale purple linen shirt and cream pleated skirt, sits at her desk with stacks of work around her, while all other desks are empty. A small green turtle with white flower patterns on its shell sits near her feet, looking up at her with concern. Quiet fatigue, warm desk lamp light. Top-right (B): The same woman stands in front of a meeting room, posture upright, expression composed and slightly forced. The turtle with white flowers sits on a chair behind her, watching quietly. Fluorescent office light, slight tension in her shoulders. Bottom-left (C): A close-up of the woman at her desk, answering a question with a neutral expression while inside there is visible weariness — slightly heavy eyelids, a coffee cup nearby. The turtle with white flowers sits on the desk corner, gently touching her arm with one flipper. Soft light, intimate frame. Bottom-right (D): The woman sits beside a window with soft afternoon light. The turtle with white flowers is beside her, and her expression is open and honest — not performing. The body language is relaxed, with a gentle smile. Warm natural light, quiet office setting. No text, no letters, no signage.",
+      "comment": "A: 上司が帰らないと部下も帰れない、という構造は、疲弊の連鎖を生む仕組みです。📌 「今日は早く上がります」と宣言してから退席する習慣が、チーム全体の退勤を早める効果があります。\n\nB: 「元気に見せよう」とするほど、それが演技に見えます。部下は上司の本音を驚くほど正確に読んでいます。📌 「今日ちょっと疲れ気味だから、夕方は静かにしてて」と正直に言える関係を育てましょう。\n\nC: 「大丈夫です」が口癖になっているとき、組織の中でサインが積み重なっています。📌 1週間に1回、自分の疲弊レベルを0〜10で数値化して記録する習慣を持ちましょう。\n\nD: 疲れを適切に表現し、助けを求められるのは、自己開示の力です。これはチームの心理的なモデルになります。📌 部下に頼んだあと「ありがとう、助かった」と伝えることで、頼み合う文化が育ちます。",
+      "quote": "💎 強いリーダーは「疲れを隠す人」ではなく「疲れを扱える人」だ"
+    },
+    {
+      "date": "2026-06-19",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "「本音を言えない」の本当の原因",
+      "character": "しらたま + ひより",
+      "content": "あなたのチームで「本音が出にくい」のは、どのパターンに近いですか？\n\nA=以前、正直に話したら批判された経験がある\nB=言う前に「これは言わないほうがいい」と自分で止めてしまう\nC=上司の反応が読めないから言葉を選んでしまう\nD=本音を言う必要性を感じていない（仕事上問題ない）",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A soft indoor scene. A fluffy white cat sits with its tail wrapped around its body, slightly turned away, with a memory-like haze behind it suggesting a past moment of conflict. A white bird with blue-tipped wings perches nearby, head tilted gently. Quiet, slightly melancholic atmosphere, soft diffused light. Top-right (B): The white fluffy cat sits at the edge of a window, one paw raised as if about to speak, then lowered. The white bird with blue wingtips watches from a branch-like perch, attentive. Afternoon light through sheer curtains, reflective mood. Bottom-left (C): The fluffy white cat and the white bird with blue wingtips sit facing an empty cushion — the sense that a third presence (off-panel) is unpredictable. Both animals have cautious, slightly tense postures. Cool indoor light, quiet tension. Bottom-right (D): The white fluffy cat and the white bird with blue wingtips sit side by side in a sun-drenched window, relaxed and close together. They look forward contentedly — a sense of ease and no need to speak. Warm golden light, peaceful framing. No text, no letters, no signage.",
+      "comment": "A: 一度「言って損した」と感じると、人は静かになります。その学習は数年単位で残ります。📌 「先週話してくれたこと、あれ役に立ったよ」と後から一言フィードバックするだけで、安心の仕組みが育ちます。\n\nB: 自己検閲は「言えない」ではなく、「言った後が怖い」という経験の蓄積です。📌 1on1で「最近、自分で止めた言葉はある？」と聞いてみることが、組織の地層を確認する作業になります。\n\nC: 上司の反応が読めない職場では、人は「最も安全な発言」だけをするようになります。📌 リーダーは意見をもらったとき、賛否より先に「教えてくれてありがとう」を習慣にしましょう。\n\nD: 「問題ない」と感じているとしたら、そこには「言っても変わらない」という経験が潜んでいるかもしれません。📌 「もし変えられるとしたら、何を変えたい？」という問いから、本音の入り口が開きます。",
+      "quote": "💎 本音が出ない組織は、「言えない」のではなく「言った後」の仕組みに問題がある"
+    },
+    {
+      "date": "2026-06-20",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "組織の疲弊サインを読む力",
+      "character": "Coco + しずく + しらたま",
+      "content": "あなたのチームに、次のサインはありますか？\n\nA=ミスや確認漏れが以前より増えた\nB=会議やミーティングで発言する人が減った\nC=「確認してもいいですか？」と聞かれる回数が増えた\nD=説明しにくいが、なんとなく重い空気が続いている",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A professional Japanese woman in her early 40s with an elegant bob hairstyle, wearing an aqua-green summer knit top and white linen trousers with gold hoop earrings, crouches near a small green turtle with white flower patterns on its shell. The turtle's shell shows a hairline crack (metaphorical, not damaged). A fluffy white cat sits nearby, looking concerned. Soft rainy-day light, muted palette. Top-right (B): The same woman sits in a meeting room where several empty chairs surround the table. Only the fluffy white cat sits in one chair, quietly. The turtle with white flowers rests on the table edge. The room feels subdued and slightly hollow. Cool fluorescent light. Bottom-left (C): The woman stands beside a desk where the fluffy white cat is carefully examining a small object (metaphor for double-checking). The turtle with white flowers looks on from the side. The white cat's posture is cautious and precise. Warm desk lamp, focused light. Bottom-right (D): All three — the woman, the turtle with white flowers, and the fluffy white cat — sit together in a low-lit room with heavy atmosphere. They are close, but the mood is quiet and weighted. Rain streaks on the window glass behind. Muted indigo and grey tones. No text, no letters, no signage.",
+      "comment": "A: ミスの増加は「注意力の低下」ではなく「認知的余裕の枯渇」のサインです。📌 ミスが増えたとき、まず業務量と睡眠時間を聞いてみることを習慣にしましょう。\n\nB: 発言が減るのは「意見がない」のではなく、「言っても仕方がない」という学習の結果です。📌 会議では「黙っている人に声をかける」ルールを1つ決めるだけで、場の空気が変わり始めます。\n\nC: 確認が増えるのは、「間違えたくない」という防衛反応です。ミスを責める文化があると、必ずこのサインが現れます。📌 確認してきた人に「ちゃんと聞きにきてくれてよかった」と返すだけで、確認しやすい仕組みが育ちます。\n\nD: 「なんとなく重い」は、最も早い疲弊のサインです。数値に出る前に、ここで気づけた組織は強い。📌 週に1回、5分だけ「最近チームの空気どう？」と雑談で聞く時間をカレンダーに入れましょう。",
+      "quote": "💎 組織の疲弊は「突然」来ない。見えていなかっただけだ"
+    },
+    {
+      "date": "2026-06-21",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "上司の機嫌がチームのパフォーマンスを動かす仕組み",
+      "character": "ひより",
+      "content": "あなたのチームは、どのパターンに近いですか？（夏至の今日、チームの「空気」を点検しましょう）\n\nA=上司の機嫌が悪いと、チーム全体の会話量が減る\nB=上司の朝の表情が、その日の空気のペースを決めている\nC=メンバーが上司の顔色に関係なく、自分のペースで動ける\nD=上司の感情より、成果や事実で動くチームになっている",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A Japanese indoor scene, summer solstice light streaming through large windows. A white bird with blue-tipped wings sits at the center of a low wooden table. The ambient light in the room subtly dims to match the bird's slightly withdrawn posture — wings tucked close, gaze lowered. Soft long golden light, midsummer atmosphere, a hush in the room. Top-right (B): The white bird with blue wingtips stands near a window at dawn, the sky beginning to glow amber and rose. The bird's upright, calm posture seems to set the tone for the whole room. Warm summer solstice sunrise light, gentle sense of rhythm and influence, longest day energy. Bottom-left (C): The white bird with blue wingtips stands on an open book on a wooden floor. The surrounding space is calm and independent — no external turbulence in the scene. The bird looks ahead steadily, self-possessed. Balanced natural light, quiet confidence, summer afternoon. Bottom-right (D): The white bird with blue wingtips stands on a smooth wooden platform, high summer sun streaming down. The longest-day light of summer solstice illuminates the scene evenly. The bird is still, serene, and the space around it is organized and clear. Strong clean light, open composition. No text, no letters, no signage.",
+      "comment": "A: 上司の機嫌でチームの会話量が変わるのは、「上司に合わせることが安全」という仕組みが出来上がっているサインです。📌 機嫌が悪いときほど、先に「おはよう」と言うリーダーが、チームの空気を守ります。\n\nB: 朝の表情がペースを決めるほど、上司の影響力がチームに浸透しています。その力は、プラスにもマイナスにも働きます。📌 出社したら5秒で「今日もよろしく」と言う習慣だけで、1日の空気が変わり始めます。\n\nC: メンバーが上司の顔色に左右されず動けるのは、「成果と役割が明確」なチームの証明です。📌 この状態を維持するために、1on1で「最近、自分で判断できたこと」を聞いて積み上げましょう。\n\nD: 感情より事実と成果で動くチームは、リーダーが意識的に「感情の分離」を実践し続けた結果です。📌 自分のコンディションを「今日は△△モード」と一言伝えるだけで、チームが余計な読み合いをせず済みます。",
+      "quote": "💎 上司の機嫌は「個人の感情」ではなく、チームのパフォーマンスの仕組みだ"
+    },
+    {
+      "date": "2026-06-22",
+      "platform": "X診断 6/16〜6/22",
+      "time": "12:00",
+      "purpose": "新しいメンバーが来た日の動き方",
+      "character": "Coco + しずく + しらたま + ひより",
+      "content": "新しいメンバーが来た日、あなたのチームはどう動きますか？\n\nA=自己紹介だけして、すぐ通常業務に入る\nB=全員に紹介したうえで、なじむ時間を意識的に作る\nC=1対1で話す時間を最初の1週間で設ける\nD=本人のペースに任せて、自然に溶け込むのを待つ",
+      "image_prompt": "A 4-panel image in a 2x2 grid (田の字型). Top-left (A): A bright Japanese office on a Monday morning. A professional Japanese woman in her early 40s with an elegant bob hairstyle, wearing a mango yellow silk blouse and beige ankle-length trousers with gold chain earrings, stands near a small green turtle with white flower patterns on its shell. The turtle looks toward a doorway. A fluffy white cat and a white bird with blue-tipped wings sit nearby. The scene suggests someone new is expected. Warm morning light, optimistic energy. Top-right (B): The same woman, turtle with white flowers, fluffy white cat, and white bird with blue wingtips are gathered in a welcoming circle on a sunny office floor. The group is animated and open, all facing the same direction as if greeting someone entering. Warm golden light, inclusive feeling, summer morning. Bottom-left (C): The woman sits in a small quiet corner with the turtle with white flowers on the table between them and the white bird with blue wingtips perched above. The arrangement is intimate, one-on-one, a sense of careful listening and welcome. The fluffy white cat curls nearby. Soft indoor light. Bottom-right (D): The woman stands slightly apart while the turtle with white flowers, the fluffy white cat, and the white bird with blue wingtips are arranged loosely — waiting, relaxed, not clustered. The scene conveys patience, but also a slight distance. Calm, open light, neutral space. No text, no letters, no signage.",
+      "comment": "A: 自己紹介だけでは「名前を知っている他人」止まりです。最初の3日間で感じた孤独は、数ヶ月後の離職につながる仕組みを持っています。📌 最初の1時間に「今日どんな気持ちで来ましたか？」と一言聞くだけで、接続のスイッチが入ります。\n\nB: 「なじむ時間を作る」という意図を持っているだけで、チームへの着地がまったく変わります。📌 入社初日のランチを誰と食べるかを、あらかじめ決めておくだけで、孤独の空白を埋められます。\n\nC: 1対1で話す時間を設けるのは、「あなたに興味があります」というメッセージを届ける仕組みです。📌 最初の面談では「今まで一番楽しかった仕事」を聞いてみてください。その人の強みが見えてきます。\n\nD: 「本人のペースに任せる」が誤解されると、放置になります。溶け込めない責任を本人に帰属させる組織は、入口で人を失っています。📌 1週間後に「なじんできた？率直に教えて」と聞く習慣が、チームの受け入れ力を育てます。",
+      "quote": "💎 チームへの馴染み方は、迎える側の仕組みで決まる"
+    }
+  ]
+}
