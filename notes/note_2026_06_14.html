@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="「助けたい」と「また私だ」が同時にある。やさしさが消耗に変わる瞬間の構造と、愛があるからこそ引ける「線」の作り方を、20年・5万人超の現場から解説する。">
+  <title>「やさしくしているのに、消耗する。」——課題の分離という、愛のある線の引き方 | Coco</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #161616;
+      --border: #272727;
+      --border-light: #333;
+      --text-primary: #e6e6e6;
+      --text-secondary: #999;
+      --text-muted: #555;
+      --accent: #7a9e8a;
+      --accent-light: #96b8a6;
+      --accent-dim: rgba(122,158,138,0.10);
+      --paid-border: rgba(122,158,138,0.28);
+      --checklist-bg: #131313;
+      --jump-bg: #141414;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', sans-serif;
+      --max-w: 680px;
+    }
+
+    html { font-size: 16px; -webkit-text-size-adjust: 100%; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      line-height: 1.9;
+      min-height: 100vh;
+      padding-bottom: 80px;
+    }
+
+    .nav {
+      position: sticky; top: 0;
+      background: rgba(15,15,15,0.95);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-brand { font-size: 0.78rem; color: var(--text-muted); letter-spacing: 0.08em; text-decoration: none; }
+    .nav-back { font-size: 0.75rem; color: var(--text-muted); text-decoration: none; transition: color 0.15s; }
+    .nav-back:hover { color: var(--text-secondary); }
+
+    .hero {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 48px 24px 32px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-meta { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .badge { font-size: 0.65rem; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.04em; }
+    .badge-note { background: var(--accent-dim); color: var(--accent-light); border: 1px solid var(--paid-border); }
+    .badge-price { background: rgba(255,255,255,0.05); color: var(--text-secondary); border: 1px solid var(--border-light); }
+    .badge-date { font-size: 0.65rem; color: var(--text-muted); }
+
+    .hero-title { font-size: clamp(1.15rem, 4vw, 1.55rem); font-weight: 600; line-height: 1.5; color: var(--text-primary); margin-bottom: 16px; }
+    .hero-desc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 20px; }
+
+    .hashtags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .hashtag { font-size: 0.7rem; color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border); padding: 2px 8px; border-radius: 20px; }
+
+    .article { max-width: var(--max-w); margin: 0 auto; padding: 40px 24px 0; }
+
+    .prose p { font-size: 0.95rem; line-height: 2; color: var(--text-primary); margin-bottom: 1.2em; }
+    .prose p:last-child { margin-bottom: 0; }
+    .divider { text-align: center; color: var(--text-muted); font-size: 0.78rem; letter-spacing: 0.2em; margin: 32px 0; }
+
+    .paid-gate {
+      background: var(--accent-dim);
+      border: 1px solid var(--paid-border);
+      border-radius: 12px;
+      padding: 28px 24px;
+      margin: 40px 0;
+    }
+    .paid-gate-label { font-size: 0.7rem; font-weight: 700; color: var(--accent); letter-spacing: 0.08em; margin-bottom: 12px; }
+    .paid-gate-hook { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.85; margin-bottom: 16px; white-space: pre-line; }
+    .paid-gate-benefits { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .paid-gate-benefits li { font-size: 0.83rem; color: var(--text-secondary); padding-left: 20px; position: relative; line-height: 1.65; }
+    .paid-gate-benefits li::before { content: '✔'; position: absolute; left: 0; color: var(--accent); font-size: 0.75rem; }
+
+    .chapter { margin: 48px 0 0; }
+    .chapter + .chapter { margin-top: 56px; }
+    .chapter-num { font-size: 0.65rem; color: var(--accent); font-weight: 700; letter-spacing: 0.12em; margin-bottom: 8px; }
+    .chapter-title { font-size: 1.05rem; font-weight: 600; color: var(--text-primary); line-height: 1.5; margin-bottom: 24px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+
+    .block { margin-bottom: 24px; }
+    .block-label { font-size: 0.68rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 10px; }
+    .block-body { font-size: 0.9rem; line-height: 1.95; color: var(--text-primary); white-space: pre-line; }
+
+    .jump-block { background: var(--jump-bg); border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0; padding: 18px 20px; margin: 24px 0; }
+    .jump-label { font-size: 0.65rem; color: var(--accent); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 10px; }
+    .jump-body { font-size: 0.88rem; line-height: 1.9; color: var(--text-secondary); white-space: pre-line; }
+
+    .checklist { background: var(--checklist-bg); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; margin-top: 20px; }
+    .checklist-title { font-size: 0.68rem; color: var(--text-muted); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 12px; }
+    .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .checklist li { font-size: 0.85rem; color: var(--text-secondary); padding-left: 24px; position: relative; line-height: 1.65; }
+    .checklist li::before { content: '□'; position: absolute; left: 0; color: var(--text-muted); font-size: 0.85rem; }
+
+    .chapter-sep { border: none; border-top: 1px solid var(--border); margin: 48px 0 0; }
+
+    .outro { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .outro-body { font-size: 0.92rem; line-height: 2.1; color: var(--text-primary); white-space: pre-line; margin-bottom: 32px; }
+    .cta-box { background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin-top: 24px; }
+    .cta-label { font-size: 0.65rem; color: var(--text-muted); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 10px; }
+    .cta-body { font-size: 0.88rem; line-height: 1.9; color: var(--text-secondary); white-space: pre-line; }
+
+    .sns-hooks { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--border); }
+    .sns-hooks-title { font-size: 0.7rem; color: var(--text-muted); font-weight: 700; letter-spacing: 0.08em; margin-bottom: 20px; }
+    .hook-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+    .hook-platform { font-size: 0.65rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0.06em; margin-bottom: 8px; }
+    .hook-text { font-size: 0.85rem; line-height: 1.85; color: var(--text-secondary); white-space: pre-line; }
+    .hook-copy { display: flex; justify-content: flex-end; margin-top: 10px; }
+    .copy-btn { background: rgba(255,255,255,0.05); border: 1px solid var(--border-light); color: var(--text-muted); padding: 4px 12px; border-radius: 6px; font-size: 0.7rem; font-family: var(--font); cursor: pointer; transition: all 0.15s; }
+    .copy-btn:hover { background: rgba(255,255,255,0.09); color: var(--text-secondary); }
+    .copy-btn.copied { background: rgba(45,106,79,0.3); border-color: rgba(45,106,79,0.6); color: #9ef0be; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+    @media (min-width: 640px) {
+      .hero { padding: 56px 32px 40px; }
+      .article { padding: 48px 32px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav-brand">coconocanvas</a>
+    <a href="../notes.html" class="nav-back">← note一覧</a>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-meta">
+      <span class="badge badge-note">note</span>
+      <span class="badge badge-price">¥1,500</span>
+      <span class="badge-date">2026.06.14</span>
+    </div>
+    <h1 class="hero-title">「やさしくしているのに、消耗する。」<br>——課題の分離という、愛のある線の引き方</h1>
+    <p class="hero-desc">「助けたい」と「また私だ」が同時にある。やさしさが消耗に変わる瞬間の構造と、愛があるからこそ引ける「線」の作り方を、20年・5万人超の現場から解説する。</p>
+    <div class="hashtags">
+      <span class="hashtag">#人間関係</span>
+      <span class="hashtag">#自己成長</span>
+      <span class="hashtag">#課題の分離</span>
+      <span class="hashtag">#境界線</span>
+      <span class="hashtag">#自分を大切にする</span>
+      <span class="hashtag">#距離感</span>
+    </div>
+  </header>
+
+  <article class="article">
+
+    <!-- 無料エリア -->
+    <section class="prose">
+      <p>あのね、</p>
+      <p>「助けたい」という気持ちと、「また私だ」という気持ちが、同時にあったこと、ないか。</p>
+
+      <div class="divider">──────────</div>
+
+      <p>やさしくしたい。でも、消耗したくない。</p>
+      <p>この二つは、矛盾していない。</p>
+      <p>矛盾しているように見えるのは、やさしさの「向き」がずれているからだ。</p>
+
+      <div class="divider">──────────</div>
+
+      <p>20年で延べ5万人超と向き合ってきた。</p>
+      <p>ネイルサロン、飲食、BAR。</p>
+      <p>あらゆる現場で見てきた。</p>
+      <p>やさしい人ほど、消耗する。</p>
+      <p>そして消耗した果てに、やさしさそのものを手放してしまう。</p>
+      <p>それは、やさしさの量の問題ではなかった。</p>
+      <p>「線の引き方」の問題だった。</p>
+    </section>
+
+    <!-- 有料ゲート -->
+    <div class="paid-gate">
+      <p class="paid-gate-label">ここから先は有料です</p>
+      <p class="paid-gate-hook">「やさしくしているのに、消耗する。」
+「断れなくて、あとから後悔する。」
+「また私だ、という感覚が止まらない。」
+
+そう感じているなら、ここから先を読んでください。</p>
+      <ul class="paid-gate-benefits">
+        <li>やさしさが消耗に変わる「構造」とそのサイン</li>
+        <li>断ることと、見捨てることは別物——その言葉の作り方</li>
+        <li>課題の分離という「愛のある線」の正体と引き方</li>
+        <li>一番近い人への甘えと消耗が混同されるとき</li>
+        <li>「ありがとう」を求めたとき、やさしさは取引に変わる</li>
+      </ul>
+    </div>
+
+    <!-- 有料エリア -->
+    <section>
+
+      <!-- 1 -->
+      <div class="chapter">
+        <p class="chapter-num">01</p>
+        <h2 class="chapter-title">「やさしくしたい」と「また私だ」が同時にある理由</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">20年で5万人超と向き合う中で、見えてきたことがある。
+
+「また私だ」という感覚を持っている人は、やさしくない人ではない。
+
+むしろ逆だ。
+
+「また私だ」と感じる人ほど、本当はやさしい。
+
+でも、その「また」が積み重なるとき、やさしさは静かに怒りに変わっていく。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">「助けたい」という気持ちと「また私だ」という気持ちが同時にあるのは、矛盾ではない。
+
+「やさしさの予算が、赤字に入り始めた」というサインだ。
+
+やさしさには、上限がある。
+
+「上限がない」と思ってやさしくし続ける人は、いつか使い切る。
+
+使い切った瞬間に出てくるのが、「また私だ」という疲労感だ。
+
+これはやさしさが消えたのではない。補充の仕組みがないまま、使い続けてきた結果だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">「また私だ」という感覚が出てきたとき、それを責めないでほしい。
+
+それは「やさしくない自分」の証拠ではなく、「補充の時間が来た」という内側からのサインだ。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>先週、「また私だ」と感じた場面が2回以上あったか確認する</li>
+            <li>「また私だ」と感じた後、誰かに伝えたか、それとも飲み込んだか振り返る</li>
+            <li>「助けることで、自分は何を得ているか」を一度書き出してみる</li>
+            <li>「やさしくしたい」が「嫌われたくない」になっていないか確認する</li>
+            <li>自分のやさしさを「補充する行動」を一つ書き出す</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 2 -->
+      <div class="chapter">
+        <p class="chapter-num">02</p>
+        <h2 class="chapter-title">断れないとき、本当は何が起きているか</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">昔の私は、「いい人」でいようとするあまり、いつの間にか都合よく扱われる立場になっていた。
+
+断れなかった。不満を言えなかった。それが「優しい私」だと思っていた。
+
+でも実際には、「優しい私」ではなく「輪郭のない私」だった。
+
+輪郭がなかったから、誰でも入ってこれた。誰でも要求できた。
+
+そしてある日気づいた。消耗しているのは、やさしさのせいではなく、「NO」が言えないことのせいだ、と。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">断れないとき、人は何をしているのか。
+
+相手のためではない。
+
+「断ったときに生まれる気まずさ」から逃げている。
+
+つまり、断れないのは優しさではなく、自分の不快を避けるための回避行動だ。
+
+断ることは、相手を傷つけることではない。
+
+「私には私の判断がある」という、静かな自己表明だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【私が変えたこと】</p>
+          <p class="block-body">「断る言葉を作る」より先に、「断る権利がある」と思えるようになることを変えた。
+
+「引き受けない選択が、この人のためになることもある。」
+
+その視点が持てたとき、初めて「NO」が優しさになった。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今週、断りたかったのに断れなかった場面があるとしたら、そのとき何が怖かったかを書き出してみてほしい。
+
+「断った後に嫌われる不安」なのか「気まずい空気への恐怖」なのか、見えてくるものがある。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>「断る＝相手を傷つける」という思い込みを持っていないか確認する</li>
+            <li>先週、断りたかったのに断れなかった場面を一つ思い出す</li>
+            <li>その場面で「断っていたら、相手はどうなっていたか」を具体的に考えてみる</li>
+            <li>断ることを「相手の成長の機会を奪わないこと」と言い換えてみる</li>
+            <li>「NO」を伝えるとき、謝罪ではなく説明で始める練習をする</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 3 -->
+      <div class="chapter">
+        <p class="chapter-num">03</p>
+        <h2 class="chapter-title">「助けること」がやがて重くなる瞬間</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">20年で5万人超と向き合う中で、一人でスタッフ全員の問題を抱えようとして、ある時期ほぼ機能しなくなったことがある。
+
+「全員の困りごとを、私が解かなければ」と思っていた。
+
+でも後から気づいた。全員の問題は、全員で解くべきだった。私一人の問題にしてしまったのは、私自身だった。
+
+誰かが困っているとき、自分のことより先に動いてしまうのは美しい資質だ。
+
+でも「先に動く」が習慣になると、自分の困り事を誰が拾うのかという問いが残る。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">助けることは、相手の問題を自分のものにすることではない。
+
+「この問題は誰の課題か」を見極めることが、最初のステップだ。
+
+相手の課題を引き受けることは、相手が課題と向き合う機会を奪うことでもある。
+
+助けるとは、「代わりにやること」ではなく、「本人が解けるように隣に立つこと」だ。</p>
+        </div>
+
+        <div class="jump-block">
+          <p class="jump-label">── 視座のジャンプ ①</p>
+          <p class="jump-body">やさしさが消耗になるとき、それは「量の問題」ではなく「方向の問題」だ。
+
+「相手の課題を自分のものとして解こうとする」から消耗する。
+
+「相手が自分の課題を解けるように、そばにいる」からは消耗しない。
+
+やさしさの向きを変えることが、消耗から自由になる唯一の方法だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今、あなたが抱えている誰かの問題の中に、「本当はその人自身が解くべき問題」はないか、一度仕分けてみてほしい。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>今抱えている人の問題を「自分の課題」と「相手の課題」に分けて書き出す</li>
+            <li>「代わりにやること」と「隣に立つこと」の違いを言語化してみる</li>
+            <li>相手の問題を引き受けたとき、相手は何を失っているかを考えてみる</li>
+            <li>「助けを求められていないのに動いている」ことがないか確認する</li>
+            <li>「自分のことを誰が拾っているか」を一度問い直す</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 4 -->
+      <div class="chapter">
+        <p class="chapter-num">04</p>
+        <h2 class="chapter-title">課題の分離とは——愛があるからこそ引ける線</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">かつての関係で、一方的に与え続け、相手に依存されるような形になっていったことがある。
+
+「あなたのために」という言葉で動いていたが、ある日気づいた。
+
+「あなたのために」は、「あなたがいなくなると困る」という恐怖から来ていた。
+
+課題の分離という考え方を知ったとき、最初は「冷たくなること」だと思った。
+
+でも違った。
+
+課題を分離したとき、関係が初めて対等になった。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">課題の分離とは、「あなたの問題はあなたのもの。私はあなたを応援するが、あなたの代わりに問題を解決しない」という立場だ。
+
+これは冷たさではない。
+
+むしろ相手を一人の人間として尊重することだ。
+
+「代わりに解く」を続けると、相手は「一人では解けない人」になっていく。
+
+「隣に立つ」を選ぶと、相手は「一人でも解ける人」に育っていく。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【私が変えたこと】</p>
+          <p class="block-body">「この問題は、この人が自分で解くべきことだ」と静かに決めることを始めた。
+
+「でも、隣にはいる。声をかけられたら話す。でも代わりに動かない。」
+
+最初は罪悪感があった。でも続けると、相手が自分で解き始めた。
+
+そして関係が、依存から信頼に変わっていった。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今の関係で、「もし私が何もしなかったら、どうなるか」を一度想像してみてほしい。
+
+「相手が自分で何とかする」なら、そこはあなたが必要な場面ではないかもしれない。
+
+「何もできなくなる」なら、すでに依存の構造が出来上がっているサインかもしれない。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>「この問題は誰の課題か」を今週一度だけ問い直す</li>
+            <li>「代わりにやる」と「隣に立つ」を使い分けてみる</li>
+            <li>相手が自分で解くのを「待てる」かどうか確認する</li>
+            <li>「助けなければ関係が壊れる」という恐怖がないか確認する</li>
+            <li>「課題の分離」を「見捨てること」ではなく「対等にすること」と捉え直す</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 5 -->
+      <div class="chapter">
+        <p class="chapter-num">05</p>
+        <h2 class="chapter-title">一番近い人への甘えと消耗が混同されるとき</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">実家に帰るたびに、家族に対してだけ言い方がキツくなる。
+
+外では丁寧に話すのに、一番長く一緒にいる人への感情の管理だけが甘くなる。
+
+「安全だから大丈夫」という無意識が、一番近い人を一番酷使する場所にしていた。
+
+外でやり切った疲労のコストを、家族に一切負担させていた。
+
+それは甘えではなく、消耗の押しつけだったと、後から気づいた。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">「甘え」は相手の存在に安心することだ。
+
+「消耗の押しつけ」は、相手のリソースを補充なく使い続けることだ。
+
+一番近い人は、最も安全に「NO」を言える存在であるはずだ。
+
+でも現実は、一番近い人が一番「NO」を言いにくい関係になっていることが多い。
+
+課題の分離は、外の人間関係だけでなく、一番近い人との関係にこそ必要だ。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今、一番近い人に「この感情を引き受けてもらっている」場面はないか、一度振り返ってみてほしい。
+
+「安全だから言える」と「安全だから何でも言っていい」は、まったく別の話だ。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>一番近い人への言い方が外の人への言い方と大きく違っていないか確認する</li>
+            <li>「安全だから雑でいい」という思い込みを一つ手放してみる</li>
+            <li>疲れを「一番近い人」以外の場所で補充できているか確認する</li>
+            <li>「甘える」と「消耗を押しつける」の違いを言語化してみる</li>
+            <li>今日、一番近い人に「ありがとう」を一つ言う機会を作る</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 6 -->
+      <div class="chapter">
+        <p class="chapter-num">06</p>
+        <h2 class="chapter-title">「ありがとう」を求め始めたとき——やさしさが取引に変わる瞬間</h2>
+
+        <div class="block">
+          <p class="block-label">【事実】</p>
+          <p class="block-body">「やさしくした後に『ありがとう』がないと、モヤっとする。」
+
+この感覚は、多くの人が持っている。
+
+5万人の本音を聴いてきた中で、この感覚の正体を見た。
+
+「モヤっとする」のは、やさしくすることが「対価を求める取引」に変わりかけているサインだ。
+
+やさしさが「ありがとう」のための手段になっているとき、与えることが苦しくなる。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【そこから見えた気づき】</p>
+          <p class="block-body">やさしくする理由が「相手のため」なら、「ありがとう」がなくても成立する。
+
+やさしくする理由が「自分を認めてもらうため」なら、「ありがとう」がないと崩れる。
+
+この二つの動機は、行動としては同じに見えるが、内側のコストがまったく違う。
+
+前者は与えるほど軽くなる。後者は与えるほど重くなる。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">「やさしくした後のモヤモヤ」を感じたとき、一度問い直してみてほしい。
+
+「今のやさしさは、相手のためだったか。それとも、認められるためだったか。」
+
+その問いが、やさしさの向きを整えるヒントになる。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>「やさしくした後にモヤっとした」場面を一つ思い出す</li>
+            <li>そのとき「何を期待していたか」を具体的に書き出す</li>
+            <li>「ありがとうがなくてもできるやさしさ」を一つだけ今週やってみる</li>
+            <li>やさしくする前に「これは誰のためか」を一度問い直す習慣を作る</li>
+            <li>「与えること」と「認められること」を切り離してみる</li>
+          </ul>
+        </div>
+      </div>
+
+      <hr class="chapter-sep">
+
+      <!-- 7 -->
+      <div class="chapter">
+        <p class="chapter-num">07</p>
+        <h2 class="chapter-title">課題の分離が「愛を守る」理由</h2>
+
+        <div class="block">
+          <p class="block-label">【事実と原理】</p>
+          <p class="block-body">「優しい人でいること」を自分の価値にしていたとき、初めて「それはできません」と相手に静かに言った。
+
+相手は「Cocoさん、変わりましたね」と言った。
+
+変わったのではない。ようやく「本当の自分の輪郭」を見せただけだった。
+
+そして、その後も関係は続いた。むしろ、深まった。
+
+やさしさに線を引くことで壊れる関係は、「やさしさがなければ成立しなかった関係」だ。
+
+本物の関係は、線を引いた後にも残る。</p>
+        </div>
+
+        <div class="jump-block">
+          <p class="jump-label">── 視座のジャンプ ②</p>
+          <p class="jump-body">課題の分離とは、相手を突き放すことではない。
+
+「あなたには、あなたの力がある。私はそれを信じている。だから、代わりにやらない。」
+
+という、最も深い敬意の表現だ。
+
+やさしさに線を引けるとき、それは相手を弱い存在として見ていないということだ。
+
+線を引ける人が、本当に愛している。
+
+20年で5万人超と向き合って、そのことを何度も見てきた。</p>
+        </div>
+
+        <div class="block">
+          <p class="block-label">【あなたの場合】</p>
+          <p class="block-body">今、線を引くことへの「罪悪感」があるとしたら、それはやさしさの証拠だ。
+
+でも同時に、その罪悪感を手放したとき、何が見えるかも問い直してみてほしい。
+
+「線を引いても壊れない関係」の中にこそ、本物のやさしさが宿る。</p>
+        </div>
+
+        <div class="checklist">
+          <p class="checklist-title">【チェックリスト】</p>
+          <ul>
+            <li>「線を引くこと」と「見捨てること」の違いを言語化してみる</li>
+            <li>今の関係で「線を引いても壊れないと感じる関係」を一つ確認する</li>
+            <li>「この人には線を引けない」と思う関係で、なぜそう思うかを書き出す</li>
+            <li>「課題の分離は冷たさではなく敬意だ」という視点を今週一度試してみる</li>
+            <li>線を引いた後に関係が深まった体験を一つ思い出す</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- おわり -->
+    <section class="outro">
+      <p class="outro-body">あのね、
+
+「やさしくしたい」と「消耗したくない」は、矛盾していない。
+
+ただ、向きを整えるだけでいい。
+
+──────────
+
+「また私だ」と感じてきた人は、やさしさを持っている人だ。
+
+だからこそ、そのやさしさを守ることを、一番に考えてほしい。
+
+自分が枯れたやさしさは、誰にも届かない。
+
+自分が満ちているとき初めて、本当の意味で誰かの隣に立てる。
+
+──────────
+
+読んでくれてありがとう。</p>
+
+      <div class="cta-box">
+        <p class="cta-label">おわりに</p>
+        <p class="cta-body">もしこの記事を読んで、
+
+「また私だ、という感覚、あるかも」
+
+と思ったなら、
+
+一度、その「また私だ」が出てきた場面を一つだけ書き出してみてください。
+
+「誰の課題を、私は引き受けていたのか」を書くだけで、
+
+線の引き方が少しだけ見えてきます。
+
+──────────
+
+何か感じたこととか、
+
+「この関係にどう線を引けばいいか」とか、
+
+あったら教えてね。
+
+コメントでも、DMでも。</p>
+      </div>
+    </section>
+
+    <!-- SNS導線 -->
+    <section class="sns-hooks">
+      <p class="sns-hooks-title">【日曜導線投稿】</p>
+
+      <div class="hook-card">
+        <p class="hook-platform">X（旧Twitter）向け</p>
+        <p class="hook-text" id="hook-x">「やさしさが消耗になるのは、量の問題ではなく方向の問題だ。」
+
+助けるとは「代わりにやること」ではなく、「本人が解けるように隣に立つこと」。
+
+やさしさの向きを変えたとき、消耗が止まった。
+
+→ note で書いています。</p>
+        <div class="hook-copy"><button class="copy-btn" onclick="copyHook('hook-x', this)">コピー</button></div>
+      </div>
+
+      <div class="hook-card">
+        <p class="hook-platform">Threads向け</p>
+        <p class="hook-text" id="hook-threads">「助けたい」と「また私だ」が、同時にある。
+
+その矛盾は、矛盾じゃない。
+
+やさしさの「向き」がずれているだけ。
+
+「やさしくしているのに消耗する理由」を、noteに書きました。</p>
+        <div class="hook-copy"><button class="copy-btn" onclick="copyHook('hook-threads', this)">コピー</button></div>
+      </div>
+    </section>
+
+  </article>
+
+  <script>
+    function copyHook(id, btn) {
+      const text = document.getElementById(id).textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        btn.textContent = 'コピー完了'; btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 1800);
+      }).catch(() => {
+        const ta = document.createElement('textarea');
+        ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+        document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+        btn.textContent = 'コピー完了'; btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('copied'); }, 1800);
+      });
+    }
+  </script>
+</body>
+</html>
