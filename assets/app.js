@@ -159,7 +159,7 @@ function renderCard(post) {
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
-  const quoteEscaped = escapeHtml(post.quote);
+  const quoteEscaped = post.quote ? escapeHtml(post.quote) : '';
 
   let extraSections = '';
   if (post.comment) {
@@ -174,6 +174,22 @@ function renderCard(post) {
           <p>${commentEscaped}</p>
           <div class="copy-btn-content">
             <button class="copy-btn" data-copy="${commentEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.reply_1) {
+    const r1Escaped = escapeHtml(post.reply_1);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 返信コメント</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${r1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${r1Escaped}">コピー</button>
           </div>
         </div>
       </div>`;
@@ -212,10 +228,10 @@ function renderCard(post) {
         </div>
       </div>
       ${extraSections}
-      <div class="card-quote">
+      ${post.quote ? `<div class="card-quote">
         <p class="quote-text">${quoteEscaped}</p>
         <button class="copy-btn" data-copy="${escapeHtml(post.quote)}">コピー</button>
-      </div>
+      </div>` : ''}
     </article>`;
 }
 
