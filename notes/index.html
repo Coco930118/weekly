@@ -10,6 +10,11 @@
     .notes-header {
       padding: 28px 20px 20px;
       border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(17,17,17,.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
     }
     .notes-header .brand { font-size: 1rem; font-weight: 500; letter-spacing: .08em; color: var(--text-secondary); margin-bottom: 2px; }
     .notes-header .subtitle { font-size: .75rem; color: var(--text-muted); letter-spacing: .04em; }
@@ -18,10 +23,17 @@
     .notes-header .nav-tab:hover { color: var(--text-primary); border-color: var(--border-light); }
     .notes-header .nav-tab.active { background: var(--text-primary); border-color: var(--text-primary); color: var(--bg); }
 
+    .notes-stats {
+      padding: 10px 20px;
+      font-size: .72rem;
+      color: var(--text-muted);
+      letter-spacing: .02em;
+    }
+
     .notes-list {
       max-width: 740px;
       margin: 0 auto;
-      padding: 32px 20px 80px;
+      padding: 20px 20px 80px;
     }
 
     .notes-section-title {
@@ -32,32 +44,33 @@
       font-weight: 600;
     }
 
-    .note-card {
-      display: block;
+    /* ─ Note card ─ */
+    .note-card-wrap {
       background: var(--bg-card);
       border: 1px solid var(--border);
       border-radius: 12px;
-      padding: 20px;
       margin-bottom: 14px;
-      text-decoration: none;
-      transition: background .15s, border-color .15s;
+      overflow: hidden;
+      transition: border-color .15s;
     }
-    .note-card:hover {
-      background: var(--bg-card-hover);
-      border-color: var(--border-light);
+    .note-card-wrap:hover { border-color: var(--border-light); }
+    .note-card-wrap.note-latest { border-color: rgba(201,169,110,.2); }
+
+    .note-card-link {
+      display: block;
+      padding: 20px 20px 16px;
+      text-decoration: none;
+      color: inherit;
     }
 
     .note-card-meta {
       display: flex;
-      gap: 10px;
+      gap: 8px;
       align-items: center;
+      flex-wrap: wrap;
       margin-bottom: 10px;
     }
-    .nc-date {
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: .05em;
-    }
+    .nc-date { font-size: 11px; color: var(--text-muted); letter-spacing: .05em; }
     .nc-price {
       font-size: 11px;
       background: #1e1608;
@@ -66,10 +79,32 @@
       border-radius: 4px;
       padding: 2px 8px;
     }
-    .nc-week {
+    .nc-free {
+      font-size: 11px;
+      background: rgba(45,106,79,.15);
+      color: #6bcf9e;
+      border: 1px solid rgba(45,106,79,.3);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .nc-members {
+      font-size: 11px;
+      background: rgba(155,77,202,.12);
+      color: #c084e0;
+      border: 1px solid rgba(155,77,202,.25);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .nc-week { font-size: 10px; color: var(--text-muted); margin-left: auto; }
+    .nc-new {
       font-size: 10px;
-      color: var(--text-muted);
-      margin-left: auto;
+      font-weight: 700;
+      background: rgba(201,169,110,.15);
+      color: #c9a96e;
+      border: 1px solid rgba(201,169,110,.3);
+      border-radius: 4px;
+      padding: 2px 8px;
+      letter-spacing: .05em;
     }
 
     .note-card-title {
@@ -84,7 +119,7 @@
     .note-card-desc {
       font-size: 13px;
       color: var(--text-secondary);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     .note-card-tags {
@@ -101,6 +136,64 @@
       border-radius: 20px;
       padding: 2px 10px;
     }
+
+    /* ─ Copy row ─ */
+    .note-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px 14px;
+      border-top: 1px solid var(--border);
+    }
+    .note-read-btn {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      padding: 5px 14px;
+      border-radius: 6px;
+      transition: all .15s;
+      letter-spacing: .02em;
+    }
+    .note-read-btn:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+    .note-copy-btn {
+      background: rgba(201,169,110,.08);
+      border: 1px solid rgba(201,169,110,.25);
+      color: #c9a96e;
+      padding: 5px 16px;
+      border-radius: 6px;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      cursor: pointer;
+      transition: all .15s;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    .note-copy-btn:hover {
+      background: rgba(201,169,110,.16);
+      border-color: #c9a96e;
+    }
+    .note-copy-btn.copied {
+      background: #1a3d28;
+      border-color: #2d6a4f;
+      color: #6bcf9e;
+    }
+    .note-copy-btn:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+
+    /* ─ States ─ */
+    .loading-state, .error-state, .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: .85rem;
+    }
+    .error-state { color: #f87171; }
   </style>
 </head>
 <body>
@@ -114,46 +207,153 @@
     </nav>
   </header>
 
+  <div class="notes-stats" id="notesStats">読み込み中…</div>
+
   <div class="notes-list">
     <div class="notes-section-title">NOTE ARCHIVE</div>
-
-    <!-- 最新 -->
-    <a href="./note_2026_05_29.html" class="note-card">
-      <div class="note-card-meta">
-        <span class="nc-date">2026.05.29</span>
-        <span class="nc-price">¥1,200</span>
-        <span class="nc-week">週次：05/19〜05/25</span>
-      </div>
-      <div class="note-card-title">「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのとき私がやったこと</div>
-      <div class="note-card-desc">「急に辞めた」と思ったとき、本当に急だったのか。20年・5万人超と向き合ってきた現場で気づいた、優秀な人が離れる前の「静かなサイン7つ」と、そのとき実際にやったこと。チェックリスト付き。</div>
-      <div class="note-card-tags">
-        <span class="nc-tag">#人間関係</span>
-        <span class="nc-tag">#マネジメント</span>
-        <span class="nc-tag">#離職防止</span>
-        <span class="nc-tag">#組織</span>
-        <span class="nc-tag">#リーダーシップ</span>
-      </div>
-    </a>
-
-    <!-- 前回 -->
-    <a href="./note_2026_04_27.html" class="note-card">
-      <div class="note-card-meta">
-        <span class="nc-date">2026.04.27</span>
-        <span class="nc-price">¥1,200</span>
-        <span class="nc-week">週次：04/28〜05/04</span>
-      </div>
-      <div class="note-card-title">「ちゃんと終わらせてから」がなくなる日──休む許可を、自分に出すための5つの原理</div>
-      <div class="note-card-desc">「ちゃんと終わらせてから」が来ない理由。休む許可が自分に出せない人の思考構造と、連休を「採点」してしまう癖の正体。20年で5万人と向き合った現場から見えた、疲れの設計の話。</div>
-      <div class="note-card-tags">
-        <span class="nc-tag">#人間関係</span>
-        <span class="nc-tag">#自己成長</span>
-        <span class="nc-tag">#休み方</span>
-        <span class="nc-tag">#距離感</span>
-        <span class="nc-tag">#自分との関係</span>
-      </div>
-    </a>
-
+    <div id="notesList"><p class="loading-state">読み込み中…</p></div>
   </div>
+
+<script>
+'use strict';
+
+const FONT = "-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif";
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function priceHtml(note) {
+  const v = note.visibility || (note.price && note.price !== '0' ? 'single_paid' : 'free');
+  if (v === 'members_only') return '<span class="nc-members">会員限定</span>';
+  if (v === 'single_paid' || (note.price && note.price !== '0'))
+    return `<span class="nc-price">¥${escHtml(note.price)}</span>`;
+  return '<span class="nc-free">無料</span>';
+}
+
+function weekLabel(w) {
+  if (!w) return '';
+  const [f, t] = w.split('_');
+  return `${f.slice(5).replace('-','/')}〜${t.slice(5).replace('-','/')}`;
+}
+
+function renderCard(note, isFirst) {
+  const filename = note.filename || `${note.note_id}.html`;
+  const tags = (note.hashtags || []).map(t => `<span class="nc-tag">${escHtml(t)}</span>`).join('');
+  const hasMarkdown = !!note.content_markdown;
+
+  return `
+    <div class="note-card-wrap${isFirst ? ' note-latest' : ''}" data-note-id="${escHtml(note.note_id)}">
+      <a href="./${escHtml(filename)}" class="note-card-link">
+        <div class="note-card-meta">
+          ${isFirst ? '<span class="nc-new">NEW</span>' : ''}
+          <span class="nc-date">${escHtml(note.date.replace(/-/g,'.'))}</span>
+          ${priceHtml(note)}
+          ${note.source_week ? `<span class="nc-week">週次：${escHtml(weekLabel(note.source_week))}</span>` : ''}
+        </div>
+        <div class="note-card-title">${escHtml(note.title)}</div>
+        <div class="note-card-desc">${escHtml(note.description || '')}</div>
+        ${tags ? `<div class="note-card-tags">${tags}</div>` : ''}
+      </a>
+      <div class="note-card-actions">
+        <a href="./${escHtml(filename)}" class="note-read-btn">記事を読む →</a>
+        <button class="note-copy-btn"
+          data-note-id="${escHtml(note.note_id)}"
+          data-filename="${escHtml(filename)}"
+          data-has-md="${hasMarkdown ? '1' : '0'}">全文コピー</button>
+      </div>
+    </div>`;
+}
+
+async function loadNotes() {
+  const list = document.getElementById('notesList');
+  const stats = document.getElementById('notesStats');
+
+  try {
+    const res = await fetch('./index.json');
+    if (!res.ok) throw new Error('index.json not found');
+    const index = await res.json();
+
+    const notes = index.notes || [];
+    stats.textContent = `${notes.length}本のnote`;
+
+    if (notes.length === 0) {
+      list.innerHTML = '<p class="empty-state">noteがありません</p>';
+      return;
+    }
+
+    list.innerHTML = notes.map((n, i) => renderCard(n, i === 0)).join('');
+
+  } catch (err) {
+    list.innerHTML = `<p class="error-state">読み込みに失敗しました<br><small>${escHtml(err.message)}</small></p>`;
+  }
+}
+
+async function copyNoteText(btn, noteId, filename, hasMd) {
+  btn.textContent = '取得中…';
+  btn.disabled = true;
+
+  try {
+    let text = '';
+
+    if (hasMd) {
+      // content_markdownが入っているJSONを取得
+      const jsonFile = noteId + '.json';
+      const res = await fetch('./' + jsonFile);
+      const data = await res.json();
+      text = data.content_markdown || '';
+    }
+
+    if (!text) {
+      // fallback: HTMLページのテキストを取得（タグを除去）
+      const res = await fetch('./' + filename);
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      doc.querySelectorAll('script, style, nav, header, .copy-bar, .back-link').forEach(el => el.remove());
+      const main = doc.querySelector('main') || doc.body;
+      text = (main.innerText || main.textContent || '').trim();
+    }
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+
+    btn.textContent = 'コピー完了 ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '全文コピー';
+      btn.classList.remove('copied');
+      btn.disabled = false;
+    }, 2000);
+
+  } catch (err) {
+    btn.textContent = 'コピー失敗';
+    setTimeout(() => {
+      btn.textContent = '全文コピー';
+      btn.disabled = false;
+    }, 2000);
+  }
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.note-copy-btn');
+  if (!btn || btn.disabled) return;
+  const { noteId, filename, hasMd } = btn.dataset;
+  copyNoteText(btn, noteId, filename, hasMd === '1');
+});
+
+loadNotes();
+</script>
 
 </body>
 </html>
