@@ -1,6 +1,7 @@
 'use strict';
 
 let allPosts = [];
+let allNotes = [];
 let activeFilters = {
   platform: 'all',
   week: 'all'
@@ -24,6 +25,8 @@ function escapeHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+
+// ─── Posts ───────────────────────────────────────────────
 
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
@@ -65,7 +68,7 @@ function renderDynamicPlatformFilter() {
 
   row.querySelectorAll('[data-dynamic]').forEach(b => b.remove());
 
-  const knownPlatforms = new Set(['all', 'X', 'Threads']);
+  const knownPlatforms = new Set(['all', 'X', 'Threads', 'note']);
   const extraPlatforms = [...new Set(allPosts.map(p => p.platform))]
     .filter(p => !knownPlatforms.has(p))
     .sort();
@@ -119,6 +122,12 @@ function getFilteredPosts() {
 }
 
 function renderPosts() {
+  // noteモードのときはnote一覧を表示
+  if (activeFilters.platform === 'note') {
+    renderNotes();
+    return;
+  }
+
   const container = document.getElementById('postsContainer');
   const filtered = getFilteredPosts();
 
@@ -235,6 +244,136 @@ function renderCard(post) {
     </article>`;
 }
 
+// ─── Notes ───────────────────────────────────────────────
+
+async function loadNotes() {
+  try {
+    const indexRes = await fetch('./notes/index.json');
+    if (!indexRes.ok) return;
+    const index = await indexRes.json();
+
+    const results = await Promise.all(
+      index.notes.map(async (filename) => {
+        const res = await fetch(`./notes/${filename}`);
+        if (!res.ok) return null;
+        return res.json();
+      })
+    );
+
+    allNotes = results.filter(Boolean).sort((a, b) => b.date.localeCompare(a.date));
+  } catch (err) {
+    console.warn('Notes load failed:', err.message);
+  }
+}
+
+function visibilityLabel(v) {
+  if (v === 'single_paid') return '有料';
+  if (v === 'members_only') return '会員限定';
+  return '無料';
+}
+
+function renderNotes() {
+  const container = document.getElementById('postsContainer');
+
+  // 週フィルターはnoteモードでは非表示
+  const weekRow = document.getElementById('weekFilterRow');
+  if (weekRow) weekRow.style.display = 'none';
+
+  document.getElementById('statsBar').textContent = `${allNotes.length}件のnote`;
+
+  if (allNotes.length === 0) {
+    container.innerHTML = '<p class="empty-state">noteがありません</p>';
+    return;
+  }
+
+  container.innerHTML = allNotes.map(renderNoteCard).join('');
+}
+
+function renderNoteCard(note) {
+  const visLabel = visibilityLabel(note.visibility);
+  const visCls = note.visibility === 'single_paid' ? 'vis-paid'
+    : note.visibility === 'members_only' ? 'vis-members'
+    : 'vis-free';
+
+  const priceStr = note.price && note.price !== '0' ? ` ¥${note.price}` : '';
+
+  // SNSフックセクション
+  let snsSection = '';
+  if (note.sns_hooks) {
+    const xHook = note.sns_hooks.x || '';
+    const thHook = note.sns_hooks.threads || '';
+    const xEsc = escapeHtml(xHook);
+    const thEsc = escapeHtml(thHook);
+    snsSection = `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🔗 SNS誘導文</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          ${xHook ? `<p class="sns-hook-label">X用</p><p>${xEsc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${xEsc}">コピー</button></div>` : ''}
+          ${thHook ? `<p class="sns-hook-label">Threads用</p><p>${thEsc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${thEsc}">コピー</button></div>` : ''}
+        </div>
+      </div>`;
+  }
+
+  // 調整ポイントセクション
+  let microSection = '';
+  if (note.micro_adjustment_points && note.micro_adjustment_points.length > 0) {
+    const items = note.micro_adjustment_points
+      .map(p => `<li>${escapeHtml(p)}</li>`).join('');
+    microSection = `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">✏️ 調整ポイント</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <ul class="micro-list">${items}</ul>
+        </div>
+      </div>`;
+  }
+
+  // 本文セクション（全文表示 + 全文コピー）
+  const contentSection = `
+    <div class="card-section">
+      <div class="card-section-header">
+        <span class="card-section-title">📄 本文（全文）</span>
+        <span class="card-section-toggle">▼</span>
+      </div>
+      <div class="card-section-body">
+        <pre class="note-full-text">${escapeHtml(note.content_markdown || '')}</pre>
+        <div class="copy-btn-content">
+          <button class="copy-btn copy-btn-full" data-note-id="${escapeHtml(note.note_id)}">全文コピー</button>
+        </div>
+      </div>
+    </div>`;
+
+  return `
+    <article class="card note-card">
+      <div class="card-header">
+        <div class="card-meta-left">
+          <span class="platform-badge platform-note">note</span>
+          <span class="note-vis-badge ${visCls}">${visLabel}${priceStr}</span>
+          <span class="card-time">${note.date}</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="note-title">${escapeHtml(note.title)}</p>
+        <p class="note-description">${escapeHtml(note.description || '')}</p>
+        ${note.linked_principle ? `<p class="note-principle">${escapeHtml(note.linked_principle)}</p>` : ''}
+        <div class="copy-btn-content">
+          <button class="copy-btn copy-btn-full" data-note-id="${escapeHtml(note.note_id)}">全文コピー</button>
+        </div>
+      </div>
+      ${contentSection}
+      ${snsSection}
+      ${microSection}
+    </article>`;
+}
+
+// ─── Platform filter ──────────────────────────────────────
+
 function setupPlatformFilter() {
   const row = document.getElementById('platformFilterRow');
   if (!row) return;
@@ -244,7 +383,7 @@ function setupPlatformFilter() {
     if (!btn) return;
 
     row.querySelectorAll('.filter-btn').forEach(b => {
-      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag');
+      b.classList.remove('active', 'active-x', 'active-threads', 'active-xdiag', 'active-note');
     });
 
     const platform = btn.dataset.platform;
@@ -254,10 +393,38 @@ function setupPlatformFilter() {
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
     else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
+    else if (platform === 'note') btn.classList.add('active-note');
     else btn.classList.add('active');
+
+    // noteモード以外では週フィルターを再表示
+    const weekRow = document.getElementById('weekFilterRow');
+    if (weekRow) weekRow.style.display = platform === 'note' ? 'none' : '';
 
     renderPosts();
   });
+}
+
+// ─── Copy handler ─────────────────────────────────────────
+
+async function copyText(text, btn) {
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+  }
+  const original = btn.textContent;
+  btn.textContent = 'コピー完了 ✓';
+  btn.classList.add('copied');
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove('copied');
+  }, 1800);
 }
 
 function setupCopyHandler() {
@@ -265,36 +432,22 @@ function setupCopyHandler() {
     const btn = e.target.closest('.copy-btn');
     if (!btn) return;
 
+    // note全文コピー（data-note-id経由でallNotesから取得）
+    const noteId = btn.dataset.noteId;
+    if (noteId) {
+      const note = allNotes.find(n => n.note_id === noteId);
+      if (note) await copyText(note.content_markdown || '', btn);
+      return;
+    }
+
+    // 通常コピー
     const text = btn.dataset.copy;
     if (!text) return;
-
-    try {
-      await navigator.clipboard.writeText(text);
-      const original = btn.textContent;
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
-    } catch {
-      // fallback for older browsers
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'コピー';
-        btn.classList.remove('copied');
-      }, 1800);
-    }
+    await copyText(text, btn);
   });
 }
+
+// ─── Section toggle ───────────────────────────────────────
 
 function setupSectionToggle() {
   document.addEventListener('click', e => {
@@ -308,9 +461,11 @@ function setupSectionToggle() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+// ─── Init ─────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', async () => {
   setupPlatformFilter();
   setupSectionToggle();
   setupCopyHandler();
-  loadPosts();
+  await Promise.all([loadPosts(), loadNotes()]);
 });

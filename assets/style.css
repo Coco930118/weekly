@@ -385,6 +385,123 @@ body {
   color: #f87171;
 }
 
+/* ─── Note cards ─────────────────────────────────────────── */
+
+.platform-note {
+  background: rgba(201, 169, 110, 0.15);
+  color: #c9a96e;
+  border: 1px solid rgba(201, 169, 110, 0.3);
+}
+
+.filter-btn.active-note {
+  background: #c9a96e;
+  border-color: #c9a96e;
+  color: #111;
+}
+
+.note-card {
+  border-color: rgba(201, 169, 110, 0.12);
+}
+
+.note-card:hover {
+  border-color: rgba(201, 169, 110, 0.3);
+}
+
+.note-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 8px;
+  letter-spacing: 0.01em;
+}
+
+.note-description {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin-bottom: 10px;
+}
+
+.note-principle {
+  font-size: 0.78rem;
+  color: #c9a96e;
+  border-left: 2px solid rgba(201, 169, 110, 0.5);
+  padding-left: 10px;
+  margin-bottom: 14px;
+  line-height: 1.75;
+}
+
+.note-vis-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.vis-paid {
+  background: rgba(201, 169, 110, 0.15);
+  color: #c9a96e;
+  border: 1px solid rgba(201, 169, 110, 0.35);
+}
+
+.vis-members {
+  background: rgba(155, 77, 202, 0.15);
+  color: #c084e0;
+  border: 1px solid rgba(155, 77, 202, 0.3);
+}
+
+.vis-free {
+  background: rgba(45, 106, 79, 0.18);
+  color: #6bcf9e;
+  border: 1px solid rgba(45, 106, 79, 0.35);
+}
+
+.copy-btn-full {
+  background: rgba(201, 169, 110, 0.1);
+  border-color: rgba(201, 169, 110, 0.3);
+  color: #c9a96e;
+  font-weight: 500;
+  padding: 6px 16px;
+}
+
+.copy-btn-full:hover {
+  background: rgba(201, 169, 110, 0.2);
+  border-color: #c9a96e;
+  color: #e0c280;
+}
+
+.note-full-text {
+  font-family: var(--font);
+  font-size: 0.82rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 10px;
+}
+
+.sns-hook-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 12px;
+  margin-bottom: 4px;
+}
+
+.micro-list {
+  padding-left: 1.2rem;
+  margin: 0;
+}
+
+.micro-list li {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 4px;
