@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="惰性と安定は見た目が似ている。関係の温度を守る3つの問い｜Coco note">
+  <title>惰性と安定は、見た目が似ている｜coconocanvas note</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f0f; --bg-card: #181818; --border: #2a2a2a;
+      --text-primary: #e8e8e8; --text-secondary: #999; --text-muted: #555;
+      --accent: #c9a96e; --accent-soft: #2a2218; --divider: #222;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text-primary); font-family: var(--font); font-size: 16px; line-height: 1.85; min-height: 100vh; padding-bottom: 80px; }
+    .note-header { max-width: 680px; margin: 0 auto; padding: 40px 24px 32px; border-bottom: 1px solid var(--divider); }
+    .note-nav { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; letter-spacing: .04em; }
+    .note-nav a { color: var(--text-muted); text-decoration: none; }
+    .note-nav a:hover { color: var(--accent); }
+    .note-meta-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .note-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: .04em; }
+    .badge-note { background: rgba(201,169,110,.15); color: var(--accent); border: 1px solid rgba(201,169,110,.3); }
+    .badge-members { background: rgba(192,132,224,.15); color: #c084e0; border: 1px solid rgba(192,132,224,.3); }
+    .note-date { font-size: 12px; color: var(--text-muted); letter-spacing: .05em; }
+    .note-title { font-size: clamp(1.25rem, 4vw, 1.6rem); font-weight: 700; line-height: 1.45; color: var(--text-primary); margin-bottom: 16px; letter-spacing: .01em; }
+    .note-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.8; border-left: 2px solid rgba(201,169,110,.4); padding-left: 14px; margin-bottom: 20px; }
+    .note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .note-tag { font-size: 11px; color: var(--text-muted); background: #161616; border: 1px solid #222; border-radius: 20px; padding: 2px 10px; }
+    .copy-bar { max-width: 680px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; border-bottom: 1px solid var(--divider); }
+    .copy-bar-label { font-size: 11px; color: var(--text-muted); flex: 1; }
+    .copy-all-btn { background: rgba(201,169,110,.1); border: 1px solid rgba(201,169,110,.3); color: var(--accent); padding: 7px 18px; border-radius: 6px; font-family: var(--font); font-size: 12px; font-weight: 600; letter-spacing: .03em; cursor: pointer; transition: all .15s; white-space: nowrap; }
+    .copy-all-btn:hover { background: rgba(201,169,110,.2); border-color: var(--accent); }
+    .copy-all-btn.copied { background: #1a3d28; border-color: #2d6a4f; color: #6bcf9e; }
+    .note-body { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
+    .note-body p { margin-bottom: 1.6em; color: var(--text-primary); }
+    .note-body hr { border: none; border-top: 1px solid var(--divider); margin: 2.5em 0; }
+    .note-body strong { color: #f0ece4; font-weight: 600; }
+    .note-body ul { padding-left: 1.4em; margin-bottom: 1.2em; }
+    .note-body ul li { margin-bottom: .5em; color: var(--text-secondary); font-size: 15px; line-height: 1.9; }
+    .section-title { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: .04em; margin: 2.8em 0 1.4em; padding-bottom: .5em; border-bottom: 1px solid rgba(201,169,110,.2); }
+    .section-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+    .section-label { font-size: 10px; color: rgba(201,169,110,.7); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+    .section-block p { font-size: 14px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 0; }
+    .cta-block { background: #161616; border: 1px solid #282828; border-radius: 12px; padding: 24px 22px; margin-top: 3em; }
+    .cta-block p { font-size: 14px; color: var(--text-secondary); margin-bottom: .8em; }
+    .cta-block p:last-child { margin-bottom: 0; color: var(--text-muted); font-size: 13px; }
+    .back-link { display: block; max-width: 680px; margin: 32px auto 0; padding: 0 24px; font-size: 12px; color: var(--text-muted); text-decoration: none; letter-spacing: .04em; }
+    .back-link:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header class="note-header">
+  <div class="note-nav">
+    <a href="../index.html">SNS投稿</a> &nbsp;/&nbsp;
+    <a href="./index.html">note一覧</a> &nbsp;/&nbsp; 記事
+  </div>
+  <div class="note-meta-row">
+    <span class="note-badge badge-note">note</span>
+    <span class="note-badge badge-members">会員限定</span>
+    <span class="note-date">2026.06.15</span>
+  </div>
+  <h1 class="note-title">惰性と安定は、見た目が似ている</h1>
+  <p class="note-desc">「特に不満はない。でも特に喜びもない。」それが惰性の温度。関係の温度を守る3つの問い——今週の診断と、消耗したリーダーへの言葉が残した問いへの答え。</p>
+  <div class="note-tags">
+    <span class="note-tag">#人間関係</span>
+    <span class="note-tag">#惰性</span>
+    <span class="note-tag">#自己管理</span>
+    <span class="note-tag">#チーム</span>
+    <span class="note-tag">#距離感</span>
+  </div>
+</header>
+
+<div class="copy-bar">
+  <span class="copy-bar-label">本文全体をコピーして、noteに貼り付けできます</span>
+  <button class="copy-all-btn" id="copyAllBtn">全文コピー</button>
+</div>
+
+<main class="note-body">
+
+  <p>「特に不満はない。でも、特に喜びもない。」</p>
+  <p>それが惰性の温度。</p>
+  <p>長く続いている関係には、二つの状態がある。「選び続けた安定」と「惰性の漂流」。見た目は似ているが、温度が違う。今週の診断が残した問いを、ここで整理する。</p>
+
+  <hr>
+
+  <div class="section-title">一、惰性と安定の温度差</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>長い時間を一緒に過ごすと、「当たり前」が生まれる。当たり前の中に安心がある一方で、当たり前の中から感謝が消える。「ありがとう」が消えた場所から、惰性は始まる。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">惰性か安定かを確かめる問い</div>
+    <ul>
+      <li>今の関係を「選んでいる」感覚があるか</li>
+      <li>「このままでいい」は、満足からか、変化への恐怖からか</li>
+      <li>「いてくれてよかった」という瞬間が、今週あったか</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <div class="section-label">最も多いパターン</div>
+    <p>「今が嫌」ではなく「変化が怖い」から続いている状態。安全な不快と、不安な自由の間で立ち止まっている。どちらを選ぶかより、「今、どちらを選んでいるか」に気づくことが先。</p>
+  </div>
+
+  <div class="section-title">二、「変えない理由」を言語化できる組織は強い</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>「変わらない」ことを意図的に選べている組織は強い。「変えない理由」を言語化できない組織は、惰性と安定の区別がつかなくなる。なぜこれを変えないのか、説明できるか——それが現場の自立のバロメーターだ。これは関係にも同じことが言える。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">自分への問い</div>
+    <p>「なぜ今の関係を続けているのか」を、自分の言葉で説明できるか。「なんとなく続いてきたから」——それは答えではなく、惰性の告白だ。「一緒にいることで、自分はこういう部分が育てられている」「この関係には、こういう価値がある」——この言語化ができたとき、その関係は「選択」になる。</p>
+  </div>
+
+  <div class="section-title">三、関係の温度を保つ3つの問い（具体的な技術）</div>
+  <div class="section-block">
+    <div class="section-label">前提</div>
+    <p>消耗したリーダーが「気合で乗り越える」を続けると、チームが静かに冷えていく。補充は怠慢ではない。リーダーが整うと、チームの体温が保たれる。自分自身が整っていないとき、近くにいる人に最も影響が出る。自分を補充することが、関係の温度を守る技術だ。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">問い1</div>
+    <p><strong>今日、「ありがとう」を言えたか</strong><br>感謝は「特別なこと」にだけするものではない。「いてくれること」に感謝できているとき、関係の温度が保たれる。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">問い2</div>
+    <p><strong>「変えない」ことの理由を自分の言葉で説明できるか</strong><br>惰性の関係は、「変えない理由」が言語化できない。選んでいる関係は、「なぜこのままでいるか」を自分で答えられる。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">問い3</div>
+    <p><strong>自分が整った状態で、誰かと向き合えているか</strong><br>消耗した状態でいる最も近くの人が、最も影響を受ける。自分を補充することは、利己的ではない。それが、関係の温度を守る技術だ。</p>
+  </div>
+
+  <hr>
+
+  <p>惰性と安定は、見た目が似ている。</p>
+  <p>違いは温度だ。そして温度は、毎日の小さな問いで決まる。</p>
+
+  <div class="cta-block">
+    <p>関係の温度管理と、行動から始める関係論をFlagshipnoteで全部展開しています。</p>
+    <p>「関係の温度と距離を整える技術」を、毎週少しずつ積み上げていく場所です。</p>
+  </div>
+
+</main>
+
+<a href="./index.html" class="back-link">← note一覧に戻る</a>
+
+<script>
+(function() {
+  const btn = document.getElementById('copyAllBtn');
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    try {
+      const res = await fetch('./note_2026_06_15_warmth.json');
+      const data = await res.json();
+      const text = data.content_markdown || '';
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = document.querySelector('main')?.innerText || '';
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    btn.textContent = 'コピー完了 ✓'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '全文コピー'; btn.classList.remove('copied'); }, 2000);
+  });
+})();
+</script>
+
+</body>
+</html>
