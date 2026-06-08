@@ -424,4 +424,274 @@ body {
   .posts-container {
     padding: 0 40px;
   }
+
+  .notes-container {
+    padding: 0 40px;
+  }
+}
+
+/* ── Tab navigation ──────────────────────────────────────────────────────── */
+
+.tab-nav {
+  display: flex;
+  padding: 0 20px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(17, 17, 17, 0.96);
+}
+
+.tab-btn {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--text-muted);
+  padding: 12px 20px;
+  font-size: 0.82rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.04em;
+  margin-bottom: -1px;
+}
+
+.tab-btn:hover {
+  color: var(--text-secondary);
+}
+
+.tab-btn.active {
+  border-bottom-color: var(--text-primary);
+  color: var(--text-primary);
+}
+
+/* ── Note container ──────────────────────────────────────────────────────── */
+
+.notes-container {
+  padding: 0 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+/* ── Note card ───────────────────────────────────────────────────────────── */
+
+.note-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s ease;
+  margin-top: 16px;
+}
+
+.note-card:hover {
+  border-color: var(--border-light);
+}
+
+.note-flagship {
+  border-left: 3px solid rgba(212, 175, 55, 0.45);
+}
+
+.note-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 12px 14px 10px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.note-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tier-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+}
+
+.tier-flagship {
+  background: rgba(212, 175, 55, 0.15);
+  color: #d4af37;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+.tier-member {
+  background: rgba(139, 94, 60, 0.12);
+  color: #c49a6c;
+  border: 1px solid rgba(139, 94, 60, 0.3);
+}
+
+.vis-badge {
+  font-size: 0.62rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.02em;
+}
+
+.vis-paid {
+  background: rgba(45, 106, 79, 0.15);
+  color: #6bd49a;
+  border: 1px solid rgba(45, 106, 79, 0.35);
+}
+
+.vis-member {
+  background: rgba(155, 77, 202, 0.12);
+  color: #c084e0;
+  border: 1px solid rgba(155, 77, 202, 0.25);
+}
+
+.vis-free {
+  background: rgba(74, 85, 104, 0.12);
+  color: #9aa5b8;
+  border: 1px solid rgba(74, 85, 104, 0.3);
+}
+
+.funnel-tag {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.note-date {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* ── Note card body ──────────────────────────────────────────────────────── */
+
+.note-card-body {
+  padding: 16px 14px 12px;
+}
+
+.note-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.note-description {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 10px;
+}
+
+.note-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.note-tag {
+  font-size: 0.62rem;
+  color: var(--text-muted);
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 3px;
+}
+
+/* ── SNS hook items ──────────────────────────────────────────────────────── */
+
+.hook-item {
+  margin-bottom: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+.hook-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.hook-platform {
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+/* ── Adjustment list ─────────────────────────────────────────────────────── */
+
+.adjustment-list {
+  list-style: disc;
+  padding-left: 18px;
+}
+
+.adjustment-list li {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  margin-bottom: 4px;
+}
+
+/* ── Note content (rendered HTML) ───────────────────────────────────────── */
+
+.note-content {
+  font-size: 0.85rem;
+  line-height: 1.95;
+  color: var(--text-secondary);
+}
+
+.note-content h2 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 22px 0 10px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.04em;
+}
+
+.note-content p {
+  margin-bottom: 12px;
+}
+
+.note-content strong {
+  color: #c9b87a;
+  font-weight: 600;
+}
+
+.note-content ul,
+.note-content ol {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.note-content li {
+  margin-bottom: 5px;
+  line-height: 1.8;
+}
+
+.note-content ul.checklist {
+  list-style: none;
+  padding-left: 0;
+}
+
+.note-content ul.checklist li {
+  color: var(--text-secondary);
+  padding-left: 2px;
+}
+
+.note-content hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+@media (min-width: 640px) {
+  .tab-nav {
+    padding: 0 28px;
+  }
 }
