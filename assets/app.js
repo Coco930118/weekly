@@ -373,9 +373,250 @@ function setupSectionToggle() {
   });
 }
 
+// ─── Note section ────────────────────────────────────────────────────────────
+
+let allNotes = [];
+let activeNoteFilters = { tier: 'all', week: 'all' };
+let notesLoaded = false;
+
+async function loadNotes() {
+  const container = document.getElementById('notesContainer');
+  container.innerHTML = '<p class="loading">読み込み中…</p>';
+
+  try {
+    const indexRes = await fetch('./notes/index.json');
+    if (!indexRes.ok) throw new Error('notes/index.json not found');
+    const index = await indexRes.json();
+
+    allNotes = await Promise.all(
+      index.notes.map(async (filename) => {
+        const res = await fetch(`./notes/${filename}`);
+        if (!res.ok) throw new Error(`${filename} not found`);
+        return res.json();
+      })
+    );
+
+    allNotes.sort((a, b) => new Date(b.date) - new Date(a.date));
+    notesLoaded = true;
+
+    renderNoteWeekFilter();
+    renderNotes();
+  } catch (err) {
+    container.innerHTML = `<p class="error-state">データの読み込みに失敗しました<br><small>${err.message}</small></p>`;
+  }
+}
+
+function renderNoteWeekFilter() {
+  const weekRow = document.getElementById('noteWeekFilterRow');
+  if (!weekRow) return;
+
+  weekRow.querySelectorAll('.filter-btn').forEach(b => b.remove());
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active';
+  allBtn.dataset.noteWeek = 'all';
+  allBtn.textContent = '全週';
+  weekRow.appendChild(allBtn);
+
+  const weeks = [...new Set(allNotes.map(n => n.source_week))].sort().reverse();
+  weeks.forEach(week => {
+    const [from, to] = week.split('_');
+    const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.noteWeek = week;
+    btn.textContent = label;
+    weekRow.appendChild(btn);
+  });
+
+  weekRow.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn[data-note-week]');
+    if (!btn) return;
+    weekRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeNoteFilters.week = btn.dataset.noteWeek;
+    renderNotes();
+  });
+}
+
+function setupNoteTierFilter() {
+  const tierRow = document.getElementById('noteTierFilterRow');
+  if (!tierRow) return;
+  tierRow.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn[data-tier]');
+    if (!btn) return;
+    tierRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeNoteFilters.tier = btn.dataset.tier;
+    renderNotes();
+  });
+}
+
+function renderNotes() {
+  const container = document.getElementById('notesContainer');
+  const filtered = allNotes.filter(n => {
+    if (activeNoteFilters.tier !== 'all' && n.tier !== activeNoteFilters.tier) return false;
+    if (activeNoteFilters.week !== 'all' && n.source_week !== activeNoteFilters.week) return false;
+    return true;
+  });
+
+  document.getElementById('noteStatsBar').textContent = `${filtered.length}本 / 全${allNotes.length}本`;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<p class="empty-state">該当するnoteがありません</p>';
+    return;
+  }
+
+  container.innerHTML = filtered.map(renderNoteCard).join('');
+}
+
+function renderNoteCard(note) {
+  const tierClass = note.tier === 'flagship' ? 'tier-flagship' : 'tier-member';
+  const tierLabel = note.tier === 'flagship' ? 'Flagship' : 'メンバー限定';
+  const visLabel = note.visibility === 'single_paid' ? `単発 ¥${note.price}`
+    : note.visibility === 'members_only' ? 'メンバー限定'
+    : '無料';
+  const visClass = note.visibility === 'single_paid' ? 'vis-paid'
+    : note.visibility === 'members_only' ? 'vis-member'
+    : 'vis-free';
+
+  const hashtags = (note.hashtags || [])
+    .map(h => `<span class="note-tag">${escapeHtml(h)}</span>`).join('');
+  const funnelTargets = (note.funnel_targets || [])
+    .map(t => `<span class="funnel-tag">${escapeHtml(t)}</span>`).join('');
+
+  let sections = '';
+
+  if (note.content_html) {
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📄 本文</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <div class="note-content">${note.content_html}</div>
+        </div>
+      </div>`;
+  }
+
+  if (note.sns_hooks) {
+    let hooksHtml = '';
+    if (note.sns_hooks.threads) {
+      const esc = escapeHtml(note.sns_hooks.threads);
+      hooksHtml += `
+        <div class="hook-item">
+          <span class="hook-platform platform-badge platform-threadsdiag">Threads</span>
+          <p>${esc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${esc}">コピー</button>
+          </div>
+        </div>`;
+    }
+    if (note.sns_hooks.x) {
+      const esc = escapeHtml(note.sns_hooks.x);
+      hooksHtml += `
+        <div class="hook-item">
+          <span class="hook-platform platform-badge platform-x">X</span>
+          <p>${esc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${esc}">コピー</button>
+          </div>
+        </div>`;
+    }
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📣 SNS導線文</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">${hooksHtml}</div>
+      </div>`;
+  }
+
+  if (note.cta_text) {
+    const ctaEsc = escapeHtml(note.cta_text);
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">✅ CTA</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${ctaEsc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${ctaEsc}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  if (note.micro_adjustment_points && note.micro_adjustment_points.length) {
+    const points = note.micro_adjustment_points
+      .map(p => `<li>${escapeHtml(p)}</li>`).join('');
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">✏️ 補強ポイント</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <ul class="adjustment-list">${points}</ul>
+        </div>
+      </div>`;
+  }
+
+  const noteClass = note.tier === 'flagship' ? 'note-card note-flagship' : 'note-card';
+
+  return `
+    <article class="${noteClass}">
+      <div class="note-card-header">
+        <div class="note-meta-left">
+          <span class="tier-badge ${tierClass}">${tierLabel}</span>
+          <span class="vis-badge ${visClass}">${visLabel}</span>
+          ${funnelTargets}
+        </div>
+        <span class="note-date">${formatDate(note.date)}</span>
+      </div>
+      <div class="note-card-body">
+        <h2 class="note-title">${escapeHtml(note.title)}</h2>
+        <p class="note-description">${escapeHtml(note.description)}</p>
+        ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
+      </div>
+      ${sections}
+    </article>`;
+}
+
+// ─── Tab switching ────────────────────────────────────────────────────────────
+
+function setupTabs() {
+  const tabNav = document.querySelector('.tab-nav');
+  if (!tabNav) return;
+
+  tabNav.addEventListener('click', e => {
+    const btn = e.target.closest('.tab-btn[data-tab]');
+    if (!btn) return;
+
+    tabNav.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+
+    const tab = btn.dataset.tab;
+    document.getElementById('postsSection').hidden = tab !== 'posts';
+    document.getElementById('notesSection').hidden = tab !== 'notes';
+
+    if (tab === 'notes' && !notesLoaded) {
+      loadNotes();
+    }
+  });
+}
+
+// ─── Init ─────────────────────────────────────────────────────────────────────
+
 document.addEventListener('DOMContentLoaded', () => {
   setupPlatformFilter();
   setupSectionToggle();
   setupCopyHandler();
+  setupTabs();
+  setupNoteTierFilter();
   loadPosts();
 });

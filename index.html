@@ -11,31 +11,47 @@
 
   <header class="site-header">
     <p class="site-title">coconocanvas</p>
-    <p class="site-subtitle">@coconocanvas — 投稿カレンダー</p>
-    <nav class="site-nav-tabs">
-      <a href="./index.html" class="nav-tab active">SNS投稿</a>
-      <a href="./notes/index.html" class="nav-tab">note一覧</a>
-    </nav>
+    <p class="site-subtitle">@coconocanvas — 投稿管理</p>
   </header>
 
-  <div class="filters">
-    <div class="filter-row" id="platformFilterRow">
-      <span class="filter-label">媒体</span>
-      <button class="filter-btn active" data-platform="all">全て</button>
-      <button class="filter-btn" data-platform="X">X</button>
-      <button class="filter-btn" data-platform="Threads">Threads</button>
-      <button class="filter-btn" data-platform="Threads診断">Threads診断</button>
-      <!-- note[MM/DD], X診断, Threads診断, LINEスタンプ buttons injected by app.js -->
-      <button class="filter-btn" data-platform="LINEスタンプ">📦 LINE</button>
+  <nav class="tab-nav">
+    <button class="tab-btn active" data-tab="posts">投稿カレンダー</button>
+    <button class="tab-btn" data-tab="notes">note</button>
+  </nav>
+
+  <!-- Posts section -->
+  <div id="postsSection">
+    <div class="filters">
+      <div class="filter-row" id="platformFilterRow">
+        <span class="filter-label">媒体</span>
+        <button class="filter-btn active" data-platform="all">全て</button>
+        <button class="filter-btn" data-platform="X">X</button>
+        <button class="filter-btn" data-platform="Threads">Threads</button>
+      </div>
+      <div class="filter-row" id="weekFilterRow">
+        <span class="filter-label">週</span>
+      </div>
     </div>
-    <div class="filter-row" id="weekFilterRow">
-      <span class="filter-label">週</span>
-    </div>
+    <div class="stats-bar" id="statsBar">読み込み中…</div>
+    <main class="posts-container" id="postsContainer"></main>
   </div>
 
-  <div class="stats-bar" id="statsBar">読み込み中…</div>
-
-  <main class="posts-container" id="postsContainer"></main>
+  <!-- Notes section -->
+  <div id="notesSection" hidden>
+    <div class="filters">
+      <div class="filter-row" id="noteTierFilterRow">
+        <span class="filter-label">種別</span>
+        <button class="filter-btn active" data-tier="all">全て</button>
+        <button class="filter-btn" data-tier="flagship">Flagship</button>
+        <button class="filter-btn" data-tier="member_entry">メンバー</button>
+      </div>
+      <div class="filter-row" id="noteWeekFilterRow">
+        <span class="filter-label">週</span>
+      </div>
+    </div>
+    <div class="stats-bar" id="noteStatsBar">読み込み中…</div>
+    <main class="notes-container" id="notesContainer"></main>
+  </div>
 
   <script src="./assets/app.js?v=14"></script>
 </body>
