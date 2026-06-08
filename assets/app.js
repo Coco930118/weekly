@@ -241,6 +241,38 @@ function renderCard(post) {
         </div>
       </div>`;
   }
+  if (post.comment_1) {
+    const c1Escaped = escapeHtml(post.comment_1);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説コメント①</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c1Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment_2) {
+    const c2Escaped = escapeHtml(post.comment_2);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 深掘りコメント②</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c2Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c2Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
   if (post.reply_1) {
     const r1Escaped = escapeHtml(post.reply_1);
     extraSections += `
