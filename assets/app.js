@@ -18,7 +18,8 @@ function formatDate(dateStr) {
 }
 
 function escapeHtml(str) {
-  return str
+  if (str == null) return '';
+  return String(str)
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
@@ -416,15 +417,14 @@ async function loadNotes() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json');
+    const indexRes = await fetch('./notes/index.json', { cache: 'no-cache' });
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
       index.notes.map(async (item) => {
-        // Support both old string format ("note_xxx.json") and new object format
         const filename = typeof item === 'string' ? item : `${item.note_id}.json`;
-        const res = await fetch(`./notes/${filename}`);
+        const res = await fetch(`./notes/${filename}`, { cache: 'no-cache' });
         if (!res.ok) {
           if (typeof item === 'object') return item;
           throw new Error(`${filename} not found`);
@@ -561,7 +561,8 @@ function renderNoteCard(note) {
           </div>
         </div>`;
     }
-    sections += `
+    if (hooksHtml) {
+      sections += `
       <div class="card-section">
         <div class="card-section-header">
           <span class="card-section-title">📣 SNS導線文</span>
@@ -569,6 +570,7 @@ function renderNoteCard(note) {
         </div>
         <div class="card-section-body">${hooksHtml}</div>
       </div>`;
+    }
   }
 
   if (note.cta_text) {
