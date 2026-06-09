@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="coconocanvas note一覧 — 関係の温度と距離を整える技術">
+  <title>coconocanvas | note一覧</title>
+  <link rel="stylesheet" href="../assets/style.css">
+  <style>
+    .notes-header {
+      padding: 28px 20px 20px;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      background: rgba(17,17,17,.96);
+      backdrop-filter: blur(8px);
+      z-index: 100;
+    }
+    .notes-header .brand { font-size: 1rem; font-weight: 500; letter-spacing: .08em; color: var(--text-secondary); margin-bottom: 2px; }
+    .notes-header .subtitle { font-size: .75rem; color: var(--text-muted); letter-spacing: .04em; }
+    .notes-header .nav-tabs { display: flex; gap: 4px; margin-top: 12px; }
+    .notes-header .nav-tab { font-size: .78rem; color: var(--text-muted); text-decoration: none; padding: 5px 14px; border-radius: 20px; border: 1px solid var(--border); letter-spacing: .03em; transition: all .15s; }
+    .notes-header .nav-tab:hover { color: var(--text-primary); border-color: var(--border-light); }
+    .notes-header .nav-tab.active { background: var(--text-primary); border-color: var(--text-primary); color: var(--bg); }
+
+    .notes-stats {
+      padding: 10px 20px;
+      font-size: .72rem;
+      color: var(--text-muted);
+      letter-spacing: .02em;
+    }
+
+    .notes-list {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 20px 20px 80px;
+    }
+
+    .notes-section-title {
+      font-size: .72rem;
+      color: var(--text-muted);
+      letter-spacing: .1em;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    /* ─ Note card ─ */
+    .note-card-wrap {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 14px;
+      overflow: hidden;
+      transition: border-color .15s;
+    }
+    .note-card-wrap:hover { border-color: var(--border-light); }
+    .note-card-wrap.note-latest { border-color: rgba(201,169,110,.2); }
+
+    .note-card-link {
+      display: block;
+      padding: 20px 20px 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .note-card-meta {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 10px;
+    }
+    .nc-date { font-size: 11px; color: var(--text-muted); letter-spacing: .05em; }
+    .nc-price {
+      font-size: 11px;
+      background: #1e1608;
+      color: #c9a96e;
+      border: 1px solid #3a2e1a;
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .nc-free {
+      font-size: 11px;
+      background: rgba(45,106,79,.15);
+      color: #6bcf9e;
+      border: 1px solid rgba(45,106,79,.3);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .nc-members {
+      font-size: 11px;
+      background: rgba(155,77,202,.12);
+      color: #c084e0;
+      border: 1px solid rgba(155,77,202,.25);
+      border-radius: 4px;
+      padding: 2px 8px;
+    }
+    .nc-week { font-size: 10px; color: var(--text-muted); margin-left: auto; }
+    .nc-new {
+      font-size: 10px;
+      font-weight: 700;
+      background: rgba(201,169,110,.15);
+      color: #c9a96e;
+      border: 1px solid rgba(201,169,110,.3);
+      border-radius: 4px;
+      padding: 2px 8px;
+      letter-spacing: .05em;
+    }
+
+    .note-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.55;
+      margin-bottom: 8px;
+      letter-spacing: .01em;
+    }
+
+    .note-card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    .note-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .nc-tag {
+      font-size: 11px;
+      color: var(--text-muted);
+      background: #161616;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+
+    /* ─ Copy row ─ */
+    .note-card-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px 14px;
+      border-top: 1px solid var(--border);
+    }
+    .note-read-btn {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-decoration: none;
+      border: 1px solid var(--border-light);
+      padding: 5px 14px;
+      border-radius: 6px;
+      transition: all .15s;
+      letter-spacing: .02em;
+    }
+    .note-read-btn:hover { color: var(--text-primary); border-color: var(--text-muted); }
+
+    .note-copy-btn {
+      background: rgba(201,169,110,.08);
+      border: 1px solid rgba(201,169,110,.25);
+      color: #c9a96e;
+      padding: 5px 16px;
+      border-radius: 6px;
+      font-family: var(--font);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .03em;
+      cursor: pointer;
+      transition: all .15s;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    .note-copy-btn:hover {
+      background: rgba(201,169,110,.16);
+      border-color: #c9a96e;
+    }
+    .note-copy-btn.copied {
+      background: #1a3d28;
+      border-color: #2d6a4f;
+      color: #6bcf9e;
+    }
+    .note-copy-btn:disabled {
+      opacity: .35;
+      cursor: default;
+    }
+
+    /* ─ States ─ */
+    .loading-state, .error-state, .empty-state {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-muted);
+      font-size: .85rem;
+    }
+    .error-state { color: #f87171; }
+  </style>
+</head>
+<body>
+
+  <header class="notes-header">
+    <p class="brand">coconocanvas</p>
+    <p class="subtitle">@coconocanvas — note一覧</p>
+    <nav class="nav-tabs">
+      <a href="../index.html" class="nav-tab">SNS投稿</a>
+      <a href="./index.html" class="nav-tab active">note一覧</a>
+    </nav>
+  </header>
+
+  <div class="notes-stats" id="notesStats">読み込み中…</div>
+
+  <div class="notes-list">
+    <div class="notes-section-title">NOTE ARCHIVE</div>
+    <div id="notesList"><p class="loading-state">読み込み中…</p></div>
+  </div>
+
+<script>
+'use strict';
+
+const FONT = "-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif";
+
+function escHtml(s) {
+  return String(s)
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;')
+    .replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function priceHtml(note) {
+  const v = note.visibility || (note.price && note.price !== '0' ? 'single_paid' : 'free');
+  if (v === 'members_only') return '<span class="nc-members">会員限定</span>';
+  if (v === 'single_paid' || (note.price && note.price !== '0'))
+    return `<span class="nc-price">¥${escHtml(note.price)}</span>`;
+  return '<span class="nc-free">無料</span>';
+}
+
+function weekLabel(w) {
+  if (!w) return '';
+  const [f, t] = w.split('_');
+  return `${f.slice(5).replace('-','/')}〜${t.slice(5).replace('-','/')}`;
+}
+
+function renderCard(note, isFirst) {
+  const filename = note.filename || `${note.note_id}.html`;
+  const tags = (note.hashtags || []).map(t => `<span class="nc-tag">${escHtml(t)}</span>`).join('');
+  const hasMarkdown = !!note.content_markdown;
+
+  return `
+    <div class="note-card-wrap${isFirst ? ' note-latest' : ''}" data-note-id="${escHtml(note.note_id)}">
+      <a href="./${escHtml(filename)}" class="note-card-link">
+        <div class="note-card-meta">
+          ${isFirst ? '<span class="nc-new">NEW</span>' : ''}
+          <span class="nc-date">${escHtml(note.date.replace(/-/g,'.'))}</span>
+          ${priceHtml(note)}
+          ${note.source_week ? `<span class="nc-week">週次：${escHtml(weekLabel(note.source_week))}</span>` : ''}
+        </div>
+        <div class="note-card-title">${escHtml(note.title)}</div>
+        <div class="note-card-desc">${escHtml(note.description || '')}</div>
+        ${tags ? `<div class="note-card-tags">${tags}</div>` : ''}
+      </a>
+      <div class="note-card-actions">
+        <a href="./${escHtml(filename)}" class="note-read-btn">記事を読む →</a>
+        <button class="note-copy-btn"
+          data-note-id="${escHtml(note.note_id)}"
+          data-filename="${escHtml(filename)}"
+          data-has-md="${hasMarkdown ? '1' : '0'}">全文コピー</button>
+      </div>
+    </div>`;
+}
+
+async function loadNotes() {
+  const list = document.getElementById('notesList');
+  const stats = document.getElementById('notesStats');
+
+  try {
+    const res = await fetch('./index.json');
+    if (!res.ok) throw new Error('index.json not found');
+    const index = await res.json();
+
+    const notes = index.notes || [];
+    stats.textContent = `${notes.length}本のnote`;
+
+    if (notes.length === 0) {
+      list.innerHTML = '<p class="empty-state">noteがありません</p>';
+      return;
+    }
+
+    list.innerHTML = notes.map((n, i) => renderCard(n, i === 0)).join('');
+
+  } catch (err) {
+    list.innerHTML = `<p class="error-state">読み込みに失敗しました<br><small>${escHtml(err.message)}</small></p>`;
+  }
+}
+
+async function copyNoteText(btn, noteId, filename, hasMd) {
+  btn.textContent = '取得中…';
+  btn.disabled = true;
+
+  try {
+    let text = '';
+
+    if (hasMd) {
+      // content_markdownが入っているJSONを取得
+      const jsonFile = noteId + '.json';
+      const res = await fetch('./' + jsonFile);
+      const data = await res.json();
+      text = data.content_markdown || '';
+    }
+
+    if (!text) {
+      // fallback: HTMLページのテキストを取得（タグを除去）
+      const res = await fetch('./' + filename);
+      const html = await res.text();
+      const doc = new DOMParser().parseFromString(html, 'text/html');
+      doc.querySelectorAll('script, style, nav, header, .copy-bar, .back-link').forEach(el => el.remove());
+      const main = doc.querySelector('main') || doc.body;
+      text = (main.innerText || main.textContent || '').trim();
+    }
+
+    try {
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+    }
+
+    btn.textContent = 'コピー完了 ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = '全文コピー';
+      btn.classList.remove('copied');
+      btn.disabled = false;
+    }, 2000);
+
+  } catch (err) {
+    btn.textContent = 'コピー失敗';
+    setTimeout(() => {
+      btn.textContent = '全文コピー';
+      btn.disabled = false;
+    }, 2000);
+  }
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.note-copy-btn');
+  if (!btn || btn.disabled) return;
+  const { noteId, filename, hasMd } = btn.dataset;
+  copyNoteText(btn, noteId, filename, hasMd === '1');
+});
+
+loadNotes();
+</script>
+
+</body>
+</html>
