@@ -42,7 +42,7 @@ async function loadPosts() {
       })
     );
 
-    const charMap = { 'Coco': 'Coco', 'しらたま': '🐈‍⬛しらたま', 'しずく': '🐢しずく', 'ひより': '🕊ひより' };
+    const charMap = { 'Coco': 'Coco', 'しらたま': '🐈‍Ⓑしらたま', 'しずく': '🐢しずく', 'ひより': '🕊ひより' };
     let stickerPosts = [];
     if (index.linestamps && index.linestamps.length > 0) {
       const stickerDataArr = await Promise.all(
@@ -421,9 +421,14 @@ async function loadNotes() {
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
-      index.notes.map(async (filename) => {
+      index.notes.map(async (item) => {
+        // Support both old string format ("note_xxx.json") and new object format
+        const filename = typeof item === 'string' ? item : `${item.note_id}.json`;
         const res = await fetch(`./notes/${filename}`);
-        if (!res.ok) throw new Error(`${filename} not found`);
+        if (!res.ok) {
+          if (typeof item === 'object') return item;
+          throw new Error(`${filename} not found`);
+        }
         return res.json();
       })
     );
