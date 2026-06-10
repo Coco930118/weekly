@@ -785,6 +785,21 @@ body {
   margin: 20px 0;
 }
 
+.note-content blockquote {
+  border-left: 3px solid rgba(201, 169, 110, 0.6);
+  background: rgba(201, 169, 110, 0.06);
+  margin: 14px 0;
+  padding: 10px 16px;
+  border-radius: 0 6px 6px 0;
+  color: #e8dfc8;
+  font-style: italic;
+}
+
+.note-content blockquote strong {
+  color: #e8dfc8;
+  font-style: normal;
+}
+
 @media (min-width: 640px) {
   .tab-nav {
     padding: 0 28px;
