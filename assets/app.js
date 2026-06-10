@@ -47,6 +47,9 @@ function markdownToHtml(md) {
     } else if (line.startsWith('# ')) {
       if (inList) { out.push('</ul>'); inList = false; }
       out.push(`<h2>${boldify(escapeHtml(line.slice(2)))}</h2>`);
+    } else if (line.startsWith('> ')) {
+      if (inList) { out.push('</ul>'); inList = false; }
+      out.push(`<blockquote>${boldify(escapeHtml(line.slice(2)))}</blockquote>`);
     } else if (/^[-□✔☐✅]\s/.test(line)) {
       if (!inList) { out.push('<ul>'); inList = true; }
       out.push(`<li>${boldify(escapeHtml(line.slice(2)))}</li>`);
@@ -501,7 +504,6 @@ function renderNoteCard(note) {
 
   let sections = '';
 
-  // 本文：content_html 優先、なければ content_markdown を変換して表示
   const bodyHtml = note.content_html || markdownToHtml(note.content_markdown);
   if (bodyHtml) {
     const mdCopy = note.content_markdown || '';
