@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのとき私がやったこと｜Coco note">
+  <title>「急に辞めた」は存在しない｜coconocanvas note</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f0f0f;
+      --bg-card: #181818;
+      --border: #2a2a2a;
+      --text-primary: #e8e8e8;
+      --text-secondary: #999;
+      --text-muted: #555;
+      --accent: #c9a96e;
+      --accent-soft: #2a2218;
+      --divider: #222;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font);
+      font-size: 16px;
+      line-height: 1.85;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .site-nav {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .site-nav .brand { font-size: 14px; color: var(--text-secondary); letter-spacing: .06em; }
+    .site-nav .sep { color: var(--text-muted); }
+    .site-nav .current { color: var(--text-primary); font-size: 13px; }
+
+    .article-wrap {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 48px 20px 80px;
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+    .meta-date { font-size: 12px; color: var(--text-muted); letter-spacing: .05em; }
+    .meta-price {
+      font-size: 12px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #3a2e1a;
+      border-radius: 4px;
+      padding: 2px 10px;
+      letter-spacing: .04em;
+    }
+    .meta-week { font-size: 11px; color: var(--text-muted); letter-spacing: .04em; }
+
+    .article-title {
+      font-size: clamp(20px, 4.5vw, 26px);
+      font-weight: 700;
+      line-height: 1.5;
+      letter-spacing: .02em;
+      margin-bottom: 36px;
+      color: #f0ece4;
+    }
+
+    .article-body { color: #d8d4cc; }
+    .article-body p { margin-bottom: 1.5em; }
+    .article-body h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: #f0ece4;
+      margin: 2.8em 0 1em;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+      letter-spacing: .03em;
+    }
+    .article-body hr {
+      border: none;
+      border-top: 1px solid var(--divider);
+      margin: 2em 0;
+    }
+
+    .paywall-block {
+      background: var(--accent-soft);
+      border: 1px solid #3a2e1a;
+      border-radius: 10px;
+      padding: 24px 20px;
+      margin: 2.4em 0;
+    }
+    .paywall-block .pw-label { font-size: 13px; color: var(--accent); font-weight: 700; letter-spacing: .08em; margin-bottom: 14px; }
+    .paywall-block .pw-hook { font-size: 15px; color: #c8c0b4; line-height: 1.8; margin-bottom: 16px; }
+    .paywall-block ul { list-style: none; padding: 0; }
+    .paywall-block ul li { font-size: 14px; color: #bab2a6; padding: 5px 0 5px 20px; position: relative; }
+    .paywall-block ul li::before { content: "✔"; position: absolute; left: 0; color: var(--accent); font-size: 12px; }
+
+    .viewpoint-jump {
+      background: #16130e;
+      border-left: 3px solid var(--accent);
+      border-radius: 0 8px 8px 0;
+      padding: 18px 20px;
+      margin: 1.6em 0;
+      font-size: 14.5px;
+      color: #c8c0b4;
+      line-height: 1.9;
+    }
+    .viewpoint-jump strong { display: block; font-size: 11px; color: var(--accent); letter-spacing: .1em; margin-bottom: 10px; }
+
+    .reader-section {
+      background: #131313;
+      border: 1px solid #252525;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 1.4em 0;
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.8;
+    }
+    .reader-section .rs-label { font-size: 11px; color: var(--text-muted); letter-spacing: .08em; margin-bottom: 8px; font-weight: 600; }
+
+    .checklist {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 1.4em 0;
+    }
+    .checklist .cl-label { font-size: 11px; color: var(--text-muted); letter-spacing: .08em; margin-bottom: 10px; font-weight: 600; }
+    .checklist ul { list-style: none; padding: 0; }
+    .checklist ul li { font-size: 13.5px; color: #aaa; padding: 5px 0 5px 22px; position: relative; line-height: 1.6; }
+    .checklist ul li::before { content: "□"; position: absolute; left: 0; color: var(--text-muted); }
+
+    .temp-gauge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 24px 20px;
+      margin: 2em 0;
+    }
+    .temp-gauge .tg-item { padding: 14px 0; border-bottom: 1px solid var(--divider); }
+    .temp-gauge .tg-item:last-child { border-bottom: none; }
+    .temp-gauge .tg-q { font-size: 14px; font-weight: 600; color: #d0c8bc; margin-bottom: 6px; }
+    .temp-gauge .tg-a { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+    .article-ending {
+      margin-top: 3em;
+      padding-top: 2em;
+      border-top: 1px solid var(--border);
+      font-size: 15px;
+      color: #c0b8b0;
+      line-height: 2;
+    }
+
+    .article-cta {
+      background: var(--accent-soft);
+      border: 1px solid #3a2e1a;
+      border-radius: 10px;
+      padding: 20px;
+      margin-top: 2em;
+      font-size: 14px;
+      color: #bab2a6;
+      line-height: 1.9;
+    }
+
+    .hashtags { margin-top: 2.4em; display: flex; flex-wrap: wrap; gap: 8px; }
+    .hashtag { font-size: 12px; color: var(--text-muted); background: #161616; border: 1px solid #252525; border-radius: 20px; padding: 4px 12px; }
+
+    .sns-hooks { margin-top: 3em; border-top: 1px solid var(--border); padding-top: 2em; }
+    .sns-hooks h3 { font-size: 13px; color: var(--text-muted); letter-spacing: .08em; margin-bottom: 16px; font-weight: 600; }
+    .hook-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 8px; padding: 16px; margin-bottom: 12px; }
+    .hook-platform { font-size: 11px; color: var(--text-muted); letter-spacing: .1em; margin-bottom: 8px; font-weight: 600; }
+    .hook-text { font-size: 13.5px; color: #aaa; line-height: 1.8; white-space: pre-wrap; }
+
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--text-muted); margin-top: 3em; padding-top: 2em; border-top: 1px solid var(--border); }
+    .back-link:hover { color: var(--accent); }
+
+    @media (max-width: 480px) {
+      .article-wrap { padding: 32px 16px 64px; }
+      .article-title { font-size: 19px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-nav">
+    <a href="../notes/index.html" class="brand">coconocanvas</a>
+    <span class="sep">/</span>
+    <span class="current">note</span>
+  </nav>
+
+  <article class="article-wrap">
+
+    <div class="article-meta">
+      <span class="meta-date">2026.05.29</span>
+      <span class="meta-price">¥1,200</span>
+      <span class="meta-week">週次データ：2026-05-19〜05-25</span>
+    </div>
+
+    <h1 class="article-title">
+      「急に辞めた」は存在しない<br>
+      ──優秀な人が静かに離れていく7つのサインと、そのとき私がやったこと
+    </h1>
+
+    <div class="article-body">
+
+      <p>あのね、</p>
+      <p>「急に辞めた」っていう報告を受けたとき、<br>
+      私、しばらく信じられなかった。</p>
+      <p>ネイルサロンを経営していた頃の話。<br>
+      売上の3割を担っていたスタッフが、ある日突然「辞めます」と言ってきた。<br>
+      前日まで普通に働いていた。<br>
+      「急に」だ、と思った。</p>
+      <p>でも今は、わかる。<br>
+      全然「急に」じゃなかった。<br>
+      サインは、ずっとあった。<br>
+      ただ、私が見えていなかっただけ。</p>
+      <p>20年で延べ5万人超と向き合う中で、気づいたことがある。<br>
+      「急に辞めた人」は、実は何ヶ月も前から「静かなサイン」を出していた。<br>
+      それに気づける人と気づけない人の差が、職場の空気を変える。<br>
+      チームの未来を変える。</p>
+
+      <hr>
+
+      <div class="paywall-block">
+        <div class="pw-label">ここから先は有料です</div>
+        <div class="pw-hook">
+          「なぜ、優秀な人から先に辞めていくのか」<br>
+          そう感じたことがあるなら、<br>
+          ここから先を読んでください。
+        </div>
+        <ul>
+          <li>優秀な人が静かに離れていく「7つのサイン」</li>
+          <li>サインが出たとき、私が実際にやったこと</li>
+          <li>離職を防ぐための「関係の温度」の維持法</li>
+          <li>「手遅れになる前」に使えるチェックリスト</li>
+        </ul>
+      </div>
+
+      <h2>1. 雑談が消えた</h2>
+      <p>20年・5万人超との現場で、最初に気づくサインは「雑談の消失」だ。</p>
+      <p>昨日まで朝に「おはよー、昨日〇〇があってさ」と話しかけてきていた人が、<br>
+      ある日から「おはようございます」だけになる。</p>
+      <p>飲食の現場でスタッフを40名近く自走させる過程で、この変化を何度も見てきた。</p>
+      <hr>
+      <p>雑談は「関係の余温」だ。<br>
+      関係に余裕があるとき、人は意味のない話をする。<br>
+      その余裕が消えると、雑談も消える。</p>
+      <p>「忙しくなったんだろう」と思いがちだが、<br>
+      本当は「この場所との関係を最小コストで維持しようとしている」状態。</p>
+      <hr>
+      <p>気づいたとき、私は相手から話しかけるのを待つのをやめた。<br>
+      代わりに、自分から「ねえ、最近どう？」と声をかけた。<br>
+      声をかけたとき、どう返ってくるかで、温度が見えた。</p>
+      <div class="reader-section">
+        <div class="rs-label">あなたの場合</div>
+        最近、関係が少し冷えてきたな、と感じる人はいますか？<br>
+        雑談が減った相手に、自分から声をかけてみてください。返し方の温度を、確認する。
+      </div>
+      <div class="checklist">
+        <div class="cl-label">チェックリスト</div>
+        <ul>
+          <li>最近1週間、特定の人との雑談が減っていないか確認する</li>
+          <li>「おはよう」だけで終わっていないか、記憶をさかのぼる</li>
+          <li>自分から「最近どう？」と声をかける</li>
+          <li>返ってきた言葉の「温度」を確認する</li>
+          <li>「忙しそうだから」と先読みして、声をかけることを省略しない</li>
+        </ul>
+      </div>
+
+      <h2>2. 提案が止まった</h2>
+      <p>BAR運営をしていたとき、常連を巻き込むイベントを自分から提案してくれていたスタッフがいた。<br>
+      ある時期から、その提案がピタリと止まった。<br>
+      「忙しいのかな」と思っていたら、3週間後に退職の意思を告げられた。</p>
+      <hr>
+      <p>優秀な人が提案をするのは、「ここを良くしたい」という投資の気持ちがあるからだ。<br>
+      提案が止まるとき、その人の中で「ここへの投資をやめた」という決断がなされている。</p>
+      <p>これは「怠けた」のではなく、「もう未来をここに預けない」というシグナルだ。</p>
+      <hr>
+      <p>それ以降、提案が止まった人には「最近何か思ってることない？」を必ず聞くようにした。<br>
+      答えが返ってくれば、まだ関係がある。<br>
+      返ってこなければ、温度を確認する必要があるサインだと捉えた。</p>
+      <div class="reader-section">
+        <div class="rs-label">あなたの場合</div>
+        最近、アイデアや改善提案を出さなくなったスタッフや部下はいますか？<br>
+        その人に「最近なにか気になってることある？」と、一度だけ聞いてみてください。
+      </div>
+      <div class="checklist">
+        <div class="cl-label">チェックリスト</div>
+        <ul>
+          <li>以前よく提案していた人が、最近静かになっていないか確認する</li>
+          <li>「提案が減った」を「落ち着いてきた」と好意的に解釈して放置しない</li>
+          <li>「最近、なにか思ってることはある？」と聞く機会をつくる</li>
+          <li>答えが返ってきたら、すぐに「ありがとう、続けて」と言う</li>
+          <li>返答を評価・判断せず、まず受け取ることに集中する</li>
+        </ul>
+      </div>
+
+      <h2>3. 定時になると帰るようになった</h2>
+      <p>ネイルサロン時代、指名数が最も多いスタッフが、ある時期から毎日定時ぴったりに帰るようになった。<br>
+      それまでは自主的に残って技術の練習をしていた。<br>
+      「プライベートが変わったのかな」と思っていた。2ヶ月後、退職届が届いた。</p>
+      <hr>
+      <p>定時帰りが悪いわけではない。問題は「変化」にある。</p>
+      <p>以前は自分から残っていた人が、急に定時で帰るようになったとき、<br>
+      それは「この職場に使う自分のエネルギーを最小化した」という決断だ。<br>
+      転職活動が始まると、「夜の時間」が必要になる。だから、定時での退勤が増える。</p>
+      <hr>
+      <p>この経験から、「行動の変化」を継続して観察するようになった。<br>
+      「なぜ帰るのか」を問い詰めるのではなく、「最近、どう？」と温度を確認することを先にした。</p>
+      <div class="viewpoint-jump">
+        <strong>── 視座のジャンプ ──</strong>
+        人が職場を離れるのは、「よりよい場所が見つかったから」ではない。<br>
+        「ここにいる理由が消えたから」だ。<br><br>
+        定時帰りは「職場への投資コストを下げた」サインであり、<br>
+        その背後にある「ここにいる理由」が消えていないか、を問い直す必要がある。
+      </div>
+      <div class="reader-section">
+        <div class="rs-label">あなたの場合</div>
+        急に定時帰りが増えた人はいますか？<br>
+        「最近、仕事の外で楽しいことある？」と、一度聞いてみてください。
+      </div>
+      <div class="checklist">
+        <div class="cl-label">チェックリスト</div>
+        <ul>
+          <li>勤務時間・残業パターンの変化を定期的に把握する</li>
+          <li>変化を「責める」のではなく「確認する」ための声かけをする</li>
+          <li>「最近、仕事の外で楽しいこと何かある？」を一度使ってみる</li>
+          <li>答えを聞いたあと、評価や意見を加えずにただ聞く</li>
+          <li>「定時に帰ること」を悪として扱う言動がないか、自分自身を確認する</li>
+        </ul>
+      </div>
+
+      <h2>4. 有給消化が急に増えた</h2>
+      <p>20年で5万人超と向き合う中で、多くのケースで「辞める数ヶ月前から有給消化が増えていた」という共通点がある。</p>
+      <p>1ヶ月に1〜2日使い始めたとき、私は「やっと休めるようになってきたのかな」と思っていた。<br>
+      実際には、面接や書類手続きのための時間だった。</p>
+      <hr>
+      <p>有給消化は権利だ。それ自体を問題にするつもりはない。<br>
+      ただ、「使ったことがなかった人が急に使い始めた」という変化は、生活スタイルか転職活動か、どちらかの可能性を持つ。</p>
+      <hr>
+      <p>有給の変化に気づいたとき、責めるのではなく「最近、体の調子はどう？」と聞くようにした。<br>
+      どちらにせよ、声をかけることをやめない。</p>
+      <div class="reader-section">
+        <div class="rs-label">あなたの場合</div>
+        最近、有給の使い方に変化が出た人はいますか？<br>
+        責めずに「最近、何か変化があった？」と聞いてみてください。
+      </div>
+      <div class="checklist">
+        <div class="cl-label">チェックリスト</div>
+        <ul>
+          <li>有給消化パターンの変化を定期的に把握する</li>
+          <li>「有給が増えた」を先に責めない</li>
+          <li>「最近、体の調子はどう？」と声をかける</li>
+          <li>「なぜ有給を使ったのか」を問い詰めない</li>
+          <li>答えを聞いたうえで、「何かサポートできることある？」と続ける</li>
+        </ul>
+      </div>
+
+      <h2>5. 1on1で本音が出なくなった</h2>
+      <p>BAR運営の現場で、毎週1対1で話す時間を設けていた時期がある。</p>
+      <p>あるスタッフとの1on1が、ある時期から「はい」「わかりました」「特にないです」だけで終わるようになった。<br>
+      以前は「実はちょっと気になってることがあって」と話してくれていたのに。</p>
+      <hr>
+      <p>1on1で本音が出なくなるのは、「言っても意味がない」という学習が起きたときだ。</p>
+      <p>本音を預けてくれた相手が、そっと本音を引き上げていくとき、<br>
+      それは「この関係への投資をやめた」と同じ意味を持つ。</p>
+      <hr>
+      <p>その経験から、1on1の中で「最近どう？仕事以外の話でもいい」を必ず最初に入れるようにした。<br>
+      「特にないです」が続くなら、「そっか。最近ちょっとしんどいとか、あった？」とだけ聞く。<br>
+      責めない。誘導しない。ただ、ドアを開けておく。</p>
+      <div class="reader-section">
+        <div class="rs-label">あなたの場合</div>
+        1on1で「特にないです」が続いている人はいますか？<br>
+        「最近、仕事以外で気になってることって何かある？」その一問だけ、次の1on1に入れてみてください。
+      </div>
+      <div class="checklist">
+        <div class="cl-label">チェックリスト</div>
+        <ul>
+          <li>1on1の最初の5分を「業務外の話」に使う</li>
+          <li>「特にないです」が2回続いたら、別の角度で聞く</li>
+          <li>「最近、しんどいことはなかった？」を使ってみる</li>
+          <li>答えを評価せず、まず「そっか」と受け取る</li>
+          <li>次回の1on1で「前回話してくれたこと、どうなった？」と続きを聞く</li>
+        </ul>
+      </div>
+
+      <h2>6. 「ありがとう」を言わなくなった</h2>
+      <p>20年・5万人超と向き合う中で、関係が冷えていくとき、必ず消えていくものがある。それは「ありがとう」だ。</p>
+      <p>関係に温度があるとき、人は小さなことに「ありがとう」を言う。<br>
+      「それ取ってくれてありがとう」「フォローしてくれてありがとう」</p>
+      <p>その言葉が消えたとき、関係の温度が下がっている。</p>
+      <hr>
+      <p>「ありがとう」は、相手を「人として見ている」というサインだ。<br>
+      それが消えるとき、相手を「業務の機能」として見始めている。</p>
+      <p>業務の機能として見られていると感じる人は、業務の機能として動き始める。<br>
+      そして、別の場所で「人として見られる」環境を探し始める。</p>
+      <hr>
+      <p>今は、小さな「ありがとう」を意識して言い続けている。<br>
+      それが、関係の温度を下げない最も簡単な方法だと知っているから。</p>
+      <div class="reader-section">
+        <div class="rs-label">あなたの場合</div>
+        最近、特定の人への「ありがとう」が減っていませんか？<br>
+        今日、何か一つ、小さなことに「ありがとう」を言ってみてください。
+      </div>
+      <div class="checklist">
+        <div class="cl-label">チェックリスト</div>
+        <ul>
+          <li>毎日、少なくとも1人に「ありがとう」を言う</li>
+          <li>「当たり前」と感じていることにも、一度「ありがとう」を言ってみる</li>
+          <li>メールや報告に対しても「ありがとう、助かった」を加える</li>
+          <li>「ありがとう」を言う前に「でも」「次回は」を後回しにする</li>
+          <li>受け取ってもらえたかどうか、相手の反応を確認する</li>
+        </ul>
+      </div>
+
+      <h2>7. 今日から使える「関係の温度計」3つ</h2>
+      <p>最後に、関係の温度を測るための「3つの問い」を渡しておく。</p>
+      <p>これを週1回、スタッフ・部下の顔を浮かべながら問いかけてほしい。</p>
+      <div class="temp-gauge">
+        <div class="tg-item">
+          <div class="tg-q">問い1：最近、この人と業務以外の会話をしたか？</div>
+          <div class="tg-a">→ 「していない」が続くなら、まず声をかけること</div>
+        </div>
+        <div class="tg-item">
+          <div class="tg-q">問い2：この人は最近、自分から何かを「提案・相談・報告」してきたか？</div>
+          <div class="tg-a">→ 「していない」なら、その理由を想像してみること</div>
+        </div>
+        <div class="tg-item">
+          <div class="tg-q">問い3：「この職場で頑張りたい」と、この人は今も思えているか？</div>
+          <div class="tg-a">→ わからないなら、聞いていない可能性が高い</div>
+        </div>
+      </div>
+      <p>この3つの問いを持つだけで、「急に辞めた」という言葉は、あなたの辞書から消えていく。</p>
+
+    </div>
+
+    <div class="article-ending">
+      <p>あのね、</p><br>
+      <p>20年で5万人超と向き合って、「急に辞める人」に、一人も会ったことがない。</p><br>
+      <p>全員、サインを出していた。<br>
+      ただ、そのとき私に見える目がなかっただけだ。</p><br>
+      <p>関係の温度を保つことは、特別なスキルじゃない。<br>
+      「相手を見ている」という習慣だ。</p><br>
+      <p>見ていれば、気づける。見ていれば、間に合う。</p><br>
+      <p>あなたの職場に、今日も「静かなサイン」を出している人がいるかもしれない。<br>
+      まず、声をかけることから始めてほしい。</p>
+    </div>
+
+    <div class="article-cta">
+      読んでくれてありがとう。<br><br>
+      もしこの記事を読んで、「あの人、そういえば…」と思い当たる人がいたなら、<br><br>
+      今日、その人に「最近どう？」と一言声をかけてみてください。<br>
+      それだけで、変わることがあります。<br><br>
+      何か感じたこととか、「うちの職場でもこんなことがあった」とか、<br>
+      あったら教えてね。コメントでも、DMでも。
+    </div>
+
+    <div class="hashtags">
+      <span class="hashtag">#人間関係</span>
+      <span class="hashtag">#マネジメント</span>
+      <span class="hashtag">#離職防止</span>
+      <span class="hashtag">#組織</span>
+      <span class="hashtag">#リーダーシップ</span>
+      <span class="hashtag">#人材育成</span>
+      <span class="hashtag">#現場</span>
+    </div>
+
+    <div class="sns-hooks">
+      <h3>SNS導線文（日曜15時用）</h3>
+      <div class="hook-card">
+        <div class="hook-platform">X</div>
+        <div class="hook-text">「優秀な人は、急に辞めない。」
+
+必ずサインを出している。
+ただ、気づかれていないだけ。
+
+20年・5万人超の現場で気づいた「静かなサイン7つ」をnoteにまとめました。
+チェックリスト付き。
+
+→ note（URL）</div>
+      </div>
+      <div class="hook-card">
+        <div class="hook-platform">Threads</div>
+        <div class="hook-text">「急に辞めた」っていう言葉、使ったことありますか。
+
+私もそう思ってた。でも今は、全然急じゃなかったってわかる。
+
+サインはずっとあった。ただ、見えていなかっただけで。
+
+20年で気づいた「関係の撤退サイン」をnoteに書きました。
+チェックリスト付き。
+
+→ note（URL）</div>
+      </div>
+      <div class="hook-card">
+        <div class="hook-platform">Instagram</div>
+        <div class="hook-text">優秀な人が離れる前には、必ず「静かなサイン」があります。
+
+20年・5万人超の現場で学んだ7つのサインと、そのときやったこと。
+
+noteにまとめました。
+→ note（URL）</div>
+      </div>
+    </div>
+
+    <a href="../notes/index.html" class="back-link">← note一覧へ戻る</a>
+
+  </article>
+
+</body>
+</html>
