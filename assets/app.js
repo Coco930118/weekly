@@ -18,50 +18,11 @@ function formatDate(dateStr) {
 }
 
 function escapeHtml(str) {
-  if (str == null) return '';
-  return String(str)
+  return str
     .replace(/&/g, '&amp;')
     .replace(/</g, '&lt;')
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
-}
-
-function boldify(s) {
-  return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
-}
-
-function markdownToHtml(md) {
-  if (!md) return '';
-  const lines = md.split('\n');
-  const out = [];
-  let inList = false;
-
-  for (const raw of lines) {
-    const line = raw.trim();
-    if (line === '---') {
-      if (inList) { out.push('</ul>'); inList = false; }
-      out.push('<hr>');
-    } else if (line.startsWith('## ')) {
-      if (inList) { out.push('</ul>'); inList = false; }
-      out.push(`<h2>${boldify(escapeHtml(line.slice(3)))}</h2>`);
-    } else if (line.startsWith('# ')) {
-      if (inList) { out.push('</ul>'); inList = false; }
-      out.push(`<h2>${boldify(escapeHtml(line.slice(2)))}</h2>`);
-    } else if (line.startsWith('> ')) {
-      if (inList) { out.push('</ul>'); inList = false; }
-      out.push(`<blockquote>${boldify(escapeHtml(line.slice(2)))}</blockquote>`);
-    } else if (/^[-□✔☐✅]\s/.test(line)) {
-      if (!inList) { out.push('<ul>'); inList = true; }
-      out.push(`<li>${boldify(escapeHtml(line.slice(2)))}</li>`);
-    } else if (line === '') {
-      if (inList) { out.push('</ul>'); inList = false; }
-    } else {
-      if (inList) { out.push('</ul>'); inList = false; }
-      out.push(`<p>${boldify(escapeHtml(line))}</p>`);
-    }
-  }
-  if (inList) out.push('</ul>');
-  return out.join('');
 }
 
 async function loadPosts() {
@@ -81,44 +42,16 @@ async function loadPosts() {
       })
     );
 
-    const charMap = { 'Coco': 'Coco', 'しらたま': '🐈‍Ⓑしらたま', 'しずく': '🐢しずく', 'ひより': '🕊ひより' };
-    let stickerPosts = [];
-    if (index.linestamps && index.linestamps.length > 0) {
-      const stickerDataArr = await Promise.all(
-        index.linestamps.map(async (filename) => {
-          const res = await fetch(`./posts/${filename}`);
-          if (!res.ok) return null;
-          return res.json();
-        })
-      ).then(r => r.filter(Boolean));
-
-      stickerPosts = stickerDataArr.flatMap(s => {
-        const [from, to] = s.week.split('_');
-        const label = `Lineスタンプ (${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')})`;
-        return s.stamps.map(stamp => ({
-          date: s.release_date,
-          platform: label,
-          time: '00:00',
-          purpose: stamp.scene,
-          character: (stamp.character || []).map(c => charMap[c] || c).join(' + '),
-          content: stamp.dialogue,
-          image_prompt: stamp.image_prompt,
-          weekId: s.week
-        }));
+    allPosts = weekDataArr
+      .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
+      .sort((a, b) => {
+        const tA = new Date(`${a.date}T${a.time}:00`);
+        const tB = new Date(`${b.date}T${b.time}:00`);
+        return tA - tB;
       });
-    }
-
-    allPosts = [
-      ...weekDataArr.flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week }))),
-      ...stickerPosts
-    ].sort((a, b) => {
-      const tA = new Date(`${a.date}T${a.time}:00`);
-      const tB = new Date(`${b.date}T${b.time}:00`);
-      return tA - tB;
-    });
 
     renderDynamicPlatformFilter();
-    renderWeekFilter([...weekDataArr.map(w => w.week), ...(index.linestamps ? stickerPosts.map(p => p.weekId) : []).filter((v, i, a) => a.indexOf(v) === i)]);
+    renderWeekFilter(weekDataArr.map(w => w.week));
     renderPosts();
 
   } catch (err) {
@@ -223,8 +156,6 @@ function renderCard(post) {
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
     : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
-    : post.platform.startsWith('Lineスタンプ') ? 'platform-line'
-    : post.platform.startsWith('スタンプ宣伝') ? 'platform-stamp-promo'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
@@ -232,59 +163,84 @@ function renderCard(post) {
 
   let extraSections = '';
   if (post.comment) {
-    const esc = escapeHtml(post.comment);
+    const commentEscaped = escapeHtml(post.comment);
     extraSections += `
       <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">📝 解説コメント</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説コメント</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${commentEscaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${commentEscaped}">コピー</button>
+          </div>
+        </div>
       </div>`;
   }
-  if (post.comment1) {
-    const esc = escapeHtml(post.comment1);
+  const c1 = post.comment_1 || post.comment1;
+  if (c1) {
+    const c1Escaped = escapeHtml(c1);
     extraSections += `
       <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">📝 解説コメント①</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
-      </div>`;
-  }
-  if (post.comment2) {
-    const esc = escapeHtml(post.comment2);
-    extraSections += `
-      <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">📝 解説コメント②</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
-      </div>`;
-  }
-  if (post.comment_1) {
-    const esc = escapeHtml(post.comment_1);
-    extraSections += `
-      <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">📝 解説コメント①</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
+        <div class="card-section-header">
+          <span class="card-section-title">📝 コメント①</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c1Escaped}">コピー</button>
+          </div>
+        </div>
       </div>`;
   }
   if (post.comment_2) {
-    const esc = escapeHtml(post.comment_2);
+    const c2Escaped = escapeHtml(post.comment_2);
     extraSections += `
       <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">📝 深掘りコメント②</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
+        <div class="card-section-header">
+          <span class="card-section-title">💬 コメント②</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c2Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c2Escaped}">コピー</button>
+          </div>
+        </div>
       </div>`;
   }
   if (post.reply_1) {
-    const esc = escapeHtml(post.reply_1);
+    const r1Escaped = escapeHtml(post.reply_1);
     extraSections += `
       <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">📝 返信コメント</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
+        <div class="card-section-header">
+          <span class="card-section-title">📝 返信コメント</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${r1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${r1Escaped}">コピー</button>
+          </div>
+        </div>
       </div>`;
   }
   if (post.image_prompt) {
-    const esc = escapeHtml(post.image_prompt);
+    const promptEscaped = escapeHtml(post.image_prompt);
     extraSections += `
       <div class="card-section">
-        <div class="card-section-header"><span class="card-section-title">🖼 画像プロンプト</span><span class="card-section-toggle">▼</span></div>
-        <div class="card-section-body"><p>${esc}</p><div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div></div>
+        <div class="card-section-header">
+          <span class="card-section-title">🖼 画像プロンプト</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${promptEscaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${promptEscaped}">コピー</button>
+          </div>
+        </div>
       </div>`;
   }
 
@@ -331,8 +287,6 @@ function setupPlatformFilter() {
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
     else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
-    else if (platform.startsWith('Lineスタンプ')) btn.classList.add('active-line');
-    else if (platform.startsWith('スタンプ宣伝')) btn.classList.add('active-stamp-promo');
     else btn.classList.add('active');
 
     renderPosts();
@@ -357,6 +311,7 @@ function setupCopyHandler() {
         btn.classList.remove('copied');
       }, 1800);
     } catch {
+      // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
       ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
@@ -397,18 +352,14 @@ async function loadNotes() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json', { cache: 'no-cache' });
+    const indexRes = await fetch('./notes/index.json');
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
-      index.notes.map(async (item) => {
-        const filename = typeof item === 'string' ? item : `${item.note_id}.json`;
-        const res = await fetch(`./notes/${filename}`, { cache: 'no-cache' });
-        if (!res.ok) {
-          if (typeof item === 'object') return item;
-          throw new Error(`${filename} not found`);
-        }
+      index.notes.map(async (filename) => {
+        const res = await fetch(`./notes/${filename}`);
+        if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
     );
@@ -504,9 +455,7 @@ function renderNoteCard(note) {
 
   let sections = '';
 
-  const bodyHtml = note.content_html || markdownToHtml(note.content_markdown);
-  if (bodyHtml) {
-    const mdCopy = note.content_markdown || '';
+  if (note.content_html) {
     sections += `
       <div class="card-section">
         <div class="card-section-header">
@@ -514,8 +463,7 @@ function renderNoteCard(note) {
           <span class="card-section-toggle">▼</span>
         </div>
         <div class="card-section-body">
-          <div class="note-content">${bodyHtml}</div>
-          ${mdCopy ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${escapeHtml(mdCopy)}">本文コピー</button></div>` : ''}
+          <div class="note-content">${note.content_html}</div>
         </div>
       </div>`;
   }
@@ -528,7 +476,9 @@ function renderNoteCard(note) {
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-threadsdiag">Threads</span>
           <p>${esc}</p>
-          <div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${esc}">コピー</button>
+          </div>
         </div>`;
     }
     if (note.sns_hooks.x) {
@@ -537,11 +487,12 @@ function renderNoteCard(note) {
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-x">X</span>
           <p>${esc}</p>
-          <div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${esc}">コピー</button>
+          </div>
         </div>`;
     }
-    if (hooksHtml) {
-      sections += `
+    sections += `
       <div class="card-section">
         <div class="card-section-header">
           <span class="card-section-title">📣 SNS導線文</span>
@@ -549,11 +500,10 @@ function renderNoteCard(note) {
         </div>
         <div class="card-section-body">${hooksHtml}</div>
       </div>`;
-    }
   }
 
   if (note.cta_text) {
-    const esc = escapeHtml(note.cta_text);
+    const ctaEsc = escapeHtml(note.cta_text);
     sections += `
       <div class="card-section">
         <div class="card-section-header">
@@ -561,8 +511,10 @@ function renderNoteCard(note) {
           <span class="card-section-toggle">▼</span>
         </div>
         <div class="card-section-body">
-          <p>${esc}</p>
-          <div class="copy-btn-content"><button class="copy-btn" data-copy="${esc}">コピー</button></div>
+          <p>${ctaEsc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${ctaEsc}">コピー</button>
+          </div>
         </div>
       </div>`;
   }
@@ -596,9 +548,6 @@ function renderNoteCard(note) {
       </div>
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
-        <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(note.title)}">タイトルコピー</button>
-        </div>
         <p class="note-description">${escapeHtml(note.description)}</p>
         ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
       </div>
