@@ -1,7 +1,7 @@
 {
   "week": "2026-06-16_2026-06-22",
-  "generated_at": "2026-06-11T07:00:00+09:00",
-  "source": "weekly_sns_run",
+  "generated_at": "2026-06-12T00:00:00+09:00",
+  "source": "weekly_sns_run_v7.2",
   "trend_summary": [
     "梅雨入り後の「空気の重さ」と組織・関係の消耗：雨が続く季節、現場の報告が形式化し、個人の関係でも言葉が詰まりやすい。",
     "「追いかけない関係」への共感：「好きなのに連絡できない」「距離を置かれると近づきたくなる」という感情構造が多くの人に共鳴。",
@@ -15,8 +15,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "「月曜が重かった」という声が届いた朝\nあなたはどう返しましたか\n\n「根性が足りない」で処理したなら\n現場の温度はまた一段下がる\n\n①重さを否定せず、まず受け取る\n②「しんどかったね」の一言が先\n③それだけで翌週の空気が変わる\n\n今週のチームの重さ、コメントで教えてください💬",
-      "quote": "💎 重さを受け取れる人が、温度を上げる",
+      "content": "月曜の重さを「気合いの問題」にした週、チームの誰かが黙り始める。\n\n体温が下がった現場は\n言葉より先に、足で感じる。\n\nその重さに名前をつけるのが先だ。\n仕組みを整えるのは、その後でいい。\n\n重さを受け取れる人が、場の温度を守る。",
+      "quote": "💎 重さを名前で呼べると、現場が動く",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, hydrangea petals in soft blue watercolor"
     },
     {
@@ -26,8 +27,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "保存獲得",
-      "content": "会議で誰も反論しなかったとき、安心していませんか\n\nそれは納得じゃなく\n「言っても変わらない」という諦めの静けさだ\n\n①反論ゼロの会議を警戒する\n②「本当にそれでいい？」と一回だけ問い直す\n③沈黙を安心材料にしない\n\nこの3つ、来週の会議前に読んでください💾",
+      "content": "会議で誰も反論しなかった日が、いちばん怖い。\n\n全員が納得したのではない。\n「言っても変わらない」と諦めた場は\n静かで、穏やかで、崩壊の手前だ。\n\n沈黙を信頼と読み違えた瞬間\n組織の温度は、音もなく下がっていく。",
       "quote": "💎 静かな会議は、諦めの形をしている",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, gentle rain drops on pale cream paper"
     },
     {
@@ -37,8 +39,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "現場が動かないとき、指示の量は関係ない\n\n「なぜやるのか」が届いていないだけだ\n\n①目標より先に「意味」を3文以内で伝える\n②「何のため」を自分の言葉で説明できるか確認する\n③意味が届いた現場は、指示が半分で動く\n\n保存して今週の面談に使ってください▶",
+      "content": "現場が動かないのは、指示の量の問題ではない。\n\n「なぜやるのか」が届いていない。\n意味が腹に落ちていない人間は\nどれだけ整った仕組みの中でも、足が止まる。\n\n目標の前に、意味を渡す。\nそれだけで、足音が変わる現場がある。",
       "quote": "💎 動かない足の下に、意味が埋まっている",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, morning mist over a quiet garden"
     },
     {
@@ -48,8 +51,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "今週の1on1、部下は何割話しましたか\n\n7割以上→場ができている\n5割以下→設計を変えるサイン\n\n①「どうですか？」は最悪の入り口\n②「最近、何が一番しんどい？」に変える\n③部下が話した割合を意識した管理職が強い\n\nあなたは今週、何割話しましたか？▶",
+      "content": "今週の1on1、部下は何割話しましたか。\n\n7割以上なら、場ができている。\n5割を切っていたなら、仕組みを見直すサインだ。\n\n「どうですか」は最悪の入り口。\n「最近、何がいちばん重い？」が扉を開ける。\n\n今週、どちらで聞きましたか▶",
       "quote": "💎 1on1の主役は、部下だ",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, soft purple hydrangeas in the background haze"
     },
     {
@@ -59,8 +63,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "上から「現場の声を聞け」\n下から「もっと守ってくれ」\n\nどちらも正しくて、どちらも届かない\nそれが中間管理職の正直な場所だ\n\n橋は両岸から引っ張られてこそ意味がある\nこの矛盾を「自分の力不足」にしないこと\n\n「その孤独、知ってる」という人はRT▶",
+      "content": "上から「現場を聞け」、下から「もっと守ってくれ」。\nどちらも正しくて、どちらも届かない場所にいる。\n\nそれが中間管理職の、正直な立ち位置だ。\n\n橋は両岸から引っ張られてこそ機能する。\nこの矛盾を「力不足」と呼ばないこと。",
       "quote": "💎 橋の上に立つ人が、組織を動かす",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, rain-washed clear sky at dusk"
     },
     {
@@ -70,8 +75,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "保存獲得",
-      "content": "報告が増えた組織が健全とは限らない\n\n「怒られたくないから報告する」なら\nそれは信頼ではなく、恐怖が動力だ\n\n①報告の量より「速さと質」を見る\n②遅い報告＝言いにくい案件のサイン\n③「温度の見分け方」はnoteに書いた▶\n\n保存して組織の空気を確認するときに💾",
+      "content": "報告が増えた組織が、必ずしも健全ではない。\n\n「怒られたくないから報告する」場は\n信頼で動いているのではなく、恐怖で動いている。\n\n報告の量より、温度を見る。\n「この件、早く伝えたくて」という空気があるか。\n温度の見分け方は、noteに書いた▶",
       "quote": "💎 報告の量は、関係の温度を映す",
+      "note_funnel": true,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, pale blue raindrops on the white margin"
     },
     {
@@ -81,8 +87,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "返信獲得",
-      "content": "1on1で「特にないです」と言う部下\n\nそれは本当に何もないのではなく\n「言っても意味がない」と思い始めたサインかもしれない\n\n①「本当に？」と1回だけ重ねる\n②「何があれば話せた？」を聞く\n③その問いが信頼の扉を開ける\n\nあなたの「特にないです」、どちらでしたか？▶",
-      "quote": "💎 「本当に？」の1秒が、信頼を作る",
+      "content": "1on1で「特にないです」という言葉の中に\nどれだけの文脈が詰まっているか。\n\n本当に何もないのではなく\n「言っても意味がない」と判断した結果だ。\n\n「本当に？」と一回重ねられる人が\nその扉を開ける。\n\n今週、重ねましたか▶",
+      "quote": "💎 「本当に？」の1秒が、扉を開ける",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, soft green leaves catching morning light"
     },
     {
@@ -92,8 +99,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "金曜17時のチームの「やっと終わった」空気\n\nそれは怠慢じゃない\n今週どれだけ消耗したかの、正直な答えだ\n\n①その空気を「問題」にしない\n②「来週、何を一つ減らせるか」を今夜考える\n③その判断が来週のチームを変える\n\n来週月曜、何を減らしますか？コメントで💬",
+      "content": "金曜17時のチームの「やっと終わった」空気\n\nそれは怠慢じゃない。\n今週どれだけ消耗したかの、正直な記録だ。\n\nその空気を「問題」にせず、材料にする。\n来週月曜に何を一つ減らすか。\n今夜、それを決める価値がある。",
       "quote": "💎 金曜の消耗が、来週を変える",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, delicate white petals floating in still air"
     },
     {
@@ -103,8 +111,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "管理職には「言えない判断」がある\n\n上には弱みを見せられず\n下には不安を渡せない\n\n①孤独を「問題」にしない\n②「役割の証明」として受け取る\n③その軸が、揺れない管理職を作る\n\n孤独に名前をつけられたとき、本物になる\n保存して、しんどいときに読み返してください▶",
+      "content": "管理職には、誰にも言えない判断がある。\n\n上には弱みを見せられず\n下には不安を渡せない。\n誰にも言えないまま、週末を迎える。\n\nその孤独は欠落ではなく、役割の証だ。\n名前をつけられたとき、はじめて芯になる。",
       "quote": "💎 孤独を引き受けた人が、橋になる",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, misty watercolor wash suggesting rainy season"
     },
     {
@@ -114,8 +123,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "プロフィール遷移",
-      "content": "週末に「あのとき何と言えばよかったか」を考えられる管理職が来週を変える\n\nこの振り返りを3ヶ月続けた人が\nチームの空気を静かに変えた実例がある\n\nその「振り返りの型」をnoteにまとめた▶\n\nプロフィールのnoteへ、週末5分試してみてください🙏",
+      "content": "「あのとき何と言えばよかったか」を\n週末にゆっくり考えられる管理職が、来週を変える。\n\nこれを3ヶ月続けた人が\nチームの空気を静かに変えた。\n\n振り返りを仕組み化する型は、noteに書いた▶",
       "quote": "💎 土曜の問いが、月曜の温度を決める",
+      "note_funnel": true,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, faint gold light breaking through rainy clouds"
     },
     {
@@ -125,8 +135,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "会議資料より先に確認すること\n\n「先週、チームの誰が一番消耗していたか」\n\n①消耗している人を先に守る\n②仕組みは人の状態があって動く\n③数字の前に、人を見る\n\nこれを日曜に問える管理職は強い\n保存して今週末の振り返りに使ってください▶",
+      "content": "来週の会議資料より先に、確認することがある。\n\n「先週、チームの誰が一番消耗していたか」\n\n仕組みを動かすのは人だ。\n人の状態を見てから数字を見る順番が\n組織の温度を守る。",
       "quote": "💎 仕組みより先に、人を見る",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, quiet ripple of water in a soft cream puddle"
     },
     {
@@ -136,8 +147,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "日曜夜に仕事のことが頭から離れない管理職へ\n\nそれは誠実さだ\n同時に、回復できていないサインでもある\n\nどちらにも正直でいい\n「誠実なまま、回復する方法」がある\n\n「日曜夜が辛い」と感じている人はRTして▶",
+      "content": "日曜夜に仕事のことが頭から離れない管理職へ。\n\nそれは誠実さの形だ。\n同時に、回復できていないサインでもある。\n\nどちらにも正直でいい。\n両立できない問題ではなく\n整える順序の問題だ。",
       "quote": "💎 誠実さと消耗は、紙一重",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, soft lavender hydrangea accent in corner"
     },
     {
@@ -147,8 +159,9 @@
       "time": "06:00",
       "character": "🐢しずく",
       "purpose": "返信獲得",
-      "content": "月曜朝のチームの表情、見ていますか\n\n「重い」「いつも通り」「今週は違う」\n\nその観察が一週間の対応を変える\nチームの空気を読む人が現場を動かす\n\n今日のチームはどんな空気でしたか？\nコメントで教えてください💬",
+      "content": "月曜朝のチームの表情を、読んでいますか。\n\n「重い」「いつも通り」「今週は違う」\nその読み取りが、一週間の対応を決める。\n\n空気を先に読む人が、現場を動かす。\n\n今日のチームは、どんな温度でしたか💬",
       "quote": "💎 月曜の温度が、その週の方向を決める",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, translucent rain droplets on window glass"
     },
     {
@@ -158,8 +171,9 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "保存獲得",
-      "content": "今週の振り返りを3つだけ\n\n①伝えたいことが、伝わったか\n②逃げた判断は、なかったか\n③来週の現場は今週より、軽くなるか\n\nこの問いを毎週続けた管理職の変化を\nnoteに書いた▶\n\n週末5分、これだけ考えてみて。保存してください💾",
+      "content": "今週を、三つで振り返る。\n\n伝えたいことが伝わったか。\n逃げた判断はなかったか。\n来週の現場は、今週より軽くなるか。\n\nこの問いを毎週続けた人の変化を\nnoteに書いた▶",
       "quote": "💎 問いが仕組みを変え、仕組みが温度を変える",
+      "note_funnel": true,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, pale sage and ivory morning light"
     },
     {
@@ -169,8 +183,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "好きだから、迷う\n好きじゃなければ、迷わない\n\n何度も書いて消した夜は\n丁寧さの証だ\n\n🫶",
+      "content": "好きだから、迷う。\n好きじゃなければ、迷わない。\n\n何度も書いて消した夜は\n丁寧さの証だ。\n\n🫶",
       "quote": "🫶 迷うから、丁寧なんだ",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, warm dusk with faint hydrangea silhouette"
     },
     {
@@ -180,8 +195,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "本音を言える人の数が\n豊かさを決める\n\nお金でも肩書きでもなく\nその一人がいれば\n今日は軽い\n\n🫶",
+      "content": "本音を言える人の数が\n豊かさを決める。\n\nお金でも肩書きでもなく\nその一人がいれば\n今日は軽い。\n\n🫶",
       "quote": "🫶 一人の本音が、今日を変える",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, subtle deep blue wash suggesting evening rain"
     },
     {
@@ -191,8 +207,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "送れる人と\n送れない人がいる\n\nその差は距離でも関係でもなく\n「安心していいか」の答えだ\n\n安心できる関係が\n本当の距離感を作る\n\n🫶",
+      "content": "送れる人と\n送れない人がいる。\n\nその差は距離でも関係の深さでもなく\n「安心していいか」の答えだ。\n\n安心できる関係が\n本当の距離を作る。\n\n🫶",
       "quote": "🫶 安心が、距離を決める",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, fresh morning after rain with soft greens"
     },
     {
@@ -202,8 +219,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "冷めたんじゃなく\n無理をやめただけだ\n\n本当の関係は\n緩めた後からはじまる\n\n🫶",
+      "content": "冷めたんじゃなく\n無理をやめただけだ。\n\n本当の関係は\n緩めた後からはじまる。\n\n🫶",
       "quote": "🫶 緩めた後から、本当がはじまる",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, delicate pink-ivory petals at the edge"
     },
     {
@@ -213,8 +231,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "嫌いになったわけじゃない\n自分の空気を守りたかっただけだ\n\n離れることと\n嫌いになることは\n別の話だ\n\n🫶",
+      "content": "嫌いになったわけじゃない。\n自分の空気を守りたかっただけだ。\n\n離れることと\n嫌いになることは\n別の話だ。\n\n🫶",
       "quote": "🫶 離れることと、嫌いになることは違う",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, soft amber light filtering through summer mist"
     },
     {
@@ -224,8 +243,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "返さなかったんじゃなく\n返す言葉を探していた\n\n相手の言葉が重いほど\n答えるのに時間がかかる\n\n沈黙も、答えになる\n\n🫶",
+      "content": "返さなかったんじゃなく\n返す言葉を探していた。\n\n相手の言葉が重いほど\n答えるのに時間がかかる。\n\n沈黙も、答えになる。\n\n🫶",
       "quote": "🫶 沈黙も、答えになる",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, pale sky blue wash with cream cloud shapes"
     },
     {
@@ -235,8 +255,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "近くにいるのに\n遠い気がする夜がある\n\n冷めたんじゃなく\n言葉を貯めすぎているだけだ\n\n言葉が出せる場所が\n近さを作る\n\n🫶",
+      "content": "近くにいるのに\n遠い気がする夜がある。\n\n冷めたんじゃなく\n言葉を貯めすぎているだけだ。\n\n言葉が出せる場所が\n近さを作る。\n\n🫶",
       "quote": "🫶 言葉が出せる場所が、近さを作る",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, warm ivory light with faint floral pattern"
     },
     {
@@ -246,8 +267,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "追いかけない人が\n最終的に選ばれる\n\n冷たさじゃない\n自分の軸を持っている\n静かな強さだ\n\n「追わずに愛される距離感」を\nnoteに書いた▶\n\n🫶",
-      "quote": "🫶 追わない人が、待たれる",
+      "content": "追いかけない人が\n最終的に選ばれる。\n\n冷たさじゃない。\n自分の軸を持っている\n静かな強さだ。\n\n感情はある。依存はしない。\nこの距離の整え方は、noteに置いてある💍",
+      "quote": "💍 追わない人が、待たれる",
+      "note_funnel": true,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, clear morning light on white paper texture"
     },
     {
@@ -257,8 +279,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "年を重ねるほど\n深い話ができる人の貴重さがわかる\n\n理由では説明できない\n体が先に知っている関係がある\n\nそれを縁と呼ぶ\n\n🫶",
+      "content": "年を重ねるほど\n深い話ができる人の貴重さがわかる。\n\n理由では説明できない。\n体が先に知っている関係がある。\n\nそれを縁と呼ぶ。\n\n🫶",
       "quote": "🫶 体が先に、知っている",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, faint lavender tones with cream highlights"
     },
     {
@@ -268,8 +291,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "続く関係と\n続かない関係がある\n\n差は相性でも\nタイミングでもない\n\n一緒にいて楽か\nそれだけだ\n\n🫶",
+      "content": "続く関係と\n続かない関係がある。\n\n差は相性でも\nタイミングでもない。\n\n一緒にいて楽か。\nそれだけだ。\n\n🫶",
       "quote": "🫶 楽かどうかが、続く条件だ",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, gentle summer evening with soft rose hues"
     },
     {
@@ -279,8 +303,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "愛しているのに\n依存しない\n\n相手がどう動いても\n自分の芯は揺れない\nそれでも、ちゃんと好きだ\n\n「依存しない愛し方」を\nnoteで整理した▶\n\n🫶",
-      "quote": "🫶 芯があるから、愛せる",
+      "content": "愛しているのに\n依存しない。\n\n相手がどう動いても\n自分の芯は揺れない。\nそれでも、ちゃんと好きだ。\n\n感情はある。依存はしない。\nその距離の整え方は、noteに置いてある💍",
+      "quote": "💍 芯があるから、愛せる",
+      "note_funnel": true,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, subtle emerald and ivory morning light"
     },
     {
@@ -290,8 +315,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "プロフィール遷移",
-      "content": "誰かのために使ってきた感情を\n一週間に一度\n自分へ返す\n\nそれができる人が\n長く愛し続けられる\n\n🫶",
+      "content": "誰かのために使ってきた感情を\n一週間に一度\n自分へ返す。\n\nそれができる人が\n長く愛し続けられる。\n\n🫶",
       "quote": "🫶 自分に返す夜が、愛を育てる",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, pale aqua raindrops on cream background"
     },
     {
@@ -301,8 +327,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "一人でいる時間と\n誰かといる時間\n\nどちらも捨てられない\n\n孤独と自由は\nほとんど同じ場所にある\n\n🫶",
+      "content": "一人でいる時間と\n誰かといる時間。\n\nどちらも捨てられない。\n\n孤独と自由は\nほとんど同じ場所にある。\n\n🫶",
       "quote": "🫶 孤独と自由は、同じ場所にある",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, soft warm evening in muted gold tones"
     },
     {
@@ -312,8 +339,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "週末だけ本来の自分に戻れるなら\nそれは壊れているんじゃない\nまだ本来の自分を持っている証だ\n\n週末に自分を取り戻す\n距離の整え方を\nnoteに書いた▶\n\n🫶",
+      "content": "週末だけ本来の自分に戻れるなら\nそれは壊れているんじゃない。\nまだ本来の自分を持っている証だ。\n\nこの距離の整え方は、noteに置いてある🫶",
       "quote": "🫶 週末が、本来の自分を連れ戻す",
+      "note_funnel": true,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, delicate white blossom in misty blue-grey"
     },
     {
@@ -323,8 +351,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "疲れた関係と\n安心した関係がある\n\nその差を知っていれば\n次の一歩の方向が決まる\n\n🫶",
+      "content": "疲れる関係と\n安心できる関係がある。\n\nその差を知っていれば\n次の一歩の方向が決まる。\n\n🫶",
       "quote": "🫶 安心した関係が、方向を決める",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, quiet morning with ivory and sage tones"
     },
     {
@@ -334,8 +363,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "また始まるという感覚と\nまだ終わらないでほしい感覚が\n同時にある\n\nその重さは\n大切なものを持っている証だ\n\n🫶",
+      "content": "また始まるという感覚と\nまだ終わらないでほしいという感覚が\n同時にある。\n\nその重さは\n大切なものを持っている証だ。\n\n🫶",
       "quote": "🫶 重たい朝は、大切なものがある朝",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, pale amber and cream evening texture"
     },
     {
@@ -345,8 +375,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "関係の距離は\n一度決めたら終わりではない\n\n季節で\n相手の状態で\n自分の状態で変わる\n\n距離は調整し続けるものだ\n\n🫶",
+      "content": "関係の距離は\n一度決めたら終わりではない。\n\n季節で\n相手の状態で\n自分の状態で変わる。\n\n距離は調整し続けるものだ。\n\n🫶",
       "quote": "🫶 距離は、ずっと調整し続けるもの",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, soft blue-grey rain morning atmosphere"
     },
     {
@@ -356,8 +387,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "夜の不安は\n明日が怖いのではない\n\n「今の自分のまま大丈夫か」\nという静かな問いだ\n\nその問いに気づいた夜から\n変わっていく\n\n🫶",
+      "content": "夜の不安は\n明日が怖いのではない。\n\n「今の自分のまま大丈夫か」\nという静かな問いだ。\n\nその問いに気づいた夜から\n変わっていく。\n\n🫶",
       "quote": "🫶 問いに気づいた夜から、変わる",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, cream and ivory with faint pink florals"
     },
     {
@@ -367,8 +399,9 @@
       "time": "07:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "余裕がある日と\n余裕がない日がある\n\n余裕がある日こそ\n大切な人への言葉に使う\n\n余裕がないときは\n渡せないものがある\n\n🫶",
+      "content": "余裕がある日と\n余裕がない日がある。\n\n余裕がある日こそ\n大切な人への言葉に使う。\n\n余裕がないときは\n渡せないものがある。\n\n🫶",
       "quote": "🫶 余裕のある日に、言葉を渡す",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, morning gold on translucent watercolor wash"
     },
     {
@@ -378,8 +411,9 @@
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
       "purpose": "保存獲得",
-      "content": "無理に近づかない\n無理に遠ざけない\n\n相手のペースを尊重しながら\n自分の芯は動かさない\n\nそれだけで\n関係は軽くなる\n\n🫶",
+      "content": "無理に近づかない。\n無理に遠ざけない。\n\n相手のペースを尊重しながら\n自分の芯は動かさない。\n\nそれだけで\n関係は軽くなる。\n\n🫶",
       "quote": "🫶 芯を守ることが、自由をくれる",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., soft early-morning light, fresh and bright, pale warm sunrise tones, faint purple dusk with warm cream margin"
     },
     {
@@ -389,8 +423,9 @@
       "time": "19:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "「今日どうだった？」と\n聞ける関係があれば\n今日は十分だ\n\n聞ける人がいることが\n豊かさの正体だ\n\n🫶",
+      "content": "「今日どうだった？」と\n聞ける関係があれば\n今日は十分だ。\n\n聞ける人がいることが\n豊かさの正体だ。\n\n🫶",
       "quote": "🫶 聞ける関係が一つあれば、今日は十分",
+      "note_funnel": false,
       "image_prompt": "Soft hand-painted watercolor background, airy and translucent, warm gentle pastel tones, plenty of clean white and cream negative space, delicate scattered flower accents, soft diffused light, calm and cozy Quiet Luxury mood, subtle paper texture with gentle paint bleeding, refined and elegant. No characters, no people, no animals, no text, no letters. Generous empty copy space for placing illustrations and captions., quiet evening mood, soft dusk tones, warm low light, serene, gentle summer rain in pale blue-green wash"
     }
   ]
