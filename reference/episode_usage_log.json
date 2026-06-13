@@ -265,6 +265,251 @@
       "theme": "月曜の余裕・聞ける関係",
       "platform": "Threads週次",
       "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E1",
+      "date": "2026-06-16",
+      "theme": "ファクト完全封鎖",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E5",
+      "date": "2026-06-16",
+      "theme": "裸の王様",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E9",
+      "date": "2026-06-17",
+      "theme": "又聞き",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E10",
+      "date": "2026-06-17",
+      "theme": "チームが救う",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E18",
+      "date": "2026-06-18",
+      "theme": "責任と権限のねじれ",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E2",
+      "date": "2026-06-18",
+      "theme": "数字の表面",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E4",
+      "date": "2026-06-19",
+      "theme": "伏線回収",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E7",
+      "date": "2026-06-19",
+      "theme": "施策はあなたの",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E29",
+      "date": "2026-06-20",
+      "theme": "夜中のボスの背中",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E31",
+      "date": "2026-06-20",
+      "theme": "沈黙のカード",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E34",
+      "date": "2026-06-21",
+      "theme": "同じ環境で結果",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E13",
+      "date": "2026-06-21",
+      "theme": "責任は裁量ぶん",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E56",
+      "date": "2026-06-22",
+      "theme": "委ねるのは証明",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E27",
+      "date": "2026-06-22",
+      "theme": "条件明確・可能性閉じない",
+      "platform": "X週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E16",
+      "date": "2026-06-16",
+      "theme": "選ばれるためをやめる",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E22",
+      "date": "2026-06-16",
+      "theme": "認められたい相手",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E52",
+      "date": "2026-06-16",
+      "theme": "繰り返し否定の残響",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E14",
+      "date": "2026-06-17",
+      "theme": "間違った目的",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E49",
+      "date": "2026-06-17",
+      "theme": "温かさを向ける先",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E6",
+      "date": "2026-06-17",
+      "theme": "ラベルの都合",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E24",
+      "date": "2026-06-18",
+      "theme": "受け入れと認めることの違い",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E11",
+      "date": "2026-06-18",
+      "theme": "フックを手放す",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E50",
+      "date": "2026-06-18",
+      "theme": "囚われているのは",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E8",
+      "date": "2026-06-19",
+      "theme": "仲介は白旗",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E3",
+      "date": "2026-06-19",
+      "theme": "権力へのNO",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E12",
+      "date": "2026-06-19",
+      "theme": "通貨を決める",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E26",
+      "date": "2026-06-20",
+      "theme": "疲れたのは証拠",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E15",
+      "date": "2026-06-20",
+      "theme": "天気として置く",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E33",
+      "date": "2026-06-20",
+      "theme": "群れ vs 背中",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E19",
+      "date": "2026-06-21",
+      "theme": "怒りは燃料",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E53",
+      "date": "2026-06-21",
+      "theme": "固さと温かさ両立",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E36",
+      "date": "2026-06-21",
+      "theme": "位置vsゴール",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E25",
+      "date": "2026-06-22",
+      "theme": "切り札は静けさ",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E44",
+      "date": "2026-06-22",
+      "theme": "クッションを敷く人",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
+    },
+    {
+      "episode_ref": "E30",
+      "date": "2026-06-22",
+      "theme": "ありがとうが出てきた",
+      "platform": "Threads週次",
+      "week": "2026-06-16_2026-06-22"
     }
   ]
 }
