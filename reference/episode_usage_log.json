@@ -513,51 +513,51 @@
     },
     {
       "episode_ref": "E_004",
-      "date": "2026-06-12",
-      "theme": "怒りと嫉妬の正体（感情の二層構造）",
+      "date": "2026-06-14",
+      "theme": "感情の二層構造（怒り・嫉妬）──note化フラッグシップ",
+      "platform": "Threads診断（note化）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_005",
+      "date": "2026-06-14",
+      "theme": "嫉妬の使い方・欲求の可視化",
       "platform": "Threads診断（note化）",
       "week": "2026-06-09_2026-06-15"
     },
     {
       "episode_ref": "E_002",
-      "date": "2026-06-12",
+      "date": "2026-06-14",
       "theme": "言葉にしない本音は届かない（本音・わかってくれない）",
       "platform": "Threads診断（note化）",
       "week": "2026-06-09_2026-06-15"
     },
     {
-      "episode_ref": "E_001",
-      "date": "2026-06-12",
-      "theme": "比べてくる人の物差しに乗らない技術",
-      "platform": "Threads診断（note化）",
-      "week": "2026-06-09_2026-06-15"
-    },
-    {
-      "episode_ref": "E_006",
-      "date": "2026-06-12",
-      "theme": "関係の温度は行動で育てる（惰性・自分大切に）",
-      "platform": "Threads診断（note化）",
-      "week": "2026-06-09_2026-06-15"
-    },
-    {
-      "episode_ref": "E_004",
+      "episode_ref": "E_003",
       "date": "2026-06-14",
-      "theme": "感情の二層構造（怒り・嫉妬）──改善版フラッグシップ",
-      "platform": "Threads診断（note化・改善版）",
-      "week": "2026-06-09_2026-06-15"
-    },
-    {
-      "episode_ref": "E_002",
-      "date": "2026-06-14",
-      "theme": "言葉にしない本音は届かない（本音・わかってくれない）──改善版",
-      "platform": "Threads診断（note化・改善版）",
+      "theme": "わかってくれないの正体",
+      "platform": "Threads診断（note化）",
       "week": "2026-06-09_2026-06-15"
     },
     {
       "episode_ref": "E_001",
       "date": "2026-06-14",
       "theme": "自分の軸（比べられる・惰性・自己犠牲）──3投稿統合版",
-      "platform": "Threads診断（note化・改善版）",
+      "platform": "Threads診断（note化）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_006",
+      "date": "2026-06-14",
+      "theme": "惰性と安定の温度差・自分を大切にする技術",
+      "platform": "Threads診断（note化）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_007",
+      "date": "2026-06-14",
+      "theme": "自分を大切にする技術",
+      "platform": "Threads診断（note化）",
       "week": "2026-06-09_2026-06-15"
     }
   ]
