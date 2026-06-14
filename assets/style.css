@@ -683,6 +683,52 @@ body {
   margin-bottom: 10px;
 }
 
+.note-outcome {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  background: var(--bg-section);
+  border-left: 3px solid var(--border-light);
+  padding: 8px 10px;
+  border-radius: 0 4px 4px 0;
+  line-height: 1.7;
+  margin-bottom: 8px;
+}
+
+.note-meta-line {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+
+.meta-label {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.free-ratio-badge {
+  font-size: 0.6rem;
+  color: var(--text-muted);
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+.before-after-case {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.before-after-case:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .note-tags {
   display: flex;
   flex-wrap: wrap;

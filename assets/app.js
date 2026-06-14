@@ -453,7 +453,38 @@ function renderNoteCard(note) {
   const funnelTargets = (note.funnel_targets || [])
     .map(t => `<span class="funnel-tag">${escapeHtml(t)}</span>`).join('');
 
+  const freeRatioBadge = (note.free_ratio && note.tier === 'flagship')
+    ? `<span class="free-ratio-badge">無料${Math.round(parseFloat(note.free_ratio) * 100)}%公開</span>`
+    : '';
+
+  const outcomeHtml = note.outcome_promise
+    ? `<p class="note-outcome">${escapeHtml(note.outcome_promise)}</p>`
+    : '';
+  const frameworkHtml = note.framework
+    ? `<p class="note-meta-line"><span class="meta-label">構造：</span>${escapeHtml(note.framework)}</p>`
+    : '';
+  const toolHtml = note.practice_tool
+    ? `<p class="note-meta-line"><span class="meta-label">実践ツール：</span>${escapeHtml(note.practice_tool)}</p>`
+    : '';
+
   let sections = '';
+
+  if (note.image_prompt) {
+    const promptEsc = escapeHtml(note.image_prompt);
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🖼 画像プロンプト</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${promptEsc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${promptEsc}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
 
   if (note.content_html) {
     sections += `
@@ -465,6 +496,20 @@ function renderNoteCard(note) {
         <div class="card-section-body">
           <div class="note-content">${note.content_html}</div>
         </div>
+      </div>`;
+  }
+
+  if (note.before_after && note.before_after.length) {
+    const casesHtml = note.before_after
+      .map(c => `<div class="before-after-case"><p>${escapeHtml(c)}</p></div>`)
+      .join('');
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">✨ Before / After 事例</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">${casesHtml}</div>
       </div>`;
   }
 
@@ -542,6 +587,7 @@ function renderNoteCard(note) {
         <div class="note-meta-left">
           <span class="tier-badge ${tierClass}">${tierLabel}</span>
           <span class="vis-badge ${visClass}">${visLabel}</span>
+          ${freeRatioBadge}
           ${funnelTargets}
         </div>
         <span class="note-date">${formatDate(note.date)}</span>
@@ -549,6 +595,9 @@ function renderNoteCard(note) {
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
         <p class="note-description">${escapeHtml(note.description)}</p>
+        ${outcomeHtml}
+        ${frameworkHtml}
+        ${toolHtml}
         ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
       </div>
       ${sections}
