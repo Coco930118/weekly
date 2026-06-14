@@ -487,6 +487,7 @@ function renderNoteCard(note) {
   }
 
   if (note.content_html) {
+    const mdEsc = note.content_markdown ? escapeHtml(note.content_markdown) : '';
     sections += `
       <div class="card-section">
         <div class="card-section-header">
@@ -495,6 +496,7 @@ function renderNoteCard(note) {
         </div>
         <div class="card-section-body">
           <div class="note-content">${note.content_html}</div>
+          ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
         </div>
       </div>`;
   }
