@@ -69,6 +69,55 @@
       "theme": "自分を大切にする技術",
       "platform": "Threads診断",
       "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_004",
+      "date": "2026-06-19",
+      "theme": "怒り・嫉妬・わかってくれないの正体を読む技術（感情の二層構造）",
+      "platform": "Threads診断（note化・flagship）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_005",
+      "date": "2026-06-19",
+      "theme": "嫉妬の正体（note化・flagship）",
+      "platform": "Threads診断（note化・flagship）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_003",
+      "date": "2026-06-19",
+      "theme": "わかってくれないの正体（note化・flagship）",
+      "platform": "Threads診断（note化・flagship）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_002",
+      "date": "2026-06-19",
+      "theme": "比べられても本音が言えなくても・関係の中に自分を置く技術",
+      "platform": "Threads診断（note化・member_entry）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_001",
+      "date": "2026-06-19",
+      "theme": "比較から自由になる技術（note化・member_entry）",
+      "platform": "Threads診断（note化・member_entry）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_006",
+      "date": "2026-06-19",
+      "theme": "惰性と安定の見分け方・関係の温度を保つ技術",
+      "platform": "Threads診断（note化・member_entry）",
+      "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "E_007",
+      "date": "2026-06-19",
+      "theme": "自分を大切にすることが関係の温度を保つ（note化・member_entry）",
+      "platform": "Threads診断（note化・member_entry）",
+      "week": "2026-06-09_2026-06-15"
     }
   ]
 }
