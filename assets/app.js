@@ -90,7 +90,7 @@ function renderWeekFilter(weeks) {
   all.textContent = '全週';
   row.appendChild(all);
 
-  weeks.forEach(week => {
+  [...new Set(weeks)].forEach(week => {
     const [from, to] = week.split('_');
     const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
@@ -174,6 +174,38 @@ function renderCard(post) {
           <p>${commentEscaped}</p>
           <div class="copy-btn-content">
             <button class="copy-btn" data-copy="${commentEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment_1) {
+    const c1Escaped = escapeHtml(post.comment_1);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説①</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c1Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment_2) {
+    const c2Escaped = escapeHtml(post.comment_2);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 解説②</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c2Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c2Escaped}">コピー</button>
           </div>
         </div>
       </div>`;
