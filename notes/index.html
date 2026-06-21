@@ -217,8 +217,6 @@
 <script>
 'use strict';
 
-const FONT = "-apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', sans-serif";
-
 function escHtml(s) {
   return String(s)
     .replace(/&/g,'&amp;').replace(/</g,'&lt;')
@@ -235,33 +233,35 @@ function priceHtml(note) {
 
 function weekLabel(w) {
   if (!w) return '';
-  const [f, t] = w.split('_');
+  const parts = w.split('_');
+  if (parts.length < 2) return w;
+  const f = parts[0], t = parts[1];
   return `${f.slice(5).replace('-','/')}〜${t.slice(5).replace('-','/')}`;
 }
 
 function renderCard(note, isFirst) {
-  const filename = note.filename || `${note.note_id}.html`;
-  const tags = (note.hashtags || []).map(t => `<span class="nc-tag">${escHtml(t)}</span>`).join('');
+  const jsonFilename = note._jsonFilename || '';
+  const htmlFilename = jsonFilename.replace('.json', '.html');
   const hasMarkdown = !!note.content_markdown;
+  const tags = (note.hashtags || []).map(t => `<span class="nc-tag">${escHtml(t)}</span>`).join('');
 
   return `
-    <div class="note-card-wrap${isFirst ? ' note-latest' : ''}" data-note-id="${escHtml(note.note_id)}">
-      <a href="./${escHtml(filename)}" class="note-card-link">
+    <div class="note-card-wrap${isFirst ? ' note-latest' : ''}">
+      <a href="./${escHtml(htmlFilename)}" class="note-card-link">
         <div class="note-card-meta">
           ${isFirst ? '<span class="nc-new">NEW</span>' : ''}
-          <span class="nc-date">${escHtml(note.date.replace(/-/g,'.'))}</span>
+          <span class="nc-date">${escHtml((note.date || '').replace(/-/g,'.'))}</span>
           ${priceHtml(note)}
           ${note.source_week ? `<span class="nc-week">週次：${escHtml(weekLabel(note.source_week))}</span>` : ''}
         </div>
-        <div class="note-card-title">${escHtml(note.title)}</div>
+        <div class="note-card-title">${escHtml(note.title || '（タイトルなし）')}</div>
         <div class="note-card-desc">${escHtml(note.description || '')}</div>
         ${tags ? `<div class="note-card-tags">${tags}</div>` : ''}
       </a>
       <div class="note-card-actions">
-        <a href="./${escHtml(filename)}" class="note-read-btn">記事を読む →</a>
+        <a href="./${escHtml(htmlFilename)}" class="note-read-btn">記事を読む →</a>
         <button class="note-copy-btn"
-          data-note-id="${escHtml(note.note_id)}"
-          data-filename="${escHtml(filename)}"
+          data-json-file="${escHtml(jsonFilename)}"
           data-has-md="${hasMarkdown ? '1' : '0'}">全文コピー</button>
       </div>
     </div>`;
@@ -276,22 +276,35 @@ async function loadNotes() {
     if (!res.ok) throw new Error('index.json not found');
     const index = await res.json();
 
-    const notes = index.notes || [];
-    stats.textContent = `${notes.length}本のnote`;
+    const filenames = index.notes || [];
 
-    if (notes.length === 0) {
+    const noteData = await Promise.all(
+      filenames.map(async (filename) => {
+        const r = await fetch('./' + filename);
+        if (!r.ok) throw new Error(filename + ' not found');
+        const note = await r.json();
+        note._jsonFilename = filename;
+        return note;
+      })
+    );
+
+    noteData.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+
+    stats.textContent = `${noteData.length}本のnote`;
+
+    if (noteData.length === 0) {
       list.innerHTML = '<p class="empty-state">noteがありません</p>';
       return;
     }
 
-    list.innerHTML = notes.map((n, i) => renderCard(n, i === 0)).join('');
+    list.innerHTML = noteData.map((n, i) => renderCard(n, i === 0)).join('');
 
   } catch (err) {
     list.innerHTML = `<p class="error-state">読み込みに失敗しました<br><small>${escHtml(err.message)}</small></p>`;
   }
 }
 
-async function copyNoteText(btn, noteId, filename, hasMd) {
+async function copyNoteText(btn, jsonFile, hasMd) {
   btn.textContent = '取得中…';
   btn.disabled = true;
 
@@ -299,21 +312,23 @@ async function copyNoteText(btn, noteId, filename, hasMd) {
     let text = '';
 
     if (hasMd) {
-      // content_markdownが入っているJSONを取得
-      const jsonFile = noteId + '.json';
       const res = await fetch('./' + jsonFile);
       const data = await res.json();
       text = data.content_markdown || '';
     }
 
     if (!text) {
-      // fallback: HTMLページのテキストを取得（タグを除去）
-      const res = await fetch('./' + filename);
-      const html = await res.text();
-      const doc = new DOMParser().parseFromString(html, 'text/html');
-      doc.querySelectorAll('script, style, nav, header, .copy-bar, .back-link').forEach(el => el.remove());
-      const main = doc.querySelector('main') || doc.body;
-      text = (main.innerText || main.textContent || '').trim();
+      const htmlFile = jsonFile.replace('.json', '.html');
+      try {
+        const res = await fetch('./' + htmlFile);
+        if (res.ok) {
+          const html = await res.text();
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          doc.querySelectorAll('script, style, nav, header, .copy-bar, .back-link').forEach(el => el.remove());
+          const main = doc.querySelector('main') || doc.body;
+          text = (main.innerText || main.textContent || '').trim();
+        }
+      } catch (_) {}
     }
 
     try {
@@ -348,8 +363,9 @@ async function copyNoteText(btn, noteId, filename, hasMd) {
 document.addEventListener('click', e => {
   const btn = e.target.closest('.note-copy-btn');
   if (!btn || btn.disabled) return;
-  const { noteId, filename, hasMd } = btn.dataset;
-  copyNoteText(btn, noteId, filename, hasMd === '1');
+  const jsonFile = btn.dataset.jsonFile;
+  const hasMd = btn.dataset.hasMd === '1';
+  copyNoteText(btn, jsonFile, hasMd);
 });
 
 loadNotes();
