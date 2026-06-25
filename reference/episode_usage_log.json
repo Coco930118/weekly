@@ -1023,5 +1023,251 @@
       "platform": "Threads診断",
       "week": "2026-06-30_2026-07-06"
     }
+  ,
+    {
+      "episode_ref": "FALLBACK_W2630_01",
+      "date": "2026-06-25",
+      "theme": "言えない現場・伝える経路の欠如（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_02",
+      "date": "2026-06-25",
+      "theme": "組織の体温・本音の置き場（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_03",
+      "date": "2026-06-25",
+      "theme": "現場が止まる仕組みの問題（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_04",
+      "date": "2026-06-25",
+      "theme": "責任の宙吊り・会議の増殖（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_05",
+      "date": "2026-06-25",
+      "theme": "判断消耗の分散・木曜疲弊（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_06",
+      "date": "2026-06-25",
+      "theme": "聴く仕組みと場の温度（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_07",
+      "date": "2026-06-25",
+      "theme": "週報より体温・本音の収集（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_08",
+      "date": "2026-06-25",
+      "theme": "積み残しを持ち込まない・空白の設計（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_09",
+      "date": "2026-06-25",
+      "theme": "週末の距離・リーダーの燃料（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_10",
+      "date": "2026-06-25",
+      "theme": "休日と仕事の不安・離れられない理由（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_11",
+      "date": "2026-06-25",
+      "theme": "月曜の体温・日曜の設計（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_12",
+      "date": "2026-06-25",
+      "theme": "また明日が重い・積み残しの正体（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_13",
+      "date": "2026-06-25",
+      "theme": "月曜の言えないを積まない仕組み（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_14",
+      "date": "2026-06-25",
+      "theme": "正直な一言の積み重ね・組織の体温（X）",
+      "platform": "X",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_15",
+      "date": "2026-06-25",
+      "theme": "疲れと関係の重さ・判断を遅らせる（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_16",
+      "date": "2026-06-25",
+      "theme": "好きと依存の温度差（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_17",
+      "date": "2026-06-25",
+      "theme": "夜の距離の錯覚（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_18",
+      "date": "2026-06-25",
+      "theme": "合わせすぎの自覚と消耗（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_19",
+      "date": "2026-06-25",
+      "theme": "好きでも一人の時間が関係の仕組み（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_20",
+      "date": "2026-06-25",
+      "theme": "近さを求める前に何を求めるか（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_21",
+      "date": "2026-06-25",
+      "theme": "わかってほしいの正体・伝えない愛（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_22",
+      "date": "2026-06-25",
+      "theme": "怒りの下の本当の感情（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_23",
+      "date": "2026-06-25",
+      "theme": "木曜孤独と一人でいる自由（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_24",
+      "date": "2026-06-25",
+      "theme": "金曜の関係体温測定（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_25",
+      "date": "2026-06-25",
+      "theme": "正直に話せた瞬間・関係の温度（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_26",
+      "date": "2026-06-25",
+      "theme": "余白がある人と月曜の持ち帰り（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_27",
+      "date": "2026-06-25",
+      "theme": "土曜朝の自分に戻る確信（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_28",
+      "date": "2026-06-25",
+      "theme": "ちょうどいい距離は仕組みで作る（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_29",
+      "date": "2026-06-25",
+      "theme": "言わない選択の強さ（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_30",
+      "date": "2026-06-25",
+      "theme": "期待より楽しみ・関係を軽くする（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_31",
+      "date": "2026-06-25",
+      "theme": "関係の更新タイミング（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_32",
+      "date": "2026-06-25",
+      "theme": "もったいなかった言葉・来週の最初（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_33",
+      "date": "2026-06-25",
+      "theme": "月曜リスタート・先週のよかった（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_34",
+      "date": "2026-06-25",
+      "theme": "新週の関係温度設定（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    },
+    {
+      "episode_ref": "FALLBACK_W2630_35",
+      "date": "2026-06-25",
+      "theme": "月曜夜の自分確認・明日の輪郭（Threads）",
+      "platform": "Threads",
+      "week": "2026-06-30_2026-07-06"
+    }
   ]
 }
