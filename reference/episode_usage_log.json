@@ -69,6 +69,14 @@
       "theme": "自分を大切にする技術",
       "platform": "Threads診断",
       "week": "2026-06-09_2026-06-15"
+    },
+    {
+      "episode_ref": "FALLBACK_W0630",
+      "date": "2026-06-26",
+      "theme": "組織の温度・失望と怒りの混同・距離の整え方（X14本+Threads21本）",
+      "platform": "X + Threads",
+      "week": "2026-06-30_2026-07-06",
+      "note": "reference/post_guidelines.json・episodes_soshiki.json 不在のためフォールバック生成。E_011以降の実エピソード割当は次回ファイル補充後に実施。"
     }
   ]
 }
