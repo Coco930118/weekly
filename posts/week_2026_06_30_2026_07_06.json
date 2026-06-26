@@ -1,7 +1,7 @@
 {
   "week": "2026-06-30_2026-07-06",
   "generated_at": "2026-06-26",
-  "source": "fallback:past_patterns+fixed_themes (reference/post_guidelines.json, episodes_soshiki.json not found)",
+  "source": "rewrite_v2: テーマ・構造・語彙を全面刷新（過去週との既視感解消）",
   "trend_summary": [
     "7月入りの組織疲弊感 ─ 上半期終了後の評価落差と現場の沈黙の蔓延",
     "SNSでの関係リセット文化 ─「静かなフォロー外し」が示す距離感の再定義ニーズ",
@@ -15,17 +15,10 @@
       "time": "6:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "板挟みが続くと、怒りより先に"もう決めたくない"が来る。\n\nあなたも今週、そこにいたんじゃないか。\n\n上から指示が降り、下から不満が上がる。その間で判断し続け、誰にも感謝されない日が続く。\n\n消耗は弱さじゃない。\nその疲弊は、橋を渡り続けた人間にしか出ないものだ。\n\n今週のあなたは、十分すぎるほど立っていた。",
-      "quote": "橋を渡り続けた疲弊は証だ。💎",
+      "content": "部下が"わかりました"と言う。でも、また同じ失敗が来る。\n\nあなたも、その場面に何度向き合ってきたか。\n\n問題は部下の理解力じゃない。\n"わかりました"と言わないと会話が終わらない空気を、知らずにあなたが作っているかもしれない。\n\n質問できない場所では、"返事"が"理解"の代わりになる。\n\nその違いを見抜けたとき、現場が変わり始める。",
+      "quote": "理解より返事が先になる。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes and quiet summer morning atmosphere. Shizuku (a small wise turtle with calm rounded face, creamy plastron, soft green shell) stands steadily on a wooden bridge over a lotus pond; early morning mist rises from the water; lotus flowers bloom in soft pink below; warm golden light breaks through hazy summer air; front view, full figure, dignified posture. Coco (elegant 40s Japanese woman, dark brown bob, pale blue summer ro-kimono with morning glory pattern, gold obi) stands on one end of the bridge looking toward Shizuku with quiet respect. Soft hydrangeas and morning glories in the background. Refined palette of pale gold, misty blue-green, soft ivory. Quiet Luxury watercolor style. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 148,
-        "day_time_match": "火曜朝・週明け重い空気"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early summer morning, front view. Shizuku (small wise turtle with calm rounded face, creamy plastron, soft green shell) stands on a garden step; a small blackboard behind shows a single erased question mark; morning glories bloom on a trellis; soft morning light. Coco (elegant 40s woman, dark brown bob, pale blue summer ro-kimono with morning glory pattern) stands beside Shizuku, looking at the erased mark with quiet recognition. Refined palette of pale morning gold, sage green, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_02",
@@ -33,18 +26,11 @@
       "platform": "X",
       "time": "22:00",
       "character": "🕊ひより",
-      "purpose": "保存獲得",
-      "content": "部下が"大丈夫です"と言うたびに、何かが終わっている。\n\nあなたは、そう言わせる空気を作っていないか。\n\n本音を言えない部下は、あなたを嫌っているわけじゃない。\nあなたへの期待を、静かに手放している。\n\n夜、今日何回"大丈夫です"を聞いたか、思い出してみてほしい。\nその数が、現場の本当の温度計だ。",
-      "quote": "大丈夫の数が温度計だ。💎",
+      "purpose": "返信獲得",
+      "content": "全員が頷く会議を、あなたは"うまくいった"と思っているか。\n\n一度、立ち止まってほしい。\n\n誰も反論しない場所は、合意じゃない。\n"言っても意味がない"という学習が、会議の空気を支配しているだけだ。\n\n異論が出てくる場の方が、うるさくて、でも現場は動く。\n\n今週の会議で、誰かが言いかけてやめた瞬間はなかったか。",
+      "quote": "反論ない会議が一番危ない。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Night atmosphere with moonlight and a paper lantern's warm glow. Hiyori (a small soft white bird with translucent pale blue-tinted wings, light and graceful) perches on a window ledge looking inward at a quiet meeting room; the room is empty now but papers remain; a night summer garden with fireflies just visible. Coco (elegant 40s woman, dark navy yukata with gold morning glory pattern, elegant and composed) stands reflected in the darkened glass, gazing outward with a quietly weighted expression. Side view. Refined palette of deep navy, warm lantern gold, pale ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 143,
-        "day_time_match": "火曜夜・振り返り"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, side view. Hiyori (small soft white bird with pale blue-tinted wings) perches on the back of an empty chair at a long meeting table; the table has neatly arranged papers and untouched water glasses; moonlight falls through tall windows; a firefly drifts near the ceiling. Coco (elegant 40s woman, deep navy yukata with gold morning glory pattern) stands by the window looking at the empty room with a quietly weighted expression. Refined palette of deep navy, moonlight silver, warm ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_01",
@@ -52,18 +38,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🐢しずく",
-      "purpose": "対句型：続けることと手放すことの違い",
-      "content": "続けることが愛なのか、\n手放すことが愛なのか。\n\n判断の根拠が「怖い」なら、\nどちらを選んでも、同じ場所に戻ってくる。\n\n恐怖から選んだ関係は、\nゆっくりと、どちらも削っていく。🫶",
-      "quote": "恐怖から選んだ関係は削る。🫶",
+      "purpose": "対句型：答えはすでに体が知っている",
+      "content": "連絡が来ない日の方が、\nどこかほっとしている自分に気づいたとき。\n\nそれはもう、答えが出ている。\n\nでも、まだ動けない。\n\nその"動けない"にも、\nちゃんと理由がある。🫶",
+      "quote": "答えはすでに体が知っている。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early summer morning, looking up angle. Shizuku (small wise turtle) sits at a crossroads in a garden path; morning glories climb a wooden trellis on both sides; soft morning light filters through; a moment of quiet contemplation. Summer hydrangeas in pale blue-violet in the background. The turtle's posture is still and grounded, not anxious. Refined palette of soft sage green, lavender, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "火曜朝"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early summer morning, looking up angle. Shizuku (small wise turtle) sits alone on a wooden step in a summer garden; a phone-shaped small stone lies face-down nearby; morning glories open freely on the trellis above; soft morning light; the turtle's posture is quietly still, not anxious. Refined palette of soft sage, warm ivory, morning gold. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_02",
@@ -71,18 +50,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "境界線宣言型：自分の扱われ方を言葉にする",
-      "content": "相手が気づくのを待つのは、\nもうやめた。\n\n「これは嫌だ」と言葉にした瞬間に、\n関係の形が決まる。\n\n気づかせようとするより、\n言葉にする方が、ずっと速い。\n\n静かに、でも確かに。🫶",
-      "quote": "言葉にする方が待つより速い。🫶",
+      "purpose": "短く一行一呼吸：送らなかった言葉",
+      "content": "送るつもりで下書きして、\n送らなかった言葉の方が、\n正直だったりする。\n\n送った言葉は、\n相手が受け取れる形に整えた言葉。\n\n整えすぎたものは、\nいつかちぐはぐになる。🫶",
+      "quote": "下書きした言葉が一番正直だ。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Late morning, bright summer light. Shirotsuma (fluffy round white long-haired cat, soft Persian-style, large gentle eyes, rosy cheeks, full fluffy tail) sits upright with a small open letter in front of them; a pot of morning glories blooms nearby on a sunny windowsill; the cat's expression is calm and decided, not tense. Bust up composition, slightly angled. Refined palette of warm ivory, pale blue, morning green. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "境界線宣言",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "火曜午前"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning, bust up angle. Shirotsuma (fluffy round white long-haired cat, large gentle eyes, rosy cheeks) holds a small crumpled note in both paws with a quiet considering expression; a neat folded note sits nearby; morning light through a window; a pot of morning glories on the sill. The contrast between the crumpled honest draft and the neat sent version. Refined palette of warm ivory, pale morning blue, soft green. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_03",
@@ -90,18 +62,11 @@
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
-      "purpose": "対句型：深さの質",
-      "content": "全部話せる人より、\n全部話さなくてもいい人の方が、\n長く続く。\n\n完璧に理解されることより、\nちゃんとそこにいてくれること。\n\n深さは、量じゃなく質で決まる。🫶",
-      "quote": "全部言わなくていい人が残る。🫶",
+      "purpose": "対句型：相手の機嫌を天気予報みたいに確認する",
+      "content": "相手の機嫌を、\n朝いちばんに確認するようになったら。\n\nそれはもう、\n天気に左右されて生きている状態だ。\n\n晴れなら動ける。\n曇りなら我慢する。\n\n相手の空模様に合わせていると、\n自分の季節がどこにあるかわからなくなる。🫶",
+      "quote": "相手の機嫌に季節を渡さない。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Evening summer light, golden hour. Hiyori (small soft white bird, pale blue-tinted wings) perches on a garden fence; Coco (elegant 40s woman, pale blue ro-kimono with small lotus pattern, soft bob hair) sits nearby reading; the two are in comfortable proximity with space between them; the evening sky is warm gold and soft pink; sunflowers and hydrangeas in the garden. Side view composition. Refined palette of evening gold, soft blue, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "火曜夕"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, side view. Hiyori (small soft white bird) perches on a garden fence looking at a darkening sky; summer evening light shifts from gold to grey; hydrangeas and sunflowers are in the garden; Coco (elegant 40s woman, pale blue ro-kimono with small lotus pattern) stands beside Hiyori also looking upward, but her posture is self-contained and calm rather than anxious. The scene suggests observation without being ruled by it. Refined palette of evening gold, soft blue-grey, warm ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_03",
@@ -110,17 +75,10 @@
       "time": "6:00",
       "character": "🕊ひより",
       "purpose": "プロフィール遷移",
-      "content": "組織の温度が、静かに下がっている。\n\n会議の発言が減った。\n報告が形式的になった。\n"任せてください"の声が、なぜか薄い。\n\nあなたはそれに気づいている。\nでも、何から手をつければいいかわからない。\n\n温度を下げたのは誰かの悪意じゃない。\n"言っても意味がない"という経験の積み重ねだ。\n\nその構造の全部を、noteに書いている。",
-      "quote": "組織の温度は悪意で下がらない。💎",
+      "content": "正論を言った。誰も反論しない。でも、何も変わらない。\n\nあなたも、そんな経験があるんじゃないか。\n\n人が動くのは"正しいから"じゃない。\n"この人についていきたい"という感情が、正しさより先に動く。\n\n正しさは根拠になる。でも、動機にはならない。\n\nこの構造を知ったとき、現場への関わり方が根から変わる。その話をnoteに書いた。",
+      "quote": "正論より関係が動かす。💎",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, looking up angle. Hiyori (small soft white bird) flies above a calm outdoor space with morning glory vines; below, a subtle scene of an empty meeting table visible through tall glass doors; the bird's wings catch the early morning light; a sense of quiet observation from above. Coco (elegant 40s woman, white summer ro-kimono with gold fan pattern) stands at the glass looking in, hand lightly on the frame. Morning glories climb the entrance. Refined palette of pale morning blue, warm ivory, sage. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 162,
-        "day_time_match": "水曜朝・note導線Cluster1"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, looking up angle. Hiyori (small soft white bird) hovers above a garden path; below, morning glories climb a trellis in spirals without being directed; the movement is natural and upward; Coco (elegant 40s woman, ivory ro-kimono with pale blue morning glory pattern) stands watching with quiet recognition. The scene suggests organic movement rather than commanded motion. Refined palette of pale morning blue, warm ivory, sage green. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_04",
@@ -128,18 +86,11 @@
       "platform": "X",
       "time": "22:00",
       "character": "🐢しずく",
-      "purpose": "返信獲得",
-      "content": "怒鳴っていないのに、なぜか現場が縮んでいる。\n\nあなたも、そんな感覚があるんじゃないか。\n\n問題は声の大きさじゃない。\nあなたと現場の"心理的な距離"が遠すぎることだ。\n\n部下は怒鳴られるより、沈黙の方が怖い。\n答えを返さない上司の間が、現場をじわじわ削る。\n\n今夜、距離に気づいたなら、明日何を変えるか。",
-      "quote": "現場を縮めるのは沈黙だ。💎",
+      "purpose": "保存獲得",
+      "content": ""あとで話しかけよう"と思って、話しかけなかった部下が今週何人いるか。\n\nあなたは今夜、数えてみてほしい。\n\n声をかけるタイミングを逃すたびに、現場との回路が一本ずつ細くなる。\n\n"いつでも相談して"と言った。でも最後に直接話したのがいつか、覚えているか。\n\n現場は放置より、"忘れられた"という経験で静かに崩れる。",
+      "quote": "後でが積み重なり現場は細る。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, warm lantern light and moonlight. Shizuku (small wise turtle) sits at a small desk with a lantern; the space around the turtle extends into quiet darkness; in the distance, a faint warm light suggests where others might be; a night-blooming white lotus floats in a small dish nearby. Coco (elegant 40s woman, deep indigo summer yukata with silver wisteria pattern) sits across from Shizuku, eyes thoughtful, leaning slightly forward with genuine inquiry. Front view. Refined palette of deep indigo, warm amber, pale ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 152,
-        "day_time_match": "水曜夜"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, front view. Shizuku (small wise turtle) sits at a small desk with a lantern; a row of small stones is arranged on the desk, each representing someone; the turtle counts them quietly with one flipper; outside the window, fireflies drift in the summer night; a night-blooming lotus floats in a small dish. The mood is quiet accounting, not regret. Refined palette of warm lantern amber, deep summer night blue, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_04",
@@ -147,18 +98,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🐢しずく",
-      "purpose": "関係の温度・note導線",
-      "content": "温かかったはずの関係が、\n気づいたら冷めていた。\n\n誰が悪いわけじゃない。\n温度を保つための行動を、\nどちらかがやめた。\n\n関係は、放置すると\n下がる方向にしか動かない。\n\nその温め直し方を、noteに置いてる。🫶",
-      "quote": "関係は放置すると冷める。🫶",
-      "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, fresh and slightly humid. Shizuku (small wise turtle) holds a small cup of warm tea with both front flippers; morning glories begin to open on a trellis behind; soft morning light; the turtle's expression is quiet and reflective. Front view, grounded posture. Summer garden with lotus leaves just visible at the edge of frame. Refined palette of soft sage, warm gold, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "note_funnel_correct": true,
-        "day_time_match": "水曜朝・note導線Cluster1"
-      }
+      "purpose": "対句型：穏やかな関係が来ると物足りない",
+      "content": "「普通の関係」に憧れているのに、\nいざ穏やかな人が来ると\nもの足りないと感じる。\n\nその矛盾は、欠陥じゃない。\n\n嵐みたいな関係に慣れた体は、\n静けさを"何もない"と読んでしまう。\n\n静けさを愛せる人になる。🫶",
+      "quote": "静けさを愛せる人になる。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, side view. Shizuku (small wise turtle) sits in a sunlit garden; the garden is calm and beautiful with morning glories and lotus in bloom; the turtle's posture is slowly relaxing, learning to be still; a small butterfly lands nearby undisturbed. The scene suggests learning to inhabit stillness. Refined palette of soft morning gold, lotus pink, sage green, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_05",
@@ -166,18 +110,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "対句型：言葉と行動",
-      "content": "「大切にしてる」という言葉より、\n大切にしている行動が、先に届く。\n\n言葉で信じてもらおうとするより、\n行動で確認させる方が、深く残る。\n\n伝わることと、伝えることは、\n別の技術だ。🫶",
-      "quote": "言葉より行動が先に届く。🫶",
+      "purpose": "境界線宣言型：また連絡してと言われて連絡しなかった",
+      "content": "「また連絡して」と言われた。\nでも連絡しなかった。\n\nその3週間は、\n逃げではなく観察だったかもしれない。\n\n"待っても来ない"がわかった瞬間、\nようやく次の選択ができる。🫶",
+      "quote": "待っても来ないがわかれば次へ。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning, bright summer light, bust up angle. Shirotsuma (fluffy round white cat) extends one soft paw to gently nudge a small potted morning glory toward someone; the cat's eyes are warm and intent; a sunny window in the background; morning light catches the white fur. The gesture is wordless but clear. Refined palette of warm white, morning blue, soft green. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "水曜午前"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning, looking up angle. Shirotsuma (fluffy white cat) sits at a crossroads in a summer garden; two paths lead in different directions; morning glories bloom on both sides; the cat's expression is calm and decided rather than anxious; soft morning light filters through summer leaves above. The posture suggests a choice made from observation, not impulse. Refined palette of warm ivory, morning green, pale gold. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_06",
@@ -185,18 +122,11 @@
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
-      "purpose": "宣言型：関係の選択基準",
-      "content": "不安で繋ぎ止めた関係は、\n不安が消えたとき、\n繋ぎ止めるものがなくなる。\n\n不安じゃなく、\n好きだからそこにいると言える関係だけ、\n残していく。\n\nそれが私の距離の基準。🫶",
-      "quote": "好きだからが私の基準だ。🫶",
+      "purpose": "宣言型：返信速度と安心を混同しない",
+      "content": "返信が早い人が好きだと思っていた。\n\nでも本当に求めていたのは、\n不安が少ない人だったと気づいた。\n\n返信の速さは、\n不安を静める一時的な薬で、\n処方箋にはならない。🫶",
+      "quote": "返信速度と安心を混同しない。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, looking up angle. Hiyori (small soft white bird) perches on a high branch of a summer tree; the evening sky behind is warm persimmon and pale gold; the bird looks outward with a calm and decided expression; below, summer flowers — sunflowers and hydrangeas — are just visible. The space around the bird feels chosen, not lonely. Refined palette of sunset gold, warm ivory, summer green. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "水曜夕"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, bust up angle. Hiyori (small soft white bird) perches on a high branch in warm evening light; one wing is lightly folded, the posture is settled and self-sufficient; below, the summer garden is peaceful with sunflowers and hydrangeas; the bird does not look toward any particular direction but inward. Refined palette of warm evening gold, soft ivory, summer green. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_05",
@@ -205,17 +135,10 @@
       "time": "6:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "部下への怒り、その前に確認してほしいことがある。\n\nあなたが今感じているのは"怒り"か、それとも"失望"か。\n\n怒りは、まだ期待がある。\n失望は、もう期待をやめている。\n\nどちらがあなたの中にあるかで、今日の部下への関わり方がまったく変わる。\n\n怒鳴るなと言いたいわけじゃない。\n怒る前に、何を感じているかを知ってほしい。\n\nその問いの先を、noteに書いている。",
-      "quote": "怒りか失望か先に見分ける。💎",
+      "content": "部下の誕生日じゃなくていい。その人が今週どんな顔をしていたか。\n\nあなたは思い出せるか。\n\n顔を読んでいるリーダーのチームと、そうでないチームは、問題が表に出る速度が違う。\n\n顔を見ていない場所では、部下はいつも"誰にもわかってもらえない"を積み重ねている。\n\nその積み重ねが何を生むか。その話をnoteに書いている。",
+      "quote": "顔を読む人が現場を知る。💎",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, early light, front view. Shizuku (small wise turtle) and Shirotsuma (fluffy white cat) sit side by side on a garden step; Shizuku holds a small stone in both flippers, looking at it quietly; Shirotsuma watches with gentle attention; morning glories open on the trellis behind them; morning dew on the leaves. The scene has the quiet quality of a decision being made. Refined palette of soft morning gold, sage green, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 183,
-        "day_time_match": "木曜朝・note導線Cluster2"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, front view. Shizuku (small wise turtle) and Shirotsuma (fluffy white cat) face each other at eye level on a garden path; Shizuku looks at Shirotsuma's face with quiet focused attention; morning glories bloom behind them; morning light is fresh and clear. The gaze is receiving, not evaluating. Refined palette of soft morning gold, sage, warm ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_06",
@@ -224,17 +147,10 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "上半期が終わる。\n\n評価面談もした。目標修正もした。部下の話も聞いた。\n\nでも、あなたの中に達成感より疲弊感の方が大きいなら、それは正直なサインだ。\n\n"もっとうまくやれたはず"と思う人ほど、消耗する。\n\n十分すぎるほど、やっている。\nその疲弊を、来週に持ち込まないための整理を今夜してほしい。",
-      "quote": "疲弊は真剣さの勲章だ。💎",
+      "content": ""頑張ってます"と毎回報告していた部下が、ある週から何も言わなくなった。\n\nあなたは、その変化に気づいていたか。\n\n"頑張ってます"は最初、本音だ。\nでも受け取ってもらえなかった言葉は、やがて飲み込まれる。\n\n静かになった部下が"安定した"に見えるとき、現場は一番危ない状態にある。",
+      "quote": "沈黙は安定じゃない学習だ。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, side view. Shizuku (small wise turtle) and Hiyori (small white bird) are together on a garden bench under stars; the bird perches on the turtle's shell; a firefly drifts nearby; summer night cicadas implied by the heavy summer air; a small oil lantern burns low. The mood is tired but at peace. Refined palette of deep summer night blue, warm amber lantern light, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 155,
-        "day_time_match": "木曜夜・中だるみ疲れ"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, side view. Shizuku (small wise turtle) and Hiyori (small white bird) sit together on a garden bench under summer stars; the bird perches on the turtle's shell; a firefly drifts nearby; an oil lantern burns low between them; the mood is tired but at peace, two beings who have kept showing up. Refined palette of deep summer night blue, warm amber, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_07",
@@ -242,18 +158,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🕊ひより",
-      "purpose": "感情の層・note導線",
-      "content": "怒っているとき、\nたいていその下に傷がある。\n\n傷を見せられないから、\n怒りで覆う。\n\n怒りをぶつけてくる人に、\n怒りで返さなくていい。\n\nその下の傷を静かに見ると、\n見えてくるものがある。\n\nそこの構造を、noteに書いた。🫶",
-      "quote": "怒りの下に傷がある。🫶",
+      "purpose": "宣言型：傷つけたいと傷つきたいの見分け・note導線",
+      "content": "「傷つけたくない」という言葉は、\n時々「傷つきたくない」の裏返しだ。\n\nどちらが動機かで、\n関係の形がまったく変わる。\n\n自分の動機を正確に知ることが、\n誠実さの始まりだ。\n\nその見分け方を、noteに書いた。🫶",
+      "quote": "動機を見誤らない。🫶",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, bust up angle. Hiyori (small soft white bird) perches on a branch; one wing is slightly tucked close to its body as if protecting something; the bird's expression is quietly composed; morning light filters through summer leaves above; below in the pond, a lotus flower is just beginning to open from the mud. The image of something tender beneath. Refined palette of pale morning light, soft green, ivory white. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "木曜朝・note導線Cluster2"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, bust up angle. Hiyori (small soft white bird) holds a small clear glass that reflects two different images — one facing outward, one facing inward; the bird examines both with quiet self-inquiry; morning light comes from one side; lotus leaves are visible through the window behind. The scene suggests honest self-examination without judgment. Refined palette of pale morning light, soft ivory, lotus green. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_08",
@@ -261,18 +170,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🐢しずく",
-      "purpose": "対句型：本音の2種類",
-      "content": "本音を言えない関係と、\n本音を言わなくていい関係は、\n似ているようで正反対だ。\n\n言えないは、恐怖。\n言わなくていいは、信頼。\n\nその違いを見分けると、\n関係の整え方が変わる。🫶",
-      "quote": "言えないと言わなくていいは別。🫶",
+      "purpose": "対句型：自分への優しさが人への優しさ",
+      "content": "人に優しくできる日と\nできない日の差は何か。\n\nたいていの場合、\n自分に優しくできているかどうかだ。\n\n機嫌よくいることが、\n関係への最大の貢献になる。🫶",
+      "quote": "自分への優しさが人への優しさ。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning, front view, all three animals. Shizuku (turtle), Shirotsuma (white cat), and Hiyori (white bird) sit together in a summer garden; each has a small sealed envelope and an open envelope; they compare the two versions of themselves with quiet thoughtfulness; morning glories bloom on a trellis nearby; summer morning light. The scene has a gentle analytical quality. Refined palette of warm ivory, soft morning gold, sage green. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "木曜午前"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning, all three animals without Coco, front view. Shizuku (turtle), Shirotsuma (white cat), and Hiyori (white bird) each hold a small morning glory flower; each seems to be offering one to the others simultaneously; morning light; the scene radiates ease and mutual warmth without any one being the giver or receiver. Refined palette of warm ivory, morning gold, soft sage. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_09",
@@ -280,18 +182,11 @@
       "platform": "Threads",
       "time": "19:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "境界線宣言型：消耗と愛情",
-      "content": "消耗する関係を、\n「大切だから」で続けるのは、\nどちらのためにもならない。\n\n本当に大切なら、\n消耗しない形を作る。\n\n消耗を愛情と混同しない。\nそれが、関係を守る技術だ。🫶",
-      "quote": "消耗を愛情と混同しない。🫶",
+      "purpose": "対句型：好きと安心どちらが先か",
+      "content": "好きと、安心と、\nどちらが先に来たか。\n\n好きが先なら、関係に熱がある。\n安心が先なら、関係に根がある。\n\nどちらが正解ではない。\nただ、混同すると迷う。🫶",
+      "quote": "好きと安心を混同しない。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, side view. Shirotsuma (fluffy white cat) sits by a window in evening light; a small candle has burned down to almost nothing beside them; the cat looks at it with calm recognition rather than sadness; outside the window, a summer garden glows in evening gold; hydrangeas in soft blue. The image of recognizing a limit, not with grief but with clarity. Refined palette of warm evening gold, soft ivory, muted blue. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "境界線宣言",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "木曜夕"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, side view. Shirotsuma (fluffy white cat) holds two different summer flowers — a vivid sunflower in one paw, a quiet hydrangea in the other — looking between them with thoughtful eyes; warm evening light; the cat is not choosing which is better, simply noticing the difference. Refined palette of warm gold, soft blue-violet, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_07",
@@ -299,18 +194,11 @@
       "platform": "X",
       "time": "6:00",
       "character": "🕊ひより",
-      "purpose": "プロフィール遷移",
-      "content": "現場が自走しない組織は、仕組みの問題じゃない。\n\nあなたと現場の"関係の温度"の問題だ。\n\n部下は、信頼されていると感じる場所でしか動かない。\n指示を待つのは怠けではなく、"ここで動いたら怒られる"という学習だ。\n\nその学習が積み重なった現場は、やがて静かに止まる。\n\n関係の温度を上げる具体的な話を、noteに置いている。",
-      "quote": "自走を阻むのは温度だ。💎",
+      "purpose": "保存獲得",
+      "content": "あなたが"熱量"と呼んでいるもの、一度確認してほしいことがある。\n\nそれは本当に熱量か、それとも部下を黙らせている怒りか。\n\n声が大きくなるほど相手が縮む場では、情報が上に届かなくなる。\n上に来るのは、"上が喜ぶ話"だけになる。\n\n熱量を出す場所を間違えると、現場はあなたの見えないところで動き始める。",
+      "quote": "熱量と怒りを混同しない。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, looking up angle. Hiyori (small soft white bird) hovers above a garden where Coco (elegant 40s woman, pale ivory ro-kimono with blue morning glory pattern) stands with arms slightly open; below and around them, morning glories climb freely upward on a trellis; the movement is upward and natural; warm morning light. The composition suggests upward motion, freedom, and trust. Refined palette of pale morning blue, warm ivory, summer green. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 168,
-        "day_time_match": "金曜朝"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, looking up angle. Coco (elegant 40s woman, pale ivory ro-kimono with blue morning glory and gold thread pattern) and Hiyori (white bird on her shoulder) look upward together at morning glories climbing a high trellis; the climbing is gradual and natural; the light is clear. The contrast between forced growth and natural upward movement. Refined palette of pale morning blue, warm ivory, sage. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_08",
@@ -318,18 +206,11 @@
       "platform": "X",
       "time": "22:00",
       "character": "🐢しずく",
-      "purpose": "保存獲得",
-      "content": "今週、あなたは何を整えたか。\n\n感情を飲み込んで乗り越えたなら、来週また同じことが来る。\n感情を観察して整えたなら、来週は少し楽になる。\n\n"耐える一週間"を繰り返す人と、"整える一週間"を作る人の差は、才能じゃない。\n\n金曜の夜に5分、今週何が重かったかを書き出す習慣が、現場を少しずつ変えていく。",
-      "quote": "耐えるより整えることを選ぶ。💎",
+      "purpose": "返信獲得",
+      "content": "今週、部下に"最近どう"と聞けたか。\n\n仕事の進捗じゃなく、ただ"最近どう"というたった一言を。\n\n聞けていないなら、その理由を一つだけ考えてほしい。\n\n忙しかったからか。\nそれとも、返ってきた答えに向き合う自信がなかったからか。\n\n聞けなかった言葉の重さは、いつかあなたの元に戻ってくる。",
+      "quote": "聞けなかった言葉が返ってくる。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, bust up angle. Shizuku (small wise turtle) writes carefully in a small notebook by candlelight; the turtle's posture is focused and intentional; a small glass with summer flowers — a single morning glory, now closed for the night — sits nearby; moonlight comes through the window. The mood is reflective and productive. Coco (elegant 40s woman, white summer yukata with gold pattern) sits across, also writing in a journal. Refined palette of warm candlelight gold, deep summer night blue, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 156,
-        "day_time_match": "金曜夜・区切り振り返り"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer night, bust up, Coco and Shizuku. Coco (elegant 40s woman, white summer yukata with gold morning glory pattern) and Shizuku (small wise turtle) sit across from each other at a low garden table; the lantern between them casts warm light; Coco leans slightly forward with an open expression of genuine inquiry; Shizuku's eyes meet hers; a summer night garden glows through the screen door. Refined palette of warm amber lantern light, deep summer night blue, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_10",
@@ -337,18 +218,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🐢しずく",
-      "purpose": "関係の温度・note導線（続き）",
-      "content": "最初から冷めていた関係はない。\n\n温度が下がるのは、\nどちらかが「ここでは感情を出さなくていい」と\n学んだとき。\n\nその学習を解くことは難しいが、\n最初の一手が何かは、わかっている。\n\nその話を、noteに置いている。🫶",
-      "quote": "冷えた関係には学習がある。🫶",
+      "purpose": "宣言型：離れようとするほど意識する・note導線",
+      "content": "離れようとするほど、\nなぜか意識する。\n\nそれは未練だけじゃない。\n\n関係の"終わり"がまだ消化されていないとき、\n人は相手を手放す代わりに、\n意識し続けることで繋いでいる。\n\nその構造と抜け出し方を、noteに書いた。🫶",
+      "quote": "手放す代わりに意識し続ける。🫶",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, side view. Shizuku (small wise turtle) kneels beside a small potted plant that has stopped growing; the turtle touches one leaf with a flipper with quiet intention, not giving up; morning glories bloom vigorously nearby on the same balcony; morning summer light. The contrast between the still plant and the blooming ones. Refined palette of sage green, warm morning gold, soft ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "note_funnel_correct": true,
-        "day_time_match": "金曜朝・note導線Cluster1"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer morning, side view. Shizuku (small wise turtle) stands at the edge of a garden path looking back over one shoulder; the path behind leads to a gate; morning glories climb the gate frame freely; the turtle's posture is moving forward but the gaze holds a moment; summer morning light. The image of a backward glance that is honest rather than regretful. Refined palette of soft morning gold, sage green, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_11",
@@ -356,18 +230,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "対句型：感情を整えることの意味",
-      "content": "一週間、感情を整えた人と、\n一週間、感情に流された人では、\n週末の質が違う。\n\nよい悪いではない。\nただそれが積み重なると、\n関係の形が変わる。\n\n感情を整えることは、\n感情をなくすことじゃない。🫶",
-      "quote": "整えるは消すことじゃない。🫶",
+      "purpose": "境界線宣言型：聞けなさを気遣いと呼ばない",
+      "content": "「大丈夫？」と聞ける相手と、\n聞けない相手がいる。\n\n聞けない理由が\n「心配していないから」ではないなら、\n\nそれは相手への配慮ではなく、\n自分が怖いからだ。\n\n聞けなさを、相手への気遣いと呼ばない。🫶",
+      "quote": "気遣いと臆病を混同しない。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning Friday, bust up, Coco and Shizuku. Shirotsuma (fluffy white cat) and Hiyori (white bird) sit together on a bench; Shirotsuma's fur is slightly ruffled while Hiyori's feathers are smooth; both look at the same summer garden view; the cat has a small but genuine smile; the bird perches calmly. The contrast is gentle, not dramatic. Summer hydrangeas bloom in the background. Refined palette of soft ivory, pale gold, hydrangea blue. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "金曜午前・区切り"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Morning, bust up angle. Shirotsuma (fluffy white cat) stands at a half-open door with one paw raised as if about to knock; the cat's expression is quietly honest, recognizing a moment of choice; sunlight comes through the door gap; a morning glory vine climbs the door frame. The moment before deciding whether to ask or not. Refined palette of warm ivory, morning gold, soft sage. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_12",
@@ -375,18 +242,11 @@
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
-      "purpose": "宣言型：傷つく可能性ごと選ぶ",
-      "content": "傷つきたくないから関係を持たない、\nという選択もある。\n\nでも傷つかない関係には、\n感動もない。\n\n傷つく可能性を受け入れた上で、\nそれでもここにいると選ぶ人とだけ、\n深く関わる。\n\nそれが私の基準。🫶",
-      "quote": "傷ごと選ぶ人とだけ関わる。🫶",
+      "purpose": "対句型：困った顔の方が心に残る",
+      "content": "好きな人の困った顔が、\n笑顔より心に残ることがある。\n\n弱みを見せてもらえた安心感か、\n守りたいという反射か。\n\nどちらにせよ、\n本物のひびの方が近づける。🫶",
+      "quote": "本物のひびの方が近づける。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, looking up angle. Coco (elegant 40s woman, soft white ro-kimono with red morning glory pattern, elegant bob) and Hiyori (white bird) stand in a summer garden at dusk; the bird perches on Coco's wrist raised slightly; both look upward at the first evening star appearing; sunflowers and hydrangeas surround them; the sky transitions from gold to deep blue. The mood is decided and at peace. Refined palette of dusk gold, deep summer blue, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "金曜夕・区切り振り返り"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Summer evening, looking up angle. Coco (elegant 40s woman, deep blue-grey ro-kimono with gold wisteria and summer stars pattern) and Hiyori (white bird) stand in a dusk garden; the first stars are appearing; sunflowers bow slightly in the evening breeze; both look upward with expressions of quiet wonder rather than perfect composure. The scene has gentle imperfection. Refined palette of dusk gold, deep summer blue, warm ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_09",
@@ -395,17 +255,10 @@
       "time": "6:00",
       "character": "🐢しずく",
       "purpose": "保存獲得",
-      "content": "部下が失敗したとき、最初に出てきた言葉が"なんで"だったなら、確認してほしいことがある。\n\n"なんで"は問いじゃない。それは、失望の表明だ。\n\n"なんで"と言われた瞬間、部下は次の説明より先に謝罪の言葉を探し始める。\n\n"何があった"から始めたとき、\n現場は初めて本音を返してくる。\n\nその問いの切り替え方を、noteに書いている。",
-      "quote": "なんでは失望の表明だ。💎",
+      "content": ""いい上司"でいようとするほど、なぜか現場との距離が開く。\n\nあなたにも、心当たりがないか。\n\n"いい上司"でいることに集中するとき、人は部下ではなく"部下から見た自分の像"を守り始める。\n\n部下が見ているのは、あなたが自分を守っているかどうかじゃない。あなたが、自分を見てくれているかどうかだ。\n\nこの逆転に気づいた人から、現場の空気が変わる。その話をnoteに書いた。",
+      "quote": "自分の像ではなく部下を見る。💎",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday morning, side view, Coco and all three animals. Coco (elegant 40s woman, blue-grey ro-kimono with lotus pattern) kneels beside Shizuku (turtle); Shizuku has dropped something small and is looking down; Coco's hand is open on the ground between them, not accusatory but receiving; Shirotsuma (white cat) and Hiyori (white bird) watch quietly from nearby; morning summer light in a garden. The scene has the quality of a kind question, not judgment. Refined palette of soft morning blue, sage green, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 179,
-        "day_time_match": "土曜朝・note導線Cluster2"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday morning, side view. Coco (elegant 40s woman, blue-grey ro-kimono with lotus pattern) kneels beside Shizuku (turtle); Coco's attention is fully on Shizuku's face, not on her own reflection in the nearby pond; the pond reflection of Coco is visible but she is not looking at it; morning glories bloom around them. The focus is on the other, not the self-image. Refined palette of soft morning blue, sage, warm ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_10",
@@ -414,17 +267,10 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "共感獲得",
-      "content": "土曜の夜、組織のことを考えている時点で、あなたは十分すぎるほど真剣だ。\n\nでもその真剣さが、現場には届いていないことがある。\n\n伝わらない誠実さは、存在しないのと同じに見える。\n\n明日の休息を、来週の現場への投資だと思ってほしい。\n疲弊したままの月曜より、整えた月曜の方が、現場は動く。",
-      "quote": "整えた自分が現場を動かす。💎",
+      "content": "土曜の夜、チームの顔を一人ずつ思い浮かべてみてほしい。\n\n名前が出てこない人はいないか。\n今週、直接話していない人はいないか。\n\n職位が上がるほど、個人が"数"に見え始める瞬間がある。\n\nその感覚に気づいている人は、まだ間に合う。\n気づけていない人は、来週も同じことが起きる。",
+      "quote": "名前が出ない人を見直す夜。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday night, close-up angle. Shizuku (small wise turtle) sits alone on a windowsill; the turtle holds a small unlit lantern; moonlight falls through the window; fireflies drift in the summer night outside; a night-blooming lotus is just opening below in a garden pond. The image of quiet determination in stillness. Refined palette of silver moonlight, deep navy, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 149,
-        "day_time_match": "土曜夜"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday night, close-up of Shizuku. Shizuku (small wise turtle) sits alone by candlelight; in front of the turtle, a row of small smooth stones; the turtle touches each one individually with a flipper, counting carefully; outside the window, fireflies drift in the summer night; a lotus floats in a small dish. The mood is attentive accounting. Refined palette of warm candlelight, deep night blue, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_13",
@@ -432,18 +278,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🐢しずく",
-      "purpose": "感情の扱い方（Threads関係角度）",
-      "content": "「怒ってない」と言いながら、\n明らかに怒っている人がいる。\n\n怒りを認めると負けると思っているか、\n怒りを感じることへの恥がある。\n\nどちらにしても、認めない怒りは\n地下に潜って別の形で出てくる。\n\n感情の扱い方の話を、noteに書いた。🫶",
-      "quote": "認めない怒りは地下で膨らむ。🫶",
+      "purpose": "対句型：頼ることと頼らせることは別の関係",
+      "content": "頼ることが苦手なのに、\n頼られると疲れる人がいる。\n\nその矛盾の正体は、\n「頼り合う」ではなく\n「頼らせてあげる」だけの関係に\n慣れているから。\n\n対等に受け取ることも、技術だ。🫶",
+      "quote": "対等に受け取ることも技術だ。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday morning, looking up angle. Shirotsuma (fluffy white cat) holds a small smooth stone in both paws; the stone is a swirling color suggesting contained emotion; the cat's expression is quietly self-aware; morning light comes from above; morning glories climb freely above while the stone is held still. The contrast of contained and free. Refined palette of morning gold, soft lavender, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "土曜朝"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday morning, looking up angle. Shirotsuma (fluffy white cat) and Hiyori (white bird) are passing a small morning glory flower back and forth between them; neither is clearly the giver; morning light from above; the exchange looks easy and mutual. The scene suggests reciprocity without hierarchy. Refined palette of warm morning gold, ivory, soft blue. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_14",
@@ -451,18 +290,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "対句型：孤独と依存",
-      "content": "一人でいることを楽しめる人と、\n一人でいることが怖い人では、\n誰かといるときの質が違う。\n\n孤独を恐れない人は、\n依存しない。\nだから関係が軽くなる。\n\n軽い関係が、長く続く。🫶",
-      "quote": "孤独を恐れない人が残る。🫶",
+      "purpose": "宣言型：あなたのための正体",
+      "content": "「あなたのため」と\n「私が安心するため」は、\n言葉が違うだけで、見た目が似ている。\n\nどちらが動いているか、\n正直に確認できると、\n関係は少し楽になる。🫶",
+      "quote": "あなたのためを問い直す。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday morning, bust up angle. Hiyori (small white bird) perches contentedly on a summer branch alone; the bird is preening a wing with focused care; below in the scene, a small group of birds is visible in the distance but this bird is at ease in its solitude; summer sky with soft clouds. The posture radiates contentment rather than loneliness. Refined palette of pale summer blue, warm ivory, soft gold. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "土曜午前"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday morning, bust up angle. Shirotsuma (fluffy white cat) holds a small hand mirror; the cat looks at its own reflection with honest self-inquiry rather than vanity; morning summer light; morning glories visible through the window behind. The act of looking inward honestly. Refined palette of warm ivory, soft morning gold, pale sage. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_15",
@@ -470,18 +302,11 @@
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
-      "purpose": "宣言型：一人の時間の価値",
-      "content": "週末、誰かに会わなくていい日は、\n自分に返ってくる日だと思っている。\n\n誰かのためじゃなく、\n自分のための時間を持てる人は、\n誰かといるときも豊かだ。\n\n一人の時間を、充電と呼ぶ。🫶",
-      "quote": "一人の時間が豊かさを作る。🫶",
+      "purpose": "対句型：説明の誠実さ",
+      "content": "説明しなくても伝わる関係と、\n説明しても伝わらない関係。\n\nどちらが深いかは、単純じゃない。\n\n説明を尽くしても諦めない人と、\n説明なしで伝わることを甘えにしない人。\n\nどちらも、誠実だ。🫶",
+      "quote": "説明を尽くす誠実さがある。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday evening, side view. Shizuku (small wise turtle) and Hiyori (white bird) sit together in comfortable proximity on a garden bench; each faces their own direction; the turtle holds a small book, the bird looks at the evening sky; sunflowers and summer flowers surround them; the scene radiates ease and independence-within-togetherness. Evening gold light. Refined palette of warm sunset gold, sage green, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "土曜夕"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Saturday evening, side view. Shizuku (turtle) and Hiyori (white bird) sit on either side of a small garden table at dusk; between them, a single candle burns; each faces the other; no papers or props — just the two of them in the evening light; sunflowers and hydrangeas glow behind them. The simplicity of being present and honest. Refined palette of warm dusk gold, deep summer blue, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_11",
@@ -490,17 +315,10 @@
       "time": "6:00",
       "character": "🐢しずく",
       "purpose": "プロフィール遷移",
-      "content": "現場との距離を整えることは、引くことじゃない。\n\nあなた自身の軸を持つことだ。\n\n軸のないリーダーは、部下の感情に引っ張られる。\n引っ張られた先で、全員にとって的外れな判断をしてしまう。\n\n距離を整えるのは冷たさじゃない。\nあなたが軸を持つことで、部下は初めて"何を相談すれば伝わるか"を学べる。\n\nその距離の整え方を、noteに書いている。",
-      "quote": "距離を整えることが軸になる。💎",
+      "content": "現場が"無難"な報告しか上げてこなくなったなら、一つだけ確認してほしい。\n\nあなたは、悪い話を持ってきた部下に最後にいつ"ありがとう"と言ったか。\n\n問題を報告した人が損をした経験がある組織では、みんなが安全な情報だけを選ぶ。\n\n現場が沈黙するのは怠けじゃない。学習した結果だ。\nその仕組みを、noteで話している。",
+      "quote": "悪い話を歓迎できるか。💎",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday morning, front view, Shizuku and Hiyori. Shizuku (small wise turtle) stands steadily with one flipper on a smooth river stone at the center of a stream; Hiyori (white bird) circles above; morning light; lotus flowers bloom at the stream's edge; the turtle is perfectly balanced, not holding onto anything, self-contained. The scene suggests groundedness as the source of freedom. Refined palette of clear morning blue, sage, warm ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 174,
-        "day_time_match": "日曜朝・note導線Cluster3"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday morning, front view. Shizuku (small wise turtle) holds both front flippers open and upward in a receiving gesture; Shirotsuma (fluffy white cat) approaches with a small wilted flower — not a beautiful offering but an honest one; Shizuku's expression is genuinely welcoming; morning light; morning glories bloom vigorously behind them. Receiving the difficult thing graciously. Refined palette of soft morning gold, sage green, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_12",
@@ -509,17 +327,10 @@
       "time": "22:00",
       "character": "🕊ひより",
       "purpose": "返信獲得",
-      "content": "日曜の夜、"また月曜が来る"という感覚が重いなら、一つだけ聞いてほしい。\n\nそれは月曜が嫌なのか、月曜に向き合う自分への疑いなのか。\n\n現場が重いのは、現場の問題じゃないことが多い。\nあなた自身の整理が追いついていない状態で、また月曜に立つことへの疲弊だ。\n\n今夜、明日に持っていくものを一つだけ決めてほしい。それだけでいい。",
-      "quote": "今夜明日に持つ一つを決める。💎",
+      "content": "日曜の夜、疲れているとしたら、その疲れの種類を一度確認してほしい。\n\n体の疲れか。気持ちの疲れか。それとも"誰にもわかってもらえない"という疲れか。\n\n三番目が一番重い。\n\n職位が上がるほど増える疲れだ。\n成果を出しても、一人で抱えても、誰の目にも映らない。\n\nそれでも月曜に立つ理由を、あなたは持っているか。",
+      "quote": "見えない疲れが最も重い。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday night, close-up of Shirotsuma and Hiyori. Shirotsuma (fluffy white cat) sits by a window in soft moonlight; Hiyori (white bird) perches on the cat's head gently; both look at the dark summer garden where fireflies drift; the cat's eyes are thoughtful rather than anxious; a single morning glory has closed for the night on the windowsill. The mood is quiet preparation rather than dread. Refined palette of soft moonlight silver, ivory, deep summer blue. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 163,
-        "day_time_match": "日曜夜"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday night, close-up of Shirotsuma and Hiyori. Shirotsuma (fluffy white cat) sits by a moonlit window; Hiyori (white bird) perches gently on the cat's head; both look at the dark summer garden where fireflies drift; the cat's eyes are quietly steady, not defeated; a morning glory vine has closed its flowers for the night on the sill. Quiet endurance that is not resignation. Refined palette of silver moonlight, deep summer navy, warm ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_16",
@@ -527,18 +338,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "距離の整え方・note導線",
-      "content": "近すぎると見えなくなるものがある。\n\n距離は、冷たさじゃない。\n見えるようにするための技術だ。\n\n適切な距離を保てる関係ほど、\n長く、深く続く。\n\nその距離の整え方を、noteに書いている。🫶",
-      "quote": "距離は冷たさじゃなく技術だ。🫶",
+      "purpose": "宣言型：ここじゃない感の正体・note導線",
+      "content": "「寂しい」より、\n「ここじゃない感」の方が\n正確な感覚がある。\n\n人がいないのに寂しいのではなく、\n人の中にいるのに\n"ここじゃない"と感じる。\n\nその感覚の正体を、noteに書いた。🫶",
+      "quote": "ここじゃない感を信じる。🫶",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday morning, side view, all three animals without Coco. Shizuku (turtle), Shirotsuma (white cat), and Hiyori (white bird) are arranged in a garden with natural space between each; none are touching but all are clearly in relationship; morning glories bloom around them; each faces slightly toward the others but has their own space; summer morning light. The space between them feels chosen and warm. Refined palette of soft morning gold, sage green, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "note_funnel_correct": true,
-        "day_time_match": "日曜朝・note導線Cluster3"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday morning, side view, all three animals without Coco. Shizuku (turtle), Shirotsuma (white cat), and Hiyori (white bird) are in a summer garden together with natural space between each; none are touching but all are clearly connected; morning glories bloom around them; each faces slightly toward the others but has their own space; the space between them feels chosen and warm. Refined palette of soft morning gold, sage green, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_17",
@@ -546,18 +350,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🕊ひより",
-      "purpose": "対句型：求めることを伝える",
-      "content": "求めることを伝えられる人と、\n察してもらうことを待つ人では、\n関係の消耗度が違う。\n\n伝えることは図々しくない。\n伝えないことが、お互いをじわじわ削る。\n\n声に出すことが、関係への誠実さだ。🫶",
-      "quote": "伝えることが誠実さだ。🫶",
+      "purpose": "対句型：続ける選択の重さ",
+      "content": "関係は、始まりより\n「続ける選択」の方が\n何倍も重い。\n\n始まりに必要なのは感情だが、\n続けるために必要なのは意志だ。\n\n今日も選んでいることを、\nたまに言葉にする。🫶",
+      "quote": "続ける選択が関係を育てる。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday morning, looking up angle, Coco and Shizuku. Coco (elegant 40s woman, pale blue ro-kimono with white lotus and gold thread pattern) kneels in the garden with one hand open, palm upward; Shizuku (turtle) walks toward that open hand with steady intention; morning light falls from above; morning glories bloom in a spiral on the trellis behind; the composition suggests voluntary, clear approach. Refined palette of pale morning blue, warm ivory, sage. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "日曜午前"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday morning, looking up angle. Coco (elegant 40s woman, pale blue ro-kimono with white lotus and gold thread pattern) and Shizuku (turtle) walk side by side along a garden path; the path is long and continues ahead; morning light comes from above; morning glories line the path they have already walked. The path already traveled is as visible as what lies ahead. Refined palette of pale morning blue, warm ivory, sage. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_18",
@@ -566,19 +363,10 @@
       "time": "19:00",
       "character": "🐢しずく",
       "purpose": "署名宣言（ブランド定型・距離依存テーマ）",
-      "content": "どんなに好きでも、\n自分を消してまで一緒にいない。\n\n感情はある。\n依存はしない。\n\nその軸がある人のそばに、\n似た軸を持つ人が来る。\n\n感情はある。依存はしない。\nそんな距離の整え方を、ここに残していく。💍",
-      "quote": "感情はある、依存はしない。💍",
+      "content": "完璧に理解し合える人より、\n一緒に黙っていられる人と、\n長くいたい。\n\n語り合う深さより、\n沈黙を共有できる安心感。\n\n感情はある。依存はしない。\nそんな距離の整え方を、ここに残していく。💍",
+      "quote": "感情はある依存はしない。💍",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday evening, close-up of Coco and Shirotsuma. Coco (elegant 40s woman, ivory ro-kimono with indigo morning glory pattern, gold obi, soft summer elegance) sits in a summer garden at dusk; Shirotsuma (fluffy white cat) leans gently against Coco's side without clinging; Coco's hand rests lightly on the cat's fur, not gripping; hydrangeas and evening lotus bloom around them; the sky shifts to deep blue; evening star just appearing. The posture of both radiates presence-without-dependence. Refined palette of deep dusk blue, warm ivory, soft indigo. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "署名宣言",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "ring_emoji_justified": "距離・依存を直接テーマにした署名回",
-        "no_heart_and_ring_together": true,
-        "day_time_match": "日曜夕"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Sunday evening, side view. Coco (elegant 40s woman, ivory ro-kimono with indigo morning glory pattern, gold obi) sits in a summer garden at dusk; Shirotsuma (fluffy white cat) leans gently against Coco's side without clinging; Coco's hand rests lightly on the cat's fur, not gripping; hydrangeas and lotus bloom around them; the sky is deep blue; one evening star appears. Both radiate presence-without-dependence. Refined palette of deep dusk blue, warm ivory, soft indigo. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_13",
@@ -587,17 +375,10 @@
       "time": "6:00",
       "character": "🐢しずく",
       "purpose": "共感獲得",
-      "content": "月曜の朝、部下が"おはようございます"と言った後の3秒を、あなたは読んでいるか。\n\n笑顔の後に目が泳いだ人。\nいつもより声が小さかった人。\n廊下でばったり会って、早歩きになった人。\n\nその3秒は、今週の現場の前兆だ。\n\n月曜の朝の空気の読み方が、翌週の現場の質を決めている。",
-      "quote": "朝の3秒が現場の前兆だ。💎",
+      "content": "月曜の朝、いつもより早く来ている部下がいたなら、その理由を考えてほしい。\n\n"やる気があるから"だけじゃないかもしれない。\n\n早く来ることで、誰かと二人になる場面を避けていることがある。\n始業前の静けさに逃げていることもある。\n\n今朝、誰が早く来ていたか。\nそれを覚えているリーダーが、現場の変化に最初に気づける。",
+      "quote": "早出の理由を読めるか。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday morning, side view, Coco and Hiyori. Coco (elegant 40s woman, white summer ro-kimono with pale blue morning glory pattern) stands in a doorway in morning light; Hiyori (white bird) perches on her shoulder, alert; both look forward into the scene with calm attention; morning light is fresh and clear; morning glories are fully open on the trellis by the door; the posture of both suggests ready attention. Refined palette of clear morning blue, warm ivory, sage. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 147,
-        "day_time_match": "月曜朝"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday morning, side view. Coco (elegant 40s woman, white summer ro-kimono with pale blue morning glory pattern) and Hiyori (white bird on her shoulder) stand in a doorway in early morning light; both look outward at a fresh summer garden where morning glories are fully open; the posture of both suggests attentive readiness. Refined palette of clear morning blue, warm ivory, sage. Quiet Luxury watercolor. No text."
     },
     {
       "id": "x_14",
@@ -605,18 +386,11 @@
       "platform": "X",
       "time": "22:00",
       "character": "🕊ひより",
-      "purpose": "返信獲得",
-      "content": "今日、報告に来なかった部下がいたなら、来なかった理由を考えたか。\n\n"忙しかっただけ"で終わらせると、来月、その人は別の何かも持って来なくなる。\n\n報告しない部下は怠けじゃない。\n"報告した後に起きることへの予測"で動いている。\n\n来ない理由の方が、来る理由より多くを語る。\n\n今夜、誰か一人の名前を思い浮かべてほしい。",
-      "quote": "来ない理由が現場を語る。💎",
+      "purpose": "保存獲得",
+      "content": "今日、誰かに"ありがとう"と言えたか。\n\n成果を褒めたではなく、ただ"ありがとう"という言葉を。\n\n上の立場の人間が感謝を伝えることを、照れや格のせいで省略し続けると、現場の空気は少しずつ硬くなる。\n\n"ありがとう"はコストゼロで現場を一度だけ緩める。\n\n明日の一言に、投資してほしい。",
+      "quote": "ありがとうを省かない。💎",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday night, close-up of Coco and Shizuku plus Shirotsuma. Coco (elegant 40s woman, deep indigo summer yukata with silver lotus pattern) sits at a low table with a small lantern; Shizuku (turtle) sits across from her, both looking at one empty spot on the table between them; Shirotsuma (white cat) rests nearby with eyes half-closed but ears forward; a summer night garden glows through the window; fireflies outside. The empty spot on the table is the subject of quiet thought. Refined palette of deep night indigo, warm amber lantern, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_org_theme": true,
-        "has_pain_direct": true,
-        "has_you_address": true,
-        "char_count_approx": 163,
-        "day_time_match": "月曜夜"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday night, close-up of Coco and Shizuku plus Shirotsuma. Coco (elegant 40s woman, deep indigo summer yukata with silver lotus pattern) places both hands together in a quiet gesture of genuine thanks toward Shizuku (turtle); Shizuku receives it with both flippers raised; Shirotsuma (white cat) watches with soft warm eyes; a summer night garden glows through the window; fireflies outside. Sincere gratitude, not performance. Refined palette of deep night indigo, warm amber, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_19",
@@ -624,18 +398,11 @@
       "platform": "Threads",
       "time": "7:00",
       "character": "🐢しずく",
-      "purpose": "距離の整え方・note導線（続き）",
-      "content": "「離れた」と「距離を整えた」は、\nまったく違う動作だ。\n\n離れるのは回避。\n距離を整えるのは、関係を守ること。\n\n守るために距離を置ける人は、\n関係を本当に大切にしている。\n\nそのやり方を、noteに置いてる。🫶",
-      "quote": "距離を置くことが守ることだ。🫶",
+      "purpose": "宣言型：あの頃の記憶の正体・note導線",
+      "content": "「あの頃は楽しかったな」という記憶は、\n過去の関係が良かったんじゃなく、\n「あの頃の自分」が良かったかもしれない。\n\n懐かしむ対象を間違えると、\n戻れない場所を探し続ける。\n\nその整理の仕方を、noteに書いた。🫶",
+      "quote": "懐かしむ対象を間違えない。🫶",
       "note_funnel": true,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday morning, close-up angle. Shizuku (small wise turtle) and Hiyori (white bird) sit on two branches of the same tree, each on their own branch but from the same root; morning light; morning glories wind up the trunk between them; the two are clearly separate and clearly connected. The image suggests distinct roots within shared belonging. Refined palette of clear morning gold, sage green, ivory. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句+宣言",
-        "no_direct_you_address": true,
-        "note_funnel_correct": true,
-        "day_time_match": "月曜朝・note導線Cluster3"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday morning, close-up angle. Shizuku (small wise turtle) and Hiyori (white bird) sit on two branches of the same summer tree; each is on their own branch but from the same root; morning glories wind up the trunk between them; the two are clearly separate and clearly connected. The image of distinct roots within shared belonging. Refined palette of clear morning gold, sage green, ivory. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_20",
@@ -643,18 +410,11 @@
       "platform": "Threads",
       "time": "10:00",
       "character": "🐈‍⬛しらたま",
-      "purpose": "対句型：記憶に残る人",
-      "content": "また会いたいと思われる人と、\nもう会わなくてもいいと思われる人の差は、\n何かをしてくれたかより\n何かを感じさせてくれたかだ。\n\n記憶に残るのは出来事より感情。\n感情を動かした人が、戻ってくる場所になる。🫶",
-      "quote": "感情を動かした人が残る。🫶",
+      "purpose": "対句型：気遣いの適正量",
+      "content": "長く続く関係には、\nどちらかが一方的に気を使っている、\nという瞬間が少ない。\n\n使いすぎると疲れる。\n使わなさすぎると荒れる。\n\n気遣いにも、適正量がある。🫶",
+      "quote": "気遣いにも適正量がある。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday morning, bust up, Coco and Shirotsuma and Hiyori. Coco (elegant 40s woman, pale blue ro-kimono with white summer wisteria and gold thread) places one hand gently on her chest while looking toward Shirotsuma (fluffy white cat) and Hiyori (white bird); the animals look back at her with expressions of genuine warmth; summer morning glories frame the scene; the moment is one of emotional resonance rather than action. Refined palette of pale morning blue, warm ivory, soft gold. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "対句",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "月曜午前"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday morning, bust up. Coco (elegant 40s woman, pale blue ro-kimono with white summer wisteria and gold thread) sits with Shirotsuma (fluffy white cat) and Hiyori (white bird); the three are in easy proximity; each faces slightly toward the others with expressions of genuine warmth; summer morning glories frame the scene; the moment is easy and mutual. Refined palette of pale morning blue, warm ivory, soft gold. Quiet Luxury watercolor. No text."
     },
     {
       "id": "th_21",
@@ -662,18 +422,11 @@
       "platform": "Threads",
       "time": "19:00",
       "character": "🕊ひより",
-      "purpose": "宣言型：正直でいることの基準",
-      "content": "今週、一度でも「本当のことを言えた」なら、\nそれは十分に誠実だ。\n\n全部言わなくていい。\n正直に生きることと、\n全開示することは、別の話。\n\n言える範囲で正直でいることを、\n続けていく。🫶",
-      "quote": "言える範囲の正直でいい。🫶",
+      "purpose": "宣言型：穏やかにいることが守ること",
+      "content": "今夜、機嫌よくいることが\n誰かへの最大の贈り物になる日がある。\n\n言葉でも行動でもなく、\n穏やかにそこにいること。\n\nそれだけで、関係は守られる。🫶",
+      "quote": "穏やかにいることが守ること。🫶",
       "note_funnel": false,
-      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday evening, looking up angle, Coco and all three animals. Coco (elegant 40s woman, ivory and indigo summer ro-kimono with morning glory and firefly pattern, warm and luminous), Shizuku (turtle), Shirotsuma (white cat), and Hiyori (white bird) are all in the summer garden at dusk; the sky above is deep summer blue with the first stars appearing; fireflies drift around them; the four face upward together in comfortable closeness; hydrangeas and sunflowers glow softly in the last evening light. A sense of completion and continuity. Refined palette of deep summer dusk, warm ivory, firefly gold. Quiet Luxury watercolor. No text, no letters.",
-      "self_check": {
-        "is_relationship_theme": true,
-        "type": "宣言型",
-        "no_direct_you_address": true,
-        "no_workplace_theme": true,
-        "day_time_match": "月曜夕・週の締め"
-      }
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Monday evening, looking up angle. Coco (elegant 40s woman, ivory and indigo summer ro-kimono with morning glory and firefly pattern), Shizuku (turtle), Shirotsuma (white cat), and Hiyori (white bird) are in a summer garden at dusk; the sky above is deep summer blue with the first stars appearing; fireflies drift around all four; they face upward together in comfortable closeness; hydrangeas and sunflowers glow softly in the last evening light. A sense of completion and continuity. Refined palette of deep summer dusk, warm ivory, firefly gold. Quiet Luxury watercolor. No text."
     }
   ]
 }
