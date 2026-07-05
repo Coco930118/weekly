@@ -158,7 +158,8 @@ function renderCard(post) {
     : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
     : 'platform-other';
 
-  const contentEscaped = escapeHtml(post.content);
+  const frameText = post.frame || post.content;
+  const contentEscaped = escapeHtml(frameText);
   const quoteEscaped = post.quote ? escapeHtml(post.quote) : '';
 
   let extraSections = '';
@@ -300,7 +301,7 @@ function renderCard(post) {
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
         <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+          <button class="copy-btn" data-copy="${escapeHtml(frameText)}">コピー</button>
         </div>
       </div>
       ${extraSections}
