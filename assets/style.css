@@ -472,7 +472,119 @@ body {
 /* Extra sections */
 .card-section {
   border-top: 1px solid var(--border);
-  padding: 12px 14px 4px;
+}
+
+.card-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.card-section-header:hover {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.card-section-title {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.card-section-toggle {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.card-section-body {
+  display: none;
+  padding: 4px 14px 10px;
+}
+
+.card-section-body.open {
+  display: block;
+}
+
+.card-section-body p {
+  font-size: 0.82rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 8px;
+}
+
+/* 4択 choices */
+.choices-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-bottom: 8px;
+}
+
+.choice-item {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.choice-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-xshindan);
+  min-width: 16px;
+  flex-shrink: 0;
+}
+
+.choice-text {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.choice-item .copy-btn {
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* 4択 image prompts */
+.prompts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 8px;
+}
+
+.prompt-item {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 8px 10px;
+}
+
+.prompt-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--accent-xshindan);
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+
+.prompt-item p {
+  font-size: 0.78rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  white-space: pre-wrap;
+  word-break: break-all;
+  margin-bottom: 6px;
 }
 
 .section-label {

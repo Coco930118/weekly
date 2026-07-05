@@ -227,7 +227,50 @@ function renderCard(post) {
         </div>
       </div>`;
   }
-  if (post.image_prompt) {
+  if (post.choices && post.choices.length) {
+    const labels = ['A', 'B', 'C', 'D'];
+    const choicesHtml = post.choices.map((choice, i) => {
+      const escaped = escapeHtml(choice);
+      return `<div class="choice-item">
+          <span class="choice-label">${labels[i]}</span>
+          <span class="choice-text">${escaped}</span>
+          <button class="copy-btn" data-copy="${escaped}">コピー</button>
+        </div>`;
+    }).join('');
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🔤 4択</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <div class="choices-list">${choicesHtml}</div>
+        </div>
+      </div>`;
+  }
+  if (post.image_prompts && post.image_prompts.length) {
+    const labels = ['A', 'B', 'C', 'D'];
+    const promptsHtml = post.image_prompts.map((prompt, i) => {
+      const escaped = escapeHtml(prompt);
+      return `<div class="prompt-item">
+          <span class="prompt-label">選択肢 ${labels[i]}</span>
+          <p>${escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${escaped}">コピー</button>
+          </div>
+        </div>`;
+    }).join('');
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🖼 画像プロンプト（4択）</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <div class="prompts-list">${promptsHtml}</div>
+        </div>
+      </div>`;
+  } else if (post.image_prompt) {
     const promptEscaped = escapeHtml(post.image_prompt);
     extraSections += `
       <div class="card-section">
