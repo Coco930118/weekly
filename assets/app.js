@@ -503,7 +503,9 @@ function renderNoteCard(note) {
 
   if (note.before_after && note.before_after.length) {
     const casesHtml = note.before_after
-      .map(c => `<div class="before-after-case"><p>${escapeHtml(c)}</p></div>`)
+      .map(c => typeof c === 'object'
+        ? `<div class="before-after-case"><p><strong>Before：</strong>${escapeHtml(c.before)}</p><p><strong>After：</strong>${escapeHtml(c.after)}</p></div>`
+        : `<div class="before-after-case"><p>${escapeHtml(String(c))}</p></div>`)
       .join('');
     sections += `
       <div class="card-section">
