@@ -519,8 +519,8 @@ function renderNoteCard(note) {
 
   if (note.sns_hooks) {
     let hooksHtml = '';
-    if (note.sns_hooks.threads) {
-      const esc = escapeHtml(note.sns_hooks.threads);
+    if (note.sns_hooks.Threads) {
+      const esc = escapeHtml(note.sns_hooks.Threads);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-threadsdiag">Threads</span>
@@ -530,8 +530,8 @@ function renderNoteCard(note) {
           </div>
         </div>`;
     }
-    if (note.sns_hooks.x) {
-      const esc = escapeHtml(note.sns_hooks.x);
+    if (note.sns_hooks.X) {
+      const esc = escapeHtml(note.sns_hooks.X);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-x">X</span>
