@@ -6,14 +6,14 @@
     "shindan_x_2026-06-30.json",
     "shindan_th_2026-06-30.json",
     "week_threads_shindan_2026_06_02_2026_06_08.json",
+    "week_stamppromo_2026_07_14_2026_07_20.json",
     "week_stamppromo_2026_07_07_2026_07_13.json",
-    "week_stamppromo_2026_06_30_2026_07_06.json",
-    "week_linestamp_2026_06_29_2026_07_05.json",
+    "week_linestamp_2026_07_13_2026_07_19.json",
     "week_linestamp_2026_07_06_2026_07_12.json",
     "week_2026_06_30_2026_07_06.json"
   ],
   "linestamps": [
-    "linestamp_2026_06_29.json",
-    "linestamp_2026_07_06.json"
+    "linestamp_2026_07_06.json",
+    "linestamp_2026_07_13.json"
   ]
 }

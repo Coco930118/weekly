@@ -1,0 +1,409 @@
+{
+  "release_date": "2026-07-13",
+  "week": "2026-07-13_2026-07-19",
+  "series": "きょうも、そのままで",
+  "edition": 14,
+  "pattern": 2,
+  "pattern_label": "キャラクター＋Coco",
+  "pattern_description": "しらたま・しずく・ひよりがCocoと並んで登場。海の日3連休と本格的な夏を、4人（4匹）一緒の体温で届ける24枚。",
+  "characters": [
+    "👩Coco",
+    "🐈‍⬛しらたま",
+    "🐢しずく",
+    "🕊ひより"
+  ],
+  "week_theme": "海の日3連休と本格的な夏——Cocoとしらたま・しずく・ひよりが一緒に届ける、距離を整える24枚",
+  "title_ja": "きょうも、そのままで⑭",
+  "desc_ja": "海の日3連休と本格的な夏の到来に。Cocoとしらたま・しずく・ひよりが一緒に届ける24枚、夏祭りの誘いから熱中症の気遣い、丁寧なビジネス挨拶まで、今日もそのままの気持ちを一言で贈れます。",
+  "title_en": "Just as You Are, Vol.14",
+  "desc_en": "As Marine Day meets peak summer heat, Coco and her three companions send festival invites, heat check-ins, and warm thank-yous — 24 new watercolor stamps.",
+  "stamps": [
+    {
+      "id": "⑭-01",
+      "dialogue": "おはよう、暑くなりそう",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "海の日ウィークが始まる月曜の朝、いつもより軽い足取りで送りたい一言",
+      "send_timing": "朝",
+      "send_psychology": "「今日も暑い」という天気の話題を先に言うことで、相手にも心の準備をさせてあげられる",
+      "outfit": "リネンのノースリーブワンピース（サンドベージュ）に麦わらのカンカン帽",
+      "color_scheme": "モーニングコーラル・サンドベージュ・クリアスカイブルー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Morning coral and sand beige with clear sky blue — the palette of a bright midsummer Monday. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) wearing a sleeveless linen dress in sand beige with a straw boater hat, standing on a sunlit balcony stretching one arm up in a relaxed morning greeting. Shiratama (fluffy black cat with white markings) sits on the railing beside her, tail curled, looking up with sleepy affection. Composition: full body, three-quarter view, large copy space at top center.\n[Text/Format] Handwritten-style Japanese text『おはよう、暑くなりそう』in coral-blue lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-02",
+      "dialogue": "暑いね〜",
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "scene": "梅雨明け後の本格的な暑さの中、顔を合わせた瞬間に思わずこぼれる相槌",
+      "send_timing": "昼",
+      "send_psychology": "愚痴でも我慢でもなく、ただ「暑いね」と分かち合うだけで気持ちが軽くなる",
+      "outfit": "オフショルダーのリゾートトップス（アイスブルー）とストローバッグ",
+      "color_scheme": "アイスブルー・サンシャインイエロー・クリアホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Ice blue and sunshine yellow with clear white — the shimmer of midday summer heat. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in an ice-blue off-shoulder resort top, fanning herself lightly with one hand, expression a good-humored grimace at the heat. Hiyori (gentle white bird) perches on her shoulder, wings drooping slightly in playful exaggeration of the same heat. Composition: bust-up, front view, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『暑いね〜』in sunshine-yellow lettering placed at top right, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-03",
+      "dialogue": "楽しみにしてるよ",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "海の日3連休の予定を相手から聞いて、静かに弾む期待感を伝える",
+      "send_timing": "全時間帯",
+      "send_psychology": "はしゃぎすぎない「してるよ」の言い切りが、しずくらしい落ち着いた期待の伝え方になる",
+      "outfit": "ノーカラーの麻ジャケット（セージグリーン）にワイドパンツ",
+      "color_scheme": "セージグリーン・ストーンベージュ・ソフトゴールド",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Sage green and stone beige with soft gold — calm anticipation before a long-awaited holiday. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a collarless linen jacket in sage green, sitting with one hand resting on her knee, a small calendar leaf held loosely in the other, expression quietly delighted. Shizuku (small wise turtle with olive watercolor rings on shell) rests on the table beside her, neck stretched up as if listening in. Composition: three-quarter angle, seated medium shot, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『楽しみにしてるよ』in sage-gold lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-04",
+      "dialogue": "帽子忘れないでね",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "海の日3連休、海や屋外に出かける相手への日焼け対策のひとこと",
+      "send_timing": "朝",
+      "send_psychology": "「日焼け止め塗って」より軽く、忘れ物チェックのふりをした優しい気遣い",
+      "outfit": "ストライプのコットンシャツワンピース（マリンネイビー）",
+      "color_scheme": "マリンネイビー・ホワイト・サンドイエロー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Marine navy and white with sand yellow — the palette of a seaside morning departure. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a navy-and-white striped cotton shirt dress, holding out a small straw hat toward the viewer with a knowing smile. Shizuku (small wise turtle with olive watercolor rings on shell) peeks out from a woven beach bag at her feet, one flipper resting on the rim. Composition: front view, full body, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『帽子忘れないでね』in navy-sand lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-05",
+      "dialogue": "着いたら教えてね",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "3連休で遠出する相手に、無事の連絡だけもらえたら安心という軽い気遣い",
+      "send_timing": "昼・夕",
+      "send_psychology": "「気をつけて」の心配より、「教えてね」の一言の方が相手の負担にならず届く",
+      "outfit": "サマーニットのノースリーブ（ミルクベージュ）とキャンバスバッグ",
+      "color_scheme": "ミルクベージュ・テラコッタ・ウォームホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Milk beige and terracotta with warm white — the quiet color of a送り出す afternoon. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a sleeveless summer knit in milk beige, one hand raised in a small wave, phone held loosely in the other hand. Shiratama (fluffy black cat with white markings) sits at her feet looking toward the distance with ears perked. Composition: full body, side view, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『着いたら教えてね』in terracotta-beige lettering placed at top right, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-06",
+      "dialogue": "かき氷食べたい気分",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "猛暑の昼下がり、誰かと共有したくなる他愛ない夏らしい欲求",
+      "send_timing": "昼",
+      "send_psychology": "小さな欲求を口にすることで、相手との会話のきっかけを軽やかに作れる",
+      "outfit": "ギンガムチェックのキャミワンピース（ミントグリーン）",
+      "color_scheme": "ミントグリーン・シロップレッド・クリアホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Mint green and syrup red with clear white — the cool sweetness of shaved ice. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a mint-green gingham camisole dress, holding an imaginary small bowl shape with both hands, eyes bright with craving. Shiratama (fluffy black cat with white markings) sits beside her staring at the same imaginary bowl with equal longing. Composition: bust-up, front view, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『かき氷食べたい気分』in syrup-red lettering placed at top left, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-07",
+      "dialogue": "花火、一緒に見ようね",
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "scene": "夏祭り・花火大会シーズン開幕、大切な人を花火に誘う夜のひとこと",
+      "send_timing": "夜",
+      "send_psychology": "「行こう」ではなく「見ようね」という約束の言葉が、期待をそっと確定させる",
+      "outfit": "浴衣（紺地に朝顔柄）と麻の葉柄の帯",
+      "color_scheme": "ナイトネイビー・花火レッド・ゴールドスパーク",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Night navy and firework red with gold spark — the glow of a summer festival evening. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a navy yukata patterned with morning glories, looking up at an unseen sky with wide hopeful eyes, one hand lightly holding a paper fan. Hiyori (gentle white bird) flies just above her shoulder, wings catching a faint firework glow. Composition: three-quarter angle, full body, looking-up pose, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『花火、一緒に見ようね』in gold-red lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-08",
+      "dialogue": "ゆかた似合ってるね",
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "scene": "夏祭りで浴衣姿の相手に会えた瞬間の、素直な褒め言葉",
+      "send_timing": "夜",
+      "send_psychology": "服装をきちんと見て伝える褒め言葉は、社交辞令ではない実感として届く",
+      "outfit": "浴衣（生成りに撫子柄）に赤い帯締め",
+      "color_scheme": "生成りホワイト・撫子ピンク・レッド",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Natural white and dianthus pink with red — the modest elegance of a festival yukata. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a natural-white yukata patterned with pink dianthus flowers, red obi-jime tied neatly, hands clasped in front as she admires someone with a warm smile. Hiyori (gentle white bird) rests on a nearby paper lantern prop, head tilted in the same admiring direction. Composition: front view, bust-up, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『ゆかた似合ってるね』in pink-red lettering placed at top right, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-09",
+      "dialogue": "麦茶、飲んでる？",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "猛暑日、こまめな水分補給ができているか気にかける昼のひとこと",
+      "send_timing": "昼",
+      "send_psychology": "「水分とって」という指示形より、質問形の方が押しつけがましくなく届く",
+      "outfit": "リネンのシャツブラウス（グレージュ）と麻のパンツ",
+      "color_scheme": "グレージュ・麦茶ブラウン・アイスホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Greige and roasted-barley brown with ice white — the calm color of a cool glass of mugicha. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a greige linen shirt blouse, holding a small glass pitcher shape gently in both hands, eyebrows raised in gentle inquiry. Shizuku (small wise turtle with olive watercolor rings on shell) tilts her head from the tabletop beside the pitcher, equally curious. Composition: three-quarter angle, seated medium shot, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『麦茶、飲んでる？』in brown-ice lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-10",
+      "dialogue": "涼しい場所にいてね",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "炎天下へ出かける相手に、無理に外にいないでほしいと願う気遣い",
+      "send_timing": "昼",
+      "send_psychology": "「無理しないで」より具体的な行動を示すことで、相手も従いやすくなる",
+      "outfit": "麻のセットアップ（パウダーブルー）",
+      "color_scheme": "パウダーブルー・アイスミント・シルバーグレー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Powder blue and ice mint with silver grey — the color of shade on a scorching day. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a powder-blue linen set, one hand held up like a small visor over her brow, expression calmly concerned. Shizuku (small wise turtle with olive watercolor rings on shell) tucks fully into her shell in the shade of Coco's hand, only her eyes peeking out. Composition: bust-up, front view, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『涼しい場所にいてね』in mint-silver lettering placed at top left, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-11",
+      "dialogue": "お疲れさま、今週も",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "3連休を目前にした金曜の夜、一週間頑張った相手をねぎらう",
+      "send_timing": "夜",
+      "send_psychology": "「今週も」を添えることで、毎週続く積み重ねをちゃんと見ているという実感が伝わる",
+      "outfit": "部屋着のロングカーディガン（くすみラベンダー）",
+      "color_scheme": "くすみラベンダー・キャンドルオレンジ・ウォームグレー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Dusty lavender and candlelight orange with warm grey — the soft relief of a Friday evening. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a dusty-lavender long cardigan, sitting cross-legged with a cup of tea cradled in both hands, eyes half-closed in quiet relief. Shiratama (fluffy black cat with white markings) is curled asleep in her lap. Composition: front view, seated medium shot, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『お疲れさま、今週も』in lavender-orange lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-12",
+      "dialogue": "ありがとう、助かった",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "ちょっとした手伝いや気遣いを受けた直後に、率直に返す感謝",
+      "send_timing": "全時間帯",
+      "send_psychology": "「ありがとう」だけで終わらせず「助かった」を添えることで、実際に効果があったと伝わる",
+      "outfit": "コットンシャツ（ソフトホワイト）にデニムのサロペット",
+      "color_scheme": "ソフトホワイト・デニムブルー・アプリコット",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Soft white and denim blue with apricot — the plain honesty of a genuine thank-you. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a white cotton shirt under denim overalls, both hands pressed together in a small grateful bow, eyes crinkled with sincerity. Shiratama (fluffy black cat with white markings) sits beside her mirroring the gesture with paws together. Composition: full body, front view, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『ありがとう、助かった』in apricot-white lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-13",
+      "dialogue": "変わらないところが好き",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "長い付き合いの相手に、変わらない安心感をあらためて言葉にする",
+      "send_timing": "全時間帯",
+      "send_psychology": "「好き」だけより「変わらないところが」を添えると、積み重ねた時間ごと肯定できる",
+      "outfit": "コットンニットのベスト（オリーブ）とロングスカート",
+      "color_scheme": "オリーブグリーン・ストーンベージュ・ディープブラウン",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Olive green and stone beige with deep brown — the settled color of long familiarity. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in an olive cotton knit vest, chin resting lightly on one hand, eyes soft with quiet fondness. Shizuku (small wise turtle with olive watercolor rings on shell) rests beside her elbow, shell catching the same warm light. Composition: three-quarter angle, bust-up, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『変わらないところが好き』in olive-brown lettering placed at top right, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-14",
+      "dialogue": "今日も一緒にいてくれて嬉しい",
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "scene": "特別な出来事がなくても、隣にいてくれることへの静かな感謝を伝える夜",
+      "send_timing": "夜",
+      "send_psychology": "理由のない「嬉しい」が、日常そのものを肯定する言葉になる",
+      "outfit": "シルクのナイトドレス（ローズベージュ）",
+      "color_scheme": "ローズベージュ・キャンドルゴールド・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Rose beige and candle gold with milk white — the tender hush of a shared evening. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a rose-beige silk night dress, both hands resting over her heart, eyes gently closed in contentment. Hiyori (gentle white bird) nestles against her collarbone, wings folded softly. Composition: close-up, front view, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『今日も一緒にいてくれて嬉しい』in gold-rose lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-15",
+      "dialogue": "無理しないでね",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "夏バテ気味で頑張りすぎている相手を、静かに引き止める夜のひとこと",
+      "send_timing": "夜",
+      "send_psychology": "「頑張れ」の逆にある言葉。止めてもらえることで、初めて力を抜ける人がいる",
+      "outfit": "ゆったりしたリネンのルームウェア（グレイッシュブルー）",
+      "color_scheme": "グレイッシュブルー・ムーンシルバー・ソフトホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Greyish blue and moon silver with soft white — the quiet permission of a late summer night. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in loose greyish-blue linen loungewear, one hand gently placed over her own chest, expression calm and protective. Shizuku (small wise turtle with olive watercolor rings on shell) rests fully withdrawn into her shell beside her, safe and unhurried. Composition: bust-up, three-quarter angle, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『無理しないでね』in silver-blue lettering placed at top left, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-16",
+      "dialogue": "その調子でいいよ",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "小さな一歩を踏み出した相手に、これでいいと静かに背中を押す",
+      "send_timing": "全時間帯",
+      "send_psychology": "評価ではなく継続の許可を与える言葉が、プレッシャーなく相手を前に進ませる",
+      "outfit": "サマーカーディガン（ソフトイエロー）にワイドパンツ",
+      "color_scheme": "ソフトイエロー・ウォームグレー・クリアホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Soft yellow and warm grey with clear white — the gentle color of steady encouragement. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a soft-yellow summer cardigan, one thumb held up lightly at chest height, smile calm and reassuring. Shiratama (fluffy black cat with white markings) walks beside her mid-step, tail raised in matching confidence. Composition: full body, side view, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『その調子でいいよ』in yellow-grey lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-17",
+      "dialogue": "一緒なら大丈夫",
+      "character": [
+        "Coco",
+        "しずく",
+        "ひより"
+      ],
+      "scene": "不安を抱えている相手に、一人じゃないことを伝えて安心させる",
+      "send_timing": "全時間帯",
+      "send_psychology": "「大丈夫だよ」より「一緒なら」を添えることで、根拠のある安心感になる",
+      "outfit": "リネンのロングワンピース（セージホワイト）",
+      "color_scheme": "セージホワイト・ディープティール・ソフトゴールド",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Sage white and deep teal with soft gold — three companions standing quietly together. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a long sage-white linen dress, standing centered with both arms open slightly in a gesture of steady reassurance. Shizuku (small wise turtle with olive watercolor rings on shell) sits at her feet and Hiyori (gentle white bird) perches on her shoulder, all three facing the viewer together. Composition: full body, front view, all three grouped together, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『一緒なら大丈夫』in teal-gold lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-18",
+      "dialogue": "海の日、ゆっくりしてね",
+      "character": [
+        "Coco",
+        "ひより"
+      ],
+      "scene": "海の日の祝日の朝、予定を詰め込まずのんびり過ごしてほしいという願い",
+      "send_timing": "朝",
+      "send_psychology": "祝日を「楽しんで」ではなく「ゆっくりしてね」にすることで、休むことへの許可になる",
+      "outfit": "リゾートワンピース（ターコイズブルー）に貝殻のアクセサリー",
+      "color_scheme": "ターコイズブルー・シェルホワイト・サンゴピンク",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Turquoise blue and shell white with coral pink — the relaxed color of a marine holiday morning. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a turquoise resort dress with a small shell pendant, reclining lightly against a cushion with eyes closed in easy rest. Hiyori (gentle white bird) floats gently above her like a lazy summer breeze made visible. Composition: three-quarter angle, full body, reclining pose, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『海の日、ゆっくりしてね』in turquoise-coral lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-19",
+      "dialogue": "3連休楽しんで",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "海の日3連休を前にした前日、相手を明るく送り出す一言",
+      "send_timing": "朝",
+      "send_psychology": "「楽しんで」という短い後押しが、相手の休暇の解放感をそのまま肯定してくれる",
+      "outfit": "コットンのサマーシャツ（レモンイエロー）",
+      "color_scheme": "レモンイエロー・スカイブルー・ホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Lemon yellow and sky blue with white — the bright send-off color of a long weekend. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a lemon-yellow cotton summer shirt, both hands waving energetically overhead, expression openly delighted for someone else's holiday. Shiratama (fluffy black cat with white markings) leaps mid-air beside her in a small joyful hop. Composition: full body, dynamic pose, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『3連休楽しんで』in blue-yellow lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-20",
+      "dialogue": "お土産話、待ってるね",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "旅行や帰省に出かけた相手を、帰りを楽しみに待つ気持ちで見送る",
+      "send_timing": "昼",
+      "send_psychology": "「お土産」ではなく「お土産話」にすることで、物より時間を共有したい気持ちが伝わる",
+      "outfit": "サマーニットのカーディガン（ピーチベージュ）",
+      "color_scheme": "ピーチベージュ・トラベルカーキ・ソフトゴールド",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Peach beige and travel khaki with soft gold — the warm patience of waiting for a good story. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a peach-beige summer knit cardigan, chin propped on both hands with eyes bright with anticipation. Shiratama (fluffy black cat with white markings) sits attentively beside her, ears perked as if already listening for the story. Composition: bust-up, front view, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『お土産話、待ってるね』in gold-peach lettering placed at top right, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-21",
+      "dialogue": "本日もよろしくお願いいたします",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "夏の新しい取引先やお客様とのやり取りに使える、丁寧なビジネス挨拶",
+      "send_timing": "朝・昼",
+      "send_psychology": "定型の丁寧語でも、Cocoとしずくの柔らかさが加わることで冷たく響かない",
+      "outfit": "サマーテーラードジャケット（ネイビー）にシフォンブラウス",
+      "color_scheme": "ネイビー・シフォンホワイト・シルバーグレー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Navy and chiffon white with silver grey — the composed color of professional courtesy. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a navy summer tailored jacket over a chiffon blouse, bowing slightly with both hands folded in front, expression sincere and composed. Shizuku (small wise turtle with olive watercolor rings on shell) sits formally beside her on a small folded cloth. Composition: front view, full body, slight bow, large copy space at bottom.\n[Text/Format] Handwritten-style Japanese text『本日もよろしくお願いいたします』in navy-silver lettering placed at top, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-22",
+      "dialogue": "ご確認のほど、よろしくお願いいたします",
+      "character": [
+        "Coco",
+        "しずく"
+      ],
+      "scene": "夏の業務連絡やメールの締めに添えられる、丁寧な依頼の一言",
+      "send_timing": "昼",
+      "send_psychology": "硬くなりがちな依頼文にも、キャラクターが添うことで受け取る側の緊張がやわらぐ",
+      "outfit": "サマーテーラードジャケット（グレージュ）",
+      "color_scheme": "グレージュ・ペーパーホワイト・スチールブルー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Greige and paper white with steel blue — the neutral tone of a considerate business request. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a greige summer tailored jacket, one hand gesturing toward a small paper-like leaf held in the other, expression polite and clear. Shizuku (small wise turtle with olive watercolor rings on shell) rests beside the paper, one flipper resting on its edge as if double-checking it too. Composition: three-quarter angle, seated medium shot, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『ご確認のほど、よろしくお願いいたします』in steel-grey lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-23",
+      "dialogue": "暑い中お疲れさまです",
+      "character": [
+        "Coco",
+        "しらたま"
+      ],
+      "scene": "猛暑の中働く取引先や同僚に向けた、丁寧な気遣いのビジネス表現",
+      "send_timing": "全時間帯",
+      "send_psychology": "天候への言及を挟むことで、事務的になりがちな挨拶に体温が加わる",
+      "outfit": "サマーブラウス（ミストグレー）にパールのアクセサリー",
+      "color_scheme": "ミストグレー・パールホワイト・アンバーゴールド",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Mist grey and pearl white with amber gold — the polite warmth of midsummer business courtesy. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a mist-grey summer blouse with a small pearl necklace, one hand gently fanning a paper fan, expression composed and considerate. Shiratama (fluffy black cat with white markings) sits properly beside her, tail wrapped neatly around her paws. Composition: bust-up, front view, large copy space at top.\n[Text/Format] Handwritten-style Japanese text『暑い中お疲れさまです』in amber-grey lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    },
+    {
+      "id": "⑭-24",
+      "dialogue": "みんなで乾杯しよう！",
+      "character": [
+        "Coco",
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "scene": "海の日3連休の締めくくり、全員で集まって過ごす特別な瞬間",
+      "send_timing": "夜",
+      "send_psychology": "Cocoと3匹全員が揃うレア感が、「今日は特別な日」という気持ちの重みを表現する",
+      "outfit": "サマードレス（サンセットオレンジ）にゴールドのアクセサリー",
+      "color_scheme": "サンセットオレンジ・ゴールドスパーク・スカイブルー",
+      "image_prompt": "[Style] Soft watercolor illustration with gentle paint bleeding and visible brush texture, pastel tones, hand-painted traditional art feel, not digital-flat. Sunset orange and gold spark with sky blue — the celebratory glow of a long weekend's final evening. Warm sparkling eyes with soft light reflection in the pupils, gentle cheerful expression radiating warmth.\n[Character] Coco (stylish 41-year-old woman, sleek bob haircut, cool-beauty features softened by warmth) in a sunset-orange summer dress, raising a small glass shape high with a wide joyful smile. Shiratama (fluffy black cat with white markings), Shizuku (small wise turtle with olive watercolor rings on shell), and Hiyori (gentle white bird) gather closely around her feet and shoulder, all mid-gesture of celebration. Composition: full body, front view, all four grouped together, centered, large copy space above.\n[Text/Format] Handwritten-style Japanese text『みんなで乾杯しよう！』in orange-gold lettering placed at top center, not overlapping character faces; strict 1:1 square crop, completely transparent background, PNG with alpha channel, clean edge cutout with no color fringe, LINE sticker style, market-ready polish.",
+      "with_coco": true,
+      "type": "キャラ＋Coco"
+    }
+  ]
+}
