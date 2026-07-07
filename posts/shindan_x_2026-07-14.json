@@ -1,0 +1,132 @@
+{
+  "week": "2026-07-14_2026-07-20",
+  "type": "shindan_x",
+  "posts": [
+    {
+      "date": "2026-07-14",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "episode_ref": "E13",
+      "frame": "「言われたので」は、免罪符にも呪いにもなる。\n\n自分が決めていない指示が、自分を飛び越えて部下に直接下りた。責任だけが、後からこちらに積まれる。\n\nこの時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "「指示なので」と、自分が関わっていない判断まで含めて全部自分の責任として抱える",
+        "「自分は聞いていない」と、部下の前で線引きを主張する",
+        "自分が決めた部分にだけ責任を持ち、決めていない部分は経緯を記録して保留する",
+        "何も言わず、成り行きに任せる"
+      ],
+      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, quiet scene — top-left: Coco quietly gathering an overflowing stack of responsibilities into her own arms, earnest overwhelmed expression, しずく beside her; top-right: Coco with a composed firm gesture drawing a gentle line in front of an unseen junior figure, protective clear gaze, しらたま watching nearby; bottom-left: Coco calmly writing in a notebook with precise dual focus, steady discerning gaze, しずく and しらたま both close at her side; bottom-right: Coco with a softly uncertain drifting expression, open unresolved hands, ひより perched quietly beside her — each a gentle office / relationship metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background with subtle deep green bamboo and pale morning glory for midsummer. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant deep indigo summer formal kimono shown at the collar and shoulders, bust-up — and/or the animals (しずく a gentle green turtle / しらたま a fluffy round white cat / ひより a small white bird with pale blue wings); never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "責任は裁量のぶんだけついてくる。それが逆転すると、消耗はいつも中間管理職に集まる。\n\n──────────────\nA｜「指示なので」と全部自分の責任として抱える\n\n一見誠実に見えるが、自分が選んでいない判断まで背負うと、境界が消える。次も同じ経路で指示が降りてきても、止められなくなる。\n\n──────────────\nB｜「自分は聞いていない」と部下の前で線引きを主張する\n\n線引きの主張自体は間違っていない。ただし部下の前でそれをやると、部下は「誰の指示に従えばいいか」を見失う。線引きは、伝える相手を選ぶ。\n\n──────────────\nC｜自分が決めた部分にだけ責任を持ち、決めていない部分は経緯を記録して保留する\n\n最も機能する型だ。「これは自分が決めたことなので向き合う」「これは自分を飛び越えて降りてきたことなので、経緯だけ記録する」——この二層に分けると、責任の所在が静かに正確になる。\n\n──────────────\nD｜何も言わず成り行きに任せる\n\n穏便に見えるが、記録がないまま時間が経つと「誰の判断だったか」が曖昧になり、後から全部こちらに寄せられるリスクが残る。\n\n──────────────\n\n「誰かに言われたから」は免罪符にならない。でも、自分が決めてもいないことまで背負う必要もない。",
+      "comment_2": "「責任は裁量のぶんだけ」の仕組み化：\n\n1. 指示が来た経路を記録する（誰が・いつ・どの経路で）\n2. 自分が判断した部分と、判断していない部分を分けて言語化する\n3. 判断していない部分は、結果が出ても「経緯」として淡々と提示する\n\n責任の重さは、握った裁量の重さと同じであっていい。\n重さがねじれている組織ほど、この二層の分け方が静かに効いてくる。\n\n──────────────\n\n→ 「責任と裁量を一致させる仕組みと、管理職が消耗しない組織の在り方」は、プロフィールのnoteへ。5万人の現場から逆算した、組織の温度を整える技術。単発でもメンバーシップでも受け取れます。"
+    },
+    {
+      "date": "2026-07-15",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま",
+      "episode_ref": "E17",
+      "frame": "「人気があるんだから、いいじゃん」——この一言で、現場の判断がひっくり返った。\n\n素行や実績より、好かれているかどうかが先に評価される。\n\nそんな場面に立ち会った時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。",
+      "choices": [
+        "上の判断を尊重し、自分の評価基準も合わせて緩める",
+        "納得できないまま、口には出さず現場だけで基準を維持する",
+        "「その順番だと、いずれ数字に出ます」と、事実ベースで淡々と伝える",
+        "評価そのものに関わるのをやめる"
+      ],
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A (top-left): Coco quietly lowers her own standard, matching an unseen shifted bar with a faintly resigned soft expression; a gentle green turtle (Shizuku) beside her, a fluffy white cat (Shirotsuma) watching with uncertain concern; warm humid mid-July morning light. B (top-right): Coco holds a firm private standard while the outer atmosphere feels mismatched and unspoken, quiet internal tension beneath a composed exterior; Shirotsuma sits nearby with patient but strained stillness; soft overcast July light. C (bottom-left): Coco places one calm gesture forward, quietly pointing toward a future outcome rather than an argument, composed and unhurried; Shizuku and Shirotsuma both watch with calm attention; clear bright July afternoon light. D (bottom-right): Coco steps back from a shared table, choosing quiet distance with dignified composure; Shirotsuma remains at the table alone; soft fading evening July light. Quiet Luxury aesthetic. Muted sage green, soft charcoal, and pale cream tones. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant soft sage green summer formal kimono shown at the collar and shoulders, bust-up — together with Shizuku and Shirotsuma; never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "基準の順番が逆になった組織は、いずれ静かに数字が教えてくれる。\n\n──────────────\nA｜自分の評価基準も合わせて緩める\n\n上に合わせることは処世術として理解できる。ただし基準を緩めた瞬間、現場が見ている「何が評価されるか」の景色も一緒に歪む。緩めた基準は、下にもそのまま伝染する。\n\n──────────────\nB｜納得できないまま現場だけで基準を維持する\n\n現場の実務としては機能する。ただし「上の基準」と「現場の基準」が分裂したまま放置されると、板挟みになるのはいつも中間管理職だ。分裂は、どこかで誰かが疲弊して支払うことになる。\n\n──────────────\nC｜「その順番だと、いずれ数字に出ます」と事実ベースで伝える\n\n最も機能する型だ。人気を否定する必要はない。「順番」の話だと示すだけでいい。人気が先に来る基準は、萎縮させても成果には繋がらない——これは感情論ではなく、時間が経てば数字が証明する。\n\n──────────────\nD｜評価そのものに関わるのをやめる\n\n消耗を避ける選択として理解できる。ただし関わりをやめると、基準を正す機会そのものも手放すことになる。距離を取ることと、諦めることは違う。\n\n──────────────\n\n基準の順番は、いつも最後に数字が答え合わせをする。",
+      "comment_2": "「順番のズレ」を伝える技術：\n\n1. 「人気か実力か」の二択にしない。「順番」の話にする\n2. 今すぐの正誤ではなく、時間軸で語る（「いずれ数字に出ます」）\n3. 相手の判断を否定せず、結果だけを淡々と予告する\n\n基準の順番がそもそも逆——それは声を荒げなくても、時間が証明してくれる類の話だ。\n静かに言い切って、あとは結果に語らせる。\n\n──────────────\n\n→ 「評価基準の順番を整える技術と、組織の温度調整」は、プロフィールのnoteへ。5万人の現場から逆算した、消耗しない組織の作り方。単発でもメンバーシップでも受け取れます。"
+    },
+    {
+      "date": "2026-07-16",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🕊ひより",
+      "episode_ref": "E36",
+      "frame": "話が進まないのは、日程の問題じゃない。\n明確な選択肢を出しても、笑われたり、命じられたり、保留にされたりする。\n\n会議やちょっとした調整で話が進まない時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "「どうすれば早く決まるか」を、さらにわかりやすく整理して出し直す",
+        "決まらないことにイライラしながらも、待つしかないと諦める",
+        "相手が握っているのは「中身」ではなく「誰が上か」だと見抜いて、立場を立てた形で選ばせる",
+        "自分の判断で、上に確認せず先に進めてしまう"
+      ],
+      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, quiet scene — top-left: Coco carefully rearranging papers into an even clearer layout, earnest focused expression, ひより watching from beside her; top-right: Coco with tense patient stillness, quiet restrained frustration beneath a composed exterior, ひより perched close; bottom-left: Coco with a knowing composed half-smile, gently sliding a choice toward an unseen other with deferential ease, ひより tilting its head; bottom-right: Coco moving forward alone with quiet resolve, unhurried confident posture, ひより in gentle flight beside her — each a gentle office / relationship metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background with subtle pale blue morning glory and gentle summer clouds. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant pale blue summer formal kimono shown at the collar and shoulders, bust-up — and/or the animal (ひより a small white bird with pale blue wings); never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "正論が通らない時、相手が見ている問いが違う場合がある。\n\n──────────────\nA｜さらにわかりやすく整理して出し直す\n\n誠実なアプローチだ。ただし「中身」を磨いても、相手が見ているのが「誰が上か」という別の問いなら、磨いた分だけ空回りする。\n\n──────────────\nB｜イライラしながらも待つしかないと諦める\n\n気持ちはよくわかる。ただし諦めは学習を止める。「なぜ決まらないのか」の構造を見ないまま、同じ場面を繰り返すことになる。\n\n──────────────\nC｜相手が握っている問いを見抜き、立場を立てた形で選ばせる\n\n最も機能する型だ。「どうすれば回るか」を問う人と、「誰が上か」を問う人は、そもそも見ている盤面が違う。地位で動く人には、決定権が相手にあるように見える形で選択肢を渡す。中身は変えず、器だけ変える。\n\n──────────────\nD｜上に確認せず自分の判断で先に進める\n\nスピードは出る。ただし「立場を守るためにわざと遅らせる」動機を持つ相手には、勝手に進めたこと自体が新しい火種になりやすい。\n\n──────────────\n\n握っている問いを見抜けば、正論を通す道筋が変わる。",
+      "comment_2": "「位置のこだわりを持つ人」への対処の手順：\n\n1. 決まらない理由が「中身」ではなく「立場」かもしれないと疑う\n2. 選択肢は変えず、決定の主語だけを相手に譲る形に組み替える\n3. 「どちらでも進められます、お決めください」——決めたのは相手、という形を残す\n\nゴールで動く人には最短ルートを見せればいい。\n地位で動く人には、決めたのは自分だ、という景色を見せればいい。どちらも否定せず、渡し方だけを変える。\n\n──────────────\n\n→ 「会議が進まない構造と、決定権の渡し方」は、プロフィールのnoteへ。5万人の現場から逆算した、組織の温度を整える技術。単発でもメンバーシップでも受け取れます。"
+    },
+    {
+      "date": "2026-07-17",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "episode_ref": "E56",
+      "frame": "握って回している間は、安心できる。\nでも、握ったまま渡さないチームは、いつまでも自分抜きでは回らない。\n\n「任せる」という場面で、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。",
+      "choices": [
+        "内側で決めて、結論だけを黙って流す",
+        "任せてみるが、不安で細かく口を出してしまう",
+        "「私はこう考えている」と、判断の過程ごと開いて委ねる",
+        "任せた後は一切関わらず、結果だけを見る"
+      ],
+      "image_prompt": "The image is divided into four equal quadrants (top-left for A, top-right for B, bottom-left for C, bottom-right for D). A (top-left): Coco writes a quiet conclusion alone at a low table and slides only the finished note forward, toward a gentle green turtle (Shizuku), a fluffy white cat (Shirotsuma) and a small white bird (Hiyori) who watch from a slight distance, unaware of the process behind it; warm humid mid-July morning light. B (top-right): Coco gestures a task toward Shizuku, who begins tentatively while Coco leans in with visible unease, watching closely; Shirotsuma and Hiyori observe the hovering closeness; soft overcast July light. C (bottom-left): Coco sits openly beside Shizuku, Shirotsuma and Hiyori, gesturing through a visible thought process on a small unfurled scroll, all gathered close in shared understanding; clear bright July afternoon light. D (bottom-right): Shizuku, Shirotsuma and Hiyori move forward independently with a task while Coco rests calmly at a distance, present but not intervening, faint uncertainty in the open space between them; soft fading July evening light. Quiet Luxury aesthetic. Warm sage, soft gold, and pale cream tones. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant warm gold summer formal kimono shown at the collar and shoulders, bust-up — together with Shizuku, Shirotsuma and Hiyori; never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "委ねられるかどうかは、握って回してきた時間の量で決まる。\n\n──────────────\nA｜内側で決めて結論だけを流す\n\n効率は良い。ただし相手は「なぜその結論か」を学べないまま、次も同じように待つ人になる。判断の型が、渡らない。\n\n──────────────\nB｜任せてみるが不安で細かく口を出す\n\n任せようとする意志はある。ただし細かい介入が続くと、相手は「結局は握られている」と感じ、自分で判断する練習の機会を失う。\n\n──────────────\nC｜判断の過程ごと開いて委ねる\n\n最も機能する型だ。「私はこう考えてる、でもこれは私の偏りかもしれない」——過程を開くと、相手は判断の仕方そのものを学べる。偏りにラベルを貼ることで、相手は安心して反論もできる。委ねるのは力を手放すことではなく、力がある証明だ。\n\n──────────────\nD｜任せた後は一切関わらず結果だけを見る\n\n放任は委任とは違う。過程が見えないまま結果だけを問われると、相手は次から挑戦を避けるようになる。\n\n──────────────\n\n委ねる力は、握って回してきた時間の証明として現れる。",
+      "comment_2": "「委ねる」の実際の手順：\n\n1. 結論だけでなく、そこに至った考え方を言葉にして渡す\n2. 自分の判断に潜む偏りを先に自分でラベル付けする（「これは私の好みかもしれない」）\n3. 相手の判断が違っても、まず理由を聞く\n\nAIが結論を早く出せる時代だからこそ、人に委ねられるのは「過程を渡せるかどうか」になる。\n握らなくても回ると確信できるのは、握って回してきた時間が積んであるからだ。\n\n──────────────\n\n→ 「委ねる技術と、AI時代に人が担う役割」は、プロフィールのnoteへ。5万人の現場から体系化した、組織の温度を整える技術。単発でもメンバーシップでも受け取れます。"
+    },
+    {
+      "date": "2026-07-18",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま",
+      "episode_ref": "E33",
+      "frame": "肩書きを失った瞬間に、誰もいなくなる人がいる。\n肩書きを失っても、人がついてくる人がいる。\n\n信頼を積む場面で、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "自分の周りに人を集めて、数の力で場を保つ",
+        "困っている人を見ても、余計な口出しにならないよう一歩引いて静観する",
+        "トラブルの時に時間を投げ打って現場を守り、あとは静かに背中で示す",
+        "誰かとつながることに、あまり意味を感じない"
+      ],
+      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, quiet scene — top-left: Coco surrounded by a small gathered cluster of implied figures, composed but faintly anxious smile seeking reassurance in numbers, しずく beside her; top-right: Coco standing at a careful, hesitant distance from a quietly struggling unseen figure, holding back with a considerate but uncertain expression, unsure whether to step in, しらたま looking up at her with a questioning tilt; bottom-left: Coco kneeling with quiet urgent devotion beside an unseen struggling presence, sleeves gently gathered, resolute warm gaze, しずく and しらたま both close at her side; bottom-right: Coco standing calm and unbothered in open quiet space, serene self-contained expression, しらたま resting near her feet — each a gentle office / relationship metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background with subtle deep green bamboo and warm summer light. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant deep moss green summer formal kimono shown at the collar and shoulders, bust-up — and/or the animals (しずく a gentle green turtle / しらたま a fluffy round white cat); never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "本物のつながりは、群れた時間ではなく、ともに火中に飛び込んだ夜に生まれる。\n\n──────────────\nA｜数の力で場を保つ\n\n安心材料にはなる。ただし肩書きや立場が支えている関係は、それが外れた瞬間に静かに解散する。自分の物差しでしか他者を測れないと、群れることでしか保身できなくなる。\n\n──────────────\nB｜困っている人を見ても一歩引いて静観する\n\n出しゃばらない配慮のようにも見える。ただし本当に助けが要る瞬間に動かなければ、そこにいなかったのと同じに映る。信頼は、動いた事実でしか証明できない。\n\n──────────────\nC｜トラブルの時に時間を投げ打って守り、あとは背中で示す\n\n最も強い型だ。本物のボスは、いざという時に動く。その結果生まれる絆は、何年経っても笑い合える深さになる。背中で動かす人は、肩書きを失っても人がついてくる。\n\n──────────────\nD｜つながりにあまり意味を感じない\n\n消耗を避ける合理的な選択に見える。ただしつながりを完全に切ると、いざという時に守り守られる関係そのものが育たなくなる。\n\n──────────────\n\n群れなくても、孤独ではない。背中には、いつも誰かが見ている。",
+      "comment_2": "「背中で証明する」の実際：\n\n1. 平時は群れなくていい。実力と結果を静かに積む\n2. トラブルが起きた時こそ、時間と労力を惜しまず現場に立つ\n3. 感謝や評価を求めず、ただそこにいたという事実だけを残す\n\n肩書きで動かす人間は肩書きを失った瞬間に誰もいなくなる。\n背中で動かす人間は、肩書きを失っても人がついてくる。\n\n──────────────\n\n→ 「背中で信頼を積む技術と、5万人の現場で見た本物のリーダー像」は、プロフィールのnoteへ。単発でもメンバーシップでも受け取れます。"
+    },
+    {
+      "date": "2026-07-19",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "episode_ref": "E44",
+      "frame": "「自分が責任持ちます」——その優しさが、育つ機会を奪っていることがある。\n\n責任が本人に着地しそうになるたび、誰かがクッションを敷く。\n\nそんな場面に立ち会った時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。",
+      "choices": [
+        "その優しさに感心して、自分も同じように庇う",
+        "違和感はあるが、場の空気を壊したくなくて黙って見ている",
+        "「今回は本人に着地させましょう」と、静かに一言を挟む",
+        "自分には関係ないと、関わらないようにする"
+      ],
+      "image_prompt": "Coco and a fluffy white cat (Shirotsuma) appear together in all four quadrants. A (top-left): Shirotsuma gently slides a soft cushion beneath a small unsteady figure about to touch the ground; Coco watches with an admiring, agreeing expression, quietly considering doing the same; warm humid mid-July morning light. B (top-right): The same scene repeats; Coco watches with a faintly uneasy stillness, choosing not to intervene, arms held close; soft overcast July light. C (bottom-left): Coco steps in and quietly pulls the cushion back just slightly with a calm gentle gesture, allowing the small figure to touch the ground on its own for the first time; Shirotsuma looks on, gently reconsidering; clear bright July afternoon light. D (bottom-right): Coco sits apart with a detached composed expression, facing away from the scene entirely; Shirotsuma remains near the cushion alone; soft fading July evening light. Quiet Luxury aesthetic. Soft ivory, pale rose, and warm cream tones. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant soft ivory summer formal kimono shown at the collar and shoulders, bust-up — together with Shirotsuma; never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "過剰な優しさが、責任の着地点を消し続けることがある。\n\n──────────────\nA｜同じように庇う\n\n優しさとしては自然な反応だ。ただし庇いが重なるほど、本人は「自分の責任」という実感を持つ機会そのものを失っていく。\n\n──────────────\nB｜違和感はあるが黙って見ている\n\n場の空気を守る選択として理解できる。ただし黙って見ている間も、着地しない責任は静かに積み上がり続ける。\n\n──────────────\nC｜「今回は本人に着地させましょう」と一言挟む\n\n最も機能する型だ。指摘ではなく提案の形にすると、場の空気を壊さずに済む。過剰な支援が機能不全の仕組みそのものになっていることを、誰かが一度は言葉にする必要がある。\n\n──────────────\nD｜関わらないようにする\n\n消耗を避ける選択だが、見て見ぬふりを続けると、着地しない責任がやがて別の形で組織全体のコストになって返ってくる。\n\n──────────────\n\n優しさは、着地点を作ることと矛盾しない。",
+      "comment_2": "「クッションを敷きすぎない」ための線引き：\n\n1. 助けるのは「やり方」まで。「責任の所在」までは肩代わりしない\n2. 本人が失敗した時、結果を淡々と本人に返す（罰ではなく、事実として）\n3. その上で、次に向けた支援は惜しまない\n\n優しさが機能不全の仕組みになっていないか、時々点検する。\n本当の優しさは、いつか本人が自分の足で立てるようにすることだ。\n\n──────────────\n\n→ 「過保護にならない育成の仕組みと、組織の温度調整」は、プロフィールのnoteへ。5万人の現場から逆算した、消耗しない組織の作り方。単発でもメンバーシップでも受け取れます。"
+    },
+    {
+      "date": "2026-07-20",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく",
+      "episode_ref": "E21",
+      "frame": "必要な情報を最後まで知らされなかった。\nなのに後で「準備不足」として咎められた。\n\n足りなかったのは、自分の準備じゃなく、渡されなかった情報のほう——\nそんな時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "「自分の準備が足りなかった」と受け止めて次に活かそうとする",
+        "悔しさを感じながらも、何も言わずに飲み込む",
+        "いつ・何を訊いて・どう返ってこなかったかを、淡々と記録に残す",
+        "「情報をもらえなかった」と、その場で強く主張する"
+      ],
+      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, quiet scene — top-left: Coco with a gentle self-reflective nod, quietly taking in a lesson with soft accepting expression, しずく beside her; top-right: Coco with quietly restrained disappointment, composed but subdued posture, しずく watching with concern; bottom-left: Coco calmly writing a dated note with precise deliberate care, steady clear gaze, しずく resting attentively nearby; bottom-right: Coco with a firm assertive expression mid-sentence, direct forward gaze, しずく alert beside her — each a gentle office / relationship metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background with subtle soft aqua and seafoam tones evoking early summer sea breeze for Marine Day week, gentle wave-like patterns in the fabric border. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant soft aqua summer formal kimono shown at the collar and shoulders, bust-up — and/or the animal (しずく a gentle green turtle); never Coco alone. Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "comment_1": "情報を伏せた上で作られた落ち度は、こちらの落ち度ではない。\n\n──────────────\nA｜自分の準備が足りなかったと受け止める\n\n向上心としては尊い。ただし原因が情報の非対称にあった場合、そこを見誤ると同じ構造で何度も「準備不足」を背負わされることになる。\n\n──────────────\nB｜悔しさを感じながら飲み込む\n\n穏便だが、記録が残らないまま時間が経つと、次に同じことが起きた時にも「証拠」が手元にない状態が続く。\n\n──────────────\nC｜いつ・何を訊いて・どう返ってこなかったかを記録に残す\n\n最も機能する型だ。答えが来なくても、「ちゃんと訊いた」という事実は記録に残る。沈黙もまた、相手の側の記録になる。感情ではなく事実で、落ち度の所在を静かに正確にしておく。\n\n──────────────\nD｜その場で強く主張する\n\n主張の内容自体は正しいことが多い。ただし感情が乗ると「言い訳している人」のフレームに収められやすい。同じ主張も、記録という形で残す方が長く効く。\n\n──────────────\n\n渡されなかった情報を、こちらの落ち度にはさせない。",
+      "comment_2": "「準備不足」と呼ばせないための仕組み：\n\n1. 必要な情報を、いつ・誰に・どう訊いたかを都度メモしておく\n2. 返事が来なくても、既読・未読・返答の有無だけは記録する\n3. 後から問われた時は、感情ではなく「訊いた記録」だけを淡々と提示する\n\n新しい一週間の始まりに、去年までの「言われっぱなし」を持ち込まない。\n訊いたという事実は、答えが来なくても、あなたを守る記録になる。\n\n──────────────\n\n→ 「情報の非対称を記録で埋める技術と、組織の温度を整える方法」は、プロフィールのnoteへ。5万人の現場から逆算した、消耗しない組織の作り方。単発でもメンバーシップでも受け取れます。"
+    }
+  ]
+}
