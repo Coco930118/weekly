@@ -1,5 +1,6 @@
 {
   "weeks": [
+    "week_2026_07_14_2026_07_20.json",
     "week_2026_07_07_2026_07_13.json",
     "shindan_th_2026-07-14.json",
     "shindan_th_2026-07-07.json",
@@ -9,8 +10,7 @@
     "week_stamppromo_2026_07_14_2026_07_20.json",
     "week_stamppromo_2026_07_07_2026_07_13.json",
     "week_linestamp_2026_07_13_2026_07_19.json",
-    "week_linestamp_2026_07_06_2026_07_12.json",
-    "week_2026_06_30_2026_07_06.json"
+    "week_linestamp_2026_07_06_2026_07_12.json"
   ],
   "linestamps": [
     "linestamp_2026_07_06.json",
