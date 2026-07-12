@@ -9,7 +9,7 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🕊ひより",
       "episode_ref": "E71",
-      "frame": "思ったことを伝えただけなのに、なぜか喧嘩になる夜がある。\n\nそれ、伝え方のせいかもしれない。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "思ったことを、そのまま言おうとした瞬間——なぜかケンカになっている。\n\nそれ、伝え方のせいかもしれない。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "「いつもそうだよね」と、今日のことなのに過去のパターンまで持ち出してしまう",
         "「私はこう感じた」のつもりが、気づくと「あなたが悪い」という言い方になっている",
@@ -26,7 +26,7 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく",
       "episode_ref": "E73",
-      "frame": "全部一人で抱えて、誰にも頼らずやり切った夜のほうが、なぜか一番疲れている。\n\nそれ、頑張ったからじゃないかもしれない。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "「大丈夫？」と聞かれた瞬間、反射的に「大丈夫」と答えてしまう。\n\nそれ、頑張ったからじゃないかもしれない。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "「迷惑かけたくない」が口癖になっていて、困っていても自分から言い出せない",
         "頼んだ後の「ありがとう」が言えるか不安で、最初から頼むのをやめてしまう",
@@ -43,7 +43,7 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく + 🐈しらたま",
       "episode_ref": "E74",
-      "frame": "腹が立った。でも、それをそのまま相手にぶつけるかどうかは、また別の話。\n\n自分の感情パターンに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "「は？」と声に出しそうになった瞬間があった。\n\nでも、それをそのまま相手にぶつけるかどうかは、また別の話。\n\n自分の感情パターンに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "カッとなった瞬間、考えるより先に強い言葉が口から出てしまう",
         "怒りを感じた自分を「器が小さい」と責めて、無理に飲み込んでしまう",
@@ -60,7 +60,7 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐈しらたま",
       "episode_ref": "E16",
-      "frame": "好きになるたび、相手の機嫌が自分の天気になる人がいる。\n\n自分の愛し方に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "既読がついたのに返事が来ない。その瞬間から、頭の中はその人でいっぱいになる。\n\n好きになるたび、相手の機嫌が自分の天気になる人がいる。\n\n自分の愛し方に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "LINEの返信が遅いだけで、その日一日の気分が決まってしまう",
         "相手の声や表情が少し曇っただけで、自分が何かしたのかもと考え込んでしまう",
@@ -77,15 +77,15 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく + 🕊ひより",
       "episode_ref": "E75",
-      "frame": "棘のある態度を見せてくる人ほど、本当は一番柔らかいところを隠している。\n\nそんな人とのこと、思い出した？\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "素っ気ない一言を返された瞬間、頭の中で「嫌われた？」がぐるぐる回り出す。\n\n棘のある態度を見せてくる人ほど、本当は一番柔らかいところを隠している。\n\nそんな人とのこと、思い出した？\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "素っ気ない態度を取られると、嫌われているのかもとすぐに不安になる",
+        "その人の素っ気なさの奥に、寂しさや不器用さがあるとわかった瞬間がある",
         "ツンとされるほど、なぜか放っておけなくて構いたくなってしまう",
-        "冷たくされるたびに、過去の誰かの態度を思い出して身がすくむ",
-        "その人の素っ気なさの奥に、寂しさや不器用さがあるとわかった瞬間がある"
+        "冷たくされるたびに、過去の誰かの態度を思い出して身がすくむ"
       ],
-      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, tender scene — top-left: Coco flinching slightly as ひより turns away in a small standoffish gesture, しずく watching Coco's quiet hurt; top-right: ひより keeps a cool distance on a branch while Coco leans in closer anyway, gently persistent, しずく nearby; bottom-left: Coco pausing mid-motion, a flicker of an old remembered hurt crossing her expression, しずく resting supportively beside her; bottom-right: Coco noticing a flicker of loneliness behind ひより's cool posture, a soft realization dawning in her expression, しずく resting calmly nearby — each a gentle relationship / everyday-life metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background; a glass wind chime sounds softly under the eaves and morning glories climb a trellis, a slow Saturday morning in July. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant soft lavender-blue, wind chime (furin) motif summer formal kimono shown at the collar and shoulders, bust-up — together with one or more of the animals (しずく a gentle green turtle / ひより a small white bird with pale blue wings). Coco must always appear (never Coco alone, and no animals-only image). Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
-      "reply_1": "棘のある態度を見せてくる人ほど、本当は一番柔らかいところを隠している。\n\n5万人の本音を聴いてきて、何度も見てきた構造がある。\n攻撃的な態度の裏には、ほとんどの場合「傷つきたくない」という防御がある。\n\n──────────────\nA｜素っ気なくされると、すぐ嫌われているのかもと不安になる\n\n相手の素っ気なさは、あなたへの評価ではなく、相手自身の防御反応のことが多い。\n全部を自分のせいとして受け取らなくていい。\n\n──────────────\nB｜ツンとされるほど、放っておけなくなる\n\nこれは優しさであり、同時に少し危ういサインでもある。\n構いたくなる気持ちは本物。でも、自分をすり減らしてまで構う必要はない。\n\n──────────────\nC｜冷たくされるたびに、過去の誰かの態度を思い出して身がすくむ\n\n今、目の前にいる人の素っ気なさに、過去の誰かの分まで反応してしまうことがある。\n\nそれは今のあなたが弱いからではなく、似た場面が古い記憶のスイッチを押しているだけだ。\n今の相手と、過去のあの人は、別人だと一度だけ確認してみる。\n\n──────────────\nD｜その人の素っ気なさの奥に、寂しさや不器用さがあるとわかった瞬間がある\n\n棘のある人ほど、本当は近づいてほしい人であることが多い。\nただ、近づき方を知らないだけだ。\n\nその奥にあるものが見えた瞬間、振り回されていた自分から、少しだけ抜け出せる。\n\n──────────────\n\n棘は、嫌いだから出すものとは限らない。\n傷つくのが怖いから、先に出してしまうことのほうが多い。\n\nその構造が見えた人は、もう振り回されない。かといって、冷たく返しもしない。\n\n感情はある。依存はしない。\n見抜く人は、舐められない。それでいて、ちゃんと優しくいられる。\n\n棘の裏側を見分ける視点と、深い関係を育てる距離の整え方。\n会員のほうで毎回続きを置いてる。"
+      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, tender scene — top-left: Coco flinching slightly as ひより turns away in a small standoffish gesture, しずく watching Coco's quiet hurt; top-right: Coco noticing a flicker of loneliness behind ひより's cool posture, a soft realization dawning in her expression, しずく resting calmly nearby; bottom-left: ひより keeps a cool distance on a branch while Coco leans in closer anyway, gently persistent, しずく nearby; bottom-right: Coco pausing mid-motion, a flicker of an old remembered hurt crossing her expression, しずく resting supportively beside her — each a gentle relationship / everyday-life metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background; a glass wind chime sounds softly under the eaves and morning glories climb a trellis, a slow Saturday morning in July. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant soft lavender-blue, wind chime (furin) motif summer formal kimono shown at the collar and shoulders, bust-up — together with one or more of the animals (しずく a gentle green turtle / ひより a small white bird with pale blue wings). Coco must always appear (never Coco alone, and no animals-only image). Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "reply_1": "棘のある態度を見せてくる人ほど、本当は一番柔らかいところを隠している。\n\n5万人の本音を聴いてきて、何度も見てきた構造がある。\n攻撃的な態度の裏には、ほとんどの場合「傷つきたくない」という防御がある。\n\n──────────────\nA｜素っ気なくされると、すぐ嫌われているのかもと不安になる\n\n相手の素っ気なさは、あなたへの評価ではなく、相手自身の防御反応のことが多い。\n全部を自分のせいとして受け取らなくていい。\n\n──────────────\nB｜その人の素っ気なさの奥に、寂しさや不器用さがあるとわかった瞬間がある\n\n棘のある人ほど、本当は近づいてほしい人であることが多い。\nただ、近づき方を知らないだけだ。\n\nその奥にあるものが見えた瞬間、振り回されていた自分から、少しだけ抜け出せる。\n\n──────────────\nC｜ツンとされるほど、放っておけなくなる\n\nこれは優しさであり、同時に少し危ういサインでもある。\n構いたくなる気持ちは本物。でも、自分をすり減らしてまで構う必要はない。\n\n──────────────\nD｜冷たくされるたびに、過去の誰かの態度を思い出して身がすくむ\n\n今、目の前にいる人の素っ気なさに、過去の誰かの分まで反応してしまうことがある。\n\nそれは今のあなたが弱いからではなく、似た場面が古い記憶のスイッチを押しているだけだ。\n今の相手と、過去のあの人は、別人だと一度だけ確認してみる。\n\n──────────────\n\n棘は、嫌いだから出すものとは限らない。\n傷つくのが怖いから、先に出してしまうことのほうが多い。\n\nその構造が見えた人は、もう振り回されない。かといって、冷たく返しもしない。\n\n感情はある。依存はしない。\n見抜く人は、舐められない。それでいて、ちゃんと優しくいられる。\n\n棘の裏側を見分ける視点と、深い関係を育てる距離の整え方。\n会員のほうで毎回続きを置いてる。"
     },
     {
       "date": "2026-07-12",
@@ -94,7 +94,7 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐈しらたま",
       "episode_ref": "E22",
-      "frame": "認めてくれない人から、認められようとし続けていないかな。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "「すごいね」の一言が、今日も来なかった。\n\nそれでも、認めてくれない人から、認められようとし続けていないかな。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "家族や恋人に、何かにつけて「すごいね」と言ってほしくて、無意識に頑張りすぎる",
         "褒めてくれない相手だとわかっているのに、なぜかその人の評価ばかり気にしてしまう",
@@ -102,7 +102,7 @@
         "誰かに認められなくても、自分で自分を認められた瞬間がある"
       ],
       "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, tender scene — top-left: Coco holding up a finished handmade object toward someone unseen, hopeful eyes searching for a reaction, しらたま aware of the effort behind it; top-right: Coco glancing repeatedly toward a closed door, しらたま sitting steadily at her feet as a gentle presence; bottom-left: しらたま offering a warm approving nuzzle while Coco's eyes stay fixed elsewhere, distracted by an unspoken silence; bottom-right: Coco kneeling eye-level with しらたま, both hands gently cupping its face, a calm clear smile of self-recognition — each a gentle relationship / everyday-life metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background; a small home altar of cut summer flowers rests nearby, golden contemplative late-afternoon light on a quiet Sunday in July. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant warm ivory-gold summer formal kimono shown at the collar and shoulders, bust-up — together with one or more of the animals (しらたま a fluffy round white cat). Coco must always appear (never Coco alone, and no animals-only image). Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
-      "reply_1": "認めてくれない人から、認められようとし続けていないかな。\n\n5万人の本音を聴いてきて、何度も出会った構造がある。\n認められたい気持ちは、正しい。間違えてはいけないのは、それを受け取る相手のほうだ。\n\n──────────────\nA｜家族や恋人に「すごいね」と言ってほしくて、頑張りすぎる\n\n承認を求めること自体は、悪いことではない。\nただ、その承認が来ないことに毎回振り回されているなら、\n頑張りの軸が、自分ではなく相手の反応に置かれてしまっている。\n\n──────────────\nB｜褒めてくれない人とわかっていても、その人の評価ばかり気にする\n\nこれは、その人があなたにとって「特別」だからではなく、\n「まだ攻略できていない」という未完了感が引っかかっているだけのことが多い。\n\n未完了は、解決しなくても、手放していい。\n\n──────────────\nC｜ちゃんと見てくれる人より、評価しない人の沈黙が気になる\n\n人は、与えられているものより、与えられていないものに目が向きやすい。\nこれは性格の欠陥ではなく、ただの注意のクセだ。\n\n意識して、ちゃんと見てくれる人のほうに視線を戻してみる。\nそこに、ずっと渡されていた承認が、たくさん眠っている。\n\n──────────────\nD｜誰にも認められなくても、自分で自分を認められた瞬間がある\n\nこれが、いちばん自由な状態だ。\n他者からの承認は嬉しい。でも、それがなくても自分の価値は揺らがない。\n\n──────────────\n\n認められたい気持ちは、消さなくていい。\nただ、その気持ちを誰に渡すかは、自分で選び直せる。\n\n感情はある。依存はしない。\n受け取る相手を選び直した瞬間、消耗していた関係が、軽くなっていく。\n\n認められたい相手の選び直し方と、期待を手放す境界線の引き方。\n会員のほうで毎回続きを置いてる。"
+      "reply_1": "認めてくれない人から、認められようとし続けていないかな。\n\n5万人の本音を聴いてきて、何度も出会った構造がある。\n認められたい気持ちは、正しい。間違えてはいけないのは、それを受け取る相手のほうだ。\n\n──────────────\nA｜家族や恋人に「すごいね」と言ってほしくて、頑張りすぎる\n\n承認を求めること自体は、悪いことではない。\nただ、その承認が来ないことに毎回振り回されているなら、\n頑張りの軸が、自分ではなく相手の反応に置かれてしまっている。\n\n──────────────\nB｜褒めてくれない人とわかっていても、その人の評価ばかり気にする\n\nこれは、その人があなたにとって「特別」だからではなく、\n「まだ攻略できていない」という未完了感が引っかかっているだけのことが多い。\n\n未完了は、解決しなくても、手放していい。\n\n──────────────\nC｜ちゃんと見てくれる人より、評価しない人の沈黙が気になる\n\n人は、与えられているものより、与えられていないものに目が向きやすい。\nこれは性格の欠陥ではなく、ただの注意のクセだ。\n\n意識して、ちゃんと見てくれる人のほうに視線を戻してみる。\nそこに、ずっと渡されていた承認が、たくさん眠っている。\n\n──────────────\nD｜誰にも認められなくても、自分で自分を認められた瞬間がある\n\nこれも、あなたの中にずっとあった一つの真実だ。\n他者からの承認は嬉しい。それでも、それがなくても自分の価値は揺らがない、という感覚。\n\n──────────────\n\n承認を求める気持ちも、求めなくても揺らがない強さも、同じあなたの中にある。\nどちらか一方だけが正解ではない。\n\n感情はある。依存はしない。\n受け取る相手を選び直した瞬間、消耗していた関係が、軽くなっていく。\n\n認められたい相手の選び直し方と、期待を手放す境界線の引き方。\n会員のほうで毎回続きを置いてる。"
     },
     {
       "date": "2026-07-13",
@@ -111,15 +111,15 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく + 🐈しらたま + 🕊ひより",
       "episode_ref": "E76",
-      "frame": "「縁があれば続く。なければ、それまで。」\n\nその言葉を、本当に体で実践できる人は、実は多くない。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "frame": "連絡が来なくなって、もう何日か経った。\n\n「縁があれば続く。なければ、それまで。」\n\nその言葉を、本当に体で実践できる人は、実は多くない。\n\n自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
+        "本当に手放せた関係について、後悔もマイナスの感情もなく思い出せる",
         "頭ではわかっていても、連絡が来ないと結局こちらから追いかけてしまう",
         "「それまで」と割り切ったふりをして、本当はまだ未練を引きずっている",
-        "手放したはずなのに、ふとした瞬間にまた期待してしまう自分に気づく",
-        "本当に手放せた関係について、後悔もマイナスの感情もなく思い出せる"
+        "手放したはずなのに、ふとした瞬間にまた期待してしまう自分に気づく"
       ],
-      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, tender scene — top-left: Coco reaching a hand toward a distant closed door while しずく gently holds the hem of her sleeve back; top-right: Coco standing with arms crossed composed, but しらたま noticing her foot tapping restlessly beneath the calm exterior; bottom-left: Coco pausing with a soft amused realization as ひより circles back to land on her shoulder; bottom-right: Coco standing at ease in an open doorway with morning light, all three animals resting calmly around her, expression clear and unburdened — each a gentle relationship / everyday-life metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background; bright clear morning light pours through open windows on a fresh Monday morning in mid-July. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant fresh pale yellow linen summer formal kimono shown at the collar and shoulders, bust-up — together with one or more of the animals (しずく a gentle green turtle / しらたま a fluffy round white cat / ひより a small white bird with pale blue wings). Coco must always appear (never Coco alone, and no animals-only image). Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
-      "reply_1": "「縁があれば続く。なければ、それまで。」\n\n5万人の本音を聴いてきて、たどり着いた言葉のひとつ。\nでも、この言葉を本当に体で実践できる人は、実は多くない。\n\n──────────────\nA｜頭ではわかっていても、結局追いかけてしまう\n\n追いかけることが悪いのではない。\nただ、「縁があれば続く」と言いながら追いかけているなら、\nそれはまだ「縁」を自分の力でコントロールしようとしている状態だ。\n\n追いかけた後、何が変わるかを一度だけ自分に聞いてみる。\n\n──────────────\nB｜割り切ったふりをして、本当は未練がある\n\n未練があること自体は、悪いことではない。\n「もう何とも思っていない」と自分に嘘をつくほうが、実はずっと消耗する。\n\n未練がある、とただ認めるだけで、不思議と少し軽くなる。\n\n──────────────\nC｜手放したはずなのに、ふと期待してしまう\n\n人の心は、一度で完全に手放せるようにはできていない。\n何度も手放し直すのが、普通のプロセスだ。\n期待が戻ってきたことに気づけるなら、それはちゃんと進んでいる証拠。\n\n──────────────\nD｜後悔もマイナスもなく思い出せる\n\nこれは、ゴールというより、何度も手放し直した先にやっと訪れる状態だ。\n焦って今すぐそこを目指す必要はない。\n\n──────────────\n\n縁があれば続く。なければ、それまで。\n後悔はない。マイナスもない。あるがままに、受け入れる。\n\nそれは諦めではなく、追いかけることをやめた人だけが持てる、\n静かな自由だ。\n\n感情はある。依存はしない。\n今週も、その距離で関係を整えていける。\n\n追いかけない技術と、縁を手放した先にある自由の育て方。\n会員のほうで毎回続きを置いてる。"
+      "image_prompt": "Soft delicate Japanese watercolor illustration, Quiet Luxury, muted desaturated pastel tones. The image is divided into four equal quadrants (top-left, top-right, bottom-left, bottom-right); each quadrant is a distinct calm, tender scene — top-left: Coco standing at ease in an open doorway with morning light, all three animals resting calmly around her, expression clear and unburdened; top-right: Coco reaching a hand toward a distant closed door while しずく gently holds the hem of her sleeve back; bottom-left: Coco standing with arms crossed composed, but しらたま noticing her foot tapping restlessly beneath the calm exterior; bottom-right: Coco pausing with a soft amused realization as ひより circles back to land on her shoulder — each a gentle relationship / everyday-life metaphor. Keep the same art style, light and color across all four quadrants. Airy cream background; bright clear morning light pours through open windows on a fresh Monday morning in mid-July. Include Coco — a youthful, soft-featured Japanese woman with a fresh, young, gentle face, lovely, cute and approachable, with a soft quiet poise (凛); looks early-30s, NOT old, NOT aged (match the fixed Coco reference set); short dark side-parted bob, large soft warm brown eyes with a gentle kind gaze, relaxed gentle brows (never stern or harsh), smooth dewy youthful skin, a soft warm friendly smile, elegant fresh pale yellow linen summer formal kimono shown at the collar and shoulders, bust-up — together with one or more of the animals (しずく a gentle green turtle / しらたま a fluffy round white cat / ひより a small white bird with pale blue wings). Coco must always appear (never Coco alone, and no animals-only image). Keep Coco's face consistent with the fixed reference (do not invent a new face). Fine delicate linework, soft paint bleeding. NOT pop, NOT cartoonish, NOT chibi, no bold outlines, no 3D, no photorealism. No text, no letters, no signage.",
+      "reply_1": "「縁があれば続く。なければ、それまで。」\n\n5万人の本音を聴いてきて、たどり着いた言葉のひとつ。\nでも、この言葉を本当に体で実践できる人は、実は多くない。\n\n──────────────\nA｜本当に手放せた関係について、後悔もマイナスの感情もなく思い出せる\n\nこれは、ゴールというより、何度も手放し直した先にやっと訪れる状態だ。\n焦って今すぐそこを目指す必要はない。\n\n──────────────\nB｜頭ではわかっていても、結局追いかけてしまう\n\n追いかけることが悪いのではない。\nただ、「縁があれば続く」と言いながら追いかけているなら、\nそれはまだ「縁」を自分の力でコントロールしようとしている状態だ。\n\n追いかけた後、何が変わるかを一度だけ自分に聞いてみる。\n\n──────────────\nC｜割り切ったふりをして、本当は未練がある\n\n未練があること自体は、悪いことではない。\n「もう何とも思っていない」と自分に嘘をつくほうが、実はずっと消耗する。\n\n未練がある、とただ認めるだけで、不思議と少し軽くなる。\n\n──────────────\nD｜手放したはずなのに、ふと期待してしまう\n\n人の心は、一度で完全に手放せるようにはできていない。\n何度も手放し直すのが、普通のプロセスだ。\n期待が戻ってきたことに気づけるなら、それはちゃんと進んでいる証拠。\n\n──────────────\n\n縁があれば続く。なければ、それまで。\n後悔はない。マイナスもない。あるがままに、受け入れる。\n\nそれは諦めではなく、追いかけることをやめた人だけが持てる、\n静かな自由だ。\n\n感情はある。依存はしない。\n今週も、その距離で関係を整えていける。\n\n追いかけない技術と、縁を手放した先にある自由の育て方。\n会員のほうで毎回続きを置いてる。"
     }
   ]
 }
