@@ -460,6 +460,79 @@ body {
   padding: 0 0 12px;
 }
 
+/* Week bulk copy bar */
+.week-copy-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.week-copy-label {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.week-copy-buttons {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.week-copy-btn {
+  background: transparent;
+  border: 1px solid var(--border-light);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.week-copy-btn.wcb-x {
+  color: #4db3f0;
+  border-color: rgba(26, 140, 216, 0.4);
+}
+.week-copy-btn.wcb-x:hover {
+  background: rgba(26, 140, 216, 0.15);
+}
+
+.week-copy-btn.wcb-threads {
+  color: #c084e0;
+  border-color: rgba(155, 77, 202, 0.4);
+}
+.week-copy-btn.wcb-threads:hover {
+  background: rgba(155, 77, 202, 0.15);
+}
+
+.week-copy-btn.wcb-xshindan {
+  color: var(--accent-xshindan);
+  border-color: rgba(46, 168, 126, 0.4);
+}
+.week-copy-btn.wcb-xshindan:hover {
+  background: rgba(46, 168, 126, 0.15);
+}
+
+.week-copy-btn.wcb-threadsshindan {
+  color: var(--accent-threads-shindan);
+  border-color: rgba(196, 122, 138, 0.4);
+}
+.week-copy-btn.wcb-threadsshindan:hover {
+  background: rgba(196, 122, 138, 0.15);
+}
+
+.week-copy-btn.copied {
+  background: var(--copy-success);
+  border-color: var(--copy-success);
+  color: #9ef0be;
+}
+
 /* Theme badge */
 .card-theme {
   padding: 6px 14px 0;

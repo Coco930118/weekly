@@ -30,13 +30,13 @@ async function loadPosts() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json?v=20260720');
+    const indexRes = await fetch('./posts/index.json?v=20260727');
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=20260720`);
+        const res = await fetch(`./posts/${filename}?v=20260727`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -52,6 +52,7 @@ async function loadPosts() {
 
     renderDynamicPlatformFilter();
     renderWeekFilter(weekDataArr.map(w => w.week));
+    renderWeekCopyBar();
     renderPosts();
 
   } catch (err) {
@@ -337,24 +338,12 @@ function setupPlatformFilter() {
   });
 }
 
-function setupCopyHandler() {
-  document.addEventListener('click', async e => {
-    const btn = e.target.closest('.copy-btn');
-    if (!btn) return;
-
-    const text = btn.dataset.copy;
-    if (!text) return;
-
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
     try {
-      await navigator.clipboard.writeText(text);
-      const original = btn.textContent;
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
-    } catch {
       // fallback for older browsers
       const ta = document.createElement('textarea');
       ta.value = text;
@@ -363,13 +352,119 @@ function setupCopyHandler() {
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'コピー';
-        btn.classList.remove('copied');
-      }, 1800);
+      return true;
+    } catch {
+      return false;
     }
+  }
+}
+
+function flashCopyState(btn, ok) {
+  const original = btn.textContent;
+  btn.textContent = ok ? 'コピー完了' : 'コピー失敗';
+  btn.classList.toggle('copied', ok);
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove('copied');
+  }, 1800);
+}
+
+function setupCopyHandler() {
+  document.addEventListener('click', async e => {
+    const btn = e.target.closest('.copy-btn');
+    if (!btn) return;
+
+    const text = btn.dataset.copy;
+    if (!text) return;
+
+    const ok = await copyToClipboard(text);
+    flashCopyState(btn, ok);
+  });
+}
+
+// ─── Week bulk copy (X / Threads / X診断 / Threads診断) ────────────────────────
+
+const WEEK_COPY_CATEGORIES = [
+  { platform: 'X', cls: 'wcb-x' },
+  { platform: 'Threads', cls: 'wcb-threads' },
+  { platform: 'X診断', cls: 'wcb-xshindan' },
+  { platform: 'Threads診断', cls: 'wcb-threadsshindan' }
+];
+
+function getLatestWeekId() {
+  if (!allPosts.length) return null;
+  return allPosts.reduce((max, p) => (p.weekId > max ? p.weekId : max), allPosts[0].weekId);
+}
+
+function formatWeekRangeLabel(weekId) {
+  const [from, to] = weekId.split('_');
+  return `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
+}
+
+function buildCategoryCopyText(weekId, platform) {
+  const posts = allPosts
+    .filter(p => p.weekId === weekId && p.platform === platform)
+    .sort((a, b) => new Date(`${a.date}T${a.time}:00`) - new Date(`${b.date}T${b.time}:00`));
+
+  const blocks = posts.map(p => {
+    const head = `◆ ${formatDate(p.date)} ${p.time}`;
+
+    if (p.frame) {
+      const choicesText = (p.choices || [])
+        .map((c, i) => `${['A', 'B', 'C', 'D'][i]}. ${c}`)
+        .join('\n');
+      const reply = p.comment_1 || p.reply_1 || '';
+      const parts = [head, '【フック】', p.frame, '', '【選択肢】', choicesText, '', '【コメント①】', reply];
+      if (p.comment_2) parts.push('', '【コメント②】', p.comment_2);
+      return parts.join('\n');
+    }
+
+    const parts = [head, p.content || ''];
+    if (p.quote) parts.push('', `〈ひとこと〉${p.quote}`);
+    return parts.join('\n');
+  });
+
+  return blocks.join('\n\n──────────\n\n');
+}
+
+function renderWeekCopyBar() {
+  const bar = document.getElementById('weekCopyBar');
+  if (!bar) return;
+
+  const weekId = getLatestWeekId();
+  if (!weekId) {
+    bar.innerHTML = '';
+    return;
+  }
+
+  const buttons = WEEK_COPY_CATEGORIES
+    .filter(c => allPosts.some(p => p.weekId === weekId && p.platform === c.platform))
+    .map(c => `<button class="week-copy-btn ${c.cls}" data-week-copy="${escapeHtml(c.platform)}">${escapeHtml(c.platform)}を一括コピー</button>`)
+    .join('');
+
+  if (!buttons) {
+    bar.innerHTML = '';
+    return;
+  }
+
+  bar.innerHTML = `
+    <span class="week-copy-label">最新週 ${formatWeekRangeLabel(weekId)}</span>
+    <div class="week-copy-buttons">${buttons}</div>
+  `;
+}
+
+function setupWeekCopyHandler() {
+  document.addEventListener('click', async e => {
+    const btn = e.target.closest('.week-copy-btn');
+    if (!btn) return;
+
+    const platform = btn.dataset.weekCopy;
+    const weekId = getLatestWeekId();
+    if (!weekId) return;
+
+    const text = buildCategoryCopyText(weekId, platform);
+    const ok = await copyToClipboard(text);
+    flashCopyState(btn, ok);
   });
 }
 
@@ -681,6 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPlatformFilter();
   setupSectionToggle();
   setupCopyHandler();
+  setupWeekCopyHandler();
   setupTabs();
   setupNoteTierFilter();
   loadPosts();

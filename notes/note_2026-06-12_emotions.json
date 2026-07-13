@@ -14,8 +14,8 @@
     "th_5"
   ],
   "episode_ref": "E_004",
-  "visibility": "single_paid",
-  "price": "1500",
+  "visibility": "members_only",
+  "price": "0",
   "membership_hook": "メンバーシップでは、毎週この続きを書いています。各週の診断で拾えなかった本音と実用の核を詰め込んだ会員限定エントリが毎週届きます。",
   "note_url": "",
   "membership_url": "https://note.com/coconocanvas/membership",
