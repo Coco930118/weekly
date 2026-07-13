@@ -15,8 +15,8 @@
     "x_07"
   ],
   "episode_ref": "E66",
-  "visibility": "single_paid",
-  "price": "1500",
+  "visibility": "members_only",
+  "price": "0",
   "free_ratio": 0.35,
   "outcome_promise": "感情を「抜く」外向きの技術と「消す」内向きの危険の違い、感情の引き算3ステップ、麻痺と強さを見分ける問いがわかります",
   "framework": "感情の引き算（外向き）vs 感情の消去（内向き）/ 感情の引き算3ステップ",

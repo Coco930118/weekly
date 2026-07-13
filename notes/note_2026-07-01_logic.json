@@ -15,8 +15,8 @@
     "x_03"
   ],
   "episode_ref": "E57",
-  "visibility": "single_paid",
-  "price": "1500",
+  "visibility": "members_only",
+  "price": "0",
   "free_ratio": "0.35",
   "outcome_promise": "このnoteを読むと「正論が届かない現場の構造」が見えるようになり、人が動く関わり方に切り替える具体的な手がかりを得られる",
   "framework": "人が動く3層構造——正しさ（根拠層）/ 感情（動機層）/ 行動（結果層）と、感情層を動かす3つの関わり方",
