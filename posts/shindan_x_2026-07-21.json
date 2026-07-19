@@ -1,0 +1,132 @@
+{
+  "week": "2026-07-21_2026-07-27",
+  "type": "shindan_x",
+  "posts": [
+    {
+      "date": "2026-07-21",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま + 🕊ひより",
+      "episode_ref": "E5",
+      "frame": "「なんで誰も、俺の言うことを聞かないんだ」——そう声を荒げた上司を、現場が静かに見ていた。\n\n敬意は、要求して集まるものじゃない。積み上がって、勝手に集まるもの。\n\n人がついてこないと感じた時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "「役職なんだから敬われて当然だ」と、立場を根拠に従わせようとする",
+        "嫌われたくなくて、言うべきことを飲み込み、いい人でいようとする",
+        "「どうせ分かってもらえない」と、現場と距離を置いて割り切る",
+        "誰も見ていない時間に現場と並んで動き、実績と事実だけを黙って積む"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, deep indigo kimono, firework pattern) with Shizuku (moss-green turtle), Shirotsuma (white cat), Hiyori (white bird, blue wingtips); four scenes: gesturing at an empty high chair, pressing a hand to held-back words, turning away at a distance, quietly stacking work side by side. Distant summer fireworks in warm night air. Deep indigo, warm gold, pale cream, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "「敬え」と叫ぶほど、敬意は逃げていく。5万人を見てきて、そう命じた人が本当に敬われた例を、私は一度も見ていない。\n\n──────────────\nA｜立場を根拠に従わせる\n\n短期的には動く。ただし人は「役職」には従っても「その人」にはついてこない。椅子が外れた瞬間、従う理由も消える。\n\n──────────────\nB｜嫌われたくなくて飲み込む\n\n波風は立たない。ただし言うべきを飲み込み続けると、現場は「この人は何も決めない人」と学習する。優しさが、いつのまにか軽さになる。\n\n──────────────\nC｜距離を置いて割り切る\n\n消耗は減る。ただし割り切りは、諦めと紙一重。距離を取った分だけ、現場の情報もあなたに届かなくなる。\n\n──────────────\nD｜誰も見ていない時間に、実績と事実を積む\n\nいちばん静かで、いちばん遠くまで効く型だ。敬意は要求して集めるものではなく、積み上がって勝手に集まるもの。挑発に乗らず事実だけを置く人は、感情的に怒る人より、ずっと怖い。弱点は速さ——積み上がるまでは、何も起きていないように見える。\n\n──────────────\n\nもやもやの正体は、「敬意は要求できる」という思い込み。敬えと言わない人のところに、敬意は静かに集まっていく。",
+      "comment_2": "「敬われる」ではなく「積み上がる」に変える手順：\n\n1. 「敬ってほしい」という要求を、いったん手放す\n2. 誰も見ていない時間に、現場と同じ目線で動く\n3. 挑発や理不尽には反応せず、実績と事実だけを置き続ける\n\n感情で怒る人より、事実だけを積んで完封する人が、いちばん強い。\n敬意は、追いかけると逃げ、積み上げると集まる。\n\n──────────────\n\n→ 「敬え」と言わずに敬われる人の在り方は、プロフィールのnoteへ。単発でもメンバーシップでも受け取れます。あなたの現場は、要求で人を動かそうとしていないだろうか。"
+    },
+    {
+      "date": "2026-07-22",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく",
+      "episode_ref": "E18",
+      "frame": "「責任は君にある」と言われた。でも、それを動かす権限は、遠くの誰かが握ったまま。\n\n決める人が現場を見ず、見ている人が決められない。\n\nその板挟みの中にいる時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "権限がないまま、責任だけを全部抱えて、なんとか回そうとする",
+        "「権限をください」と正面から掛け合うが、通らずに消耗する",
+        "「責任は現場に、権限は遠くに」というねじれの構造を、まず言葉にして見える化する",
+        "どうにもならないと感じて、決められた通りにだけ動く"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, pale grey-blue kimono, flowing water pattern) with Shizuku (moss-green turtle); four scenes: carrying a heavy load alone, pleading across a distant desk, calmly drawing a diagram of a twist, moving mechanically as directed. Cool summer river breeze through bamboo blinds. Soft grey-blue, indigo, pale cream, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "責任と権限が別々の場所に置かれている——このねじれが、板挟みの正体だ。20年、この構造の中で静かに潰れていく中間管理職を、数えきれず見てきた。\n\n──────────────\nA｜責任だけを全部抱えて回す\n\n現場は一時的に保たれる。ただし権限のないまま責任だけを抱え続けると、消耗はあなた一人に集中し、構造は一切変わらない。\n\n──────────────\nB｜正面から権限を掛け合う\n\n筋は通っている。ただし「権限を渡すと自分の立場が薄まる」と感じる相手には、正論ほど警戒される。掛け合う順番の工夫が要る。\n\n──────────────\nC｜ねじれの構造を、まず言葉にする\n\nいちばん最初に効く一手だ。「責任は現場に、権限は遠くに」と名指しできた時点で、対処の半分は終わっている。見えていないねじれには手が打てないが、見えたねじれには順番に手が打てる。派手さはない。でも、ここから全部が始まる。\n\n──────────────\nD｜決められた通りにだけ動く\n\n消耗は避けられる。ただし思考を止めると、ねじれは「当たり前」になり、次に潰れる誰かへそのまま引き継がれていく。\n\n──────────────\n\nもやもやの正体は、あなたの力不足ではなく、責任と権限が別の場所に置かれた構造そのもの。それが見えた瞬間、抱えていた重さの半分は、あなたのものではなくなる。",
+      "comment_2": "ねじれを見える化する手順：\n\n1. 「これは責任の話か、権限の話か」を毎回分けて捉える\n2. 権限のない領域の結果は、抱え込まず「構造の問題」として記録する\n3. 掛け合う時は感情ではなく、ねじれの事実だけを一枚で見せる\n\n見えているだけで、対処の半分はできている。\nねじれを、自分の欠点と混同しないこと。それが、消耗しない第一歩。\n\n──────────────\n\n→ 「責任と権限のねじれをほどく技術」は、プロフィールのnoteへ。単発でも、続きが気になる人はメンバーシップへ。あなたが今抱えている重さは、本当にあなたの権限の内側だろうか。"
+    },
+    {
+      "date": "2026-07-23",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐈‍⬛しらたま",
+      "episode_ref": "E2",
+      "frame": "「新施策で利益は出ている。問題ない」——その一言で、会議は終わった。\n\nでも数字が良いことと、構造が健全なことは、別の話。\n\n表面の数字に全員が安心している時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "誰にも頼まれなくても、自分で数字を一から掘り、「なぜ良いのか」を突き止める",
+        "違和感はあるが、上が問題ないと言うなら、と一旦飲み込む",
+        "「衰退しているのでは」と感情的に警鐘を鳴らすが、空気で流される",
+        "自分のエリアだけは、現場の力で静かに保ち続ける"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, pale sage green kimono, morning glory pattern) with Shirotsuma (white cat); four scenes: digging through a ledger of numbers, swallowing a doubt quietly, raising a small alarm that goes unheard, tending her own small garden steadily. Morning glories in clear early-summer light. Soft sage green, warm cream, muted gold, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "「数字が良い」と「構造が健全」は、まったく別の話だ。良い数字を見た時こそ、「なぜ良いのか」を掘る人が、最後に残る。\n\n──────────────\nA｜自分で数字を掘り、「なぜ」を突き止める\n\nこの中で、いちばん遠くまで効く型だ。「低迷を別の数字が補っているだけで、根本の客数は減っている」——そこまで掘った言葉には、やってみないと出ない重みがある。反論できないファクトは、言い訳を静かに封鎖する。地味で、誰も頼んでこない作業なのが、唯一の難点だ。\n\n──────────────\nB｜違和感を一旦飲み込む\n\n波風は立たない。ただし飲み込んだ違和感は消えず、根本が崩れた時に「気づいていたのに」という後悔だけが残る。\n\n──────────────\nC｜感情的に警鐘を鳴らす\n\n問題意識は正しい。ただし感情が乗ると「悲観的な人」のフレームに入れられ、正しさごと流される。同じ中身も、ファクトで返す方が通る。\n\n──────────────\nD｜自分のエリアだけ現場の力で保つ\n\n堅実で誠実だ。ただし守りに徹すると、崩れていく全体の構造そのものには手が届かないまま終わる。\n\n──────────────\n\nもやもやの正体は、「良い数字」が安心の理由にされ、「なぜ良いか」が誰にも問われていないこと。掘る人の一言が、環境のせいにする人との差を、静かに確定させる。",
+      "comment_2": "「なぜ良いのか」を掘る手順：\n\n1. 良い数字を見たら、まず「どの部分が補っているのか」を分解する\n2. 感情語を抜き、「客数」「継続率」など根本の指標だけを並べる\n3. 反論の余地がない事実として、一枚にまとめて置く\n\n表面の数字は、安心の材料にもなるし、崩壊の予告にもなる。\n分けるのは、「なぜ」を掘ったかどうかだけ。\n\n──────────────\n\n→ 「数字の裏の構造を掘る技術」は、プロフィールのnoteへ。40名を自走させた現場から逆算した、消耗しない組織の見方。単発でもメンバーシップでも受け取れます。あなたの現場の「良い数字」は、なぜ良いのだろう。"
+    },
+    {
+      "date": "2026-07-24",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🕊ひより",
+      "episode_ref": "E14",
+      "frame": "「結果のためだ」と思っていた判断が、いつのまにか「嫌われないため」に変わっていた。\n\n自分でも、境目がわからないくらい、自然に。\n\nその、すり替わりの瞬間、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "厳しいことを言うべき場面で、「まあ今回はいいか」と流してしまう",
+        "全員の顔色を立てようとして、いつのまにか決断が遅くなる",
+        "「これは相手のため」と言いながら、本当は自分が波風を避けたいだけの時がある",
+        "正しさより、その場の空気の心地よさを、優先している自分に気づく"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, soft ivory kimono, sunflower pattern) with Hiyori (white bird, powder-blue wingtips); four scenes: letting a strict word slip away, reading many faces and hesitating, offering a gentle mask, resting in a comfortable warm air. Bright sunflowers under a midsummer sky. Warm ivory, sunflower gold, pale blue, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "この回に、正解の選択肢はない。どれも、あなたが誠実だからこそ起きる「すり替わり」だ。\n\n間違った目的は、いい顔してやってくる。謙虚そう・優しそう・平和そうな顔で、静かに忍び寄る。月商500万を1000万にする過程で、いちばん怖かったのも、この境目のなさだった。\n\n──────────────\nA｜厳しさを「今回はいいか」で流す\n\n優しさに見える。ただし流し続けると、基準そのものが少しずつ溶けていく。\n\n──────────────\nB｜全員の顔色を立てて決断が遅れる\n\n配慮は本物だ。ただし全員を立てることは、しばしば「誰の目的も果たさない」に着地する。\n\n──────────────\nC｜「相手のため」で波風を避ける\n\n言葉は正しい。ただし主語が「相手」から「自分の安心」にすり替わっていないか、時々点検が要る。\n\n──────────────\nD｜空気の心地よさを優先している\n\n場を読む力の裏返しだ。ただし心地よさが目的になると、結果は静かに後回しになる。\n\n──────────────\n\nもやもやの正体は、「正しい目的を知らないこと」ではなく、「正しかった目的がすり替わったことに、気づけないこと」。気づけた時点で、あなたはもう半分、元の場所に戻っている。",
+      "comment_2": "すり替わりに気づく手順：\n\n1. 判断の後に「今のは結果のため？　嫌われないため？」と一度だけ問う\n2. 「相手のため」と言った時ほど、主語が自分にすり替わっていないか点検する\n3. 週に一度、流した厳しさ・遅らせた決断を棚卸しする\n\n目的は、知ることより、ずれに気づき続けることのほうが難しい。\n気づける人だけが、心地よさに飲まれずにいられる。\n\n──────────────\n\n→ 「目的のすり替わりに気づく技術」は、プロフィールのnoteへ。単発でも、続きはメンバーシップで。あなたの最近の判断、その主語は本当に「結果」だっただろうか。"
+    },
+    {
+      "date": "2026-07-25",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🐈‍⬛しらたま",
+      "episode_ref": "E6",
+      "frame": "「あなたは変化に弱いから」——事実だけを感情を抜いて伝えたのに、返ってきたのは、そのラベルだった。\n\n先月は「感情的」、その前は「反抗的」。言い方は同じなのに、貼られる名前だけが変わっていく。\n\nそう決めつけられた時、あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "「そう見えたのかな」と、貼られたラベルを一度受け入れて反省する",
+        "「ラベルが毎回変わるなら、問題は中身ではなく却下する側だ」と静かに見抜く",
+        "その場で「それは違います」と、ラベルそのものに反論する",
+        "何を言っても無駄だと感じて、提案すること自体をやめる"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, dusty rose kimono, hydrangea pattern) with Shizuku (moss-green turtle), Shirotsuma (white cat); four scenes: accepting a pinned paper label, quietly seeing through a label, arguing back at a label, setting a proposal down for good. Late hydrangea in warm summer shade. Dusty rose, sage green, pale cream, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "中身が本当に問題なら、ラベルは一つに定まるはずだ。20年、却下のラベルを貼られ続けて分かったのは、変わり続けるラベルは「その時いちばん却下しやすい言い方」を選んでいるだけ、ということ。\n\n──────────────\nA｜ラベルを受け入れて反省する\n\n誠実な姿勢だ。ただし毎回変わるラベルまで真に受けると、却下する側の都合を、自分の欠点として抱え込むことになる。\n\n──────────────\nB｜「問題は却下する側だ」と見抜く\n\nいちばん消耗しない一手だ。ラベルが月ごとに変わるという事実そのものが、中身ではなく「却下ありき」の証拠。そう見抜けると、相手の言葉に自分を明け渡さずに済む。ただし、見抜いたことを顔に出す必要はない。静かに握っておくだけでいい。\n\n──────────────\nC｜ラベルに正面から反論する\n\n言いたくなるのは当然だ。ただし反論は、貼られたラベルの土俵に乗ることになる。「違います」と言うほど、そのラベルは強化される。\n\n──────────────\nD｜提案すること自体をやめる\n\n消耗は止まる。ただし黙ると、却下する側の都合が「正しかった」ことになってしまう。\n\n──────────────\n\nもやもやの正体は、「自分に一貫した欠点がある」という思い込み。コロコロ変わっているのは、あなたではなく、貼る側の都合のほうだ。",
+      "comment_2": "ラベルに飲まれない手順：\n\n1. 貼られたラベルを、時系列で並べてみる（先月は何？　その前は？）\n2. 変わっているなら、それは中身ではなく「却下しやすさ」で選ばれたと判断する\n3. 反論せず、事実と提案だけを淡々と出し続ける\n\nラベルが一つに定まらないなら、それはあなたの問題ではない。\n見抜いた静けさは、どんな反論より強い。\n\n──────────────\n\n→ 「ラベルに自分を明け渡さない技術」は、プロフィールのnoteへ。単発でもメンバーシップでも受け取れます。最近あなたに貼られたラベル、先月のものと同じ名前だっただろうか。"
+    },
+    {
+      "date": "2026-07-26",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐈‍⬛しらたま + 🕊ひより",
+      "episode_ref": "E10",
+      "frame": "いちばん忙しい夜に、上の施策が生んだトラブルが、最悪のタイミングで現場に降ってきた。\n\nそれでも現場は、誰も潰れずに乗り切った。\n\nその夜を越えた後、報告をどう上げるか。あなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "「自分がなんとか収めました」と、収拾した自分の働きを中心に報告する",
+        "「施策のせいで大変だった」と、トラブルの原因を正確に指摘する",
+        "特に何も報告せず、無事に終わったからいい、と流す",
+        "「とてもいい連携でした」と、現場チームの名前で手柄を上げる"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, warm charcoal kimono, festival lantern pattern) with Shirotsuma (white cat), Hiyori (white bird, blue wingtips); four scenes: reporting with a hand on her own chest, pointing at a distant cause, staying silent, lifting the team's name with open hands. Summer festival lanterns in warm night air. Warm charcoal, lantern gold, pale cream, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "現場を救うのは、良い施策じゃない。良いチームだ。5万人の現場を見てきて、危機を越えたチームには必ず一つの共通点があった——手柄をチームに返せるリーダーが、そこにいたこと。\n\n──────────────\nA｜自分の働きを中心に報告する\n\n評価はされる。ただし手柄を自分に寄せた瞬間、次の危機で誰も本気で動かなくなる。人は「自分の働きが誰かの手柄になる」場所では踏ん張れない。\n\n──────────────\nB｜施策の原因を正確に指摘する\n\n事実として正しい。ただし原因追及が先に立つと、乗り切った現場の連携という一番の財産が、報告から抜け落ちる。\n\n──────────────\nC｜何も報告せず流す\n\n謙虚に見える。ただし良い連携を言葉にしないと、それは「たまたま」として消え、次に再現できない。\n\n──────────────\nD｜チームの名前で手柄を上げる\n\nいちばん現場を強くする一手だ。手柄をチームに返せる人のもとで、人は次も踏ん張れる。派手さはない。でも、この一回の報告が、次の危機を越える連携を育てる。\n\n──────────────\n\nもやもやの正体は、「手柄は自分で示すもの」という前提。手柄を返せる人にこそ、次の現場がついてくる。",
+      "comment_2": "手柄をチームに返す手順：\n\n1. 危機を越えたら、まず「誰の、どの動きが効いたか」を具体で挙げる\n2. 報告の主語を「私」ではなく「チーム」にする\n3. 原因追及と、連携の称賛を、混ぜずに分けて伝える\n\n手柄を返せる人のところに、次も人は集まる。\n良いチームは、良い報告の仕方から育っていく。\n\n──────────────\n\n→ 「手柄を返して現場を強くする技術」は、プロフィールのnoteへ。単発でも、続きが気になる人はメンバーシップへ。この前の危機の後、あなたは誰の名前で報告を上げただろう。"
+    },
+    {
+      "date": "2026-07-27",
+      "platform": "X診断",
+      "time": "12:00",
+      "purpose": "診断・エンゲージメント",
+      "character": "Coco + 🐢しずく + 🕊ひより",
+      "episode_ref": "E13",
+      "frame": "あなたを飛び越えて、上の指示が部下に直接下りていた。あなたはそれを、後から知らされた。\n\nその指示の結果まで、あなたの責任にされそうになった時——\n\nあなたに一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
+      "choices": [
+        "自分が知らなかった指示の結果も、立場上、全部引き受ける",
+        "「勝手にやったのはそっちだ」と、関与を全面的に否定する",
+        "「自分が選んでいない指示の責任は負わない。ただし部下が自分で判断した部分には向き合う」と線を引く",
+        "面倒を避けて、何も言わずに曖昧なまま流す"
+      ],
+      "image_prompt": "delicate watercolor, gentle transparent washes, airy Quiet Luxury mood, 4-panel grid. Coco (40s, dark brown bob, warm brown eyes, soft ivory skin, pale aqua kimono, wave pattern) with Shizuku (moss-green turtle), Hiyori (white bird, powder-blue wingtips); four scenes: shouldering every load at once, pushing everything away, drawing one clear line on the ground, letting a boundary blur into fog. Cool seaside summer breeze. Pale aqua, seafoam green, warm cream, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "comment_1": "責任は、裁量のぶんだけついてくる。40名の現場を預かって、いちばん最初に引いた線が、これだった。\n\n──────────────\nA｜知らない指示の結果も全部引き受ける\n\n責任感は立派だ。ただし自分が選んでもいないことまで背負うと、際限がなくなり、本当に向き合うべきことに力が残らない。\n\n──────────────\nB｜関与を全面的に否定する\n\n気持ちは分かる。ただし全否定は、部下が自分の判断で動いた部分まで切り捨てることになり、育てる機会も一緒に失う。\n\n──────────────\nC｜線を引いて、向き合う部分だけ向き合う\n\nいちばんフェアで、いちばん強い型だ。「誰かに言われたから」は免罪符にならない。同時に、決めてもいないことまで背負う必要もない。この二つを同時に握れる人は、板挟みでも芯が折れない。線を引く一言に、少し勇気が要るのが、唯一のコストだ。\n\n──────────────\nD｜曖昧なまま流す\n\n波風は立たない。ただし線を引かないと、飛び越えた指示は繰り返され、責任だけが毎回あなたに残る。\n\n──────────────\n\nもやもやの正体は、「責任」と「裁量」がひとまとめにされていること。二つを分けた瞬間、抱えるべき重さと、手放していい重さが、はっきり見えてくる。",
+      "comment_2": "責任の線を引く手順：\n\n1. 起きたことを「自分が選んだこと／選んでいないこと」に分ける\n2. 選んでいないことは、事実として記録し、背負い込まない\n3. 部下が自分で判断した部分には、逃げずに向き合う\n\n決めていないことまで背負わない。決めたことからは逃げない。\nこの線が引けると、板挟みでも消耗しない。\n\n──────────────\n\n→ 「責任と裁量の線を引く技術」は、プロフィールのnoteへ。単発でもメンバーシップでも受け取れます。あなたが今抱えている責任は、あなたが選んだことの分だろうか。"
+    }
+  ]
+}
