@@ -391,9 +391,13 @@ const WEEK_COPY_CATEGORIES = [
   { platform: 'Threads診断', cls: 'wcb-threadsshindan' }
 ];
 
-function getLatestWeekId() {
-  if (!allPosts.length) return null;
-  return allPosts.reduce((max, p) => (p.weekId > max ? p.weekId : max), allPosts[0].weekId);
+// カテゴリ（媒体）ごとに、その媒体の投稿が存在する最新週IDを返す。
+// X/Threads と X診断/Threads診断 は別ファイル・別週で管理されるため、
+// 単一の「最新週」ではなく媒体ごとに最新週を求める。
+function getLatestWeekIdForPlatform(platform) {
+  const ids = allPosts.filter(p => p.platform === platform).map(p => p.weekId);
+  if (!ids.length) return null;
+  return ids.reduce((max, id) => (id > max ? id : max), ids[0]);
 }
 
 function formatWeekRangeLabel(weekId) {
@@ -431,24 +435,21 @@ function renderWeekCopyBar() {
   const bar = document.getElementById('weekCopyBar');
   if (!bar) return;
 
-  const weekId = getLatestWeekId();
-  if (!weekId) {
+  const cats = WEEK_COPY_CATEGORIES
+    .map(c => ({ ...c, weekId: getLatestWeekIdForPlatform(c.platform) }))
+    .filter(c => c.weekId);
+
+  if (!cats.length) {
     bar.innerHTML = '';
     return;
   }
 
-  const buttons = WEEK_COPY_CATEGORIES
-    .filter(c => allPosts.some(p => p.weekId === weekId && p.platform === c.platform))
-    .map(c => `<button class="week-copy-btn ${c.cls}" data-week-copy="${escapeHtml(c.platform)}">${escapeHtml(c.platform)}を一括コピー</button>`)
+  const buttons = cats
+    .map(c => `<button class="week-copy-btn ${c.cls}" data-week-copy="${escapeHtml(c.platform)}">${escapeHtml(c.platform)}を一括コピー（${formatWeekRangeLabel(c.weekId)}）</button>`)
     .join('');
 
-  if (!buttons) {
-    bar.innerHTML = '';
-    return;
-  }
-
   bar.innerHTML = `
-    <span class="week-copy-label">最新週 ${formatWeekRangeLabel(weekId)}</span>
+    <span class="week-copy-label">最新回をまとめてコピー</span>
     <div class="week-copy-buttons">${buttons}</div>
   `;
 }
@@ -459,7 +460,7 @@ function setupWeekCopyHandler() {
     if (!btn) return;
 
     const platform = btn.dataset.weekCopy;
-    const weekId = getLatestWeekId();
+    const weekId = getLatestWeekIdForPlatform(platform);
     if (!weekId) return;
 
     const text = buildCategoryCopyText(weekId, platform);
