@@ -30,13 +30,13 @@ async function loadPosts() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json?v=20260719e');
+    const indexRes = await fetch('./posts/index.json?v=20260719f');
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=20260719e`);
+        const res = await fetch(`./posts/${filename}?v=20260719f`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
