@@ -97,12 +97,12 @@
       "frame": "「こうした方がいいよ」——聞かれてもいないのに、答えを差し出してしまったことがある。\n\n相手のためだと思っていた。でも、その瞬間、相手が選ぶ機会は、静かに消えていた。\n\n境界線の引き方、自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "相手が困っていると、つい答えを全部渡してしまう",
-        "材料や選択肢だけ渡して、決めるのは相手に任せられる",
+        "手を出したい気持ちを抑えて、聞かれるまで黙って待てる",
         "相手が失敗しそうな時、先回りして止めてしまう",
-        "手を出したい気持ちを抑えて、聞かれるまで黙って待てる"
+        "材料や選択肢だけ渡して、決めるのは相手に任せられる"
       ],
-      "image_prompt": "delicate watercolor, airy Quiet Luxury mood, 4-panel grid. Coco (youthful early-30s, not aged, dark brown bob, warm brown eyes, soft ivory skin, dusky lavender kimono, morning glory pattern) with Shirotsuma (white cat), Hiyori (white bird, blue wingtips); four scenes: handing over a finished answer, laying out options and stepping back, reaching out to stop a stumble, sitting on her hands, waiting quietly. A cool early-August dawn, morning glories still open. Dusky lavender, warm ivory, soft periwinkle, watercolor bloom. No dog, no extra animals, no text, no letters.",
-      "reply_1": "「こうした方がいいよ」——聞かれてもいないのに、答えを差し出してしまったことがある。\n\n5万人の本音を聴いてきて、気づいたことがある。責任感が強い人ほど、相手の判断まで引き受けたくなる。でも、引き受けた瞬間、相手が決める機会は消える。\n\n──────────────\nA｜答えを全部渡してしまう\n\n助けたい気持ちの強さだ。ただ、答えを渡すたびに、相手が自分で選ぶ経験は、ひとつずつ減っていく。\n\n──────────────\nB｜材料や選択肢だけ渡して、決めるのは相手に任せる\n\nこれが、いちばん境界線が整った形だ。決めるのは本人。決められる状態を作るところまでが、こちらの役目。渡したら、待つ。\n\n──────────────\nC｜失敗しそうな時、先回りして止める\n\n守りたい気持ちからくる行動だ。ただ、止め続けると、相手は「失敗した後にどう戻るか」を、自分で学ぶ機会を失う。\n\n──────────────\nD｜手を出したい気持ちを抑えて、聞かれるまで待てる\n\nこれも、Bと並ぶくらい難しい境界線だ。ただ、黙って待つだけで終わらせず、材料はちゃんと渡しておくと、相手はもっと早く自分で決められるようになる。\n\n──────────────\n\n期待を手放すというのは、関わらないことじゃない。決められる状態まで整えて、そこから先は本人に渡す、ということだ。\n\n感情はある。依存はしない。\n境界線を引ける人は、都合のいい人としては使われないし、冷たい人だとも思われない。むしろ、決める自由を渡された相手のほうが、その人をずっと信頼するようになる。\n\nじゃあ、「材料は渡すけど答えは渡さない」その言い方の具体は、どう作ればいいのか。その型は、会員の場に置いてる。"
+      "image_prompt": "delicate watercolor, airy Quiet Luxury mood, 4-panel grid. Coco (youthful early-30s, not aged, dark brown bob, warm brown eyes, soft ivory skin, dusky lavender kimono, morning glory pattern) with Shirotsuma (white cat), Hiyori (white bird, blue wingtips); four scenes: handing over a finished answer, sitting on her hands and waiting quietly, reaching out to stop a stumble, laying out options and stepping back. A cool early-August dawn, morning glories still open. Dusky lavender, warm ivory, soft periwinkle, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "reply_1": "「こうした方がいいよ」——聞かれてもいないのに、答えを差し出してしまったことがある。\n\n5万人の本音を聴いてきて、気づいたことがある。責任感が強い人ほど、相手の判断まで引き受けたくなる。でも、引き受けた瞬間、相手が決める機会は消える。\n\n──────────────\nA｜答えを全部渡してしまう\n\n助けたい気持ちの強さだ。ただ、答えを渡すたびに、相手が自分で選ぶ経験は、ひとつずつ減っていく。\n\n──────────────\nB｜手を出したい気持ちを抑えて、聞かれるまで待てる\n\nこれも、Dと並ぶくらい難しい境界線だ。ただ、黙って待つだけで終わらせず、材料はちゃんと渡しておくと、相手はもっと早く自分で決められるようになる。\n\n──────────────\nC｜失敗しそうな時、先回りして止める\n\n守りたい気持ちからくる行動だ。ただ、止め続けると、相手は「失敗した後にどう戻るか」を、自分で学ぶ機会を失う。\n\n──────────────\nD｜材料や選択肢だけ渡して、決めるのは相手に任せる\n\nこれが、いちばん境界線が整った形だ。決めるのは本人。決められる状態を作るところまでが、こちらの役目。渡したら、待つ。\n\n──────────────\n\n期待を手放すというのは、関わらないことじゃない。決められる状態まで整えて、そこから先は本人に渡す、ということだ。\n\n感情はある。依存はしない。\n境界線を引ける人は、都合のいい人としては使われないし、冷たい人だとも思われない。むしろ、決める自由を渡された相手のほうが、その人をずっと信頼するようになる。\n\nじゃあ、「材料は渡すけど答えは渡さない」その言い方の具体は、どう作ればいいのか。その型は、会員の場に置いてる。"
     },
     {
       "date": "2026-08-03",
@@ -114,12 +114,12 @@
       "frame": "「距離を置いたら、終わるかもしれない」——そう思って、苦しいままそばにい続けたことがある。\n\nでも、本当に切れない関係なら、手を離しても、なくならないはずだった。\n\n距離の取り方、自分に一番近いのはどれ？\n\nA〜D、コメントへ。いくつ当てはまった？",
       "choices": [
         "距離を取ることは冷たくすることだと思って、なかなか一歩引けない",
-        "切れない関係だとわかっているから、安心して距離を置ける",
         "距離を置いたら関係そのものが終わる気がして、怖くて動けない",
+        "切れない関係だとわかっているから、安心して距離を置ける",
         "温度まで下げてでも、距離だけは意地でも死守しようとする"
       ],
-      "image_prompt": "delicate watercolor, airy Quiet Luxury mood, 4-panel grid. Coco (youthful early-30s, not aged, dark brown bob, warm brown eyes, soft ivory skin, warm terracotta-sand kimono, summer-cloud pattern) with Shizuku (moss-green turtle), Shirotsuma (white cat), Hiyori (white bird, blue wingtips); four scenes: hesitating to step back, standing calm at an easy distance, frozen with worry, holding a cool front while her eyes stay warm. Towering summer clouds rise over a bright early-August sky. Warm terracotta, warm ivory, sky-blue, watercolor bloom. No dog, no extra animals, no text, no letters.",
-      "reply_1": "「距離を置いたら、終わるかもしれない」——そう思って、苦しいままそばにい続けたことがある。\n\n5万人の本音を聴いてきて、わかったことがある。距離を取ることを、ずっと冷たさだと思っていた時期がある。でも、順序が逆だった。切れない関係があるから、手を離せる。\n\n──────────────\nA｜冷たくすることだと思って、一歩引けない\n\n温かさを大事にしてきた証拠だ。ただ、離れることを冷たさと同一視すると、疲れていても離れられなくなる。\n\n──────────────\nB｜切れない関係だとわかっているから、安心して距離を置ける\n\nこれが、感情と依存を分けられた状態だ。温度は下げていない。距離だけを、整えている。切れる関係で手を離せば、それはただの放置になる。でも、切れないと分かっている関係なら、手を離すことは、放置じゃなく整えだ。\n\n──────────────\nC｜距離を置いたら終わる気がして怖い\n\nそれだけ大切に思っている証拠だ。ただ、怖さのまま距離を取らずにいると、疲れが先に関係を削っていく。\n\n──────────────\nD｜温度を下げてでも距離だけは死守する\n\n距離を守る意志の強さがある。ただ、温度まで一緒に下げてしまうと、相手には「嫌われた」としか伝わらない。\n\n──────────────\n\n温度は下げない。距離だけ整える。この二つは、同時にできる。追いかけないことは、冷めることじゃない。\n\n感情はある。依存はしない。\n温度を保ったまま距離を取れる人は、離れても軽く扱われない。むしろ、その落ち着きに、相手のほうが安心して戻ってくる。\n\nじゃあ、温度を保ったまま距離だけ整える、その具体的な間合いの取り方は、どこから練習すればいいのか。その続きは、会員の場に置いてる。"
+      "image_prompt": "delicate watercolor, airy Quiet Luxury mood, 4-panel grid. Coco (youthful early-30s, not aged, dark brown bob, warm brown eyes, soft ivory skin, warm terracotta-sand kimono, summer-cloud pattern) with Shizuku (moss-green turtle), Shirotsuma (white cat), Hiyori (white bird, blue wingtips); four scenes: hesitating to step back, frozen with worry, standing calm at an easy distance, holding a cool front while her eyes stay warm. Towering summer clouds rise over a bright early-August sky. Warm terracotta, warm ivory, sky-blue, watercolor bloom. No dog, no extra animals, no text, no letters.",
+      "reply_1": "「距離を置いたら、終わるかもしれない」——そう思って、苦しいままそばにい続けたことがある。\n\n5万人の本音を聴いてきて、わかったことがある。距離を取ることを、ずっと冷たさだと思っていた時期がある。でも、順序が逆だった。切れない関係があるから、手を離せる。\n\n──────────────\nA｜冷たくすることだと思って、一歩引けない\n\n温かさを大事にしてきた証拠だ。ただ、離れることを冷たさと同一視すると、疲れていても離れられなくなる。\n\n──────────────\nB｜距離を置いたら終わる気がして怖い\n\nそれだけ大切に思っている証拠だ。ただ、怖さのまま距離を取らずにいると、疲れが先に関係を削っていく。\n\n──────────────\nC｜切れない関係だとわかっているから、安心して距離を置ける\n\nこれが、感情と依存を分けられた状態だ。温度は下げていない。距離だけを、整えている。切れる関係で手を離せば、それはただの放置になる。でも、切れないと分かっている関係なら、手を離すことは、放置じゃなく整えだ。\n\n──────────────\nD｜温度を下げてでも距離だけは死守する\n\n距離を守る意志の強さがある。ただ、温度まで一緒に下げてしまうと、相手には「嫌われた」としか伝わらない。\n\n──────────────\n\n温度は下げない。距離だけ整える。この二つは、同時にできる。追いかけないことは、冷めることじゃない。\n\n感情はある。依存はしない。\n温度を保ったまま距離を取れる人は、離れても軽く扱われない。むしろ、その落ち着きに、相手のほうが安心して戻ってくる。\n\nじゃあ、温度を保ったまま距離だけ整える、その具体的な間合いの取り方は、どこから練習すればいいのか。その続きは、会員の場に置いてる。"
     }
   ]
 }
