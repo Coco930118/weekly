@@ -593,7 +593,9 @@ function renderNoteCard(note) {
   const funnelTargets = (note.funnel_targets || [])
     .map(t => `<span class="funnel-tag">${escapeHtml(t)}</span>`).join('');
 
-  const freeRatioBadge = (note.free_ratio && note.tier === 'flagship')
+  // 本文に有料境界マーカーがあるものだけバッジを出す（free_ratio の宣言だけでは出さない）
+  const hasPaywall = /ここから有料/.test(note.content_markdown || '');
+  const freeRatioBadge = (note.free_ratio && parseFloat(note.free_ratio) > 0 && hasPaywall)
     ? `<span class="free-ratio-badge">無料${Math.round(parseFloat(note.free_ratio) * 100)}%公開</span>`
     : '';
 
