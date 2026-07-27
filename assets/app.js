@@ -30,13 +30,13 @@ async function loadPosts() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json?v=20260729b');
+    const indexRes = await fetch('./posts/index.json?v=20260729c');
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=20260729b`);
+        const res = await fetch(`./posts/${filename}?v=20260729c`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -492,13 +492,13 @@ async function loadNotes() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json?v=20260707');
+    const indexRes = await fetch('./notes/index.json?v=20260727a');
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}?v=20260707`);
+        const res = await fetch(`./notes/${filename}?v=20260727a`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
