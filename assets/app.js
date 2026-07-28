@@ -30,7 +30,7 @@ async function loadPosts() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json?v=20260810c');
+    const indexRes = await fetch('./posts/index.json?v=20260804d');
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
