@@ -492,13 +492,13 @@ async function loadNotes() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json?v=20260727b');
+    const indexRes = await fetch('./notes/index.json?v=20260728a');
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}?v=20260727b`);
+        const res = await fetch(`./notes/${filename}?v=20260728a`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
