@@ -36,7 +36,7 @@ async function loadPosts() {
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=20260803h`);
+        const res = await fetch(`./posts/${filename}?v=20260803i`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
