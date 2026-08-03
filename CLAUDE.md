@@ -458,6 +458,7 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
   - 実年齢は40代でも、**絵は必ず30代前半に見えるように描く**。`elegant 40s woman` の素の指定は使わない（生成結果が50代前後に寄る）
 - 3匹の外見定義もそのまま使う。**英字表記は Shizuku / Shiratama / Hiyori に統一**（旧表記 Shirotsuma・Shirotama は使わない）
   - しずく＝`Shizuku (small wise turtle)`／しらたま＝`Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks)`／ひより＝`Hiyori (small soft white bird)`
+  - **しらたまは常に白の長毛猫**。黒猫・黒地に白模様・琥珀色の目では絶対に描かない。`character` の絵文字が🐈‍⬛（黒猫）でも**絵は必ず白**。投稿・note・診断・LINEスタンプの全プラットフォーム共通
 - 画風は **Quiet Luxury watercolor・soft transparent washes・muted dusty tones** で固定。締めは必ず **No text**（noteは `No text, no letters, no signage.`）
 - **X診断7本の画像プロンプトは絶対に変更しない**（既存ルール）
 
