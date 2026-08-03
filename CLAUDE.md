@@ -447,6 +447,54 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
 
 ---
 
+## 画像プロンプト 恒久ルール（X・Threads・note 共通・毎回必ず適用）
+
+`reference/image_prompt_rules.json` を毎回読み込んでから画像プロンプトを書く。**2026-07-14週の35投稿と2026-08-04週のnoteプロンプト（Coco承認済み）を正典として固定したもの。**
+
+### 絶対条件（これを外すとブランド資産が飛ぶ）
+- **必ず英語で書く**。日本語の短い情景メモは不可
+- **Cocoと動物が必ず登場する**。人物なしの静物・風景のみは作らない
+- **Cocoの外見定義は一字一句そのまま使う**：`Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; smooth youthful complexion, dark brown bob, warm brown eyes, …)`
+  - 実年齢は40代でも、**絵は必ず30代前半に見えるように描く**。`elegant 40s woman` の素の指定は使わない（生成結果が50代前後に寄る）
+- 3匹の外見定義（しずく＝small wise turtle／しらたま＝fluffy round white long-haired cat, large gentle eyes, rosy cheeks／ひより＝small soft white bird）もそのまま使う
+- 画風は **Quiet Luxury watercolor・soft transparent washes・muted dusty tones** で固定。締めは必ず **No text**（noteは `No text, no letters, no signage.`）
+- **X診断7本の画像プロンプトは絶対に変更しない**（既存ルール）
+
+### X・Threads（週35投稿）
+```
+A high-quality watercolor illustration with soft transparent washes. Summer {band}, {angle}.
+{coco} stands with {animals} {arrangement}; {shared_action}; {posture}; {background}; {light}.
+Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
+```
+- **日付・時刻の昇順に並べてから巡回させる**（この順序を間違えると分布が崩れる）
+- **動物は7周期**：しずく→しらたま→ひより→しずく＋しらたま→しずく＋ひより→しらたま＋ひより→3匹全員。週35本で各組合せ5本ずつ
+- **アングルは5周期**：front bust-up／side-profile bust-up／looking up／over-the-shoulder／close-up。週35本で各7本ずつ
+- **時間帯は投稿時刻から機械的に決める**（〜11:59＝morning／12:00〜20:59＝evening／21:00〜＝night）。**ズレを1本も出さない**
+- **朝夕＝絽の着物（淡色）／夜＝浴衣（濃紺系）**
+- **佇まいの一文（posture）は35本すべて別文**。その投稿の本文テーマに合わせて書く（ここが投稿と絵を繋ぐ唯一の可変部）
+
+### note（サムネイル）
+- **9:16縦・1080x1920をプロンプト内に明記**
+- Cocoは note版の定義（`never stern, no sharp eyes or furrowed brow; face fixed by the six reference images`）を使う
+- **動物は2匹**を記事テーマに合わせて配置
+- **上三分の一をタイトル文字用のグラデーション余白として空ける**（1本も欠かさない）
+- **ネガティブ指定を必ず末尾に**：`No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.`
+- Cocoは静物ではなく**行為の途中**を描く（お茶を持つ／紙を差し出す等）。記事の具体策を絵にする
+
+### 季節モチーフだけ毎週入れ替える（それ以外は固定）
+夏＝朝顔・蓮・トンボ・蛍・風鈴・灯籠／晩夏＝百日紅・向日葵・夕顔・蜩・夏の月／秋＝コスモス・すすき・紅葉・名月・柿／冬＝椿・南天・初雪・裸木・灯り／春＝桜・藤・躑躅・霞・燕（詳細は `reference/image_prompt_rules.json`）
+
+### 完成後チェック（毎回必須）
+`reference/image_prompt_rules.json` の `self_check` 12項目を実行する。特に——
+- [ ] 全本にCocoと動物が登場しているか（人物なしがゼロか）
+- [ ] `early 30s` が全本に入っているか／`elegant 40s woman` が残っていないか
+- [ ] 動物とアングルの巡回本数が揃っているか
+- [ ] 投稿時刻と時間帯のズレがゼロか
+- [ ] 佇まいの一文が35本すべて別文で、本文テーマと噛み合っているか
+- [ ] 季節モチーフが今週の季節に合っているか（前週の使い回しでないか）
+
+---
+
 ## 投稿JSONの構造
 `posts/week_YYYY-MM-DD_YYYY-MM-DD.json`
 - `week`: `"YYYY-MM-DD_YYYY-MM-DD"`
