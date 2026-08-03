@@ -492,7 +492,7 @@ async function loadNotes() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json?v=20260731c');
+    const indexRes = await fetch('./notes/index.json?v=20260803a');
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
