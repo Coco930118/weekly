@@ -456,7 +456,8 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
 - **Cocoと動物が必ず登場する**。人物なしの静物・風景のみは作らない
 - **Cocoの外見定義は一字一句そのまま使う**：`Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; smooth youthful complexion, dark brown bob, warm brown eyes, …)`
   - 実年齢は40代でも、**絵は必ず30代前半に見えるように描く**。`elegant 40s woman` の素の指定は使わない（生成結果が50代前後に寄る）
-- 3匹の外見定義（しずく＝small wise turtle／しらたま＝fluffy round white long-haired cat, large gentle eyes, rosy cheeks／ひより＝small soft white bird）もそのまま使う
+- 3匹の外見定義もそのまま使う。**英字表記は Shizuku / Shiratama / Hiyori に統一**（旧表記 Shirotsuma・Shirotama は使わない）
+  - しずく＝`Shizuku (small wise turtle)`／しらたま＝`Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks)`／ひより＝`Hiyori (small soft white bird)`
 - 画風は **Quiet Luxury watercolor・soft transparent washes・muted dusty tones** で固定。締めは必ず **No text**（noteは `No text, no letters, no signage.`）
 - **X診断7本の画像プロンプトは絶対に変更しない**（既存ルール）
 
@@ -477,7 +478,11 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 - **9:16縦・1080x1920をプロンプト内に明記**
 - Cocoは note版の定義（`never stern, no sharp eyes or furrowed brow; face fixed by the six reference images`）を使う
 - **動物は2匹**を記事テーマに合わせて配置
-- **上三分の一をタイトル文字用のグラデーション余白として空ける**（1本も欠かさない）
+- **縦を三分割して役割を固定する**（1本も欠かさない）
+  - **上三分の一＝タイトル文字用のグラデーション余白**（下三分の一に置かない）
+  - **中央＝Cocoと動物の主題**。サムネイルで読めるサイズで大きく置く
+  - **下三分の一＝静かな余白**
+  - 必ず入れる一文：`The upper third is left as a soft {c1}-to-{c2} gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space.`
 - **ネガティブ指定を必ず末尾に**：`No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.`
 - Cocoは静物ではなく**行為の途中**を描く（お茶を持つ／紙を差し出す等）。記事の具体策を絵にする
 

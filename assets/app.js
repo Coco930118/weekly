@@ -36,7 +36,7 @@ async function loadPosts() {
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=20260803m`);
+        const res = await fetch(`./posts/${filename}?v=20260803n`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -498,7 +498,7 @@ async function loadNotes() {
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}?v=20260731c`);
+        const res = await fetch(`./notes/${filename}?v=20260803n`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
