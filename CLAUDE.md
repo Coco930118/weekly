@@ -35,7 +35,7 @@
 4. **Threads診断7本**：作成後チェック2項目（焦点一致／「舐められず好かれる」明確化）
 5. **診断共通**：2ルール（その瞬間フック／選択肢のバランス・答えの位置）
 6. **note**：在り方署名＋背中押し＋完成後チェック3項目（ブランド整合性／到達力／読了と納得）
-7. **画像プロンプト**：`reference/image_prompt_rules.json` の `self_check` 全項目（X・Threads・note共通）
+7. **画像プロンプト**：`reference/image_prompt_rules.json` の `self_check` 全項目（X・Threads・note共通。**X診断・Threads診断は画像プロンプト廃止のため対象外**——2026-08-05 Coco決定）
 8. **収益モデルとの整合**：note_funnel週8本、定番プロミスのCTA統一
 
 #### 出力の作法（両方共通）
@@ -288,7 +288,7 @@ AだからB、を抽象語で置かない。「攻撃をやめたら」ではな
 ### ①焦点一致チェック
 - 各投稿のframe（フック＋設問）と4択choicesが、同じ1つの軸を指しているか（choicesがフックと無関係な複数テーマに散っていないか）
 - reply_1の解説・締めが、その1軸から外れていないか
-- 崩れていたら、choices・reply_1・image_promptの該当箇所を書き直す
+- 崩れていたら、choices・reply_1の該当箇所を書き直す
 
 ### ②「舐められず好かれる」明確化チェック
 - reply_1の締め（北極星「感情はある。依存はしない。」の前後）で、「どうすれば自分を安売りせず（舐められず）、それでも温かく愛される（好かれる）か」が名言化されているか
@@ -484,7 +484,7 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
   - しずく＝`Shizuku (small wise turtle)`／しらたま＝`Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks)`／ひより＝`Hiyori (small soft white bird)`
   - **しらたまは常に白の長毛猫**。黒猫・黒地に白模様・琥珀色の目では絶対に描かない。`character` の絵文字が🐈‍⬛（黒猫）でも**絵は必ず白**。投稿・note・診断・LINEスタンプの全プラットフォーム共通
 - 画風は **Quiet Luxury watercolor・soft transparent washes・muted dusty tones** で固定。締めは必ず **No text**（noteは `No text, no letters, no signage.`）
-- **X診断7本の画像プロンプトは絶対に変更しない**（既存ルール）
+- **X診断・Threads診断の画像プロンプトは廃止**（2026-08-05 Coco決定・恒久ルール）。`posts/shindan_x_*.json`／`posts/shindan_th_*.json` には `image_prompt` を持たせない。新規作成・グローアップ時にも作らない（旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの廃止決定で置き換え）
 
 ### X・Threads（週35投稿）
 ```
@@ -529,6 +529,7 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 `posts/week_YYYY-MM-DD_YYYY-MM-DD.json`
 - `week`: `"YYYY-MM-DD_YYYY-MM-DD"`
 - `posts[]`: date / platform / time / purpose / character / content / image_prompt / quote（+ comment は X診断のみ）
+- **X診断・Threads診断（`shindan_x_*` / `shindan_th_*`）は image_prompt を持たない**（2026-08-05 画像プロンプト廃止）
 
 ## 週次スケジュール
 | 時刻 | プラットフォーム |

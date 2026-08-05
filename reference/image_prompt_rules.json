@@ -11,7 +11,7 @@
     "3匹の外見定義も下記 animals をそのまま使う",
     "文末は必ず No text（noteは No text, no letters, no signage）で締める",
     "画風は Quiet Luxury watercolor・soft transparent washes・muted dusty tones で固定",
-    "X診断7本の画像プロンプトは絶対に変更しない（既存ルール）",
+    "X診断・Threads診断の画像プロンプトは廃止（2026-08-05 Coco決定・恒久ルール）。shindan_x_*.json / shindan_th_*.json には image_prompt を持たせず、新規作成・グローアップ時にも作らない。本ファイルの適用範囲は週35投稿とnoteサムネイルのみ",
     "しらたまは常に白の長毛猫として描く。黒猫表記は全プラットフォーム（投稿・note・診断・LINEスタンプ）で禁止"
   ],
   "coco_fixed_description": {
@@ -262,8 +262,9 @@
     "動物の呼び名が Shizuku / Shiratama / Hiyori に統一されているか（Shirotsuma・Shirotama が残っていないか）",
     "しらたまが全ファイルで白の長毛猫になっているか（black cat / 黒猫 の表記がゼロか）"
   ],
-  "updated": "2026-08-03",
+  "updated": "2026-08-05",
   "decisions_log": [
+    "2026-08-05 X診断・Threads診断の画像プロンプトを恒久廃止（Coco決定）。既存の shindan_x_*.json / shindan_th_*.json から image_prompt を削除済み。旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの決定で置き換え",
     "2026-08-03 しらたまの英字表記を Shiratama に統一（Coco決定）。旧表記 Shirotsuma（投稿）/ Shirotama（note）は全ファイルで置換済み",
     "2026-08-03 noteサムネイルは主題を中央（middle third）に大きく置く。上三分の一＝タイトル余白、下三分の一＝静かな余白（Coco指示）",
     "2026-08-03 しらたまは常に白の長毛猫で統一（Coco決定）。黒猫・黒地に白模様の表記を全ファイルから排除。絵文字🐈‍⬛は据え置き、絵だけ白で固定"
