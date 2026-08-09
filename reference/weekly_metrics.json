@@ -1,0 +1,38 @@
+{
+  "title": "週次実測ログ（35投稿の型配分をデータで回すための5指標）",
+  "created": "2026-08-09",
+  "how_to": "Cocoが週1回、その週の数字を5つだけ記入する（ざっくりでOK・スクショ1枚分の手間まで）。Codeは35投稿の新規生成・グローアップ時に必ずこのファイルを読み込み、直近2週で勝った型に拡散帯の配分を寄せる。記入がない週はスキップ可（欠測で生成は止めない）。",
+  "metrics_definition": {
+    "kakusan_avg_views": "拡散帯投稿の平均表示回数（Threads中心・ざっくりでよい）",
+    "top_post": "最高表示だった投稿（platform / 型 / 表示回数 / 内容メモ）",
+    "follower_delta": "フォロワー純増（x / threads 別）",
+    "note_weekly_views": "noteの週間ビュー",
+    "new_members": "メンバーシップ新規入会数（組織 / 恋愛 別）"
+  },
+  "type_labels": ["実験の物語", "場面ドロップ", "直球の問い", "一般論・定義", "本文CTA型funnel"],
+  "weeks": [
+    {
+      "week": "2026-08-04_2026-08-10",
+      "kakusan_avg_views": null,
+      "top_post": {
+        "platform": "Threads",
+        "type": "実験の物語",
+        "views": 243,
+        "memo": "パートナーが興味ないことを月に一度ひとりでやりに行く"
+      },
+      "follower_delta": { "x": null, "threads": null },
+      "note_weekly_views": null,
+      "new_members": { "soshiki": null, "renai": null },
+      "memo": "スクショ実測（部分）：実験型243／場面型149／直球の問い146／一般論・定義16〜62／本文CTA型funnel長文は2〜3回で配信されず。→ 2026-08-09にfunnel構造の恒久変更（本文＝勝ち型・note導線は返信へ）と拡散帯の型配分（実験10・場面4・問い3）を決定"
+    },
+    {
+      "week": "2026-08-11_2026-08-17",
+      "kakusan_avg_views": null,
+      "top_post": { "platform": null, "type": null, "views": null, "memo": null },
+      "follower_delta": { "x": null, "threads": null },
+      "note_weekly_views": null,
+      "new_members": { "soshiki": null, "renai": null },
+      "memo": "フック強化＋funnel新構造の初適用週。前週との比較対象"
+    }
+  ]
+}
