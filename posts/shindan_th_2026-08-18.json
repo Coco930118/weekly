@@ -9,15 +9,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく",
       "episode_ref": "E_011",
-      "frame": "「最初に無理して『いい人』を演じた関係は、\nずっとその仮面を外せなくなる。」\n\n出会って間もない人との距離感で、\nいつのまにか無理をしていることに気づいたことがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "「いつも機嫌いいよね」——出会って間もない人にそう言われた瞬間、作った笑顔のまま、胸の奥が少し重くなった。\n\n出会って間もない人との距離感で、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "嫌われたくなくて、本音より「いい反応」を選んでしまう",
         "「ここまでは見せていい」を決める前に、なんとなく全部見せてしまう",
         "相手のペースに合わせすぎて、自分のペースがわからなくなる",
         "仲良くなりたい気持ちが強くて、最初から距離を詰めすぎてしまう"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August post-Obon morning, lingering summer heat with morning glory (asagao) vines climbing a trellis and faint cicada-song atmosphere in warm early light. Coco (a composed young woman in a soft celadon-green linen dress with delicate mother-of-pearl buttons, late-summer morning style) and a small wise turtle (Shizuku, white flower on its shell) appear in all four quadrants. Quadrant A: Coco offers a bright practiced smile to an unseen new acquaintance while her free hand quietly presses against her own chest, holding something back; Shizuku watches her with a knowing, gentle gaze. Quadrant B: Coco kneels beside an open wicker basket spilling many small personal keepsakes out onto the ground all at once; Shizuku reaches a flipper toward the basket's lid as if suggesting to close it partway. Quadrant C: Coco walks half a step behind an unseen companion's footprints painted faintly in the path, her own natural stride visibly broken to match; Shizuku walks steadily at its own unhurried pace beside her. Quadrant D: Coco leans eagerly forward across a small tea table toward an empty chair; Shizuku gently rests a flipper on the hem of her sleeve, holding her back just slightly. Refined palette of soft celadon green, warm ivory, and pale morning gold. No text, no letters, no signage.",
-      "reply_1": "「最初に無理して『いい人』を演じた関係は、\nずっとその仮面を外せなくなる。」\n\n5万人の本音を聴いてきて、新しい関係にはある共通点がある。最初の数回のやり取りが、その後ずっと使われる「役」を決めてしまう。\n\n──────────────\nA｜本音より「いい反応」を選んでしまう\n\n嫌われたくない気持ちの表れだ。ただ、いい反応ばかり返していると、「いつも機嫌のいい人」という役が、相手の中に静かに固定されていく。\n\n──────────────\nB｜「見せていい範囲」を決める前に、全部見せてしまう\n\n安心してほしい気持ちの表れだ。ただ、最初にすべてを見せると、後から線を引いたときに「なんで急に」と受け取られやすくなる。\n\n──────────────\nC｜相手のペースに合わせすぎて、自分のペースを見失う\n\n思いやりの表れだ。ただ、最初に合わせたペースは、その関係の「基準速度」としてずっと使われ続ける。\n\n──────────────\nD｜仲良くなりたくて、最初から距離を詰めすぎてしまう\n\n早く安心したい気持ちの表れだ。ただ、それは相手にとって、急に重さとして届く入口になることがある。\n\n──────────────\n\n新しい相手の前で無理をした自分は、その後もずっと「無理をする役」を演じ続けることになる。\n\n感情はある。依存はしない。\n最初の数回で、少しだけでも本当の自分を混ぜておける人は、後から「素を出しにくい」関係に苦しまなくて済む。仮面を外せる関係のほうが、結局は長く、深く続く。\n\nじゃあ、その「最初から少しだけ本音を混ぜる」を、嫌われる不安なく始めるにはどうすればいいのか。その始め方は、会員の場に置いてる。"
+      "reply_1": "「いつも機嫌いいよね」——出会って間もない人にそう言われた瞬間、作った笑顔のまま、胸の奥が少し重くなった。\n\n5万人の本音を聴いてきて、新しい関係にはある共通点がある。最初の数回のやり取りが、その後ずっと使われる「役」を決めてしまう。\n\n──────────────\nA｜本音より「いい反応」を選んでしまう\n\n嫌われたくない気持ちの表れだ。ただ、いい反応ばかり返していると、「いつも機嫌のいい人」という役が、相手の中に静かに固定されていく。\n\n──────────────\nB｜「見せていい範囲」を決める前に、全部見せてしまう\n\n安心してほしい気持ちの表れだ。ただ、最初にすべてを見せると、後から線を引いたときに「なんで急に」と受け取られやすくなる。\n\n──────────────\nC｜相手のペースに合わせすぎて、自分のペースを見失う\n\n思いやりの表れだ。ただ、最初に合わせたペースは、その関係の「基準速度」としてずっと使われ続ける。\n\n──────────────\nD｜仲良くなりたくて、最初から距離を詰めすぎてしまう\n\n早く安心したい気持ちの表れだ。ただ、それは相手にとって、急に重さとして届く入口になることがある。\n\n──────────────\n\n新しい相手の前で無理をした自分は、その後もずっと「無理をする役」を演じ続けることになる。\n\n感情はある。依存はしない。\n最初の数回で、少しだけでも本当の自分を混ぜておける人は、後から「素を出しにくい」関係に苦しまなくて済む。仮面を外せる関係のほうが、結局は長く、深く続く。\n\nじゃあ、その「最初から少しだけ本音を混ぜる」を、嫌われる不安なく始めるにはどうすればいいのか。その始め方は、会員の場に置いてる。"
     },
     {
       "date": "2026-08-19",
@@ -26,15 +25,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "🐈しらたま",
       "episode_ref": "E_012",
-      "frame": "「言葉にできない違和感は、\nなかったことにはならない。」\n\n人間関係の中で「なんか違う」と感じたとき、\nつい流してしまうことがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "笑って頷きながら、胸の奥で小さく「ん？」が鳴った。でもその場では、何も言えなかった。\n\n人間関係の中で「なんか違う」と感じたとき、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "うまく説明できないから、その場では黙ってしまう",
         "違和感の理由を、後から自分に都合よく説明し直してしまう",
-        "違和感を感じるたびに、「私が細かいだけかも」と自分を疑う",
+        "違和感を感じるたびに、「わたしが細かいだけかも」と自分を疑う",
         "我慢した違和感の分だけ、別の些細なことで急に苛立ってしまう"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August humid afternoon, lingering heat haze, cicada-song stillness, a single electric fan turning slowly indoors. A fluffy round white cat (Shirotsuma) appears in all four quadrants. Quadrant A: Shirotsuma sits very still with mouth slightly open as if about to speak, a small thought-bubble of wavy uncertain lines above its head that never quite forms into words; warm hazy light. Quadrant B: Shirotsuma rearranges a small stack of mismatched blocks into a neater pile, patting them smooth as if to make them look fine, though one block clearly does not fit; a faint troubled crease remains in its expression. Quadrant C: Shirotsuma looks at its own reflection in a glass of iced barley tea, tilting its head with a doubting, self-questioning expression. Quadrant D: Shirotsuma's fur bristles slightly as it swats, a touch too sharply, at a paper fan that has fallen off the table; its eyes show surprise at its own sudden sharpness. Refined palette of warm hazy amber, soft grey-blue, and muted ivory. No text, no letters, no signage.",
-      "reply_1": "「言葉にできない違和感は、\nなかったことにはならない。」\n\n5万人の本音を聴いてきて、「なんか違う」にはある共通点がある。言葉にならない違和感は、感情ではなく、まだ言語化されていない情報だ。\n\n──────────────\nA｜うまく説明できないから黙ってしまう\n\n丁寧でいたい気持ちの表れだ。ただ、黙って流すと、相手にはしばしば「同意」として伝わってしまう。\n\n──────────────\nB｜理由を後から都合よく説明し直してしまう\n\n自分を納得させたい気持ちの表れだ。ただ、それは違和感を消す処理であって、解決ではない。同じ違和感は、また同じ場所で顔を出す。\n\n──────────────\nC｜「私が細かいだけかも」と自分を疑う\n\n相手を悪く思いたくない気持ちの表れだ。ただ、直感的なサインの多くは、後から振り返ると正確だったと気づくことが多い。\n\n──────────────\nD｜別の些細なことで急に苛立ってしまう\n\n我慢が限界に近づいているサインだ。我慢した違和感は消えるのではなく、別の場所に移動して出てくる。\n\n──────────────\n\n声を上げなかったことは、多くの場合「納得していた」と誤解される。\n\n感情はある。依存はしない。\n違和感を持ったまま黙らずにいられる人は、重い人にも、細かい人にも見られない。むしろ、ちゃんと関係を見ている人として、相手はまた話しやすくなる。\n\nじゃあ、その「なんか違う」を、責めている風に聞こえさせずに伝えるにはどうすればいいのか。その言い方は、会員の場で続きを話してる。"
+      "reply_1": "笑って頷きながら、胸の奥で小さく「ん？」が鳴った。でもその場では、何も言えなかった。\n\n5万人の本音を聴いてきて、「なんか違う」にはある共通点がある。言葉にならない違和感は、感情ではなく、まだ言語化されていない情報だ。\n\n──────────────\nA｜うまく説明できないから黙ってしまう\n\n丁寧でいたい気持ちの表れだ。ただ、黙って流すと、相手にはしばしば「同意」として伝わってしまう。\n\n──────────────\nB｜理由を後から都合よく説明し直してしまう\n\n自分を納得させたい気持ちの表れだ。ただ、それは違和感を消す処理であって、解決ではない。同じ違和感は、また同じ場所で顔を出す。\n\n──────────────\nC｜「わたしが細かいだけかも」と自分を疑う\n\n相手を悪く思いたくない気持ちの表れだ。ただ、直感的なサインの多くは、後から振り返ると正確だったと気づくことが多い。\n\n──────────────\nD｜別の些細なことで急に苛立ってしまう\n\n我慢が限界に近づいているサインだ。我慢した違和感は消えるのではなく、別の場所に移動して出てくる。\n\n──────────────\n\n声を上げなかったことは、多くの場合「納得していた」と誤解される。\n\n感情はある。依存はしない。\n違和感を持ったまま黙らずにいられる人は、重い人にも、細かい人にも見られない。むしろ、ちゃんと関係を見ている人として、相手はまた話しやすくなる。\n\nじゃあ、その「なんか違う」を、責めている風に聞こえさせずに伝えるにはどうすればいいのか。その言い方は、会員の場で続きを話してる。"
     },
     {
       "date": "2026-08-20",
@@ -43,15 +41,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく + 🐈しらたま",
       "episode_ref": "E_013",
-      "frame": "「同じ痛みが繰り返されるのは、\n相手のせいじゃないこともある。」\n\n自分の感情の動き方を振り返ったとき、\n心当たりがあることがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "また、この感じ——相手は前と違う人なのに、傷つき方だけが同じだと気づいた夜がある。\n\n自分の感情の動き方を振り返ったとき、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "同じような言葉で、毎回同じように傷ついている自分に気づく",
         "なぜそこまで反応してしまうのか、自分でもよくわからない",
         "冷静になった後、「そこまで怒ることじゃなかったかも」と思う",
         "その反応のパターンを、過去の別の人にも感じたことがある"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August early evening, indoor lamplight beginning as the summer heat softens outside, a quiet contemplative mood. Coco (a composed young woman in a pale wisteria-purple silk blouse with a delicate obi-inspired sash, late-summer evening style), a small wise turtle (Shizuku), and a fluffy round white cat (Shirotsuma) appear together in all four quadrants. Quadrant A: Coco touches her own cheek gently as if recalling an old ache, while Shizuku and Shirotsuma watch her with quiet recognition, both having seen this exact expression on her before. Quadrant B: Coco holds an old, faded photograph facing away from the viewer, her brow softly furrowed in genuine puzzlement; Shizuku tilts its head studying her expression rather than the photo. Quadrant C: Coco sits back in her chair with her hand loosely open, a relieved half-smile of hindsight; Shirotsuma curls calmly in her lap. Quadrant D: Coco traces a single thread with her finger that loops back on itself across a small table, connecting several tiny faded portraits; Shizuku and Shirotsuma both follow the thread's loop with careful eyes. Refined palette of soft wisteria purple, warm lamplight amber, and pale grey. No text, no letters, no signage.",
-      "reply_1": "「同じ痛みが繰り返されるのは、\n相手のせいじゃないこともある。」\n\n5万人の本音を聴いてきて、感情には「型」があるとわかってきた。同じ言葉に毎回同じ反応が出るのは、その型がすでにできている証拠だ。\n\n──────────────\nA｜同じ言葉で、毎回同じように傷つく\n\n繊細さの表れではなく、蓄積のサインだ。その型は、今の相手が作ったものとは限らない。もっと前から、自分の中にあった可能性がある。\n\n──────────────\nB｜反応の理由が自分でもよくわからない\n\n自然なことだ。パターンは言語化される前に、体が先に覚えていることが多い。わからないままでいいと、まず自分に許可していい。\n\n──────────────\nC｜冷静になった後「そこまで怒ることじゃなかった」と思う\n\n感情そのものが間違っていたサインではない。反応の大きさが、今の出来事に対して過剰だったというサインだ。\n\n──────────────\nD｜過去の別の人にも同じ反応を感じたことがある\n\nそれはほぼ確実にパターンだ。今の相手はそのパターンの「きっかけ」であって、「原因」ではないことが多い。\n\n──────────────\n\n感情のパターンは、今の関係を映す鏡ではなく、過去の未消化な出来事を映す鏡であることが多い。\n\n感情はある。依存はしない。\n強く反応した瞬間に「これはいつからの反応か」を自分に問える人は、今の相手を必要以上に責めずに済む。パターンに気づける人ほど、同じ痛みを繰り返さずに済む。\n\nじゃあ、その「いつからの反応か」を、混乱せずに見分けるにはどうすればいいのか。その見分け方は、会員の場に置いてる。"
+      "reply_1": "また、この感じ——相手は前と違う人なのに、傷つき方だけが同じだと気づいた夜がある。\n\n5万人の本音を聴いてきて、感情には「型」があるとわかってきた。同じ言葉に毎回同じ反応が出るのは、その型がすでにできている証拠だ。\n\n──────────────\nA｜同じ言葉で、毎回同じように傷つく\n\n繊細さの表れではなく、蓄積のサインだ。その型は、今の相手が作ったものとは限らない。もっと前から、自分の中にあった可能性がある。\n\n──────────────\nB｜反応の理由が自分でもよくわからない\n\n自然なことだ。パターンは言語化される前に、体が先に覚えていることが多い。わからないままでいいと、まず自分に許可していい。\n\n──────────────\nC｜冷静になった後「そこまで怒ることじゃなかった」と思う\n\n感情そのものが間違っていたサインではない。反応の大きさが、今の出来事に対して過剰だったというサインだ。\n\n──────────────\nD｜過去の別の人にも同じ反応を感じたことがある\n\nそれはほぼ確実にパターンだ。今の相手はそのパターンの「きっかけ」であって、「原因」ではないことが多い。\n\n──────────────\n\n感情のパターンは、今の関係を映す鏡ではなく、過去の未消化な出来事を映す鏡であることが多い。\n\n感情はある。依存はしない。\n強く反応した瞬間に「これはいつからの反応か」を自分に問える人は、今の相手を必要以上に責めずに済む。パターンに気づける人ほど、同じ痛みを繰り返さずに済む。そして、過剰に反応しない人のそばは安心できるから、相手はまた本音を話したくなる。\n\nじゃあ、その「いつからの反応か」を、混乱せずに見分けるにはどうすればいいのか。その見分け方は、会員の場に置いてる。"
     },
     {
       "date": "2026-08-21",
@@ -60,15 +57,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "🐢しずく + 🕊ひより",
       "episode_ref": "E_014",
-      "frame": "「愛の量より、\n愛の言語が合っているかどうか。」\n\n自分の愛し方・愛され方について、\nふと立ち止まって考えることがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "「そういうことじゃないんだけどな」——よかれと思ってしたことに、その顔をされた瞬間。\n\n自分の愛し方・愛され方について、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "尽くすことで愛を伝えているつもりが、相手にはあまり響いていない気がする",
         "「言わなくても伝わるはず」と思って、言葉で伝えることを省略している",
         "相手からの愛情表現を、自分の基準で「足りない」と感じてしまう",
         "愛されている実感が、特定の行動をされたときだけ強く湧く"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August golden Friday evening, the cooling breeze of yūnagi after a hot day, fading light with a hint of relief in the air. A small wise turtle (Shizuku) and a gentle white bird (Hiyori, pale blue-tinged wingtips) appear together in all four quadrants. Quadrant A: Shizuku carefully carries an armful of gathered flowers toward Hiyori, who looks at the flowers with a polite but slightly distant smile, clearly appreciating the effort without quite feeling met by it. Quadrant B: Hiyori sits close beside Shizuku in comfortable silence, assuming its presence alone says enough, while Shizuku glances sideways with a small wistful, waiting expression. Quadrant C: Hiyori offers a small warm gift wrapped in a leaf to Shizuku, who receives it while quietly measuring it against an invisible ruler, unconvinced it is quite enough. Quadrant D: Shizuku's eyes brighten with pure delight only when Hiyori performs one very specific familiar gesture, while several other quiet gestures around them go unnoticed. Refined palette of warm golden dusk, soft blue-grey, and pale coral. No text, no letters, no signage.",
-      "reply_1": "「愛の量より、\n愛の言語が合っているかどうか。」\n\n5万人の本音を聴いてきて、愛にはクセがあるとわかってきた。そのクセは、育った環境や過去の経験の中でできあがっていく。\n\n──────────────\nA｜尽くしているのに、あまり響いていない気がする\n\n本人にとっては最大の誠実さだ。ただ、相手が求めているのが「言葉」や「時間」だった場合、届き方がずれてしまう。\n\n──────────────\nB｜「言わなくても伝わるはず」で省略してしまう\n\n信頼している証でもある。ただ、多くの人は、言葉にされて初めて確信を持てる。\n\n──────────────\nC｜相手の愛情表現を「足りない」と感じてしまう\n\n真剣に愛を受け取りたい気持ちの表れだ。ただ、自分の基準で測ると、実際には渡されているのに「足りない」と感じ続けることになる。\n\n──────────────\nD｜特定の行動をされたときだけ実感が湧く\n\n自分なりの「愛されてる」の中心がはっきりしている証だ。ただ、その一点だけを求め続けると、他の愛情表現を見逃してしまう。\n\n──────────────\n\n愛し方のズレは、愛の不足ではなく、言語の違いであることが多い。\n\n感情はある。依存はしない。\n自分が一番愛されてると感じる瞬間を、相手に具体的に伝えられる人は、察してもらうのを待たなくて済む。渡す言葉を持っている人ほど、愛を受け取り損ねない。\n\nじゃあ、その「愛されてると感じる瞬間」を、重く聞こえさせずに伝えるにはどうすればいいのか。その伝え方は、会員の場で続きを話してる。"
+      "reply_1": "「そういうことじゃないんだけどな」——よかれと思ってしたことに、その顔をされた瞬間。\n\n5万人の本音を聴いてきて、愛にはクセがあるとわかってきた。そのクセは、育った環境や過去の経験の中でできあがっていく。\n\n──────────────\nA｜尽くしているのに、あまり響いていない気がする\n\n本人にとっては最大の誠実さだ。ただ、相手が求めているのが「言葉」や「時間」だった場合、届き方がずれてしまう。\n\n──────────────\nB｜「言わなくても伝わるはず」で省略してしまう\n\n信頼している証でもある。ただ、多くの人は、言葉にされて初めて確信を持てる。\n\n──────────────\nC｜相手の愛情表現を「足りない」と感じてしまう\n\n真剣に愛を受け取りたい気持ちの表れだ。ただ、自分の基準で測ると、実際には伝えられているのに「足りない」と感じ続けることになる。\n\n──────────────\nD｜特定の行動をされたときだけ実感が湧く\n\n自分なりの「愛されてる」の中心がはっきりしている証だ。ただ、その一点だけを求め続けると、他の愛情表現を見逃してしまう。\n\n──────────────\n\n愛し方のズレは、愛の不足ではなく、言語の違いであることが多い。\n\n感情はある。依存はしない。\n自分が一番愛されてると感じる瞬間を、相手に具体的に伝えられる人は、察してもらうのを待たなくて済む。伝える言葉を持っている人ほど、愛を受け取り損ねない。\n\nじゃあ、その「愛されてると感じる瞬間」を、重く聞こえさせずに伝えるにはどうすればいいのか。その伝え方は、会員の場で続きを話してる。"
     },
     {
       "date": "2026-08-22",
@@ -77,15 +73,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "🐢しずく + 🐈しらたま + 🕊ひより",
       "episode_ref": "E_015",
-      "frame": "「話さないことは、\n隠すこととは違う。」\n\n近しい人との「言わないでおく」について、\n考えたことがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "「なんかあった？」と聞かれて、「何もないよ」と返した。嘘じゃないのに、少しだけ後ろめたかった。\n\n近しい人との「言わないでおく」について、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "何でも共有しないと、不安になってしまう",
         "相手の全てを知りたくて、つい詮索してしまう",
         "言わないでいることに、罪悪感を感じることがある",
         "黙っている相手を見ると、「隠されている」と感じてしまう"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August quiet Saturday, slow afternoon light, distant cicada-song softening into evening stillness, a sense of unhurried time. A small wise turtle (Shizuku), a fluffy round white cat (Shirotsuma), and a gentle white bird (Hiyori) appear together in all four quadrants, without Coco. Quadrant A: Shirotsuma keeps glancing at a small empty notebook, anxious to fill every page with notes for Shizuku and Hiyori, who sit calmly needing no such record. Quadrant B: Hiyori peeks curiously behind a half-closed drawer that Shizuku has left slightly open, while Shizuku continues its own quiet task, unbothered by what is not shown. Quadrant C: Shizuku sits with a small private shell held close, a faint troubled look, as if it owes an explanation it hasn't given; Shirotsuma and Hiyori simply rest nearby, entirely at ease. Quadrant D: Shirotsuma watches Hiyori sitting in silent thought at a distance, its own eyes narrowing with suspicion, while the silence is in fact peaceful and untroubled. Refined palette of soft sage green, warm ivory, and muted dove grey. No text, no letters, no signage.",
-      "reply_1": "「話さないことは、\n隠すこととは違う。」\n\n5万人の本音を聴いてきて、深い関係にはある共通点がある。何でも全部話す関係が、必ずしも一番深い関係とは限らない。\n\n──────────────\nA｜何でも共有しないと不安になる\n\nつながっていたい気持ちの表れだ。ただ、安心は情報の量ではなく、信頼の質から生まれる。\n\n──────────────\nB｜相手の全てを知りたくて詮索してしまう\n\n愛情に見えて、実は「知らないことへの不安」が動いていることが多い。知らない部分を残せる関係のほうが、長く続く。\n\n──────────────\nC｜言わないでいることに罪悪感を感じる\n\n誠実でいたい気持ちの表れだ。ただ、誰にでも、自分だけで持っていていい部分がある。それは不誠実ではない。\n\n──────────────\nD｜黙っている相手を「隠している」と感じる\n\n不安から来る解釈だ。沈黙は多くの場合、考えている時間や、言葉にする準備の時間にすぎない。\n\n──────────────\n\n深い関係は、全部を共有することでは育たない。言わなくても信頼できる余白があることが、関係の強さになる。\n\n感情はある。依存はしない。\n相手の沈黙をすぐに不安と結びつけずにいられる人は、詮索も、疑いも手放していける。余白を持てる人ほど、そばにいて疲れない関係を作れる。\n\nじゃあ、その「沈黙を不安と結びつけない」を、日常でどう保てばいいのか。その保ち方は、会員の場に置いてる。"
+      "reply_1": "「なんかあった？」と聞かれて、「何もないよ」と返した。嘘じゃないのに、少しだけ後ろめたかった。\n\n5万人の本音を聴いてきて、深い関係にはある共通点がある。何でも全部話す関係が、必ずしも一番深い関係とは限らない。\n\n──────────────\nA｜何でも共有しないと不安になる\n\nつながっていたい気持ちの表れだ。ただ、安心は情報の量ではなく、信頼の質から生まれる。\n\n──────────────\nB｜相手の全てを知りたくて詮索してしまう\n\n愛情に見えて、実は「知らないことへの不安」が動いていることが多い。知らない部分を残せる関係のほうが、長く続く。\n\n──────────────\nC｜言わないでいることに罪悪感を感じる\n\n誠実でいたい気持ちの表れだ。ただ、誰にでも、自分だけで持っていていい部分がある。それは不誠実ではない。\n\n──────────────\nD｜黙っている相手を「隠している」と感じる\n\n不安から来る解釈だ。沈黙は多くの場合、考えている時間や、言葉にする準備の時間にすぎない。\n\n──────────────\n\n深い関係は、全部を共有することでは育たない。言わなくても信頼できる余白があることが、関係の強さになる。\n\n感情はある。依存はしない。\n相手の沈黙をすぐに不安と結びつけずにいられる人は、詮索も、疑いも手放していける。余白を持てる人ほど、そばにいて疲れない関係を作れる。\n\nじゃあ、その「沈黙を不安と結びつけない」を、日常でどう保てばいいのか。その保ち方は、会員の場に置いてる。"
     },
     {
       "date": "2026-08-23",
@@ -94,15 +89,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🕊ひより",
       "episode_ref": "E_016",
-      "frame": "「期待とは、\n相手ではなく自分が描いた理想への執着。」\n\n近しい人への「期待」について、\n裏切られた気持ちになったことがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "これくらい、してくれると思ってた——口に出さなかった期待が外れて、一人で勝手に冷めていく瞬間。\n\n近しい人への「期待」について、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "「こうしてくれるはず」という期待が裏切られると、深く落ち込む",
         "期待通りに動かない相手に、いつもがっかりしてしまう",
         "期待を手放すことは、諦めることのように感じてしまう",
         "期待していないふりをして、本当は強く期待している"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August Sunday, the very first cool hint of autumn in otherwise lingering summer light, clear pale-gold late afternoon. Coco (a composed young woman in a warm champagne-beige linen one-piece, a woven straw sun hat resting on the table beside her, late-summer garden style) and a gentle white bird (Hiyori) appear together in all four quadrants. Quadrant A: Coco holds a small drawing she made of an imagined perfect garden, now visibly wilted and different from the real garden behind her; Hiyori watches her deflated posture with quiet concern. Quadrant B: Coco gestures with mild frustration at Hiyori, who is doing its own unhurried thing rather than the specific task Coco expected; Hiyori remains unbothered, simply itself. Quadrant C: Coco holds the drawing loosely, hesitant to let it go, her hand hovering above releasing it into the breeze; Hiyori waits patiently nearby. Quadrant D: Coco says something light and unconcerned with a practiced smile, while her other hand secretly grips the edge of the drawing tightly out of sight; Hiyori notices the tension anyway. Refined palette of warm champagne gold, soft sage, and pale autumn-tinged blue. No text, no letters, no signage.",
-      "reply_1": "「期待とは、\n相手ではなく自分が描いた理想への執着。」\n\n5万人の本音を聴いてきて、期待にはある正体があるとわかってきた。期待は、相手への信頼のように見えて、実は「自分の理想通りに動いてほしい」という執着であることが多い。\n\n──────────────\nA｜期待が裏切られると深く落ち込む\n\nその落胆の深さは、期待が「相手の可能性」ではなく「自分の理想」に向いていた度合いに比例する。\n\n──────────────\nB｜期待通りに動かない相手にがっかりする\n\n相手を「思い通りにできる存在」として見ている名残だ。相手は最初から、自分の思い通りにはならない、別の人間だ。\n\n──────────────\nC｜期待を手放すことが諦めのように感じる\n\n大切にしたい気持ちの表れだ。ただ、期待を手放すことは諦めることではない。相手をそのまま見るという選択だ。\n\n──────────────\nD｜期待していないふりをして、本当は強く期待している\n\n傷つきたくない防衛だ。隠したまま裏切られると、痛みだけが残り、相手には何も伝わらない。\n\n──────────────\n\n期待を手放したとき、初めて相手の本当の姿と、本当の関係が見えてくる。\n\n感情はある。依存はしない。\n「こうあってほしい」を、相手のためか自分の安心のためかで見分けられる人は、期待に振り回されずに済む。手放し方を知っている人ほど、がっかりする回数が減っていく。\n\nじゃあ、その「相手のためか自分のためか」を、迷わず見分けるにはどうすればいいのか。その見分け方は、会員の場で続きを話してる。"
+      "reply_1": "これくらい、してくれると思ってた——口に出さなかった期待が外れて、一人で勝手に冷めていく瞬間。\n\n5万人の本音を聴いてきて、期待にはある正体があるとわかってきた。期待は、相手への信頼のように見えて、実は「自分の理想通りに動いてほしい」という執着であることが多い。\n\n──────────────\nA｜期待が裏切られると深く落ち込む\n\nその落胆の深さは、期待が「相手の可能性」ではなく「自分の理想」に向いていた度合いに比例する。\n\n──────────────\nB｜期待通りに動かない相手にがっかりする\n\n相手を「思い通りにできる存在」として見ている名残だ。相手は最初から、自分の思い通りにはならない、別の人間だ。\n\n──────────────\nC｜期待を手放すことが諦めのように感じる\n\n大切にしたい気持ちの表れだ。ただ、期待を手放すことは諦めることではない。相手をそのまま見るという選択だ。\n\n──────────────\nD｜期待していないふりをして、本当は強く期待している\n\n傷つきたくない防衛だ。隠したまま裏切られると、痛みだけが残り、相手には何も伝わらない。\n\n──────────────\n\n期待を手放したとき、初めて相手の本当の姿と、本当の関係が見えてくる。\n\n感情はある。依存はしない。\n「こうあってほしい」を、相手のためか自分の安心のためかで見分けられる人は、期待に振り回されずに済む。手放し方を知っている人ほど、がっかりする回数が減っていく。期待で縛らない人のそばは軽いから、相手はむしろ、自分から応えたくなる。\n\nじゃあ、その「相手のためか自分のためか」を、迷わず見分けるにはどうすればいいのか。その見分け方は、会員の場で続きを話してる。"
     },
     {
       "date": "2026-08-24",
@@ -111,15 +105,14 @@
       "purpose": "診断・共感・エンゲージメント",
       "character": "Coco + 🐢しずく + 🐈しらたま + 🕊ひより",
       "episode_ref": "E_017",
-      "frame": "「追わない選択は、諦めではなく、\n自分を取り戻す最初の一歩。」\n\n連絡や距離感で、追いかけたくなる衝動が\n生まれたことがある。\n\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
+      "frame": "送信したあと、画面を伏せて、また表にして。既読の二文字だけを待っていた夜。\n\n連絡や距離感で追いかけたくなるとき、\n一番近いのはどれ？\n\nA〜D、いちばん近いのをコメントへ。",
       "choices": [
         "既読がつかないと、何度もスマホを確認してしまう",
         "連絡が減ると、自分が何かしたかと不安になる",
         "距離を置かれるほど、なんとかして繋ぎとめたくなる",
-        "追いかけるのをやめたいのに、やめ方がわからない"
+        "追いかけるのをやめてみたら、少し寂しくて、でも呼吸が楽だった"
       ],
-      "image_prompt": "A high-quality watercolor illustration divided into four equal quadrants (top-left A, top-right B, bottom-left C, bottom-right D), soft transparent washes with a delicate 1px white border between panels. Late-August Monday morning, the week turning over, the first crisp edge of early-autumn light cutting through fading summer haze, a sense of quiet fresh resolve. Coco (a composed young woman in a dusty indigo yukata-inspired robe with a pale gold obi accent, transitional late-summer-to-autumn style), a small wise turtle (Shizuku), a fluffy round white cat (Shirotsuma), and a gentle white bird (Hiyori) appear together in all four quadrants. Quadrant A: Coco glances repeatedly at a small mirror held up by Shirotsuma that shows only her own reflection, not any message; Shizuku and Hiyori wait calmly nearby. Quadrant B: Coco touches her own chest with a flicker of worry as Hiyori simply continues preening nearby, entirely unrelated to her; Shizuku offers a steady reassuring glance. Quadrant C: Coco reaches a hand toward a kite string pulling away in the wind, chasing it a step too far; Shizuku gently rests a flipper on her ankle, holding her grounded. Quadrant D: Coco stands still at last with both hands calmly at her sides, the kite now sailing freely and beautifully on its own in the clear sky above; Shizuku, Shirotsuma, and Hiyori all stand beside her in quiet, upright companionship. Refined palette of dusty indigo, pale gold, and crisp early-autumn sky blue. No text, no letters, no signage.",
-      "reply_1": "「追わない選択は、諦めではなく、\n自分を取り戻す最初の一歩。」\n\n5万人の本音を聴いてきて、「追いかける」にはある正体があるとわかってきた。追いかけることは、相手のためではなく、自分の不安を静めるための行動になっていることが多い。\n\n──────────────\nA｜既読がつかないと何度も確認してしまう\n\n相手の反応を「安心のスイッチ」にしている状態だ。安心の在り処を相手の画面の中に置いている限り、心は休まらない。\n\n──────────────\nB｜連絡が減ると、自分が何かしたかと不安になる\n\n連絡の量を「自分の価値」の指標にしている状態だ。連絡の量と愛情の量は、必ずしも比例しない。\n\n──────────────\nC｜距離を置かれるほど繋ぎとめたくなる\n\n「距離が開くこと＝見捨てられること」という思い込みが動いている。距離は、関係の終わりではなく、関係の呼吸であることも多い。\n\n──────────────\nD｜追いかけるのをやめたいのに、やめ方がわからない\n\n自然なことだ。追いかける習慣は一気には止められない。まず「今日一回分だけ、送るのを我慢する」という小さな単位から始めるといい。\n\n──────────────\n\n追わない選択をした人は、諦めたのではない。自分の価値を、相手の反応から切り離すという技術を手にしただけだ。\n\n感情はある。依存はしない。\n連絡を送りたくなった瞬間に「これは相手のため？自分の不安を消すため？」と自分に聞ける人は、追いかける回数が自然に減っていく。追わずにいられる人のそばにこそ、人は自然と戻ってくる。\n\nじゃあ、その「送りたくなった瞬間の一呼吸」を、我慢と感じずに続けるにはどうすればいいのか。その続け方は、会員の場に置いてる。"
+      "reply_1": "送信したあと、画面を伏せて、また表にして。既読の二文字だけを待っていた夜。\n\n5万人の本音を聴いてきて、「追いかける」にはある正体があるとわかってきた。追いかけることは、相手のためではなく、自分の不安を静めるための行動になっていることが多い。\n\n──────────────\nA｜既読がつかないと何度も確認してしまう\n\n相手の反応を「安心のスイッチ」にしている状態だ。安心の在り処を相手の画面の中に置いている限り、心は休まらない。\n\n──────────────\nB｜連絡が減ると、自分が何かしたかと不安になる\n\n連絡の量を「自分の価値」の指標にしている状態だ。連絡の量と愛情の量は、必ずしも比例しない。\n\n──────────────\nC｜距離を置かれるほど繋ぎとめたくなる\n\n「距離が開くこと＝見捨てられること」という思い込みが動いている。距離は、関係の終わりではなく、関係の呼吸であることも多い。\n\n──────────────\nD｜追いかけるのをやめてみたら、少し寂しくて、でも呼吸が楽だった\n\nこれは、越えた側の感覚だ。寂しさが消えたわけではない。ただ、自分の価値を相手の反応から切り離せた人だけが知る軽さがある。\n\n──────────────\n\n追わない選択をした人は、諦めたのではない。自分の価値を、相手の反応から切り離すという技術を手にしただけだ。\n\n感情はある。依存はしない。\n連絡を送りたくなった瞬間に「これは相手のため？自分の不安を消すため？」と自分に聞ける人は、追いかける回数が自然に減っていく。追わずにいられる人のそばにこそ、人は自然と戻ってくる。\n\nじゃあ、その「送りたくなった瞬間の一呼吸」を、我慢と感じずに続けるにはどうすればいいのか。その続け方は、会員の場に置いてる。"
     }
   ]
 }
