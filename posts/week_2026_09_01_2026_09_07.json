@@ -1,0 +1,586 @@
+{
+  "week": "2026-09-01_2026-09-07",
+  "generated_at": "2026-08-14T07:00:00+09:00",
+  "source": "weekly_sns_run",
+  "trend_summary": [
+    "「管理職の罰ゲーム化」への共感が静かに広がっている——責任だけが増えて、評価も相談相手もない孤独を、正直に言語化できない現場リーダーの喉に刺さっている棘。",
+    "9月・下半期スタートの重さ——計画会議と期待値の更新が重なるこの時期、「また同じ9月が来た」という静かな疲労感と仕切り直しへの問いが交差している。",
+    "夏の終わりの関係の棚卸し——長い夏で近くなりすぎた関係に秋の風が入り始め、距離の再調整と「ちゃんと好きでいられるか」の問いが静かに高まっている。"
+  ],
+  "posts": [
+    {
+      "id": "x_01",
+      "date": "2026-09-01",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E334",
+      "content": "「また9月だ」と思った朝に、下半期の計画会議の資料が届いた。\n\n見た瞬間、胃が重くなった。\n\n何年もやってきて、まだなる。\n\nその重さは失敗ではない。向き合っているサインだ。\n\n今朝だけは、計画の前に「今月の自分が大切にしたいこと」を一行だけ書く。",
+      "quote": "向き合っているから、重い。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; smooth youthful complexion, dark brown bob, warm brown eyes, mustard-yellow ro-kimono with scattered chrysanthemum motif, shown from the chest up) faces the viewer with quiet composure, Shizuku (small wise turtle, dark shell with golden highlights) resting beside her hands; early autumn morning garden with first cosmos flowers and still-lingering morning glories; clear crisp morning light. Refined palette of mustard gold, warm ivory, pale sage. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "計画より先に、自分の軸を一行書く。そうしないと、計画に自分が使われる。",
+        "重い朝ほど、今月大切にしたい一つのことを決めてから動く。"
+      ]
+    },
+    {
+      "id": "x_02",
+      "date": "2026-09-01",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "episode_id": "E335",
+      "content": "部下が遅れた理由を話している。\n\n「でも」「だって」「そもそも」が続く。\n\n「また言い訳か」と思った、その瞬間。\n\n言い訳の中に、私が聞けていなかった本当の問題が混じっていることがある。\n\n最後まで聞いてから、判断する。今夜そう決めた。",
+      "quote": "言い訳の中に、聞けていなかった問題がある。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep crimson ro-kimono with cosmos pattern, shown from the chest up) faces the viewer with a listening, open expression; Hiyori (small soft white bird with pale blue-tinted wings) perches quietly on her shoulder; early autumn evening garden with cosmos flowers glowing in last light. Refined palette of deep crimson, pale ivory, soft autumn gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "最後まで聞いた後の判断は、聞く前の判断よりだいたい少し正確になる。",
+        "「また言い訳か」で止まらず、もう一呼吸聞いてみる。今夜だけ。"
+      ]
+    },
+    {
+      "id": "x_03",
+      "date": "2026-09-02",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E336",
+      "content": "中間管理職に相談できる人間関係がない、と気づいたのは3年目だった。\n\n上に言えば弱く見られる。下に言えば信頼を失う。横に言えばプライドが立つ。\n\nどこにも渡せない感情を、出張帰りの電車で飲んでいた。\n\n誰にも言えないことを知っているのは、自分だけだ。だからそれを、今日は日記に書く。",
+      "quote": "誰にも言えない分が、日記の行数になる。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, dark green ro-kimono with small autumn leaf pattern, shown from the chest up) holds a small notebook with quiet solemnity; Hiyori (small soft white bird) perches on the edge of the page; early autumn morning with cosmos flowers in a window behind them. Refined palette of dark forest green, warm cream, soft dawn gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "書いた瞬間は解決しない。でも書いた分だけ、少し軽くなる。",
+        "管理職の孤独は弱さじゃない。構造が作っている。だから記録が代わりになる。"
+      ]
+    },
+    {
+      "id": "x_04",
+      "date": "2026-09-02",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "episode_id": "E337",
+      "content": "正論を言いに行って、部屋が静まり返った。\n\n内容は正しかった。タイミングも悪くなかった。\n\nでも、自分の中にまだ怒りがあった。\n\n感情のまま出た言葉は、どんなに正しくても「責め」として届く。\n\n整理してから言葉を出す。その順番だけが、人を動かす正論になる。\n\n整え方はnoteに。",
+      "quote": "感情が整ってから出た言葉が、正論になる。💎",
+      "note_funnel": true,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, mustard ro-kimono with chrysanthemum detailing, shown from the chest up) and Shizuku (small wise turtle) and Shirotsuma (fluffy round white long-haired cat, large gentle eyes) are all present; an early autumn evening study scene with a candle and scattered notes; soft amber evening light. Refined palette of mustard, amber, and deep ivory. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "「伝わらなかった」は内容ではなく温度の問題であることが多い。",
+        "言葉を出す前に、自分の中の感情の温度を確認する。"
+      ]
+    },
+    {
+      "id": "x_05",
+      "date": "2026-09-03",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E338",
+      "content": "会議室で黙っている部下がいた。\n\n「また受け身だ」と思いかけた。\n\nでも思い返したら、あの子が発言した時に、ちゃんと受け取ったことがあったかわからなかった。\n\n「もう少し聞かせて」を言ったことがあるか。\n\nないなら、黙る理由を作ったのは私かもしれない。\n\n今日の会議で、一回だけ聞き返す。",
+      "quote": "「もう少し聞かせて」が、次の発言を生む。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, sage green ro-kimono with hagi bush-clover motif, shown from the chest up) and Shizuku (small wise turtle) face the viewer with attentive, questioning expression; Hiyori (small white bird) perches nearby with open posture; early autumn garden with morning cosmos and clear light. Refined palette of sage green, ivory, soft autumn morning. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "「もう少し聞かせて」の一言が、次の発言を作る。",
+        "黙る部下の前に、最後にちゃんと聞いた瞬間があったかを確認する。"
+      ]
+    },
+    {
+      "id": "x_06",
+      "date": "2026-09-03",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "episode_id": "E339",
+      "content": "経営が言った言葉と、現場が感じた言葉が全然違う日があった。\n\n同じ施策を、二つの言語で話す仕事が始まった。\n\n翻訳がうまくいった時、どちらも同じ方向を見ていた。\n\n板挟みは、どちらかの代弁者になることではない。両者の言語を橋でつなぐことだ。\n\n今夜、来週の言葉を一つだけ準備する。",
+      "quote": "板挟みは翻訳の仕事だ。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep crimson ro-kimono with subtle woven pattern, shown from the chest up) and Shirotsuma (fluffy round white long-haired cat) and Hiyori (small white bird) are arranged in a quiet evening scene; a small lamp illuminates a handwritten page; first autumn evening light. Refined palette of deep crimson, ivory, warm amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "翻訳者の仕事は意見を変えることではなく、届き方を変えること。",
+        "両者の言語を橋でつなぐ一語を、今夜だけ考えてみる。"
+      ]
+    },
+    {
+      "id": "x_07",
+      "date": "2026-09-04",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "返信獲得",
+      "episode_id": "E340",
+      "content": "今週の会議、何人の顔を覚えているか。\n\n人数ではなく、「今日この人しんどいかも」と思った顔の数。\n\n管理職の感度は、数字を読む力だけじゃない。\n\nその人の今日の温度を、一秒だけ考えたかどうかも含まれる。\n\n週末前に、今週見えなかった顔を一人、浮かべてみる。",
+      "quote": "顔を見ることが、現場の感度だ。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Friday morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, warm ivory ro-kimono with soft autumn flower arrangement, shown from the chest up) and all three characters Shizuku (small turtle), Shirotsuma (fluffy white cat), Hiyori (small white bird) appear together; a Friday morning quiet scene with cosmos flowers in a small vase; clear autumn morning light. Refined palette of warm ivory, mustard, sage. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "見ようとしないと、見えない。見ようとすると、だいたい見える。",
+        "今週見えなかった顔を一人浮かべるだけで、来週が少し変わる。"
+      ]
+    },
+    {
+      "id": "x_08",
+      "date": "2026-09-04",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "episode_id": "E341",
+      "content": "今週、「もう少し違う選択があったかも」と引っかかった判断が二つあった。\n\nそれを今夜だけで構わないから、一言で言語化した。\n\n「あそこは聞く前に答えを出しすぎた。」「あの場面は感情が整う前に言葉を出しすぎた。」\n\n言葉にすると、来週の一手が生まれる。\n\n引っかかりの活かし方はnoteに。",
+      "quote": "引っかかりを言語化すると、来週の一手が生まれる。💎",
+      "note_funnel": true,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Friday evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep indigo ro-kimono with autumn leaf pattern, shown from the chest up) alone with Shizuku (small wise turtle); a small open journal page with handwritten notes; Friday evening autumn garden with warm lamp glow. Refined palette of deep indigo, warm amber, soft ivory. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "引っかかった分だけ、明日への解像度が上がる。",
+        "「もう少し違ったかも」を言語化した夜が、来週の一手になる。"
+      ]
+    },
+    {
+      "id": "x_09",
+      "date": "2026-09-05",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E342",
+      "content": "休みの朝なのに、昨日の会議が頭にある。\n\n「あの発言、ちゃんと受け取れていたか」「あそこで一言足せばよかった」。\n\n取り越し苦労ではない。\n\nこれは、まだ現場を丁寧に扱っている証拠だ。\n\n今日はその考えを解決しようとしない。あった、と認めるだけでいい。",
+      "quote": "土曜に考えてしまうのは、責任を持っている証拠だ。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Saturday morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, soft white ro-kimono with pale cosmos and morning glory pattern, shown from the chest up) alone with Shirotsuma (fluffy round white long-haired cat) in a quiet Saturday morning scene; a window overlooking an autumn garden; clear soft morning light. Refined palette of soft white, pale lavender, warm morning gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "土曜に考えてしまう人は、月曜に少し丁寧になれる。",
+        "「あった」と認めるだけで、解決より先に少し軽くなる。"
+      ]
+    },
+    {
+      "id": "x_10",
+      "date": "2026-09-05",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E343",
+      "content": "今週、一番消耗したのはどの場面だった。\n\n怒りを飲み込んだ瞬間か。期待に応えられなかった感覚か。誰かのために正論を引っ込めた時間か。\n\nどれも、丁寧に仕事をした記録だ。\n\n「また来週もがんばろう」ではなくていい。\n\n「今週、よくやった」を一言、今夜だけ声に出してほしい。",
+      "quote": "消耗した分が、丁寧に仕事した記録だ。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Saturday evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale gold ro-kimono with scattered kiku chrysanthemum pattern, shown from the chest up) alone with Hiyori (small soft white bird) in a quiet evening scene; a glowing lamp and small cup of tea; Saturday autumn evening with soft night garden visible. Refined palette of pale gold, warm amber, ivory. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "消耗した記憶は、向き合った証拠でもある。",
+        "今週の消耗を一語で言えた瞬間、来週の一手が見えてくる。"
+      ]
+    },
+    {
+      "id": "x_11",
+      "date": "2026-09-06",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E344",
+      "content": "日曜の朝、頭の片隅に月曜がよぎる。\n\n「また始まるか」で終わる人と、「今週は何を大切にしよう」と考える人では、月曜の立ち上がりが変わる。\n\n1分だけでいい。\n\n今週、自分が大切にしたい「一つのこと」を、今から決めておく。",
+      "quote": "月曜の立ち上がりは、日曜の1分で変わる。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Sunday morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, sage green ro-kimono with autumn leaf motif, shown from the chest up) and Shizuku (small wise turtle) and Shirotsuma (fluffy round white long-haired cat) face the viewer in a calm Sunday morning scene; a journal page open with a single line written; soft autumn morning light through a window with cosmos. Refined palette of sage, warm ivory, gentle morning light. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "月曜に決めると遅い。日曜の夜が、翌週の土台になる。",
+        "1分で「今週大切にしたいこと」を一行書く。それだけで月曜が変わる。"
+      ]
+    },
+    {
+      "id": "x_12",
+      "date": "2026-09-06",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "保存獲得",
+      "episode_id": "E345",
+      "content": "チームが自走し始めた時に、何が変わったかを考えた。\n\n私が、何も言わなかった場面を作った週だった。\n\n任せるとは放置ではない。「この範囲はあなたが決める」と責任の輪郭を渡すことだ。\n\n引き取りすぎた分だけ、部下は考えるのをやめる。\n\n今週、一つだけ手を放す場面を作る。",
+      "quote": "任せるとは、責任の輪郭を渡すことだ。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Sunday evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep crimson ro-kimono with flying hiyori bird motif, shown from the chest up) and Shizuku (small wise turtle) and Hiyori (small white bird) in a reflective Sunday evening scene; a candle and an open hand gesture; soft autumn evening light. Refined palette of deep crimson, warm ivory, amber evening. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "渡した後の不安と、渡さなかった後の消耗。どちらが長期的に重いか、考えてみる。",
+        "手を放す場面を一つ作るだけで、チームの空気が変わることがある。"
+      ]
+    },
+    {
+      "id": "x_13",
+      "date": "2026-09-07",
+      "platform": "X",
+      "time": "06:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E346",
+      "content": "月曜の朝、部下の名前を一人だけ思い浮かべた。\n\n今週、その人に「今日どうだった？」をいつもより少しだけ丁寧に聞く。\n\nそれだけを、今週の一手に決めた。\n\n管理職が誰かを見ると、そのチームは少し前を向く。\n\n今週、あなたが丁寧に関わる一人は誰か。",
+      "quote": "管理職が誰かを見ると、チームは少し前を向く。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Monday morning, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, mustard-gold ro-kimono with chrysanthemum and autumn leaf pattern, shown from the chest up) and Shirotsuma (fluffy round white long-haired cat) and Hiyori (small white bird) face the viewer with morning energy; early autumn Monday morning garden with cosmos in full bloom; clear morning light. Refined palette of mustard gold, ivory, clear autumn morning. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "一人を丁寧に見られると、その空気がチームに伝わることがある。",
+        "名前を一人浮かべて、今週一度だけ丁寧に関わる。それだけが今週の一手。"
+      ]
+    },
+    {
+      "id": "x_14",
+      "date": "2026-09-07",
+      "platform": "X",
+      "time": "22:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E347",
+      "content": "今日の終わりに、一つだけ確認した。\n\n「あの場面、もう少し聞けばよかった」。\n\nそれだけだ。自己嫌悪ではない。\n\n引っかかりに気づいた分だけ、明日の解像度が上がる。\n\n今日の「もう少し違ったな」を、一言だけ言語化してほしい。コメントで教えてもらえると嬉しい。",
+      "quote": "引っかかりを言語化した日の翌日が変わる。💎",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Monday evening, front view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep forest green ro-kimono with autumn chrysanthemum pattern, shown from the chest up) alone with Hiyori (small white bird), facing the viewer with quiet, reflective evening expression; soft evening lamp glow with autumn garden beyond window. Refined palette of deep forest green, warm amber, ivory. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "言語化した日の翌日は、少しだけ違う選択肢が見える。",
+        "「もう少し違ったな」と言えた夜は、消耗じゃなく成長の記録だ。"
+      ]
+    },
+    {
+      "id": "th_01",
+      "date": "2026-09-01",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E348",
+      "content": "「また会いたい」と思う人と、\n「もう十分」と感じる人がいる。\n\n違いは、その人といる時の自分が好きかどうかだけだった。\n\n秋が来るたびに、それを確認する。\n\n💍",
+      "quote": "自分が好きでいられる人と、時間を使う。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September morning, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, mustard-gold ro-kimono with chrysanthemum and cosmos pattern, shown from the chest up) in side profile with Shizuku (small wise turtle) resting quietly beside her; early autumn morning scene with cosmos flowers in soft light. Refined palette of mustard gold, ivory, pale autumn morning. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "好きでいられる自分が増える場所に、時間を使っていく。"
+      ]
+    },
+    {
+      "id": "th_02",
+      "date": "2026-09-01",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E349",
+      "content": "もう一度会いたいと思う人がいる。\n\n話が上手いわけでも、一緒にいて楽しいわけでもない。\n\nその人といると、自分が少し正直になれる気がする。\n\nそれだけで、また会いたくなる。\n\n💍",
+      "quote": "その人といると、自分が少し正直になれる気がする。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September midday, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale cream ro-kimono with soft cosmos pattern, shown from the chest up) in side profile with Shirotsuma (fluffy round white long-haired cat, large gentle eyes, rosy cheeks) nestled beside her; soft autumn midday light with cosmos framing the scene. Refined palette of pale cream, warm ivory, soft autumn blue sky. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "「もう一度会いたい」の理由がわかった時、自分が何を求めているかがわかる。"
+      ]
+    },
+    {
+      "id": "th_03",
+      "date": "2026-09-01",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E350",
+      "content": "夜は、自分に戻る時間にしている。\n\n誰かの機嫌を確かめない。\n誰かの期待に答えない。\n\nただ今日の自分が、どんな気分かを感じる。\n\nその10分が翌朝の余裕を作る。\n\nあなたにも、そんな時間がある？🫶",
+      "quote": "夜の10分で、翌朝の余裕は生まれる。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September evening, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale blue ro-kimono with autumn water and cosmos motif, shown from the chest up) in side profile with Hiyori (small soft white bird with pale blue-tinted wings) perched on her shoulder; early autumn evening with soft garden candlelight. Refined palette of pale blue, warm ivory, evening amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "一人でいられるから、誰かといられる。"
+      ]
+    },
+    {
+      "id": "th_04",
+      "date": "2026-09-02",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E351",
+      "content": "先に連絡するのをやめた週があった。\n\n3日、5日、7日。\n\n返ってきた日と、来なかった日。\n\nどちらもその関係の答えだった。\n\n待てる自分になった分だけ、返ってきた言葉が軽く聞こえなくなった。\n\n💍",
+      "quote": "待てる自分になった分だけ、返ってきた言葉が変わる。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September morning, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, dark green ro-kimono with hagi bush-clover motif, shown from the chest up) and Shizuku (small wise turtle) and Shirotsuma (fluffy round white long-haired cat) in side profile, looking toward a window; morning cosmos garden with clear autumn light. Refined palette of dark green, ivory, morning gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "待てる人は、相手の言葉をちゃんと受け取れる。"
+      ]
+    },
+    {
+      "id": "th_05",
+      "date": "2026-09-02",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E352",
+      "content": "「好きだから何でもする」が\n「失うのが怖いから何でもする」に変わる瞬間がある。\n\nそこを越えると、愛情は執着に変わる。\n\n自分のためなのか、相手のためなのか。\n\n問い直すだけで、少し整う。\n\n💍",
+      "quote": "自分のためか、相手のためか。問い直すだけで整う。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September midday, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale sage ro-kimono with chrysanthemum and autumn leaf pattern, shown from the chest up) and Shizuku (small wise turtle) and Hiyori (small white bird) in side profile; a thoughtful midday scene with cosmos in a vase and soft autumn light. Refined palette of sage, ivory, pale autumn blue. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "整えるだけでいい。答えを出す必要はない。"
+      ]
+    },
+    {
+      "id": "th_06",
+      "date": "2026-09-02",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E353",
+      "content": "本音が言えた夜と、\n言えなかった夜がある。\n\nどちらが正解かより、言えなかった夜に何を選んだかの方が大事だと思っている。\n\n黙ることも、離れることも、選択だ。\n\n整え方はnoteに書きました。\n\n💍",
+      "quote": "言えなかった夜も、選択だ。🫶",
+      "note_funnel": true,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September evening, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep crimson ro-kimono with cosmos and autumn star motif, shown from the chest up) and Shirotsuma (fluffy round white long-haired cat) and Hiyori (small white bird) in side profile; a quiet evening scene with candlelight and autumn garden. Refined palette of deep crimson, warm ivory, soft amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "言えなかった選択は、次の言えた選択の土台になる。"
+      ]
+    },
+    {
+      "id": "th_07",
+      "date": "2026-09-03",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E354",
+      "content": "好きだから、手を放すことがある。\n\n嫌いになったわけじゃない。\n\n近すぎると、相手の感情と自分の感情が区別できなくなるから。\n\n離れることで、ちゃんと好きでいられる。\n\n距離の整え方をnoteに書きました。\n\n💍",
+      "quote": "離れることで、ちゃんと好きでいられる。🫶",
+      "note_funnel": true,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September morning, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, ivory ro-kimono with scattered autumn cosmos and leaf pattern, shown from the chest up) and all three animals Shizuku (small turtle), Shirotsuma (fluffy white cat), Hiyori (small white bird) in side profile; morning scene with cosmos garden and clear autumn light. Refined palette of ivory, sage, autumn morning gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "好きを守るために離れる。それが分かった時、関係が少し軽くなった。"
+      ]
+    },
+    {
+      "id": "th_08",
+      "date": "2026-09-03",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E355",
+      "content": "「いないと不安」と「いると安心」は、\n似ているようで全然違う。\n\n前者は、相手がいなければ崩れる。\n後者は、相手がいなくても立っていられる。\n\nその違いに気づいた時、関係の形が少し変わった。\n\n💍",
+      "quote": "一人でいられる力が、信頼を生む。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September midday, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale blue ro-kimono with cosmos cloud pattern, shown from the chest up) alone with Shizuku (small wise turtle) in side profile; a midday scene with clear autumn blue sky and cosmos in a garden; soft cheerful autumn light. Refined palette of pale blue, ivory, warm gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "一人でいられる力が、誰かといることを豊かにする。"
+      ]
+    },
+    {
+      "id": "th_09",
+      "date": "2026-09-03",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E356",
+      "content": "今年の夏、少し関係の棚卸しをした。\n\n「また会いたい」人。\n「名前を見ると少し重くなる」人。\n「連絡が来なくなってきた」人。\n\n答えを出すためじゃない。\n\n今の自分が、正直にどう感じているかを一度確認した。\n\nあなたの今夏は、どんな棚卸しになる？🫶",
+      "quote": "関係の棚卸しは、正解を出すためじゃない。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September evening, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, mustard-gold ro-kimono with autumn leaf and cosmos pattern, shown from the chest up) alone with Shirotsuma (fluffy round white long-haired cat) in side profile; a quiet evening reflection scene with small handwritten notes; warm autumn evening light. Refined palette of mustard gold, ivory, warm amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "棚卸しは正解を見つけるためじゃなく、今の自分を確認するためにある。"
+      ]
+    },
+    {
+      "id": "th_10",
+      "date": "2026-09-04",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E357",
+      "content": "長く続く関係に共通しているのは、\n一緒にいる時に自分のペースでいられること。\n\n無理して合わせない。\n気を遣いすぎない。\nただそこにいられる。\n\n「そこにいられる」感覚が、一番贅沢な関係だと気づいた。\n\n💍",
+      "quote": "そこにいられる感覚が、一番贅沢な関係だ。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Friday morning, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, sage green ro-kimono with autumn chrysanthemum pattern, shown from the chest up) alone with Hiyori (small soft white bird) in side profile; a Friday morning scene with fresh cosmos and early autumn garden; clear morning light. Refined palette of sage green, ivory, clear morning. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "「そこにいられる」を一つ見つけると、他に何もなくても十分になれることがある。"
+      ]
+    },
+    {
+      "id": "th_11",
+      "date": "2026-09-04",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E358",
+      "content": "「疲れた」と言える人と、言えない人がいる。\n\n違いは親しさじゃない。\n\nその人の前の「自分」を、信頼できているかどうかだ。\n\n言えた場所の方を、もう少し大切にしていく。\n\n💍",
+      "quote": "「疲れた」が言えた場所が、本当の居場所だ。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Friday midday, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep crimson ro-kimono with autumn bush-clover motif, shown from the chest up) and Shizuku (small wise turtle) and Shirotsuma (fluffy round white long-haired cat) in side profile; a warm Friday midday scene with a small tea tray and cosmos in light. Refined palette of deep crimson, ivory, warm afternoon. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "「疲れた」が出た場所が、本当の居場所だと後からわかる。"
+      ]
+    },
+    {
+      "id": "th_12",
+      "date": "2026-09-04",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E359",
+      "content": "秋の入口に、一度だけ整えたいことがある。\n\nもう少し近くにいたかった人に、そのまま伝える。\n少し距離を置きたかった人に、それも正直になる。\n\n感情を持ち越さないのが、整え方のひとつだと思っている。\n\nその技術をnoteに書きました。\n\n💍",
+      "quote": "感情を持ち越さないのが、秋の入口の整え方だ。🫶",
+      "note_funnel": true,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Friday evening, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale gold ro-kimono with cosmos and hagi pattern, shown from the chest up) and Shizuku (small wise turtle) and Hiyori (small white bird) in side profile; a quiet Friday evening scene with candles and autumn garden; soft dusk light. Refined palette of pale gold, ivory, dusk amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "持ち越した感情は、別の場所で顔を出す。"
+      ]
+    },
+    {
+      "id": "th_13",
+      "date": "2026-09-05",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E360",
+      "content": "誰かのためではなく、\nただ自分のためだけの時間が週に何時間あるか。\n\nそれが、関係の余裕の量に比例している気がする。\n\n自分の時間が少ない人ほど、誰かに「もっとして」と求めやすくなる。\n\n今日は、ただ自分のためだけに時間を使う。\n\n💍",
+      "quote": "自分のための時間が、関係の余裕を作る。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Saturday morning, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, soft white ro-kimono with pale cosmos and chrysanthemum pattern, shown from the chest up) and Shirotsuma (fluffy round white long-haired cat) and Hiyori (small white bird) in side profile; a quiet Saturday morning with a window view of an autumn garden. Refined palette of soft white, pale lavender, gentle morning. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "自分を満たした分だけ、誰かへの余裕が生まれる。"
+      ]
+    },
+    {
+      "id": "th_14",
+      "date": "2026-09-05",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E361",
+      "content": "一人でいることを、意図的に練習した時期があった。\n\n誰かに会う前に、一人でいる。\n誰かに会った後も、一人でいる。\n\n何かをしなくていい。\nただ「一人でいられる自分」を確認する。\n\nそれが、依存しない関係の土台になった。\n\n💍",
+      "quote": "一人でいられる自分が、依存しない関係の土台になる。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Saturday midday, side-profile view. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, mustard gold ro-kimono with scattered autumn leaf pattern, shown from the chest up) alone with Shizuku (small wise turtle) in side profile; a quiet Saturday midday with a cup of tea and cosmos outside; warm autumn light. Refined palette of mustard gold, warm ivory, clear autumn. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "一人でいられると、誰かといることが少し自由になる。"
+      ]
+    },
+    {
+      "id": "th_15",
+      "date": "2026-09-05",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E362",
+      "content": "追いかけないを、選んだ日のことを覚えている。\n\n返信を待たずに自分の時間を使えた日と、\nずっとスマホを見ていた日。\n\nどちらが自分らしかったか、わかっていた。\n\n追わない技術は、相手への諦めじゃない。自分への戻り方だ。\n\nその技術をnoteに書きました。\n\n💍",
+      "quote": "追わない選択は、自分への戻り方だ。🫶",
+      "note_funnel": true,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Saturday evening, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale blue ro-kimono with Hiyori flying bird motif, shown from the chest up looking upward) and Shizuku (small wise turtle); Hiyori (small white bird) flies freely upward in the composition; early autumn evening with clear sky beyond. Refined palette of pale blue, ivory, evening amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "自分に戻れた日から、関係が少し変わった。"
+      ]
+    },
+    {
+      "id": "th_16",
+      "date": "2026-09-06",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E363",
+      "content": "日曜の朝は、何もしなくていい時間にしている。\n\n誰かに返信しない。\n誰かに会わない。\n\nただ今の自分がどんな気分かを感じる。\n\nそれだけで、関係の余白が生まれる。\n\n💍",
+      "quote": "何もしない朝が、関係の余白を作る。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Sunday morning, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, soft sage ro-kimono with autumn morning pattern, shown from the chest up looking gently upward) and Shirotsuma (fluffy round white long-haired cat); Sunday morning light from above with cosmos and chrysanthemum framing. Refined palette of sage, ivory, clear morning gold. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "何もしない朝を持てる人は、誰かといる時に余裕がある。"
+      ]
+    },
+    {
+      "id": "th_17",
+      "date": "2026-09-06",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E364",
+      "content": "言えてよかった言葉と、\n言わなくてよかった言葉がある。\n\nどちらも愛情から来ているのに、届き方が全然違う。\n\n黙ることも、選択だ。\n\nいい沈黙は、いい言葉より信頼されることがある。\n\n💍",
+      "quote": "黙ることも、言葉の選択だ。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Sunday midday, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale ivory ro-kimono with hiyori bird and autumn flower motif, shown from the chest up looking gently upward) and Hiyori (small soft white bird) perched above; soft Sunday midday with autumn light from above. Refined palette of ivory, pale blue, warm midday. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "沈黙は逃げではなく、言葉を選んだ結果であることがある。"
+      ]
+    },
+    {
+      "id": "th_18",
+      "date": "2026-09-06",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E365",
+      "content": "「また来週ね」と言って別れた後、\n次に会うまでに何度思い出すかを数えてみた。\n\n多い人ほど、次に会えた時の喜びが違う。\n少ない人ほど、次に会っても「また会えた」感がない。\n\n距離が開いた分だけ、出会い直しの喜びがある。\n\nあなたには、そんな人がいる？🫶",
+      "quote": "距離が開くほど、出会い直しの喜びが深くなる。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Sunday evening, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep crimson ro-kimono with autumn cosmos and leaf pattern, shown from the chest up looking gently upward) and Shizuku (small wise turtle) and Shirotsuma (fluffy round white cat); soft Sunday evening light from above with autumn garden. Refined palette of deep crimson, ivory, soft evening amber. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "距離が出会い直しの価値を作る。"
+      ]
+    },
+    {
+      "id": "th_19",
+      "date": "2026-09-07",
+      "platform": "Threads",
+      "time": "07:00",
+      "character": "🐢しずく",
+      "purpose": "共感獲得",
+      "episode_id": "E366",
+      "content": "月曜の朝は、昨日の続きから始まる。\n\n昨日「また連絡してみようかな」と思った相手への、今日の「おはよう」もその続きだ。\n\n関係は、切れたり繋がったりするわけじゃない。\n\nずっとゆっくり、動いてる。\n\n💍",
+      "quote": "関係はずっとゆっくり、動いている。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Monday morning, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, mustard-gold ro-kimono with chrysanthemum and hagi pattern, shown from the chest up looking gently upward with a hopeful morning expression) and Shizuku (small wise turtle) and Hiyori (small white bird) flying upward; Monday morning cosmos garden with clear autumn sky above. Refined palette of mustard gold, ivory, clear morning blue. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "ゆっくり動く関係の方が、長く続くことがある。"
+      ]
+    },
+    {
+      "id": "th_20",
+      "date": "2026-09-07",
+      "platform": "Threads",
+      "time": "10:00",
+      "character": "🐈‍⬛しらたま",
+      "purpose": "保存獲得",
+      "episode_id": "E367",
+      "content": "「期待している」と「信頼している」は\n似ているようで、全然違う。\n\n期待は、裏切られると傷つく。\n信頼は、裏切られても崩れない。\n\n「あなたならできる」と「あなたに任せる」では、\n渡している重さが違う。\n\n💍",
+      "quote": "信頼は、裏切られても崩れないものだ。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Monday midday, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, pale blue ro-kimono with autumn star and cosmos pattern, shown from the chest up looking gently upward with a serene expression) and Shirotsuma (fluffy round white long-haired cat) and Hiyori (small white bird) flying above; Monday autumn midday with clear sky and cosmos from above. Refined palette of pale blue, ivory, clear autumn light. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "信頼を渡せるようになった時、相手も少し変わった。"
+      ]
+    },
+    {
+      "id": "th_21",
+      "date": "2026-09-07",
+      "platform": "Threads",
+      "time": "19:00",
+      "character": "🕊ひより",
+      "purpose": "返信獲得",
+      "episode_id": "E368",
+      "content": "夏が終わる前に、一つだけ整えておきたいことがある。\n\n手放せなかった感情でも、\n言えなかった言葉でも——\n\n全部に答えを出さなくていい。\n\nただ「あった」と認めること。それだけで十分。\n\nあなたの今夏に残っているものは？🫶",
+      "quote": "「あった」と認めることが、整えの始まりだ。🫶",
+      "note_funnel": false,
+      "image_prompt": "A high-quality watercolor illustration with soft transparent washes. Early September Monday evening, looking-up angle. Coco (a refined young woman, brand age 40s but drawn to look early 30s; smooth youthful complexion, dark brown bob, warm brown eyes, deep forest green ro-kimono with cosmos and autumn chrysanthemum pattern, shown from the chest up looking gently upward with a soft, accepting expression) and all three Shizuku (small turtle), Shirotsuma (fluffy white cat), and Hiyori (small white bird flying above) together; Monday autumn evening with warm lamp glow and cosmos garden. Refined palette of deep forest green, ivory, warm amber evening. Quiet Luxury watercolor. No text.",
+      "self_replies": [
+        "「あった」と認めた後に、静かに手が動くことがある。"
+      ]
+    }
+  ]
+}
