@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="「優しくしているのに、なぜか軽く扱われる」——境界線とは壁ではなく輪郭。輪郭を持つことが、本当の愛を守る技術になる｜Coco note">
+  <title>愛の輪郭 ――境界線という本当の優しさ｜coconocanvas note</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0f0f; --bg-card: #181818; --border: #2a2a2a;
+      --text-primary: #e8e8e8; --text-secondary: #999; --text-muted: #555;
+      --accent: #c9a96e; --accent-soft: #2a2218; --divider: #222;
+      --font: -apple-system, BlinkMacSystemFont, 'Hiragino Sans', 'Yu Gothic UI', 'Noto Sans JP', sans-serif;
+    }
+    body { background: var(--bg); color: var(--text-primary); font-family: var(--font); font-size: 16px; line-height: 1.85; min-height: 100vh; padding-bottom: 80px; }
+    .note-header { max-width: 680px; margin: 0 auto; padding: 40px 24px 32px; border-bottom: 1px solid var(--divider); }
+    .note-nav { font-size: 12px; color: var(--text-muted); margin-bottom: 24px; letter-spacing: .04em; }
+    .note-nav a { color: var(--text-muted); text-decoration: none; }
+    .note-nav a:hover { color: var(--accent); }
+    .note-meta-row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+    .note-badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: .04em; }
+    .badge-note { background: rgba(201,169,110,.15); color: var(--accent); border: 1px solid rgba(201,169,110,.3); }
+    .badge-paid { background: #1e1608; color: var(--accent); border: 1px solid #3a2e1a; }
+    .note-date { font-size: 12px; color: var(--text-muted); letter-spacing: .05em; }
+    .note-title { font-size: clamp(1.25rem, 4vw, 1.6rem); font-weight: 700; line-height: 1.45; color: var(--text-primary); margin-bottom: 16px; letter-spacing: .01em; }
+    .note-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.8; border-left: 2px solid rgba(201,169,110,.4); padding-left: 14px; margin-bottom: 20px; }
+    .note-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+    .note-tag { font-size: 11px; color: var(--text-muted); background: #161616; border: 1px solid #222; border-radius: 20px; padding: 2px 10px; }
+    .copy-bar { max-width: 680px; margin: 0 auto; padding: 16px 24px; display: flex; align-items: center; justify-content: flex-end; gap: 12px; border-bottom: 1px solid var(--divider); }
+    .copy-bar-label { font-size: 11px; color: var(--text-muted); flex: 1; }
+    .copy-all-btn { background: rgba(201,169,110,.1); border: 1px solid rgba(201,169,110,.3); color: var(--accent); padding: 7px 18px; border-radius: 6px; font-family: var(--font); font-size: 12px; font-weight: 600; letter-spacing: .03em; cursor: pointer; transition: all .15s; white-space: nowrap; }
+    .copy-all-btn:hover { background: rgba(201,169,110,.2); border-color: var(--accent); }
+    .copy-all-btn.copied { background: #1a3d28; border-color: #2d6a4f; color: #6bcf9e; }
+    .note-body { max-width: 680px; margin: 0 auto; padding: 40px 24px; }
+    .note-body p { margin-bottom: 1.6em; color: var(--text-primary); }
+    .note-body hr { border: none; border-top: 1px solid var(--divider); margin: 2.5em 0; }
+    .note-body strong { color: #f0ece4; font-weight: 600; }
+    .note-body ul { padding-left: 1.4em; margin-bottom: 1.2em; }
+    .note-body ul li { margin-bottom: .5em; color: var(--text-secondary); font-size: 15px; line-height: 1.9; }
+    .section-title { font-size: 15px; font-weight: 700; color: var(--accent); letter-spacing: .04em; margin: 2.8em 0 1.4em; padding-bottom: .5em; border-bottom: 1px solid rgba(201,169,110,.2); }
+    .section-block { background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; margin-bottom: 12px; }
+    .section-label { font-size: 10px; color: rgba(201,169,110,.7); letter-spacing: .12em; text-transform: uppercase; font-weight: 700; margin-bottom: 8px; }
+    .section-block p { font-size: 14px; color: var(--text-secondary); line-height: 1.9; margin-bottom: 0; }
+    .paid-gate { background: var(--accent-soft); border: 1px solid rgba(201,169,110,.25); border-radius: 10px; padding: 20px 22px; margin: 2.5em 0; }
+    .paid-gate p { font-size: 14px; color: var(--text-secondary); line-height: 1.9; margin-bottom: .8em; }
+    .paid-gate p:last-child { margin-bottom: 0; }
+    .paid-gate strong { color: var(--accent); }
+    .cta-block { background: #161616; border: 1px solid #282828; border-radius: 12px; padding: 24px 22px; margin-top: 3em; }
+    .cta-block p { font-size: 14px; color: var(--text-secondary); margin-bottom: .8em; }
+    .cta-block p:last-child { margin-bottom: 0; color: var(--text-muted); font-size: 13px; }
+    .back-link { display: block; max-width: 680px; margin: 32px auto 0; padding: 0 24px; font-size: 12px; color: var(--text-muted); text-decoration: none; letter-spacing: .04em; }
+    .back-link:hover { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<header class="note-header">
+  <div class="note-nav">
+    <a href="../index.html">SNS投稿</a> &nbsp;/&nbsp;
+    <a href="./index.html">note一覧</a> &nbsp;/&nbsp; 記事
+  </div>
+  <div class="note-meta-row">
+    <span class="note-badge badge-note">note</span>
+    <span class="note-badge badge-paid">有料 ¥1,500</span>
+    <span class="note-date">2026.06.09</span>
+  </div>
+  <h1 class="note-title">愛の輪郭 ――境界線という本当の優しさ</h1>
+  <p class="note-desc">「優しくしているのに、なぜか軽く扱われる」——今週の三つの診断が指していた答え。境界線とは壁ではなく輪郭。輪郭を持つことが、本当の愛を守る技術になる。10の視座のジャンプ・チェックリスト付き。</p>
+  <div class="note-tags">
+    <span class="note-tag">#境界線</span>
+    <span class="note-tag">#人間関係</span>
+    <span class="note-tag">#距離感</span>
+    <span class="note-tag">#自己成長</span>
+    <span class="note-tag">#恋愛</span>
+  </div>
+</header>
+
+<div class="copy-bar">
+  <span class="copy-bar-label">本文全体をコピーして、noteに貼り付けできます</span>
+  <button class="copy-all-btn" id="copyAllBtn">全文コピー</button>
+</div>
+
+<main class="note-body">
+
+  <p>「優しくしているのに、なぜか軽く扱われる。」</p>
+  <p>今週の診断で、5万人を超える本音の中から何度も浮かんできた言葉だ。</p>
+  <p>断れなくて引き受ける。嫌われたくなくて黙っている。距離を置かれるほど、もっと近づこうとしてしまう。それをずっと「優しさ」だと思っていた。</p>
+  <p>でも、あるとき気づいた。「優しさ」と信じていたものの大半は、「境界線がない状態」だった。</p>
+  <p>輪郭のない人に、人は無意識に重さを預ける。「ここまでいい」と言わない人のことを「全部いい人」と読み取るのが人間の本能だから。その「全部いい人」が少しずつ消耗し、ある日「どうしてわかってくれないの」と爆発する。でも相手には、あなたの輪郭が見えていなかった。</p>
+  <p>本当の優しさとは何か。境界線と愛は、なぜ矛盾しないのか。今週の三つの診断が残した問いを、ここで全部回収する。</p>
+
+  <hr>
+
+  <div class="paid-gate">
+    <p>「断ったら嫌われる」「怒ると関係が壊れそう」「優しい自分でいたいのに、なぜか疲弊している」——そのどれかに心当たりがあるなら、ここから先はあなたのために書いた。</p>
+    <p>
+      <strong>✔</strong> 消耗する愛の正体——恐怖と愛を区別する視点（①）<br>
+      <strong>✔</strong> 「追いかける」行動の本質と、軸を持つ技術（②）<br>
+      <strong>✔</strong> 「断れない」の心理構造と最初のNOの設計（③）<br>
+      <strong>✔</strong> 境界線は壁ではなく「輪郭」という再定義（④）<br>
+      <strong>✔</strong> 「優しい人でいること」というアイデンティティの罠（⑤）<br>
+      <strong>✔</strong> 感情的にならずに境界線を伝える言葉の設計（⑥）<br>
+      <strong>✔</strong> 輪郭を確かめる7項目チェックリスト（⑦）<br>
+      <strong>✔</strong> 境界線を引いた後に起きること（⑧）<br>
+      <strong>✔</strong> 愛が豊かになる境界線の原理（⑨）<br>
+      <strong>✔</strong> 今日から始める小さな一歩（⑩）
+    </p>
+  </div>
+
+  <div class="section-title">一、恐怖が「愛」に化けるとき</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>消耗する愛の正体は、「恐怖」が混じっていることだ。相手の機嫌を優先して自分を後回しにするとき、動機は相手への愛ではなく「嫌われるかもしれない」という恐怖だ。リソースは与えているが、その与え方は防衛であって、愛ではない。恐怖から来る与え方は続かない。一時的に不安が緩和されるだけで、根っこの恐怖は解消されない。だから与え続けても満たされない。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ①</div>
+    <p><strong>「与える」と「恐怖を静める」を区別する</strong><br>今、自分が行動しているのは「したいから」か「しなければ怖いから」か。この問いを立てるだけで、行動の動機が見える。</p>
+  </div>
+
+  <div class="section-title">二、「追いかける」の本質</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>「好きなのに、追いかけるのをやめた。それは諦めではなく、ひとつの技術。」距離を置かれるほど近づきたくなる。これは愛の深さではなく、「距離が開くことへの恐怖」が動かす行動だ。近づけば近づくほど、相手はスペースを失う。追いかければ追いかけるほど、遠ざかる。「追いかけない」ことを選んだ人は、諦めたのではない。「自分の価値を、相手の反応から切り離す」という技術を手にしただけだ。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ②</div>
+    <p><strong>「追う」の動機を問い直す</strong><br>追いかけているとき、そこにあるのは相手への愛か、「見捨てられる恐怖」か。その違いを知ることが、最初の一歩になる。</p>
+  </div>
+
+  <div class="section-title">三、「断れない」の心理構造</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>断れない本当の理由は、相手への配慮ではない。「NOと言ったときの相手の反応への恐怖」だ。嫌な顔をされるかもしれない。関係が壊れるかもしれない。わがままだと思われるかもしれない。この恐怖が、引き受けることを命令している。一度引き受けると、「この人には何でも頼める」という認識が相手の中に静かに定着する。最初に「YES」と言った瞬間に、境界線の場所が決まってしまう。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ③</div>
+    <p><strong>最初のNOが、関係の設計図になる</strong><br>断ることは関係を壊さない。断れない関係のほうが、長期的に壊れる。最初の小さなNOが、関係の品質を決める。</p>
+  </div>
+
+  <div class="section-title">四、境界線は「壁」ではなく「輪郭」</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>境界線と聞くと、「冷たくなること」「距離を置くこと」と感じる人が多い。違う。輪郭のある絵は、美しい。輪郭がなければ、絵はぼやけて何も見えない。人も同じだ。輪郭がある人は、その内側でどれほど豊かに与えていても、尊重される。輪郭がない人は、与えるほど消耗し、与えるほど軽く見られる。「ここまではOK、ここからはNO」という輪郭を持つことは、相手を拒絶することではない。「私はこういう人間だ」と相手に教えることだ。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ④</div>
+    <p><strong>境界線は「私の存在の宣言」</strong><br>NOと言うとき、それは相手への拒絶ではなく、自分の存在を相手に知らせること。</p>
+  </div>
+
+  <div class="section-title">五、「優しい人」というアイデンティティの罠</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>「優しい人でいることが、自分の価値だと思っている。」優しさをアイデンティティにすると、境界線を引いた瞬間に「あなたは変わった」と言われる。でも変わったのではない。ようやく自分の輪郭を相手に見せただけだ。「優しくなければ愛されない」という信念がある人は、境界線を引けない。引けないから消耗する。消耗するから、やがて関係を手放すか、自分を手放すかの二択になる。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ⑤</div>
+    <p><strong>優しさは役割ではなく、選択</strong><br>優しくある力は大切だ。でも「優しくなければならない」とは違う。NOと言える力がある人だけが、本物の優しさを選べる。</p>
+  </div>
+
+  <div class="section-title">六、感情的にならずに境界線を伝える言葉</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>境界線を引くとき、感情的になってしまうことがある。長く溜め込んだものがあふれ出す。でも感情的な境界線は「感情的な人が怒っている」と映り、伝わらない。静かな境界線が、最も強い。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">使える言葉</div>
+    <ul>
+      <li>「今回は引き受けられません」（理由は添えない。理由は交渉の余地を生む）</li>
+      <li>「そのやり方は、私には合いません」（批判ではなく、自分の基準として）</li>
+      <li>「次回からは、事前に相談してほしいと思っています」（感情ではなく、リクエストとして）</li>
+      <li>「少し時間をください」（すぐに答えを出さないための一言）</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ⑥</div>
+    <p><strong>言葉を「リクエスト」として設計する</strong><br>批判でも謝罪でもなく、「こうしてほしい」という言葉は関係を壊さない。それは対話への招待だ。</p>
+  </div>
+
+  <div class="section-title">七、輪郭を確かめるチェックリスト</div>
+  <div class="section-block">
+    <div class="section-label">チェックリスト</div>
+    <ul>
+      <li>☐ 断るとき、理由を作るのに苦労していないか</li>
+      <li>☐ 不満が言葉になる前に、なぜか謝っていないか</li>
+      <li>☐ 「嫌だ」と感じた瞬間に、その感覚を押し込んでいないか</li>
+      <li>☐ 相手の反応を想像して、行動を変えていないか</li>
+      <li>☐ 「こんなことで怒るのはおかしい」と自分を説得していないか</li>
+      <li>☐ 一度引き受けたことを「今さら言えない」と思っていないか</li>
+      <li>☐ 「優しくなければ愛されない」と信じていないか</li>
+    </ul>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ⑦</div>
+    <p><strong>感じた瞬間を見逃さない</strong><br>境界線は、「なんかおかしい」という感覚が生まれた瞬間に始まる。その感覚を押し込むたびに、境界線は後退する。</p>
+  </div>
+
+  <div class="section-title">八、境界線を引いた後に起きること</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>境界線を引いた後、相手は「なんで突然？」「変わったね」と言うかもしれない。それは予測できる反応だ。長い間、輪郭なしで全部引き受けてきたから、相手はその状態を「普通」と思っていた。輪郭が現れたとき、「変化」に感じる。でも、ここが大切だ。輪郭が出たことで離れていく人は、輪郭のないあなたとの関係を求めていた人だ。輪郭が出ても留まる人が、本当の関係を築ける相手だ。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ⑧</div>
+    <p><strong>境界線は関係のふるい</strong><br>輪郭を持つことで去る人を、失ったと思わなくていい。あなたの輪郭ごと受け取れる人だけが、深い関係を共にできる。</p>
+  </div>
+
+  <div class="section-title">九、本当の愛は「境界線の内側」で豊かになる</div>
+  <div class="section-block">
+    <div class="section-label">原理</div>
+    <p>本当の愛は与えるほど豊かになる。消耗するなら、そこには恐怖が混じっている。境界線を持つことは、愛を制限することではない。自分のリソースを守ることで、与える力が満ちてくる。輪郭のある人が、深く愛せる。追いかけない人が、静かに引き寄せる。断れる人が、最も豊かに与えられる。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ⑨</div>
+    <p><strong>境界線があってこそ、愛が豊かになる</strong><br>与えたいから与える。NOと言う力があるから、YESが本物になる。</p>
+  </div>
+
+  <div class="section-title">十、今日からできる小さな一歩</div>
+  <div class="section-block">
+    <div class="section-label">実践</div>
+    <p>まず一つだけ。次に何かを頼まれたとき、「少し時間をください」と言ってみる。すぐに答えを出さない。その数秒の空白が、境界線を作る最初の練習になる。</p>
+  </div>
+  <div class="section-block">
+    <div class="section-label">視座のジャンプ⑩</div>
+    <p><strong>すぐに答えない、それが最初の輪郭</strong><br>境界線は大きなNOから始めなくていい。「少し待って」という小さな間（ま）が、最初の輪郭になる。</p>
+  </div>
+
+  <hr>
+
+  <p>「優しくしているのに、なぜか軽く扱われる。」</p>
+  <p>その感覚は、あなたの優しさが足りないのではない。輪郭が見えなかっただけだ。</p>
+  <p>輪郭を持ったとき、人は初めて「この人はここで生きている」と感じる。そして尊重が生まれる。</p>
+  <p>境界線を引くことは、相手への拒絶ではない。あなた自身への宣言だ。</p>
+  <p>「わたしは、ここにいる。」</p>
+  <p>それだけで、関係は変わり始める。</p>
+
+  <div class="cta-block">
+    <p>このnoteが「あの診断の続き」に感じたなら、メンバーシップでは毎週この続きを書いています。各週の診断で拾えなかった本音と実用の核を詰め込んだ会員限定エントリが毎週届きます。</p>
+    <p>「関係の温度と距離を整える技術」を、毎週少しずつ積み上げていく場所です。</p>
+  </div>
+
+</main>
+
+<a href="./index.html" class="back-link">← note一覧に戻る</a>
+
+<script>
+(function() {
+  const btn = document.getElementById('copyAllBtn');
+  if (!btn) return;
+  btn.addEventListener('click', async () => {
+    try {
+      const res = await fetch('./note_2026_06_09_boundary.json');
+      const data = await res.json();
+      const text = data.content_markdown || '';
+      await navigator.clipboard.writeText(text);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = document.querySelector('main')?.innerText || '';
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    btn.textContent = 'コピー完了 ✓'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '全文コピー'; btn.classList.remove('copied'); }, 2000);
+  });
+})();
+</script>
+
+</body>
+</html>

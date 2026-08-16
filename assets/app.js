@@ -30,13 +30,13 @@ async function loadPosts() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json');
+    const indexRes = await fetch('./posts/index.json?v=20260731c');
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}`);
+        const res = await fetch(`./posts/${filename}?v=20260803p`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -52,6 +52,7 @@ async function loadPosts() {
 
     renderDynamicPlatformFilter();
     renderWeekFilter(weekDataArr.map(w => w.week));
+    renderWeekCopyBar();
     renderPosts();
 
   } catch (err) {
@@ -156,10 +157,10 @@ function renderCard(post) {
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
     : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
-    : post.platform.startsWith('スタンプ宣伝') ? 'platform-stickerpromo'
     : 'platform-other';
 
-  const contentEscaped = escapeHtml(post.content);
+  const frameText = post.frame || post.content;
+  const contentEscaped = escapeHtml(frameText);
   const quoteEscaped = post.quote ? escapeHtml(post.quote) : '';
 
   let extraSections = '';
@@ -175,6 +176,39 @@ function renderCard(post) {
           <p>${commentEscaped}</p>
           <div class="copy-btn-content">
             <button class="copy-btn" data-copy="${commentEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  const c1 = post.comment_1 || post.comment1;
+  if (c1) {
+    const c1Escaped = escapeHtml(c1);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">📝 コメント①</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c1Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c1Escaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+  if (post.comment_2) {
+    const c2Escaped = escapeHtml(post.comment_2);
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">💬 コメント②</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${c2Escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${c2Escaped}">コピー</button>
           </div>
         </div>
       </div>`;
@@ -195,7 +229,50 @@ function renderCard(post) {
         </div>
       </div>`;
   }
-  if (post.image_prompt) {
+  if (post.choices && post.choices.length) {
+    const labels = ['A', 'B', 'C', 'D'];
+    const choicesHtml = post.choices.map((choice, i) => {
+      const escaped = escapeHtml(choice);
+      return `<div class="choice-item">
+          <span class="choice-label">${labels[i]}</span>
+          <span class="choice-text">${escaped}</span>
+          <button class="copy-btn" data-copy="${escaped}">コピー</button>
+        </div>`;
+    }).join('');
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🔤 4択</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <div class="choices-list">${choicesHtml}</div>
+        </div>
+      </div>`;
+  }
+  if (post.image_prompts && post.image_prompts.length) {
+    const labels = ['A', 'B', 'C', 'D'];
+    const promptsHtml = post.image_prompts.map((prompt, i) => {
+      const escaped = escapeHtml(prompt);
+      return `<div class="prompt-item">
+          <span class="prompt-label">選択肢 ${labels[i]}</span>
+          <p>${escaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${escaped}">コピー</button>
+          </div>
+        </div>`;
+    }).join('');
+    extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🖼 画像プロンプト（4択）</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <div class="prompts-list">${promptsHtml}</div>
+        </div>
+      </div>`;
+  } else if (post.image_prompt) {
     const promptEscaped = escapeHtml(post.image_prompt);
     extraSections += `
       <div class="card-section">
@@ -225,7 +302,7 @@ function renderCard(post) {
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
         <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${escapeHtml(post.content)}">コピー</button>
+          <button class="copy-btn" data-copy="${escapeHtml(frameText)}">コピー</button>
         </div>
       </div>
       ${extraSections}
@@ -255,11 +332,41 @@ function setupPlatformFilter() {
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
     else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
-    else if (platform.startsWith('スタンプ宣伝')) btn.classList.add('active-threadsdiag');
     else btn.classList.add('active');
 
     renderPosts();
   });
+}
+
+async function copyToClipboard(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    try {
+      // fallback for older browsers
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      return true;
+    } catch {
+      return false;
+    }
+  }
+}
+
+function flashCopyState(btn, ok) {
+  const original = btn.textContent;
+  btn.textContent = ok ? 'コピー完了' : 'コピー失敗';
+  btn.classList.toggle('copied', ok);
+  setTimeout(() => {
+    btn.textContent = original;
+    btn.classList.remove('copied');
+  }, 1800);
 }
 
 function setupCopyHandler() {
@@ -270,31 +377,95 @@ function setupCopyHandler() {
     const text = btn.dataset.copy;
     if (!text) return;
 
-    try {
-      await navigator.clipboard.writeText(text);
-      const original = btn.textContent;
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = original;
-        btn.classList.remove('copied');
-      }, 1800);
-    } catch {
-      // fallback for older browsers
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-      btn.textContent = 'コピー完了';
-      btn.classList.add('copied');
-      setTimeout(() => {
-        btn.textContent = 'コピー';
-        btn.classList.remove('copied');
-      }, 1800);
+    const ok = await copyToClipboard(text);
+    flashCopyState(btn, ok);
+  });
+}
+
+// ─── Week bulk copy (X / Threads / X診断 / Threads診断) ────────────────────────
+
+const WEEK_COPY_CATEGORIES = [
+  { platform: 'X', cls: 'wcb-x' },
+  { platform: 'Threads', cls: 'wcb-threads' },
+  { platform: 'X診断', cls: 'wcb-xshindan' },
+  { platform: 'Threads診断', cls: 'wcb-threadsshindan' }
+];
+
+// カテゴリ（媒体）ごとに、その媒体の投稿が存在する最新週IDを返す。
+// X/Threads と X診断/Threads診断 は別ファイル・別週で管理されるため、
+// 単一の「最新週」ではなく媒体ごとに最新週を求める。
+function getLatestWeekIdForPlatform(platform) {
+  const ids = allPosts.filter(p => p.platform === platform).map(p => p.weekId);
+  if (!ids.length) return null;
+  return ids.reduce((max, id) => (id > max ? id : max), ids[0]);
+}
+
+function formatWeekRangeLabel(weekId) {
+  const [from, to] = weekId.split('_');
+  return `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
+}
+
+function buildCategoryCopyText(weekId, platform) {
+  const posts = allPosts
+    .filter(p => p.weekId === weekId && p.platform === platform)
+    .sort((a, b) => new Date(`${a.date}T${a.time}:00`) - new Date(`${b.date}T${b.time}:00`));
+
+  const blocks = posts.map(p => {
+    const head = `◆ ${formatDate(p.date)} ${p.time}`;
+
+    if (p.frame) {
+      const choicesText = (p.choices || [])
+        .map((c, i) => `${['A', 'B', 'C', 'D'][i]}. ${c}`)
+        .join('\n');
+      const reply = p.comment_1 || p.reply_1 || '';
+      const parts = [head, '【フック】', p.frame, '', '【選択肢】', choicesText, '', '【コメント①】', reply];
+      if (p.comment_2) parts.push('', '【コメント②】', p.comment_2);
+      return parts.join('\n');
     }
+
+    const parts = [head, p.content || ''];
+    if (p.quote) parts.push('', `〈ひとこと〉${p.quote}`);
+    return parts.join('\n');
+  });
+
+  return blocks.join('\n\n──────────\n\n');
+}
+
+function renderWeekCopyBar() {
+  const bar = document.getElementById('weekCopyBar');
+  if (!bar) return;
+
+  const cats = WEEK_COPY_CATEGORIES
+    .map(c => ({ ...c, weekId: getLatestWeekIdForPlatform(c.platform) }))
+    .filter(c => c.weekId);
+
+  if (!cats.length) {
+    bar.innerHTML = '';
+    return;
+  }
+
+  const buttons = cats
+    .map(c => `<button class="week-copy-btn ${c.cls}" data-week-copy="${escapeHtml(c.platform)}">${escapeHtml(c.platform)}を一括コピー（${formatWeekRangeLabel(c.weekId)}）</button>`)
+    .join('');
+
+  bar.innerHTML = `
+    <span class="week-copy-label">最新回をまとめてコピー</span>
+    <div class="week-copy-buttons">${buttons}</div>
+  `;
+}
+
+function setupWeekCopyHandler() {
+  document.addEventListener('click', async e => {
+    const btn = e.target.closest('.week-copy-btn');
+    if (!btn) return;
+
+    const platform = btn.dataset.weekCopy;
+    const weekId = getLatestWeekIdForPlatform(platform);
+    if (!weekId) return;
+
+    const text = buildCategoryCopyText(weekId, platform);
+    const ok = await copyToClipboard(text);
+    flashCopyState(btn, ok);
   });
 }
 
@@ -321,13 +492,13 @@ async function loadNotes() {
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json');
+    const indexRes = await fetch('./notes/index.json?v=20260803a');
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}`);
+        const res = await fetch(`./notes/${filename}?v=20260803p`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -422,9 +593,43 @@ function renderNoteCard(note) {
   const funnelTargets = (note.funnel_targets || [])
     .map(t => `<span class="funnel-tag">${escapeHtml(t)}</span>`).join('');
 
+  // 本文に有料境界マーカーがあるものだけバッジを出す（free_ratio の宣言だけでは出さない）
+  const hasPaywall = /ここから有料/.test(note.content_markdown || '');
+  const freeRatioBadge = (note.free_ratio && parseFloat(note.free_ratio) > 0 && hasPaywall)
+    ? `<span class="free-ratio-badge">無料${Math.round(parseFloat(note.free_ratio) * 100)}%公開</span>`
+    : '';
+
+  const outcomeHtml = note.outcome_promise
+    ? `<p class="note-outcome">${escapeHtml(note.outcome_promise)}</p>`
+    : '';
+  const frameworkHtml = note.framework
+    ? `<p class="note-meta-line"><span class="meta-label">構造：</span>${escapeHtml(note.framework)}</p>`
+    : '';
+  const toolHtml = note.practice_tool
+    ? `<p class="note-meta-line"><span class="meta-label">実践ツール：</span>${escapeHtml(note.practice_tool)}</p>`
+    : '';
+
   let sections = '';
 
+  if (note.image_prompt) {
+    const promptEsc = escapeHtml(note.image_prompt);
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">🖼 画像プロンプト</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${promptEsc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${promptEsc}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+  }
+
   if (note.content_html) {
+    const mdEsc = note.content_markdown ? escapeHtml(note.content_markdown) : '';
     sections += `
       <div class="card-section">
         <div class="card-section-header">
@@ -433,14 +638,31 @@ function renderNoteCard(note) {
         </div>
         <div class="card-section-body">
           <div class="note-content">${note.content_html}</div>
+          ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
         </div>
+      </div>`;
+  }
+
+  if (note.before_after && note.before_after.length) {
+    const casesHtml = note.before_after
+      .map(c => typeof c === 'object'
+        ? `<div class="before-after-case"><p><strong>Before：</strong>${escapeHtml(c.before)}</p><p><strong>After：</strong>${escapeHtml(c.after)}</p></div>`
+        : `<div class="before-after-case"><p>${escapeHtml(String(c))}</p></div>`)
+      .join('');
+    sections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">✨ Before / After 事例</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">${casesHtml}</div>
       </div>`;
   }
 
   if (note.sns_hooks) {
     let hooksHtml = '';
-    if (note.sns_hooks.threads) {
-      const esc = escapeHtml(note.sns_hooks.threads);
+    if (note.sns_hooks.Threads) {
+      const esc = escapeHtml(note.sns_hooks.Threads);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-threadsdiag">Threads</span>
@@ -450,8 +672,8 @@ function renderNoteCard(note) {
           </div>
         </div>`;
     }
-    if (note.sns_hooks.x) {
-      const esc = escapeHtml(note.sns_hooks.x);
+    if (note.sns_hooks.X) {
+      const esc = escapeHtml(note.sns_hooks.X);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-x">X</span>
@@ -511,6 +733,7 @@ function renderNoteCard(note) {
         <div class="note-meta-left">
           <span class="tier-badge ${tierClass}">${tierLabel}</span>
           <span class="vis-badge ${visClass}">${visLabel}</span>
+          ${freeRatioBadge}
           ${funnelTargets}
         </div>
         <span class="note-date">${formatDate(note.date)}</span>
@@ -518,178 +741,12 @@ function renderNoteCard(note) {
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
         <p class="note-description">${escapeHtml(note.description)}</p>
+        ${outcomeHtml}
+        ${frameworkHtml}
+        ${toolHtml}
         ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
       </div>
       ${sections}
-    </article>`;
-}
-
-// ─── Sticker section ────────────────────────────────────────────────────────
-
-let allStickerSets = [];
-let activeStickerFilters = { set: 'all' };
-let stickersLoaded = false;
-
-async function loadStickers() {
-  const container = document.getElementById('stickersContainer');
-  container.innerHTML = '<p class="loading">読み込み中…</p>';
-
-  try {
-    const indexRes = await fetch('./stickers/index.json');
-    if (!indexRes.ok) throw new Error('stickers/index.json not found');
-    const index = await indexRes.json();
-
-    allStickerSets = await Promise.all(
-      index.sets.map(async (filename) => {
-        const res = await fetch(`./stickers/${filename}`);
-        if (!res.ok) throw new Error(`${filename} not found`);
-        return res.json();
-      })
-    );
-
-    allStickerSets.sort((a, b) => new Date(b.meta.created_date) - new Date(a.meta.created_date));
-    stickersLoaded = true;
-
-    renderStickerSetFilter();
-    renderStickerSets();
-  } catch (err) {
-    container.innerHTML = `<p class="error-state">データの読み込みに失敗しました<br><small>${err.message}</small></p>`;
-  }
-}
-
-function renderStickerSetFilter() {
-  const row = document.getElementById('stickerSetFilterRow');
-  if (!row) return;
-
-  row.querySelectorAll('.filter-btn').forEach(b => b.remove());
-
-  const allBtn = document.createElement('button');
-  allBtn.className = 'filter-btn active';
-  allBtn.dataset.stickerSet = 'all';
-  allBtn.textContent = '全弾';
-  row.appendChild(allBtn);
-
-  allStickerSets.forEach(set => {
-    const btn = document.createElement('button');
-    btn.className = 'filter-btn';
-    btn.dataset.stickerSet = set.meta.created_date;
-    btn.textContent = `第${set.meta.volume}弾`;
-    row.appendChild(btn);
-  });
-
-  row.addEventListener('click', e => {
-    const btn = e.target.closest('.filter-btn[data-sticker-set]');
-    if (!btn) return;
-    row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    activeStickerFilters.set = btn.dataset.stickerSet;
-    renderStickerSets();
-  });
-}
-
-function renderStickerSets() {
-  const container = document.getElementById('stickersContainer');
-  const filtered = activeStickerFilters.set === 'all'
-    ? allStickerSets
-    : allStickerSets.filter(s => s.meta.created_date === activeStickerFilters.set);
-
-  const totalCount = allStickerSets.reduce((sum, s) => sum + s.stickers.length, 0);
-  const filteredCount = filtered.reduce((sum, s) => sum + s.stickers.length, 0);
-  document.getElementById('stickerStatsBar').textContent = `${filteredCount}個 / 全${totalCount}個`;
-
-  if (filtered.length === 0) {
-    container.innerHTML = '<p class="empty-state">該当するスタンプがありません</p>';
-    return;
-  }
-
-  container.innerHTML = filtered.map(renderStickerSet).join('');
-}
-
-function renderStickerSet(set) {
-  const m = set.meta;
-  const sales = set.sales_text || {};
-  const salesJaEsc = sales.description_ja ? escapeHtml(sales.description_ja) : '';
-  const shopIntroEsc = sales.shop_intro_ja ? escapeHtml(sales.shop_intro_ja) : '';
-  const titleEsc = sales.title_ja ? escapeHtml(sales.title_ja) : '';
-
-  const cards = set.stickers
-    .slice()
-    .sort((a, b) => (a.rank || 0) - (b.rank || 0))
-    .map(renderStickerCard)
-    .join('');
-
-  return `
-    <section class="sticker-set-summary">
-      <p class="sticker-set-title">${escapeHtml(m.series)} 第${m.volume}弾${titleEsc ? `「${titleEsc}」` : ''}</p>
-      <p class="sticker-set-meta">作成日 ${escapeHtml(m.created_date)} ／ ${escapeHtml(m.pattern || '')} ／ 全${m.sticker_count}個</p>
-      <p class="sticker-set-meta">週テーマ：${escapeHtml(m.theme || '')}</p>
-      ${salesJaEsc ? `<div class="sticker-sales-block">
-        <p>${salesJaEsc}</p>
-        <div class="copy-btn-content"><button class="copy-btn" data-copy="${salesJaEsc}">説明文コピー</button></div>
-      </div>` : ''}
-      ${shopIntroEsc ? `<div class="sticker-sales-block">
-        <p>${shopIntroEsc}</p>
-        <div class="copy-btn-content"><button class="copy-btn" data-copy="${shopIntroEsc}">紹介文コピー</button></div>
-      </div>` : ''}
-    </section>
-    <div class="sticker-grid">${cards}</div>`;
-}
-
-function renderStickerCard(s) {
-  const phraseEsc = escapeHtml(s.phrase);
-  const participants = (s.participants || []).join('×');
-  const sd = s.scene_design || {};
-  const v = s.visual || {};
-  const p = s.image_prompt || {};
-
-  const sceneTags = [sd.timing, sd.scene, sd.psychology]
-    .filter(Boolean)
-    .map(t => `<span class="note-tag">${escapeHtml(t)}</span>`)
-    .join('');
-
-  const promptSections = ['style_block', 'character_block', 'text_block', 'combined']
-    .filter(key => p[key])
-    .map(key => {
-      const label = key === 'style_block' ? '🖼 プロンプト（スタイル）'
-        : key === 'character_block' ? '🎨 プロンプト（キャラクター）'
-        : key === 'text_block' ? '✍️ プロンプト（テキスト）'
-        : '🧩 プロンプト（全文）';
-      const esc = escapeHtml(p[key]);
-      return `
-        <div class="card-section">
-          <div class="card-section-header">
-            <span class="card-section-title">${label}</span>
-            <span class="card-section-toggle">▼</span>
-          </div>
-          <div class="card-section-body">
-            <p>${esc}</p>
-            <div class="copy-btn-content">
-              <button class="copy-btn" data-copy="${esc}">コピー</button>
-            </div>
-          </div>
-        </div>`;
-    })
-    .join('');
-
-  return `
-    <article class="sticker-card">
-      <div class="sticker-card-header">
-        <div class="card-meta-left">
-          <span class="sticker-rank">#${s.id}</span>
-          <span class="sticker-pattern-badge">${escapeHtml(participants)}</span>
-        </div>
-        <span class="purpose-badge">${escapeHtml(s.pattern_type === 'coco_mix' ? 'キャラ＋Coco' : 'キャラのみ')}</span>
-      </div>
-      <div class="sticker-card-body">
-        <p class="sticker-phrase">${phraseEsc}</p>
-        <div class="copy-btn-content">
-          <button class="copy-btn" data-copy="${phraseEsc}">セリフコピー</button>
-        </div>
-        <div class="sticker-scene-tags">${sceneTags}</div>
-        ${s.analysis_note ? `<p class="sticker-note">${escapeHtml(s.analysis_note)}</p>` : ''}
-        ${v.outfit ? `<p class="sticker-note">服装：${escapeHtml(v.outfit)}</p>` : ''}
-      </div>
-      ${promptSections}
     </article>`;
 }
 
@@ -709,13 +766,9 @@ function setupTabs() {
     const tab = btn.dataset.tab;
     document.getElementById('postsSection').hidden = tab !== 'posts';
     document.getElementById('notesSection').hidden = tab !== 'notes';
-    document.getElementById('stickersSection').hidden = tab !== 'stickers';
 
     if (tab === 'notes' && !notesLoaded) {
       loadNotes();
-    }
-    if (tab === 'stickers' && !stickersLoaded) {
-      loadStickers();
     }
   });
 }
@@ -726,6 +779,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPlatformFilter();
   setupSectionToggle();
   setupCopyHandler();
+  setupWeekCopyHandler();
   setupTabs();
   setupNoteTierFilter();
   loadPosts();

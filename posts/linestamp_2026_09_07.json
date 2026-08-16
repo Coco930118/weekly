@@ -1,0 +1,391 @@
+{
+  "release_date": "2026-09-07",
+  "week": "2026-09-07_2026-09-13",
+  "series": "きょうも、そのままで",
+  "edition": 22,
+  "pattern": 1,
+  "pattern_label": "キャラクターのみ",
+  "pattern_description": "しらたま・しずく・ひよりの3匹だけが主役。Coco不在の一週間、重陽の節句と敬老の日を控えた気遣いから、運動会の応援、金木犀が香り始める夕暮れまで、動物たちだけの声で届ける24枚。",
+  "characters": [
+    "🐈‍⬛しらたま",
+    "🐢しずく",
+    "🕊ひより"
+  ],
+  "week_theme": "重陽の節句・敬老の日前・運動会シーズン——しらたま・しずく・ひよりだけで届ける、秋支度の24枚",
+  "title_ja": "きょうも、そのままで㉒",
+  "desc_ja": "重陽の節句から敬老の日を控えた一週間、しらたま・しずく・ひよりの3匹だけが届ける24枚。運動会の応援から金木犀香る夕暮れまで、今日もそのままの気持ちを一言で贈れます。",
+  "title_en": "Just as You Are, Vol.22 — Animal Trio",
+  "desc_en": "Chrysanthemum season gives way to Respect-for-the-Aged Day. Shiratama, Shizuku and Hiyori carry this set alone — sports-day cheers, storm check-ins, and the first scent of osmanthus — in 24 watercolor stamps.",
+  "stamps": [
+    {
+      "id": "㉒-01",
+      "dialogue": "おはよう",
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "二学期の日常が定着した頃、変わらず交わすいつも通りの朝の挨拶",
+      "send_timing": "朝",
+      "send_psychology": "特別なことがない朝こそ、同じ挨拶が一日の芯になる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "モーニングブルー・朝焼けピンク・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. モーニングブルー and 朝焼けピンク with ミルクホワイト — the atmosphere of 二学期の日常が定着した頃、変わらず交わすいつも通りの朝の挨拶. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama sits on a sunlit windowsill, one paw raised in a small greeting wave, tail curled contentedly. Composition: front view, bust-up, direct gaze to viewer, large copy space at top center.\n[Text/Format] Handwritten-style Japanese text『おはよう』naturally placed within the illustration at top center, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-02",
+      "dialogue": "おやすみ〜",
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "二学期が始まって夜更かし気味な相手に、区切りをつけて休むよう促す一言",
+      "send_timing": "夜",
+      "send_psychology": "「頑張って」でなく「おやすみ」を選ぶことで、無理をやめる合図をやさしく渡す",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ナイトラベンダー・ムーングレー・キャンドルイエロー",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ナイトラベンダー and ムーングレー with キャンドルイエロー — the atmosphere of 二学期が始まって夜更かし気味な相手に、区切りをつけて休むよう促す一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Hiyori perches on the edge of a small lampshade, one wing tucked, eyes half-closed and sleepy. Composition: side view, close-up, large copy space at bottom center.\n[Text/Format] Handwritten-style Japanese text『おやすみ〜』naturally placed within the illustration at bottom center, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-03",
+      "dialogue": "元気？",
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "重陽の節句、菊の鉢を眺めながら、しばらく会っていない相手にそっと尋ねる一言",
+      "send_timing": "昼",
+      "send_psychology": "季節の行事を口実にすると、久しぶりの連絡も自然に切り出せる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "キクイエロー・スカイブルー・ホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. キクイエロー and スカイブルー with ホワイト — the atmosphere of 重陽の節句、菊の鉢を眺めながら、しばらく会っていない相手にそっと尋ねる一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku tilts her head beside a small potted chrysanthemum, one flipper raised, curious and warm expression. Composition: three-quarter view, medium shot, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『元気？』naturally placed within the illustration at top right, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-04",
+      "dialogue": "いつもありがとう",
+      "character": [
+        "しらたま",
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "敬老の日を控え、日頃の支えにまとめて感謝を伝える一言",
+      "send_timing": "全時間帯",
+      "send_psychology": "「いつも」を言葉にすることで、当たり前になりがちな支えが可視化される",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ハーベストゴールド・ペーパーホワイト・オリーブグリーン",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ハーベストゴールド and ペーパーホワイト with オリーブグリーン — the atmosphere of 敬老の日を控え、日頃の支えにまとめて感謝を伝える一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama bows her head gently while Shizuku sits beside her nodding along, both wearing calm grateful expressions. Composition: front view, full body, looking up, large copy space at bottom right.\n[Text/Format] Handwritten-style Japanese text『いつもありがとう』naturally placed within the illustration at bottom right, not overlapping either character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-05",
+      "dialogue": "気をつけてね",
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "台風シーズンが続くこの時期、遠くにいる相手に行き先を問わず送れる気遣いの一言",
+      "send_timing": "全時間帯",
+      "send_psychology": "心配は重くなくても、短い一言でちゃんと伝わる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ストームグレー・ウォームベージュ・パールホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ストームグレー and ウォームベージュ with パールホワイト — the atmosphere of 台風シーズンが続くこの時期、遠くにいる相手に行き先を問わず送れる気遣いの一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Hiyori holds a small luggage tag in her beak, one wing raised as if waving goodbye, body angled mid-flight. Composition: side view, full body, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『気をつけてね』naturally placed within the illustration at top left, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-06",
+      "dialogue": "今日も素敵ないちにちになりますように",
+      "character": [
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "天気が定まらない二学期の朝でも、二匹並んで見上げる祈りの一言",
+      "send_timing": "朝",
+      "send_psychology": "空模様に左右されない言葉を、一つ持っておくと朝の気分が整う",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "クラウドグレー・サンライズイエロー・ミントグリーン",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. クラウドグレー and サンライズイエロー with ミントグリーン — the atmosphere of 天気が定まらない二学期の朝でも、二匹並んで見上げる祈りの一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku and Hiyori stand side by side looking up at a partly cloudy sky, both wearing hopeful expressions. Composition: front view, full body, large copy space at top center.\n[Text/Format] Handwritten-style Japanese text『今日も素敵ないちにちになりますように』naturally placed within the illustration at top center, not overlapping either character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-07",
+      "dialogue": "大好き",
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "理由をつけない、一日の終わりの素直な本音",
+      "send_timing": "夜",
+      "send_psychology": "「なぜ」を省いた好意ほど、まっすぐ届く",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ディープローズ・キャンドルオレンジ・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ディープローズ and キャンドルオレンジ with ミルクホワイト — the atmosphere of 理由をつけない、一日の終わりの素直な本音. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama hugs a small heart-shaped cushion to her chest with a bashful, contented smile. Composition: front view, close-up, large copy space at bottom left.\n[Text/Format] Handwritten-style Japanese text『大好き』naturally placed within the illustration at bottom left, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-08",
+      "dialogue": "ご連絡ありがとうございます",
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "敬老の日ギフトの問い合わせなど、丁寧な返信が必要な場面での一言",
+      "send_timing": "昼",
+      "send_psychology": "丁寧すぎず、でもきちんとした言葉があると、やり取りの空気が整う",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ティーグリーン・ソフトグレー・アイボリー",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ティーグリーン and ソフトグレー with アイボリー — the atmosphere of 敬老の日ギフトの問い合わせなど、丁寧な返信が必要な場面での一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku sits neatly at a small writing desk with a pen held in one flipper, composed and polite posture. Composition: three-quarter view, bust-up, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『ご連絡ありがとうございます』naturally placed within the illustration at top right, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-09",
+      "dialogue": "無事にお越しくださいませ",
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "台風接近が続く中、来訪する相手を案内する丁寧な一言",
+      "send_timing": "昼",
+      "send_psychology": "「無事に」を添えることで、道中への気遣いまで一言に込められる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ウェルカムベージュ・ゴールド・アイボリー",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ウェルカムベージュ and ゴールド with アイボリー — the atmosphere of 台風接近が続く中、来訪する相手を案内する丁寧な一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Hiyori perches beside a small open signboard, one wing gesturing forward in welcome, composed polite posture. Composition: three-quarter view, full body, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『無事にお越しくださいませ』naturally placed within the illustration at top right, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-10",
+      "dialogue": "お待ちしております",
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "急かさず、静かに相手の来訪や連絡を待つ姿勢を伝える一言",
+      "send_timing": "全時間帯",
+      "send_psychology": "待ち方にも、相手への気遣いが出る",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ティーローズ・ソフトグレー・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ティーローズ and ソフトグレー with ミルクホワイト — the atmosphere of 急かさず、静かに相手の来訪や連絡を待つ姿勢を伝える一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama sits neatly with her tail wrapped around her paws, calm composed posture, gentle steady gaze. Composition: front view, bust-up, low angle, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『お待ちしております』naturally placed within the illustration at top left, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-11",
+      "dialogue": "何事も小さなことの積み重ねだよ",
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "運動会の練習で疲れ気味な相手を、大きな結果より過程で労う一言",
+      "send_timing": "昼",
+      "send_psychology": "結果の大きさより、続けている過程そのものを認める",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "サンドベージュ・オリーブ・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. サンドベージュ and オリーブ with ミルクホワイト — the atmosphere of 運動会の練習で疲れ気味な相手を、大きな結果より過程で労う一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku walks slowly along a garden path, one small paw print visible behind her, calm encouraging expression. Composition: side view, full body, large copy space at bottom center.\n[Text/Format] Handwritten-style Japanese text『何事も小さなことの積み重ねだよ』naturally placed within the illustration at bottom center, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-12",
+      "dialogue": "やってみよう",
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "運動会の応援練習、腰が重い相手を3匹揃って後押しする一言",
+      "send_timing": "昼",
+      "send_psychology": "一人じゃ踏み出せない一歩も、揃って背中を押されると軽くなる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "スタジアムブルー・サンイエロー・ホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. スタジアムブルー and サンイエロー with ホワイト — the atmosphere of 運動会の応援練習、腰が重い相手を3匹揃って後押しする一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama, Shizuku and Hiyori line up together, all three leaning forward with determined, cheerful expressions. Composition: front view, full body, three-quarter angle, large copy space at bottom right.\n[Text/Format] Handwritten-style Japanese text『やってみよう』naturally placed within the illustration at bottom right, not overlapping any character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-13",
+      "dialogue": "一歩成長だね",
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "敬老の日を控え、孫や後輩の成長をそっと見守る側の視点で贈る一言",
+      "send_timing": "夜",
+      "send_psychology": "結果より、やり切った過程を認める言葉が一番残る",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "キャンドルイエロー・ナイトブルー・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. キャンドルイエロー and ナイトブルー with ミルクホワイト — the atmosphere of 敬老の日を控え、孫や後輩の成長をそっと見守る側の視点で贈る一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Hiyori perches on a small trophy shelf, one wing raised proudly, warm approving expression. Composition: side view, medium shot, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『一歩成長だね』naturally placed within the illustration at top left, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-14",
+      "dialogue": "楽しみ〜",
+      "character": [
+        "しらたま",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "十五夜・お月見の予定を前に、待ちきれない高揚感を伝える一言",
+      "send_timing": "昼",
+      "send_psychology": "予定を言葉にすることで、待つ時間そのものが楽しくなる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ムーンシルバー・ダンゴホワイト・ススキベージュ",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ムーンシルバー and ダンゴホワイト with ススキベージュ — the atmosphere of 十五夜・お月見の予定を前に、待ちきれない高揚感を伝える一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama and Hiyori peek out from behind a small basket of dango, eyes sparkling with anticipation. Composition: front view, full body, close-up, large copy space at top center.\n[Text/Format] Handwritten-style Japanese text『楽しみ〜』naturally placed within the illustration at top center, not overlapping either character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-15",
+      "dialogue": "着いたよ〜",
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "秋の行楽シーズン、待ち合わせ場所に着いたことを気軽に知らせる一言",
+      "send_timing": "昼",
+      "send_psychology": "到着の一言があるだけで、待つ側の不安が消える",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "パンプキンオレンジ・スカイブルー・ホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. パンプキンオレンジ and スカイブルー with ホワイト — the atmosphere of 秋の行楽シーズン、待ち合わせ場所に着いたことを気軽に知らせる一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku waves a small paper flag energetically from atop a park bench, bright cheerful expression. Composition: side view, full body, large copy space at bottom left.\n[Text/Format] Handwritten-style Japanese text『着いたよ〜』naturally placed within the illustration at bottom left, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-16",
+      "dialogue": "そういうところ好き",
+      "character": [
+        "しらたま",
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "何気ない仕草にふと気づく夜、大きな理由がいらない一言",
+      "send_timing": "夜",
+      "send_psychology": "些細な気づきを言葉にするだけで、関係の温度が少し上がる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "マゼンタローズ・ナイトグレー・キャンドルオレンジ",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. マゼンタローズ and ナイトグレー with キャンドルオレンジ — the atmosphere of 何気ない仕草にふと気づく夜、大きな理由がいらない一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama gazes at Shizuku with a soft knowing smile, Shizuku tilts her head shyly in response. Composition: three-quarter view, bust-up, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『そういうところ好き』naturally placed within the illustration at top right, not overlapping either character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-17",
+      "dialogue": "ダメです",
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "夜更かしや予定の詰め込みすぎを、遠慮なく止める一言",
+      "send_timing": "昼",
+      "send_psychology": "遠慮のない関係だから、はっきり止められる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ストップレッド・ソフトグレー・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ストップレッド and ソフトグレー with ミルクホワイト — the atmosphere of 夜更かしや予定の詰め込みすぎを、遠慮なく止める一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama crosses both front paws in an X shape, firm but not angry expression. Composition: front view, bust-up, large copy space at bottom center.\n[Text/Format] Handwritten-style Japanese text『ダメです』naturally placed within the illustration at bottom center, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-18",
+      "dialogue": "少しずつでいい",
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "残暑と朝晩の涼しさの差で秋バテ気味な相手に、ペースを急かさない一言",
+      "send_timing": "昼",
+      "send_psychology": "早く戻るより、自分のペースでいいという許可を渡す",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "セージグリーン・ソフトベージュ・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. セージグリーン and ソフトベージュ with ミルクホワイト — the atmosphere of 残暑と朝晩の涼しさの差で秋バテ気味な相手に、ペースを急かさない一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Hiyori walks slowly along a windowsill, unhurried steps, calm reassuring expression. Composition: side view, full body, large copy space at top left.\n[Text/Format] Handwritten-style Japanese text『少しずつでいい』naturally placed within the illustration at top left, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-19",
+      "dialogue": "まぁいいんじゃない",
+      "character": [
+        "しずく"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "二学期の予定調整に迷う相手を、肩の力を抜いて後押しする一言",
+      "send_timing": "昼",
+      "send_psychology": "断定しない同意が、いちばんの後押しになる時がある",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "グレージュ・ソフトブルー・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. グレージュ and ソフトブルー with ミルクホワイト — the atmosphere of 二学期の予定調整に迷う相手を、肩の力を抜いて後押しする一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku lies sprawled lazily with a relaxed half-lidded smile, one flipper raised loosely. Composition: front view, close-up, large copy space at bottom right.\n[Text/Format] Handwritten-style Japanese text『まぁいいんじゃない』naturally placed within the illustration at bottom right, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-20",
+      "dialogue": "涼しくなってきたね",
+      "character": [
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "朝晩の空気が変わり始めた頃、季節の変わり目を分かち合う一言",
+      "send_timing": "朝",
+      "send_psychology": "小さな変化を一緒に見つけると、会話が自然に生まれる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "モーニングラベンダー・サンライズピンク・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. モーニングラベンダー and サンライズピンク with ミルクホワイト — the atmosphere of 朝晩の空気が変わり始めた頃、季節の変わり目を分かち合う一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Hiyori stretches its wings wide on a windowsill, chest puffed out, feeling the cool morning air. Composition: side view, close-up, large copy space at bottom center.\n[Text/Format] Handwritten-style Japanese text『涼しくなってきたね』naturally placed within the illustration at bottom center, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-21",
+      "dialogue": "重陽の節句、菊を飾ろうね",
+      "character": [
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "9月9日の重陽の節句、季節の行事を一緒に楽しもうと誘う一言",
+      "send_timing": "昼",
+      "send_psychology": "行事を一緒に迎える約束が、日常に小さな特別感を作る",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "キクイエロー・パープルアスター・ペーパーホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. キクイエロー and パープルアスター with ペーパーホワイト — the atmosphere of 9月9日の重陽の節句、季節の行事を一緒に楽しもうと誘う一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shizuku and Hiyori arrange small chrysanthemum blossoms in a vase together, focused and cheerful expressions. Composition: front view, full body, large copy space at top right.\n[Text/Format] Handwritten-style Japanese text『重陽の節句、菊を飾ろうね』naturally placed within the illustration at top right, not overlapping either character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-22",
+      "dialogue": "金木犀の香り、しない？",
+      "character": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "金木犀が香り始める頃、3匹揃って秋の気配に気づく一言",
+      "send_timing": "夕",
+      "send_psychology": "小さな発見を共有する言葉が、季節の移ろいを一緒に味わう時間になる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "モクセイオレンジ・トワイライトインディゴ・アイボリー",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. モクセイオレンジ and トワイライトインディゴ with アイボリー — the atmosphere of 金木犀が香り始める頃、3匹揃って秋の気配に気づく一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama, Shizuku and Hiyori all lift their faces toward an unseen breeze, noses gently raised, delighted expressions. Composition: three-quarter view, full body, large copy space at bottom left.\n[Text/Format] Handwritten-style Japanese text『金木犀の香り、しない？』naturally placed within the illustration at bottom left, not overlapping any character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-23",
+      "dialogue": "台風、逸れますように",
+      "character": [
+        "しらたま"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "台風の進路が気になる日、不安を煽らず願う一言",
+      "send_timing": "昼",
+      "send_psychology": "心配を祈りの形にすると、重くならずに気持ちを渡せる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "ストームグレー・ペールブルー・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. ストームグレー and ペールブルー with ミルクホワイト — the atmosphere of 台風の進路が気になる日、不安を煽らず願う一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama sits by a window with both paws pressed together, looking up at a cloudy sky with a hopeful expression. Composition: side view, bust-up, large copy space at top center.\n[Text/Format] Handwritten-style Japanese text『台風、逸れますように』naturally placed within the illustration at top center, not overlapping her body; 1:1 square format, transparent background, PNG, no background, isolated character, clean edge cutout, LINE sticker style, market-ready polish."
+    },
+    {
+      "id": "㉒-24",
+      "dialogue": "敬老の日、電話するね",
+      "character": [
+        "しらたま",
+        "ひより"
+      ],
+      "with_coco": false,
+      "type": "キャラのみ",
+      "scene": "敬老の日を控え、電話をする約束を先に伝えておく一言",
+      "send_timing": "夕",
+      "send_psychology": "予告があるだけで、当日の連絡がずっと自然になる",
+      "outfit": "なし（キャラのみ）",
+      "color_scheme": "サンセットオレンジ・ウォームベージュ・ミルクホワイト",
+      "image_prompt": "[Style] Soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle paint bleeding at the edges of each wash. サンセットオレンジ and ウォームベージュ with ミルクホワイト — the atmosphere of 敬老の日を控え、電話をする約束を先に伝えておく一言. Sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression.\n[Character] Shiratama holds a small toy telephone while Hiyori perches beside her nodding along, both warm and anticipatory. Composition: front view, medium shot, large copy space at bottom right.\n[Text/Format] Handwritten-style Japanese text『敬老の日、電話するね』naturally placed within the illustration at bottom right, not overlapping either character; 1:1 square format, transparent background, PNG, no background, isolated characters, clean edge cutout, LINE sticker style, market-ready polish."
+    }
+  ]
+}
