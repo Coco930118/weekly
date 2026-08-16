@@ -156,6 +156,7 @@ function renderCard(post) {
     : post.platform === 'Threads' ? 'platform-threads'
     : post.platform.startsWith('X診断') ? 'platform-xdiag'
     : post.platform.startsWith('Threads診断') ? 'platform-threadsdiag'
+    : post.platform.startsWith('スタンプ宣伝') ? 'platform-stickerpromo'
     : 'platform-other';
 
   const contentEscaped = escapeHtml(post.content);
@@ -254,6 +255,7 @@ function setupPlatformFilter() {
     else if (platform === 'Threads') btn.classList.add('active-threads');
     else if (platform.startsWith('X診断')) btn.classList.add('active-xdiag');
     else if (platform.startsWith('Threads診断')) btn.classList.add('active-threadsdiag');
+    else if (platform.startsWith('スタンプ宣伝')) btn.classList.add('active-threadsdiag');
     else btn.classList.add('active');
 
     renderPosts();
@@ -522,6 +524,175 @@ function renderNoteCard(note) {
     </article>`;
 }
 
+// ─── Sticker section ────────────────────────────────────────────────────────
+
+let allStickerSets = [];
+let activeStickerFilters = { set: 'all' };
+let stickersLoaded = false;
+
+async function loadStickers() {
+  const container = document.getElementById('stickersContainer');
+  container.innerHTML = '<p class="loading">読み込み中…</p>';
+
+  try {
+    const indexRes = await fetch('./stickers/index.json');
+    if (!indexRes.ok) throw new Error('stickers/index.json not found');
+    const index = await indexRes.json();
+
+    allStickerSets = await Promise.all(
+      index.sets.map(async (filename) => {
+        const res = await fetch(`./stickers/${filename}`);
+        if (!res.ok) throw new Error(`${filename} not found`);
+        return res.json();
+      })
+    );
+
+    allStickerSets.sort((a, b) => new Date(b.meta.created_date) - new Date(a.meta.created_date));
+    stickersLoaded = true;
+
+    renderStickerSetFilter();
+    renderStickerSets();
+  } catch (err) {
+    container.innerHTML = `<p class="error-state">データの読み込みに失敗しました<br><small>${err.message}</small></p>`;
+  }
+}
+
+function renderStickerSetFilter() {
+  const row = document.getElementById('stickerSetFilterRow');
+  if (!row) return;
+
+  row.querySelectorAll('.filter-btn').forEach(b => b.remove());
+
+  const allBtn = document.createElement('button');
+  allBtn.className = 'filter-btn active';
+  allBtn.dataset.stickerSet = 'all';
+  allBtn.textContent = '全弾';
+  row.appendChild(allBtn);
+
+  allStickerSets.forEach(set => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.stickerSet = set.meta.created_date;
+    btn.textContent = `第${set.meta.volume}弾`;
+    row.appendChild(btn);
+  });
+
+  row.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn[data-sticker-set]');
+    if (!btn) return;
+    row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeStickerFilters.set = btn.dataset.stickerSet;
+    renderStickerSets();
+  });
+}
+
+function renderStickerSets() {
+  const container = document.getElementById('stickersContainer');
+  const filtered = activeStickerFilters.set === 'all'
+    ? allStickerSets
+    : allStickerSets.filter(s => s.meta.created_date === activeStickerFilters.set);
+
+  const totalCount = allStickerSets.reduce((sum, s) => sum + s.stickers.length, 0);
+  const filteredCount = filtered.reduce((sum, s) => sum + s.stickers.length, 0);
+  document.getElementById('stickerStatsBar').textContent = `${filteredCount}個 / 全${totalCount}個`;
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<p class="empty-state">該当するスタンプがありません</p>';
+    return;
+  }
+
+  container.innerHTML = filtered.map(renderStickerSet).join('');
+}
+
+function renderStickerSet(set) {
+  const m = set.meta;
+  const sales = set.sales_text || {};
+  const salesJaEsc = sales.description_ja ? escapeHtml(sales.description_ja) : '';
+  const shopIntroEsc = sales.shop_intro_ja ? escapeHtml(sales.shop_intro_ja) : '';
+  const titleEsc = sales.title_ja ? escapeHtml(sales.title_ja) : '';
+
+  const cards = set.stickers
+    .slice()
+    .sort((a, b) => (a.rank || 0) - (b.rank || 0))
+    .map(renderStickerCard)
+    .join('');
+
+  return `
+    <section class="sticker-set-summary">
+      <p class="sticker-set-title">${escapeHtml(m.series)} 第${m.volume}弾${titleEsc ? `「${titleEsc}」` : ''}</p>
+      <p class="sticker-set-meta">作成日 ${escapeHtml(m.created_date)} ／ ${escapeHtml(m.pattern || '')} ／ 全${m.sticker_count}個</p>
+      <p class="sticker-set-meta">週テーマ：${escapeHtml(m.theme || '')}</p>
+      ${salesJaEsc ? `<div class="sticker-sales-block">
+        <p>${salesJaEsc}</p>
+        <div class="copy-btn-content"><button class="copy-btn" data-copy="${salesJaEsc}">説明文コピー</button></div>
+      </div>` : ''}
+      ${shopIntroEsc ? `<div class="sticker-sales-block">
+        <p>${shopIntroEsc}</p>
+        <div class="copy-btn-content"><button class="copy-btn" data-copy="${shopIntroEsc}">紹介文コピー</button></div>
+      </div>` : ''}
+    </section>
+    <div class="sticker-grid">${cards}</div>`;
+}
+
+function renderStickerCard(s) {
+  const phraseEsc = escapeHtml(s.phrase);
+  const participants = (s.participants || []).join('×');
+  const sd = s.scene_design || {};
+  const v = s.visual || {};
+  const p = s.image_prompt || {};
+
+  const sceneTags = [sd.timing, sd.scene, sd.psychology]
+    .filter(Boolean)
+    .map(t => `<span class="note-tag">${escapeHtml(t)}</span>`)
+    .join('');
+
+  const promptSections = ['style_block', 'character_block', 'text_block', 'combined']
+    .filter(key => p[key])
+    .map(key => {
+      const label = key === 'style_block' ? '🖼 プロンプト（スタイル）'
+        : key === 'character_block' ? '🎨 プロンプト（キャラクター）'
+        : key === 'text_block' ? '✍️ プロンプト（テキスト）'
+        : '🧩 プロンプト（全文）';
+      const esc = escapeHtml(p[key]);
+      return `
+        <div class="card-section">
+          <div class="card-section-header">
+            <span class="card-section-title">${label}</span>
+            <span class="card-section-toggle">▼</span>
+          </div>
+          <div class="card-section-body">
+            <p>${esc}</p>
+            <div class="copy-btn-content">
+              <button class="copy-btn" data-copy="${esc}">コピー</button>
+            </div>
+          </div>
+        </div>`;
+    })
+    .join('');
+
+  return `
+    <article class="sticker-card">
+      <div class="sticker-card-header">
+        <div class="card-meta-left">
+          <span class="sticker-rank">#${s.id}</span>
+          <span class="sticker-pattern-badge">${escapeHtml(participants)}</span>
+        </div>
+        <span class="purpose-badge">${escapeHtml(s.pattern_type === 'coco_mix' ? 'キャラ＋Coco' : 'キャラのみ')}</span>
+      </div>
+      <div class="sticker-card-body">
+        <p class="sticker-phrase">${phraseEsc}</p>
+        <div class="copy-btn-content">
+          <button class="copy-btn" data-copy="${phraseEsc}">セリフコピー</button>
+        </div>
+        <div class="sticker-scene-tags">${sceneTags}</div>
+        ${s.analysis_note ? `<p class="sticker-note">${escapeHtml(s.analysis_note)}</p>` : ''}
+        ${v.outfit ? `<p class="sticker-note">服装：${escapeHtml(v.outfit)}</p>` : ''}
+      </div>
+      ${promptSections}
+    </article>`;
+}
+
 // ─── Tab switching ────────────────────────────────────────────────────────────
 
 function setupTabs() {
@@ -538,9 +709,13 @@ function setupTabs() {
     const tab = btn.dataset.tab;
     document.getElementById('postsSection').hidden = tab !== 'posts';
     document.getElementById('notesSection').hidden = tab !== 'notes';
+    document.getElementById('stickersSection').hidden = tab !== 'stickers';
 
     if (tab === 'notes' && !notesLoaded) {
       loadNotes();
+    }
+    if (tab === 'stickers' && !stickersLoaded) {
+      loadStickers();
     }
   });
 }

@@ -1,0 +1,765 @@
+{
+  "meta": {
+    "series": "きょうも、そのままで",
+    "volume": 3,
+    "created_date": "2026-08-16",
+    "pattern": "3（ミックス：キャラクターのみ＆キャラクター＋Coco）",
+    "sticker_count": 24,
+    "theme": "季節の変わり目に、労わりと感謝を届ける週（敬老・お月見モチーフ）",
+    "characters": {
+      "Coco": "41歳、物静かで上品。クールビューティー／フェミニンビューティーを場面ごとに使い分け",
+      "しらたま": "猫・感情担当",
+      "しずく": "亀・思考担当",
+      "ひより": "鳥・直感担当"
+    },
+    "visual_rules": [
+      "やさしい水彩タッチ、ふんわりとした色使い、にじみや筆感を活かした手描き風の質感",
+      "冷たい表情はNG。sparkling warm eyesで温かみのある目の輝きを表現",
+      "手書き風フォントでセリフをイラスト内に自然配置",
+      "1:1正方形、背景完全透過PNG",
+      "全24個で構図・ポーズ・表情・服装・色・小物の重複なし",
+      "透け長方形オーバーレイ配置用に、上下左右いずれかに大きなCopy Spaceを確保"
+    ]
+  },
+  "trend_analysis": {
+    "analysis_date": "2026-08-16",
+    "target_period": "2026年9月中旬〜下旬（実行日の約1か月後）",
+    "seasonal_events": [
+      "9/9 重陽の節句（菊の節句）",
+      "9/21 敬老の日（9月第3月曜）",
+      "9/22-23頃 秋分の日・秋の彼岸",
+      "9月下旬 十五夜・お月見（2026年は9/25頃）",
+      "台風シーズンのピークが継続、秋雨前線の影響も増える",
+      "衣替えシーズン（半袖から薄手の羽織りへ）"
+    ],
+    "weather_lifestyle": [
+      "日中はまだ残暑が残るが、朝晩は急に涼しくなり寒暖差が拡大",
+      "寒暖差による自律神経の乱れ＝『秋バテ』が話題になりやすい時期",
+      "台風・秋雨前線のニュースが増え、天候不順への気遣いが会話に増える"
+    ],
+    "conversation_predictions": [
+      "『秋バテ気味？』『涼しくなってきたね』など季節の変わり目を分かち合う一言",
+      "敬老の日に合わせた『いつもありがとうございます』等、目上の人への丁寧な感謝表現",
+      "台風接近時の『気をつけてね』『無事にお越しくださいませ』といった気遣い表現",
+      "お月見・秋の行楽の予定を伝える『楽しみ』『着いたよ〜』"
+    ],
+    "sns_trend_keywords": [
+      "秋バテ",
+      "衣替え",
+      "敬老の日ギフト",
+      "お月見スイーツ",
+      "台風進路",
+      "寒暖差疲れ",
+      "秋の実り",
+      "シルバーウィーク"
+    ],
+    "production_notes": "ターゲットは30〜40代の大人女子。淡いくすみカラー（テラコッタ、モスグリーン、マスタード、グレージュ）を基調にしつつ、敬老の日にちなんだ落ち着いたベージュ・深緑も差し込む。水彩の滲みで『残暑から秋への移ろい』を表現し、癒やし・労わり・感謝の3トーンを軸に構成する。"
+  },
+  "sales_text": {
+    "title_ja": "きょうも、そのままで（3）",
+    "description_ja": "季節の変わり目、頑張るあなたへ。しらたま・しずく・ひよりとCocoが贈る、労わりと感謝のスタンプ24種。敬老の日のご挨拶から、秋バテ気味な日の気遣い、お月見前の楽しみまで。忙しい日常に、そっと寄り添う一滴の体温を。",
+    "title_en": "Today, Just As You Are (3)",
+    "description_en": "Autumn arrives. Coco and her gentle friends Shiratama, Shizuku and Hiyori bring 24 warm stickers for gratitude, care, and quiet comfort as the seasons change — a little warmth for your busy days.",
+    "shop_intro_ja": "『関係の温度と距離を整える技術』をテーマにしたLINEスタンプ第3弾。今回は敬老の日とお月見を控えた季節の変わり目がテーマです。寒暖差で疲れやすいこの時期、大切な人へ感謝や気遣いをそっと届けられる24種類を、水彩タッチのCocoと3匹の仲間たちが表現しました。家族・恋人・職場、どんな関係にもなじむ、押しつけがましくない優しさを詰め込んでいます。"
+  },
+  "stickers": [
+    {
+      "id": 1,
+      "rank": 1,
+      "phrase": "いつもありがとうございます",
+      "participants": [
+        "Coco",
+        "しずく"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "仕事/日常",
+        "psychology": "敬老・目上への感謝"
+      },
+      "analysis_note": "敬老の日を控え、目上の人へも送りやすい丁寧な感謝の言葉を最需要として1位に配置。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "elegant beige autumn-weight dress with a small pearl brooch, soft cream cardigan draped over shoulders",
+        "season_motif": "early autumn morning light, a small bouquet of chrysanthemums and a folded card on a wooden table",
+        "pose": "Coco bows gently forward with both hands folded in front, Shizuku sits beside the card giving an approving nod",
+        "composition": "front view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, early autumn morning light, a small bouquet of chrysanthemums and a folded card on a wooden table, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing elegant beige autumn-weight dress with a small pearl brooch, soft cream cardigan draped over shoulders; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco bows gently forward with both hands folded in front, Shizuku sits beside the card giving an approving nod; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『いつもありがとうございます』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, early autumn morning light, a small bouquet of chrysanthemums and a folded card on a wooden table, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing elegant beige autumn-weight dress with a small pearl brooch, soft cream cardigan draped over shoulders; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco bows gently forward with both hands folded in front, Shizuku sits beside the card giving an approving nod; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『いつもありがとうございます』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 2,
+      "rank": 2,
+      "phrase": "気をつけてね",
+      "participants": [
+        "しらたま"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "日常",
+        "psychology": "台風シーズンの気遣い"
+      },
+      "analysis_note": "台風接近が増える時期、大切な人を気遣う一言として上位需要を想定。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a rain-streaked window in the background, a small paper umbrella leaning nearby, dusky blue-grey light",
+        "pose": "Shiratama looks back over its shoulder with a slightly worried but caring expression, one paw raised as if waving goodbye",
+        "composition": "side view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a rain-streaked window in the background, a small paper umbrella leaning nearby, dusky blue-grey light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Shiratama looks back over its shoulder with a slightly worried but caring expression, one paw raised as if waving goodbye; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『気をつけてね』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a rain-streaked window in the background, a small paper umbrella leaning nearby, dusky blue-grey light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details. Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Shiratama looks back over its shoulder with a slightly worried but caring expression, one paw raised as if waving goodbye; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『気をつけてね』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 3,
+      "rank": 3,
+      "phrase": "元気そうね",
+      "participants": [
+        "Coco",
+        "しらたま"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "日常",
+        "psychology": "秋バテを気遣う声かけ"
+      },
+      "analysis_note": "寒暖差で体調を崩しやすい時期、相手の様子を気遣う定番フレーズとして高需要。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "terracotta-orange walking cardigan over a linen dress, light knit stole",
+        "season_motif": "gentle midday breeze, a few falling ginkgo leaves drifting past",
+        "pose": "Coco tilts her head warmly looking at Shiratama, who stretches up on hind legs looking pleased",
+        "composition": "three-quarter view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle midday breeze, a few falling ginkgo leaves drifting past, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing terracotta-orange walking cardigan over a linen dress, light knit stole; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Coco tilts her head warmly looking at Shiratama, who stretches up on hind legs looking pleased; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『元気そうね』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, gentle midday breeze, a few falling ginkgo leaves drifting past, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing terracotta-orange walking cardigan over a linen dress, light knit stole; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Coco tilts her head warmly looking at Shiratama, who stretches up on hind legs looking pleased; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『元気そうね』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 4,
+      "rank": 4,
+      "phrase": "感謝でいっぱいです",
+      "participants": [
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "日常",
+        "psychology": "実りの季節への感謝"
+      },
+      "analysis_note": "お月見・秋の実りの時期に合わせ、3匹そろって感謝を伝える構図で季節感を強調。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a small full moon rising behind soft clouds, a plate of dango and a single susuki (pampas grass) stalk",
+        "pose": "all three characters sit in a small row looking up at the moon, paws/wings gently pressed together in gratitude",
+        "composition": "front view, full body, close-up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small full moon rising behind soft clouds, a plate of dango and a single susuki (pampas grass) stalk, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: all three characters sit in a small row looking up at the moon, paws/wings gently pressed together in gratitude; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『感謝でいっぱいです』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small full moon rising behind soft clouds, a plate of dango and a single susuki (pampas grass) stalk, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: all three characters sit in a small row looking up at the moon, paws/wings gently pressed together in gratitude; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『感謝でいっぱいです』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 5,
+      "rank": 5,
+      "phrase": "いつもありがとう",
+      "participants": [
+        "Coco",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "日常",
+        "psychology": "日常の感謝を軽く伝える"
+      },
+      "analysis_note": "敬老の日ほど改まらない、日常的な感謝を伝える場面での使用頻度を見込んで上位に配置。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "soft ivory knit dress with a small ginkgo-leaf embroidered pin",
+        "season_motif": "warm afternoon light filtering through a window, a small teacup releasing gentle steam",
+        "pose": "Coco smiles softly with one hand near her chest, Hiyori perches on her shoulder chirping happily",
+        "composition": "front view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm afternoon light filtering through a window, a small teacup releasing gentle steam, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing soft ivory knit dress with a small ginkgo-leaf embroidered pin; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco smiles softly with one hand near her chest, Hiyori perches on her shoulder chirping happily; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『いつもありがとう』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm afternoon light filtering through a window, a small teacup releasing gentle steam, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing soft ivory knit dress with a small ginkgo-leaf embroidered pin; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco smiles softly with one hand near her chest, Hiyori perches on her shoulder chirping happily; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『いつもありがとう』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 6,
+      "rank": 6,
+      "phrase": "無事にお越しくださいませ",
+      "participants": [
+        "しずく"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "仕事",
+        "psychology": "天候不順な中での来客への気遣い"
+      },
+      "analysis_note": "台風・秋雨シーズンに来訪者を迎える場面向けの丁寧な気遣い表現。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a small entrance mat and folded umbrella stand, soft grey rainy-day light",
+        "pose": "Shizuku stands upright near the doorway with a small welcoming bow, one hand gesture guiding the way",
+        "composition": "side view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small entrance mat and folded umbrella stand, soft grey rainy-day light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Shizuku stands upright near the doorway with a small welcoming bow, one hand gesture guiding the way; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『無事にお越しくださいませ』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small entrance mat and folded umbrella stand, soft grey rainy-day light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Shizuku stands upright near the doorway with a small welcoming bow, one hand gesture guiding the way; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『無事にお越しくださいませ』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 7,
+      "rank": 7,
+      "phrase": "今日も素敵ないちにちになりますように",
+      "participants": [
+        "Coco",
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "日常",
+        "psychology": "敬老週の丁寧な朝の挨拶"
+      },
+      "analysis_note": "敬老の日を含む週の朝の挨拶として、全員登場のにぎやかな構図で特別感を演出。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "mustard-yellow autumn blouse with a soft cream skirt",
+        "season_motif": "soft golden morning light, a small vase of cosmos flowers on the windowsill",
+        "pose": "Coco stands centered with arms gently open, all three animal characters gathered happily around her feet",
+        "composition": "front view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft golden morning light, a small vase of cosmos flowers on the windowsill, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing mustard-yellow autumn blouse with a soft cream skirt; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco stands centered with arms gently open, all three animal characters gathered happily around her feet; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『今日も素敵ないちにちになりますように』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft golden morning light, a small vase of cosmos flowers on the windowsill, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing mustard-yellow autumn blouse with a soft cream skirt; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco stands centered with arms gently open, all three animal characters gathered happily around her feet; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『今日も素敵ないちにちになりますように』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 8,
+      "rank": 8,
+      "phrase": "おはよう",
+      "participants": [
+        "ひより"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "日常",
+        "psychology": "軽い朝の挨拶"
+      },
+      "analysis_note": "定番の朝挨拶。使用頻度が最も高い基本語として安定需要を見込む。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a sunrise gradient sky, a small open window with a light autumn breeze",
+        "pose": "Hiyori stretches its wings wide on a windowsill, chest puffed out cheerfully",
+        "composition": "side view, close-up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a sunrise gradient sky, a small open window with a light autumn breeze, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Hiyori stretches its wings wide on a windowsill, chest puffed out cheerfully; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『おはよう』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a sunrise gradient sky, a small open window with a light autumn breeze, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details. Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Hiyori stretches its wings wide on a windowsill, chest puffed out cheerfully; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『おはよう』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 9,
+      "rank": 9,
+      "phrase": "おはようございます",
+      "participants": [
+        "Coco",
+        "しずく"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "仕事",
+        "psychology": "目上の人への丁寧な朝の挨拶"
+      },
+      "analysis_note": "敬老の日週の仕事・目上シーンで使える丁寧語バージョンとして#1と差別化。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "deep green tailored dress with a slim beige belt",
+        "season_motif": "crisp early autumn morning air, a small potted chrysanthemum on the desk",
+        "pose": "Coco gives a composed polite bow with hands folded, Shizuku mirrors a small respectful nod beside her",
+        "composition": "front view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, crisp early autumn morning air, a small potted chrysanthemum on the desk, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing deep green tailored dress with a slim beige belt; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco gives a composed polite bow with hands folded, Shizuku mirrors a small respectful nod beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『おはようございます』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, crisp early autumn morning air, a small potted chrysanthemum on the desk, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing deep green tailored dress with a slim beige belt; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco gives a composed polite bow with hands folded, Shizuku mirrors a small respectful nod beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『おはようございます』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 10,
+      "rank": 10,
+      "phrase": "秋バテ気味？",
+      "participants": [
+        "Coco",
+        "しらたま"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "日常",
+        "psychology": "寒暖差疲れを気遣う新トレンドフレーズ"
+      },
+      "analysis_note": "STEP1トレンド分析より、寒暖差による秋バテを気遣う言い回しを新規追加。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "mint-green loose loungewear with a soft knit cardigan",
+        "season_motif": "a small electric fan turned off beside a warm blanket, transitional autumn light",
+        "pose": "Coco rests her cheek on her hand with a gently concerned look, Shiratama lies curled against her leg",
+        "composition": "three-quarter view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small electric fan turned off beside a warm blanket, transitional autumn light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing mint-green loose loungewear with a soft knit cardigan; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Coco rests her cheek on her hand with a gently concerned look, Shiratama lies curled against her leg; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『秋バテ気味？』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small electric fan turned off beside a warm blanket, transitional autumn light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing mint-green loose loungewear with a soft knit cardigan; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Coco rests her cheek on her hand with a gently concerned look, Shiratama lies curled against her leg; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『秋バテ気味？』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 11,
+      "rank": 11,
+      "phrase": "おやすみ〜",
+      "participants": [
+        "しらたま",
+        "ひより"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "日常",
+        "psychology": "気軽な夜の挨拶"
+      },
+      "analysis_note": "夜の定番挨拶。二匹の組み合わせで親しみやすさを強調。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a soft crescent moon and a few stars, warm lamplight glow",
+        "pose": "Shiratama yawns curled in a small basket while Hiyori tucks its head under a wing beside it",
+        "composition": "front view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a soft crescent moon and a few stars, warm lamplight glow, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Shiratama yawns curled in a small basket while Hiyori tucks its head under a wing beside it; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『おやすみ〜』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a soft crescent moon and a few stars, warm lamplight glow, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details. Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Shiratama yawns curled in a small basket while Hiyori tucks its head under a wing beside it; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『おやすみ〜』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 12,
+      "rank": 12,
+      "phrase": "おやすみなさい",
+      "participants": [
+        "Coco",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "日常",
+        "psychology": "丁寧な夜の挨拶"
+      },
+      "analysis_note": "恋人や家族への丁寧な夜の挨拶として#11と差別化。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "mauve-pink silk pajamas with a soft lace trim",
+        "season_motif": "a small bedside candle glowing softly, dark blue night sky through the window",
+        "pose": "Coco sits on the edge of a bed gently waving, Hiyori rests sleepily on the pillow beside her",
+        "composition": "side view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small bedside candle glowing softly, dark blue night sky through the window, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing mauve-pink silk pajamas with a soft lace trim; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco sits on the edge of a bed gently waving, Hiyori rests sleepily on the pillow beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『おやすみなさい』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small bedside candle glowing softly, dark blue night sky through the window, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing mauve-pink silk pajamas with a soft lace trim; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco sits on the edge of a bed gently waving, Hiyori rests sleepily on the pillow beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『おやすみなさい』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 13,
+      "rank": 13,
+      "phrase": "本日も笑顔溢れるいちにちになりますように",
+      "participants": [
+        "Coco",
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "仕事",
+        "psychology": "敬老週の丁寧な朝メッセージ（#7と時間帯・構図違い）"
+      },
+      "analysis_note": "#7と同フレーズ系統だが、より丁寧な言い回しでオフィス向けに展開し需要を分散。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "dusty-blue cardigan over a white blouse, small silver earrings",
+        "season_motif": "soft desk lamp light, a small autumn leaf pressed inside an open notebook",
+        "pose": "Coco sits at a desk smiling warmly toward the viewer, the three animals peek up from the desk edge together",
+        "composition": "front view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft desk lamp light, a small autumn leaf pressed inside an open notebook, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing dusty-blue cardigan over a white blouse, small silver earrings; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco sits at a desk smiling warmly toward the viewer, the three animals peek up from the desk edge together; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『本日も笑顔溢れるいちにちになりますように』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, soft desk lamp light, a small autumn leaf pressed inside an open notebook, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing dusty-blue cardigan over a white blouse, small silver earrings; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco sits at a desk smiling warmly toward the viewer, the three animals peek up from the desk edge together; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『本日も笑顔溢れるいちにちになりますように』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 14,
+      "rank": 14,
+      "phrase": "大好き",
+      "participants": [
+        "しずく"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "恋愛/日常",
+        "psychology": "素直な感情表現"
+      },
+      "analysis_note": "口癖リストの中核フレーズ。単体キャラで感情のストレートさを表現。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a warm sunlit patch of grass, a single acorn resting nearby",
+        "pose": "Shizuku hugs a small red heart-shaped leaf to its chest with a bashful smile",
+        "composition": "front view, close-up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a warm sunlit patch of grass, a single acorn resting nearby, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Shizuku hugs a small red heart-shaped leaf to its chest with a bashful smile; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『大好き』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a warm sunlit patch of grass, a single acorn resting nearby, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Shizuku hugs a small red heart-shaped leaf to its chest with a bashful smile; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『大好き』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 15,
+      "rank": 15,
+      "phrase": "今日も大好き",
+      "participants": [
+        "Coco",
+        "しらたま"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "恋愛",
+        "psychology": "日々の愛情表現"
+      },
+      "analysis_note": "恋愛シーンでの継続的な愛情表現として#14と差別化した使用文脈を設計。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "terracotta wrap dress with a soft knit shawl",
+        "season_motif": "warm sunset-orange sky through a window, a lit candle on the table",
+        "pose": "Coco embraces Shiratama gently against her chest with closed eyes and a soft smile",
+        "composition": "three-quarter view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm sunset-orange sky through a window, a lit candle on the table, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing terracotta wrap dress with a soft knit shawl; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Coco embraces Shiratama gently against her chest with closed eyes and a soft smile; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『今日も大好き』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, warm sunset-orange sky through a window, a lit candle on the table, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing terracotta wrap dress with a soft knit shawl; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Coco embraces Shiratama gently against her chest with closed eyes and a soft smile; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『今日も大好き』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 16,
+      "rank": 16,
+      "phrase": "そういうところ好き",
+      "participants": [
+        "Coco",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "恋愛",
+        "psychology": "相手の個性を肯定する"
+      },
+      "analysis_note": "恋愛関係での距離を縮める肯定フレーズ。デート帰りのシーンを想定。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "camel-colored coat draped over the shoulders, a thin patterned scarf",
+        "season_motif": "a quiet evening street lined with soft lantern lights, a few drifting leaves",
+        "pose": "Coco looks sideways with a knowing smile, Hiyori tilts its head from her shoulder",
+        "composition": "side view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a quiet evening street lined with soft lantern lights, a few drifting leaves, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing camel-colored coat draped over the shoulders, a thin patterned scarf; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco looks sideways with a knowing smile, Hiyori tilts its head from her shoulder; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『そういうところ好き』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a quiet evening street lined with soft lantern lights, a few drifting leaves, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing camel-colored coat draped over the shoulders, a thin patterned scarf; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco looks sideways with a knowing smile, Hiyori tilts its head from her shoulder; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『そういうところ好き』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 17,
+      "rank": 17,
+      "phrase": "あなたらしいわ",
+      "participants": [
+        "Coco",
+        "しずく"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "日常",
+        "psychology": "見守り・肯定"
+      },
+      "analysis_note": "誰かの選択をそのまま認める、見守り型の肯定フレーズとして中位に配置。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "greige knit one-piece with a soft woven belt",
+        "season_motif": "a small reading nook with autumn-colored cushions, soft afternoon light",
+        "pose": "Coco rests her chin on her hand with a warm approving gaze, Shizuku sits reading a tiny book beside her",
+        "composition": "front view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small reading nook with autumn-colored cushions, soft afternoon light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing greige knit one-piece with a soft woven belt; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco rests her chin on her hand with a warm approving gaze, Shizuku sits reading a tiny book beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『あなたらしいわ』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small reading nook with autumn-colored cushions, soft afternoon light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing greige knit one-piece with a soft woven belt; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco rests her chin on her hand with a warm approving gaze, Shizuku sits reading a tiny book beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『あなたらしいわ』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 18,
+      "rank": 18,
+      "phrase": "一歩成長だね",
+      "participants": [
+        "Coco",
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "仕事/日常",
+        "psychology": "敬老・見守り系の励まし"
+      },
+      "analysis_note": "敬老の日の『見守る側』の視点を反映した励まし表現。全員登場で祝福感を演出。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "navy tailored blazer with a small ginkgo-leaf brooch",
+        "season_motif": "a small potted seedling on the windowsill, soft midday light",
+        "pose": "Coco gives a thumbs-up with a proud smile, the three animals cheer around a small growing sprout",
+        "composition": "front view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small potted seedling on the windowsill, soft midday light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing navy tailored blazer with a small ginkgo-leaf brooch; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco gives a thumbs-up with a proud smile, the three animals cheer around a small growing sprout; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『一歩成長だね』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small potted seedling on the windowsill, soft midday light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing navy tailored blazer with a small ginkgo-leaf brooch; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco gives a thumbs-up with a proud smile, the three animals cheer around a small growing sprout; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『一歩成長だね』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 19,
+      "rank": 19,
+      "phrase": "少しずつでいい",
+      "participants": [
+        "しずく"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "日常",
+        "psychology": "自分を労わる"
+      },
+      "analysis_note": "秋バテ・疲労シーズンに自分を労わるための単体しずくフレーズ。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a soft blanket and a warm mug nearby, dim evening lamp light",
+        "pose": "Shizuku sits quietly wrapped in a small knit blanket with a gentle reassuring expression",
+        "composition": "side view, bust up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a soft blanket and a warm mug nearby, dim evening lamp light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Shizuku sits quietly wrapped in a small knit blanket with a gentle reassuring expression; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『少しずつでいい』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a soft blanket and a warm mug nearby, dim evening lamp light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details. Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Shizuku sits quietly wrapped in a small knit blanket with a gentle reassuring expression; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, bust up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『少しずつでいい』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 20,
+      "rank": 20,
+      "phrase": "やってみよう",
+      "participants": [
+        "ひより"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "朝",
+        "scene": "仕事",
+        "psychology": "背中を押す"
+      },
+      "analysis_note": "新しいことに挑戦する朝のシーン向け、直感担当ひよりが後押しする構図。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a bright open sky background, a small paper airplane mid-flight",
+        "pose": "Hiyori leaps forward mid-flight with wings spread and a determined bright expression",
+        "composition": "side view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a bright open sky background, a small paper airplane mid-flight, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Hiyori leaps forward mid-flight with wings spread and a determined bright expression; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『やってみよう』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a bright open sky background, a small paper airplane mid-flight, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Hiyori leaps forward mid-flight with wings spread and a determined bright expression; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『やってみよう』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 21,
+      "rank": 21,
+      "phrase": "涼しい風、感じる？",
+      "participants": [
+        "Coco",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "日常",
+        "psychology": "季節の変わり目を分かち合う"
+      },
+      "analysis_note": "STEP1トレンド分析より、季節の変わり目の会話を促す新規フレーズを追加。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "moss-green cardigan with a light cotton scarf",
+        "season_motif": "a tree-lined path with a few early falling leaves, soft breeze motion lines",
+        "pose": "Coco closes her eyes and lifts her face gently into the breeze, Hiyori rides the wind beside her",
+        "composition": "three-quarter view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a tree-lined path with a few early falling leaves, soft breeze motion lines, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing moss-green cardigan with a light cotton scarf; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco closes her eyes and lifts her face gently into the breeze, Hiyori rides the wind beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『涼しい風、感じる？』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a tree-lined path with a few early falling leaves, soft breeze motion lines, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the right area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing moss-green cardigan with a light cotton scarf; Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco closes her eyes and lifts her face gently into the breeze, Hiyori rides the wind beside her; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; three-quarter view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『涼しい風、感じる？』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the left area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 22,
+      "rank": 22,
+      "phrase": "まぁいいんじゃない",
+      "participants": [
+        "しらたま"
+      ],
+      "pattern_type": "characters_only",
+      "scene_design": {
+        "timing": "夜",
+        "scene": "日常",
+        "psychology": "肩の力を抜く"
+      },
+      "analysis_note": "頑張りすぎな相手への軽い肯定。しらたまの気の抜けたリアクションで表現。",
+      "visual": {
+        "coco_style": null,
+        "outfit": null,
+        "season_motif": "a cozy cushion and a half-finished cup of tea, soft warm indoor light",
+        "pose": "Shiratama lies sprawled lazily on its back with a relaxed half-lidded smile",
+        "composition": "front view, close-up"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a cozy cushion and a half-finished cup of tea, soft warm indoor light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Shiratama lies sprawled lazily on its back with a relaxed half-lidded smile; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『まぁいいんじゃない』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a cozy cushion and a half-finished cup of tea, soft warm indoor light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the bottom area for a translucent overlay rectangle, keep that area free of important details. Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); pose: Shiratama lies sprawled lazily on its back with a relaxed half-lidded smile; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, close-up composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『まぁいいんじゃない』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the top area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 23,
+      "rank": 23,
+      "phrase": "楽しみ",
+      "participants": [
+        "Coco",
+        "しらたま",
+        "しずく",
+        "ひより"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "昼",
+        "scene": "日常",
+        "psychology": "お月見・秋の行楽への期待"
+      },
+      "analysis_note": "お月見・秋の行楽シーズンの高揚感を全員登場で表現し、季節イベント需要に対応。",
+      "visual": {
+        "coco_style": "クールビューティー",
+        "outfit": "mustard-and-navy patterned autumn dress with small dango-shaped earrings",
+        "season_motif": "a picnic basket and a susuki bouquet, soft late-afternoon golden light",
+        "pose": "Coco hugs her knees with sparkling anticipation, the three animals peek out excitedly from the picnic basket",
+        "composition": "front view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a picnic basket and a susuki bouquet, soft late-afternoon golden light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing mustard-and-navy patterned autumn dress with small dango-shaped earrings; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco hugs her knees with sparkling anticipation, the three animals peek out excitedly from the picnic basket; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『楽しみ』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a picnic basket and a susuki bouquet, soft late-afternoon golden light, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the left area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, sharp clean eyeliner, straight glossy bob, cool muted color palette, quietly elegant demeanor, wearing mustard-and-navy patterned autumn dress with small dango-shaped earrings; Shiratama, a small realistic white-and-cream cat with soft fluffy watercolor-and-colored-pencil fur texture, round expressive eyes, tiny pink nose, embodying emotion (感情); Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); Hiyori, a small bird with soft pastel realistic watercolor plumage, bright alert eyes, perky posture, embodying intuition (直感); pose: Coco hugs her knees with sparkling anticipation, the three animals peek out excitedly from the picnic basket; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; front view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『楽しみ』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the right area, clearly separated from the copy space."
+      }
+    },
+    {
+      "id": 24,
+      "rank": 24,
+      "phrase": "着いたよ〜",
+      "participants": [
+        "Coco",
+        "しずく"
+      ],
+      "pattern_type": "coco_mix",
+      "scene_design": {
+        "timing": "夕方",
+        "scene": "日常",
+        "psychology": "待ち合わせの気軽な連絡"
+      },
+      "analysis_note": "秋の行楽・待ち合わせシーンでの気軽な連絡用フレーズとして着地。",
+      "visual": {
+        "coco_style": "フェミニンビューティー",
+        "outfit": "checked wool stole over a simple cream dress",
+        "season_motif": "a small station bench and a signpost, warm dusky orange-pink sky",
+        "pose": "Coco waves one hand high above her head with a bright smile, Shizuku waves a tiny flag beside her feet",
+        "composition": "side view, full body"
+      },
+      "image_prompt": {
+        "style_block": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small station bench and a signpost, warm dusky orange-pink sky, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details",
+        "character_block": "Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing checked wool stole over a simple cream dress; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco waves one hand high above her head with a bright smile, Shizuku waves a tiny flag beside her feet; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s)",
+        "text_block": "handwritten-style Japanese text『着いたよ〜』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space",
+        "combined": "soft watercolor illustration, gentle pastel tones, hand-painted texture, warm and cozy feeling, a small station bench and a signpost, warm dusky orange-pink sky, 1:1 square format, transparent background, PNG, no background, isolated character, large empty copy space reserved in the top area for a translucent overlay rectangle, keep that area free of important details. Coco, a composed 41-year-old Japanese woman with a neat bob haircut, rendered in modern soft illustration blended with watercolor texture, soft wavy bob with gentle side-swept bangs, warm blush tones, tender feminine demeanor, wearing checked wool stole over a simple cream dress; Shizuku, a small wise tortoise rendered in realistic watercolor and colored-pencil texture, with a delicate white flower decoration on its shell, calm knowing expression, embodying thought (思考); pose: Coco waves one hand high above her head with a bright smile, Shizuku waves a tiny flag beside her feet; sparkling warm eyes, soft light reflection in eyes, gentle and cheerful gaze, bright and hopeful expression; side view, full body composition, 1px soft white outline, 10% soft drop shadow beneath character(s). handwritten-style Japanese text『着いたよ〜』naturally placed within the illustration in soft warm brush-pen lettering, ink color harmonized with the scene's palette, positioned in the bottom area, clearly separated from the copy space."
+      }
+    }
+  ]
+}

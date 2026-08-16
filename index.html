@@ -17,6 +17,7 @@
   <nav class="tab-nav">
     <button class="tab-btn active" data-tab="posts">投稿カレンダー</button>
     <button class="tab-btn" data-tab="notes">note</button>
+    <button class="tab-btn" data-tab="stickers">LINEスタンプ</button>
   </nav>
 
   <!-- Posts section -->
@@ -51,6 +52,17 @@
     </div>
     <div class="stats-bar" id="noteStatsBar">読み込み中…</div>
     <main class="notes-container" id="notesContainer"></main>
+  </div>
+
+  <!-- Stickers section -->
+  <div id="stickersSection" hidden>
+    <div class="filters">
+      <div class="filter-row" id="stickerSetFilterRow">
+        <span class="filter-label">弾</span>
+      </div>
+    </div>
+    <div class="stats-bar" id="stickerStatsBar">読み込み中…</div>
+    <main class="stickers-container" id="stickersContainer"></main>
   </div>
 
   <script src="./assets/app.js"></script>

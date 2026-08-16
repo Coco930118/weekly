@@ -237,6 +237,12 @@ body {
   border: 1px solid rgba(224, 90, 140, 0.3);
 }
 
+.platform-stickerpromo {
+  background: rgba(80, 170, 150, 0.15);
+  color: #6fd4b8;
+  border: 1px solid rgba(80, 170, 150, 0.3);
+}
+
 .card-time {
   font-size: 0.72rem;
   color: var(--text-muted);
@@ -694,4 +700,115 @@ body {
   .tab-nav {
     padding: 0 28px;
   }
+}
+
+/* ── Sticker section ─────────────────────────────────────────────────────── */
+
+.stickers-container {
+  padding: 0 16px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: 60px;
+}
+
+.sticker-set-summary {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 14px;
+  margin-top: 16px;
+}
+
+.sticker-set-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.sticker-set-meta {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.sticker-sales-block {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  background: var(--bg-section);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+}
+
+.sticker-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.sticker-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.sticker-card:hover {
+  border-color: var(--border-light);
+}
+
+.sticker-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.sticker-rank {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+.sticker-pattern-badge {
+  font-size: 0.62rem;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid rgba(155, 77, 202, 0.25);
+  background: rgba(155, 77, 202, 0.12);
+  color: #c084e0;
+}
+
+.sticker-card-body {
+  padding: 12px 14px 6px;
+}
+
+.sticker-phrase {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.sticker-scene-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.sticker-note {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 6px;
 }
