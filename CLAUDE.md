@@ -597,6 +597,11 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 
 ---
 
+## 週次ファイルの削除タイミング（2026-08-17 Coco決定・恒久ルール）
+- 新しい週を生成した時に消してよいのは**配信が終わった週**のみ（例：8/18〜8/24週は8/25に削除する）
+- **配信中の週と未来の週は `posts/index.json` から外さない**。公開サイトはCocoの投稿作業台なので、配信中の週が消えると当日の投稿作業ができなくなる
+- 旧運用の「前々週分を消して最新2回分維持」は、この読み替えで運用する（indexには一時的に3週並んでよい）
+
 ## 投稿JSONの構造
 `posts/week_YYYY-MM-DD_YYYY-MM-DD.json`
 - `week`: `"YYYY-MM-DD_YYYY-MM-DD"`
