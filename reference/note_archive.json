@@ -1,0 +1,1913 @@
+{
+  "meta": {
+    "purpose": "公開した全noteの永久索引。notes/ 配下のJSONは配信終了から30日で削除するが、この索引は削除しない。週またぎの既視感チェック（同じ表現・同じ原理に寄っていないか）と、あわせて読む（内部導線）の候補探しに使う。",
+    "created": "2026-08-24",
+    "rule": "noteを作るたびに1本1行を追記する（note作成プロトコル STEP 9）。本文は持たない。note.com上の公開記事は削除しない。",
+    "platform_origin_note": "2026-06以前のnoteには platform_origin フィールドがなかったため unknown。推測で埋めない。2026-07以降は X / Threads が入る。",
+    "principle_no_note": "Coco Methodology 原理01〜07の番号。既存分は未判定で null。今後作るnoteでは必須。",
+    "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
+    "count": 118
+  },
+  "notes": [
+    {
+      "title": "「もういいや」は、諦めじゃなかった",
+      "publish_date": "2026-04-26",
+      "platform_origin": "unknown",
+      "source_week": "2026-04-21_2026-04-27",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "感情はある。依存はしない。——「もういいや」という静かな感覚は、諦めではなく、愛情が依存をやめた瞬間だった。距離を整えることと、相手を切ることの違い。消した言葉の中に宿る本音について。",
+      "linked_principle": "",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_04_26.json",
+      "in_index": false
+    },
+    {
+      "title": "「ちゃんと終わらせてから」がなくなる日──休む許可を、自分に出すための5つの原理",
+      "publish_date": "2026-04-27",
+      "platform_origin": "unknown",
+      "source_week": "2026-04-28_2026-05-04",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "「ちゃんと終わらせてから休もう」は永遠に来ない。休む許可を外側の完了に設定している人が、連休を採点し、忙しさで孤独を隠し、疲れを休暇で回収しようとして失敗する構造を解く。",
+      "linked_principle": "",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_04_27.json",
+      "in_index": true
+    },
+    {
+      "title": "「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのとき私がやったこと",
+      "publish_date": "2026-05-29",
+      "platform_origin": "unknown",
+      "source_week": "2026-05-19_2026-05-25",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "優秀な人が辞める前には必ず「静かなサイン」がある。20年・5万人超の現場経験から見えた「関係の撤退パターン」と、手遅れになる前に使える7つの観察軸・チェックリスト。組織・チームの「温度と距離」を整える技術の体系化。",
+      "linked_principle": "",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_05_29.json",
+      "in_index": true
+    },
+    {
+      "title": "「優しいのに、軽く扱われる」には構造がある",
+      "publish_date": "2026-06-07",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "「断れない・怒れない・優しい人でいること」の構造的な問題と、感情なしで境界線を引く技術",
+      "linked_principle": "輪郭がある人は尊重される。境界線は、壁ではなく愛を守るための設計図だ",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_07.json",
+      "in_index": true
+    },
+    {
+      "title": "愛の輪郭 ――境界線という本当の優しさ",
+      "publish_date": "2026-06-09",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "境界線を持つことが、愛を守り、尊重を生む技術になる",
+      "linked_principle": "自分の輪郭（境界線）を持つことが、愛を守り、尊重を生む技術になる",
+      "funnel_targets": [
+        "th_01",
+        "th_03",
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-09_boundary.json",
+      "in_index": true,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "比べてくる人の物差しに、乗らなくていい",
+      "publish_date": "2026-06-09",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "比較の言葉を受け取らずに自分の物差しを保つ技術",
+      "linked_principle": "比べてくる人の物差しは、あなたのサイズに合っていない。自分の道を静かに指さすだけでいい",
+      "funnel_targets": [
+        "shindan_th_20260609"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-09_comparison.json",
+      "in_index": true
+    },
+    {
+      "title": "一番近い人ほど、距離が要る",
+      "publish_date": "2026-06-09",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "距離を保てる強さが、一番近い人との関係を豊かにする",
+      "linked_principle": "距離を保てる強さが、一番近い人との関係を豊かにする",
+      "funnel_targets": [
+        "th_04",
+        "th_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-09_distance.json",
+      "in_index": true,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "変えたい欲求と言わない期待が、関係を静かに侵食するまで",
+      "publish_date": "2026-06-09",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "変えたい欲求も期待も、言葉にして初めて関係が動き始める",
+      "linked_principle": "変えたい欲求も期待も、言葉にして初めて関係が動き始める",
+      "funnel_targets": [
+        "th_02",
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-09_words.json",
+      "in_index": true,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "愛の輪郭 ――境界線という本当の優しさ",
+      "publish_date": "2026-06-09",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "",
+      "linked_principle": "自分の輪郭（境界線）を持つことが、愛を守り、尊重を生む技術になる",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_09_boundary.json",
+      "in_index": false,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "一番近い人ほど、距離が要る",
+      "publish_date": "2026-06-09",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "",
+      "linked_principle": "距離を保てる強さが、一番近い人との関係を豊かにする",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_09_distance.json",
+      "in_index": false,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "変えたい欲求と言わない期待が、関係を静かに侵食するまで",
+      "publish_date": "2026-06-09",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-03_2026-06-09",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "",
+      "linked_principle": "変えたい欲求も期待も、言葉にして初めて関係が動き始める",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_09_words.json",
+      "in_index": false,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "本音を飲み込むほど、本当の自分が消えていく",
+      "publish_date": "2026-06-10",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "本音が言えない4つの構造と、言葉を自由にする一歩",
+      "linked_principle": "本音を飲み込み続けると「本当の自分」が関係から消える。言えない理由を知ることが、言える状態への最初の橋になる",
+      "funnel_targets": [
+        "shindan_th_20260610"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-10_honne.json",
+      "in_index": true
+    },
+    {
+      "title": "「なんでわかってくれないの」の下に、本当に求めているものがある",
+      "publish_date": "2026-06-11",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「わかってくれない」という嘆きの正体と、伝え方を変えるための3ステップ",
+      "linked_principle": "人はそれぞれ違う物差しを持って生きている。「わかってくれない」は「伝え方を変える」という静かなサインだ",
+      "funnel_targets": [
+        "shindan_th_20260611"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-11_wakaranai.json",
+      "in_index": true
+    },
+    {
+      "title": "言葉にしない本音は届かない──伝わらない関係の構造",
+      "publish_date": "2026-06-12",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "言葉にされない感情も期待も届かない。伝わらないのは愛情の問題ではなく言語化の問題だ",
+      "linked_principle": "言葉にされない感情や期待は届かない。伝わらないのは愛情の問題ではなく「言語化の問題」だ",
+      "funnel_targets": [
+        "th_2",
+        "th_3"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-12_communication.json",
+      "in_index": true
+    },
+    {
+      "title": "比べてくる人の物差しに、乗らなくていい",
+      "publish_date": "2026-06-12",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "比較は自己防衛の言語。他者の物差しに乗らず、自分の道を歩くことが本当の自由になる",
+      "linked_principle": "比べてくる人は自分の現在地への不安を持っている。その物差しはあなたの価値を測れない",
+      "funnel_targets": [
+        "th_1"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-12_comparison.json",
+      "in_index": true
+    },
+    {
+      "title": "「怒りと嫉妬の正体」──感情の二層構造を読む技術",
+      "publish_date": "2026-06-12",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "怒りと嫉妬は二次感情。表面の感情の下にある本当の感情を読む技術が、関係を変える",
+      "linked_principle": "強い感情は二次感情である。表面の感情の下にある本当の感情を読むことが、自分と関係を変える技術になる",
+      "funnel_targets": [
+        "th_4",
+        "th_5"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-12_emotions.json",
+      "in_index": true
+    },
+    {
+      "title": "怒りは、二次感情だ",
+      "publish_date": "2026-06-12",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "怒りの下に眠る感情を知り、怒りを関係を壊す武器ではなく自分を知る手がかりにする",
+      "linked_principle": "怒りは二次感情。強い怒りの裏側には、必ず別の感情がある。その下を知ることが、関係の質を変える",
+      "funnel_targets": [
+        "shindan_th_20260612"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-12_ikari.json",
+      "in_index": true
+    },
+    {
+      "title": "関係の温度は、行動で育てる──惰性から目覚める技術",
+      "publish_date": "2026-06-12",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "関係の温度は感情ではなく行動で保たれる。自分軸がある人が対等に愛される",
+      "linked_principle": "関係の温度は感情ではなく行動で保たれる。自分の軸を持つ人が、最も対等に愛される",
+      "funnel_targets": [
+        "th_6",
+        "th_7"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-12_warmth.json",
+      "in_index": true
+    },
+    {
+      "title": "嫉妬を羅針盤に変えた日から、比べなくなった",
+      "publish_date": "2026-06-13",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "嫉妬の正体を知り、自分の欲求地図として使いこなす技術",
+      "linked_principle": "嫉妬の正体は「自分の中に眠っている欲求の可視化」。使い方次第で羅針盤になる",
+      "funnel_targets": [
+        "shindan_th_20260613"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-13_jealousy.json",
+      "in_index": true
+    },
+    {
+      "title": "自分が自分を大切にする量だけ、人は大切にされる",
+      "publish_date": "2026-06-14",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "自分の軸（物差し）が安定しているとき、関係の温度が保たれ、愛され方が変わる",
+      "linked_principle": "他者の物差しで自分を測るのをやめ、自分の軸を持つことが、比較・惰性・消耗から関係を守る技術になる",
+      "funnel_targets": [
+        "sh_01",
+        "sh_06",
+        "sh_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_axis.json",
+      "in_index": true
+    },
+    {
+      "title": "「わかってくれない」は、言葉が届く前で止まっている",
+      "publish_date": "2026-06-14",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "伝わらないのは愛情の量の問題ではなく、言葉の手前で何かが止まっているから",
+      "linked_principle": "本音が届かないのも「わかってくれない」も、言葉になる前の構造の問題。その構造を知ると、関係が動き始める",
+      "funnel_targets": [
+        "sh_02",
+        "sh_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_communicate.json",
+      "in_index": true
+    },
+    {
+      "title": "「なんでわかってくれないの」の答えは、自分の言葉の中にある",
+      "publish_date": "2026-06-14",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "言葉にされない感情も期待も届かない。伝わらないのは愛情の問題ではなく言語化の問題だ",
+      "linked_principle": "言葉にされない感情は届かない。「わかってくれない」は「伝え方を変える必要がある」という静かなサインだ",
+      "funnel_targets": [
+        "th_2",
+        "th_3"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_communication.json",
+      "in_index": true
+    },
+    {
+      "title": "腹立ちの下に、悲しみがある。嫉妬の下に、欲求がある。",
+      "publish_date": "2026-06-14",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "怒りも嫉妬も「二次感情」。その下にある本当の感情を知ることが、関係を壊さず自分を守る技術になる",
+      "linked_principle": "強い感情（怒り・嫉妬）は「二次感情」として現れる。一次感情を知ることが、関係を壊さず自分を深く知る技術になる",
+      "funnel_targets": [
+        "sh_04",
+        "sh_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_emotion.json",
+      "in_index": true
+    },
+    {
+      "title": "「怒っている」と思っていた。本当は、傷ついていた。",
+      "publish_date": "2026-06-14",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "怒りは二次感情・嫉妬は羅針盤・比較は相手の不安の告白——感情を「武器」から「手がかり」に変える翻訳技術",
+      "linked_principle": "感情は翻訳されている。怒り・嫉妬・比較の下にある本当の感情を読むことが、自分と関係を変える最初の技術だ",
+      "funnel_targets": [
+        "th_4",
+        "th_5"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_emotions.json",
+      "in_index": true
+    },
+    {
+      "title": "惰性と安定は、見た目が似ている",
+      "publish_date": "2026-06-14",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "惰性と安定を見分け、関係の温度を意識的に保ち続ける技術",
+      "linked_principle": "関係は感情ではなく行動で育てるもの。惰性に気づいた今が、一番動きやすいとき",
+      "funnel_targets": [
+        "shindan_th_20260614"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_inertia.json",
+      "in_index": true
+    },
+    {
+      "title": "自分の物差しを持ったとき、関係は育ち始めた──比較・惰性・自己犠牲からの自由",
+      "publish_date": "2026-06-14",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "自分の物差し・軸を持つことが、比較・惰性・自己犠牲の三つすべてから自由になる技術の核だ",
+      "linked_principle": "自分の物差し・軸を持つ人が、比較にも惰性にも流されない。軸がある人が最も対等に愛される",
+      "funnel_targets": [
+        "th_1",
+        "th_6",
+        "th_7"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-14_selfaxis.json",
+      "in_index": true
+    },
+    {
+      "title": "あなたの怒りの下に、悲しみがある",
+      "publish_date": "2026-06-15",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "怒り・嫉妬・「わかってくれない」という強い感情は二次感情であり、その正体を読む技術が関係を変える",
+      "linked_principle": "強い感情（怒り・嫉妬・わかってくれない）は二次感情であり、その下にある本当の欲求・傷・悲しみを読むことが、関係を壊す武器から自分を知る道具への転換をもたらす",
+      "funnel_targets": [
+        "th_03",
+        "th_04",
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-15_emotions.json",
+      "in_index": true
+    },
+    {
+      "title": "自分を大切にするほど、対等に愛される",
+      "publish_date": "2026-06-15",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "自分を大切にすることが「愛され方」を変える構造と、今日からできる小さな実践",
+      "linked_principle": "自分を大切にする人は、他者に「大切にされ方」を教えている。軸がある人は、対等に愛される",
+      "funnel_targets": [
+        "shindan_th_20260615"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-15_selflove.json",
+      "in_index": true
+    },
+    {
+      "title": "惰性と安定は、見た目が似ている",
+      "publish_date": "2026-06-15",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "惰性と安定の違いは温度にある。自己軸を持つことが、関係の温度を意識的に保つ技術になる",
+      "linked_principle": "関係の温度は感情ではなく毎日の行動選択で決まる。「今日もこの人と一緒にいたい」という意識的な選択と、自分を大切にするという自己軸が、惰性と安定を分ける",
+      "funnel_targets": [
+        "th_06",
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-15_stable.json",
+      "in_index": true,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "比べられても、本音が言えなくても",
+      "publish_date": "2026-06-15",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "比較への揺れと本音を飲み込む構造は、同じ根（自己軸への不信）から来ている",
+      "linked_principle": "比べられて揺れることと本音を飲み込むことは、どちらも「自分の物差しへの信頼」が揺らいだときに起きる。自分の物差しを取り戻すことが、関係の中に「自分」を置く技術になる",
+      "funnel_targets": [
+        "th_01",
+        "th_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-15_truth.json",
+      "in_index": true
+    },
+    {
+      "title": "感情には正体がある——怒り・嫉妬・比較が、本当に教えてくれること",
+      "publish_date": "2026-06-15",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "",
+      "linked_principle": "感情は一次現象ではなく翻訳。怒り・嫉妬・比較の下に隠れた本音を読む技術が、自分と関係の自由度を上げる",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_15_emotions.json",
+      "in_index": true
+    },
+    {
+      "title": "「なんでわかってくれないの」の下にあるもの",
+      "publish_date": "2026-06-15",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "",
+      "linked_principle": "「わかってほしい」の下に、本当に求めているものがある。言葉にする技術が関係の温度を決める",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_15_voice.json",
+      "in_index": true
+    },
+    {
+      "title": "惰性と安定は、見た目が似ている",
+      "publish_date": "2026-06-15",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "",
+      "principle_no": null,
+      "cluster_topic": "",
+      "linked_principle": "関係は感情ではなく行動で育てる。意図的に選ぶ安定と、惰性の漂流は、温度で区別できる",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026_06_15_warmth.json",
+      "in_index": true,
+      "duplicate_of_title": true
+    },
+    {
+      "title": "怒りは、嘘をついている",
+      "publish_date": "2026-06-16",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "怒りと嫉妬の正体——感情の二層構造を読み解く技術",
+      "linked_principle": "強い感情（怒り・嫉妬）は別の感情が変形したもので、正体を知ることで羅針盤になる",
+      "funnel_targets": [
+        "sth_04",
+        "sth_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-16_anger.json",
+      "in_index": true
+    },
+    {
+      "title": "本音が届かない関係には、理由がある",
+      "publish_date": "2026-06-16",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「わかってくれない」「本音が言えない」「比べられる」の共通構造",
+      "linked_principle": "物差しの違いを知ると「わかってくれない」が「伝え方を変えるサイン」に変わる",
+      "funnel_targets": [
+        "sth_01",
+        "sth_02",
+        "sth_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-16_connection.json",
+      "in_index": true
+    },
+    {
+      "title": "惰性と安定は、見た目が似ている",
+      "publish_date": "2026-06-16",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-09_2026-06-15",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「惰性か安定か」「自分を大切にする」の共通構造",
+      "linked_principle": "関係の温度は感情ではなく日々の行動の選択と自己尊重によって決まる",
+      "funnel_targets": [
+        "sth_06",
+        "sth_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-16_warmth.json",
+      "in_index": true
+    },
+    {
+      "title": "感情はある。でも、依存はしない。──認められたい相手に、振り回されなくなった日",
+      "publish_date": "2026-06-22",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-16_2026-06-22",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "感情を持ちながら、依存・承認欲求・執着を手放す技術が真の自由と本物のつながりの始まりになる",
+      "linked_principle": "認められたい・勝ちたい・わかってほしい・追いかけたいという4つの取っ手は、相手に感情の主導権を渡している構造。取っ手の種類を知り、名前をつけ、静かに手放すことで、感情を残したまま依存だけを外せる",
+      "funnel_targets": [
+        "th_sh_03",
+        "th_sh_04",
+        "th_sh_05",
+        "x_10",
+        "th_08",
+        "th_11",
+        "th_14"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-22_freedom.json",
+      "in_index": true
+    },
+    {
+      "title": "「嫌」と言える人ほど、「ありがとう」が増えていく──境界線は、愛の反対じゃない",
+      "publish_date": "2026-06-22",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-16_2026-06-22",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "NOという境界線は愛の反対ではない。境界線があってこそ本物の「ありがとう」と本物の愛が生まれる",
+      "linked_principle": "「嫌」と言える人ほど「ありがとう」が本物になり、条件を明確にしながら可能性を閉じない言葉が、関係をもっとも深く続かせる",
+      "funnel_targets": [
+        "th_sh_06",
+        "th_sh_07",
+        "x_14"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-22_honest.json",
+      "in_index": true
+    },
+    {
+      "title": "「なんか違う」の正体を知ったとき、関係の温度が変わった",
+      "publish_date": "2026-06-22",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-16_2026-06-22",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「好き嫌い通貨」と「信頼通貨」——「なんか違う」の正体は、使っている通貨の違いにある。目的を「好かれること」から「自分が安心しているか」に変えた瞬間、関係の温度が変わる",
+      "linked_principle": "「好かれている」と「関係が本物」は別の話。「期待」と「信頼」も別の通貨。目的を好き嫌いから安心へ移した瞬間、人質は効かなくなる",
+      "funnel_targets": [
+        "th_sh_01",
+        "th_sh_02",
+        "x_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-22_surface.json",
+      "in_index": true
+    },
+    {
+      "title": "感情はある。依存はしない。",
+      "publish_date": "2026-06-29",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-23_2026-06-29",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "感情と依存は別の話。自分軸が育った人だけが、相手を本当に自由にできる。「離れても大丈夫」が、最も深い近さを作る",
+      "linked_principle": "「感情はある。依存はしない。」の間にある距離が、自分軸の育ちの証。依存しない状態は意志の力で作るものではなく、自分の中に帰れる場所ができたとき自然に生まれる",
+      "funnel_targets": [
+        "x_06",
+        "th_04",
+        "th_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-29_distance.json",
+      "in_index": true
+    },
+    {
+      "title": "感情を整えてから、関係に向かう",
+      "publish_date": "2026-06-29",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-23_2026-06-29",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "感情を「反応」ではなく「情報」として扱う技術が、関係の見え方を変える。整えてから向かうと、同じ相手が違って見える",
+      "linked_principle": "感情は「出口」ではなく「入口」。整えてから関係に向かうことで、感情は消耗の源泉ではなく関係を深める情報になる",
+      "funnel_targets": [
+        "th_12",
+        "x_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-29_emotion.json",
+      "in_index": true
+    },
+    {
+      "title": "「伝えた」と「届いた」は、別の技術",
+      "publish_date": "2026-06-29",
+      "platform_origin": "unknown",
+      "source_week": "2026-06-23_2026-06-29",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "「言った」が「届いた」にならない構造は、組織でも関係でも同じ。翻訳できる人が、温度を変える",
+      "linked_principle": "言葉は送ったものではなく、受け取られたものになって初めて「届いた」になる。意図層・言語層・受信層の三層を意識して翻訳することが、組織でも関係でも「伝わる」を作る技術になる",
+      "funnel_targets": [
+        "x_03",
+        "x_07",
+        "th_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-06-29_translate.json",
+      "in_index": true
+    },
+    {
+      "title": "正論は、動機にならない",
+      "publish_date": "2026-07-01",
+      "platform_origin": "X",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "正しさより「ついていきたい」という感情が現場を動かす",
+      "linked_principle": "正論は根拠になるが動機にはならない。人が動くのは感情が先に動いたときだ",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-01_logic.json",
+      "in_index": true
+    },
+    {
+      "title": "顔を読んでいるリーダーが、現場をいちばん早く知る",
+      "publish_date": "2026-07-02",
+      "platform_origin": "X",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "部下の顔を読む観察力が現場の問題を早期に表面化させる",
+      "linked_principle": "顔を読んでいるリーダーのチームは、問題が早く表に出る——誰にもわかってもらえないの積み重ねが現場を静かにする",
+      "funnel_targets": [
+        "x_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-02_face.json",
+      "in_index": true
+    },
+    {
+      "title": "「傷つけたくない」は、時に「傷つきたくない」の裏返しだ",
+      "publish_date": "2026-07-02",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "動機の見分けが誠実さの始まり——傷つけたくないと傷つきたくないは形が似ている",
+      "linked_principle": "動機がどちらかで、関係の形がまったく変わる。自分の動機を正確に知ることが誠実さの始まりだ",
+      "funnel_targets": [
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-02_motive.json",
+      "in_index": true
+    },
+    {
+      "title": "離れようとするほど、なぜか意識する",
+      "publish_date": "2026-07-03",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "関係の終わりが消化されないとき人は手放す代わりに意識し続けることで繋いでいる",
+      "linked_principle": "「終わり」が消化されていないとき、人は離れようとしながら意識し続けることで関係を保つ。消化が手放しの前提だ",
+      "funnel_targets": [
+        "th_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-03_release.json",
+      "in_index": true
+    },
+    {
+      "title": "「いい上司」でいようとするほど、現場から遠くなる",
+      "publish_date": "2026-07-04",
+      "platform_origin": "X",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「いい上司でいたい」という自己像の守りが部下との距離を生む逆説",
+      "linked_principle": "「いい上司」という自己像を守ろうとするほど、部下はあなたではなく「あなたの像」と付き合うことになる",
+      "funnel_targets": [
+        "x_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-04_mirror.json",
+      "in_index": true
+    },
+    {
+      "title": "「寂しい」より「ここじゃない感」の方が、正確だ",
+      "publish_date": "2026-07-05",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "人の中にいるのに「ここじゃない」と感じる感覚の正体——孤独は人がいないことではない",
+      "linked_principle": "孤独は人がいないことではなく、人の中にいて「ここじゃない」と感じること。その感覚の正体を知ると、場所ではなく状態を変えられる",
+      "funnel_targets": [
+        "th_16"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-05_belonging.json",
+      "in_index": true
+    },
+    {
+      "title": "現場が黙るのは、怠けではなく学習だ",
+      "publish_date": "2026-07-05",
+      "platform_origin": "X",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "現場の沈黙は心理的安全性の欠如が生む学習の結果",
+      "linked_principle": "問題を報告した人が損をした経験がある組織では、誰が安全な情報だけを選ぶようになる——現場の沈黙は怠けでなく学習の結果だ",
+      "funnel_targets": [
+        "x_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-05_silence.json",
+      "in_index": true
+    },
+    {
+      "title": "「あの頃は良かった」の正体",
+      "publish_date": "2026-07-06",
+      "platform_origin": "Threads",
+      "source_week": "2026-06-30_2026-07-06",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "懐かしむのは過去の関係ではなく「あの頃の自分」かもしれない——対象の取り違えが戻れない場所を探させる",
+      "linked_principle": "懐かしむ対象を間違えると、戻れない場所を探し続ける。「あの頃」に良かったのは関係ではなく、あの頃の自分だったかもしれない",
+      "funnel_targets": [
+        "th_19"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-06_nostalgia.json",
+      "in_index": true
+    },
+    {
+      "title": "感情はある。依存はしない。それだけでいい",
+      "publish_date": "2026-07-07",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "感情と依存を切り離す——好きという気持ちを持ちながら、それに縛られない距離の整え方",
+      "linked_principle": "感情があることと、依存することは別のことだ。好きを持ち続けながら、それが決断を歪める理由にはならない——それが距離を整える技術だ",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-07_affection.json",
+      "in_index": true
+    },
+    {
+      "title": "あなたを量る物差しに、乗らなくていい",
+      "publish_date": "2026-07-07",
+      "platform_origin": "X",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "相手の物差しの前提を崩す——正面から反論しなくても、物差しそのものを無効にできる",
+      "linked_principle": "相手の物差しは、あなたのサイズで作られていない。前提を一語で崩せば、話は静かに終わる",
+      "funnel_targets": [
+        "x_01"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-07_yardstick.json",
+      "in_index": true
+    },
+    {
+      "title": "言い方を探すのをやめた日、記録が守りはじめた",
+      "publish_date": "2026-07-08",
+      "platform_origin": "X",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "言い方の追求から記録への切り替え——歪める相手への最も持続力のある対処法",
+      "linked_principle": "言い方ではなく、記録が守る。言い方に依存しない事実の積み重ねが、最も冷静で精度の高い対処になる",
+      "funnel_targets": [
+        "x_04"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-08_record.json",
+      "in_index": true
+    },
+    {
+      "title": "傷が深かっただけ。それは弱さじゃない",
+      "publish_date": "2026-07-09",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "傷が癒えない理由の構造と、傷が癒える場所の作り方",
+      "linked_principle": "立て直しが遅いんじゃない。傷が深かっただけ。深く傷つく人は、深く信じられる人だ",
+      "funnel_targets": [
+        "th_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-09_wound.json",
+      "in_index": true
+    },
+    {
+      "title": "感情を引いた言葉には、真実しか残らない",
+      "publish_date": "2026-07-10",
+      "platform_origin": "X",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "感情の引き算——外に向ける技術と、内に向けてはいけない理由",
+      "linked_principle": "感情を引いた言葉には、真実しか残らない。麻痺と強さは違う——感情の引き算は外向きの技術だ",
+      "funnel_targets": [
+        "x_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-10_emotion.json",
+      "in_index": true
+    },
+    {
+      "title": "全部を話さないことは、嘘じゃない",
+      "publish_date": "2026-07-14",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-14_2026-07-20",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "何を話し、何を閉じておくか——心の一部を閉じることで自分を守り、愛おしい人とは争わず同じ方を向く距離の設計",
+      "linked_principle": "閉じることは、守ること。愛おしい人とは、向かい合わずに、隣で同じ方を向く",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-14_close.json",
+      "in_index": true
+    },
+    {
+      "title": "同じ言葉が、判断の所在を動かす",
+      "publish_date": "2026-07-16",
+      "platform_origin": "X",
+      "source_week": "2026-07-14_2026-07-20",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "言葉で「判断の所在」をコントロールする四つの設計術——問い・断定・感情調整・主語の置き方",
+      "linked_principle": "言葉には、判断の所在をコントロールする構造がある。同じ内容でも、渡し方を設計すれば、まったく別の体験になる",
+      "funnel_targets": [
+        "x_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-16_design.json",
+      "in_index": true
+    },
+    {
+      "title": "大事な言葉は、感情のピークで使わない",
+      "publish_date": "2026-07-17",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-14_2026-07-20",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "別れ話も本音も、感情が高ぶった瞬間には口にしない——心がいちばん静かな時に差し出す、切り札のタイミング設計",
+      "linked_principle": "切り札は、静けさの中で切る。「いつでも言える」と知っているだけで、もう振り回されなくなる",
+      "funnel_targets": [
+        "th_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-17_quiet.json",
+      "in_index": true
+    },
+    {
+      "title": "擁護も排除もしない。事実を、正しい場所に渡すだけ",
+      "publish_date": "2026-07-17",
+      "platform_origin": "X",
+      "source_week": "2026-07-14_2026-07-20",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "板挟みの重さから抜ける——どちらの肩も持たず、事実を必要な分だけ正しい場所に渡すことに徹する技術",
+      "linked_principle": "擁護も排除もしない。目的は誰かに勝つことではなく、その場が正しく前に進み続けること",
+      "funnel_targets": [
+        "x_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-17_relay.json",
+      "in_index": true
+    },
+    {
+      "title": "部下が自分の言葉で基準を語るまで、黙って待つ",
+      "publish_date": "2026-07-19",
+      "platform_origin": "X",
+      "source_week": "2026-07-14_2026-07-20",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "現場感覚を保ちながら、部下が自分の言葉で基準を語り出すまで支える——口を出したくなる時間こそ、こらえどころ",
+      "linked_principle": "現場感覚を保ちながら、部下を自分の言葉で動けるようにする。部下が基準を語り出した時、あなたの仕事は完成する",
+      "funnel_targets": [
+        "x_12"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-19_wait.json",
+      "in_index": true
+    },
+    {
+      "title": "いつでも離れられる、という静けさが自由をくれる",
+      "publish_date": "2026-07-20",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-14_2026-07-20",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "感情でむやみに動かない強さ——「嫌になったら静かに離れればいい」と思えた時から、しがみつかなくなる距離の作り方",
+      "linked_principle": "相手を縛る言葉ではなく、「いつでも離れられる」という静けさが、自分を自由にする",
+      "funnel_targets": [
+        "th_20"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-20_leave.json",
+      "in_index": true
+    },
+    {
+      "title": "疲れたのは、ちゃんと向き合ってきた証拠だ",
+      "publish_date": "2026-07-21",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "夏前の組織疲弊——疲弊の正体と、動機のすり替わりへの気づき",
+      "linked_principle": "疲れたのは逃げてきたからではなく、向き合ってきたからだ。「相手の騒ぎ」を手放すことと「自分」を手放すことは、別のことだ",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-07-21_exhaustion.json",
+      "in_index": true
+    },
+    {
+      "title": "語の温度が、内心を映す",
+      "publish_date": "2026-07-22",
+      "platform_origin": "X",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "語の選択で内心の変化を読む——質問より先に情報をくれる観察の技術",
+      "linked_principle": "「了解です」と「わかりました」は温度が違う。語の選択には、内心が滲む",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-07-22_language.json",
+      "in_index": true
+    },
+    {
+      "title": "頼れる関係を、先に作る",
+      "publish_date": "2026-07-22",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "頼れる関係は頼る前に作られている——一人でやり切る強さと、頼れる強さは別物。解決と回復を分ける",
+      "linked_principle": "一人で解決できても、楽になるとは限らない。解決と回復は別。頼れる関係は、困る前に作っておくもの。頼ると依存の線引きは『戻れるか』にある",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-07-22_rely.json",
+      "in_index": true
+    },
+    {
+      "title": "攻撃者の椅子を降りると、相手が座る場所をなくす",
+      "publish_date": "2026-07-23",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-07_2026-07-13",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "攻撃への最も持続力のある応答——正面から戦わずに、椅子を降りる技術",
+      "linked_principle": "攻撃者の椅子を降りると、相手は座る場所をなくす。傷つけていたのは事実ではなく、事実に乗せた感情だった",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-07-23_chair.json",
+      "in_index": true
+    },
+    {
+      "title": "「私が悪いのかな」が、いつも一番早く来る",
+      "publish_date": "2026-07-23",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "攻撃と正当な指摘の見分け方——温かさの向く方向で、人ではなく言葉を仕分ける",
+      "linked_principle": "きつい言葉が攻撃か指摘かは、内容ではなく「温かさがどこを向いているか」でわかる。仕分けるのは人ではなく言葉。仕分けてから、受け取るものを選ぶ",
+      "funnel_targets": [
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-23_sort.json",
+      "in_index": true
+    },
+    {
+      "title": "「私がいないとダメでしょ」で繋いでいた頃",
+      "publish_date": "2026-07-24",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "相手を依存させて繋ぐのをやめる——握らない人が、いちばん信頼される。「離れられない」と「一緒にいたい」を分ける",
+      "linked_principle": "「この人がいないと困る」で繋ぐ関係は、どちらも自由じゃない。握らずに去れる自由を持った人が、いちばん信頼される。握らない構えは、相手を戻す技術ではなく、どちらに転んでも自分が立っていられる状態のこと",
+      "funnel_targets": [
+        "th_12"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-24_hold.json",
+      "in_index": true
+    },
+    {
+      "title": "答えを渡すのをやめた日、売上が動いた",
+      "publish_date": "2026-07-25",
+      "platform_origin": "X",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "渡し方の設計——何を渡し、何を渡さないか。答えではなく事実と判断の範囲を渡すと、判断の回数が増え、売上が動く",
+      "linked_principle": "組織が育つか縮むかは、渡し方の設計で決まる。渡すのは事実・判断の範囲・期限、渡さないのは結論と責任の所在。手放すのは権限ではなく「自分が一番わかっている」という前提",
+      "funnel_targets": [
+        "x_09",
+        "x_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-25_delegate.json",
+      "in_index": true
+    },
+    {
+      "title": "伝えていない期待は、相手の中に存在していない",
+      "publish_date": "2026-07-25",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "伝えていない期待は相手に存在しない——期待は減らさず、口に出す量だけ増やす。主語を自分に置いて渡す",
+      "linked_principle": "期待は消すものではない。片方の中だけで膨らんだ期待は片方の中だけで壊れる。減らすのではなく、小さいうちに、主語を自分に置いて口に出す",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-07-25_expectation.json",
+      "in_index": true
+    },
+    {
+      "title": "信頼は、必要になる前にしか積めない",
+      "publish_date": "2026-07-26",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "信頼は必要になる前にしか積めない——用のない日の連絡という、いちばん効く仕込み。頻度ではなく、返信を待っていないかどうか",
+      "linked_principle": "信頼は、困った時には積めない。必要になる前、なんでもない日に積んだ密度が、崩れた時に自分を守る。分けるのは頻度ではなく、返信を待っているかどうか",
+      "funnel_targets": [
+        "th_18"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-26_trust.json",
+      "in_index": true
+    },
+    {
+      "title": "受け止める量を、自分で決める",
+      "publish_date": "2026-07-27",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-21_2026-07-27",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "受け止める量を自分で決める——全部引き受けるのをやめた人が、いちばん長く優しくいられる。わかると受け入れ続けるは別",
+      "linked_principle": "受け止める量を自分で決めることは、冷たさではなく、長く優しくいられるための設計。聞く前に線を引く。わかることと受け入れ続けることは別",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-07-27_capacity.json",
+      "in_index": true
+    },
+    {
+      "title": "痛みの大きさは、望みの大きさで決まる",
+      "publish_date": "2026-07-28",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "外された理由を証拠なく決めつけず、自分がその場に惹かれていたかを先に確かめる——痛みの大きさは扱われ方ではなく望みの大きさで決まる",
+      "linked_principle": "排除に見える扱いを受けても、その場に価値を感じていなければ痛手はない。呼ばれるかどうかより、自分がそこに惹かれているかどうかが先",
+      "funnel_targets": [
+        "th_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-28_drawn.json",
+      "in_index": true
+    },
+    {
+      "title": "何を言われたかより、どこから言われたか",
+      "publish_date": "2026-07-30",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "NGは関係が悪い証拠ではなく信頼がある証拠——避ける・濁す・陰で言うは信頼のない扱い。断らない人の線は、こちらが踏まない",
+      "linked_principle": "信頼がない相手にはNGを出さない（避ける・濁す・陰で言う）。全部引き受ける人ほど、自分の線がないと際限なく差し出して壊れる。信頼が先にあって、その上でNGが出る",
+      "funnel_targets": [
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-30_ng.json",
+      "in_index": true
+    },
+    {
+      "title": "「やって」と言うと、言った分しか返ってこない",
+      "publish_date": "2026-07-30",
+      "platform_origin": "X",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "詰めずにきっかけだけ渡すと拾う範囲が変わる——指示に反応する状態と、自分を点検する状態の分かれ目",
+      "linked_principle": "詰めていたら、言った分で終わっていた。詰められていないから、自分で拾いに行く余地が残る。指示に反応する状態と、指示をきっかけに自分を点検する状態は、違う",
+      "funnel_targets": [
+        "x_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-30_pickup.json",
+      "in_index": true
+    },
+    {
+      "title": "「落ち着いたら決めよう」の、落ち着いたは来ない",
+      "publish_date": "2026-07-31",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "判断の基準を「不安かどうか」から「自分が決められることかどうか」へ移す——心配ごとを二列に分けて、左の列にだけ手をかける",
+      "linked_principle": "判断の基準は不安かどうかではなく、自分が決められることかどうか。決められる範囲なら不安でも手が動く。決められないなら、何をしても状況は変わらない",
+      "funnel_targets": [
+        "th_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-07-31_decide.json",
+      "in_index": true
+    },
+    {
+      "title": "面談の空気は、席に着く前に決まっている",
+      "publish_date": "2026-08-01",
+      "platform_origin": "X",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "会話の中身より先に、挨拶と佇まいの温度が信頼を決める——待ち時間に耐えられるのは、待たせる前に生まれていた信頼の結果",
+      "linked_principle": "心を掴むのは会話の中身だと思われがちだが、挨拶と佇まいの温度が先に決める。攻めないほうが、大きく返る",
+      "funnel_targets": [
+        "x_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-01_greeting.json",
+      "in_index": true
+    },
+    {
+      "title": "教えると、伝わらない。渡すと、その人のものになる",
+      "publish_date": "2026-08-03",
+      "platform_origin": "X",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "教える言葉から渡す言葉へ——正解の提示が発話を止める構造と、未来の位置づけ・経験談・選択権の返却という育成三型",
+      "linked_principle": "正解の提示は、かえって人の発話を止める。渡すのは、順位のつかない実例と、反論できる経験談と、最後の選択権。教えると伝わらない、渡すとその人のものになる",
+      "funnel_targets": [
+        "x_13",
+        "x_14"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-03_hand.json",
+      "in_index": true
+    },
+    {
+      "title": "中身より先に、立ち方が届く",
+      "publish_date": "2026-08-03",
+      "platform_origin": "Threads",
+      "source_week": "2026-07-28_2026-08-03",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "会話の中身ではなく立ち方で先に判断される——愛想で場を埋めない人が、黙って観察した上で言葉を出す",
+      "linked_principle": "会話の中身ではなく、立ち方や振る舞いで判断されている。愛想で場を作らない人が、黙って観察した上で出す言葉がある",
+      "funnel_targets": [
+        "th_20"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-03_stance.json",
+      "in_index": true
+    },
+    {
+      "title": "数えるのをやめた夜に、三十分だけ自分へ返す",
+      "publish_date": "2026-08-04",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "相手の中の順位を数えるのをやめ、自分の中の順位を時間で動かす",
+      "linked_principle": "順位は気持ちではなく時間の配分で決まる。相手の中の順位は動かせないが、自分の中の順位は今夜動かせる",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-04_order.json",
+      "in_index": true
+    },
+    {
+      "title": "本当に代わりがいるなら、上司は黙って替えている",
+      "publish_date": "2026-08-05",
+      "platform_origin": "X",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "「明日いなくなったら止まる仕事」が一つも出てこなかった人が、何から作りはじめるか",
+      "linked_principle": "代替不可能性は、握って詰まりを作ることではなく、渡してなお残るものから生まれる。距離を取れる人ほど、代わりがきかなくなる",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-05_irreplaceable.json",
+      "in_index": true
+    },
+    {
+      "title": "誘うのをやめた二週間で、相手が動く人かどうかが分かった",
+      "publish_date": "2026-08-06",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "脈ではなく自分の満足度を測る。相手の手番を一度だけ空けたあと、どう決めるか",
+      "linked_principle": "測るのは相手の脈ではなく自分の満足度。手番を空けることは、責めることではなく余白を渡すこと",
+      "funnel_targets": [
+        "th_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-06_turn.json",
+      "in_index": true
+    },
+    {
+      "title": "「あなたのため」が効かない相手には、燃料を切る",
+      "publish_date": "2026-08-07",
+      "platform_origin": "X",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「あなたのために言ってる」に、二つの返しが効かない相手へどう返すか",
+      "linked_principle": "正当化を続ける相手に必要なのは反論ではなく、燃料になっている反応を止めること。距離は言葉ではなく反応量で決まる",
+      "funnel_targets": [
+        "x_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-07_fuel.json",
+      "in_index": true
+    },
+    {
+      "title": "頼るのは、できないことからじゃなくていい",
+      "publish_date": "2026-08-08",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "頼る筋肉を、できることを頼む練習から育てる。何をどう言葉にするか、断られたときどうするか",
+      "linked_principle": "頼れないままでいるのは強さではなく備えのない状態。頼る力は、必要になる前の練習でしか育たない",
+      "funnel_targets": [
+        "th_13"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-08_rely.json",
+      "in_index": true
+    },
+    {
+      "title": "「今回は難しいです」と言った翌日に、何を送るか",
+      "publish_date": "2026-08-09",
+      "platform_origin": "X",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "「今回は難しいです」と断ったあと、関係をどう戻すか",
+      "linked_principle": "断りは関係を壊さない。壊れるのは、断ったあとに温度を下げてしまったとき。線と温度は別々に動かせる",
+      "funnel_targets": [
+        "x_12"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-09_afterno.json",
+      "in_index": true
+    },
+    {
+      "title": "我慢は消えない。飲み込んだ言葉を、一行書いて残す",
+      "publish_date": "2026-08-09",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "抑えた分を書き出したあと、いつ・どんな言い方で伝えるか",
+      "linked_principle": "我慢は消えない。置き場所がないだけ。書いて残すと、溜まるのではなく「待っている状態」に変わる",
+      "funnel_targets": [
+        "th_16"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-09_hold.json",
+      "in_index": true
+    },
+    {
+      "title": "叱ればハラスメント、任せなければ放置。紙に三つ書いて渡す",
+      "publish_date": "2026-08-10",
+      "platform_origin": "X",
+      "source_week": "2026-08-04_2026-08-10",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "叱責と放置のあいだで揺れずに、範囲を外されたときに何を言うか",
+      "linked_principle": "踏み込みの迷いは感情ではなく範囲の問題。範囲の中の話に戻すと、叱責ではなく確認になる",
+      "funnel_targets": [
+        "x_14"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-10_scope.json",
+      "in_index": true
+    },
+    {
+      "title": "上司は要求を聞いていない。リターンだけを聞いている",
+      "publish_date": "2026-08-12",
+      "platform_origin": "X",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "板挟みの真ん中を通訳の場所に変える——現場の言葉を数字の言葉に訳し、上に持っていく言い方の実物",
+      "linked_principle": "上の要求は、下の不満を解消すれば達成できる。板挟みの真ん中は情報がいちばん集まる場所で、言葉をそのまま運ぶのをやめて訳しはじめた人から楽になる",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-12_sandwich.json",
+      "in_index": true
+    },
+    {
+      "title": "「言うほどでもないこと」が、関係の寿命を決めていた",
+      "publish_date": "2026-08-12",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "飲み込んだ小さなことの切り出しの一文と、言ったあとの空気の戻し方",
+      "linked_principle": "言いにくいことを小さく出し合ってきた関係が強くなっていく。小さいうちに話すほど、大事にならない",
+      "funnel_targets": [
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-12_unsaid.json",
+      "in_index": true
+    },
+    {
+      "title": "周りの目は消えない。十年後も隣にいたいか",
+      "publish_date": "2026-08-13",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "年の差恋愛——周りの目を事実として持ったまま、自分の気持ちを確かめる三つの問い",
+      "linked_principle": "周りの目は変わらない事実として持っておく。消そうとも説得しようともしない。そのうえで、相殺してでも一緒にいたいとお互いが思えるかどうか",
+      "funnel_targets": [
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-13_agediff.json",
+      "in_index": true
+    },
+    {
+      "title": "同じ言葉が、順番一つで違う重みで届く",
+      "publish_date": "2026-08-14",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "言う順番の組み立て——事実を並べてから自分がどうするかを見せる。届かない時の見切りまで",
+      "linked_principle": "要求は相手の領域への侵入で、防御が返ってくる。事実と自分の行動はこちらの領域の話で、考える余白が返ってくる",
+      "funnel_targets": [
+        "th_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-14_sequence.json",
+      "in_index": true
+    },
+    {
+      "title": "年上の部下に言えなかった注意は、「いつか言う候補」に入れておく",
+      "publish_date": "2026-08-15",
+      "platform_origin": "X",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "人格の話を落として役割の言葉に書き換える——年上の部下に届く順番と、最初の一言の実物",
+      "linked_principle": "言えないのは年齢のせいではなく、人格に触れようとしているから。数字だけでも通らない。敬意→役割と数字、の順番で置くと同じ内容が届く",
+      "funnel_targets": [
+        "x_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-15_senior.json",
+      "in_index": true
+    },
+    {
+      "title": "会話がなくなった夫婦の、最初の一言は決まっている",
+      "publish_date": "2026-08-15",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "会話がなくなった夫婦の最初の一言と、二言目からの道のり・そっけない返事の受け止め方",
+      "linked_principle": "最初の一言はありがとう一択。風景に戻っていた相手を、もう一度「人」に戻す言葉。返事が要らないから始めやすい",
+      "funnel_targets": [
+        "th_13"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-15_thanks.json",
+      "in_index": true
+    },
+    {
+      "title": "見えない部下は、GOALを二つ置くと見えてくる",
+      "publish_date": "2026-08-16",
+      "platform_origin": "X",
+      "source_week": "2026-08-11_2026-08-17",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "見えない前提の管理——中間確認GOALの置き方と、遅れが見えた日の三文",
+      "linked_principle": "見えるようにするのではなく、見えなくても回る形にする。最終GOALと中間確認GOALの二段設定で、嘘をつく余地がなくなる",
+      "funnel_targets": [
+        "x_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-16_remote.json",
+      "in_index": true
+    },
+    {
+      "title": "向いていない人から先に書く。メンバーシップ『距離の整え方 —— 恋愛と関係』の案内",
+      "publish_date": "2026-08-17",
+      "platform_origin": "Threads",
+      "source_week": "standing_guide",
+      "tier": "guide",
+      "principle_no": null,
+      "cluster_topic": "メンバーシップ常設案内（恋愛）——向く人・変わること・期間・やること・費用・向いていない人の6項目",
+      "linked_principle": "会員の意味は『悩みを解決する対価』ではなく『ぐるぐるする時に開く場所を持っておく対価』。感情はある。依存はしない。——そのための場所",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-08-17_guide-renai.json",
+      "in_index": true
+    },
+    {
+      "title": "合わない人を先に書く。メンバーシップ『温度の整え方 —— 組織と仕事』の案内",
+      "publish_date": "2026-08-17",
+      "platform_origin": "X",
+      "source_week": "standing_guide",
+      "tier": "guide",
+      "principle_no": null,
+      "cluster_topic": "メンバーシップ常設案内（組織）——向く人・変わること・期間・やること・費用・合わない人の6項目",
+      "linked_principle": "会員の意味は『悩みを解決する対価』ではなく『ぐるぐるする時に開く場所を持っておく対価』。原理は7つで増えず、増えるのは場面——だから過去記事の読み放題に意味が出る",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-08-17_guide-soshiki.json",
+      "in_index": true
+    },
+    {
+      "title": "最初に無理をした関係は、ずっとその仮面を外せない",
+      "publish_date": "2026-08-18",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "新しい関係の最初の数回で、ありのままの自分を少しだけ混ぜておく技術",
+      "linked_principle": "最初に作ったテンプレートが、その後の関係の基準速度になる",
+      "funnel_targets": [
+        "shindan_th_20260818"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-18_first-distance.json",
+      "in_index": true
+    },
+    {
+      "title": "会いたい人は、頭より先に体が決めている",
+      "publish_date": "2026-08-19",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "会った後の疲れを二つに分ける問いと、気をつかった疲れ／合っていない疲れ、それぞれの距離の戻し方",
+      "linked_principle": "会いたいかどうかは、頭の義理より先に体が答えを出している。疲れの中身を分けられれば、関係を切らずに距離だけを変えられる",
+      "funnel_targets": [
+        "th_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-19_body.json",
+      "in_index": true
+    },
+    {
+      "title": "「なんか違う」は、言葉にならないだけで、情報だった",
+      "publish_date": "2026-08-19",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "言葉にならない違和感を無効化せず、情報として扱う技術",
+      "linked_principle": "違和感は感情ではなく、まだ言語化されていない情報である",
+      "funnel_targets": [
+        "shindan_th_20260819"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-19_nuance.json",
+      "in_index": true
+    },
+    {
+      "title": "上司は返事を聞いていない。二度目の「わかりました」を数えている",
+      "publish_date": "2026-08-19",
+      "platform_origin": "X",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "同じ日に両方へ「わかりました」と答えてしまう理由と、上向き／現場向けの二枚の言い分け——一枚しかない「わかりました」を、範囲と日付の入った二枚に分ける",
+      "linked_principle": "上司が数えているのは誠実さではなく、同じ話が二度来た回数。一枚の「わかりました」を二つの言語の相手に配るから二度目が生まれる。範囲と日付を入れた二枚に分けた人から、数えられる側を降りられる",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-19_translate.json",
+      "in_index": true
+    },
+    {
+      "title": "同じ痛みが繰り返されるのは、今の相手のせいとは限らない",
+      "publish_date": "2026-08-20",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "感情のパターンに気づき、今の相手と過去の出来事を切り離す技術",
+      "linked_principle": "繰り返される感情反応は、今の相手が作ったものではなく、過去からの型である",
+      "funnel_targets": [
+        "shindan_th_20260820"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-20_pattern.json",
+      "in_index": true
+    },
+    {
+      "title": "三十分置くと、淋しさと会いたいが分かれる",
+      "publish_date": "2026-08-20",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "夜の連絡衝動を三十分置いて、その日の疲れから来る淋しさと、関係に足りていないものから来る会いたいを分ける",
+      "linked_principle": "淋しさは埋めると消える。会いたいは埋めても消えない。だから埋める前に置くと、二つは自分から分かれる",
+      "funnel_targets": [
+        "th_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-20_thirty.json",
+      "in_index": true
+    },
+    {
+      "title": "「来週こそ」は決意じゃない。先送りの、いちばん丁寧な言い方だ",
+      "publish_date": "2026-08-21",
+      "platform_origin": "X",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "金曜の夜30分で今週の負けを数え直す——変えられなかった理由を時間か人かに仕分けて、月曜の一歩目を一つだけ決める",
+      "linked_principle": "「来週こそ」は決意ではなく、今週の負けを数えずに済ませるための言葉。理由を一行にして時間か人かに仕分けた人だけが、翌週の形を変えられる",
+      "funnel_targets": [
+        "x_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-21_friday.json",
+      "in_index": true
+    },
+    {
+      "title": "愛の量ではなく、愛の言語が合っているかどうか",
+      "publish_date": "2026-08-21",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "自分の愛の言語を知り、相手との言語のズレを調整する技術",
+      "linked_principle": "愛は量ではなく、渡し方の一致で伝わる",
+      "funnel_targets": [
+        "shindan_th_20260821"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-21_love-language.json",
+      "in_index": true
+    },
+    {
+      "title": "優しさで黙ったのか、怖くて黙ったのか",
+      "publish_date": "2026-08-21",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "のみ込んだ言葉を優しさと怖さに仕分けてから、怖さの側だけ伝える日と最初の一言を選ぶ",
+      "linked_principle": "言うか黙るかを決める前に、沈黙の理由を二つに分ける。優しさの沈黙は選択として残し、怖さの沈黙だけを扱う対象にする",
+      "funnel_targets": [
+        "th_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-21_silence.json",
+      "in_index": true
+    },
+    {
+      "title": "頭が同じ場所を回るのは、行き先を書いていないから",
+      "publish_date": "2026-08-22",
+      "platform_origin": "X",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "止まらない頭の外出し——未解決を三点だけの一行に落とす書き方と、月曜の開き方",
+      "linked_principle": "頭は答えが出ないから回るのではなく、行き先が書かれていないから回る。書いた一行が感情のままだと宛先にならない。件名・いつ・誰にの三点まで下ろした時、頭は見張るのをやめる",
+      "funnel_targets": [
+        "x_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-22_offload.json",
+      "in_index": true
+    },
+    {
+      "title": "話さないことは、隠すこととは違う",
+      "publish_date": "2026-08-22",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "言わなくてもいい部分を持つことが、関係の信頼を深める",
+      "linked_principle": "全部を共有しなくても信頼できる余白があることが、関係の強さになる",
+      "funnel_targets": [
+        "shindan_th_20260822"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-22_silence.json",
+      "in_index": true
+    },
+    {
+      "title": "期待を手放したとき、はじめて相手が見えた",
+      "publish_date": "2026-08-23",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "期待を手放すことで、相手の本当の姿と本当の関係が見えてくる",
+      "linked_principle": "期待は相手への信頼ではなく自分の理想への執着であり、手放すことで本当の関係が始まる",
+      "funnel_targets": [
+        "shindan_th_20260823"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-23_expectation.json",
+      "in_index": true
+    },
+    {
+      "title": "日曜の夜が重いのは、月曜の最初の30分が空白だから",
+      "publish_date": "2026-08-23",
+      "platform_origin": "X",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "日曜の夜の憂鬱を、気分の問題から段取りの問題に置き換える——月曜の最初の30分を日曜のうちに決める手順と、決めても残る憂鬱の出どころの見分け方",
+      "linked_principle": "日曜の夜が重いのは気分が落ちているからではなく、月曜の最初の30分が空白のままだから。頭は空白を、いちばん重いもので勝手に埋める。空白を一行で埋めた人から、日曜の夜の呼吸が変わる",
+      "funnel_targets": [
+        "x_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-23_monday.json",
+      "in_index": true
+    },
+    {
+      "title": "その気持ちに名前をつけるのは、急がなくていい",
+      "publish_date": "2026-08-24",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "浮かんだ日を数えて、会いたい・気がかり・癖の三つを見分ける",
+      "linked_principle": "急いでつけた名前は、たいてい間違う。名前を決める前に、出てくる条件を数える",
+      "funnel_targets": [
+        "th_20"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-24_name.json",
+      "in_index": true
+    },
+    {
+      "title": "追わない選択は、諦めではなく、自分を取り戻す最初の一歩",
+      "publish_date": "2026-08-24",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-18_2026-08-24",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "追いかける行動の正体を知り、自分の価値を相手の反応から切り離す技術",
+      "linked_principle": "自分の価値を相手の反応から切り離したとき、追わない選択ができる",
+      "funnel_targets": [
+        "shindan_th_20260824"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-24_not-chasing.json",
+      "in_index": true
+    },
+    {
+      "title": "「あなたにしか話せない」は、二回目からは頼まれごとになる",
+      "publish_date": "2026-08-25",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "「あなたにしか」が愛の言葉から依存の入口に変わる境目を、言われた言葉ではなく「そのあと何が起きたか」で見分ける——三つの見え方と、聞く前に足す一言",
+      "linked_principle": "愛と依存は同じ入口から入ってくる。違いが出るのは入ったあとで、愛は相手が動き、依存は相手が同じ場所に戻る。見分けるのは相手の気持ちではなく、自分の疲れ方のほう",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-25_only-you.json",
+      "in_index": true
+    },
+    {
+      "title": "感情を足した言葉は、届く前に相手の防御に当たる",
+      "publish_date": "2026-08-26",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "伝えたはずの話がこじれるのは言い方が下手だからではなく、感情が届く前に処理されるから——感情を引いて伝える三つの手順と、伝え方では越えられない相手の見分け",
+      "linked_principle": "人は言葉の中身より先に、責められる気配を受け取る。事実だけ置くと相手が自分で埋め、埋めた分は相手の言葉になるので反発が起きない",
+      "funnel_targets": [
+        "th_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-26_subtract.json",
+      "in_index": true
+    },
+    {
+      "title": "「確認してから返します」は、断り方じゃない。時間の取り方だ",
+      "publish_date": "2026-08-27",
+      "platform_origin": "X",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "flagship",
+      "principle_no": null,
+      "cluster_topic": "NOが言えない場所で少しずつ被害者になる構造を、言い方の在庫の問題に置き換える——叫ばずにNOを伝える五つの言葉と、それでも押し切られる相手の見分け方",
+      "linked_principle": "NOが言えないのは性格ではなく、言い方の在庫が「できません」の一語しかないから。五つ持てば、その場で一つ出せる。どれも相手の同意も上司の許可も要らない",
+      "funnel_targets": [
+        "x_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-27_no.json",
+      "in_index": true
+    },
+    {
+      "title": "言えないままの気持ちは、相手の都合のいい形で伝わる",
+      "publish_date": "2026-08-27",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "黙っているあいだも関係は勝手に進んでいる——伝わり方を自分の側に戻すための五つのステップと、いま渡してはいけない相手の見分け",
+      "linked_principle": "言葉にしない気持ちは伝わる時がある。ただ伝わり方は制御できない。言葉にする練習は勇気の話ではなく、伝わり方を自分の側に戻す作業",
+      "funnel_targets": [
+        "th_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-27_put-into-words.json",
+      "in_index": true
+    },
+    {
+      "title": "「好かれなくても大丈夫」は、覚悟じゃなくて回数だ",
+      "publish_date": "2026-08-28",
+      "platform_origin": "Threads",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "覚悟は一回ぶんしか持たない——嫌われたかもしれない日と、その一週間後に実際に起きたことを数える方法、そして数えてはいけない相手の見分け",
+      "linked_principle": "好かれなくても大丈夫になるのは強くなったからではなく、好かれなかった日の翌日も普通に来ることを何回か見たから。回数が先で、気持ちはあとから追いつく",
+      "funnel_targets": [
+        "th_12"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-28_disliked.json",
+      "in_index": true
+    },
+    {
+      "title": "疲れを九月に持ち越す人は、何が重かったかを書いていない",
+      "publish_date": "2026-08-29",
+      "platform_origin": "X",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "月末の疲れを敗戦処理ではなく棚卸しに置き換える——八月を閉じる三つの問いと、疲れが体に来ている場合の切り分け",
+      "linked_principle": "月末の疲れは積み残しではなく、どこに力を使ったかの記録。事実で数えた人だけが翌月を軽くできる。閉じる権限は自分が持っている",
+      "funnel_targets": [
+        "x_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-29_close-august.json",
+      "in_index": true
+    },
+    {
+      "title": "受け入れた日に、自分の判断まで置いてこなくていい",
+      "publish_date": "2026-08-31",
+      "platform_origin": "X",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "飲み込むたびに小さくなる人とならない人の差を、判断を移したかどうかで切り分ける——受け入れた日に一行だけ残す形と、飲み込んではいけない一件の見分け",
+      "linked_principle": "受け入れることと正しいと認めることは別の動作。行動だけ合わせて判断は手元に置いた人が、方針が外れた日に立て直せる",
+      "funnel_targets": [
+        "x_14"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-31_accept.json",
+      "in_index": true
+    },
+    {
+      "title": "あなたを見ている人と、順番をつけているだけの人がいる",
+      "publish_date": "2026-08-31",
+      "platform_origin": "X",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "member_entry",
+      "principle_no": null,
+      "cluster_topic": "評価する側は全員を見ているわけではなく順番をつけている——その前提の上で「誰に認められたいか」を一人に絞る三つの選び方",
+      "linked_principle": "上の全員から正確に見られることはない。一人に絞るのは他を切ることではなく、評価の更新を一人ぶんに限ること。聞くことと、書き換えることを分ける",
+      "funnel_targets": [
+        "x_13"
+      ],
+      "note_url": "",
+      "file": "note_2026-08-31_one-person.json",
+      "in_index": true
+    }
+  ]
+}
