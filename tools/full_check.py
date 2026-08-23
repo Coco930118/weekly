@@ -174,6 +174,26 @@ def main(path):
     except Exception as ex:
         print('  (使用ログ照合スキップ:', ex, ')')
 
+
+    # 11 目線の一貫性（3型のどれか1秒で分かるか）＋ひとことの長さ
+    DEN = ['って相談', 'って聞', 'って話', 'そう打ち明け', 'という声', 'みたい', 'だそう',
+           'という人がいる', '人がいる', 'らしい', 'んだって', 'たって', 'そう。', '聞かれた', 'って笑ってた']
+    for p in TH:
+        body = p['content'].split('感情はある。')[0].strip()
+        finals = [l for l in body.split('\n') if l.strip() and 'note' not in l]
+        tail = finals[-1] if finals else ''
+        if any(m in body for m in DEN): pov = '②相談者'
+        elif 'わたし' in body or body.startswith('昔'): pov = '①わたし'
+        elif re.search(r'(ある。|いる。|なる。|できる。|いい。|だ。|使える。|かもしれない。|なら。)$', tail): pov = '③観察'
+        elif re.search(r'(た。|かった。|ていた。|だった。)$', tail): pov = '?曖昧'
+        else: pov = '③観察'
+        if pov == '?曖昧':
+            ng(p['id'], '目線が曖昧（ゼロ主語＋過去形＝わたしの話に読まれる。伝聞マーカーか「昔は/わたしは」を付ける）')
+    for p in posts:
+        q = p.get('quote', '').rstrip('💎🫶').strip()
+        if len(q) > 23:
+            ng(p['id'], f'ひとことが{len(q)}字（上限23字・理想15〜20字。縦書き画像で読めなくなる）')
+
     # ===== 結果 =====
     if issues:
         print(f'■ 機械チェック: 要修正 {len(issues)}件')
