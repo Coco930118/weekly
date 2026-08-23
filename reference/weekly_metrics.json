@@ -7,7 +7,8 @@
   "top_post": "最高表示だった投稿（platform / 型 / 表示回数 / 内容メモ）",
   "follower_delta": "フォロワー純増（x / threads 別）",
   "note_weekly_views": "noteの週間ビュー",
-  "new_members": "メンバーシップ新規入会数（組織 / 恋愛 別）"
+  "new_members": "メンバーシップ新規入会数（組織 / 恋愛 別）",
+  "shindan_frame_vs_comment": "診断（X診断・Threads診断）は2値で記録する：本文（設問＝frame）の表示回数／コメント（答え・解説＝X診断はcomment_1・comment_2、Threads診断はreply_1）の表示回数。コメント÷本文＝コメント到達率。診断は答え側に解説・北極星・会員導線が全部あるため、この到達率が診断の生命線（2026-08-18週実測：X診断134%／Threads診断18%）"
  },
  "type_labels": [
   "実験の物語",
@@ -119,49 +120,59 @@
       "no": 71,
       "technique": "問いの形で気づかせる",
       "layer": "manager",
-      "views": 52,
-      "second_metric": 50
+      "frame_views": 52,
+      "comment_views": 50,
+      "comment_reach_rate": "96%"
      },
      "08-19": {
       "no": 72,
       "technique": "離しすぎのサインを見る",
       "layer": "manager",
-      "views": 68,
-      "second_metric": 113
+      "frame_views": 68,
+      "comment_views": 113,
+      "comment_reach_rate": "166%"
      },
      "08-20": {
       "no": 73,
       "technique": "逆質問で照らす",
       "layer": "owner",
-      "views": 27,
-      "second_metric": 46
+      "frame_views": 27,
+      "comment_views": 46,
+      "comment_reach_rate": "170%"
      },
      "08-21": {
       "no": 74,
       "technique": "意図で守る",
       "layer": "manager",
-      "views": 25,
-      "second_metric": 24
+      "frame_views": 25,
+      "comment_views": 24,
+      "comment_reach_rate": "96%"
      },
      "08-22": {
       "no": 75,
       "technique": "承認を先に置く",
       "layer": "manager",
-      "views": 18,
-      "second_metric": 26
+      "frame_views": 18,
+      "comment_views": 26,
+      "comment_reach_rate": "144%"
      },
      "08-23": {
       "no": 76,
       "technique": "委ねるを力の証明にする",
       "layer": "owner",
-      "views": 21,
-      "second_metric": 24
+      "frame_views": 21,
+      "comment_views": 24,
+      "comment_reach_rate": "114%"
      }
     },
-    "second_metric_label": "未確認（コメント閲覧数と推定＝4択の解説がコメントにあるため本体より伸びる日がある。Cocoに確認中・確認でき次第差し替える）",
     "avg_views_6days": 35.2,
     "median_views_6days": 26.0,
-    "memo": "火曜#072（離しすぎのサインを見る）が68・113で週内トップ、2値目が本体の1.7倍＝コメントが本体より読まれた唯一の回。火曜ピーク→週後半逓減はX通常投稿と同じ形（3週連続）。平均35はX通常投稿（平均17〜）を上回り、診断はXの中で相対的に強い枠。同週Threads診断（平均7.2）の約5倍。この週は現行形式（frame内4択・比喩ゼロ適用前の生成分）＝9/1週からのウィット一滴試験の判定に使うベースライン（週内中央値26）。owner回（#073・#076）よりmanager回の上位2本が強いが、サンプル不足で断定しない"
+    "memo": "火曜#072（離しすぎのサインを見る）が本文68・コメント113で週内トップ。火曜ピーク→週後半逓減はX通常投稿と同じ形（3週連続）。本文平均35はX通常投稿（平均17前後）の約2倍で、診断はXの中で相対的に強い枠。【最重要】コメント到達率134%（日別96〜170%）。同週のThreads診断18%と正反対で、X診断は「設問を読んで終わり」にならず答えを見に行く行動が確実に起きている＝4択形式が読者を二度動かしている。Xのnote添付コメントが本体の7〜9割読まれている実測とも一致し、X側は解説・会員導線がコメントにあっても届く。本文が伸びた日はコメントも連動（#072）。唯一コメントが本文を下回るのは初日#071（96%）で、週の入りは設問だけ流し読みされた可能性。この週は現行形式（frame内4択・比喩ゼロ適用前）＝9/1週からのウィット一滴試験のベースライン（本文中央値26・コメント到達率134%）。ウィット判定はコメント表示で見るのが妥当（ウィット行はcomment_1／comment_2側にあるため）。owner回（#073・#076）よりmanager回の上位2本が強いが、サンプル不足で断定しない",
+    "metric_labels": "frame_views＝本文（診断の設問）の表示回数／comment_views＝コメント（4択の答え・解説＝comment_1・comment_2）の表示回数。2026-08-23 Cocoにより確定",
+    "avg_frame_views_6days": 35.2,
+    "median_frame_views_6days": 26.0,
+    "avg_comment_views_6days": 47.2,
+    "comment_reach_rate": "134%（合計 本文211／コメント283）。6日すべてでコメントが本文の96%以上、4日は本文超え"
    }
   }
  ],
