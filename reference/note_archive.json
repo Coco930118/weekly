@@ -1625,7 +1625,7 @@
     },
     {
       "title": "向いていない人から先に書く。メンバーシップ『距離の整え方 —— 恋愛と関係』の案内",
-      "publish_date": "2026-08-17",
+      "publish_date": "",
       "platform_origin": "Threads",
       "source_week": "standing_guide",
       "tier": "guide",
@@ -1635,11 +1635,13 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-08-17_guide-renai.json",
-      "in_index": true
+      "in_index": true,
+      "published_confirmed": false,
+      "status": "未アップ"
     },
     {
       "title": "合わない人を先に書く。メンバーシップ『温度の整え方 —— 組織と仕事』の案内",
-      "publish_date": "2026-08-17",
+      "publish_date": "",
       "platform_origin": "X",
       "source_week": "standing_guide",
       "tier": "guide",
@@ -1649,7 +1651,9 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-08-17_guide-soshiki.json",
-      "in_index": true
+      "in_index": true,
+      "published_confirmed": false,
+      "status": "未アップ"
     },
     {
       "title": "最初に無理をした関係は、ずっとその仮面を外せない",

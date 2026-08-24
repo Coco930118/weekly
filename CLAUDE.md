@@ -914,6 +914,13 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 - **消す時は `notes/index.json` から外すのとファイル削除をセットで行う**。noteの週フィルタの項目名は各noteの`source_week`から作られるため、片方だけ残すと終わった週の項目名（例：8/11〜8/17）がサイトに残り続ける
 - 常設案内note（`source_week: standing_guide`）はこの削除対象外（週に紐づかないため常時掲載）
 
+#### 書いた日と、アップした日を分ける（2026-08-24 Coco指摘・恒久ルール）
+サイトのnoteカードは `date` をそのまま日付として出す。**`date` に書いた日を入れたまま置くと、note.comに上げていない記事が「その日に公開済み」に見える**（実例：常設案内2本が2026-08-17公開として表示されていた）。
+- **note.comに上げていない記事は `published_confirmed: false` を持たせる。** サイトは日付の代わりに **「未アップ」** と出す
+- 書いた日は `written_date` に退避し、`publish_date` は**空にする**（推測で埋めない）
+- 上げたら、Cocoから実際の公開日を受け取って `date` / `publish_date` に入れ、`published_confirmed: true` にする
+- 新規に週次noteを作るときは、`publish_date` ＝ 予告した投稿の投稿日（予定日）。**予定日は `published_confirmed` を立てない**——立てるのは実際に上げたと確認できたときだけ
+
 #### 過去分（2026-08-24 Coco決定・恒久ルール／保持期間の例外）
 プラン振り分けをしていなかった4〜6月のnoteは、**「過去分」としてサイトに残す**（30日削除の対象外）。バックカタログとして機能させるため。
 - 対象のnoteは `week_group: "過去分"` を持つ。**`source_week` は元の週のまま残す**（`note_archive.json` との突き合わせ・既視感チェック・あわせて読む候補探しに使うため、履歴を消さない）

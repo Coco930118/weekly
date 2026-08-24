@@ -769,7 +769,9 @@ function renderNoteCard(note) {
           ${freeRatioBadge}
           ${funnelTargets}
         </div>
-        <span class="note-date">${formatDate(note.date)}</span>
+        <span class="note-date">${note.published_confirmed === false
+          ? '未アップ'
+          : formatDate(note.date)}</span>
       </div>
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
