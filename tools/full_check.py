@@ -115,6 +115,14 @@ def main(path):
         r'という声を、何度も聞いてきた|って話を聞いた|って相談を受けたことがある)', ''.join(p['content'] for p in posts)))
     for k, v in uke.items():
         if v >= 3: ng('WEEK', f'受け口「{k}」が{v}回（週3本未満に）')
+    # 伝聞マーカーの偏り（相談者目線の入り方が同じ形に寄っていないか）
+    den = collections.Counter()
+    for p in TH:
+        l1 = p['content'].split('\n')[0]
+        m = re.search(r'(人がいる。|人がいた。|そう。|んだって。|みたい。|って。|ことがある。|話を聞いた。)$', l1)
+        if m: den[m.group(1)] += 1
+    for k, v in den.items():
+        if v >= 3: ng('WEEK', f'冒頭の伝聞マーカー「{k}」が{v}本（週3本未満に散らす）')
 
     # 7 時間軸
     for p in posts:
