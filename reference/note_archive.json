@@ -8,24 +8,10 @@
     "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
     "count": 119,
     "week_group_note": "week_group='過去分' は、プラン振り分けをしていなかった4〜6月のnote。保持期間30日削除の対象外としてサイトに残す（CLAUDE.md「過去分」参照）。source_week は元の週のまま残す。",
-    "last_updated": "2026-08-24"
+    "last_updated": "2026-08-24",
+    "draft_pool": "notes/drafts/ は、note.comに投稿していない下書きの置き場。サイトには出さない。新規note作成時の素材として読む（切り口・処方・言い回し）。note_archive.json には status=未公開・素材 で残す"
   },
   "notes": [
-    {
-      "title": "💼自分はちゃんとやっているのに巻き込まれる人へ｜正論を言う人ほど評価を落とす組織で、信頼される立ち回り方",
-      "publish_date": "2026-03-30",
-      "platform_origin": "X",
-      "source_week": "2026-03-30_2026-04-05",
-      "week_group": "過去分",
-      "tier": "flagship",
-      "principle_no": 3,
-      "cluster_topic": "組織が崩れていく順番（細かい管理→現場の疲弊→崩壊→統制）と、その中で巻き込まれない立ち回り。責任の線引き・感情と流れの分離・評価を落とさない報告＋経営者が信頼する3要素（役割を奪わない知性／余裕の自立／距離の品）",
-      "linked_principle": "原理03（事実と感情を分ける）＋原理07（現実を先に置いてから、その中での動き方を出す）——組織は変えられないという現実を先に置いて、自分の側の線引きだけを渡す",
-      "funnel_targets": [],
-      "note_url": "",
-      "file": "note_2026-03-30_involved.json",
-      "in_index": true
-    },
     {
       "title": "💗また同じパターンで終わる人へ｜我慢なく、依存せず、「大好きだけど、自分を生きる」関係の作り方",
       "publish_date": "2026-03-20",
@@ -96,9 +82,10 @@
       "linked_principle": "",
       "funnel_targets": [],
       "note_url": "",
-      "file": "note_2026_04_27.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026_04_27.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのときわたしがやったこと",
@@ -147,10 +134,11 @@
         "th_05"
       ],
       "note_url": "",
-      "file": "note_2026-06-09_boundary.json",
-      "in_index": true,
+      "file": "drafts/note_2026-06-09_boundary.json",
+      "in_index": false,
       "duplicate_of_title": true,
-      "week_group": "過去分"
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "比べてくる人の物差しに、乗らなくていい",
@@ -182,10 +170,11 @@
         "th_06"
       ],
       "note_url": "",
-      "file": "note_2026-06-09_distance.json",
-      "in_index": true,
+      "file": "drafts/note_2026-06-09_distance.json",
+      "in_index": false,
       "duplicate_of_title": true,
-      "week_group": "過去分"
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "変えたい欲求と言わない期待が、関係を静かに侵食するまで",
@@ -201,10 +190,11 @@
         "th_07"
       ],
       "note_url": "",
-      "file": "note_2026-06-09_words.json",
-      "in_index": true,
+      "file": "drafts/note_2026-06-09_words.json",
+      "in_index": false,
       "duplicate_of_title": true,
-      "week_group": "過去分"
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "愛の輪郭 ――境界線という本当の優しさ",
@@ -297,9 +287,10 @@
         "th_3"
       ],
       "note_url": "",
-      "file": "note_2026-06-12_communication.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-12_communication.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "比べてくる人の物差しに、乗らなくていい",
@@ -314,9 +305,10 @@
         "th_1"
       ],
       "note_url": "",
-      "file": "note_2026-06-12_comparison.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-12_comparison.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "「怒りと嫉妬の正体」──感情の二層構造を読む技術",
@@ -367,9 +359,10 @@
         "th_7"
       ],
       "note_url": "",
-      "file": "note_2026-06-12_warmth.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-12_warmth.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "嫉妬を羅針盤に変えた日から、比べなくなった",
@@ -402,9 +395,10 @@
         "sh_07"
       ],
       "note_url": "",
-      "file": "note_2026-06-14_axis.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-14_axis.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "「わかってくれない」は、言葉が届く前で止まっている",
@@ -420,9 +414,10 @@
         "sh_03"
       ],
       "note_url": "",
-      "file": "note_2026-06-14_communicate.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-14_communicate.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "「なんでわかってくれないの」の答えは、自分の言葉の中にある",
@@ -438,9 +433,10 @@
         "th_3"
       ],
       "note_url": "",
-      "file": "note_2026-06-14_communication.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-14_communication.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "腹立ちの下に、悲しみがある。嫉妬の下に、欲求がある。",
@@ -456,9 +452,10 @@
         "sh_05"
       ],
       "note_url": "",
-      "file": "note_2026-06-14_emotion.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-14_emotion.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "「怒っている」と思っていた。本当は、傷ついていた。",
@@ -474,9 +471,10 @@
         "th_5"
       ],
       "note_url": "",
-      "file": "note_2026-06-14_emotions.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-14_emotions.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "惰性と安定は、見た目が似ている",
@@ -509,9 +507,10 @@
         "th_7"
       ],
       "note_url": "",
-      "file": "note_2026-06-14_selfaxis.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-14_selfaxis.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "あなたの怒りの下に、悲しみがある",
@@ -528,9 +527,10 @@
         "th_05"
       ],
       "note_url": "",
-      "file": "note_2026-06-15_emotions.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-15_emotions.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "自分を大切にするほど、対等に愛される",
@@ -562,10 +562,11 @@
         "th_07"
       ],
       "note_url": "",
-      "file": "note_2026-06-15_stable.json",
-      "in_index": true,
+      "file": "drafts/note_2026-06-15_stable.json",
+      "in_index": false,
       "duplicate_of_title": true,
-      "week_group": "過去分"
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "比べられても、本音が言えなくても",
@@ -581,9 +582,10 @@
         "th_02"
       ],
       "note_url": "",
-      "file": "note_2026-06-15_truth.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-15_truth.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "感情には正体がある——怒り・嫉妬・比較が、本当に教えてくれること",
@@ -648,9 +650,10 @@
         "sth_05"
       ],
       "note_url": "",
-      "file": "note_2026-06-16_anger.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-16_anger.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "本音が届かない関係には、理由がある",
@@ -667,9 +670,10 @@
         "sth_03"
       ],
       "note_url": "",
-      "file": "note_2026-06-16_connection.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-16_connection.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "惰性と安定は、見た目が似ている",
@@ -685,9 +689,10 @@
         "sth_07"
       ],
       "note_url": "",
-      "file": "note_2026-06-16_warmth.json",
-      "in_index": true,
-      "week_group": "過去分"
+      "file": "drafts/note_2026-06-16_warmth.json",
+      "in_index": false,
+      "week_group": null,
+      "status": "未公開・素材"
     },
     {
       "title": "感情はある。でも、依存はしない。──認められたい相手に、振り回されなくなった日",

@@ -4,7 +4,6 @@
   "date": "2026-06-12",
   "generated_at": "2026-06-12T00:00:00+09:00",
   "source_week": "2026-06-09_2026-06-15",
-  "week_group": "過去分",
   "cluster_topic": "比較は自己防衛の言語。他者の物差しに乗らず、自分の道を歩くことが本当の自由になる",
   "tier": "member_entry",
   "linked_principle": "比べてくる人は自分の現在地への不安を持っている。その物差しはあなたの価値を測れない",
@@ -37,5 +36,7 @@
     "「物差しをすり替えない」の具体的な場面イメージを一行添える"
   ],
   "image_prompt": "Hand-painted soft watercolor illustration, 9:16 vertical composition. Upper one-third left as soft ivory wash for title text. A refined woman in her 40s (Coco, light aqua summer kimono with morning glory motif, short dark bob, warm brown eyes) walks forward unhurried along a garden stone path, expression calm and self-possessed. A pale white bird (Hiyori) glides at her side at shoulder height, wings open. Hydrangea hedges line the curving path ahead. Clear summer sky, warm morning light. Watercolour texture, Quiet Luxury aesthetic. Aqua, white, soft violet tones. No text, no letters, no signage.",
-  "closing_push": "比べられた日は、自分が今年やったことを三つ書き出す。 あなたの物差しは、あなたが持っていていい。"
+  "closing_push": "比べられた日は、自分が今年やったことを三つ書き出す。 あなたの物差しは、あなたが持っていていい。",
+  "status": "未公開・素材",
+  "status_note": "note.comには投稿していない下書き（2026-08-24 Coco確認）。サイトには出さない。新規note作成時に、切り口・処方・言い回しの素材として参照する。そのまま公開しない——公開するなら現行の恒久ルールで作り直す"
 }
