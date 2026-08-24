@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.8",
+  "version": "1.9",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -15,14 +15,39 @@
     "しらたまは常に白の長毛猫として描く。黒猫表記は全プラットフォーム（投稿・note・診断・LINEスタンプ）で禁止"
   ],
   "coco_fixed_description": {
-    "canonical": "Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; smooth youthful complexion, dark brown bob, warm brown eyes, {kimono}, shown {position})",
-    "note_variant": "Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; face fixed by the six reference images)",
-    "age_rule": "実年齢は40代だが、絵は必ず30代前半に見えるように描く。'elegant 40s woman' の素の指定は使わない（生成結果が50代前後に寄るため）",
+    "canonical": "Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a {kimono}, seen from the shoulders up",
+    "note_variant": "Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern",
+    "age_rule": "30代前半の見た目で描く。**年齢を操作する言い方（brand age 40s but drawn to look early 30s）は使わない**——Canvaの画像生成が年齢操作の指示として弾くため（2026-08-24 Coco決定）。`elegant 40s woman` も従来どおり使わない（生成結果が50代前後に寄る）",
     "never": [
       "never stern",
       "no sharp eyes",
       "no furrowed brow"
-    ]
+    ],
+    "legacy_canonical": "Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; smooth youthful complexion, dark brown bob, warm brown eyes, {kimono}, shown {position})",
+    "legacy_note_variant": "Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; face fixed by the six reference images)",
+    "canva_safety": {
+      "decided": "2026-08-24 Coco決定・恒久ルール",
+      "why": "8/18週のnoteサムネイルがCanvaのポリシーで生成を弾かれた。原因は旧定義に含まれる①年齢＋容姿の直接描写（a refined young woman）②年齢を操作する指示（brand age 40s but drawn to look early 30s）③肌の描写（smooth youthful complexion）④身体部位語（chest / bust-up）。note側は8/18週で安全版に差し替え済みだったが、35投稿側が旧定義のまま残っていた",
+      "forbidden_words": [
+        "a refined young woman",
+        "brand age 40s",
+        "drawn to look early 30s",
+        "smooth youthful complexion",
+        "youthful",
+        "complexion",
+        "from the chest up",
+        "chest-up",
+        "bust-up",
+        "bust"
+      ],
+      "replacements": {
+        "from the chest up": "seen from the shoulders up",
+        "front bust-up": "head-and-shoulders view",
+        "side-profile bust-up": "side profile view",
+        "chest-up pose": "head-and-shoulders pose"
+      },
+      "scope": "X・Threads35投稿とnoteサムネイルの両方。8/25週・9/1週の70本に適用済み。**noteサムネイルは2026-08-24にnoteセッションが8/25週9本へ適用完了**（それまで旧定義が残っていた）。8/18週以前は画像を生成済みのため遡及しない"
+    }
   },
   "animals": {
     "note": "呼び名は Shiratama に統一済み（2026-08-03 Coco決定）。しずく=Shizuku／しらたま=Shiratama／ひより=Hiyori。絵柄を決めるのは呼び名ではなく各 fixed_description なので、そちらも必ずそのまま使う。",
@@ -313,7 +338,7 @@
       "required_sentence": "Horizontal 1280x670 watercolor illustration for a note header.",
       "replaces": "旧「9:16縦・1080x1920」はこの決定で置き換え。縦長はnoteの表示枠に合わず上下が切れていた",
       "not_sns": "35投稿の正方形 1:1（1080x1080）とは統一しない。noteは横長、35投稿は正方形で別々に持つ",
-      "migration": "2026-08-24 noteセッションで引き継ぎ完了。8/25週の9本すべてを横長 1280x670 に更新済み。8/24週以前の103本は配信済みで画像も生成済みのため、遡及しない（noteの保持期間は配信終了から30日で、順次落ちる）。",
+      "migration": "2026-08-24 noteセッションで引き継ぎ完了。8/25週の9本すべてを横長 1280x670 に更新済み。8/24週以前の103本は配信済みで画像も生成済みのため遡及しない（noteの保持期間は配信終了から30日で順次落ちる）。",
       "composition_note": "縦三分割（上＝タイトル余白／中央＝主題／下＝余白）と横の中央3分の1ルールは横長でもそのまま維持する。横長では中央3分の1に全キャラを収める指定がより重要になる"
     }
   },
@@ -371,7 +396,7 @@
   "self_check": [
     "全35本が英語で、A high-quality watercolor illustration で始まっているか",
     "全35本に Coco と動物が登場しているか（人物なしの絵がゼロか）",
-    "Cocoの外見定義が全本で完全一致しているか（'early 30s' が入っているか／'elegant 40s woman' が残っていないか）",
+    "Cocoの外見定義が全本で完全一致しているか（'in her early thirties' が入っているか／'elegant 40s woman' が残っていないか）",
     "動物の巡回が7周期で回り、各組合せの本数が揃っているか",
     "アングルの巡回が5周期で回り、各アングルの本数が揃っているか",
     "投稿時刻と time band が全本一致しているか（morning/evening/night のズレがゼロか）",
@@ -389,12 +414,14 @@
     "パレットがプラットフォーム別（X＝寒色／Threads＝暖色）に分かれ、温度またぎがゼロか",
     "35投稿の全プロンプト冒頭に正方形 1:1（1080x1080）の指定が入っているか",
     "noteサムネイルが横長 1280x670 指定になっているか（旧9:16縦が残っていないか）",
-    "noteは全本に image_prompt_short があり、500字前後で must_keep の項目が残っているか"
+    "Canvaの禁止語（young woman／brand age 40s／youthful complexion／chest／bust）がゼロか",
+    "noteは全本に image_prompt_short があり、500字前後で must_keep が残り、Canva禁止語がゼロか"
   ],
   "updated": "2026-08-24",
   "decisions_log": [
-    "2026-08-24 noteサムネイルの横長 1280x670 化を noteセッションが引き継ぎ完了。8/25週9本を更新。8/24週以前の103本は遡及しない",
-    "2026-08-24 画像プロンプトの短縮版（image_prompt_short）を新設（Coco指示）。詳細版は残して併存。約500字。参照画像への言及と40代表記は短縮版から外す",
+    "2026-08-24 noteサムネイルの横長1280x670化とCanva安全版のCoco定義を、noteセッションが8/25週9本へ適用完了（引き継ぎ消化）",
+    "2026-08-24 画像プロンプトの短縮版（image_prompt_short）を新設（Coco指示）。約500字。詳細版と併存。参照画像への言及と動物の固有名は短縮版から外す",
+    "2026-08-24 Cocoの外見定義をCanva安全版に差し替え（Coco決定・恒久ルール）。年齢操作・肌の描写・身体部位語を全廃し「a gentle Japanese woman in her early thirties」に統一。アングル語も bust-up → head-and-shoulders view / side profile view に変更。旧定義は legacy_canonical に保存。8/25週・9/1週の70本に適用済み",
     "2026-08-24 noteサムネイルを横長 1280x670px に変更（Coco決定・恒久ルール）。note.comの推奨サイズ。旧9:16縦1080x1920は置き換え。35投稿の正方形1:1とは統一しない。既存noteは作り直しが必要で、noteセッション側での対応となる",
     "2026-08-24 灯りの色をパレット色分けの対象外と決定（Coco）。X夜の warm amber light は暖色のまま維持。判定はぱっと見の感触で足りるとの判断。検査対象は palette 3色と着物の色に限定する",
     "2026-08-24 パレットをプラットフォーム別に分割（Coco決定・恒久ルール）。X＝soft blue-grey（寒色）4組／Threads＝dusty rose（暖色）4組、締めの中間色は cool ivory / warm ivory。狙いは一覧で青系と桃系の2グループに割れること。着物の色プールも同時に分割。旧「週内で完全一致は3回まで」は廃止（4組運用では成立しないため）",
@@ -422,12 +449,12 @@
   },
   "short_prompt": {
     "decided": "2026-08-24 Coco指示・恒久ルール",
-    "why": "詳細版のプロンプトは約1,650字で、うち固定文（Coco定義・縦三分割・横中央3分の1・ネガティブ）だけで917字＝54%を占める。一般的な画像生成の入力欄には収まらず、収まっても長いプロンプトは前半に重みが寄るためブランドの核が薄まる。",
-    "field": "notes/note_*.json の image_prompt_short（image_prompt はそのまま残し、併存させる）",
-    "target_length": "500字前後。詳細版から約70%削減",
+    "why": "詳細版は約1,500〜1,700字あり、固定文（Coco定義・縦三分割・横中央3分の1・ネガティブ）だけで半分以上を占める。一般的な画像生成の入力欄には収まらず、収まっても長いプロンプトは前半に重みが寄るためブランドの核が薄まる。",
+    "field": "notes/note_*.json の image_prompt_short（image_prompt はそのまま残して併存させる）",
+    "target_length": "500字前後。詳細版から約65〜70%削減",
     "must_keep": [
       "Horizontal 1280x670 note header（比率指定）",
-      "early 30s（50代に寄る事故の防止。年齢は early 30s のみ書き、brand age 40s は書かない）",
+      "Canva安全版のCoco定義（coco_fixed_description.note_variant をそのまま使う）",
       "動物2匹。しらたまは white long-haired cat と明示（黒猫事故の防止）",
       "横の中央3分の1に全キャラ＋上1/3をタイトル余白",
       "プラン別パレット（X＝cool ivory／Threads＝warm ivory）",
@@ -437,9 +464,9 @@
     ],
     "drop": [
       "face fixed by the six reference images——生成側に参照画像がないため機能しない。特定人物の顔の再現指示とも読まれうる",
-      "brand age 40s but drawn to look early 30s——年齢の二重表記をやめ early 30s のみにする",
       "動物の固有名（Shizuku / Shiratama / Hiyori）——生成側で意味を持たないため、見た目の指定だけ残す"
     ],
+    "canva_safety_note": "短縮版にも canva_safety.forbidden_words を必ず適用する。詳細版だけ安全版に直して短縮版が旧表記のまま、という取り違えが起きやすい",
     "site": "公開サイトのnoteカードで、短縮版と詳細版を別々のコピーボタンで出す（assets/app.js で対応済み）"
   }
 }
