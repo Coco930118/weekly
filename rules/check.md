@@ -7,12 +7,16 @@
 ## 1. 機械チェック
 
 ```
-python3 tools/full_check.py posts/week_*.json
+python3 tools/full_check.py    posts/week_*.json            # 35投稿
+python3 tools/shindan_check.py posts/shindan_*_YYYY-MM-DD.json   # 診断14本
+python3 tools/note_check.py    --week YYYY-MM-DD_YYYY-MM-DD      # note
 ```
 
 毎回その場でスクリプトを書かない（項目がブレて抜けるため）。**項目を足したくなったら、その場しのぎで書かずツール本体を更新する。**
 
-いま見ているもの（35投稿）：
+`note_check.py` は `--all`（index掲載の全note）とファイル名の直接指定も受ける。
+
+### 35投稿（`full_check.py`）
 
 | # | 中身 |
 |---|---|
@@ -28,7 +32,12 @@ python3 tools/full_check.py posts/week_*.json
 | 10 | エピソード紐づけと30日除外 |
 | 11 | 目線の一貫性（3型のどれか1秒で分かるか）＋ひとことの長さ |
 
-**note と診断はまだ機械チェックがない**（`reference/todo.md` の順番待ち）。それまでは各 `rules/*.md` の後半にある項目を目で見る。
+### 診断（`shindan_check.py`）
+X診断＝frameの280字上限／固定CTA・「四つとも、間違いではない。」・`#温度の4択 NNN`／comment1通（旧2通構成の残り）／接続の一行（固定文）／診断URLが最終行・形式／メンバーシップCTAとバックカタログ行の残り／image_prompt を持っていないか／禁止語／設問の型の配分（素の行動型は週2本まで）／ウィットの本数。
+Threads診断＝本文にリンクがないか／`takeaway_line` が本文にあり、コメントと同じ文になっていないか／4行の箇条書き／北極星／橋渡しの一行（固定文）／診断リンク／会員導線が返信欄にないか／旧形式の区切り線／禁止語／フックと受け口の重複／ウィットの本数。
+
+### note（`note_check.py`）
+禁止語（原理01/07の公式文言は例外）／一人称の「私」（記事タイトルの引用は例外）／md と html の同期／プラン記号（💼💗・二重も）／定番プロミスと本数の約束／在り方署名→背中押し→あわせて読むの順／有料エリアの境界と `free_ratio` の実測一致／販売リストが有料側に埋まっていないか／単発有料の検出／あわせて読むのプラン跨ぎ／画像プロンプト（1280x670・Canva禁止語・early thirties・No text・中央3分の1・短縮版・季節モチーフと公開月）／週内の重複（背中押しの言い切り・在り方署名の書き出し・あわせて読むの導入文）。
 
 ---
 
