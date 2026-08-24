@@ -1,6 +1,6 @@
 {
   "note_id": "note_20260629_translate",
-  "title": "「伝えた」と「届いた」は、別の技術",
+  "title": "💼「伝えた」と「届いた」は、別の技術",
   "date": "2026-06-24",
   "generated_at": "2026-06-21T00:00:00+09:00",
   "source_week": "2026-06-22_2026-06-28",
@@ -49,5 +49,6 @@
   ],
   "closing_push": "次の一言の前に、相手の受け取れる時間を一つだけ確かめる。 あなたなら、届けられる。",
   "publish_date": "2026-06-24",
-  "published_confirmed": true
+  "published_confirmed": true,
+  "platform_origin": "X"
 }
