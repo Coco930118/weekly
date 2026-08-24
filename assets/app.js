@@ -770,7 +770,9 @@ function renderNoteCard(note) {
           ${funnelTargets}
         </div>
         <span class="note-date">${note.published_confirmed === false
-          ? '未アップ'
+          ? (note.scheduled_upload_date
+              ? `未アップ（${formatDate(note.scheduled_upload_date)}予定）`
+              : '未アップ')
           : formatDate(note.date)}</span>
       </div>
       <div class="note-card-body">
