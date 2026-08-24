@@ -63,5 +63,9 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early winter, quiet morning light, still air. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, holding a small warm cup in both hands and offering it forward, mid-gesture, in a softly layered winter kimono-inspired robe in pale mist grey and soft stone beige with a delicate camellia sprig at the shoulder. With a small green turtle and a gentle white bird. All characters grouped compactly in the central third of the width; upper third a soft pale mist grey-to-soft stone beige gradient for the title; lower third quiet. Palette: pale mist grey, soft stone beige, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "neutral",
   "before_after_type": "事例なし（土台の記事のため）",
-  "principle_no": "01-07"
+  "principle_no": "01-07",
+  "fix_required": true,
+  "fix_reasons": [
+    "本文を現行ルールで整え直しました（3,309字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください"
+  ]
 }

@@ -56,5 +56,9 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early spring, soft evening, mild air. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, writing a single line in a small notebook, pen just lifting from the page, in a light spring kimono-inspired robe in dusty rose and warm apricot with scattered cherry petals at the sleeve. With a fluffy white long-haired cat and a gentle white bird. All characters grouped compactly in the central third of the width; upper third a soft dusty rose-to-warm apricot gradient for the title; lower third quiet. Palette: dusty rose, warm apricot, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "Threads",
   "principle_no": "06",
-  "before_after_type": "Coco自身の実体験（本文中に記載。合成ではない）"
+  "before_after_type": "Coco自身の実体験（本文中に記載。合成ではない）",
+  "fix_required": true,
+  "fix_reasons": [
+    "本文を現行ルールで整え直しました（8,332字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください"
+  ]
 }

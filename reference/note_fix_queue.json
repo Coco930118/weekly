@@ -13,13 +13,234 @@
   },
   "queue": [
     {
+      "file": "note_2025-12-03_coco-methodology.json",
+      "note_id": "note_20251203_coco_methodology",
+      "date": "2025-12-03",
+      "title": "Coco Methodologyとは？ —— 人は、安心の中で静かに動き始める",
+      "plan": "both",
+      "visibility": "public",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を現行ルールで整え直しました（3,309字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_keieisha-trust.json",
+      "note_id": "note_keieisha_trust",
+      "date": "2025-12-15",
+      "title": "💼経営者が「死ぬほど信頼する人」の動き方――物申さず、静かに結果を積む人",
+      "plan": "X",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を現行ルールで整え直しました（2,913字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026-03-20_same-pattern.json",
+      "note_id": "note_20260320_same_pattern",
+      "date": "2026-03-20",
+      "title": "💗また同じパターンで終わる人へ｜我慢なく、依存せず、「大好きだけど、自分を生きる」関係の作り方",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を現行ルールで整え直しました（8,332字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026_05_29.json",
+      "note_id": "note_2026_05_29",
+      "date": "2026-06-08",
+      "title": "💼優秀な人が辞める前に出す6つのサイン——「急に辞めた」は存在しない",
+      "plan": "X",
+      "visibility": "public",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を現行ルールで整え直しました（5,435字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026_06_07.json",
+      "note_id": "note_2026_06_07",
+      "date": "2026-06-09",
+      "title": "💗「優しいのに、軽く扱われる」には理由がある",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（5238→6285字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026_06_15_voice.json",
+      "note_id": "note_2026_06_15_voice",
+      "date": "2026-06-11",
+      "title": "💗「なんでわかってくれないの」の下にあるもの",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（2212→3097字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026_06_15_emotions.json",
+      "note_id": "note_2026_06_15_emotions",
+      "date": "2026-06-12",
+      "title": "💗怒り・嫉妬・比較の正体——感情に振り回されない読み方",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（2678→3744字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026_06_15_warmth.json",
+      "note_id": "note_2026_06_15_warmth",
+      "date": "2026-06-13",
+      "title": "💗「このままでいいのかな」の正体——惰性と安定は、見た目が似ている",
+      "plan": "Threads",
+      "visibility": "public",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（1790→3016字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026-06-12_emotions.json",
+      "note_id": "note_20260612_emotions",
+      "date": "2026-06-16",
+      "title": "💗「怒りと嫉妬の正体」──感情の二層を読む技術",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（3860→4816字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026-06-22_freedom.json",
+      "note_id": "note_20260622_freedom",
+      "date": "2026-06-16",
+      "title": "💗認められたい相手に、振り回されなくなった日",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（4567→5249字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026-06-22_honest.json",
+      "note_id": "note_20260622_honest",
+      "date": "2026-06-18",
+      "title": "💗「嫌」と言える人ほど、「ありがとう」が増えていく──境界線は、愛の反対じゃない",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（4205→4803字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026-06-22_surface.json",
+      "note_id": "note_20260622_surface",
+      "date": "2026-06-19",
+      "title": "💗恋愛で「なんか違う」と感じたとき、本当は何が変わっているのか",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（3840→4674字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
+      "file": "note_2026-06-29_translate.json",
+      "note_id": "note_20260629_translate",
+      "date": "2026-06-24",
+      "title": "💼部下に伝わらないのはなぜか——「伝えた」と「届いた」は別の技術",
+      "plan": "X",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（4631→5333字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
+    },
+    {
       "file": "note_2026-06-29_distance.json",
       "note_id": "note_20260629_distance",
       "date": "2026-06-26",
       "title": "💗好きなのに、依存しない——感情はある。依存はしない。",
       "plan": "Threads",
       "visibility": "public",
-      "note_com_edit_needed": false,
+      "note_com_edit_needed": true,
       "items": [
         {
           "rule": "重複",
@@ -27,8 +248,38 @@
           "severity": "高",
           "status": "done",
           "decision": "2026-08-25 対応済み。本籍を一本に決めて、他の2本は同じ場面を再現しない形に書き直した（組1＝8/09／組2＝7/30／組3＝8/10）"
+        },
+        {
+          "rule": "本文の書き直し",
+          "detail": "重複の解消：「前に出すぎていた」を8/10に一本化したため、言い換えを一つ落とした",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（2900→3813字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
         }
-      ]
+      ],
+      "patch_count": 1
+    },
+    {
+      "file": "note_2026-06-29_emotion.json",
+      "note_id": "note_20260629_emotion",
+      "date": "2026-06-27",
+      "title": "💼仕事のモヤモヤを週明けに持ち越さない——金曜のうちに置いていく整え方",
+      "plan": "X",
+      "visibility": "members_only",
+      "items": [
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文を書き直しました（2028→2999字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください",
+          "severity": "高",
+          "status": "open"
+        }
+      ],
+      "note_com_edit_needed": true
     },
     {
       "file": "note_2026-07-22_rely.json",
@@ -59,6 +310,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3422→3681字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 3,
@@ -107,6 +364,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3062→3276字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 14,
@@ -153,6 +416,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（2833→3086字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 11,
@@ -199,6 +468,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（4990→5244字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 13,
@@ -250,6 +525,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3279→3491字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 23,
@@ -296,6 +577,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（2577→2805字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 5,
@@ -342,6 +629,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（2848→3083字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 7,
@@ -391,6 +684,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3255→3506字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 5,
@@ -444,6 +743,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3585→3840字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 11,
@@ -493,6 +798,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3773→4038字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 8,
@@ -539,6 +850,12 @@
           "severity": "低",
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "本文の貼り替え",
+          "detail": "本文が変わっています（3657→3929字）。有料エリアの境界ブロックを足したぶんです。カードの「📄 本文をコピー」で貼り替えてください",
+          "severity": "中",
+          "status": "open"
         }
       ],
       "patch_count": 8,
@@ -720,8 +1037,15 @@
           "severity": "低",
           "status": "done",
           "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
+        },
+        {
+          "rule": "本文の書き直し",
+          "detail": "重複の解消：「事実と数字を並べて伝えた」の場面を7/30に一本化したため、この段落を圧縮した",
+          "severity": "高",
+          "status": "open"
         }
-      ]
+      ],
+      "patch_count": 1
     },
     {
       "file": "note_2026-08-06_turn.json",
@@ -916,8 +1240,15 @@
           "severity": "低",
           "status": "done",
           "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
+        },
+        {
+          "rule": "本文の書き直し",
+          "detail": "重複の解消：「ここまではやりますけど…」の台詞を8/09に一本化したため、この段落を書き直した",
+          "severity": "高",
+          "status": "open"
         }
-      ]
+      ],
+      "patch_count": 1
     },
     {
       "file": "note_2026-08-12_sandwich.json",
@@ -984,8 +1315,15 @@
           "severity": "低",
           "status": "done",
           "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
+        },
+        {
+          "rule": "本文の書き直し",
+          "detail": "重複の解消：「ここまではやりますけど…」の台詞を8/09に一本化したため、実例を作り直した",
+          "severity": "高",
+          "status": "open"
         }
-      ]
+      ],
+      "patch_count": 1
     },
     {
       "file": "note_2026-08-15_senior.json",
@@ -1016,8 +1354,15 @@
           "severity": "低",
           "status": "done",
           "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
+        },
+        {
+          "rule": "本文の書き直し",
+          "detail": "重複の解消：「事実と数字を並べて伝えた」の場面を7/30に一本化したため、この段落を書き直した",
+          "severity": "高",
+          "status": "open"
         }
-      ]
+      ],
+      "patch_count": 1
     },
     {
       "file": "note_2026-08-15_thanks.json",
@@ -1529,7 +1874,7 @@
       "title": "💼疲れを九月に持ち越す人は、何が重かったかを書いていない",
       "plan": "X",
       "visibility": "members_only",
-      "note_com_edit_needed": false,
+      "note_com_edit_needed": true,
       "items": [
         {
           "rule": "重複",
@@ -1537,8 +1882,15 @@
           "severity": "高",
           "status": "done",
           "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
+        },
+        {
+          "rule": "本文の書き直し",
+          "detail": "重複の解消：「前に出すぎていた」を8/10に一本化したため、この一文を書き直した",
+          "severity": "高",
+          "status": "open"
         }
-      ]
+      ],
+      "patch_count": 1
     },
     {
       "file": "note_2026-08-31_accept.json",

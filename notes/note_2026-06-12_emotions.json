@@ -57,5 +57,9 @@
   "framework": "感情の二層（表面／その下）を、怒りと嫉妬でそれぞれ解剖し、掘り返す問いを渡してから、相手の感情にも同じ読み方を当てる",
   "principle_no": "06",
   "before_after_type": "事例なし",
-  "free_ratio": "0.31"
+  "free_ratio": "0.31",
+  "fix_required": true,
+  "fix_reasons": [
+    "本文を書き直しました（3860→4816字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください"
+  ]
 }

@@ -60,5 +60,9 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Winter, late afternoon, cold clear air. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, setting a slim ledger down on a table without a word, hand still resting on it, in a softly layered winter kimono-inspired robe in deep indigo and pale slate blue with a delicate small nandina berry motif at the cuff. With a small green turtle and a fluffy white long-haired cat. All characters grouped compactly in the central third of the width; upper third a soft deep indigo-to-pale slate blue gradient for the title; lower third quiet. Palette: deep indigo, pale slate blue, cool ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "X",
   "principle_no": "03",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_required": true,
+  "fix_reasons": [
+    "本文を現行ルールで整え直しました（2,913字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください"
+  ]
 }
