@@ -1154,24 +1154,16 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 3,
-      "patch_kinds": {
-        "禁止語": 2,
-        "タイトル": 1
-      },
-      "full_rewrite_needed": [
-        "渡すx1"
       ]
     },
     {
@@ -1187,8 +1179,8 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 んです",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
       ]
     },
@@ -1205,31 +1197,23 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 仕組み",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "タイトル": 1,
-        "在り方署名＋背中押し": 1
-      },
-      "full_rewrite_needed": [
-        "仕組みx1(芯)"
       ]
     },
     {
@@ -1245,14 +1229,10 @@
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 1,
-      "patch_kinds": {
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-19_nuance.json",
@@ -1267,30 +1247,24 @@
           "rule": "一人称",
           "detail": "「私」が1箇所（正は「わたし」）",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 3,
-      "patch_kinds": {
-        "一人称": 1,
-        "タイトル": 1,
-        "在り方署名＋背中押し": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-19_translate.json",
@@ -1305,24 +1279,16 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "禁止語": 1,
-        "タイトル": 1
-      },
-      "full_rewrite_needed": [
-        "渡すx4(芯)"
       ]
     },
     {
@@ -1338,22 +1304,17 @@
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "タイトル": 1,
-        "在り方署名＋背中押し": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-20_thirty.json",
@@ -1368,22 +1329,17 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 3,
-      "patch_kinds": {
-        "禁止語": 2,
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-21_friday.json",
@@ -1398,22 +1354,17 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 3,
-      "patch_kinds": {
-        "禁止語": 2,
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-21_love-language.json",
@@ -1428,40 +1379,30 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "一人称",
           "detail": "「私」が1箇所（正は「わたし」）",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 4,
-      "patch_kinds": {
-        "禁止語": 1,
-        "一人称": 1,
-        "タイトル": 1,
-        "在り方署名＋背中押し": 1
-      },
-      "full_rewrite_needed": [
-        "渡すx3(芯)"
       ]
     },
     {
@@ -1477,22 +1418,17 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "禁止語": 1,
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-22_offload.json",
@@ -1507,22 +1443,17 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 5,
-      "patch_kinds": {
-        "禁止語": 4,
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-22_silence.json",
@@ -1537,22 +1468,17 @@
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "タイトル": 1,
-        "在り方署名＋背中押し": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-23_expectation.json",
@@ -1567,46 +1493,37 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 構造／消耗",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "一人称",
           "detail": "「私」が8箇所（正は「わたし」）",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "値付け",
           "detail": "単発1500円。メンバーシップ月額と同額で、入会の判断を壊す（実態はメンバーシップ記事）",
           "severity": "高",
-          "status": "open"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 11,
-      "patch_kinds": {
-        "禁止語": 1,
-        "一人称": 8,
-        "タイトル": 1,
-        "背中押し": 1
-      },
-      "full_rewrite_needed": [
-        "構造x3(芯)"
       ]
     },
     {
@@ -1622,22 +1539,17 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "禁止語": 1,
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-24_name.json",
@@ -1652,22 +1564,17 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡し",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "禁止語": 1,
-        "タイトル": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-24_not-chasing.json",
@@ -1682,22 +1589,17 @@
           "rule": "プラン記号",
           "detail": "タイトル先頭に💼／💗がない",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         },
         {
           "rule": "背中押し",
           "detail": "closing_push が空",
           "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 2,
-      "patch_kinds": {
-        "タイトル": 1,
-        "在り方署名＋背中押し": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-27_no.json",
@@ -1712,14 +1614,10 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
-      ],
-      "patch_count": 1,
-      "patch_kinds": {
-        "禁止語": 1
-      }
+      ]
     },
     {
       "file": "note_2026-08-29_close-august.json",
@@ -1734,7 +1632,8 @@
           "rule": "重複",
           "detail": "「前に出すぎていた」が3本に入っている",
           "severity": "高",
-          "status": "open"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
       ]
     },
@@ -1751,8 +1650,8 @@
           "rule": "抽象語・文体",
           "detail": "禁止語 渡す／んです",
           "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+          "status": "done",
+          "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
       ]
     }
