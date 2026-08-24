@@ -178,7 +178,7 @@ def main(path):
             e = p.get('episode_id')
             if not e: continue
             cut = (datetime.date(*map(int, p['date'].split('-'))) - datetime.timedelta(days=30)).isoformat()
-            if last.get(e, '') >= cut: ng(p['id'], f'エピソード{e}は30日以内に使用済（{last[e]} / 基準{cut}）')
+            if last.get(e, '') >= cut: ng(p['id'], f'エピソード{e}は30日以内に使用済（{last[e]} / 基準{cut}）※在庫ゼロなら最終使用日が最も古いものから再使用可＝恒久ルール。その場合は報告に明示すること')
     except Exception as ex:
         print('  (使用ログ照合スキップ:', ex, ')')
 
