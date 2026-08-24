@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.6",
+  "version": "1.7",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -286,9 +286,9 @@
   },
   "note_thumbnails": {
     "scope": "notes/note_*.json の image_prompt",
-    "template": "9:16 vertical watercolor illustration (1080x1920) for a note thumbnail. {season} {time_of_day}, {air}. Composition: {coco_note_variant} {action}, {expression}, wearing a luxurious summer kimono-inspired {garment} in {colors} with delicate {motif} at the {place}. {animal_1}; {animal_2}. {background}. The upper third is left as a soft {c1}-to-{c2} gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Watercolor style: soft transparent washes, muted dusty tones, Quiet Luxury. Palette of {c1}, {c2}, {c3}, {c4}. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
+    "template": "Horizontal 1280x670 watercolor illustration for a note header. {season} {time_of_day}, {air}. Composition: {coco_note_variant} {action}, {expression}, wearing a luxurious summer kimono-inspired {garment} in {colors} with delicate {motif} at the {place}. {animal_1}; {animal_2}. {background}. The upper third is left as a soft {c1}-to-{c2} gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Watercolor style: soft transparent washes, muted dusty tones, Quiet Luxury. Palette of {c1}, {c2}, {c3}, {c4}. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
     "required_elements": [
-      "9:16縦・1080x1920をプロンプト内に明記する",
+      "横長 1280x670px をプロンプト内に明記する",
       "Cocoは note_variant（never stern／六枚の参照画像で顔を固定）を使う",
       "動物は2匹を配置する（記事のテーマに合わせて選ぶ）",
       "上三分の一をタイトル文字用のグラデーション余白として空ける（必須・下三分の一に置かない）",
@@ -306,6 +306,15 @@
         "主題を画面の端・隅に寄せない",
         "背景だけで主題が小さい構図にしない"
       ]
+    },
+    "aspect_ratio": {
+      "decided": "2026-08-24 Coco決定・恒久ルール",
+      "rule": "横長 1280x670px（note.comの推奨サイズ）。プロンプト内に明記する",
+      "required_sentence": "Horizontal 1280x670 watercolor illustration for a note header.",
+      "replaces": "旧「9:16縦・1080x1920」はこの決定で置き換え。縦長はnoteの表示枠に合わず上下が切れていた",
+      "not_sns": "35投稿の正方形 1:1（1080x1080）とは統一しない。noteは横長、35投稿は正方形で別々に持つ",
+      "migration": "既存noteのプロンプトと画像は作り直しが必要。noteは別セッションの持ち場のため、このルールを引き継ぎとして置く（本セッションは notes/ 配下を編集しない）",
+      "composition_note": "縦三分割（上＝タイトル余白／中央＝主題／下＝余白）と横の中央3分の1ルールは横長でもそのまま維持する。横長では中央3分の1に全キャラを収める指定がより重要になる"
     }
   },
   "seasonal_motifs": {
@@ -378,10 +387,12 @@
     "プラン別のパレットが守られているか（X＝寒色／Threads＝暖色。cool ivory と warm ivory の取り違えがないか）",
     "横の中央3分の1に全キャラが収まる一文が入っているか（Canvaで正方形に切られても全員残るか）",
     "パレットがプラットフォーム別（X＝寒色／Threads＝暖色）に分かれ、温度またぎがゼロか",
-    "35投稿の全プロンプト冒頭に正方形 1:1（1080x1080）の指定が入っているか"
+    "35投稿の全プロンプト冒頭に正方形 1:1（1080x1080）の指定が入っているか",
+    "noteサムネイルが横長 1280x670 指定になっているか（旧9:16縦が残っていないか）"
   ],
   "updated": "2026-08-24",
   "decisions_log": [
+    "2026-08-24 noteサムネイルを横長 1280x670px に変更（Coco決定・恒久ルール）。note.comの推奨サイズ。旧9:16縦1080x1920は置き換え。35投稿の正方形1:1とは統一しない。既存noteは作り直しが必要で、noteセッション側での対応となる",
     "2026-08-24 灯りの色をパレット色分けの対象外と決定（Coco）。X夜の warm amber light は暖色のまま維持。判定はぱっと見の感触で足りるとの判断。検査対象は palette 3色と着物の色に限定する",
     "2026-08-24 パレットをプラットフォーム別に分割（Coco決定・恒久ルール）。X＝soft blue-grey（寒色）4組／Threads＝dusty rose（暖色）4組、締めの中間色は cool ivory / warm ivory。狙いは一覧で青系と桃系の2グループに割れること。着物の色プールも同時に分割。旧「週内で完全一致は3回まで」は廃止（4組運用では成立しないため）",
     "2026-08-05 X診断・Threads診断の画像プロンプトを恒久廃止（Coco決定）。既存の shindan_x_*.json / shindan_th_*.json から image_prompt を削除済み。旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの決定で置き換え",
