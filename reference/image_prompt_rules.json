@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.9",
+  "version": "2.0",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -343,55 +343,103 @@
     }
   },
   "seasonal_motifs": {
-    "rule": "季節モチーフだけは毎週入れ替える。ここ以外は固定。",
-    "早春（2〜3月）": [
-      "plum blossom",
-      "camellia",
-      "early narcissus",
-      "lingering snow"
-    ],
-    "春（3〜5月）": [
-      "cherry blossom",
-      "wisteria",
-      "azalea",
-      "spring haze",
-      "swallow"
-    ],
-    "初夏（5〜6月）": [
-      "hydrangea",
-      "iris",
-      "young green leaves",
-      "rain on the eaves"
-    ],
-    "夏（6〜8月）": [
-      "morning glory",
-      "lotus",
-      "dragonfly",
-      "firefly",
-      "wind chime",
-      "paper lantern"
-    ],
-    "晩夏（8月）": [
-      "crape myrtle",
-      "sunflower",
-      "moonflower",
-      "evening cicada",
-      "summer moon"
-    ],
-    "秋（9〜11月）": [
-      "cosmos",
-      "susuki grass",
-      "maple",
-      "harvest moon",
-      "persimmon"
-    ],
-    "冬（12〜1月）": [
-      "camellia",
-      "nandina berries",
-      "first snow",
-      "bare branches",
-      "warm lamplight"
-    ]
+    "rule": "季節モチーフだけは毎週入れ替える。ここ以外は固定。**月で引く**（季節名で引くと月をまたぐ境目が抜ける）",
+    "decided": "2026-08-24 Coco決定・恒久ルール。従来の7区分（早春・春・初夏・夏・晩夏・秋・冬）は月の境目が重なったり空いたりしていたため、12ヶ月の表に組み直した。梅雨（6月）を独立させ、5月・9月・11月・1月の薄かったところも埋めた",
+    "how_to_use": "記事の公開日の月を見て、その月の配列から選ぶ。前後の月にまたがるモチーフは両方に載せてあるので、月初・月末は隣の月から取ってもよい。同じモチーフを週内で並べない",
+    "by_month": {
+      "1月（冬）": [
+        "camellia",
+        "nandina berries",
+        "narcissus",
+        "first snow",
+        "bare branches",
+        "warm lamplight"
+      ],
+      "2月（早春）": [
+        "plum blossom",
+        "winter camellia",
+        "narcissus",
+        "lingering snow",
+        "adonis flower"
+      ],
+      "3月（春の入り）": [
+        "plum blossom",
+        "rape blossoms",
+        "daphne",
+        "horsetail shoots",
+        "cherry blossom（下旬）"
+      ],
+      "4月（春）": [
+        "cherry blossom",
+        "wisteria",
+        "azalea",
+        "spring haze",
+        "swallow"
+      ],
+      "5月（晩春〜初夏）": [
+        "wisteria",
+        "azalea",
+        "fresh green",
+        "iris",
+        "rose",
+        "young leaves"
+      ],
+      "6月（梅雨）": [
+        "hydrangea",
+        "rain on the eaves",
+        "young green leaves",
+        "green plums",
+        "iris",
+        "firefly"
+      ],
+      "7月（夏）": [
+        "morning glory",
+        "lotus",
+        "firefly",
+        "wind chime",
+        "paper lantern",
+        "summer shower"
+      ],
+      "8月（晩夏）": [
+        "crape myrtle",
+        "sunflower",
+        "moonflower",
+        "evening cicada",
+        "summer moon",
+        "dragonfly"
+      ],
+      "9月（初秋）": [
+        "susuki grass",
+        "harvest moon",
+        "cosmos",
+        "bush clover",
+        "dragonfly"
+      ],
+      "10月（秋）": [
+        "cosmos",
+        "persimmon",
+        "ginkgo",
+        "maple（下旬）",
+        "high autumn sky"
+      ],
+      "11月（晩秋）": [
+        "maple",
+        "ginkgo",
+        "sasanqua",
+        "persimmon",
+        "fallen leaves"
+      ],
+      "12月（冬）": [
+        "camellia",
+        "nandina berries",
+        "first snow",
+        "bare branches",
+        "warm lamplight"
+      ]
+    },
+    "tsuyu_note": "6月＝梅雨は独立した月として扱う。朝顔（旬7〜9月）と蓮（旬7〜8月）を6月に当てない——1〜2ヶ月早くなり、絵が季節から浮く。逆に紫陽花・青梅は7月に持ち越さない",
+    "air_not_motif": "モチーフを増やさなくても、背景と空気で季節は出せる（雨上がり／若葉を透ける光／濡れた石畳／雨の輪が残る水面／蝉のいない朝）。モチーフの反復が気になるときは、まず背景で散らす",
+    "sync_warning": "**この表が正典。CLAUDE.mdの要約はここから作る。** 2026-08-24までCLAUDE.md側の要約から早春（梅）と初夏（紫陽花・菖蒲）が落ちており、CLAUDE.mdだけを読んだセッションが6月の記事に朝顔と蓮を当てる事故が実際に起きた"
   },
   "self_check": [
     "全35本が英語で、A high-quality watercolor illustration で始まっているか",
@@ -415,7 +463,8 @@
     "35投稿の全プロンプト冒頭に正方形 1:1（1080x1080）の指定が入っているか",
     "noteサムネイルが横長 1280x670 指定になっているか（旧9:16縦が残っていないか）",
     "Canvaの禁止語（young woman／brand age 40s／youthful complexion／chest／bust）がゼロか",
-    "noteは全本に image_prompt_short があり、500字前後で must_keep が残り、Canva禁止語がゼロか"
+    "noteは全本に image_prompt_short があり、500字前後で must_keep が残り、Canva禁止語がゼロか",
+    "季節モチーフが**公開日の月**の配列から選ばれているか（seasonal_motifs.by_month を月で引く。季節名で引かない）"
   ],
   "updated": "2026-08-24",
   "decisions_log": [
@@ -428,7 +477,14 @@
     "2026-08-05 X診断・Threads診断の画像プロンプトを恒久廃止（Coco決定）。既存の shindan_x_*.json / shindan_th_*.json から image_prompt を削除済み。旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの決定で置き換え",
     "2026-08-03 しらたまの英字表記を Shiratama に統一（Coco決定）。旧表記 Shirotsuma（投稿）/ Shirotama（note）は全ファイルで置換済み",
     "2026-08-03 noteサムネイルは主題を中央（middle third）に大きく置く。上三分の一＝タイトル余白、下三分の一＝静かな余白（Coco指示）",
-    "2026-08-03 しらたまは常に白の長毛猫で統一（Coco決定）。黒猫・黒地に白模様の表記を全ファイルから排除。絵文字🐈‍⬛は据え置き、絵だけ白で固定"
+    "2026-08-03 しらたまは常に白の長毛猫で統一（Coco決定）。黒猫・黒地に白模様の表記を全ファイルから排除。絵文字🐈‍⬛は据え置き、絵だけ白で固定",
+    {
+      "date": "2026-08-24",
+      "by": "Coco",
+      "decision": "季節モチーフを12ヶ月の表に組み直し、6月＝梅雨を独立させた（紫陽花・雨・若葉・青梅・菖蒲・蛍）",
+      "why": "7区分では月の境目が空いていた。CLAUDE.mdの要約から早春と初夏が落ちていたため、6月の記事に朝顔・蓮（旬は7〜9月）を当てる事故が起きた",
+      "also": "5月（新緑・薔薇・菖蒲）、9月（萩・すすき・名月）、11月（山茶花・銀杏・落ち葉）、1月（水仙）も薄かったので埋めた"
+    }
   ],
   "plan_color_coding": {
     "decided": "2026-08-24 Coco決定・恒久ルール",
