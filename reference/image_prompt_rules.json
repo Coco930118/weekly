@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.2",
+  "version": "1.3",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -140,35 +140,141 @@
       "current_schedule": "X 06:00/22:00・Threads 07:00/10:00/19:00 → morning / night / morning / morning / evening"
     },
     "posture_rule": "佇まいの一文（{posture}）は35本すべて別文で、その投稿の本文テーマに合わせて書く。ここが投稿と絵を繋ぐ唯一の可変部。例：判決を出さない回=the posture holds anger without a verdict／見守りの回=the posture is watching, not intervening",
-    "palette_rule": "3色構成。着物の色に連動させる。週内で完全一致は3回まで（夜の deep summer navy 系は繰り返してよい）",
+    "palette_rule": "3色構成。**1色目・2色目はプラットフォーム別のパレット表（platform_palette）から選び、3色目は X＝cool ivory ／ Threads＝warm ivory で固定する**（2026-08-24 Coco決定・恒久ルール）。狙いは、公開サイトやタイムラインに一覧で並んだとき、X（組織）＝青系／Threads（恋愛）＝桃系の2グループに視覚で割れること。着物の色もパレットに連動させる（kimono_color_pool を参照）。旧ルール「週内で完全一致は3回まで」はこの決定で置き換え（パレットを4組に絞ったため成立しない）",
     "kimono_color_pool": {
-      "morning_evening": [
-        "pale grey-blue",
-        "pale cream",
-        "pale sage green",
-        "pale teal",
-        "pale ivory",
-        "pale blue",
-        "pale mint green",
-        "pale peach",
-        "pale lavender",
-        "pale blue-grey",
-        "pale gold",
-        "pale aqua",
-        "pale indigo",
-        "pale moss green",
-        "pale rose",
-        "soft ivory"
+      "rule": "パレットに連動させる。プラットフォーム別に温度を揃える（2026-08-24 Coco決定）。柄（季節モチーフ）は従来どおり週ごとに入れ替える。色だけをこの表から選ぶ",
+      "X_morning_evening": [
+        "pale ash blue",
+        "muted sage-grey",
+        "pale celadon",
+        "soft steel blue",
+        "pale slate blue",
+        "pale silver-grey"
       ],
-      "night": [
-        "deep navy",
+      "X_night": [
         "deep indigo",
-        "deep summer navy",
-        "deep midnight blue",
-        "deep slate navy",
-        "deep ink blue"
-      ]
-    }
+        "deep navy-indigo",
+        "deep navy"
+      ],
+      "Threads_morning_evening": [
+        "pale peach",
+        "soft coral",
+        "pale rose",
+        "soft gold",
+        "dusty rose",
+        "warm apricot",
+        "ash rose",
+        "pale apricot"
+      ],
+      "Threads_night": [
+        "deep navy"
+      ],
+      "note": "旧プール（プラットフォーム共通16色＋夜6色）はこの分割で置き換え。X に rose/peach/coral/gold 系、Threads に blue/indigo/slate/celadon 系は使わない"
+    },
+    "platform_palette": {
+      "why": "X＝組織・仕事（寒色／冷徹な軍師）、Threads＝恋愛・関係（暖色／慈愛の哲学者）。ブランドの媒体役割を色でも分ける。一覧で2グループに割れることが目的なので、温度をまたぐ色（Xに rose 系、Threadsに indigo/blue 系）は使わない",
+      "closing_neutral": {
+        "X": "cool ivory",
+        "Threads": "warm ivory"
+      },
+      "X": {
+        "temperature": "寒色（soft blue-grey）",
+        "pairs": [
+          {
+            "no": 1,
+            "c1": "deep indigo",
+            "c2": "pale slate blue",
+            "band": "night",
+            "kimono": [
+              "deep indigo"
+            ]
+          },
+          {
+            "no": 2,
+            "c1": "pale ash blue",
+            "c2": "muted sage-grey",
+            "band": "morning/evening",
+            "kimono": [
+              "pale ash blue",
+              "muted sage-grey"
+            ]
+          },
+          {
+            "no": 3,
+            "c1": "deep navy-indigo",
+            "c2": "pale silver-grey",
+            "band": "night",
+            "kimono": [
+              "deep navy-indigo"
+            ]
+          },
+          {
+            "no": 4,
+            "c1": "pale celadon",
+            "c2": "soft steel blue",
+            "band": "morning/evening",
+            "kimono": [
+              "pale celadon",
+              "soft steel blue"
+            ]
+          }
+        ]
+      },
+      "Threads": {
+        "temperature": "暖色（dusty rose）",
+        "pairs": [
+          {
+            "no": 1,
+            "c1": "dusty rose",
+            "c2": "warm apricot",
+            "band": "evening",
+            "kimono": [
+              "dusty rose",
+              "warm apricot"
+            ]
+          },
+          {
+            "no": 2,
+            "c1": "pale peach",
+            "c2": "soft coral",
+            "band": "morning",
+            "kimono": [
+              "pale peach",
+              "soft coral"
+            ]
+          },
+          {
+            "no": 3,
+            "c1": "ash rose",
+            "c2": "pale apricot",
+            "band": "evening",
+            "kimono": [
+              "ash rose",
+              "pale apricot"
+            ]
+          },
+          {
+            "no": 4,
+            "c1": "pale rose",
+            "c2": "soft gold",
+            "band": "morning",
+            "kimono": [
+              "pale rose",
+              "soft gold"
+            ]
+          }
+        ]
+      },
+      "rotation": "日付・時刻の昇順に並べ、band の一致する組を順に巡回させる。X＝夜は組1・3、朝は組2・4／Threads＝夕は組1・3、朝は組2・4。着物の色は各組の kimono を交互に使い、同じ色が並ばないようにする",
+      "conflict_note": "「夜＝浴衣（濃紺系）」の恒久ルールはこの分けより優先する。Threadsに夜スロット（21:00〜）が出た場合は、浴衣は濃紺のままで、パレットの3色目 warm ivory と2色目の暖色で暖かさを担保する"
+    },
+    "self_check_palette": [
+      "X14本のパレットが全部 platform_palette.X の4組のいずれかで、3色目が cool ivory か",
+      "Threads21本のパレットが全部 platform_palette.Threads の4組のいずれかで、3色目が warm ivory か",
+      "X に rose/peach/coral/apricot/gold 系が混ざっていないか（温度またぎゼロ）",
+      "Threads に indigo/blue/slate/celadon/silver 系が混ざっていないか（温度またぎゼロ）",
+      "着物の色がパレットと同じ温度か（夜の濃紺は例外として可）"
+    ]
   },
   "note_thumbnails": {
     "scope": "notes/note_*.json の image_prompt",
@@ -260,10 +366,12 @@
     "noteは全本に「上三分の一の余白」「中央に主題」「下三分の一の余白」の三分割指定が入っているか",
     "noteは全本にネガティブ指定が入っているか",
     "動物の呼び名が Shizuku / Shiratama / Hiyori に統一されているか（Shirotsuma・Shirotama が残っていないか）",
-    "しらたまが全ファイルで白の長毛猫になっているか（black cat / 黒猫 の表記がゼロか）"
+    "しらたまが全ファイルで白の長毛猫になっているか（black cat / 黒猫 の表記がゼロか）",
+    "パレットがプラットフォーム別（X＝寒色／Threads＝暖色）に分かれ、温度またぎがゼロか"
   ],
-  "updated": "2026-08-05",
+  "updated": "2026-08-24",
   "decisions_log": [
+    "2026-08-24 パレットをプラットフォーム別に分割（Coco決定・恒久ルール）。X＝soft blue-grey（寒色）4組／Threads＝dusty rose（暖色）4組、締めの中間色は cool ivory / warm ivory。狙いは一覧で青系と桃系の2グループに割れること。着物の色プールも同時に分割。旧「週内で完全一致は3回まで」は廃止（4組運用では成立しないため）",
     "2026-08-05 X診断・Threads診断の画像プロンプトを恒久廃止（Coco決定）。既存の shindan_x_*.json / shindan_th_*.json から image_prompt を削除済み。旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの決定で置き換え",
     "2026-08-03 しらたまの英字表記を Shiratama に統一（Coco決定）。旧表記 Shirotsuma（投稿）/ Shirotama（note）は全ファイルで置換済み",
     "2026-08-03 noteサムネイルは主題を中央（middle third）に大きく置く。上三分の一＝タイトル余白、下三分の一＝静かな余白（Coco指示）",

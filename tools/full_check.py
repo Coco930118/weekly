@@ -22,6 +22,11 @@ PROMISE = 'メンバーシップは、毎週深堀りが増えて'
 TIME_WORDS = ['今夜', '今晩', '今朝', '夕方', 'この時間', '寝る前', '翌朝', '店じまい',
               '金曜の夜', '土曜の夜', '日曜の夜', '月曜の夜', '土曜の朝', '日曜の朝', '月曜の朝']
 ANGLES = ['front bust-up', 'side-profile', 'looking up', 'over-the-shoulder', 'close-up']
+# パレットの温度（2026-08-24 恒久ルール：X＝寒色／Threads＝暖色）
+WARM_HUE = ['rose', 'peach', 'coral', 'apricot', 'gold', 'amber', 'ochre', 'mustard',
+            'persimmon', 'terracotta', 'warm ivory']
+COOL_HUE = ['indigo', 'blue', 'slate', 'celadon', 'silver', 'navy', 'steel',
+            'sage-grey', 'cool ivory']
 WIT_HINTS = ['お茶', 'アイス', 'おいしいもの', 'プリン', '花を', '春巻き', 'ビール', 'レモンサワー',
              'コーヒー', '昼寝', '湯船', '温泉', '麦茶', '寝ていい', '休みの人', 'それだけ。',
              'ごはん', '元手', 'シーツ', '一杯', '取り返す']
@@ -149,6 +154,23 @@ def main(path):
         if 'elegant 40s woman' in ip: ng(p['id'], '画像: elegant 40s woman残存')
         if not any(a in ip for a in ['Shizuku', 'Shiratama', 'Hiyori']): ng(p['id'], '画像: 動物なし')
         if band(int(p['time'][:2])) not in ip: ng(p['id'], f'画像: 時間帯ズレ（{p["time"]}）')
+        # パレットのプラットフォーム別色分け（2026-08-24 恒久ルール・8/25週から適用）
+        mp = re.search(r'Refined palette of ([^.]+)\.', ip)
+        mk = re.search(r'warm brown eyes, (.+?) (?:ro-kimono|yukata)', ip)
+        if p['date'] < '2026-08-25':
+            pass  # 色分けルールの適用開始前（8/18週以前は生成済みのため遡及しない）
+        elif not mp: ng(p['id'], '画像: Refined palette行なし')
+        else:
+            pal = mp.group(1).lower()
+            look = pal + ' ' + (mk.group(1).lower() if mk else '')
+            if p['platform'] == 'X':
+                if 'cool ivory' not in pal: ng(p['id'], '画像: X の3色目が cool ivory でない', mp.group(1))
+                w = [c for c in WARM_HUE if c in look]
+                if w: ng(p['id'], '画像: X に暖色（温度またぎ）', w)
+            else:
+                if 'warm ivory' not in pal: ng(p['id'], '画像: Threads の3色目が warm ivory でない', mp.group(1))
+                c = [c for c in COOL_HUE if c in look]
+                if c: ng(p['id'], '画像: Threads に寒色（温度またぎ）', c)
         for a in ANGLES:
             if a in ip: ang[a] += 1; break
         ani[tuple(sorted(a for a in ['Shizuku', 'Shiratama', 'Hiyori'] if a in ip))] += 1

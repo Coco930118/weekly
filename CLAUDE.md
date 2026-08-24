@@ -786,6 +786,24 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 - **朝夕＝絽の着物（淡色）／夜＝浴衣（濃紺系）**
 - **佇まいの一文（posture）は35本すべて別文**。その投稿の本文テーマに合わせて書く（ここが投稿と絵を繋ぐ唯一の可変部）
 
+#### パレットはプラットフォームで色分けする（2026-08-24 Coco決定・恒久ルール）
+**X（組織）＝寒色 soft blue-grey ／ Threads（恋愛）＝暖色 dusty rose に統一する。** 狙いは、公開サイトやタイムラインに**一覧で並んだとき、青系と桃系の2グループに視覚で割れる**こと。媒体の役割（X＝組織の温度／Threads＝関係の距離）を色でも分ける。
+
+| 組 | X＝組織（寒色） | Threads＝恋愛（暖色） |
+|---|---|---|
+| 1 | deep indigo, pale slate blue | dusty rose, warm apricot |
+| 2 | pale ash blue, muted sage-grey | pale peach, soft coral |
+| 3 | deep navy-indigo, pale silver-grey | ash rose, pale apricot |
+| 4 | pale celadon, soft steel blue | pale rose, soft gold |
+
+- **3色目（締めの中間色）も分ける**：X＝`cool ivory` ／ Threads＝`warm ivory`
+- **温度またぎゼロ**が絶対条件。Xに rose／peach／coral／apricot／gold 系、Threadsに indigo／blue／slate／celadon／silver 系を混ぜない
+- **着物の色もパレットに連動**させる（`reference/image_prompt_rules.json` の `kimono_color_pool` をプラットフォーム別に分割済み）。柄＝季節モチーフは従来どおり週替わり、色だけをこの表から選ぶ
+- **巡回**：日付・時刻の昇順で、暗い組（1・3）を夜と夕に、淡い組（2・4）を朝に当てる。着物は各組の2色を交互に使って同じ色を並べない
+- **旧ルール「週内で完全一致は3回まで」は廃止**（4組運用では成立しないため）。パレットの反復は許容し、代わりにプラットフォーム内で組が偏らないよう巡回で散らす
+- **「夜＝浴衣（濃紺系）」はこの色分けより優先**。Threadsに夜スロットが出た場合、浴衣は濃紺のまま、パレットの2色目と `warm ivory` で暖かさを担保する
+- **適用開始＝2026-08-25週から**。8/18週以前は画像を生成済みのため遡及しない（`tools/full_check.py` もこの週より前はパレット判定をスキップする）
+
 ### note（サムネイル）
 - **9:16縦・1080x1920をプロンプト内に明記**
 - Cocoは note版の定義（`never stern, no sharp eyes or furrowed brow; face fixed by the six reference images`）を使う
@@ -807,6 +825,8 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 - [ ] `early 30s` が全本に入っているか／`elegant 40s woman` が残っていないか
 - [ ] 動物とアングルの巡回本数が揃っているか
 - [ ] 投稿時刻と時間帯のズレがゼロか
+- [ ] **パレットがX＝寒色／Threads＝暖色の4組に収まり、3色目が cool ivory／warm ivory で分かれているか（温度またぎゼロ）**
+- [ ] **着物の色がパレットと同じ温度か**（夜の濃紺は例外として可）
 - [ ] 佇まいの一文が35本すべて別文で、本文テーマと噛み合っているか
 - [ ] 季節モチーフが今週の季節に合っているか（前週の使い回しでないか）
 
