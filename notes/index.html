@@ -241,13 +241,12 @@ function weekLabel(w) {
 
 function renderCard(note, isFirst) {
   const jsonFilename = note._jsonFilename || '';
-  const htmlFilename = jsonFilename.replace('.json', '.html');
   const hasMarkdown = !!note.content_markdown;
   const tags = (note.hashtags || []).map(t => `<span class="nc-tag">${escHtml(t)}</span>`).join('');
 
   return `
     <div class="note-card-wrap${isFirst ? ' note-latest' : ''}">
-      <a href="./${escHtml(htmlFilename)}" class="note-card-link">
+      <div class="note-card-link">
         <div class="note-card-meta">
           ${isFirst ? '<span class="nc-new">NEW</span>' : ''}
           <span class="nc-date">${escHtml((note.date || '').replace(/-/g,'.'))}</span>
@@ -257,9 +256,8 @@ function renderCard(note, isFirst) {
         <div class="note-card-title">${escHtml(note.title || '（タイトルなし）')}</div>
         <div class="note-card-desc">${escHtml(note.description || '')}</div>
         ${tags ? `<div class="note-card-tags">${tags}</div>` : ''}
-      </a>
+      </div>
       <div class="note-card-actions">
-        <a href="./${escHtml(htmlFilename)}" class="note-read-btn">記事を読む →</a>
         <button class="note-copy-btn"
           data-json-file="${escHtml(jsonFilename)}"
           data-has-md="${hasMarkdown ? '1' : '0'}">全文コピー</button>
