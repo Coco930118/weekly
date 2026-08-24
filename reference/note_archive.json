@@ -6,7 +6,7 @@
     "platform_origin_note": "2026-06以前のnoteには platform_origin フィールドがなかったため unknown。推測で埋めない。2026-07以降は X / Threads が入る。",
     "principle_no_note": "Coco Methodology 原理01〜07の番号。既存分は未判定で null。今後作るnoteでは必須。",
     "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
-    "count": 118
+    "count": 119
   },
   "notes": [
     {
@@ -1875,6 +1875,20 @@
       ],
       "note_url": "",
       "file": "note_2026-08-29_close-august.json",
+      "in_index": true
+    },
+    {
+      "title": "💼答えは配っていない。決め方のほうを置いている",
+      "publish_date": "2026-08-30",
+      "platform_origin": "X",
+      "source_week": "2026-08-25_2026-08-31",
+      "tier": "free_entry",
+      "principle_no": "01",
+      "cluster_topic": "週次の無料案内（組織）——答えではなく決め方を置いている場所であることと、四つの形、向かない場面",
+      "linked_principle": "答えは場面ごとに違うが、決め方は変わらない。相手の同意も上司の許可も組織の変化も要らないことだけを渡す",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-08-30_guide-soshiki.json",
       "in_index": true
     },
     {
