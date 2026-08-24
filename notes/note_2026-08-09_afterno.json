@@ -50,5 +50,9 @@
   ],
   "closing_push": "一つ断って、何も壊れないことを確かめるところから。 あなたなら、大丈夫。",
   "principle_no": "05",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_required": true,
+  "fix_reasons": [
+    "重複：「ここまではやりますけど、これ以上は無理です」が3本に入っている"
+  ]
 }

@@ -50,5 +50,9 @@
   ],
   "closing_push": "誠実さの置き場所が、まだ決まっていないだけ。 あなたなら、届けられる。",
   "principle_no": "03",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_required": true,
+  "fix_reasons": [
+    "重複：「事実と数字を並べて伝えた」の場面が3本に入っている"
+  ]
 }

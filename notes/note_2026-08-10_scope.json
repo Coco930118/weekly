@@ -50,5 +50,9 @@
   ],
   "closing_push": "線を引くのは、突き放すことじゃない。 あなたなら、渡せる。",
   "principle_no": "05",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_required": true,
+  "fix_reasons": [
+    "重複：「前に出すぎていた」が3本に入っている"
+  ]
 }

@@ -484,7 +484,7 @@ function setupSectionToggle() {
 // ─── Note section ────────────────────────────────────────────────────────────
 
 let allNotes = [];
-let activeNoteFilters = { tier: 'all', week: 'all' };
+let activeNoteFilters = { tier: 'all', week: 'all', fixOnly: false };
 let notesLoaded = false;
 
 async function loadNotes() {
@@ -570,11 +570,12 @@ function setupNoteTierFilter() {
   const tierRow = document.getElementById('noteTierFilterRow');
   if (!tierRow) return;
   tierRow.addEventListener('click', e => {
-    const btn = e.target.closest('.filter-btn[data-tier]');
+    const btn = e.target.closest('.filter-btn[data-tier], .filter-btn[data-fix]');
     if (!btn) return;
     tierRow.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    activeNoteFilters.tier = btn.dataset.tier;
+    activeNoteFilters.fixOnly = btn.dataset.fix === '1';
+    activeNoteFilters.tier = activeNoteFilters.fixOnly ? 'all' : btn.dataset.tier;
     renderNotes();
   });
 }
@@ -584,6 +585,7 @@ function renderNotes() {
   const filtered = allNotes.filter(n => {
     if (activeNoteFilters.tier !== 'all' && n.tier !== activeNoteFilters.tier) return false;
     if (activeNoteFilters.week !== 'all' && noteWeekGroup(n) !== activeNoteFilters.week) return false;
+    if (activeNoteFilters.fixOnly && n.fix_required !== true) return false;
     return true;
   });
 
@@ -764,6 +766,7 @@ function renderNoteCard(note) {
     <article class="${noteClass}">
       <div class="note-card-header">
         <div class="note-meta-left">
+          ${note.fix_required === true ? '<span class="fix-badge">修正必須</span>' : ''}
           <span class="tier-badge ${tierClass}">${tierLabel}</span>
           <span class="vis-badge ${visClass}">${visLabel}</span>
           ${freeRatioBadge}
@@ -777,6 +780,9 @@ function renderNoteCard(note) {
       </div>
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
+        ${note.fix_required === true && (note.fix_reasons || []).length
+          ? `<ul class="fix-reasons">${note.fix_reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`
+          : ''}
         <p class="note-description">${escapeHtml(note.description)}</p>
         ${outcomeHtml}
         ${frameworkHtml}

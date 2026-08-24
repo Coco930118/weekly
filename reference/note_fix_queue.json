@@ -1,0 +1,1558 @@
+{
+  "updated": "2026-08-25",
+  "policy": "新しい恒久ルールは原則として過去記事に遡及しない。検出したらこのキューに入れて、対応するかどうかをCocoが決める。",
+  "severity": {
+    "高": "読者に実害／会員体験に直接効く（重複・矛盾・死んだ導線・値付け）",
+    "中": "ブランドの一貫性（一人称・抽象語・文体）",
+    "低": "体裁（記号・欄の空き）"
+  },
+  "status": {
+    "open": "要対応",
+    "deferred": "見送り（理由を decision に書く）",
+    "done": "対応済み"
+  },
+  "queue": [
+    {
+      "file": "note_2026_06_09_boundary.json",
+      "note_id": "note_2026_06_09_boundary",
+      "date": "2026-06-09",
+      "title": "愛の輪郭 ――境界線という本当の優しさ",
+      "plan": null,
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 設計／構造／消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が3箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026_06_09_distance.json",
+      "note_id": "note_2026_06_09_distance",
+      "date": "2026-06-09",
+      "title": "一番近い人ほど、距離が要る",
+      "plan": null,
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が1箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026_06_09_words.json",
+      "note_id": "note_2026_06_09_words",
+      "date": "2026-06-09",
+      "title": "変えたい欲求と言わない期待が、関係を静かに侵食するまで",
+      "plan": null,
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 構造",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が4箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-06-29_distance.json",
+      "note_id": "note_20260629_distance",
+      "date": "2026-06-26",
+      "title": "💗好きなのに、依存しない——感情はある。依存はしない。",
+      "plan": "Threads",
+      "visibility": "public",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「前に出すぎていた」が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-22_rely.json",
+      "note_id": "note_20260722_rely",
+      "date": "2026-07-22",
+      "title": "頼れる関係を、先に作る",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-23_sort.json",
+      "note_id": "note_20260723_sort",
+      "date": "2026-07-23",
+      "title": "「私が悪いのかな」が、いつも一番早く来る",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が8箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-24_hold.json",
+      "note_id": "note_20260724_hold",
+      "date": "2026-07-24",
+      "title": "「私がいないとダメでしょ」で繋いでいた頃",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が5箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-25_delegate.json",
+      "note_id": "note_20260725_delegate",
+      "date": "2026-07-25",
+      "title": "答えを渡すのをやめた日、売上が動いた",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 設計／仕組み／渡す／渡し／んです",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が4箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-25_expectation.json",
+      "note_id": "note_20260725_expectation",
+      "date": "2026-07-25",
+      "title": "伝えていない期待は、相手の中に存在していない",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が8箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-26_trust.json",
+      "note_id": "note_20260726_trust",
+      "date": "2026-07-26",
+      "title": "信頼は、必要になる前にしか積めない",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗／渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が1箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-27_capacity.json",
+      "note_id": "note_20260727_capacity",
+      "date": "2026-07-27",
+      "title": "受け止める量を、自分で決める",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 設計／消耗／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が3箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-28_drawn.json",
+      "note_id": "note_20260728_drawn",
+      "date": "2026-07-28",
+      "title": "痛みの大きさは、望みの大きさで決まる",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が2箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-30_pickup.json",
+      "note_id": "note_20260730_pickup",
+      "date": "2026-07-30",
+      "title": "「やって」と言うと、言った分しか返ってこない",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「事実と数字を並べて伝えた」の場面が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 仕組み／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が2箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-30_ng.json",
+      "note_id": "note_20260730_ng",
+      "date": "2026-07-30",
+      "title": "何を言われたかより、どこから言われたか",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が5箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-07-31_decide.json",
+      "note_id": "note_20260731_decide",
+      "date": "2026-07-31",
+      "title": "「落ち着いたら決めよう」の、落ち着いたは来ない",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が8箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-01_greeting.json",
+      "note_id": "note_20260801_greeting",
+      "date": "2026-08-01",
+      "title": "面談の空気は、席に着く前に決まっている",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 構造／消耗／削れる／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が1箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-03_hand.json",
+      "note_id": "note_20260803_hand",
+      "date": "2026-08-03",
+      "title": "教えると、伝わらない。渡すと、その人のものになる",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 設計／構造／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が2箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-03_stance.json",
+      "note_id": "note_20260803_stance",
+      "date": "2026-08-03",
+      "title": "中身より先に、立ち方が届く",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 仕組み／消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が2箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-04_order.json",
+      "note_id": "note_20260804_order",
+      "date": "2026-08-04",
+      "title": "数えるのをやめた夜に、三十分だけ自分へ返す",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "一人称",
+          "detail": "「私」が1箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-05_irreplaceable.json",
+      "note_id": "note_20260805_irreplaceable",
+      "date": "2026-08-05",
+      "title": "本当に代わりがいるなら、上司は黙って替えている",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「事実と数字を並べて伝えた」の場面が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 構造／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-06_turn.json",
+      "note_id": "note_20260806_turn",
+      "date": "2026-08-06",
+      "title": "誘うのをやめた二週間で、相手が動く人かどうかが分かった",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-07_fuel.json",
+      "note_id": "note_20260807_fuel",
+      "date": "2026-08-07",
+      "title": "「あなたのため」が効かない相手には、燃料を切る",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-08_rely.json",
+      "note_id": "note_20260808_rely",
+      "date": "2026-08-08",
+      "title": "頼るのは、できないことからじゃなくていい",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-09_afterno.json",
+      "note_id": "note_20260809_afterno",
+      "date": "2026-08-09",
+      "title": "「今回は難しいです」と言った翌日に、何を送るか",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「ここまではやりますけど、これ以上は無理です」が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-09_hold.json",
+      "note_id": "note_20260809_hold",
+      "date": "2026-08-09",
+      "title": "我慢は消えない。飲み込んだ言葉を、一行書いて残す",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-10_scope.json",
+      "note_id": "note_20260810_scope",
+      "date": "2026-08-10",
+      "title": "叱ればハラスメント、任せなければ放置。紙に三つ書いて渡す",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「前に出すぎていた」が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-12_unsaid.json",
+      "note_id": "note_20260812_unsaid",
+      "date": "2026-08-12",
+      "title": "「言うほどでもないこと」が、関係の寿命を決めていた",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「ここまではやりますけど、これ以上は無理です」が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-12_sandwich.json",
+      "note_id": "note_20260812_sandwich",
+      "date": "2026-08-12",
+      "title": "上司は要求を聞いていない。リターンだけを聞いている",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 消耗／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-13_agediff.json",
+      "note_id": "note_20260813_agediff",
+      "date": "2026-08-13",
+      "title": "周りの目は消えない。十年後も隣にいたいか",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-14_sequence.json",
+      "note_id": "note_20260814_sequence",
+      "date": "2026-08-14",
+      "title": "同じ言葉が、順番一つで違う重みで届く",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「ここまではやりますけど、これ以上は無理です」が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-15_senior.json",
+      "note_id": "note_20260815_senior",
+      "date": "2026-08-15",
+      "title": "年上の部下に言えなかった注意は、「いつか言う候補」に入れておく",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「事実と数字を並べて伝えた」の場面が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        },
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 設計／渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-15_thanks.json",
+      "note_id": "note_20260815_thanks",
+      "date": "2026-08-15",
+      "title": "会話がなくなった夫婦の、最初の一言は決まっている",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-16_remote.json",
+      "note_id": "note_20260816_remote",
+      "date": "2026-08-16",
+      "title": "見えない部下は、GOALを二つ置くと見えてくる",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-17_guide-soshiki.json",
+      "note_id": "note_20260817_guide_soshiki",
+      "date": "2026-08-17",
+      "title": "💼合わない人を先に書く。メンバーシップ『温度の整え方 —— 組織と仕事』の案内",
+      "plan": "X",
+      "visibility": "public",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 んです",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-18_first-distance.json",
+      "note_id": "note_20260818_first_distance",
+      "date": "2026-08-18",
+      "title": "最初に無理をした関係は、ずっとその仮面を外せない",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 仕組み",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-19_body.json",
+      "note_id": "note_20260819_body",
+      "date": "2026-08-19",
+      "title": "会いたい人は、頭より先に体が決めている",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-19_nuance.json",
+      "note_id": "note_20260819_nuance",
+      "date": "2026-08-19",
+      "title": "「なんか違う」は、言葉にならないだけで、情報だった",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "一人称",
+          "detail": "「私」が1箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-19_translate.json",
+      "note_id": "note_20260819_translate",
+      "date": "2026-08-19",
+      "title": "上司は返事を聞いていない。二度目の「わかりました」を数えている",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-20_pattern.json",
+      "note_id": "note_20260820_pattern",
+      "date": "2026-08-20",
+      "title": "同じ痛みが繰り返されるのは、今の相手のせいとは限らない",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-20_thirty.json",
+      "note_id": "note_20260820_thirty",
+      "date": "2026-08-20",
+      "title": "三十分置くと、淋しさと会いたいが分かれる",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-21_friday.json",
+      "note_id": "note_20260821_friday",
+      "date": "2026-08-21",
+      "title": "「来週こそ」は決意じゃない。先送りの、いちばん丁寧な言い方だ",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-21_love-language.json",
+      "note_id": "note_20260821_love_language",
+      "date": "2026-08-21",
+      "title": "愛の量ではなく、愛の言語が合っているかどうか",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が1箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-21_silence.json",
+      "note_id": "note_20260821_silence",
+      "date": "2026-08-21",
+      "title": "優しさで黙ったのか、怖くて黙ったのか",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-22_offload.json",
+      "note_id": "note_20260822_offload",
+      "date": "2026-08-22",
+      "title": "頭が同じ場所を回るのは、行き先を書いていないから",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-22_silence.json",
+      "note_id": "note_20260822_silence",
+      "date": "2026-08-22",
+      "title": "話さないことは、隠すこととは違う",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-23_expectation.json",
+      "note_id": "note_20260823_expectation",
+      "date": "2026-08-23",
+      "title": "期待を手放したとき、はじめて相手が見えた",
+      "plan": "Threads",
+      "visibility": "single_paid",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 構造／消耗",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "一人称",
+          "detail": "「私」が8箇所（正は「わたし」）",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        },
+        {
+          "rule": "値付け",
+          "detail": "単発1500円。メンバーシップ月額と同額で、入会の判断を壊す（実態はメンバーシップ記事）",
+          "severity": "高",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-23_monday.json",
+      "note_id": "note_20260823_monday",
+      "date": "2026-08-23",
+      "title": "日曜の夜が重いのは、月曜の最初の30分が空白だから",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-24_name.json",
+      "note_id": "note_20260824_name",
+      "date": "2026-08-24",
+      "title": "その気持ちに名前をつけるのは、急がなくていい",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡し",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        },
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-24_not-chasing.json",
+      "note_id": "note_20260824_not_chasing",
+      "date": "2026-08-24",
+      "title": "追わない選択は、諦めではなく、自分を取り戻す最初の一歩",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": true,
+      "items": [
+        {
+          "rule": "プラン記号",
+          "detail": "タイトル先頭に💼／💗がない",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
+        },
+        {
+          "rule": "背中押し",
+          "detail": "closing_push が空",
+          "severity": "低",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-27_no.json",
+      "note_id": "note_20260827_no",
+      "date": "2026-08-27",
+      "title": "💼「確認してから返します」は、断り方じゃない。時間の取り方だ",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-29_close-august.json",
+      "note_id": "note_20260829_close_august",
+      "date": "2026-08-29",
+      "title": "💼疲れを九月に持ち越す人は、何が重かったかを書いていない",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "重複",
+          "detail": "「前に出すぎていた」が3本に入っている",
+          "severity": "高",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-31_accept.json",
+      "note_id": "note_20260831_accept",
+      "date": "2026-08-31",
+      "title": "💼受け入れた日に、自分の判断まで置いてこなくていい",
+      "plan": "X",
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "抽象語・文体",
+          "detail": "禁止語 渡す／んです",
+          "severity": "中",
+          "status": "deferred",
+          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
+        }
+      ]
+    }
+  ]
+}

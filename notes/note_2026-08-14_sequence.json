@@ -50,5 +50,9 @@
   ],
   "closing_push": "侵入には防御が、宣言には余白が返ってくる。 あなたなら、組み立てられる。",
   "principle_no": "03",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_required": true,
+  "fix_reasons": [
+    "重複：「ここまではやりますけど、これ以上は無理です」が3本に入っている"
+  ]
 }

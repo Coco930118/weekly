@@ -54,5 +54,9 @@
     "優秀な人が辞める前に出す6つのサイン——「急に辞めた」は存在しない"
   ],
   "principle_no": "04",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_required": true,
+  "fix_reasons": [
+    "重複：「事実と数字を並べて伝えた」の場面が3本に入っている"
+  ]
 }
