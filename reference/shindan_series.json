@@ -9,10 +9,10 @@
     "rule": "2026-06-09の週を第1週とし、1週=7本の連番。frame末尾に「#温度の4択 NNN」（3桁ゼロ埋め）を置く。",
     "week_1_start": "2026-06-09",
     "posts_per_week": 7,
-    "last_assigned_no": 84,
-    "last_assigned_week": "2026-08-25_2026-08-31",
-    "next_no": 85,
-    "next_week": "2026-09-01_2026-09-07"
+    "last_assigned_no": 91,
+    "last_assigned_week": "2026-09-01_2026-09-07",
+    "next_no": 92,
+    "next_week": "2026-09-08_2026-09-14"
   },
   "frame_constraint": {
     "max_weighted_chars": 280,
@@ -229,6 +229,48 @@
       "date": "2026-08-31",
       "technique": "手を出さない選択を記録する",
       "layer": "manager"
+    },
+    {
+      "no": 85,
+      "date": "2026-09-01",
+      "technique": "頼るか手放すかを先に決める",
+      "layer": "manager"
+    },
+    {
+      "no": 86,
+      "date": "2026-09-02",
+      "technique": "比較ではなく事実で位置を持つ",
+      "layer": "owner"
+    },
+    {
+      "no": 87,
+      "date": "2026-09-03",
+      "technique": "答えを持ってから確認する",
+      "layer": "manager"
+    },
+    {
+      "no": 88,
+      "date": "2026-09-04",
+      "technique": "事実は一つだけ置く",
+      "layer": "manager"
+    },
+    {
+      "no": 89,
+      "date": "2026-09-05",
+      "technique": "変数は人だと見る",
+      "layer": "owner"
+    },
+    {
+      "no": 90,
+      "date": "2026-09-06",
+      "technique": "期限は本人に置かせる",
+      "layer": "manager"
+    },
+    {
+      "no": 91,
+      "date": "2026-09-07",
+      "technique": "欠落の方向を見る",
+      "layer": "manager"
     }
   ],
   "reader_layer_log": {
@@ -316,6 +358,25 @@
             "date": "2026-08-29",
             "episode": "E365",
             "theme": "前職の型を疑う"
+          }
+        ]
+      },
+      {
+        "week": "2026-09-01_2026-09-07",
+        "manager": 5,
+        "owner": 2,
+        "owner_posts": [
+          {
+            "no": 86,
+            "date": "2026-09-02",
+            "episode": "E379",
+            "theme": "比較ではなく事実で位置を持つ"
+          },
+          {
+            "no": 89,
+            "date": "2026-09-05",
+            "episode": "E390",
+            "theme": "変数は人だと見る"
           }
         ]
       }
