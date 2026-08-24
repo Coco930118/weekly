@@ -514,6 +514,19 @@ async function loadNotes() {
   }
 }
 
+// noteの週グループ。week_group があればそれ、なければ source_week
+function noteWeekGroup(note) {
+  return note.week_group || note.source_week;
+}
+
+function noteWeekLabel(week) {
+  if (week === '過去分') return '過去分';
+  if (week === 'standing_guide') return '常設案内';
+  const [from, to] = String(week).split('_');
+  if (!from || !to || !/^\d{4}-\d{2}-\d{2}$/.test(from) || !/^\d{4}-\d{2}-\d{2}$/.test(to)) return week;
+  return `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
+}
+
 function renderNoteWeekFilter() {
   const weekRow = document.getElementById('noteWeekFilterRow');
   if (!weekRow) return;
@@ -526,14 +539,20 @@ function renderNoteWeekFilter() {
   allBtn.textContent = '全週';
   weekRow.appendChild(allBtn);
 
-  const weeks = [...new Set(allNotes.map(n => n.source_week))].sort().reverse();
+  // 週フィルタの並び：日付の週（新しい順）→ 過去分 → 常設案内
+  const specialOrder = { '過去分': 1, 'standing_guide': 2 };
+  const weeks = [...new Set(allNotes.map(noteWeekGroup))].sort((a, b) => {
+    const sa = specialOrder[a] || 0;
+    const sb = specialOrder[b] || 0;
+    if (sa !== sb) return sa - sb;
+    if (sa) return 0;
+    return a < b ? 1 : a > b ? -1 : 0;
+  });
   weeks.forEach(week => {
-    const [from, to] = week.split('_');
-    const label = `${from.slice(5).replace('-', '/')}〜${to.slice(5).replace('-', '/')}`;
     const btn = document.createElement('button');
     btn.className = 'filter-btn';
     btn.dataset.noteWeek = week;
-    btn.textContent = label;
+    btn.textContent = noteWeekLabel(week);
     weekRow.appendChild(btn);
   });
 
@@ -564,7 +583,7 @@ function renderNotes() {
   const container = document.getElementById('notesContainer');
   const filtered = allNotes.filter(n => {
     if (activeNoteFilters.tier !== 'all' && n.tier !== activeNoteFilters.tier) return false;
-    if (activeNoteFilters.week !== 'all' && n.source_week !== activeNoteFilters.week) return false;
+    if (activeNoteFilters.week !== 'all' && noteWeekGroup(n) !== activeNoteFilters.week) return false;
     return true;
   });
 

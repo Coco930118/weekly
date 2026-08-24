@@ -6,7 +6,9 @@
     "platform_origin_note": "2026-06以前のnoteには platform_origin フィールドがなかったため unknown。推測で埋めない。2026-07以降は X / Threads が入る。",
     "principle_no_note": "Coco Methodology 原理01〜07の番号。既存分は未判定で null。今後作るnoteでは必須。",
     "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
-    "count": 119
+    "count": 119,
+    "week_group_note": "week_group='過去分' は、プラン振り分けをしていなかった4〜6月のnote。保持期間30日削除の対象外としてサイトに残す（CLAUDE.md「過去分」参照）。source_week は元の週のまま残す。",
+    "last_updated": "2026-08-24"
   },
   "notes": [
     {
@@ -35,10 +37,11 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026_04_27.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
-      "title": "「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのとき私がやったこと",
+      "title": "「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのときわたしがやったこと",
       "publish_date": "2026-05-29",
       "platform_origin": "unknown",
       "source_week": "2026-05-19_2026-05-25",
@@ -49,7 +52,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026_05_29.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「優しいのに、軽く扱われる」には構造がある",
@@ -63,7 +67,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026_06_07.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "愛の輪郭 ――境界線という本当の優しさ",
@@ -82,7 +87,8 @@
       "note_url": "",
       "file": "note_2026-06-09_boundary.json",
       "in_index": true,
-      "duplicate_of_title": true
+      "duplicate_of_title": true,
+      "week_group": "過去分"
     },
     {
       "title": "比べてくる人の物差しに、乗らなくていい",
@@ -116,7 +122,8 @@
       "note_url": "",
       "file": "note_2026-06-09_distance.json",
       "in_index": true,
-      "duplicate_of_title": true
+      "duplicate_of_title": true,
+      "week_group": "過去分"
     },
     {
       "title": "変えたい欲求と言わない期待が、関係を静かに侵食するまで",
@@ -134,7 +141,8 @@
       "note_url": "",
       "file": "note_2026-06-09_words.json",
       "in_index": true,
-      "duplicate_of_title": true
+      "duplicate_of_title": true,
+      "week_group": "過去分"
     },
     {
       "title": "愛の輪郭 ――境界線という本当の優しさ",
@@ -228,7 +236,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-12_communication.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "比べてくる人の物差しに、乗らなくていい",
@@ -244,7 +253,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-12_comparison.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「怒りと嫉妬の正体」──感情の二層構造を読む技術",
@@ -261,7 +271,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-12_emotions.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "怒りは、二次感情だ",
@@ -294,7 +305,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-12_warmth.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "嫉妬を羅針盤に変えた日から、比べなくなった",
@@ -328,7 +340,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_axis.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「わかってくれない」は、言葉が届く前で止まっている",
@@ -345,7 +358,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_communicate.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「なんでわかってくれないの」の答えは、自分の言葉の中にある",
@@ -362,7 +376,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_communication.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "腹立ちの下に、悲しみがある。嫉妬の下に、欲求がある。",
@@ -379,7 +394,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_emotion.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「怒っている」と思っていた。本当は、傷ついていた。",
@@ -396,7 +412,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_emotions.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "惰性と安定は、見た目が似ている",
@@ -430,7 +447,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_selfaxis.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "あなたの怒りの下に、悲しみがある",
@@ -448,7 +466,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-15_emotions.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "自分を大切にするほど、対等に愛される",
@@ -482,7 +501,8 @@
       "note_url": "",
       "file": "note_2026-06-15_stable.json",
       "in_index": true,
-      "duplicate_of_title": true
+      "duplicate_of_title": true,
+      "week_group": "過去分"
     },
     {
       "title": "比べられても、本音が言えなくても",
@@ -499,7 +519,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-15_truth.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "感情には正体がある——怒り・嫉妬・比較が、本当に教えてくれること",
@@ -513,7 +534,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026_06_15_emotions.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「なんでわかってくれないの」の下にあるもの",
@@ -527,7 +549,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026_06_15_voice.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "惰性と安定は、見た目が似ている",
@@ -542,7 +565,8 @@
       "note_url": "",
       "file": "note_2026_06_15_warmth.json",
       "in_index": true,
-      "duplicate_of_title": true
+      "duplicate_of_title": true,
+      "week_group": "過去分"
     },
     {
       "title": "怒りは、嘘をついている",
@@ -559,7 +583,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-16_anger.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "本音が届かない関係には、理由がある",
@@ -577,7 +602,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-16_connection.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "惰性と安定は、見た目が似ている",
@@ -594,7 +620,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-16_warmth.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "感情はある。でも、依存はしない。──認められたい相手に、振り回されなくなった日",
@@ -616,7 +643,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-22_freedom.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「嫌」と言える人ほど、「ありがとう」が増えていく──境界線は、愛の反対じゃない",
@@ -634,7 +662,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-22_honest.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「なんか違う」の正体を知ったとき、関係の温度が変わった",
@@ -652,7 +681,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-22_surface.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "感情はある。依存はしない。",
@@ -670,7 +700,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-29_distance.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "感情を整えてから、関係に向かう",
@@ -687,7 +718,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-29_emotion.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "「伝えた」と「届いた」は、別の技術",
@@ -705,7 +737,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-29_translate.json",
-      "in_index": true
+      "in_index": true,
+      "week_group": "過去分"
     },
     {
       "title": "正論は、動機にならない",

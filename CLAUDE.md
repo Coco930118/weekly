@@ -904,6 +904,13 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 - **消す時は `notes/index.json` から外すのとファイル削除をセットで行う**。noteの週フィルタの項目名は各noteの`source_week`から作られるため、片方だけ残すと終わった週の項目名（例：8/11〜8/17）がサイトに残り続ける
 - 常設案内note（`source_week: standing_guide`）はこの削除対象外（週に紐づかないため常時掲載）
 
+#### 過去分（2026-08-24 Coco決定・恒久ルール／保持期間の例外）
+プラン振り分けをしていなかった4〜6月のnoteは、**「過去分」としてサイトに残す**（30日削除の対象外）。バックカタログとして機能させるため。
+- 対象のnoteは `week_group: "過去分"` を持つ。**`source_week` は元の週のまま残す**（`note_archive.json` との突き合わせ・既視感チェック・あわせて読む候補探しに使うため、履歴を消さない）
+- サイトの週フィルタは `week_group`（なければ `source_week`）で作る。並びは**日付の週（新しい順）→ 過去分 → 常設案内**
+- 週次の新規noteに `week_group` は付けない（`source_week` がそのまま週になる）。**過去分に新しい記事を足さない**——ここは4〜6月の振り分け対象だけの箱
+- 過去分は**既存記事の書き換えを目的にしない**。プランの振り分け（`platform_origin` と タイトル先頭の 💼／💗）と、恒久ルール違反の修正だけを入れる。本文を書き直す必要がある違反は**提案にとどめてCocoの判断を待つ**
+
 ## 投稿JSONの構造
 `posts/week_YYYY-MM-DD_YYYY-MM-DD.json`
 - `week`: `"YYYY-MM-DD_YYYY-MM-DD"`
