@@ -56,7 +56,7 @@ def main(path):
         if not l1.startswith('「'): ng(p['id'], '1行目が読者の声引用でない')
         if last.rstrip().endswith(('？', '?', 'ですか。')): ng(p['id'], '末尾が明示質問')
         if '私' in naked: ng(p['id'], '一人称「私」（わたしに統一）')
-        if '💎' not in p.get('quote', ''): ng(p['id'], 'quoteに💎なし')
+        if '💎' in p.get('quote', ''): ng(p['id'], 'quoteに💎（絵文字は2026-08-24廃止）')
         lines = [l for l in p['content'].split('\n') if l.strip()]
         if len(lines) > 7: ng(p['id'], f'X本文が{len(lines)}行（5〜7行に圧縮する）')
 
@@ -73,7 +73,7 @@ def main(path):
         if not (80 <= n <= 190): ng(p['id'], f'字数 {n}')
         q = p.get('quote', '').rstrip('🫶💎').strip()
         if q and q == p['content'].split('\n')[0].strip(): ng(p['id'], 'quoteが冒頭文の流用')
-        if '🫶' not in p.get('quote', ''): ng(p['id'], 'quoteに🫶なし')
+        if '🫶' in p.get('quote', ''): ng(p['id'], 'quoteに🫶（絵文字は2026-08-24廃止）')
 
     # 4 数字
     used = []
