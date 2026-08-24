@@ -13,120 +13,6 @@
   },
   "queue": [
     {
-      "file": "note_2026_06_09_boundary.json",
-      "note_id": "note_2026_06_09_boundary",
-      "date": "2026-06-09",
-      "title": "愛の輪郭 ――境界線という本当の優しさ",
-      "plan": null,
-      "visibility": "members_only",
-      "note_com_edit_needed": false,
-      "items": [
-        {
-          "rule": "抽象語・文体",
-          "detail": "禁止語 設計／構造／消耗",
-          "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
-        },
-        {
-          "rule": "一人称",
-          "detail": "「私」が3箇所（正は「わたし」）",
-          "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
-        },
-        {
-          "rule": "背中押し",
-          "detail": "closing_push が空",
-          "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
-        }
-      ],
-      "patch_count": 13,
-      "patch_kinds": {
-        "禁止語": 10,
-        "一人称": 3
-      },
-      "full_rewrite_needed": [
-        "構造x1(芯)"
-      ]
-    },
-    {
-      "file": "note_2026_06_09_distance.json",
-      "note_id": "note_2026_06_09_distance",
-      "date": "2026-06-09",
-      "title": "一番近い人ほど、距離が要る",
-      "plan": null,
-      "visibility": "members_only",
-      "note_com_edit_needed": false,
-      "items": [
-        {
-          "rule": "抽象語・文体",
-          "detail": "禁止語 消耗",
-          "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
-        },
-        {
-          "rule": "一人称",
-          "detail": "「私」が1箇所（正は「わたし」）",
-          "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
-        },
-        {
-          "rule": "背中押し",
-          "detail": "closing_push が空",
-          "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
-        }
-      ],
-      "patch_count": 3,
-      "patch_kinds": {
-        "禁止語": 2,
-        "一人称": 1
-      }
-    },
-    {
-      "file": "note_2026_06_09_words.json",
-      "note_id": "note_2026_06_09_words",
-      "date": "2026-06-09",
-      "title": "変えたい欲求と言わない期待が、関係を静かに侵食するまで",
-      "plan": null,
-      "visibility": "members_only",
-      "note_com_edit_needed": false,
-      "items": [
-        {
-          "rule": "抽象語・文体",
-          "detail": "禁止語 構造",
-          "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
-        },
-        {
-          "rule": "一人称",
-          "detail": "「私」が4箇所（正は「わたし」）",
-          "severity": "中",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
-        },
-        {
-          "rule": "背中押し",
-          "detail": "closing_push が空",
-          "severity": "低",
-          "status": "deferred",
-          "decision": "2026-08-25 Coco判断：見送り"
-        }
-      ],
-      "patch_count": 5,
-      "patch_kinds": {
-        "禁止語": 1,
-        "一人称": 4
-      }
-    },
-    {
       "file": "note_2026-06-29_distance.json",
       "note_id": "note_20260629_distance",
       "date": "2026-06-26",
@@ -174,10 +60,11 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 2,
+      "patch_count": 3,
       "patch_kinds": {
         "禁止語": 1,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       },
       "full_rewrite_needed": [
         "消耗x1(芯)"
@@ -224,8 +111,9 @@
       "patch_count": 14,
       "patch_kinds": {
         "禁止語": 5,
-        "一人称": 8,
-        "タイトル": 1
+        "一人称": 7,
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -266,11 +154,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 10,
+      "patch_count": 11,
       "patch_kinds": {
         "禁止語": 5,
-        "一人称": 5,
-        "タイトル": 1
+        "一人称": 4,
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -311,11 +200,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 12,
+      "patch_count": 13,
       "patch_kinds": {
         "禁止語": 7,
         "一人称": 4,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       },
       "full_rewrite_needed": [
         "設計x5(芯)",
@@ -361,11 +251,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 22,
+      "patch_count": 23,
       "patch_kinds": {
         "禁止語": 15,
-        "一人称": 8,
-        "タイトル": 1
+        "一人称": 6,
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -406,11 +297,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 4,
+      "patch_count": 5,
       "patch_kinds": {
         "禁止語": 2,
         "一人称": 1,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -451,11 +343,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 6,
+      "patch_count": 7,
       "patch_kinds": {
         "禁止語": 3,
-        "一人称": 3,
-        "タイトル": 1
+        "一人称": 2,
+        "タイトル": 1,
+        "背中押し": 1
       },
       "full_rewrite_needed": [
         "消耗x2(芯)"
@@ -499,11 +392,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 4,
+      "patch_count": 5,
       "patch_kinds": {
         "禁止語": 1,
         "一人称": 2,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -550,11 +444,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 10,
+      "patch_count": 11,
       "patch_kinds": {
         "禁止語": 7,
         "一人称": 2,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       },
       "full_rewrite_needed": [
         "渡しx7(芯)"
@@ -598,11 +493,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 7,
+      "patch_count": 8,
       "patch_kinds": {
         "禁止語": 1,
         "一人称": 5,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -646,8 +542,9 @@
       "patch_count": 8,
       "patch_kinds": {
         "禁止語": 1,
-        "一人称": 7,
-        "タイトル": 1
+        "一人称": 5,
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -688,11 +585,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 9,
+      "patch_count": 10,
       "patch_kinds": {
         "禁止語": 7,
         "一人称": 1,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -733,11 +631,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 6,
+      "patch_count": 7,
       "patch_kinds": {
         "禁止語": 3,
         "一人称": 2,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       },
       "full_rewrite_needed": [
         "渡すx18(芯)",
@@ -782,11 +681,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 4,
+      "patch_count": 5,
       "patch_kinds": {
         "禁止語": 2,
-        "一人称": 2,
-        "タイトル": 1
+        "一人称": 1,
+        "タイトル": 1,
+        "背中押し": 1
       }
     },
     {
@@ -815,7 +715,6 @@
       ],
       "patch_count": 1,
       "patch_kinds": {
-        "一人称": 1,
         "タイトル": 1
       }
     },
@@ -1324,9 +1223,10 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 1,
+      "patch_count": 2,
       "patch_kinds": {
-        "タイトル": 1
+        "タイトル": 1,
+        "在り方署名＋背中押し": 1
       },
       "full_rewrite_needed": [
         "仕組みx1(芯)"
@@ -1385,10 +1285,11 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 2,
+      "patch_count": 3,
       "patch_kinds": {
         "一人称": 1,
-        "タイトル": 1
+        "タイトル": 1,
+        "在り方署名＋背中押し": 1
       }
     },
     {
@@ -1448,9 +1349,10 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 1,
+      "patch_count": 2,
       "patch_kinds": {
-        "タイトル": 1
+        "タイトル": 1,
+        "在り方署名＋背中押し": 1
       }
     },
     {
@@ -1551,11 +1453,12 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 3,
+      "patch_count": 4,
       "patch_kinds": {
         "禁止語": 1,
         "一人称": 1,
-        "タイトル": 1
+        "タイトル": 1,
+        "在り方署名＋背中押し": 1
       },
       "full_rewrite_needed": [
         "渡すx3(芯)"
@@ -1645,9 +1548,10 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 1,
+      "patch_count": 2,
       "patch_kinds": {
-        "タイトル": 1
+        "タイトル": 1,
+        "在り方署名＋背中押し": 1
       }
     },
     {
@@ -1694,11 +1598,12 @@
           "status": "open"
         }
       ],
-      "patch_count": 10,
+      "patch_count": 11,
       "patch_kinds": {
         "禁止語": 1,
         "一人称": 8,
-        "タイトル": 1
+        "タイトル": 1,
+        "背中押し": 1
       },
       "full_rewrite_needed": [
         "構造x3(芯)"
@@ -1788,9 +1693,10 @@
           "decision": "2026-08-25 Coco判断：見送り"
         }
       ],
-      "patch_count": 1,
+      "patch_count": 2,
       "patch_kinds": {
-        "タイトル": 1
+        "タイトル": 1,
+        "在り方署名＋背中押し": 1
       }
     },
     {
