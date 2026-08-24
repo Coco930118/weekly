@@ -17,9 +17,9 @@
   "episode_ref": "E_015",
   "visibility": "members_only",
   "price": "0",
-  "free_ratio": null,
+  "free_ratio": "0.30",
   "outcome_promise": "「言わなくてもいい自分」を持つことへの罪悪感が減り、沈黙を信頼として扱えるようになる",
-  "framework": null,
+  "framework": "話さないことと隠すことを分けたうえで、言わなくていい部分を持つことが信頼になる、という順で組み立てる",
   "practice_tool": "沈黙を信頼に変える一つの習慣",
   "before_after": null,
   "membership_hook": "このエントリはメンバー限定です。メンバーシップでは毎週こうした実践が届きます。",
@@ -47,5 +47,7 @@
   "internal_links": [
     "愛の量ではなく、愛の言語が合っているかどうか",
     "中身より先に、立ち方が届く"
-  ]
+  ],
+  "principle_no": "06",
+  "before_after_type": "事例なし"
 }

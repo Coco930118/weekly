@@ -17,9 +17,9 @@
   "episode_ref": "E_014",
   "visibility": "members_only",
   "price": "0",
-  "free_ratio": null,
+  "free_ratio": "0.30",
   "outcome_promise": "自分の「愛の言語」を知り、相手への伝え方を一つ変えられるようになる",
-  "framework": null,
+  "framework": "愛は量ではなく渡し方の一致で伝わると置き直してから、自分の言語を知り、相手とのズレを調整する手順に落とす",
   "practice_tool": "愛の言語を相手に伝えるための一言",
   "before_after": null,
   "membership_hook": "このエントリはメンバー限定です。メンバーシップでは毎週こうした実践が届きます。",
@@ -47,5 +47,7 @@
   "internal_links": [
     "三十分置くと、淋しさと会いたいが分かれる",
     "同じ痛みが繰り返されるのは、今の相手のせいとは限らない"
-  ]
+  ],
+  "principle_no": "06",
+  "before_after_type": "事例なし"
 }

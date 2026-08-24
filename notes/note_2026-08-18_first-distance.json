@@ -17,9 +17,9 @@
   "episode_ref": "E_011",
   "visibility": "members_only",
   "price": "0",
-  "free_ratio": null,
+  "free_ratio": "0.30",
   "outcome_promise": "新しい関係の最初の数回で、無理しないための距離の作り方がわかる",
-  "framework": null,
+  "framework": "最初の数回で作った速度が、その後の基準になると置いてから、ありのままを少しだけ混ぜる分量と入れどきに落とす",
   "practice_tool": "「最初の数回」で使える具体的な一言",
   "before_after": null,
   "membership_hook": "このエントリはメンバー限定です。メンバーシップでは毎週こうした実践が届きます。",
@@ -46,5 +46,7 @@
   "internal_links": [
     "周りの目は消えない。十年後も隣にいたいか",
     "会話がなくなった夫婦の、最初の一言は決まっている"
-  ]
+  ],
+  "principle_no": "07",
+  "before_after_type": "事例なし"
 }

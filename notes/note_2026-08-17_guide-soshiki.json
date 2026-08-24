@@ -9,7 +9,7 @@
   "cluster_topic": "メンバーシップ常設案内（組織）——向く人・変わること・期間・やること・費用・合わない人の6項目",
   "tier": "guide",
   "linked_principle": "会員の意味は『悩みを解決する対価』ではなく『ぐるぐるする時に開く場所を持っておく対価』。原理は7つで増えず、増えるのは場面——だから過去記事の読み放題に意味が出る",
-  "unresolved_question": "",
+  "unresolved_question": "入るかどうかを、いつ決めるか",
   "echoed_scene": "funnel投稿の返信2やプロフィールから来た読者が、入会直前に知りたいこと（向き・変化・期間・費用・不適合）に answering する常設の受け皿",
   "funnel_targets": [],
   "episode_ref": null,
@@ -51,5 +51,7 @@
   "published_confirmed": false,
   "status": "未アップ（note.comに未公開）。9/1週にアップ予定：2026-09-01",
   "scheduled_upload_date": "2026-09-01",
-  "scheduled_upload_week": "2026-09-01_2026-09-07"
+  "scheduled_upload_week": "2026-09-01_2026-09-07",
+  "before_after_type": "事例なし",
+  "principle_no": "01"
 }

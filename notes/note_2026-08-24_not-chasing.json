@@ -17,9 +17,9 @@
   "episode_ref": "E_017",
   "visibility": "members_only",
   "price": "0",
-  "free_ratio": null,
+  "free_ratio": "0.30",
   "outcome_promise": "追いかける衝動の正体を知り、「今日一回分だけ送るのを我慢する」から始める方法がわかる",
-  "framework": null,
+  "framework": "追いかける行動の正体を名指ししてから、自分の価値を相手の反応から切り離す手順に落とす",
   "practice_tool": "「追わない」を始める最小単位の方法",
   "before_after": null,
   "membership_hook": "このエントリはメンバー限定です。メンバーシップでは毎週こうした実践が届きます。",
@@ -47,5 +47,7 @@
   "internal_links": [
     "期待を手放したとき、はじめて相手が見えた",
     "「言うほどでもないこと」が、関係の寿命を決めていた"
-  ]
+  ],
+  "principle_no": "06",
+  "before_after_type": "事例なし"
 }

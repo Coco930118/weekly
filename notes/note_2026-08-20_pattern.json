@@ -17,9 +17,9 @@
   "episode_ref": "E_013",
   "visibility": "members_only",
   "price": "0",
-  "free_ratio": null,
+  "free_ratio": "0.30",
   "outcome_promise": "感情パターンに気づき、今の相手と過去の出来事を切り離す問いが持てるようになる",
-  "framework": null,
+  "framework": "繰り返す感情反応は今の相手が作ったものではなく過去からの型だと切り分けてから、今の相手と型を切り離す手順に落とす",
   "practice_tool": "感情パターンを辿る問い",
   "before_after": null,
   "membership_hook": "このエントリはメンバー限定です。メンバーシップでは毎週こうした実践が届きます。",
@@ -46,5 +46,7 @@
   "internal_links": [
     "会いたい人は、頭より先に体が決めている",
     "「なんか違う」は、言葉にならないだけで、情報だった"
-  ]
+  ],
+  "principle_no": "06",
+  "before_after_type": "事例なし"
 }

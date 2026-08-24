@@ -17,9 +17,9 @@
   "episode_ref": "E_012",
   "visibility": "members_only",
   "price": "0",
-  "free_ratio": null,
+  "free_ratio": "0.30",
   "outcome_promise": "違和感を「流す」のではなく「記録する」ことで、関係のサインを見逃さなくなる",
-  "framework": null,
+  "framework": "違和感は感情ではなく、まだ言語化されていない情報だと定義し直してから、無効化せずに情報として扱う手順に落とす",
   "practice_tool": "違和感をキャッチする3ステップ",
   "before_after": null,
   "membership_hook": "このエントリはメンバー限定です。メンバーシップでは毎週こうした実践が届きます。",
@@ -46,5 +46,7 @@
   "internal_links": [
     "最初に無理をした関係は、ずっとその仮面を外せない",
     "「なんか違う」の正体を知ったとき、関係の温度が変わった"
-  ]
+  ],
+  "principle_no": "06",
+  "before_after_type": "事例なし"
 }
