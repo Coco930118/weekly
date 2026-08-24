@@ -55,10 +55,6 @@
   ],
   "principle_no": "04",
   "before_after_type": "事例なし",
-  "fix_required": true,
-  "fix_reasons": [
-    "重複：「事実と数字を並べて伝えた」の場面が3本に入っている"
-  ],
   "fix_patch": [
     {
       "kind": "禁止語",
