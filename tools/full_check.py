@@ -21,8 +21,15 @@ NUMS = ['20年', '5万人', '40名', '月商']
 PROMISE = 'メンバーシップは、毎週深堀りが増えて'
 TIME_WORDS = ['今夜', '今晩', '今朝', '夕方', 'この時間', '寝る前', '翌朝', '店じまい',
               '金曜の夜', '土曜の夜', '日曜の夜', '月曜の夜', '土曜の朝', '日曜の朝', '月曜の朝']
-ANGLES = ['front bust-up', 'side-profile', 'looking up', 'over-the-shoulder', 'close-up']
+# アングル5種。旧表記（bust-up 系）は2026-08-24にCanva対応で置換したが、
+# 8/18週以前の生成済み週も判定できるよう別名で受ける
+ANGLES = {'front': ['head-and-shoulders view', 'front bust-up'],
+          'side': ['side profile view', 'side-profile'],
+          'up': ['looking up'], 'over': ['over-the-shoulder'], 'close': ['close-up']}
 # パレットの温度（2026-08-24 恒久ルール：X＝寒色／Threads＝暖色）
+# Canvaのポリシーで生成が弾かれる語（2026-08-24 恒久ルール）
+CANVA_NG = ['young woman', 'brand age 40s', 'drawn to look', 'youthful', 'complexion',
+            'chest', 'bust-up', ' bust']
 WARM_HUE = ['rose', 'peach', 'coral', 'apricot', 'gold', 'amber', 'ochre', 'mustard',
             'persimmon', 'terracotta', 'warm ivory']
 COOL_HUE = ['indigo', 'blue', 'slate', 'celadon', 'silver', 'navy', 'steel',
@@ -149,7 +156,11 @@ def main(path):
         ip = p.get('image_prompt') or ''
         prompts.append(ip)
         if not ip: ng(p['id'], 'image_promptなし'); continue
-        if 'early 30s' not in ip: ng(p['id'], '画像: early 30sなし')
+        if p['date'] >= '2026-08-25':  # Canva安全版の適用開始（8/18週以前は生成済みのため遡及しない）
+            if 'in her early thirties' not in ip: ng(p['id'], '画像: in her early thirties なし')
+            cv = [w for w in CANVA_NG if w in ip.lower()]
+            if cv: ng(p['id'], '画像: Canva禁止語（生成が弾かれる）', cv)
+            if 'square 1:1' not in ip: ng(p['id'], '画像: 正方形 1:1 の指定なし')
         if 'No text' not in ip: ng(p['id'], '画像: No textなし')
         if 'elegant 40s woman' in ip: ng(p['id'], '画像: elegant 40s woman残存')
         if not any(a in ip for a in ['Shizuku', 'Shiratama', 'Hiyori']): ng(p['id'], '画像: 動物なし')
@@ -171,8 +182,8 @@ def main(path):
                 if 'warm ivory' not in pal: ng(p['id'], '画像: Threads の3色目が warm ivory でない', mp.group(1))
                 c = [c for c in COOL_HUE if c in look]
                 if c: ng(p['id'], '画像: Threads に寒色（温度またぎ）', c)
-        for a in ANGLES:
-            if a in ip: ang[a] += 1; break
+        for key, alts in ANGLES.items():
+            if any(a in ip for a in alts): ang[key] += 1; break
         ani[tuple(sorted(a for a in ['Shizuku', 'Shiratama', 'Hiyori'] if a in ip))] += 1
     if len(prompts) != len(set(prompts)): ng('WEEK', '画像プロンプトに重複')
     if sorted(ang.values()) != [7] * 5: ng('WEEK', 'アングル巡回が7本ずつでない', dict(ang))
