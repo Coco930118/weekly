@@ -9,7 +9,8 @@
     "count": 119,
     "week_group_note": "week_group='過去分' は、プラン振り分けをしていなかった4〜6月のnote。保持期間30日削除の対象外としてサイトに残す（CLAUDE.md「過去分」参照）。source_week は元の週のまま残す。",
     "last_updated": "2026-08-24",
-    "draft_pool": "notes/drafts/ は、note.comに投稿していない下書きの置き場。サイトには出さない。新規note作成時の素材として読む（切り口・処方・言い回し）。note_archive.json には status=未公開・素材 で残す"
+    "draft_pool": "notes/drafts/ は、note.comに投稿していない下書きの置き場。サイトには出さない。新規note作成時の素材として読む（切り口・処方・言い回し）。note_archive.json には status=未公開・素材 で残す",
+    "deleted_2026-08-24": "保持期間超過4週 29本を notes/ から削除（2026-06-09_2026-06-15, 2026-06-30_2026-07-06, 2026-07-07_2026-07-13, 2026-07-14_2026-07-20）。note_archive.json の行は索引として残す"
   },
   "notes": [
     {
@@ -154,7 +155,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-09_comparison.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "一番近い人ほど、距離が要る",
@@ -255,7 +257,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-10_honne.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "「なんでわかってくれないの」の下に、本当に求めているものがある",
@@ -271,7 +274,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-11_wakaranai.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "言葉にしない本音は届かない──伝わらない関係の構造",
@@ -343,7 +347,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-12_ikari.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "関係の温度は、行動で育てる──惰性から目覚める技術",
@@ -378,7 +383,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-13_jealousy.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "自分が自分を大切にする量だけ、人は大切にされる",
@@ -490,7 +496,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-14_inertia.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "自分の物差しを持ったとき、関係は育ち始めた──比較・惰性・自己犠牲からの自由",
@@ -546,7 +553,8 @@
       ],
       "note_url": "",
       "file": "note_2026-06-15_selflove.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "惰性と安定は、見た目が似ている",
@@ -831,7 +839,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-01_logic.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "顔を読んでいるリーダーが、現場をいちばん早く知る",
@@ -847,7 +856,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-02_face.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "「傷つけたくない」は、時に「傷つきたくない」の裏返しだ",
@@ -863,7 +873,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-02_motive.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "離れようとするほど、なぜか意識する",
@@ -879,7 +890,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-03_release.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "「いい上司」でいようとするほど、現場から遠くなる",
@@ -895,7 +907,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-04_mirror.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "「寂しい」より「ここじゃない感」の方が、正確だ",
@@ -911,7 +924,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-05_belonging.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "現場が黙るのは、怠けではなく学習だ",
@@ -927,7 +941,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-05_silence.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "「あの頃は良かった」の正体",
@@ -943,7 +958,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-06_nostalgia.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "感情はある。依存はしない。それだけでいい",
@@ -959,7 +975,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-07_affection.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "あなたを量る物差しに、乗らなくていい",
@@ -975,7 +992,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-07_yardstick.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "言い方を探すのをやめた日、記録が守りはじめた",
@@ -991,7 +1009,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-08_record.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "傷が深かっただけ。それは弱さじゃない",
@@ -1007,7 +1026,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-09_wound.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "感情を引いた言葉には、真実しか残らない",
@@ -1023,7 +1043,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-10_emotion.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "全部を話さないことは、嘘じゃない",
@@ -1039,7 +1060,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-14_close.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "同じ言葉が、判断の所在を動かす",
@@ -1055,7 +1077,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-16_design.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "大事な言葉は、感情のピークで使わない",
@@ -1071,7 +1094,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-17_quiet.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "擁護も排除もしない。事実を、正しい場所に渡すだけ",
@@ -1087,7 +1111,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-17_relay.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "部下が自分の言葉で基準を語るまで、黙って待つ",
@@ -1103,7 +1128,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-19_wait.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "いつでも離れられる、という静けさが自由をくれる",
@@ -1119,7 +1145,8 @@
       ],
       "note_url": "",
       "file": "note_2026-07-20_leave.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "疲れたのは、ちゃんと向き合ってきた証拠だ",
@@ -1133,7 +1160,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-07-21_exhaustion.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "語の温度が、内心を映す",
@@ -1147,7 +1175,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-07-22_language.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "頼れる関係を、先に作る",
@@ -1175,7 +1204,8 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-07-23_chair.json",
-      "in_index": true
+      "in_index": false,
+      "retention": "2026-08-24 保持期間（週の最終日＋30日）超過により削除。本文はnote.comにあり、この行が索引として残る"
     },
     {
       "title": "「私が悪いのかな」が、いつも一番早く来る",
