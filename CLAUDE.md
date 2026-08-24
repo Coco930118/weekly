@@ -774,8 +774,9 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
 - **X診断・Threads診断の画像プロンプトは廃止**（2026-08-05 Coco決定・恒久ルール）。`posts/shindan_x_*.json`／`posts/shindan_th_*.json` には `image_prompt` を持たせない。新規作成・グローアップ時にも作らない（旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの廃止決定で置き換え）
 
 ### X・Threads（週35投稿）
+**比率は正方形 1:1（1080x1080）に固定**（2026-08-24 Coco決定・恒久ルール）。プロンプトの冒頭に明記する。これまで比率指定が1本も入っておらず、生成のたびに形が変わっていた。**noteサムネイルとは比率を統一しない**（noteはnote側の指定に従う）。
 ```
-A high-quality watercolor illustration with soft transparent washes. Summer {band}, {angle}.
+A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Summer {band}, {angle}.
 {coco} stands with {animals} {arrangement}; {shared_action}; {posture}; {background}; {light}.
 Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 ```
