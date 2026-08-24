@@ -611,19 +611,33 @@ function renderNoteCard(note) {
 
   let sections = '';
 
-  if (note.image_prompt) {
-    const promptEsc = escapeHtml(note.image_prompt);
+  if (note.image_prompt || note.image_prompt_short) {
+    let promptBody = '';
+    if (note.image_prompt_short) {
+      const shortEsc = escapeHtml(note.image_prompt_short);
+      promptBody += `
+          <p class="note-meta-line"><span class="meta-label">Canva用（短縮版）：</span></p>
+          <p>${shortEsc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${shortEsc}">短縮版をコピー</button>
+          </div>`;
+    }
+    if (note.image_prompt) {
+      const promptEsc = escapeHtml(note.image_prompt);
+      promptBody += `
+          <p class="note-meta-line"><span class="meta-label">詳細版：</span></p>
+          <p>${promptEsc}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${promptEsc}">詳細版をコピー</button>
+          </div>`;
+    }
     sections += `
       <div class="card-section">
         <div class="card-section-header">
           <span class="card-section-title">🖼 画像プロンプト</span>
           <span class="card-section-toggle">▼</span>
         </div>
-        <div class="card-section-body">
-          <p>${promptEsc}</p>
-          <div class="copy-btn-content">
-            <button class="copy-btn" data-copy="${promptEsc}">コピー</button>
-          </div>
+        <div class="card-section-body">${promptBody}
         </div>
       </div>`;
   }
