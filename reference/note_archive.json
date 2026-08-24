@@ -1787,7 +1787,7 @@
       "platform_origin": "Threads",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "flagship",
-      "principle_no": null,
+      "principle_no": "05",
       "cluster_topic": "「あなたにしか」が愛の言葉から依存の入口に変わる境目を、言われた言葉ではなく「そのあと何が起きたか」で見分ける——三つの見え方と、聞く前に足す一言",
       "linked_principle": "愛と依存は同じ入口から入ってくる。違いが出るのは入ったあとで、愛は相手が動き、依存は相手が同じ場所に戻る。見分けるのは相手の気持ちではなく、自分の疲れ方のほう",
       "funnel_targets": [
@@ -1803,7 +1803,7 @@
       "platform_origin": "Threads",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "member_entry",
-      "principle_no": null,
+      "principle_no": "03",
       "cluster_topic": "伝えたはずの話がこじれるのは言い方が下手だからではなく、感情が届く前に処理されるから——感情を引いて伝える三つの手順と、伝え方では越えられない相手の見分け",
       "linked_principle": "人は言葉の中身より先に、責められる気配を受け取る。事実だけ置くと相手が自分で埋め、埋めた分は相手の言葉になるので反発が起きない",
       "funnel_targets": [
@@ -1819,8 +1819,8 @@
       "platform_origin": "X",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "flagship",
-      "principle_no": null,
-      "cluster_topic": "NOが言えない場所で少しずつ被害者になる構造を、言い方の在庫の問題に置き換える——叫ばずにNOを伝える五つの言葉と、それでも押し切られる相手の見分け方",
+      "principle_no": "01",
+      "cluster_topic": "NOが言えない場所で少しずつ被害者になる理由を、言い方の在庫の問題に置き換える——叫ばずにNOを伝える五つの言葉と、それでも押し切られる相手の見分け方",
       "linked_principle": "NOが言えないのは性格ではなく、言い方の在庫が「できません」の一語しかないから。五つ持てば、その場で一つ出せる。どれも相手の同意も上司の許可も要らない",
       "funnel_targets": [
         "x_06"
@@ -1835,7 +1835,7 @@
       "platform_origin": "Threads",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "member_entry",
-      "principle_no": null,
+      "principle_no": "04",
       "cluster_topic": "黙っているあいだも関係は勝手に進んでいる——伝わり方を自分の側に戻すための五つのステップと、いま渡してはいけない相手の見分け",
       "linked_principle": "言葉にしない気持ちは伝わる時がある。ただ伝わり方は制御できない。言葉にする練習は勇気の話ではなく、伝わり方を自分の側に戻す作業",
       "funnel_targets": [
@@ -1851,7 +1851,7 @@
       "platform_origin": "Threads",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "member_entry",
-      "principle_no": null,
+      "principle_no": "02",
       "cluster_topic": "覚悟は一回ぶんしか持たない——嫌われたかもしれない日と、その一週間後に実際に起きたことを数える方法、そして数えてはいけない相手の見分け",
       "linked_principle": "好かれなくても大丈夫になるのは強くなったからではなく、好かれなかった日の翌日も普通に来ることを何回か見たから。回数が先で、気持ちはあとから追いつく",
       "funnel_targets": [
@@ -1867,7 +1867,7 @@
       "platform_origin": "X",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "member_entry",
-      "principle_no": null,
+      "principle_no": "03",
       "cluster_topic": "月末の疲れを敗戦処理ではなく棚卸しに置き換える——八月を閉じる三つの問いと、疲れが体に来ている場合の切り分け",
       "linked_principle": "月末の疲れは積み残しではなく、どこに力を使ったかの記録。事実で数えた人だけが翌月を軽くできる。閉じる権限は自分が持っている",
       "funnel_targets": [
@@ -1883,7 +1883,7 @@
       "platform_origin": "X",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "member_entry",
-      "principle_no": null,
+      "principle_no": "06",
       "cluster_topic": "飲み込むたびに小さくなる人とならない人の差を、判断を移したかどうかで切り分ける——受け入れた日に一行だけ残す形と、飲み込んではいけない一件の見分け",
       "linked_principle": "受け入れることと正しいと認めることは別の動作。行動だけ合わせて判断は手元に置いた人が、方針が外れた日に立て直せる",
       "funnel_targets": [
@@ -1899,7 +1899,7 @@
       "platform_origin": "X",
       "source_week": "2026-08-25_2026-08-31",
       "tier": "member_entry",
-      "principle_no": null,
+      "principle_no": "05",
       "cluster_topic": "評価する側は全員を見ているわけではなく順番をつけている——その前提の上で「誰に認められたいか」を一人に絞る三つの選び方",
       "linked_principle": "上の全員から正確に見られることはない。一人に絞るのは他を切ることではなく、評価の更新を一人ぶんに限ること。聞くことと、書き換えることを分ける",
       "funnel_targets": [
