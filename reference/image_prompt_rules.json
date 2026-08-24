@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.4",
+  "version": "1.5",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -266,14 +266,16 @@
         ]
       },
       "rotation": "日付・時刻の昇順に並べ、band の一致する組を順に巡回させる。X＝夜は組1・3、朝は組2・4／Threads＝夕は組1・3、朝は組2・4。着物の色は各組の kimono を交互に使い、同じ色が並ばないようにする",
-      "conflict_note": "「夜＝浴衣（濃紺系）」の恒久ルールはこの分けより優先する。Threadsに夜スロット（21:00〜）が出た場合は、浴衣は濃紺のままで、パレットの3色目 warm ivory と2色目の暖色で暖かさを担保する"
+      "conflict_note": "「夜＝浴衣（濃紺系）」の恒久ルールはこの分けより優先する。Threadsに夜スロット（21:00〜）が出た場合は、浴衣は濃紺のままで、パレットの3色目 warm ivory と2色目の暖色で暖かさを担保する",
+      "light_exception": "灯りの色は色分けの対象外（2026-08-24 Coco決定）。X夜（22:00）の time_band light 「warm amber light illuminates the scene」は暖色のまま残す。判定基準はぱっと見の感触で、青系／桃系の印象が保たれていればよい。行灯の暖かさは世界観側の資産なので消さない。検査対象は palette の3色と着物の色だけ——light を「Xに暖色が残っている」として直さないこと"
     },
     "self_check_palette": [
       "X14本のパレットが全部 platform_palette.X の4組のいずれかで、3色目が cool ivory か",
       "Threads21本のパレットが全部 platform_palette.Threads の4組のいずれかで、3色目が warm ivory か",
       "X に rose/peach/coral/apricot/gold 系が混ざっていないか（温度またぎゼロ）",
       "Threads に indigo/blue/slate/celadon/silver 系が混ざっていないか（温度またぎゼロ）",
-      "着物の色がパレットと同じ温度か（夜の濃紺は例外として可）"
+      "着物の色がパレットと同じ温度か（夜の濃紺は例外として可）",
+      "灯り（light）は検査対象外。X夜の warm amber light を寒色に直していないか（残っているのが正）"
     ]
   },
   "note_thumbnails": {
@@ -373,6 +375,7 @@
   ],
   "updated": "2026-08-24",
   "decisions_log": [
+    "2026-08-24 灯りの色をパレット色分けの対象外と決定（Coco）。X夜の warm amber light は暖色のまま維持。判定はぱっと見の感触で足りるとの判断。検査対象は palette 3色と着物の色に限定する",
     "2026-08-24 パレットをプラットフォーム別に分割（Coco決定・恒久ルール）。X＝soft blue-grey（寒色）4組／Threads＝dusty rose（暖色）4組、締めの中間色は cool ivory / warm ivory。狙いは一覧で青系と桃系の2グループに割れること。着物の色プールも同時に分割。旧「週内で完全一致は3回まで」は廃止（4組運用では成立しないため）",
     "2026-08-05 X診断・Threads診断の画像プロンプトを恒久廃止（Coco決定）。既存の shindan_x_*.json / shindan_th_*.json から image_prompt を削除済み。旧ルール「X診断7本の画像プロンプトは絶対に変更しない」はこの決定で置き換え",
     "2026-08-03 しらたまの英字表記を Shiratama に統一（Coco決定）。旧表記 Shirotsuma（投稿）/ Shirotama（note）は全ファイルで置換済み",
