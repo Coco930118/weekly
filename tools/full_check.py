@@ -57,6 +57,8 @@ def main(path):
         if last.rstrip().endswith(('？', '?', 'ですか。')): ng(p['id'], '末尾が明示質問')
         if '私' in naked: ng(p['id'], '一人称「私」（わたしに統一）')
         if '💎' not in p.get('quote', ''): ng(p['id'], 'quoteに💎なし')
+        lines = [l for l in p['content'].split('\n') if l.strip()]
+        if len(lines) > 7: ng(p['id'], f'X本文が{len(lines)}行（5〜7行に圧縮する）')
 
     # 3 Threads形式
     for p in TH:
