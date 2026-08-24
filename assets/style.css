@@ -1393,3 +1393,35 @@ body {
 }
 
 .fix-reasons li { margin: 0; }
+
+.patch-badge, .rewrite-badge {
+  font-size: 0.65rem; font-weight: 700; padding: 2px 8px;
+  border-radius: 4px; letter-spacing: 0.04em;
+}
+.patch-badge { background: rgba(212,160,60,.14); color: #e0b467; border: 1px solid rgba(212,160,60,.36); }
+.rewrite-badge { background: rgba(120,120,130,.14); color: #a9adb8; border: 1px solid rgba(120,120,130,.36); }
+
+.patch-block {
+  margin: 8px 0 12px; padding: 10px 12px;
+  border: 1px solid rgba(212,160,60,.28); border-radius: 6px;
+  background: rgba(212,160,60,.05);
+}
+.patch-head {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px; font-size: .74rem; color: #e0b467; letter-spacing: .03em; font-weight: 700;
+}
+.patch-copy {
+  font-size: .7rem; padding: 3px 10px; border-radius: 4px; cursor: pointer;
+  background: transparent; color: #e0b467; border: 1px solid rgba(212,160,60,.5);
+}
+.patch-copy:hover { background: rgba(212,160,60,.14); }
+.patch-copy.copied { background: rgba(212,160,60,.24); }
+.patch-list { margin: 8px 0 0; padding: 0; list-style: none; }
+.patch-item { margin: 0 0 10px; font-size: .78rem; line-height: 1.7; }
+.patch-kind { font-size: .68rem; color: var(--text-muted); letter-spacing: .04em; }
+.patch-before { color: var(--text-muted); text-decoration: line-through; text-decoration-color: rgba(200,60,60,.5); }
+.patch-after { color: var(--text-primary); }
+.patch-after::before { content: '→ '; color: #e0b467; }
+.patch-rewrite {
+  margin: 8px 0 0; font-size: .74rem; line-height: 1.7; color: var(--text-secondary);
+}

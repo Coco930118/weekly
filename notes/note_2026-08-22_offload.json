@@ -55,5 +55,32 @@
   "closing_push": "今夜、一行だけ。件名と、いつと、誰に。 大丈夫。ちゃんと、休める。",
   "before_after_type": "合成相談（二層ルール準拠・GEN293の相談パターンから束ねた形。実在の特定相談者ではない。本文に束ねてある旨を明示）",
   "image_prompt_full": "9:16 vertical watercolor illustration (1080x1920) for a note thumbnail. Late-August night at the end of summer, warm still air, a pale summer moon hanging low over the garden. Composition: Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; smooth youthful complexion, dark brown bob, warm brown eyes) in a deep indigo yukata with a faint crape myrtle pattern, sitting on a wooden engawa veranda, writing one short line on a small notepad resting on her knee, the pen just touching the paper — the moment of putting one unfinished thing outside her head and letting it go. Her expression is calm and released, shoulders lowered. Shizuku (small wise watercolor turtle) rests on the veranda beside the notepad, watching the line being written; Hiyori (small soft white bird) perches on the veranda rail with feathers settled, already asleep for the night. White moonflowers open along the garden edge and crape myrtle blossoms hang softly beyond them in the moonlight. The upper third is left as a soft indigo-to-moonlight-silver gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Refined palette of deep indigo, moonlight silver, soft ivory, pale crape myrtle rose. Quiet Luxury watercolor with soft transparent washes. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
-  "principle_no": "03"
+  "principle_no": "03",
+  "fix_patch": [
+    {
+      "kind": "禁止語",
+      "before": "潰れずに橋渡しを続けるための手札を増やしていく場所。",
+      "after": "潰れずに橋を架け続けるための手札を増やしていく場所。"
+    },
+    {
+      "kind": "禁止語",
+      "before": "一つだけ渡す。",
+      "after": "一つだけ言う。"
+    },
+    {
+      "kind": "禁止語",
+      "before": "判断の材料を一つだけ渡す。",
+      "after": "判断の材料を一つだけ出す。"
+    },
+    {
+      "kind": "禁止語",
+      "before": "**今日渡すもの**",
+      "after": "**今日言うこと**"
+    },
+    {
+      "kind": "タイトル",
+      "before": "頭が同じ場所を回るのは、行き先を書いていないから",
+      "after": "💼頭が同じ場所を回るのは、行き先を書いていないから"
+    }
+  ]
 }

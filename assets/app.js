@@ -585,7 +585,7 @@ function renderNotes() {
   const filtered = allNotes.filter(n => {
     if (activeNoteFilters.tier !== 'all' && n.tier !== activeNoteFilters.tier) return false;
     if (activeNoteFilters.week !== 'all' && noteWeekGroup(n) !== activeNoteFilters.week) return false;
-    if (activeNoteFilters.fixOnly && n.fix_required !== true) return false;
+    if (activeNoteFilters.fixOnly && n.fix_required !== true && !(n.fix_patch || []).length && !(n.fix_full_rewrite || []).length) return false;
     return true;
   });
 
@@ -598,6 +598,60 @@ function renderNotes() {
 
   container.innerHTML = filtered.map(renderNoteCard).join('');
 }
+
+
+// ─── 修正必須：一文差し替えのパッチ ───────────────────────────────────────────
+function patchPlainText(note) {
+  const lines = [`【${note.title}】note.com側の修正`];
+  (note.fix_patch || []).forEach((p, i) => {
+    lines.push('', `${i + 1}. ${p.kind}`, `（前）${p.before}`, `（後）${p.after}`);
+  });
+  if ((note.fix_full_rewrite || []).length) {
+    lines.push('', `※ 部分修正では直せないもの：${note.fix_full_rewrite.join('／')}`,
+               '　 その語が見出し・タイトル・説明文に入っていて、記事の主題語になっています。');
+  }
+  return lines.join('\n');
+}
+
+function renderFixPatch(note) {
+  const ps = note.fix_patch || [];
+  const fr = note.fix_full_rewrite || [];
+  if (!ps.length && !fr.length) return '';
+  const rows = ps.map((p, i) => `
+      <li class="patch-item">
+        <div class="patch-kind">${i + 1}. ${escapeHtml(p.kind)}</div>
+        <div class="patch-before">${escapeHtml(p.before)}</div>
+        <div class="patch-after">${escapeHtml(p.after)}</div>
+      </li>`).join('');
+  return `
+    <div class="patch-block">
+      <div class="patch-head">
+        <span>部分修正${ps.length ? `（${ps.length}件・この一文だけ差し替え）` : ''}</span>
+        ${ps.length ? `<button class="patch-copy" data-note-id="${escapeHtml(note.note_id || note.title)}">まとめてコピー</button>` : ''}
+      </div>
+      ${ps.length ? `<ol class="patch-list">${rows}</ol>` : ''}
+      ${fr.length ? `<p class="patch-rewrite">部分修正では直せないもの：<strong>${escapeHtml(fr.join('／'))}</strong>　その語が見出し・タイトル・説明文に入っていて、記事の主題語になっています。直すなら全文の作り直しです。</p>` : ''}
+    </div>`;
+}
+
+document.addEventListener('click', e => {
+  const btn = e.target.closest('.patch-copy');
+  if (!btn) return;
+  const id = btn.dataset.noteId;
+  const note = allNotes.find(n => (n.note_id || n.title) === id);
+  if (!note) return;
+  const text = patchPlainText(note);
+  navigator.clipboard.writeText(text).then(() => {
+    const o = btn.textContent; btn.textContent = 'コピーしました'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = o; btn.classList.remove('copied'); }, 1600);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.cssText = 'position:fixed;opacity:0;top:0;left:0';
+    document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove();
+    const o = btn.textContent; btn.textContent = 'コピーしました';
+    setTimeout(() => { btn.textContent = o; }, 1600);
+  });
+});
 
 function renderNoteCard(note) {
   const tierClass = note.tier === 'flagship' ? 'tier-flagship' : 'tier-member';
@@ -767,6 +821,8 @@ function renderNoteCard(note) {
       <div class="note-card-header">
         <div class="note-meta-left">
           ${note.fix_required === true ? '<span class="fix-badge">修正必須</span>' : ''}
+          ${(note.fix_patch || []).length ? `<span class="patch-badge">部分修正 ${note.fix_patch.length}件</span>` : ''}
+          ${(note.fix_full_rewrite || []).length ? '<span class="rewrite-badge">全文の作り直し</span>' : ''}
           <span class="tier-badge ${tierClass}">${tierLabel}</span>
           <span class="vis-badge ${visClass}">${visLabel}</span>
           ${freeRatioBadge}
@@ -783,6 +839,7 @@ function renderNoteCard(note) {
         ${note.fix_required === true && (note.fix_reasons || []).length
           ? `<ul class="fix-reasons">${note.fix_reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`
           : ''}
+        ${renderFixPatch(note)}
         <p class="note-description">${escapeHtml(note.description)}</p>
         ${outcomeHtml}
         ${frameworkHtml}

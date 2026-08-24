@@ -50,5 +50,12 @@
   ],
   "closing_push": "今夜の三十分は、誰にも断らずに使っていい。 あなたなら、戻ってこられる。",
   "principle_no": "01",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_patch": [
+    {
+      "kind": "タイトル",
+      "before": "数えるのをやめた夜に、三十分だけ自分へ返す",
+      "after": "💗数えるのをやめた夜に、三十分だけ自分へ返す"
+    }
+  ]
 }

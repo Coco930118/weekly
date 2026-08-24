@@ -48,5 +48,15 @@
     "会話がなくなった夫婦の、最初の一言は決まっている"
   ],
   "principle_no": "07",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_patch": [
+    {
+      "kind": "タイトル",
+      "before": "最初に無理をした関係は、ずっとその仮面を外せない",
+      "after": "💗最初に無理をした関係は、ずっとその仮面を外せない"
+    }
+  ],
+  "fix_full_rewrite": [
+    "仕組みx1(芯)"
+  ]
 }

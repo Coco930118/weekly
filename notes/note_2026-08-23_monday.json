@@ -57,5 +57,17 @@
   "closing_push": "月曜の朝の自分に、一行だけ渡しておく。それで日曜の夜は、少し息ができる。 あなたなら、決めておける。",
   "before_after_type": "合成相談（二層ルール準拠・GEN295の実相談パターンから束ねた形。実在の特定相談者ではない。本文中に束ねてある旨を明示）",
   "image_prompt_full": "9:16 vertical watercolor illustration (1080x1920) for a note thumbnail. Late-August night, the quiet of a Sunday evening before a new week, a pale summer moon low above the eaves. Composition: Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; smooth youthful complexion, dark brown bob, warm brown eyes) in a deep indigo yukata with a fine moonflower pattern, seated at a low wooden desk by an open window, caught mid-action as she sets a single small blank card down in the middle of the desk with one hand, her other hand still resting on a closed notebook — a person leaving one quiet instruction for tomorrow morning's self. Shizuku (small wise watercolor turtle) rests on the corner of the desk beside the card, and Hiyori (small white bird) perches on the window frame, already facing the paling eastern sky. White moonflowers open along the window lattice, crape myrtle blooms in the dark garden beyond, the stillness left behind by the evening cicadas. Low night light, calm and unhurried, with the faintest hint of morning at the horizon. The upper third is left as a soft indigo-to-silver gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Refined palette of deep indigo, moonlight silver, soft ivory, faint crape myrtle rose. Quiet Luxury watercolor with soft transparent washes. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
-  "principle_no": "01"
+  "principle_no": "01",
+  "fix_patch": [
+    {
+      "kind": "禁止語",
+      "before": "一行だけ渡しておく。",
+      "after": "一行だけ送っておく。"
+    },
+    {
+      "kind": "タイトル",
+      "before": "日曜の夜が重いのは、月曜の最初の30分が空白だから",
+      "after": "💼日曜の夜が重いのは、月曜の最初の30分が空白だから"
+    }
+  ]
 }

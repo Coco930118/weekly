@@ -49,5 +49,12 @@
     "中身より先に、立ち方が届く"
   ],
   "principle_no": "06",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "fix_patch": [
+    {
+      "kind": "タイトル",
+      "before": "話さないことは、隠すこととは違う",
+      "after": "💗話さないことは、隠すこととは違う"
+    }
+  ]
 }

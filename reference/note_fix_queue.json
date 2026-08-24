@@ -42,6 +42,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 13,
+      "patch_kinds": {
+        "禁止語": 10,
+        "一人称": 3
+      },
+      "full_rewrite_needed": [
+        "構造x1(芯)"
       ]
     },
     {
@@ -74,7 +82,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "一人称": 1
+      }
     },
     {
       "file": "note_2026_06_09_words.json",
@@ -106,7 +119,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 5,
+      "patch_kinds": {
+        "禁止語": 1,
+        "一人称": 4
+      }
     },
     {
       "file": "note_2026-06-29_distance.json",
@@ -155,6 +173,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "消耗x1(芯)"
       ]
     },
     {
@@ -194,7 +220,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 14,
+      "patch_kinds": {
+        "禁止語": 5,
+        "一人称": 8,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-07-24_hold.json",
@@ -233,7 +265,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 10,
+      "patch_kinds": {
+        "禁止語": 5,
+        "一人称": 5,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-07-25_delegate.json",
@@ -272,6 +310,17 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 12,
+      "patch_kinds": {
+        "禁止語": 7,
+        "一人称": 4,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "設計x5(芯)",
+        "渡すx27(芯)",
+        "渡しx18(芯)"
       ]
     },
     {
@@ -311,7 +360,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 22,
+      "patch_kinds": {
+        "禁止語": 15,
+        "一人称": 8,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-07-26_trust.json",
@@ -350,7 +405,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 4,
+      "patch_kinds": {
+        "禁止語": 2,
+        "一人称": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-07-27_capacity.json",
@@ -389,6 +450,15 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 6,
+      "patch_kinds": {
+        "禁止語": 3,
+        "一人称": 3,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "消耗x2(芯)"
       ]
     },
     {
@@ -428,7 +498,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 4,
+      "patch_kinds": {
+        "禁止語": 1,
+        "一人称": 2,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-07-30_pickup.json",
@@ -473,6 +549,15 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 10,
+      "patch_kinds": {
+        "禁止語": 7,
+        "一人称": 2,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡しx7(芯)"
       ]
     },
     {
@@ -512,7 +597,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 7,
+      "patch_kinds": {
+        "禁止語": 1,
+        "一人称": 5,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-07-31_decide.json",
@@ -551,7 +642,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 8,
+      "patch_kinds": {
+        "禁止語": 1,
+        "一人称": 7,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-01_greeting.json",
@@ -590,7 +687,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 9,
+      "patch_kinds": {
+        "禁止語": 7,
+        "一人称": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-03_hand.json",
@@ -629,6 +732,16 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 6,
+      "patch_kinds": {
+        "禁止語": 3,
+        "一人称": 2,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx18(芯)",
+        "渡しx11(芯)"
       ]
     },
     {
@@ -668,7 +781,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 4,
+      "patch_kinds": {
+        "禁止語": 2,
+        "一人称": 2,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-04_order.json",
@@ -693,7 +812,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "一人称": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-05_irreplaceable.json",
@@ -724,6 +848,15 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx6(芯)",
+        "渡しx14(芯)"
       ]
     },
     {
@@ -749,7 +882,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 4,
+      "patch_kinds": {
+        "禁止語": 3,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-07_fuel.json",
@@ -774,7 +912,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-08_rely.json",
@@ -799,7 +942,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-09_afterno.json",
@@ -830,7 +978,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-09_hold.json",
@@ -855,7 +1008,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-10_scope.json",
@@ -886,6 +1044,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
+      ],
+      "patch_count": 7,
+      "patch_kinds": {
+        "禁止語": 6,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx3(芯)"
       ]
     },
     {
@@ -917,7 +1083,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-12_sandwich.json",
@@ -942,6 +1113,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
+      ],
+      "patch_count": 4,
+      "patch_kinds": {
+        "禁止語": 3,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx1"
       ]
     },
     {
@@ -960,7 +1139,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-14_sequence.json",
@@ -984,7 +1167,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-15_senior.json",
@@ -1015,6 +1202,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
+      ],
+      "patch_count": 5,
+      "patch_kinds": {
+        "禁止語": 4,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx1"
       ]
     },
     {
@@ -1040,7 +1235,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-16_remote.json",
@@ -1065,6 +1265,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx1"
       ]
     },
     {
@@ -1115,6 +1323,13 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "仕組みx1(芯)"
       ]
     },
     {
@@ -1133,7 +1348,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-19_nuance.json",
@@ -1165,7 +1384,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "一人称": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-19_translate.json",
@@ -1190,6 +1414,14 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx4(芯)"
       ]
     },
     {
@@ -1215,7 +1447,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-20_thirty.json",
@@ -1240,7 +1476,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-21_friday.json",
@@ -1265,7 +1506,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 2,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-21_love-language.json",
@@ -1304,6 +1550,15 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
+      ],
+      "patch_count": 3,
+      "patch_kinds": {
+        "禁止語": 1,
+        "一人称": 1,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "渡すx3(芯)"
       ]
     },
     {
@@ -1329,7 +1584,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-22_offload.json",
@@ -1354,7 +1614,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 5,
+      "patch_kinds": {
+        "禁止語": 4,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-22_silence.json",
@@ -1379,7 +1644,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-23_expectation.json",
@@ -1424,6 +1693,15 @@
           "severity": "高",
           "status": "open"
         }
+      ],
+      "patch_count": 10,
+      "patch_kinds": {
+        "禁止語": 1,
+        "一人称": 8,
+        "タイトル": 1
+      },
+      "full_rewrite_needed": [
+        "構造x3(芯)"
       ]
     },
     {
@@ -1449,7 +1727,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-24_name.json",
@@ -1474,7 +1757,12 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：note.com側で46本の改題が必要なため見送り"
         }
-      ]
+      ],
+      "patch_count": 2,
+      "patch_kinds": {
+        "禁止語": 1,
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-24_not-chasing.json",
@@ -1499,7 +1787,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "タイトル": 1
+      }
     },
     {
       "file": "note_2026-08-27_no.json",
@@ -1517,7 +1809,11 @@
           "status": "deferred",
           "decision": "2026-08-25 Coco判断：会員限定記事のため見送り"
         }
-      ]
+      ],
+      "patch_count": 1,
+      "patch_kinds": {
+        "禁止語": 1
+      }
     },
     {
       "file": "note_2026-08-29_close-august.json",
@@ -1554,5 +1850,6 @@
         }
       ]
     }
-  ]
+  ],
+  "patch_note": "fix_patch は「その一文だけ差し替えれば済む」修正。noteのJSONに before/after で持たせ、公開サイトのカードからコピーできる。fix_full_rewrite は、その語が見出し・タイトル・説明文に入っていて記事の主題語になっているもの＝部分修正では直せない（全文の作り直しになる）。"
 }

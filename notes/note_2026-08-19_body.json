@@ -54,5 +54,12 @@
   "closing_push": "今週、真っ先に浮かんだ一人に、短い連絡を。 大丈夫。もう、分かっている。",
   "image_prompt_full": "9:16 vertical watercolor illustration (1080x1920) for a note thumbnail. Late-summer evening in the last days of August, the air just starting to cool, cicada song fading. Composition: Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; smooth youthful complexion, dark brown bob, warm brown eyes) in a deep navy cotton yukata with a fine pale pattern, seated on a wooden veranda just home from the evening, one sandal still off, a small notebook open on her lap and her pen paused above a single name she is about to circle — the gesture of listening to her own body before deciding whom to see. Her expression is quiet and unhurried, faintly relieved. Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks) is pressed warm against her thigh, half asleep; Hiyori (small soft white bird) perches on the veranda rail beside her, head tilted toward the notebook. Crape myrtle in soft pink blooms by the eaves, a pale evening moon low in the sky beyond. Soft late-summer dusk light, warm and settled. The upper third is left as a soft dusk-blue-to-warm-amber gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Refined palette of dusk blue, warm amber, crape myrtle pink, soft ivory. Quiet Luxury watercolor with soft transparent washes. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
   "principle_no": "06",
-  "before_after_type": "合成相談（二層ルール準拠。実相談パターンから束ねた形で、実在の特定相談者ではない）"
+  "before_after_type": "合成相談（二層ルール準拠。実相談パターンから束ねた形で、実在の特定相談者ではない）",
+  "fix_patch": [
+    {
+      "kind": "タイトル",
+      "before": "会いたい人は、頭より先に体が決めている",
+      "after": "💗会いたい人は、頭より先に体が決めている"
+    }
+  ]
 }
