@@ -765,8 +765,12 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
 ### 絶対条件（これを外すとブランド資産が飛ぶ）
 - **必ず英語で書く**。日本語の短い情景メモは不可
 - **Cocoと動物が必ず登場する**。人物なしの静物・風景のみは作らない
-- **Cocoの外見定義は一字一句そのまま使う**：`Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; smooth youthful complexion, dark brown bob, warm brown eyes, …)`
-  - 実年齢は40代でも、**絵は必ず30代前半に見えるように描く**。`elegant 40s woman` の素の指定は使わない（生成結果が50代前後に寄る）
+- **Cocoの外見定義は一字一句そのまま使う**：`Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a {kimono}, seen from the shoulders up`
+  - **旧定義（`a refined young woman, brand age 40s but drawn to look early 30s … smooth youthful complexion` ／ `shown from the chest up`）は2026-08-24に廃止**（Coco決定・恒久ルール）。Canvaの画像生成が①年齢＋容姿の直接描写 ②年齢を操作する指示 ③肌の描写 ④身体部位語（chest／bust）をポリシー違反として弾き、8/18週のnoteで実際に生成できなかったため
+  - **Canvaの禁止語**：`young woman` ／ `brand age 40s` ／ `drawn to look` ／ `youthful` ／ `complexion` ／ `chest` ／ `bust-up`。`tools/full_check.py` が検出する
+  - **アングル語も置き換える**：`front bust-up` → `head-and-shoulders view` ／ `side-profile bust-up` → `side profile view` ／ `chest-up pose` → `head-and-shoulders pose`
+  - 実年齢は40代でも、**絵は30代前半に見えるように描く**。ただし年齢を操作する言い方はしない（`in her early thirties` と書くだけにする）。`elegant 40s woman` も従来どおり使わない（生成結果が50代前後に寄る）
+  - **適用開始＝2026-08-25週から**。8/18週以前は画像を生成済みのため遡及しない
 - 3匹の外見定義もそのまま使う。**英字表記は Shizuku / Shiratama / Hiyori に統一**（旧表記 Shirotsuma・Shirotama は使わない）
   - しずく＝`Shizuku (small wise turtle)`／しらたま＝`Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks)`／ひより＝`Hiyori (small soft white bird)`
   - **しらたまは常に白の長毛猫**。黒猫・黒地に白模様・琥珀色の目では絶対に描かない。`character` の絵文字が🐈‍⬛（黒猫）でも**絵は必ず白**。投稿・note・診断・LINEスタンプの全プラットフォーム共通
@@ -848,7 +852,9 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
 ### 完成後チェック（毎回必須）
 `reference/image_prompt_rules.json` の `self_check` 12項目を実行する。特に——
 - [ ] 全本にCocoと動物が登場しているか（人物なしがゼロか）
-- [ ] `early 30s` が全本に入っているか／`elegant 40s woman` が残っていないか
+- [ ] `in her early thirties` が全本に入っているか／`elegant 40s woman` が残っていないか
+- [ ] **Canvaの禁止語（young woman／brand age 40s／youthful／complexion／chest／bust-up）がゼロか**
+- [ ] **全本の冒頭に正方形 1:1（1080x1080）の指定が入っているか**
 - [ ] 動物とアングルの巡回本数が揃っているか
 - [ ] 投稿時刻と時間帯のズレがゼロか
 - [ ] **パレットがX＝寒色／Threads＝暖色の4組に収まり、3色目が cool ivory／warm ivory で分かれているか（温度またぎゼロ）**
