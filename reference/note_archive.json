@@ -102,9 +102,9 @@
     },
     {
       "title": "「急に辞めた」は存在しない──優秀な人が静かに離れていく7つのサインと、そのときわたしがやったこと",
-      "publish_date": "2026-05-29",
+      "publish_date": "2026-06-08",
       "platform_origin": "unknown",
-      "source_week": "2026-05-19_2026-05-25",
+      "source_week": "2026-06-08_2026-06-14",
       "tier": "",
       "principle_no": null,
       "cluster_topic": "優秀な人が辞める前には必ず「静かなサイン」がある。20年・5万人超の現場経験から見えた「関係の撤退パターン」と、手遅れになる前に使える7つの観察軸・チェックリスト。組織・チームの「温度と距離」を整える技術の体系化。",
@@ -113,13 +113,14 @@
       "note_url": "",
       "file": "note_2026_05_29.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "「優しいのに、軽く扱われる」には構造がある",
-      "publish_date": "2026-06-07",
+      "publish_date": "2026-06-09",
       "platform_origin": "unknown",
-      "source_week": "2026-06-03_2026-06-09",
+      "source_week": "2026-06-08_2026-06-14",
       "tier": "",
       "principle_no": null,
       "cluster_topic": "「断れない・怒れない・優しい人でいること」の構造的な問題と、感情なしで境界線を引く技術",
@@ -128,7 +129,8 @@
       "note_url": "",
       "file": "note_2026_06_07.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "愛の輪郭 ――境界線という本当の優しさ",
@@ -318,9 +320,9 @@
     },
     {
       "title": "「怒りと嫉妬の正体」──感情の二層構造を読む技術",
-      "publish_date": "2026-06-12",
+      "publish_date": "2026-06-16",
       "platform_origin": "unknown",
-      "source_week": "2026-06-09_2026-06-15",
+      "source_week": "2026-06-15_2026-06-21",
       "tier": "flagship",
       "principle_no": null,
       "cluster_topic": "怒りと嫉妬は二次感情。表面の感情の下にある本当の感情を読む技術が、関係を変える",
@@ -332,7 +334,8 @@
       "note_url": "",
       "file": "note_2026-06-12_emotions.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "怒りは、二次感情だ",
@@ -584,9 +587,9 @@
     },
     {
       "title": "感情には正体がある——怒り・嫉妬・比較が、本当に教えてくれること",
-      "publish_date": "2026-06-15",
+      "publish_date": "2026-06-12",
       "platform_origin": "unknown",
-      "source_week": "2026-06-09_2026-06-15",
+      "source_week": "2026-06-08_2026-06-14",
       "tier": "",
       "principle_no": null,
       "cluster_topic": "",
@@ -595,13 +598,14 @@
       "note_url": "",
       "file": "note_2026_06_15_emotions.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "「なんでわかってくれないの」の下にあるもの",
-      "publish_date": "2026-06-15",
+      "publish_date": "2026-06-11",
       "platform_origin": "unknown",
-      "source_week": "2026-06-09_2026-06-15",
+      "source_week": "2026-06-08_2026-06-14",
       "tier": "",
       "principle_no": null,
       "cluster_topic": "",
@@ -610,13 +614,14 @@
       "note_url": "",
       "file": "note_2026_06_15_voice.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "惰性と安定は、見た目が似ている",
-      "publish_date": "2026-06-15",
+      "publish_date": "2026-06-13",
       "platform_origin": "unknown",
-      "source_week": "2026-06-09_2026-06-15",
+      "source_week": "2026-06-08_2026-06-14",
       "tier": "",
       "principle_no": null,
       "cluster_topic": "",
@@ -626,7 +631,8 @@
       "file": "note_2026_06_15_warmth.json",
       "in_index": true,
       "duplicate_of_title": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "怒りは、嘘をついている",
@@ -685,9 +691,9 @@
     },
     {
       "title": "感情はある。でも、依存はしない。──認められたい相手に、振り回されなくなった日",
-      "publish_date": "2026-06-22",
+      "publish_date": "2026-06-16",
       "platform_origin": "unknown",
-      "source_week": "2026-06-16_2026-06-22",
+      "source_week": "2026-06-15_2026-06-21",
       "tier": "flagship",
       "principle_no": null,
       "cluster_topic": "感情を持ちながら、依存・承認欲求・執着を手放す技術が真の自由と本物のつながりの始まりになる",
@@ -704,13 +710,14 @@
       "note_url": "",
       "file": "note_2026-06-22_freedom.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "「嫌」と言える人ほど、「ありがとう」が増えていく──境界線は、愛の反対じゃない",
-      "publish_date": "2026-06-22",
+      "publish_date": "2026-06-18",
       "platform_origin": "unknown",
-      "source_week": "2026-06-16_2026-06-22",
+      "source_week": "2026-06-15_2026-06-21",
       "tier": "member_entry",
       "principle_no": null,
       "cluster_topic": "NOという境界線は愛の反対ではない。境界線があってこそ本物の「ありがとう」と本物の愛が生まれる",
@@ -723,13 +730,14 @@
       "note_url": "",
       "file": "note_2026-06-22_honest.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "「なんか違う」の正体を知ったとき、関係の温度が変わった",
-      "publish_date": "2026-06-22",
+      "publish_date": "2026-06-19",
       "platform_origin": "unknown",
-      "source_week": "2026-06-16_2026-06-22",
+      "source_week": "2026-06-15_2026-06-21",
       "tier": "member_entry",
       "principle_no": null,
       "cluster_topic": "「好き嫌い通貨」と「信頼通貨」——「なんか違う」の正体は、使っている通貨の違いにある。目的を「好かれること」から「自分が安心しているか」に変えた瞬間、関係の温度が変わる",
@@ -742,13 +750,14 @@
       "note_url": "",
       "file": "note_2026-06-22_surface.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "感情はある。依存はしない。",
-      "publish_date": "2026-06-29",
+      "publish_date": "2026-06-26",
       "platform_origin": "unknown",
-      "source_week": "2026-06-23_2026-06-29",
+      "source_week": "2026-06-22_2026-06-28",
       "tier": "member_entry",
       "principle_no": null,
       "cluster_topic": "感情と依存は別の話。自分軸が育った人だけが、相手を本当に自由にできる。「離れても大丈夫」が、最も深い近さを作る",
@@ -761,13 +770,14 @@
       "note_url": "",
       "file": "note_2026-06-29_distance.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "感情を整えてから、関係に向かう",
-      "publish_date": "2026-06-29",
+      "publish_date": "2026-06-27",
       "platform_origin": "unknown",
-      "source_week": "2026-06-23_2026-06-29",
+      "source_week": "2026-06-22_2026-06-28",
       "tier": "member_entry",
       "principle_no": null,
       "cluster_topic": "感情を「反応」ではなく「情報」として扱う技術が、関係の見え方を変える。整えてから向かうと、同じ相手が違って見える",
@@ -779,13 +789,14 @@
       "note_url": "",
       "file": "note_2026-06-29_emotion.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "「伝えた」と「届いた」は、別の技術",
-      "publish_date": "2026-06-29",
+      "publish_date": "2026-06-24",
       "platform_origin": "unknown",
-      "source_week": "2026-06-23_2026-06-29",
+      "source_week": "2026-06-22_2026-06-28",
       "tier": "flagship",
       "principle_no": null,
       "cluster_topic": "「言った」が「届いた」にならない構造は、組織でも関係でも同じ。翻訳できる人が、温度を変える",
@@ -798,7 +809,8 @@
       "note_url": "",
       "file": "note_2026-06-29_translate.json",
       "in_index": true,
-      "week_group": "過去分"
+      "week_group": "過去分",
+      "published_confirmed": true
     },
     {
       "title": "正論は、動機にならない",
