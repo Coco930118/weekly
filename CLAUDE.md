@@ -794,8 +794,27 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
   - **中央＝Cocoと動物の主題**。サムネイルで読めるサイズで大きく置く
   - **下三分の一＝静かな余白**
   - 必ず入れる一文：`The upper third is left as a soft {c1}-to-{c2} gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space.`
+- **横も三分割して、全キャラを中央3分の1に収める**（2026-08-24 Coco決定・恒久ルール）
+  - 生成画像をCanvaに載せると正方形になり、横に切られるとキャラが画面から外れる事故が起きた。**横に三分割したとき、1カットの中にCocoと動物全員が収まっていれば、どの切り方でも使える**
+  - 必ず入れる一文：`All characters — Coco and every animal in the scene — are grouped together compactly within the central third of the image's width, so that a square crop taken from the centre contains all of them; the left and right thirds hold only background and quiet space.`
+  - 位置はパレット指定と縦三分割の指定の直後、`Quiet Luxury watercolor.` の直前。**キャラを散らさず、横幅の中央3分の1にひとかたまりで置く**。縦の三分割は従来どおり併存させる
+- **プラン別にパレットを固定する**（2026-08-24 Coco決定・恒久ルール）
+  - 背景：メンバーシップ一覧で6枚とも同じ絵に見え、どちらのプランの記事か判別できなかった。Coco＋動物＋Quiet Luxury固定というブランド資産が、そのまま識別を殺していた。**色は文字より速く処理される**
+  - **X由来（組織と仕事）＝寒色**：deep indigo／navy-indigo／pale slate blue／ash blue／pale celadon／soft steel blue／silver-grey／sage-grey。締めの中間色は **cool ivory**
+  - **Threads由来（恋愛と関係）＝暖色**：dusty rose／pale rose／ash rose／warm apricot／pale peach／soft coral／soft gold。締めの中間色は **warm ivory**
+  - X由来に暖色（dusty rose・peach・coral・gold）を入れない。Threads由来に寒色（slate blue・indigo・steel blue）を入れない。週内で同じ組み合わせを繰り返さないのは従来どおり
+  - **既存記事には遡らない**（画像の作り直しが必要なため）。X・Threadsの投稿画像への適用はCocoの判断待ち
 - **ネガティブ指定を必ず末尾に**：`No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.`
 - Cocoは静物ではなく**行為の途中**を描く（お茶を持つ／紙を差し出す等）。記事の具体策を絵にする
+
+### noteタイトルの先頭に、プランの記号を置く（2026-08-24 Coco決定・恒久ルール）
+一覧でどちらのプランの記事か判別できるようにする。パレットの色分けと併用する（色＝遠目、記号＝確認）。
+- **X由来（組織と仕事）＝ `💎`** ／ **Threads由来（恋愛と関係）＝ `🫶`**
+- 投稿のひとことで既に X＝💎／Threads＝🫶 を使っているため、**ブランド内に既存の記号体系がある**。新しい絵文字を増やさない（💼💰🏆等は Quiet Luxury から浮くため使わない）
+- **1プラン1記号に固定する。**複数を使い分けると読者が学習できず、識別子として機能しない
+- 記号はタイトルの1文字目に置く。**本文中の「あわせて読む」のリンク表記には付けない**（散文が濁るため。`internal_links` も記号なしで持つ）
+- `reference/note_archive.json` の `title` は、記事の `title` と同じ形（記号あり）で持つ
+- **既存記事への遡及はCocoの判断**（note.com側でのタイトル編集が必要）
 
 ### 季節モチーフだけ毎週入れ替える（それ以外は固定）
 夏＝朝顔・蓮・トンボ・蛍・風鈴・灯籠／晩夏＝百日紅・向日葵・夕顔・蜩・夏の月／秋＝コスモス・すすき・紅葉・名月・柿／冬＝椿・南天・初雪・裸木・灯り／春＝桜・藤・躑躅・霞・燕（詳細は `reference/image_prompt_rules.json`）

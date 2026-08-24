@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.2",
+  "version": "1.3",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -260,7 +260,9 @@
     "noteは全本に「上三分の一の余白」「中央に主題」「下三分の一の余白」の三分割指定が入っているか",
     "noteは全本にネガティブ指定が入っているか",
     "動物の呼び名が Shizuku / Shiratama / Hiyori に統一されているか（Shirotsuma・Shirotama が残っていないか）",
-    "しらたまが全ファイルで白の長毛猫になっているか（black cat / 黒猫 の表記がゼロか）"
+    "しらたまが全ファイルで白の長毛猫になっているか（black cat / 黒猫 の表記がゼロか）",
+    "プラン別のパレットが守られているか（X＝寒色／Threads＝暖色。cool ivory と warm ivory の取り違えがないか）",
+    "横の中央3分の1に全キャラが収まる一文が入っているか（Canvaで正方形に切られても全員残るか）"
   ],
   "updated": "2026-08-05",
   "decisions_log": [
@@ -268,5 +270,22 @@
     "2026-08-03 しらたまの英字表記を Shiratama に統一（Coco決定）。旧表記 Shirotsuma（投稿）/ Shirotama（note）は全ファイルで置換済み",
     "2026-08-03 noteサムネイルは主題を中央（middle third）に大きく置く。上三分の一＝タイトル余白、下三分の一＝静かな余白（Coco指示）",
     "2026-08-03 しらたまは常に白の長毛猫で統一（Coco決定）。黒猫・黒地に白模様の表記を全ファイルから排除。絵文字🐈‍⬛は据え置き、絵だけ白で固定"
-  ]
+  ],
+  "plan_color_coding": {
+    "decided": "2026-08-24 Coco決定・恒久ルール",
+    "why": "noteのメンバーシップ一覧で、6枚とも同じ絵に見えてどちらのプランの記事か判別できなかった。Coco＋動物＋Quiet Luxury固定というブランド資産が、そのまま識別を殺していた。色は文字より速く処理されるため、パレットで分ける。",
+    "rule": {
+      "X（組織と仕事・温度の整え方）": "**寒色に固定**。deep indigo / navy-indigo / pale slate blue / ash blue / pale celadon / soft steel blue / silver-grey / sage-grey。締めの中間色は cool ivory",
+      "Threads（恋愛と関係・距離の整え方）": "**暖色に固定**。dusty rose / pale rose / ash rose / warm apricot / pale peach / soft coral / soft gold。締めの中間色は warm ivory"
+    },
+    "forbidden": "X由来に dusty rose・peach・coral・gold などの暖色を入れない。Threads由来に slate blue・indigo・steel blue などの寒色を入れない。週内で同じ組み合わせを繰り返さないのは従来どおり。",
+    "scope": "noteサムネイル（notes/note_*.json の image_prompt）に適用。既存記事には遡らない（画像の作り直しが必要なため）。X・Threadsの投稿画像への適用はCocoの判断待ち。"
+  },
+  "center_third_composition": {
+    "decided": "2026-08-24 Coco決定・恒久ルール",
+    "why": "生成した画像をCanvaに載せると正方形になり、横に切られると登場キャラが画面から外れることがあった。横に三分割したとき、1カットの中にCocoと動物全員が収まっていれば、どの切り方でも使える。",
+    "required_sentence": "All characters — Coco and every animal in the scene — are grouped together compactly within the central third of the image's width, so that a square crop taken from the centre contains all of them; the left and right thirds hold only background and quiet space.",
+    "rule": "この一文を、パレット指定と縦三分割の指定の直後、`Quiet Luxury watercolor.` の直前に必ず入れる。キャラクターは散らさず、横幅の中央3分の1にひとかたまりで置く。左右3分の1は背景と余白だけにする。",
+    "note": "縦の三分割（上1/3＝タイトル余白／中央＝主題／下1/3＝余白）は従来どおり維持する。今回加わったのは横方向の指定で、縦の指定と併存する。"
+  }
 }
