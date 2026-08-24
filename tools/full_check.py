@@ -122,7 +122,7 @@ def main(path):
         m = re.search(r'(人がいる。|人がいた。|そう。|んだって。|みたい。|って。|ことがある。|話を聞いた。)$', l1)
         if m: den[m.group(1)] += 1
     for k, v in den.items():
-        if v >= 3: ng('WEEK', f'冒頭の伝聞マーカー「{k}」が{v}本（週3本未満に散らす）')
+        if v >= 3: ng('WEEK', f'冒頭の文末が「{k}」で{v}本（同じ形は週3本未満に散らす）')
 
     # 7 時間軸
     for p in posts:
