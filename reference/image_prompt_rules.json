@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.5",
+  "version": "1.6",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -53,7 +53,7 @@
   },
   "sns_posts": {
     "scope": "X14本 + Threads21本 = 週35投稿",
-    "template": "A high-quality watercolor illustration with soft transparent washes. Summer {band}, {angle}. {coco} stands with {animals} {arrangement}; {shared_action}; {posture}; {background}; {light}. Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.",
+    "template": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Summer {band}, {angle}. {coco} stands with {animals} {arrangement}; {shared_action}; {posture}; {background}; {light}. Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.",
     "animal_rotation": {
       "rule": "投稿を日付・時刻の昇順に並べ、先頭から7周期で巡回させる。週35本なら各組合せがちょうど5本ずつになる",
       "cycle": [
@@ -276,7 +276,13 @@
       "Threads に indigo/blue/slate/celadon/silver 系が混ざっていないか（温度またぎゼロ）",
       "着物の色がパレットと同じ温度か（夜の濃紺は例外として可）",
       "灯り（light）は検査対象外。X夜の warm amber light を寒色に直していないか（残っているのが正）"
-    ]
+    ],
+    "aspect_ratio": {
+      "decided": "2026-08-24 Coco決定・恒久ルール",
+      "rule": "X・Threadsの週35投稿は**正方形 1:1（1080x1080）**。プロンプトの冒頭に明記する",
+      "why": "これまで比率指定が1本もなく、生成のたびに形が変わっていた。SNSのタイムラインは正方形が基準",
+      "not_note": "noteサムネイルは別（note_thumbnails 側の指定に従う）。35投稿とnoteで比率は統一しない"
+    }
   },
   "note_thumbnails": {
     "scope": "notes/note_*.json の image_prompt",
@@ -371,7 +377,8 @@
     "しらたまが全ファイルで白の長毛猫になっているか（black cat / 黒猫 の表記がゼロか）",
     "プラン別のパレットが守られているか（X＝寒色／Threads＝暖色。cool ivory と warm ivory の取り違えがないか）",
     "横の中央3分の1に全キャラが収まる一文が入っているか（Canvaで正方形に切られても全員残るか）",
-    "パレットがプラットフォーム別（X＝寒色／Threads＝暖色）に分かれ、温度またぎがゼロか"
+    "パレットがプラットフォーム別（X＝寒色／Threads＝暖色）に分かれ、温度またぎがゼロか",
+    "35投稿の全プロンプト冒頭に正方形 1:1（1080x1080）の指定が入っているか"
   ],
   "updated": "2026-08-24",
   "decisions_log": [
