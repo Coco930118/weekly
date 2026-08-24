@@ -10,7 +10,7 @@
   "cluster_topic": "Coco Methodologyの定義。安心（Safety）×自由（Space）が揃うと人は自分から動く。見る角度＝五つのレンズ（安心のデザイン／距離の美学／自発性のデザイン／静かな強さ／生感を一滴）、動き方＝七つの原理（01今日決められることだけ／02消さずに扱う／03事実と感情を分ける／04決断を返す／05三つ目の軸／06反転して定義し直す／07現実を先に置く）。原理は七つ、場面は無限",
   "tier": "free_entry",
   "linked_principle": "全プランの土台。原理は7つ、場面は無限——その『原理の側』を名指しした記事。組織と仕事／恋愛と関係のどちらの読者もここに戻ってこられる",
-  "unresolved_question": "",
+  "unresolved_question": "安心と自由の両方を、同時に置き続けられるか",
   "echoed_scene": "プロフィールや投稿から来た読者が、『この人は何を軸に書いているのか』を最初に確かめる場所",
   "funnel_targets": [],
   "episode_ref": null,
@@ -58,5 +58,6 @@
   "published_confirmed": true,
   "image_prompt_full": "Horizontal 1280x670 watercolor illustration for a note header. Early winter, quiet morning light, still air. Composition: Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, holding a small warm cup in both hands and offering it forward, mid-gesture, wearing a softly layered winter kimono-inspired robe in pale mist grey and soft stone beige with a delicate camellia sprig at the shoulder. A small wise turtle (Shizuku, calm green, cream plastron); A gentle white bird (Hiyori, pale blue-white). A quiet room with a low table and a paper screen, one branch of nandina in a slim vase. The upper third is left as a soft pale mist grey-to-soft stone beige gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. All characters — Coco and every animal in the scene — are grouped together compactly within the central third of the image's width, so that a square crop taken from the centre contains all of them; the left and right thirds hold only background and quiet space. Watercolor style: soft transparent washes, muted dusty tones, Quiet Luxury. Palette of pale mist grey, soft stone beige, warm ivory, soft pale sand. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early winter, quiet morning light, still air. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, holding a small warm cup in both hands and offering it forward, mid-gesture, in a softly layered winter kimono-inspired robe in pale mist grey and soft stone beige with a delicate camellia sprig at the shoulder. With a small green turtle and a gentle white bird. All characters grouped compactly in the central third of the width; upper third a soft pale mist grey-to-soft stone beige gradient for the title; lower third quiet. Palette: pale mist grey, soft stone beige, warm ivory. No text, no chibi, no 3D, no photorealism.",
-  "image_prompt_plan": "neutral"
+  "image_prompt_plan": "neutral",
+  "before_after_type": "事例なし（土台の記事のため）"
 }
