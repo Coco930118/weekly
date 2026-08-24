@@ -828,6 +828,11 @@ Refined palette of {c1}, {c2}, {c3}. Quiet Luxury watercolor. No text.
   - **Threads由来（恋愛と関係）＝暖色**：dusty rose／pale rose／ash rose／warm apricot／pale peach／soft coral／soft gold。締めの中間色は **warm ivory**
   - X由来に暖色（dusty rose・peach・coral・gold）を入れない。Threads由来に寒色（slate blue・indigo・steel blue）を入れない。週内で同じ組み合わせを繰り返さないのは従来どおり
   - **既存記事には遡らない**（画像の作り直しが必要なため）。X・Threadsの投稿画像への適用はCocoの判断待ち
+- **短縮版（`image_prompt_short`）を必ず併記する**（2026-08-24 Coco指示・恒久ルール）
+  - 詳細版は約1,650字あり、固定文だけで54%を占める。一般的な画像生成の入力欄に収まらず、収まっても前半に重みが寄ってブランドの核が薄まる
+  - **500字前後**に圧縮した `image_prompt_short` を各noteに持たせる。詳細版（`image_prompt`）は残して併存させる
+  - **短縮版に必ず残す**：横長1280x670／`early 30s`／動物2匹（しらたまは `white long-haired cat` と明示）／横の中央3分の1＋上1/3の余白／プラン別パレット／`No text, no chibi, no 3D, no photorealism`／季節モチーフ／行為の途中
+  - **短縮版から外す**：`face fixed by the six reference images`（生成側に参照画像がなく機能しない。特定人物の顔の再現指示とも読まれうる）／`brand age 40s`（年齢の二重表記をやめ `early 30s` のみ）／動物の固有名
 - **ネガティブ指定を必ず末尾に**：`No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.`
 - Cocoは静物ではなく**行為の途中**を描く（お茶を持つ／紙を差し出す等）。記事の具体策を絵にする
 

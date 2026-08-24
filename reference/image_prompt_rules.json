@@ -1,6 +1,6 @@
 {
   "title": "画像プロンプト 恒久ルール（X・Threads・note 共通／毎回必ず適用）",
-  "version": "1.7",
+  "version": "1.8",
   "created": "2026-08-03",
   "source_of_truth": "2026-07-14週の35投稿プロンプト＋2026-08-04週のnoteプロンプトから規則を抽出。Cocoが「すべてとてもいい」と承認した状態を基準として固定する。",
   "why_this_exists": "2026-08-04週で、Coco本人も3匹も登場しない日本語の短い情景メモに劣化する事故が起きた。popular_account_patterns.json の persona_consistency が『キャラ（Coco＋動物）・水彩の画風がブレないこと自体がブランド資産』と定めており、世界観の一貫性は指名される理由そのもの。形式が飛ぶ事故を二度と起こさないため明文化する。",
@@ -313,7 +313,7 @@
       "required_sentence": "Horizontal 1280x670 watercolor illustration for a note header.",
       "replaces": "旧「9:16縦・1080x1920」はこの決定で置き換え。縦長はnoteの表示枠に合わず上下が切れていた",
       "not_sns": "35投稿の正方形 1:1（1080x1080）とは統一しない。noteは横長、35投稿は正方形で別々に持つ",
-      "migration": "既存noteのプロンプトと画像は作り直しが必要。noteは別セッションの持ち場のため、このルールを引き継ぎとして置く（本セッションは notes/ 配下を編集しない）",
+      "migration": "2026-08-24 noteセッションで引き継ぎ完了。8/25週の9本すべてを横長 1280x670 に更新済み。8/24週以前の103本は配信済みで画像も生成済みのため、遡及しない（noteの保持期間は配信終了から30日で、順次落ちる）。",
       "composition_note": "縦三分割（上＝タイトル余白／中央＝主題／下＝余白）と横の中央3分の1ルールは横長でもそのまま維持する。横長では中央3分の1に全キャラを収める指定がより重要になる"
     }
   },
@@ -388,10 +388,13 @@
     "横の中央3分の1に全キャラが収まる一文が入っているか（Canvaで正方形に切られても全員残るか）",
     "パレットがプラットフォーム別（X＝寒色／Threads＝暖色）に分かれ、温度またぎがゼロか",
     "35投稿の全プロンプト冒頭に正方形 1:1（1080x1080）の指定が入っているか",
-    "noteサムネイルが横長 1280x670 指定になっているか（旧9:16縦が残っていないか）"
+    "noteサムネイルが横長 1280x670 指定になっているか（旧9:16縦が残っていないか）",
+    "noteは全本に image_prompt_short があり、500字前後で must_keep の項目が残っているか"
   ],
   "updated": "2026-08-24",
   "decisions_log": [
+    "2026-08-24 noteサムネイルの横長 1280x670 化を noteセッションが引き継ぎ完了。8/25週9本を更新。8/24週以前の103本は遡及しない",
+    "2026-08-24 画像プロンプトの短縮版（image_prompt_short）を新設（Coco指示）。詳細版は残して併存。約500字。参照画像への言及と40代表記は短縮版から外す",
     "2026-08-24 noteサムネイルを横長 1280x670px に変更（Coco決定・恒久ルール）。note.comの推奨サイズ。旧9:16縦1080x1920は置き換え。35投稿の正方形1:1とは統一しない。既存noteは作り直しが必要で、noteセッション側での対応となる",
     "2026-08-24 灯りの色をパレット色分けの対象外と決定（Coco）。X夜の warm amber light は暖色のまま維持。判定はぱっと見の感触で足りるとの判断。検査対象は palette 3色と着物の色に限定する",
     "2026-08-24 パレットをプラットフォーム別に分割（Coco決定・恒久ルール）。X＝soft blue-grey（寒色）4組／Threads＝dusty rose（暖色）4組、締めの中間色は cool ivory / warm ivory。狙いは一覧で青系と桃系の2グループに割れること。着物の色プールも同時に分割。旧「週内で完全一致は3回まで」は廃止（4組運用では成立しないため）",
@@ -416,5 +419,27 @@
     "required_sentence": "All characters — Coco and every animal in the scene — are grouped together compactly within the central third of the image's width, so that a square crop taken from the centre contains all of them; the left and right thirds hold only background and quiet space.",
     "rule": "この一文を、パレット指定と縦三分割の指定の直後、`Quiet Luxury watercolor.` の直前に必ず入れる。キャラクターは散らさず、横幅の中央3分の1にひとかたまりで置く。左右3分の1は背景と余白だけにする。",
     "note": "縦の三分割（上1/3＝タイトル余白／中央＝主題／下1/3＝余白）は従来どおり維持する。今回加わったのは横方向の指定で、縦の指定と併存する。"
+  },
+  "short_prompt": {
+    "decided": "2026-08-24 Coco指示・恒久ルール",
+    "why": "詳細版のプロンプトは約1,650字で、うち固定文（Coco定義・縦三分割・横中央3分の1・ネガティブ）だけで917字＝54%を占める。一般的な画像生成の入力欄には収まらず、収まっても長いプロンプトは前半に重みが寄るためブランドの核が薄まる。",
+    "field": "notes/note_*.json の image_prompt_short（image_prompt はそのまま残し、併存させる）",
+    "target_length": "500字前後。詳細版から約70%削減",
+    "must_keep": [
+      "Horizontal 1280x670 note header（比率指定）",
+      "early 30s（50代に寄る事故の防止。年齢は early 30s のみ書き、brand age 40s は書かない）",
+      "動物2匹。しらたまは white long-haired cat と明示（黒猫事故の防止）",
+      "横の中央3分の1に全キャラ＋上1/3をタイトル余白",
+      "プラン別パレット（X＝cool ivory／Threads＝warm ivory）",
+      "watercolor, soft transparent washes, muted dusty tones",
+      "No text, no chibi, no 3D, no photorealism",
+      "季節モチーフ／行為の途中"
+    ],
+    "drop": [
+      "face fixed by the six reference images——生成側に参照画像がないため機能しない。特定人物の顔の再現指示とも読まれうる",
+      "brand age 40s but drawn to look early 30s——年齢の二重表記をやめ early 30s のみにする",
+      "動物の固有名（Shizuku / Shiratama / Hiyori）——生成側で意味を持たないため、見た目の指定だけ残す"
+    ],
+    "site": "公開サイトのnoteカードで、短縮版と詳細版を別々のコピーボタンで出す（assets/app.js で対応済み）"
   }
 }
