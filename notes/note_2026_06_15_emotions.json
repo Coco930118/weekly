@@ -34,5 +34,11 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early summer, night, cool air after rain. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, lifting a small paper lantern to look at what is under the table's shadow, in a single-layer early-summer kimono-inspired robe in pale rose and soft gold with a delicate young-green-leaf motif at the shoulder at the shoulder. With a fluffy white long-haired cat and a gentle white bird. All characters grouped compactly in the central third of the width; upper third a soft pale rose-to-soft gold gradient for the title; lower third quiet. Palette: pale rose, soft gold, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "Threads",
   "practice_tool": "感情の通訳テンプレート（怒りの下・嫉妬の下・比較の下を、それぞれ一問で掘る）",
-  "tier": "member_entry"
+  "tier": "member_entry",
+  "outcome_promise": "怒り・嫉妬・比較の正体が分かる。感情が「武器」から「手がかり」に変わり、その夜のうちに扱えるようになる",
+  "framework": "怒りは二次感情／嫉妬は羅針盤／比べてくる人は不安を告白している——三つの正体を順に開いて、最後に「これは、何の翻訳か」の一問に集約する",
+  "micro_adjustment_points": [
+    "三つの感情それぞれに、実際に自分で掘った例を一つずつ添える",
+    "「何の翻訳か」を問う十秒を、どの場面で使うかを一つ決める"
+  ]
 }

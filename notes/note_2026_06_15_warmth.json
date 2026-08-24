@@ -33,5 +33,11 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early summer, morning, bright air washed by rain. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, placing one fresh flower into a plain vase that already holds a dried stem, in a single-layer early-summer kimono-inspired robe in dusty rose and warm apricot with a delicate hydrangea motif at the sleeve at the sleeve. With a small green turtle and a fluffy white long-haired cat. All characters grouped compactly in the central third of the width; upper third a soft dusty rose-to-warm apricot gradient for the title; lower third quiet. Palette: dusty rose, warm apricot, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "Threads",
   "practice_tool": "関係の温度を保つ3つの問い（ありがとうを最後に言ったのはいつか／最近知りたいと思ったか／今日いることを選んでいるか）",
-  "tier": "member_entry"
+  "tier": "member_entry",
+  "outcome_promise": "惰性と安定を、温度で見分けられるようになる。流れで続けているのか、選んで続けているのかが分かる",
+  "framework": "「ありがとうが消えた場所から惰性は始まる」を軸に、当たり前の中で感謝が消える過程を追い、関係の温度を保つ三つの問いに落とす",
+  "micro_adjustment_points": [
+    "「やっと、ここまで来た」の場面を、関係の側でも一つ添える",
+    "三つの問いを、いつ・どこで問うかまで決めると習慣になる"
+  ]
 }

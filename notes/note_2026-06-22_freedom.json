@@ -54,5 +54,11 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early summer, evening, cooling air after rain. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, opening her hand to let a thin ribbon slip away, the ribbon still mid-air, in a single-layer early-summer kimono-inspired robe in ash rose and pale apricot with a delicate firefly motif at the sleeve at the sleeve. With a fluffy white long-haired cat and a gentle white bird. All characters grouped compactly in the central third of the width; upper third a soft ash rose-to-pale apricot gradient for the title; lower third quiet. Palette: ash rose, pale apricot, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "Threads",
   "practice_tool": "取っ手診断A〜D（勝ちたい／わかってほしい／認められたい／嫌われたくない、のどれを握らせているかを確かめる）",
-  "outcome_promise": ""
+  "outcome_promise": "相手に握らせている取っ手が分かる。感情は残したまま、依存だけを外せるようになる",
+  "framework": "関係には四つの取っ手（勝ちたい／わかってほしい／認められたい／嫌われたくない）があると置いてから、外し方を順に渡し、最後に「いつでも席を立てる」という位置に着地させる",
+  "before_after": [
+    "Before：その人を「倒すべき相手」「認めてもらう審判」として見ていた頃、一日に何度も「どう対処するか」を考えていた。夜、布団に入ってからも頭の中で言い返していた。",
+    "After：この人の機嫌は、この人のもの。こちらが何をしても、そこは変わらない。そう見えた瞬間、肩の力が抜けた。深夜に「どう言い返すか」を考える時間が消え、あの人を頭の中に連れ帰っていた時間が、大切な人との穏やかな時間に戻った。"
+  ],
+  "before_after_type": "Coco自身の実体験（本文の Before / After の章から抽出。合成ではない）"
 }

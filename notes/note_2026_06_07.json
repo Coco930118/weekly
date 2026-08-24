@@ -36,5 +36,11 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early summer, late morning, soft light through young leaves. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, gently closing a folding fan and setting it between herself and the table's edge, in a single-layer early-summer kimono-inspired robe in pale peach and soft coral with a delicate iris motif at the sleeve at the sleeve. With a fluffy white long-haired cat and a small green turtle. All characters grouped compactly in the central third of the width; upper third a soft pale peach-to-soft coral gradient for the title; lower third quiet. Palette: pale peach, soft coral, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "Threads",
   "practice_tool": "境界線の一文（「ここまでOK、ここからNO」を、責める言葉ではなく行動の言葉で書く）",
-  "tier": "member_entry"
+  "tier": "member_entry",
+  "outcome_promise": "断ることが冷たさではなくなる。優しさを条件にするのをやめて、自分を疲れさせない線を引けるようになる",
+  "framework": "「NO」は冷たい言葉じゃない／怒らないことは優しさじゃない、と前提を外してから、「ここまでOK、ここからNO」を言葉にする七つの技術に落とす",
+  "micro_adjustment_points": [
+    "「ここまでOK」の言い方を、仕事・パートナー・家族の三場面で一つずつ実物にする",
+    "即答をやめたあと、相手の反応がどう変わったかを一行足す"
+  ]
 }

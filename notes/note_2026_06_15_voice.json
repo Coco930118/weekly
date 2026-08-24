@@ -31,5 +31,11 @@
   "image_prompt_short": "Horizontal 1280x670 note header. Watercolor, soft transparent washes, muted dusty tones, Quiet Luxury. Early summer, evening, humid air after a light rain. A gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, holding out a folded paper note on an open palm, not yet let go, in a single-layer early-summer kimono-inspired robe in ash rose and pale apricot with a delicate firefly motif at the cuff at the cuff. With a gentle white bird and a fluffy white long-haired cat. All characters grouped compactly in the central third of the width; upper third a soft ash rose-to-pale apricot gradient for the title; lower third quiet. Palette: ash rose, pale apricot, warm ivory. No text, no chibi, no 3D, no photorealism.",
   "image_prompt_plan": "Threads",
   "practice_tool": "本当に求めているものを名指しする三段（理解ではなく、何をしてほしいのかを一つに絞る）",
-  "tier": "member_entry"
+  "tier": "member_entry",
+  "outcome_promise": "「わかってくれない」の下にある、本当に求めているものを名指しできるようになる。責めずに、必要だけを置ける",
+  "framework": "「理解」は代理指標だと外してから、その下にある具体的な要求を三段で掘り、責める形ではなくお願いの形で置く",
+  "micro_adjustment_points": [
+    "「本当は何をしてほしいのか」の掘り方を、実際の一問で示す",
+    "置いたあとの沈黙をどう扱うかを一段足す"
+  ]
 }
