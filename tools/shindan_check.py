@@ -18,6 +18,10 @@ import json, re, sys, glob, os, collections, unicodedata
 BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れる', '明け渡す',
           '渡す', '渡し', '恋人', '寄り添', 'んです', 'と言えるでしょう', 'いかがでしょうか', '台所']
 STYLE_ONLY = ['んです', 'と言えるでしょう', 'いかがでしょうか', '寄り添']
+# 設問の主語（rules/shindan.md「文体」・2026-08-25 Coco決定／9/1週から適用）
+# frame だけを見る：解説の地の文で語そのものを説明する場合があり、そこは射程外
+SUBJECT_NG = ['あなた', 'みんな']
+SUBJECT_FROM = '2026-09-01'
 
 X_CTA = 'いちばん近いの、一文字だけコメントで教えて。'
 X_FOUR = '四つとも、間違いではない。'
@@ -50,6 +54,13 @@ def width(s):
 def banned_in(text):
     naked = re.sub(r'「[^」]*」', '', text)   # 読者の声の引用内は文体ルールの対象外
     return [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in text)]
+
+
+def subject_in(frame, date):
+    """設問の主語。frame 限定・引用の「」内は対象外・9/1週より前には遡及しない"""
+    if date < SUBJECT_FROM: return []
+    naked = re.sub(r'「[^」]*」', '', frame)
+    return [w for w in SUBJECT_NG if w in naked]
 
 
 def check_x(posts, label):
@@ -95,6 +106,8 @@ def check_x(posts, label):
         if h: ng(pid, '禁止語', '／'.join(h))
         m = MOJI.findall(fr + cm)
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
+        sb = subject_in(fr, pid)
+        if sb: ng(pid, '設問に主語', '／'.join(sb), '（frame限定・9/1週から）')
 
         # 8 参考カウント
         if any(k in cm for k in WIT_HINTS): wit.append(pid)
@@ -148,6 +161,8 @@ def check_th(posts, label):
         if h: ng(pid, '禁止語', '／'.join(h))
         m = MOJI.findall(fr + r1)
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
+        sb = subject_in(fr, pid)
+        if sb: ng(pid, '設問に主語', '／'.join(sb), '（frame限定・9/1週から）')
 
         # 7 既視感：フックの書き出しと受け口
         opens.append((pid, fr.strip()[:12], r1.strip()[:14]))
