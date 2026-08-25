@@ -91,8 +91,9 @@ def check(d, path, titles):
     for t in titles:
         if '私' in t: naked = naked.replace(t, '')
 
-    # 1 禁止語（原理01/07の公式文言だけ例外）
+    # 1 禁止語（原理01/07の公式文言と、「」内の引用は例外）
     body = md.replace('今日決められることだけを渡す', '').replace('動ける範囲を渡す', '')
+    body = re.sub(r'「[^」]*」', '', body)   # 読者の声・過去記事タイトルの引用内は文体ルールの対象外
     hit = [w for w in BANNED if w in body]
     if hit: ng(nid, '禁止語', '／'.join(hit))
 
