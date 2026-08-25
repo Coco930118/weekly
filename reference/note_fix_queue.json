@@ -1909,6 +1909,46 @@
           "decision": "2026-08-25 対応済み（note.com側の作業完了・リポジトリにも反映）"
         }
       ]
+    },
+    {
+      "file": "note_2026-08-26_subtract.json",
+      "note_id": "note_20260826_subtract",
+      "date": "2026-08-26",
+      "title": "💗感情を足した言葉は、届く前に相手の防御に当たる",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "画像プロンプト",
+          "detail": "季節モチーフの重複。8/26 と 8/27 が同じ「朝顔／夕顔」系だった。8/26 を百日紅に差し替え（リポジトリ反映済み）。未アップのため note.com 側の作業はなし",
+          "severity": "低",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "file": "note_2026-08-27_put-into-words.json",
+      "note_id": "note_20260827_put_into_words",
+      "date": "2026-08-27",
+      "title": "💗言えないままの気持ちは、相手の都合のいい形で伝わる",
+      "plan": "Threads",
+      "visibility": "members_only",
+      "note_com_edit_needed": false,
+      "items": [
+        {
+          "rule": "画像プロンプト",
+          "detail": "蛍は8月下旬の季節モチーフとして遅い。夕顔が「しぼむ」も夜のはじまりと合わない。夜顔がひらく形に差し替え（リポジトリ反映済み）。未アップのため note.com 側の作業はなし",
+          "severity": "低",
+          "status": "open"
+        },
+        {
+          "rule": "重複",
+          "detail": "「あわせて読む」の導入文が 8/26 と同一（「愛と依存の見分け方は、こちらに。」）。本籍は 8/26。こちらを「特別扱いが、いつのまにか役目に変わる話は、こちらに。」に差し替え（リポジトリ反映済み）",
+          "severity": "高",
+          "status": "open"
+        }
+      ]
     }
   ],
   "patch_note": "fix_patch は「その一文だけ差し替えれば済む」修正。noteのJSONに before/after で持たせ、公開サイトのカードからコピーできる。fix_full_rewrite は、その語が見出し・タイトル・説明文に入っていて記事の主題語になっているもの＝部分修正では直せない（全文の作り直しになる）。"
