@@ -44,6 +44,7 @@ MONTH_MOTIF = {
 }
 
 issues = []
+sig_over = []
 def ng(nid, *m): issues.append(f'{nid}: ' + ' '.join(str(x) for x in m))
 
 
@@ -59,6 +60,15 @@ def md2html(md):
         lines = [l.strip() for l in b.split('\n') if l.strip()]
         out.append('<p>' + '<br>'.join(inline(l) for l in lines) + '</p>')
     return ''.join(out)
+
+
+def being_section(md, i, push):
+    """在り方署名の段＝「あわせて読む」の手前・背中押しの直前にある、最後の --- 以降"""
+    if i <= 0: return ''
+    head = md[:i]
+    first = re.split(r'[\n　 ]+', push.strip())[0] if push else ''
+    j = head.rfind(first) if first else -1
+    return head[:j if j > 0 else len(head)].rsplit('\n---\n', 1)[-1].strip()
 
 
 def being_open(md, i, push):
@@ -179,7 +189,9 @@ def check(d, path, titles):
             ng(nid, f'季節モチーフが公開月（{mth}月）と合っていない：{MONTH_MOTIF[mth]}')
     return {'nid': nid, 'plan': plan, 'push': (d.get('closing_push') or '').split('\n')[-1],
             'leads': re.findall(r'^(.+)\n→「', md[i:], re.M) if i > 0 else [],
-            'being': being_open(md, i, d.get('closing_push') or '')}
+            'being': being_open(md, i, d.get('closing_push') or ''),
+            'sig_fixed': 'でしかない' in being_section(md, i, d.get('closing_push') or ''),
+            'week': d.get('source_week') or ''}
 
 
 def main(paths):
@@ -197,6 +209,18 @@ def main(paths):
         c = collections.Counter(r[key] for r in rows if r[key])
         dup = [k for k, v in c.items() if v > lim]
         if dup: ng('週内', f'{name}が重複: ' + ' / '.join(x[:28] for x in dup))
+    # 在り方署名の①定型は週3本まで（広い定義＝語尾「でしかない」で締めるものを全部数える）
+    # 週ごとに数える。--all で全記事をまとめて数えない。過去分・常設案内は週の単位を持たないので対象外
+    # 配信済みの週には遡及しないので、--all では要修正にせず参考として出す
+    weeks = sorted({r['week'] for r in rows if r['week'] and r['week'] != 'standing_guide'})
+    for wk in weeks:
+        grp = [r for r in rows if r['week'] == wk]
+        fixed = [r['nid'] for r in grp if r.get('sig_fixed')]
+        if len(grp) >= 7 and len(fixed) > 3:
+            msg = f'在り方署名の定型（〜でしかない）が{len(fixed)}本（上限3本）: ' + ' / '.join(fixed)
+            if len(weeks) == 1: ng(wk, msg)
+            else: sig_over.append(f'{wk}: {msg}')
+
     lead = collections.Counter(l for r in rows for l in r['leads'])
     dup = [k for k, v in lead.items() if v > 1]
     if dup: ng('週内', 'あわせて読むの導入文が重複: ' + ' / '.join(x[:28] for x in dup[:4]))
@@ -209,6 +233,8 @@ def main(paths):
 
     c = collections.Counter(r['plan'] for r in rows)
     print(f'\n■ 参考カウント\n  プラン別: {dict(c)}')
+    for m in sig_over:
+        print(f'  ! {m}\n    （配信済みの週は遡及しない。note_fix_queue の deferred 済み）')
 
     print('\n' + '=' * 60)
     print('【判断チェック】機械では判定できない。必ず目視で埋めること')
@@ -222,8 +248,8 @@ def main(paths):
     print('   「整理された感覚」か。同じ形の悩みが来たとき自分で処理できる手触りが残るか')
     print('④ 6項目 — ①向いているか ②何が変わるか ③変化までどれくらい（固定スロット）')
     print('   ④自分でやること1つ ⑤費用 ⑥どんな場面に合わないか（固定スロット）')
-    print('\n■ 在り方署名の書き出し（記事ごとに違う角度になっているか目視）')
-    for r in rows: print(f'  {r["nid"]} {r["being"][:52]}')
+    print('\n■ 在り方署名の書き出し（記事ごとに違う角度になっているか目視／● ＝ ①定型・週3本まで）')
+    for r in rows: print(f'  {"●" if r.get("sig_fixed") else "　"} {r["nid"]} {r["being"][:50]}')
     print('\n■ 背中押しの言い切り（週内で重複していないか目視）')
     for r in rows: print(f'  {r["nid"]} {r["push"][:52]}')
     return 1 if issues else 0
