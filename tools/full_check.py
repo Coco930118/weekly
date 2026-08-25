@@ -202,18 +202,23 @@ def main(path):
     dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1]
     if dup: ng('WEEK', 'エピソード重複', dup)
     try:
-        log = json.load(open('reference/episode_usage_log.json', encoding='utf-8'))['log']
-        last = {}
+        u = json.load(open('reference/episode_usage_log.json', encoding='utf-8'))
+        # 30日除外の適用外（registered の exempt_30day: true ＝ type: 日常素材。現在は E373）
+        exempt = {r for b in u.get('registered', []) if b.get('exempt_30day')
+                  for r in b.get('episode_refs', [])}
+        hist = collections.defaultdict(list)
         wk = d.get('week', '')
-        for l in log:
+        for l in u['log']:
             r = l.get('episode_ref')
             if r and l.get('week') != wk:
-                last[r] = max(last.get(r, ''), l.get('date', ''))
+                hist[r].append(l.get('date', ''))
         for p in posts:
             e = p.get('episode_id')
-            if not e: continue
+            if not e or e in exempt: continue
             cut = (datetime.date(*map(int, p['date'].split('-'))) - datetime.timedelta(days=30)).isoformat()
-            if last.get(e, '') >= cut: ng(p['id'], f'エピソード{e}は30日以内に使用済（{last[e]} / 基準{cut}）※在庫ゼロなら最終使用日が最も古いものから再使用可＝恒久ルール。その場合は報告に明示すること')
+            # 投稿日より前の使用だけ数える（後の週での使用は、その週を検査するときに判定される）
+            prev = [x for x in hist.get(e, []) if x < p['date']]
+            if prev and max(prev) >= cut: ng(p['id'], f'エピソード{e}は30日以内に使用済（{max(prev)} / 基準{cut}）※在庫ゼロなら最終使用日が最も古いものから再使用可＝恒久ルール。その場合は報告に明示すること')
     except Exception as ex:
         print('  (使用ログ照合スキップ:', ex, ')')
 
