@@ -25,8 +25,10 @@ X_BRIDGE = 'さっきの4択が1問目。残り7問で出るのは、その場�
 X_TAIL = '▼ 8問 / 約1分'
 TH_BRIDGE = 'さっきの4択が1問目。残り7問で出るのは、その場面ではなく、いつもの癖のほう。'
 TH_STAR = '感情はある。依存はしない。'
-TH_TAIL = '▼ 8問 / 約1分'          # rules/shindan.md の全文は「…で、いまどこに立っているか」
-TH_TAIL_FULL = '▼ 8問 / 約1分で、いまどこに立っているか'
+TH_TAIL = '▼ 8問 / 約1分'          # 正文（2026-08-25 Coco決定・8/25週から）。
+TH_TAIL_OLD = '▼ 8問 / 約1分で、いまどこに立っているか'   # 旧文。橋渡しの一行と約束が重なるため廃止
+# 混入文字：キリル・ハングルは日本語の投稿に出ない。手打ち経路で紛れると目視で気づけない
+MOJI = re.compile(r'[Ѐ-ӿ가-힣]')
 MEMBERSHIP = 'note.com/coconocanvas/membership'
 
 # 設問の型（実測の到達率：見立て170/166・順番144・自己分類114・行動96）
@@ -88,9 +90,11 @@ def check_x(posts, label):
         if 'これまでの診断' in cm: ng(pid, 'バックカタログ行が残っている（新形式で廃止）')
         if p.get('image_prompt'): ng(pid, 'image_prompt を持っている（診断は画像プロンプト廃止）')
 
-        # 7 禁止語
+        # 7 禁止語・混入文字
         h = banned_in(fr + cm)
         if h: ng(pid, '禁止語', '／'.join(h))
+        m = MOJI.findall(fr + cm)
+        if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
 
         # 8 参考カウント
         if any(k in cm for k in WIT_HINTS): wit.append(pid)
@@ -107,7 +111,7 @@ def check_x(posts, label):
 
 def check_th(posts, label):
     print(f'--- Threads診断 {len(posts)}本 ---')
-    wit, opens, notes = [], [], []
+    wit, opens = [], []
     for p in posts:
         pid = p['date']
         fr, r1 = p.get('frame', ''), p.get('reply_1', '')
@@ -126,7 +130,7 @@ def check_th(posts, label):
         if TH_STAR not in r1: ng(pid, f'北極星「{TH_STAR}」がない')
         if TH_BRIDGE not in r1: ng(pid, '橋渡しの一行が固定文と違う（既視感チェックの対象外・7本同一）')
         if TH_TAIL not in r1: ng(pid, f'「{TH_TAIL}」がない')
-        elif TH_TAIL_FULL not in r1: notes.append(pid)
+        if TH_TAIL_OLD in r1: ng(pid, f'診断リンクが旧文（「{TH_TAIL_OLD}」は2026-08-25に廃止）')
         if MEMBERSHIP in r1: ng(pid, '会員導線が返信欄にある（診断リンクの先にあるため置かない）')
 
         # 4 診断URL
@@ -139,18 +143,17 @@ def check_th(posts, label):
         if '──────────────' in r1: ng(pid, '旧形式の区切り線が残っている（4行の箇条書きに圧縮する）')
         if p.get('image_prompt'): ng(pid, 'image_prompt を持っている（診断は画像プロンプト廃止）')
 
-        # 6 禁止語
+        # 6 禁止語・混入文字
         h = banned_in(fr + r1)
         if h: ng(pid, '禁止語', '／'.join(h))
+        m = MOJI.findall(fr + r1)
+        if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
 
         # 7 既視感：フックの書き出しと受け口
         opens.append((pid, fr.strip()[:12], r1.strip()[:14]))
         if any(k in r1 for k in WIT_HINTS): wit.append(pid)
 
     print(f'  ウィット一滴 検出: {len(wit)}本 {wit}（試験中・週2〜3本）')
-    if notes:
-        print(f'  ! 診断リンクの見出しが短縮形（{len(notes)}本）。rules/shindan.md は'
-              f'「{TH_TAIL_FULL}」。どちらに揃えるか診断セッションの判断')
     for key, name in ((1, 'フックの書き出し'), (2, '返信の受け口')):
         c = collections.Counter(o[key] for o in opens)
         d = [k for k, v in c.items() if v > 1]

@@ -59,6 +59,9 @@ def main(path):
         naked = re.sub(r'「[^」]*」', '', t)  # 読者の声の引用内は文体ルールの対象外
         hit = [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in t)]
         if hit: ng(p['id'], '禁止語', hit)
+        # 混入文字：キリル・ハングルは日本語の投稿に出ない。手打ち経路で紛れると目視で気づけない
+        m = re.findall(r'[Ѐ-ӿ가-힣]', t)
+        if m: ng(p['id'], '混入文字（キリル・ハングル）', sorted(set(m)))
 
     # 2 X形式
     for p in X:
