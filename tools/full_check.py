@@ -126,6 +126,19 @@ def main(path):
             ng(p['id'], '非funnelにnote/プロフィール誘導')
 
     # 6 構文重複
+    # 命名締めの骨格（否定→断定）が週内で重なっていないか（2026-08-27 実測で16/17本の収束を検出）
+    NEG = r'(じゃない|ではない|じゃなく|ではなく|でなく)'
+    skel = []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0].strip()
+        ls = [l for l in b.split('\n') if l.strip()]
+        if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
+    if len(skel) > 2:
+        ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
+    tada = [p['id'] for p in posts if p.get('note_funnel') and 'ただし' in p['content']]
+    if len(tada) > 2:
+        ng('WEEK', f'funnelの「続きが要る理由」が「ただし」で{len(tada)}本（週3本以上重ねない）', tada)
+
     for label, arr in [('X', X), ('Th', TH)]:
         yame = [p['id'] for p in arr if re.search(r'(やめる|やめてみる|やめた)。?.$', p.get('quote', ''))]
         if len(yame) > 2: ng('WEEK', f'{label} quote「やめる」型 {len(yame)}本', yame)
