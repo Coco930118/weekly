@@ -63,6 +63,16 @@ def main(path):
         m = re.findall(r'[Ѐ-ӿ가-힣]', t)
         if m: ng(p['id'], '混入文字（キリル・ハングル）', sorted(set(m)))
 
+    # 1.5 ゼロ主語基本（「わたし」は週2本まで）／効能締めの禁止（2026-08-27 Coco決定）
+    watashi = [p['id'] for p in TH if 'わたし' in p['content']]
+    if len(watashi) > 2: ng('WEEK', f'Threadsで「わたし」主語が{len(watashi)}本（上限2・ゼロ主語が基本）', watashi)
+    KOUNO = ['が減る', 'がラクに', 'が楽に', '気持ちが軽', 'しやすくなる', 'がなくなる']
+    for p in posts:
+        body = p['content'].split('感情はある。')[0].strip()
+        tail = [l for l in body.split('\n') if l.strip()]
+        if tail and any(k in tail[-1] for k in KOUNO):
+            ng(p['id'], '効能で締めている（名前をつける一行にする）', tail[-1][:28])
+
     # 2 X形式
     for p in X:
         l1 = p['content'].split('\n')[0]
@@ -85,7 +95,7 @@ def main(path):
         if not any(w in p['content'] for w in CTX): ng(p['id'], '恋愛/関係の文脈明示なし')
         s = [w for w in SOSHIKI if w in p['content']]
         if s: ng(p['id'], '組織語', s)
-        if not (80 <= n <= 190): ng(p['id'], f'字数 {n}')
+        if not (130 <= n <= 230): ng(p['id'], f'字数 {n}（拡散帯150〜200字・2026-08-27変更）')
         q = p.get('quote', '').rstrip('🫶💎').strip()
         if q and q == p['content'].split('\n')[0].strip(): ng(p['id'], 'quoteが冒頭文の流用')
         if '🫶' in p.get('quote', ''): ng(p['id'], 'quoteに🫶（絵文字は2026-08-24廃止）')
