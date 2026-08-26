@@ -131,7 +131,8 @@ def main(path):
     skel = []
     for p in posts:
         b = p['content'].split('感情はある。')[0].strip()
-        ls = [l for l in b.split('\n') if l.strip()]
+        # note導線の行は締めではないので窓から外す。入れるとfunnelだけ1行ずれた位置を測ることになる
+        ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
         if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
     if len(skel) > 2:
         ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
