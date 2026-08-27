@@ -140,10 +140,11 @@ def main(path):
     da_over, da_tail = [], []
     for p in posts:
         b = p['content'].split('感情はある。')[0].strip()
-        n = len(re.findall(r'だ。', b))
+        # 過去形の「〜んだ。」（飲んだ・読んだ・呼んだ）は断定ではないので除く
+        n = len(re.findall(r'(?<!ん)だ。', b))
         if n > 1: da_over.append((p['id'], n))
         ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
-        if ls and re.search(r'だ。?$', ls[-1]): da_tail.append(p['id'])
+        if ls and re.search(r'(?<!ん)だ。?$', ls[-1]): da_tail.append(p['id'])
     for pid, n in da_over:
         ng(pid, f'「だ。」が{n}回（1投稿1回まで。「〜こと。」か体言止めに）')
     if len(da_tail) > 3:
