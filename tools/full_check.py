@@ -98,8 +98,8 @@ def main(path):
         if not any(w in p['content'] for w in CTX): ng(p['id'], '恋愛/関係の文脈明示なし')
         s = [w for w in SOSHIKI if w in p['content']]
         if s: ng(p['id'], '組織語', s)
-        # 窓は据え置き（130〜230）。条文150〜200と実測205〜230のどちらに寄せるかはCoco判断待ち
-        if not (130 <= n <= 230): ng(p['id'], f'字数 {n}（条文は拡散帯150〜200・窓は130〜230）')
+        # 150〜200が目安・230が上限（2026-08-27 Coco決定）。200超は参考カウントで出す
+        if not (130 <= n <= 230): ng(p['id'], f'字数 {n}（目安150〜200・上限230）')
         q = p.get('quote', '').rstrip('🫶💎').strip()
         if q and q == p['content'].split('\n')[0].strip(): ng(p['id'], 'quoteが冒頭文の流用')
         if '🫶' in p.get('quote', ''): ng(p['id'], 'quoteに🫶（絵文字は2026-08-24廃止）')
@@ -334,6 +334,10 @@ def main(path):
 
     print(f'\n■ 参考カウント')
     print(f'  ウィット一滴 検出: {len(wit)}本 {wit}（目安5〜6）')
+    over200 = [(p['id'], len(p['content'].split('感情はある。')[0].strip().replace('\n', '')))
+               for p in TH if len(p['content'].split('感情はある。')[0].strip().replace('\n', '')) > 200]
+    if over200:
+        print(f'  200字超: {len(over200)}本 {over200}（目安150〜200・上限230。削除ではなく統合で縮める）')
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
     print(f'  X観察締め: {len(obs)}本 {obs}（上限4）')
     print(f'  funnel: {[p["id"] for p in fun]}')
