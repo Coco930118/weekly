@@ -64,8 +64,9 @@ def main(path):
         if m: ng(p['id'], '混入文字（キリル・ハングル）', sorted(set(m)))
 
     # 1.5 ゼロ主語基本（「わたし」は週2本まで）／効能締めの禁止（2026-08-27 Coco決定）
-    watashi = [p['id'] for p in TH if 'わたし' in p['content']]
-    if len(watashi) > 2: ng('WEEK', f'Threadsで「わたし」主語が{len(watashi)}本（上限2・ゼロ主語が基本）', watashi)
+    # 「わたし」2回以上＝主題がCocoの回（週2本まで）。1回だけ＝「相談＋対応例」型の対応行なので数えない
+    watashi = [p['id'] for p in TH if p['content'].count('わたし') >= 2]
+    if len(watashi) > 2: ng('WEEK', f'Threadsで主題がCocoの回が{len(watashi)}本（「わたし」2回以上・上限2）', watashi)
     KOUNO = ['が減る', 'がラクに', 'が楽に', '気持ちが軽', 'しやすくなる', 'がなくなる']
     for p in posts:
         body = p['content'].split('感情はある。')[0].strip()
