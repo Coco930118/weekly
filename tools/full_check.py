@@ -156,7 +156,10 @@ def main(path):
 
     # 数字の歯止め（2026-08-27 Coco決定）：経過・回数・期間の数字をゼロ主語で書かない。
     # 伝聞マーカーがある回か、素材に数字がある回だけ。素材の照合は機械では無理なので目視に回す
-    NUM = r'(一|二|三|四|五|六|七|八|九|十|[0-9０-９]+)(日|回|人|件|週間|か月|ヶ月|年|度目|日目|つ)'
+    # 経過・期間を表す数量のみ。「一つ／一人／一件／一日」は処方の単位なので除く
+    # （2026-08-27 実測：9/1 x_01「守るものを一つだけ」・th_08「一日がぐらぐらする」が誤検出だった）
+    NUM = (r'((二|三|四|五|六|七|八|九|十|[2-9]|[0-9]{2,})(日|回|人|件|度目|日目|つ)'
+           r'|(一|二|三|四|五|六|七|八|九|十|[0-9]+)(週間|か月|ヶ月|年|日間|時間))')
     DEN = r'(って|そう。|みたい|人がいた|人がいる|だって|らしい|聞いた|相談があった)'
     numless = []
     for p in posts:
@@ -282,7 +285,9 @@ def main(path):
     # 10 エピソード
     eids = [p.get('episode_id') for p in posts]
     if any(not e for e in eids): ng('WEEK', f'エピソード未紐づけ {sum(1 for e in eids if not e)}本')
-    dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1]
+    # E373は佇まい枠の唯一の素材で、週2〜3本の佇まい枠に付けると必ず重複する。
+    # 用量はE373側の usage_limit（1投稿1〜2要素・同じ要素は週内1回）で担保（2026-08-27 Coco決定）
+    dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1 and k != 'E373']
     if dup: ng('WEEK', 'エピソード重複', dup)
     try:
         u = json.load(open('reference/episode_usage_log.json', encoding='utf-8'))
