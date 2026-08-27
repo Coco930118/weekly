@@ -136,6 +136,19 @@ def main(path):
         if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
     if len(skel) > 2:
         ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
+    # 「だ。」の連発（2026-08-27 Coco決定：1投稿1回まで／締めの「〜だ。」は週3本まで）
+    da_over, da_tail = [], []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0].strip()
+        n = len(re.findall(r'だ。', b))
+        if n > 1: da_over.append((p['id'], n))
+        ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
+        if ls and re.search(r'だ。?$', ls[-1]): da_tail.append(p['id'])
+    for pid, n in da_over:
+        ng(pid, f'「だ。」が{n}回（1投稿1回まで。「〜こと。」か体言止めに）')
+    if len(da_tail) > 3:
+        ng('WEEK', f'締めが「〜だ。」で{len(da_tail)}本（週3本まで）', da_tail)
+
     # 締めの禁止形（2026-08-27 Cocoインタビュー：本人が使わない言い方。独り言に見える）
     YOBI = r'と呼んでいる|と呼ぶ|と呼んだ|という言葉の中身は|だけだった'
     yobi = []
