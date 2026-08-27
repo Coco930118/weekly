@@ -98,7 +98,8 @@ def main(path):
         if not any(w in p['content'] for w in CTX): ng(p['id'], '恋愛/関係の文脈明示なし')
         s = [w for w in SOSHIKI if w in p['content']]
         if s: ng(p['id'], '組織語', s)
-        if not (130 <= n <= 230): ng(p['id'], f'字数 {n}（拡散帯150〜200字・2026-08-27変更）')
+        # 窓は据え置き（130〜230）。条文150〜200と実測205〜230のどちらに寄せるかはCoco判断待ち
+        if not (130 <= n <= 230): ng(p['id'], f'字数 {n}（条文は拡散帯150〜200・窓は130〜230）')
         q = p.get('quote', '').rstrip('🫶💎').strip()
         if q and q == p['content'].split('\n')[0].strip(): ng(p['id'], 'quoteが冒頭文の流用')
         if '🫶' in p.get('quote', ''): ng(p['id'], 'quoteに🫶（絵文字は2026-08-24廃止）')
@@ -153,6 +154,19 @@ def main(path):
     if len(da_tail) > 3:
         ng('WEEK', f'締めが「〜だ。」で{len(da_tail)}本（週3本まで）', da_tail)
 
+    # 数字の歯止め（2026-08-27 Coco決定）：経過・回数・期間の数字をゼロ主語で書かない。
+    # 伝聞マーカーがある回か、素材に数字がある回だけ。素材の照合は機械では無理なので目視に回す
+    NUM = r'(一|二|三|四|五|六|七|八|九|十|[0-9０-９]+)(日|回|人|件|週間|か月|ヶ月|年|度目|日目|つ)'
+    DEN = r'(って|そう。|みたい|人がいた|人がいる|だって|らしい|聞いた|相談があった)'
+    numless = []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0]
+        if len(re.findall(NUM, b)) >= 2 and not re.search(DEN, b):
+            numless.append(p['id'])
+    if numless:
+        ng('WEEK', f'経過・回数の数字が伝聞マーカーなしで書かれている{len(numless)}本'
+                   '（ゼロ主語＝Cocoの記録として読まれる。素材に数字があるか目視で照合）', numless)
+
     # 締めの禁止形（2026-08-27 Cocoインタビュー：本人が使わない言い方。独り言に見える）
     YOBI = r'と呼んでいる|と呼ぶ|と呼んだ|という言葉の中身は|だけだった'
     yobi = []
@@ -160,10 +174,19 @@ def main(path):
         b = p['content'].split('感情はある。')[0].strip()
         ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
         if any(re.search(YOBI, l) for l in ls[-2:]): yobi.append(p['id'])
+    KOSOKU = r'でやっているのは|という言葉の中身は|で決まる|が決めている'
+    ks = []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0].strip()
+        ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
+        if any(re.search(KOSOKU, l) for l in ls[-2:]): ks.append(p['id'])
+    if len(ks) > 2:
+        ng('WEEK', f'締めが「〜でやっているのは／〜で決まる」型で{len(ks)}本（週3本以上重ねない）', ks)
     if yobi:
         ng('WEEK', f'締めが禁止形（〜と呼んでいる／という言葉の中身は／だけだった）{len(yobi)}本'
                    '。Cocoが使わない言い方で、独り言に見える', yobi)
-    tada = [p['id'] for p in posts if p.get('note_funnel') and re.search(r'ただし|ただ、', p['content'])]
+    # 「ただし」だけでなく条件節そのものを数える（2026-08-27 Wチェック：散った先が全部条件節だった）
+    tada = [p['id'] for p in posts if p.get('note_funnel') and re.search(r'ただし|ただ、|間違え(ると|たら)|すると、|なら、.{0,12}(なる|届く|残る|消え)', p['content'])]
     if len(tada) > 2:
         ng('WEEK', f'funnelの「続きが要る理由」が「ただし」で{len(tada)}本（週3本以上重ねない）', tada)
 
@@ -248,10 +271,10 @@ def main(path):
     # 佇まい枠＝処方ゼロの「整った側の風景」。アクションも切り捨ても無い回だけ。
     # 2026-08-27の語尾変更（〜してみてもいいかもね／〜はどう？）で旧リストが当たらなくなり、
     # 普通の投稿まで佇まい枠として数えていた（実測12本・10本）。語幹で拾う形に直した
-    ACT = (r'(してみ|やってみ|やめてみ|決め|入れて|聞いて|数え|書い|置いて|外して|'
+    ACT = (r'(てみ|てみる|てみない|決め|入れて|聞いて|数え|書い|置いて|添えて|立って|外して|'
            r'切って|降り|渡して|返して|止めて|今日ひとつ|今夜ひとつ|明日ひとつ|今週ひとつ|'
            r'はどう？|でいいよ|で十分)')
-    tatazumai = [p['id'] for p in TH if '感情はある。' in p['content'] and
+    tatazumai = [p['id'] for p in TH if '感情はある。' in p['content'] and not p.get('note_funnel') and
                  not re.search(ACT, p['content'].split('感情はある。')[0])]
     obs = [p['id'] for p in X if re.search(r'(それだけだ。|それだけの習慣だ。|ことにしてる。|してる。それだけ。)', p['content'][-60:])]
     if len(obs) > 4: ng('WEEK', f'X観察締めが{len(obs)}本（上限4）', obs)
