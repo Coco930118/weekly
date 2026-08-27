@@ -136,6 +136,16 @@ def main(path):
         if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
     if len(skel) > 2:
         ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
+    # 締めの禁止形（2026-08-27 Cocoインタビュー：本人が使わない言い方。独り言に見える）
+    YOBI = r'と呼んでいる|と呼ぶ|と呼んだ|という言葉の中身は|だけだった'
+    yobi = []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0].strip()
+        ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
+        if any(re.search(YOBI, l) for l in ls[-2:]): yobi.append(p['id'])
+    if yobi:
+        ng('WEEK', f'締めが禁止形（〜と呼んでいる／という言葉の中身は／だけだった）{len(yobi)}本'
+                   '。Cocoが使わない言い方で、独り言に見える', yobi)
     tada = [p['id'] for p in posts if p.get('note_funnel') and re.search(r'ただし|ただ、', p['content'])]
     if len(tada) > 2:
         ng('WEEK', f'funnelの「続きが要る理由」が「ただし」で{len(tada)}本（週3本以上重ねない）', tada)
