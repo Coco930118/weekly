@@ -341,7 +341,10 @@ def main(path):
            'という人がいる', '人がいる', 'らしい', 'んだって', 'たって', 'そう。', '聞かれた', 'って笑ってた']
     for p in TH:
         body = p['content'].split('感情はある。')[0].strip()
-        finals = [l for l in body.split('\n') if l.strip() and 'note' not in l]
+        # note案内の行は目線判定から外す。2026-08-27の新形式（「〜だけ、返信に置いた。」）は
+        # 'note' の字を含まないため、旧条件では最終行として拾われ、ゼロ主語＋過去形と誤判定された
+        finals = [l for l in body.split('\n')
+                  if l.strip() and 'note' not in l and '返信に' not in l and '返信へ' not in l]
         tail = finals[-1] if finals else ''
         if any(m in body for m in DEN): pov = '②相談者'
         elif 'わたし' in body or body.startswith('昔'): pov = '①わたし'
