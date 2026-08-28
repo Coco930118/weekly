@@ -14,6 +14,142 @@
   },
   "notes": [
     {
+      "title": "💗待つ場所を、自分の側に戻す夜",
+      "publish_date": "2026-09-01",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "member_entry",
+      "principle_no": 1,
+      "cluster_topic": "返信待ちの夜の使い方——送った後に夜の予定を先に入れると、待つ場所が自分の側に戻る三日間の作り方",
+      "linked_principle": "待つ場所を自分の側に戻すのは追わないことではなく、自分の時間の中で待てる状態を作ること。軸ができた人から、裏返せる夜になる",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-01_flip.json",
+      "in_index": true
+    },
+    {
+      "title": "💼管理職の孤独は、書くことで「状態」になる",
+      "publish_date": "2026-09-02",
+      "platform_origin": "X",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "flagship",
+      "principle_no": 1,
+      "cluster_topic": "管理職の孤独・五分書く技術——上にも下にも横にも話せない構造を、自分宛の一件で抜け出す",
+      "linked_principle": "誰の許可もいらない、今日の一手。書き先が自分だけでも、頭の整理は始まる",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-02_alone.json",
+      "in_index": true
+    },
+    {
+      "title": "💼正しいことを言っても部屋が凍るとき、怒りが混入している",
+      "publish_date": "2026-09-02",
+      "platform_origin": "X",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "member_entry",
+      "principle_no": 3,
+      "cluster_topic": "怒りの混入・状態を返す——正しいことを言っても届かない時、事実より先に相手の状態を一行返す技術",
+      "linked_principle": "事実と感情を分離する。相手の状態を先に返してから、こちらの話に入る",
+      "funnel_targets": [
+        "x_04"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-02_freeze.json",
+      "in_index": true
+    },
+    {
+      "title": "💗本音が言えた夜と言えなかった夜の差は、翌朝の一行だ",
+      "publish_date": "2026-09-02",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "member_entry",
+      "principle_no": 4,
+      "cluster_topic": "本音が言えた夜と言えなかった夜（夫婦・パートナー）——翌朝に自分あてに一行残すことで、未処理を「処理した」状態にする",
+      "linked_principle": "判断を読者へ返す。言えなかったことを、まず自分の中で受け取る",
+      "funnel_targets": [
+        "th_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-02_morning.json",
+      "in_index": true
+    },
+    {
+      "title": "💗言いたいことが言えないまま次の日になるとき、順番が逆になっている",
+      "publish_date": "2026-09-03",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "member_entry",
+      "principle_no": 2,
+      "cluster_topic": "言いたいことが言えないまま次の日になる——できていることを先に確認してから言えていないことに向かう、順番の技術",
+      "linked_principle": "扱える大きさに。できていることから先に始めると、言えていないことの重さが変わる",
+      "funnel_targets": [
+        "th_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-03_order.json",
+      "in_index": true
+    },
+    {
+      "title": "💼振り返りは「よかったか悪かったか」ではない。引っかかりを一つ来週へ持ち込まないことだ",
+      "publish_date": "2026-09-04",
+      "platform_origin": "X",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "member_entry",
+      "principle_no": 1,
+      "cluster_topic": "振り返りの技術——「何を振り返ればいいか分からない」を「引っかかりを一つ来週に持ち込まない」で解決する",
+      "linked_principle": "今日の一手。引っかかりを一つ見つけて、来週の最初の一手に変える",
+      "funnel_targets": [
+        "x_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-04_review.json",
+      "in_index": true
+    },
+    {
+      "title": "💗秋の入口で整えるなら、関係を「切る」ではなく「確認する」",
+      "publish_date": "2026-09-04",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "flagship",
+      "principle_no": 1,
+      "cluster_topic": "秋の入口に整えるなら——持ち越さない区切り・友達関係の整理・今の自分に必要な距離の確認",
+      "linked_principle": "今日の一手。関係の距離を「切る」か「続ける」の二択ではなく、「今の自分に必要な距離」を確認する第三の軸",
+      "funnel_targets": [
+        "th_12"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-04_autumn.json",
+      "in_index": true
+    },
+    {
+      "title": "💼今週何をしたか思い出せないのは、「飲み込んだこと」を数えていないからだ",
+      "publish_date": "2026-09-05",
+      "platform_origin": "X",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "member_entry",
+      "principle_no": 3,
+      "cluster_topic": "頑張ったはずなのに思い出せない——飲み込んだ回数・三つ書き出す技術で、見えない仕事を事実として扱う",
+      "linked_principle": "事実と感情を分離する。飲み込んだことを感情ではなく事実として数える",
+      "funnel_targets": [
+        "x_10"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-05_invisible.json",
+      "in_index": true
+    },
+    {
       "title": "💗また同じパターンで終わる人へ｜我慢なく、依存せず、「大好きだけど、自分を生きる」関係の作り方",
       "publish_date": "2026-03-20",
       "platform_origin": "Threads",
