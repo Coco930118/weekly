@@ -190,7 +190,9 @@ def main(path):
                    '。Cocoが使わない言い方で、独り言に見える', yobi)
     # 「ただし」だけでなく条件節そのものを数える（2026-08-27 Wチェック：散った先が全部条件節だった）
     # note案内が「〜は、noteに。」の旧型になっていないか（2026-08-27 廃止。実測16/16本が同型だった）
-    old_note = [p['id'] for p in posts if p.get('note_funnel')
+    # 適用は9/1週から（2026-08-27 Coco決定）。8/25週は対象外
+    NOTE_FROM = '2026-09-01'
+    old_note = [p['id'] for p in posts if p.get('note_funnel') and p['date'] >= NOTE_FROM
                 and re.search(r'(は|を)、?note(に|へ)。', p['content'])]
     if old_note:
         ng('WEEK', f'note案内が旧型「〜は、noteに。」{len(old_note)}本'
@@ -200,10 +202,15 @@ def main(path):
              r'嫌われ|喧嘩|待つ|待って|休み|帰り|黙っ|話しかけ|任せ|報告)')
     noba = []
     for p in posts:
-        if not p.get('note_funnel'): continue
+        if not p.get('note_funnel') or p['date'] < NOTE_FROM: continue
         b = p['content'].split('感情はある。')[0]
-        nl = [l for l in b.split('\n') if 'note' in l or '書いた' in l or '置いた' in l]
+        nl = [l for l in b.split('\n') if 'note' in l or '返信に' in l]
         if nl and not re.search(BAMEN, nl[-1]): noba.append(p['id'])
+    tome = [p['id'] for p in posts if p.get('note_funnel') and p['date'] >= NOTE_FROM
+            and '返信に' not in p['content'].split('感情はある。')[0]]
+    if tome:
+        ng('WEEK', f'note案内が「返信に置いた」で閉じていない{len(tome)}本'
+                   '（本文にリンクがないため、置き場所を示さないと行き止まりになる）', tome)
     if noba:
         ng('WEEK', f'note案内に具体的場面がない{len(noba)}本'
                    '（その一行だけ読んで、誰のどの場面の話か分かるか）', noba)
