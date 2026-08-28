@@ -194,7 +194,19 @@ def main(path):
                 and re.search(r'(は|を)、?note(に|へ)。', p['content'])]
     if old_note:
         ng('WEEK', f'note案内が旧型「〜は、noteに。」{len(old_note)}本'
-                   '（中身の一部を見せて「だけ」で範囲を限定する形にする）', old_note)
+                   '（〈読者の場面〉→〈できるようになること〉→〈それだけ書いた〉にする）', old_note)
+    # note案内に具体的場面が入っているか（2026-08-27 実測：16本中11本が場面ゼロだった）
+    BAMEN = (r'(夜|朝|翌朝|日曜|月曜|土曜|面談|会議|返事|連絡|会えな|言えなか|断った|'
+             r'嫌われ|喧嘩|待つ|待って|休み|帰り|黙っ|話しかけ|任せ|報告)')
+    noba = []
+    for p in posts:
+        if not p.get('note_funnel'): continue
+        b = p['content'].split('感情はある。')[0]
+        nl = [l for l in b.split('\n') if 'note' in l or '書いた' in l or '置いた' in l]
+        if nl and not re.search(BAMEN, nl[-1]): noba.append(p['id'])
+    if noba:
+        ng('WEEK', f'note案内に具体的場面がない{len(noba)}本'
+                   '（その一行だけ読んで、誰のどの場面の話か分かるか）', noba)
     tada = [p['id'] for p in posts if p.get('note_funnel') and re.search(r'ただし|ただ、|間違え(ると|たら)|すると、|なら、.{0,12}(なる|届く|残る|消え)', p['content'])]
     if len(tada) > 2:
         ng('WEEK', f'funnelの「続きが要る理由」が「ただし」で{len(tada)}本（週3本以上重ねない）', tada)
