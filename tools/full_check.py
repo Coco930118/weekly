@@ -189,6 +189,12 @@ def main(path):
         ng('WEEK', f'締めが禁止形（〜と呼んでいる／という言葉の中身は／だけだった）{len(yobi)}本'
                    '。Cocoが使わない言い方で、独り言に見える', yobi)
     # 「ただし」だけでなく条件節そのものを数える（2026-08-27 Wチェック：散った先が全部条件節だった）
+    # note案内が「〜は、noteに。」の旧型になっていないか（2026-08-27 廃止。実測16/16本が同型だった）
+    old_note = [p['id'] for p in posts if p.get('note_funnel')
+                and re.search(r'(は|を)、?note(に|へ)。', p['content'])]
+    if old_note:
+        ng('WEEK', f'note案内が旧型「〜は、noteに。」{len(old_note)}本'
+                   '（中身の一部を見せて「だけ」で範囲を限定する形にする）', old_note)
     tada = [p['id'] for p in posts if p.get('note_funnel') and re.search(r'ただし|ただ、|間違え(ると|たら)|すると、|なら、.{0,12}(なる|届く|残る|消え)', p['content'])]
     if len(tada) > 2:
         ng('WEEK', f'funnelの「続きが要る理由」が「ただし」で{len(tada)}本（週3本以上重ねない）', tada)
