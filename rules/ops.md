@@ -52,7 +52,9 @@ note.comに投稿していない下書きの置き場。**サイトには出さ�
 ## 投稿JSONの構造
 `posts/week_YYYY-MM-DD_YYYY-MM-DD.json`
 - `week`: `"YYYY-MM-DD_YYYY-MM-DD"`
-- `posts[]`: date / platform / time / purpose / character / content / image_prompt / quote
+- `posts[]`: **`id`** / date / platform / time / purpose / character / **`episode_id`** / content / quote / **`note_funnel`** / image_prompt / **`self_replies`**（12項目・2026-08-30 訂正）
+  - 太字の4つが旧定義から漏れていた。**`full_check.py` はこの4つを直接読む**（id＝指摘の宛先／episode_id＝30日除外と佇まい枠／note_funnel＝週8本・土日回避・返信2プロミス／self_replies＝禁止語の3箇所横断）。ここを見てJSONを組むと、機械チェックが回らない
+  - 2026-08-29に診断側（下の2行）の同じ欠落を直したとき、35投稿側が残っていた
 - **X診断（`shindan_x_*`）は2026-08-25週から新形式**：frame / choices / **comment（1通）** / shindan_url / technique（＋該当回のみ tatazumai_episode_ref）。旧 comment_1・comment_2 の2通構成は廃止（詳細は「X診断の新形式」）
 - **Threads診断（`shindan_th_*`）は2026-08-24週から新形式**：frame / choices / reply_1 / **takeaway_line**（本文の持ち帰れる一行）/ **bridge_line**（橋渡しの一行・7本同一）/ question_type / theme_title / shindan_url / episode_ref。旧「frame / choices / reply_1 の3つだけ」は廃止（2026-08-29 訂正。takeaway_line・bridge_line は2026-08-24 Coco決定の必須要素なのに、JSONの形の定義から漏れていた）
 - **X診断・Threads診断は image_prompt を持たない**（2026-08-05 画像プロンプト廃止）
