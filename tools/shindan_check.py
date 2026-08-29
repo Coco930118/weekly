@@ -122,15 +122,27 @@ def check_x(posts, label):
 
         # 8 参考カウント
         if any(k in cm for k in WIT_HINTS): wit.append(pid)
-        t = next((n for n, ks in QTYPE if any(k in fr for k in ks)), '不明')
-        qt.append((pid, t))
+        # 設問の型は「設問文（？で終わる行）」だけで判定する。frame 全体を見ると2通り化ける：
+        #   ①固定CTA「いちばん近いの、一文字だけ〜」に「いちばん近い」が入っているため、
+        #     設問が行動型（「どう返す？」）でも全本が自己分類型に当たる
+        #   ②「先に」のような順番型の語がフックや選択肢に出ると、設問が行動型でも順番型になる
+        # どちらも「素の行動型は週2本まで」（rules/shindan.md ⑤）を素通りさせていた
+        # （2026-08-30 Wチェック検出。実測：8/25週は7本中3本が本文側の語で誤判定だった）
+        # 検出語そのものは動かさない——定義を変えると週をまたいだ比較ができなくなる
+        ask = '／'.join(l.strip() for l in fr.replace(X_CTA, '').split('\n')
+                        if l.strip().endswith(('？', '?'))) or fr.replace(X_CTA, '')
+        t = next((n for n, ks in QTYPE if any(k in ask for k in ks)), '不明')
+        qt.append((pid, t, ask))
 
     print(f'  ウィット一滴 候補: {len(wit)}本 {wit}（試験中・週2〜3本・**目視で確定すること**）')
-    c = collections.Counter(t for _, t in qt)
+    c = collections.Counter(t for _, t, _ in qt)
     print(f'  設問の型: {dict(c)}')
     if c.get('行動', 0) > 2: ng(label, f'素の行動型が{c["行動"]}本（上限2本・到達率96%で最下位）')
-    for pid, t in qt:
-        if t == '不明': print(f'    ! {pid} 設問の型を判定できず（目視）')
+    for pid, t, ask in qt:
+        if t == '不明': print(f'    ! {pid} 設問の型を判定できず（目視で決める）: {ask[:44]}')
+    if c.get('不明'):
+        print(f'    ※不明が{c["不明"]}本。**素の行動型の本数は目視で確定する**'
+              f'（上の上限判定は不明を数えていない）')
 
 
 def check_th(posts, label):
