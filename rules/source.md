@@ -56,6 +56,11 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
 5. 使用したエピソードIDと投稿日を `episode_usage_log.json` に追記
 6. 更新したログファイルを main にプッシュ
 
+### 使用履歴の台帳は `episode_usage_log.json` だけ（2026-08-29 Coco決定・恒久ルール）
+**`episodes_soshiki.json` の `used_in` は廃止した。** `log` が per-post で全項目（episode_ref／date／theme／platform／week）を持っており、`used_in` は同じ情報の二重帳簿だった。更新主体がルールに書かれておらず、実際に食い違いが出ている（2026-08-29：th_15 の素材を花→ヨガに直したとき、`log` だけ直って `used_in` が花のまま残った）。
+- **使用履歴を書くのは `episode_usage_log.json` の `log` だけ。** エピソード側に使用実績を書き戻さない
+- 廃止時に、`log` に無かった9件（9/1週の記録漏れ6件＋E372のnote3件）は `log` へ移してから削除した
+
 ### エピソード追加時
 - `episodes_soshiki.json` の `episodes` 配列に追記（ID採番: E6, E7...）
 - `episode_usage_log.json` に新IDを空配列で追加
@@ -73,7 +78,7 @@ Codeは素材から下書きを起こし、**Cocoが赤ペンで最終判断**�
   4. 使用条件（`usage_limit`）
   5. 事実ルール（`verbatim_rule`）
   6. 注意（`usage_note`。Cocoから受けた訂正・書き方の指摘もここに含める）
-  7. 使用実績（`used_in`。未使用なら「なし」）
+  7. 使用実績（`episode_usage_log.json` の `log` から引く。未使用なら「なし」）
   8. 背景（なぜこの素材が要るのか。他セッションが用途を誤らないため）
 - 内容を後から訂正した時も、**訂正後の全文を同じ形で出し直す**（差分だけ伝えない。コピペで上書きできる状態を保つ）
 

@@ -4955,6 +4955,69 @@
    "theme": "コンビニの春巻きを買って帰る（ウィット一滴）",
    "platform": "X（x_14・ウィット一滴）",
    "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E295",
+   "date": "2026-09-01",
+   "theme": "🕊ひより 保存獲得（x_02・used_in から移行 2026-08-29）",
+   "platform": "X",
+   "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E300",
+   "date": "2026-09-01",
+   "theme": "🐈‍⬛しらたま 保存獲得（th_02・used_in から移行 2026-08-29）",
+   "platform": "Threads",
+   "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E307",
+   "date": "2026-09-03",
+   "theme": "🕊ひより 保存獲得（x_06・used_in から移行 2026-08-29）",
+   "platform": "X",
+   "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E360",
+   "date": "2026-09-07",
+   "theme": "🐈‍⬛しらたま 保存獲得（th_20・used_in から移行 2026-08-29）",
+   "platform": "Threads",
+   "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E362",
+   "date": "2026-09-06",
+   "theme": "🕊ひより 保存獲得（x_12・used_in から移行 2026-08-29）",
+   "platform": "X",
+   "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E366",
+   "date": "2026-09-02",
+   "theme": "🐈‍⬛しらたま 保存獲得（th_05・used_in から移行 2026-08-29）",
+   "platform": "Threads",
+   "week": "2026-09-01_2026-09-07"
+  },
+  {
+   "episode_ref": "E372",
+   "date": "2026-08-19",
+   "theme": "note_20260819_body（used_in から移行 2026-08-29）",
+   "platform": "note",
+   "week": ""
+  },
+  {
+   "episode_ref": "E372",
+   "date": "2026-08-20",
+   "theme": "note_2026-08-20_thirty（在り方の段・軸の後の一行）（used_in から移行 2026-08-29）",
+   "platform": "note",
+   "week": ""
+  },
+  {
+   "episode_ref": "E372",
+   "date": "2026-08-24",
+   "theme": "note_2026-08-24_name（癖の段・時間の使い道）（used_in から移行 2026-08-29）",
+   "platform": "note",
+   "week": ""
   }
  ],
  "registered": [
