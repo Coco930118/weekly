@@ -51,7 +51,12 @@ WIT_SYNTAX = ['お茶', 'コーヒー', 'ごはん', '一杯', '甘いもの', '
 WIT_HINTS = e373.elements() + WIT_SYNTAX
 
 issues = []
-def ng(pid, *m): issues.append(f'{pid}: ' + ' '.join(str(x) for x in m))
+CURRENT = ['']   # いま検査中のファイル名。指摘の出力は最後に一括なので、
+                 # これが無いとX診断とThreads診断のどちらの指摘か区別できない
+                 # （両ファイルとも日付をIDに使うため。2026-08-29 Wチェック指摘）
+def ng(pid, *m):
+    head = f'{CURRENT[0]} {pid}' if CURRENT[0] else str(pid)
+    issues.append(f'{head}: ' + ' '.join(str(x) for x in m))
 
 def width(s):
     """全角2・半角1・改行1で数える（Xの280字判定）"""
@@ -120,7 +125,7 @@ def check_x(posts, label):
         t = next((n for n, ks in QTYPE if any(k in fr for k in ks)), '不明')
         qt.append((pid, t))
 
-    print(f'  ウィット一滴 検出: {len(wit)}本 {wit}（試験中・週2〜3本）')
+    print(f'  ウィット一滴 候補: {len(wit)}本 {wit}（試験中・週2〜3本・**目視で確定すること**）')
     c = collections.Counter(t for _, t in qt)
     print(f'  設問の型: {dict(c)}')
     if c.get('行動', 0) > 2: ng(label, f'素の行動型が{c["行動"]}本（上限2本・到達率96%で最下位）')
@@ -174,7 +179,7 @@ def check_th(posts, label):
         opens.append((pid, fr.strip()[:12], r1.strip()[:14]))
         if any(k in r1 for k in WIT_HINTS): wit.append(pid)
 
-    print(f'  ウィット一滴 検出: {len(wit)}本 {wit}（試験中・週2〜3本）')
+    print(f'  ウィット一滴 候補: {len(wit)}本 {wit}（試験中・週2〜3本・**目視で確定すること**）')
     for key, name in ((1, 'フックの書き出し'), (2, '返信の受け口')):
         c = collections.Counter(o[key] for o in opens)
         d = [k for k, v in c.items() if v > 1]
@@ -186,6 +191,7 @@ def main(paths):
         d = json.load(open(path, encoding='utf-8'))
         posts = d['posts']
         name = os.path.basename(path)
+        CURRENT[0] = name
         print(f'=== 機械チェック: {name} ===')
         (check_x if '_x_' in name else check_th)(posts, name)
         print()
