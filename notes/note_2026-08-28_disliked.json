@@ -58,7 +58,7 @@
   "image_prompt_full": "Horizontal 1280x670 watercolor illustration for a note header. Late-August afternoon, the season turning, crape myrtle petals scattered on stone and a high clear sky. Composition: Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern stands in a pale wisteria-grey ro kimono, in the middle of an action — she is placing a small pebble onto a low stone ledge where two pebbles already rest, counting rather than deciding, her expression calm and quietly assured. With her are Shizuku (small wise turtle) resting beside the ledge and Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks) sitting a little apart, both at ease. Soft transparent washes, clear afternoon light. Refined palette of pale rose, soft gold and warm ivory. The upper third is left as a soft pale rose-to-soft gold gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. All characters — Coco and every animal in the scene — are grouped together compactly within the central third of the image's width, so that a square crop taken from the centre contains all of them; the left and right thirds hold only background and quiet space. Quiet Luxury watercolor. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
   "principle_no": "02",
   "image_prompt_short": "Watercolor, soft transparent washes, muted dusty tones. Horizontal 1280x670 note header. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, pale-rose summer kimono, placing a small pebble onto a stone ledge where two already rest, afternoon. Beside her a small turtle and a fluffy white long-haired cat, all three grouped in the centre third of the width. Upper third left empty for a title. Palette pale rose, soft gold, warm ivory. Crape myrtle petals on stone. No text, no chibi, no 3D, no photorealism.",
-  "fix_required": true,
+  "fix_required": false,
   "fix_reasons": [
     "在り方署名の①定型（〜でしかない）が週7本ありました。週3本の上限を恒久ルールにしたため、この記事は②（記事の語彙のまま在り方へ着地）に書き換えています。まだ note.com に上げていない記事なので、貼るときに下の after を使ってください",
     "th_12 の返信2が約束している「断ったあとの後味の消し方」が本文に一度も出ていませんでした（死んだ導線）。まだ note.com に上げていない記事なので、貼るときの本文はリポジトリのものを使ってください"
@@ -74,5 +74,6 @@
       "before": "## 数えはじめた人のこと",
       "after": "## 断ったあとの、後味のこと\n\n断れた日の夜が、いちばんざわつく。言えたのに、言えたからこそ、相手の顔が何度も浮かぶ。\n\nここで多くの人がやるのが、埋め合わせだ。翌日にいつもより優しくする、頼まれてもいない用事を引き受ける。後味が長引くのは、断ったからではない。埋め合わせた分だけ、断ったことが「悪いこと」として自分の中に登録されるから。\n\n**やることは一つ。翌日、いつもと同じに接する。** 多めに優しくしない。用事も引き受けない。そのうえで、相手が普通に話しかけてきたら、その一回を一行書いておく。\n\n三つ四つたまるころには、後味の残る時間が短くなっている。一晩で消えるものではない。ただ、埋め合わせをやめた分だけ、翌日には持ち越さずに済む。\n\n---\n\n## 数えはじめた人のこと"
     }
-  ]
+  ],
+  "fix_note": "2026-08-29：リポジトリ側は修正済み・未アップのため残作業なし（note_fix_queue は deferred）。アップ時はリポジトリの本文をそのまま使う。fix_patch は貼り付け用に残してある"
 }
