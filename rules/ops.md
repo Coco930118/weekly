@@ -54,7 +54,7 @@ note.comに投稿していない下書きの置き場。**サイトには出さ�
 - `week`: `"YYYY-MM-DD_YYYY-MM-DD"`
 - `posts[]`: date / platform / time / purpose / character / content / image_prompt / quote
 - **X診断（`shindan_x_*`）は2026-08-25週から新形式**：frame / choices / **comment（1通）** / shindan_url / technique（＋該当回のみ tatazumai_episode_ref）。旧 comment_1・comment_2 の2通構成は廃止（詳細は「X診断の新形式」）
-- **Threads診断（`shindan_th_*`）は従来通り**：frame / choices / reply_1
+- **Threads診断（`shindan_th_*`）は2026-08-24週から新形式**：frame / choices / reply_1 / **takeaway_line**（本文の持ち帰れる一行）/ **bridge_line**（橋渡しの一行・7本同一）/ question_type / theme_title / shindan_url / episode_ref。旧「frame / choices / reply_1 の3つだけ」は廃止（2026-08-29 訂正。takeaway_line・bridge_line は2026-08-24 Coco決定の必須要素なのに、JSONの形の定義から漏れていた）
 - **X診断・Threads診断は image_prompt を持たない**（2026-08-05 画像プロンプト廃止）
 
 ---
