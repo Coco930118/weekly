@@ -1,6 +1,7 @@
 # weekly — Claude 運用ルール
 
 週次SNS投稿カレンダー。X（14本）+ Threads（21本）+ 各診断（7本×2）= 週49本、＋note週9本。
+常設の**間合い診断**（8問の型診断・`rules/type.md`）は週次ではなく、診断サイトに常設。
 公開URL: https://coco930118.github.io/weekly/ ／ 開発ブランチ `claude/ecstatic-euler-e3u25a` → 本番 `main`（GitHub Pages）
 
 ---
@@ -13,7 +14,8 @@
 |---|---|
 | **このファイル（CLAUDE.md）** | **毎回、最初に。判断の土台** |
 | `rules/posts.md` | 35投稿（X14・Threads21）を作る・直すとき |
-| `rules/shindan.md` | X診断・Threads診断を作る・直すとき |
+| `rules/shindan.md` | X診断・Threads診断（日替わり4択）を作る・直すとき |
+| `rules/type.md` | **間合い診断（8問の型診断）**を作る・直すとき |
 | `rules/note.md` | noteを作る・直すとき |
 | `rules/image.md` | 画像プロンプトを書くとき（正典は `reference/image_prompt_rules.json`） |
 | `rules/source.md` | 素材・エピソードを使うとき |
@@ -46,6 +48,7 @@
 | **note** | `notes/` 配下＋ `reference/note_archive.json` ＋ `reference/note_fix_queue.json` |
 | **35投稿（X14・Threads21）** | `posts/week_*.json` |
 | **診断** | `posts/shindan_x_*.json` / `posts/shindan_th_*.json` |
+| **診断サイト反映**（別リポジトリ `cocomethodology/shindan`） | サイト側のファイルのみ。**言葉は作らない**——正典は `rules/type.md` と `rules/shindan.md`。手順は `reference/runbook_weekly.md` の④-b |
 
 - 担当外に効く改善を見つけたら、**そのファイルを直さず、該当する `rules/*.md` にルールとして置いて担当セッションに渡す**
 - 作業報告でも、担当外の指摘（曜日配置・字数など）を持ち込まない
