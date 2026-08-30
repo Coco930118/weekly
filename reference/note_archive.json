@@ -156,7 +156,7 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
-      "plan_type": "秘める人",
+      "plan_type": "溶ける人",
       "principle_no": 1,
       "cluster_topic": "返信待ちの夜の使い方——送った後に夜の予定を先に入れると、待つ場所が自分の側に戻る三日間の作り方",
       "linked_principle": "待つ場所を自分の側に戻すのは追わないことではなく、自分の時間の中で待てる状態を作ること。軸ができた人から、裏返せる夜になる",
@@ -172,7 +172,7 @@
       "in_index": true,
       "maai_axis": {
         "温度": "高",
-        "距離": "低"
+        "距離": "高"
       }
     },
     {
@@ -427,26 +427,6 @@
       "in_index": true,
       "plan_type": null,
       "maai_axis": null
-    },
-    {
-      "title": "「もういいや」は、諦めじゃなかった",
-      "publish_date": "2026-04-26",
-      "platform_origin": "Threads",
-      "source_week": "2026-04-21_2026-04-27",
-      "tier": "",
-      "principle_no": 6,
-      "cluster_topic": "好きなのに、依存しない——感情はある。依存はしない。——「もういいや」という静かな感覚は、諦めではなく、愛情が依存をやめた瞬間だった。距離を整えることと、相手を切ることの違い。消した言葉の中に宿る本音について。",
-      "linked_principle": "",
-      "funnel_targets": [],
-      "note_url": "",
-      "file": "note_2026_04_26.json",
-      "in_index": true,
-      "week_group": "過去分",
-      "plan_type": "守る人",
-      "maai_axis": {
-        "温度": "低",
-        "距離": "低"
-      }
     },
     {
       "title": "「ちゃんと終わらせてから」がなくなる日──休む許可を、自分に出すための5つの原理",
