@@ -231,7 +231,8 @@ def funnel_check(rows):
     約束の半分を書かずに公開待ちになっていた。3つのツールはどれも自分のファイルしか読まないため、
     投稿とnoteをまたぐこの穴は構造的に検出できなかった。
     """
-    weeks = {r['week'] for r in rows if r['week'] and r['week'] != 'standing_guide'}
+    # standing_guide（常設案内）と type_guide（型の道案内）は週に紐づかず funnel も持たない
+    weeks = {r['week'] for r in rows if r['week'] and r['week'] not in ('standing_guide', 'type_guide')}
     # 複数週をまとめて見るとき（--all）は参考出力にする。配信済みの週には遡及しない（CLAUDE.md）
     single = len(weeks) == 1
     out = ng if single else (lambda nid, *m: funnel_ref.append(f'{nid}: ' + ' '.join(str(x) for x in m)))
