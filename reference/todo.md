@@ -26,21 +26,23 @@
 - **完了の判定**：全130本で `note_check.py` 0件／全130本に型が割り当て済み／`note_com_edit_list.md` の手作業が反映済み
 
 
-### 【今日やる】GitHubアカウントを Coco930118 に統合する（2026-08-30 Coco決定・9/1公開に間に合わせる）
+### 【完了】GitHubアカウントを Coco930118 に統合した（2026-08-30・9/1公開に間に合った）
 
 **前提が判明**：`cocomethodology` は組織ではなく**2つ目の個人アカウント**で、「GitHub PagesとVercelを1アカウントで両立できない」という誤解から作られたもの。**実際は1アカウントで両立できる**（Pagesはリポジトリごと／Vercelもリポジトリごと。干渉しない）。今日の権限トラブルは全部これが原因。
 
 **⚠️ 絶対にやらないこと：Vercelのプロジェクトを削除して作り直す。** 環境変数・KVの接続はプロジェクトに紐づいているので、**プロジェクトを保ったまま、Git連携先だけを差し替える**。作り直すと計測（KV）が飛ぶ。
 
-- [ ] **① バックアップ**：`cocomethodology/shindan` をzipでダウンロード（唯一の保険）
-- [ ] **② Vercelの現状を記録**：環境変数・ドメイン・ビルド設定・**KVの接続**をスクショ
-- [ ] **③ GitHub：Transfer ownership** `cocomethodology/shindan` → `Coco930118`（GitHubが自動でリダイレクトを張るので、Vercelの連携は多くの場合そのまま生きる）
-- [ ] **④ Vercelで連携先を確認**：`Coco930118/shindan` になっていればOK。なっていなければ、**プロジェクトはそのままでGit連携だけ差し替える**（Vercel側で Coco930118 のGitHubを許可する必要があるかもしれない）
-- [ ] **⑤ テストデプロイ**：小さな変更を1つpushして、デプロイが通るか確認
-- [ ] **⑥ KVが生きているか確認**：計測が動くか（`runbook_shindan.md` ③で読める）
-- [ ] **⑦ `cocomethodology/weekly`（フォーク）を削除**
-- [ ] **⑧ Claude の GitHub 連携を Coco930118 で入れ直す** → weekly と shindan の両方が見える状態にする
-- [ ] **⑨ 水15:00の④-b ルーティンを登録**
+- [x] **① バックアップ**：`cocomethodology/shindan` をzipでダウンロード（唯一の保険）
+- [x] **② Vercelの現状を記録**（環境変数5つ＝REDIS_URL／KV_URL／KV_REST_API_URL／KV_REST_API_READ_ONLY_TOKEN／KV_REST_API_TOKEN。値は未表示のまま記録）：環境変数・ドメイン・ビルド設定・**KVの接続**をスクショ
+- [x] **③ GitHub：Transfer ownership** `cocomethodology/shindan` → `Coco930118`（GitHubが自動でリダイレクトを張るので、Vercelの連携は多くの場合そのまま生きる）
+- [x] **④ Vercelで連携先を確認**——**自動で `Coco930118/shindan` に追随した。手当てゼロ**：`Coco930118/shindan` になっていればOK。なっていなければ、**プロジェクトはそのままでGit連携だけ差し替える**（Vercel側で Coco930118 のGitHubを許可する必要があるかもしれない）
+- [x] **⑤ 本番の状態を確認**——Status: Ready／Production Current／ドメイン `shindan-flax.vercel.app` 健在／プレビュー描画OK：小さな変更を1つpushして、デプロイが通るか確認
+- [x] **⑥ KVが生きているか確認**——統計ページが週別集計を読めている＝接続OK：計測が動くか（`runbook_shindan.md` ③で読める）
+- [x] **⑦ `cocomethodology/weekly`（フォーク）を削除**——削除前に検証：フォーク195ブランチ・タグ0で、**正典に無いものは0件**（唯一の差は自分の作業ブランチが1コミット古いだけで、正典の祖先であることを確認済み）
+- [x] **⑧ Claude の GitHub 連携**——③と同時に解消。weekly と shindan の両方が見える → weekly と shindan の両方が見える状態にする
+- [ ] **⑨ 水15:00の④-b ルーティンを登録**（Cocoの画面操作。`Coco930118/shindan` を選び、`reference/runbook_shindan.md` の①週次反映を貼る）
+
+**あわせて診断サイト側へ渡すこと**：診断の統計ページで、8/30時点の「今週」が **8/18–24** と表示され、**8/25–31 の週タブが出ない**。KVには w7（8/25〜）のデータがある。**週の区切りの計算がずれている疑い**——放置すると9/1公開後の数字を誤った週で読むことになる
 
 **ロールバック**：④〜⑥でつまずいたら、**Transferは戻せる**（Coco930118 → cocomethodology へ再Transfer）。①のバックアップと合わせて二重の保険。**ここで詰むことはない。**
 
