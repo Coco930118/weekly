@@ -29,9 +29,17 @@ SUBJECT_FROM = '2026-09-01'
 
 X_CTA = 'いちばん近いの、一文字だけコメントで教えて。'
 X_FOUR = '四つとも、間違いではない。'
-X_BRIDGE = 'さっきの4択が1問目。残り7問で出るのは、その場面ではなく、いつもの判断のほう。'
+# 間合い診断への接続（2026-08-30 Coco決定・恒久ルール／rules/shindan.md「間合い診断への接続」が正典）
+# 旧版はどちらも「…その場面ではなく、いつもの判断／癖のほう。」の一行だった。
+# 「いつもの判断」では何も立たない——読者が知りたいのは「わたしは何型？」なので、
+# 型の名前を言い切る形に変わっている。**ツールが旧版を持ったままだったので、
+# 正典どおりに書いた9/1週が14件落ちていた**（2026-08-31 Wチェックが反映）。
+BRIDGE_FROM = '2026-09-01'   # 接続の適用は9/1週から。配信済みの週には遡及しない（CLAUDE.md）
+X_FRAME_HOOK = '型の名前は、あと7問で出るよ。'      # X＝本文（frame）に一句（31幅）
+X_BRIDGE = 'さっきの4択は、間合い診断の1問目。'      # X＝コメント末尾のブロックの先頭行
 X_TAIL = '▼ 8問 / 約1分'
-TH_BRIDGE = 'さっきの4択が1問目。残り7問で出るのは、その場面ではなく、いつもの癖のほう。'
+TH_FRAME_HOOK = 'ちなみにこれ、間合い診断の1問目。'   # Threads＝本文（frame）末尾3行の先頭
+TH_BRIDGE = 'さっきの4択が1問目。残り7問で出るのは、答えじゃなくて、あなたの型の名前。'
 TH_STAR = '感情はある。依存はしない。'
 TH_TAIL = '▼ 8問 / 約1分'          # 正文（2026-08-25 Coco決定・8/25週から）。
 TH_TAIL_OLD = '▼ 8問 / 約1分で、いまどこに立っているか'   # 旧文。橋渡しの一行と約束が重なるため廃止
@@ -71,9 +79,16 @@ def banned_in(text):
 
 
 def subject_in(frame, date):
-    """設問の主語。frame 限定・引用の「」内は対象外・9/1週より前には遡及しない"""
+    """設問の主語。frame 限定・引用の「」内は対象外・9/1週より前には遡及しない。
+
+    **「間合い診断への接続」は射程外**（2026-08-30 Coco決定・恒久ルール）。
+    frame の末尾に付くので設問と同じ場所にあるが、**設問ではなく7本同一の固定要素**で、
+    しかも「あなたの型に名前がつく」の「あなた」は**ルールの中身そのもの**——
+    読者が知りたいのは「わたしは何型？」なので、ここを主語なしにすると接続が機能しない。
+    2つの正典が別々に正しいまま噛み合っていなかっただけ。"""
     if date < SUBJECT_FROM: return []
-    naked = re.sub(r'「[^」]*」', '', frame)
+    naked = frame.split(TH_FRAME_HOOK)[0].split(X_FRAME_HOOK)[0]
+    naked = re.sub(r'「[^」]*」', '', naked)
     return [w for w in SUBJECT_NG if w in naked]
 
 
@@ -99,8 +114,11 @@ def check_x(posts, label):
         if 'comment_1' in p or 'comment_2' in p: ng(pid, '旧形式（comment_1 / comment_2）が残っている')
         if not cm: ng(pid, 'comment がない')
 
-        # 4 接続の一行（固定要素。7本バラバラに書き換えない）
-        if X_BRIDGE not in cm: ng(pid, '接続の一行が固定文と違う（既視感チェックの対象外・7本同一）')
+        # 4 間合い診断への接続（固定要素。7本バラバラに書き換えない）
+        #   本文（frame）に一句・コメント末尾にブロック。置き場所は字数の余っているほうに厚みを置く
+        if pid >= BRIDGE_FROM:
+            if X_FRAME_HOOK not in fr: ng(pid, f'本文に間合い診断の一句「{X_FRAME_HOOK}」がない')
+            if X_BRIDGE not in cm: ng(pid, '接続ブロックが固定文と違う（既視感チェックの対象外・7本同一）')
         if X_TAIL not in cm: ng(pid, f'「{X_TAIL}」がない')
 
         # 5 診断URLがコメントの最終行
@@ -157,6 +175,8 @@ def check_th(posts, label):
 
         # 1 本文にリンクを置かない（8/18週の実測：本文にURLを置いた日はリーチが約8分の1）
         if 'http' in fr: ng(pid, '本文（frame）にURLがある。リンクはコメント末尾の1本だけ')
+        if pid >= BRIDGE_FROM and TH_FRAME_HOOK not in fr:
+            ng(pid, f'本文の末尾に間合い診断への接続「{TH_FRAME_HOOK}」がない')
 
         # 2 持ち帰れる一行
         if not p.get('takeaway_line'): ng(pid, 'takeaway_line がない')
@@ -167,7 +187,8 @@ def check_th(posts, label):
         b = r1.count('・')
         if b < 4: ng(pid, f'4行の箇条書きが{b}行（A〜Dを全部肯定で拾う）')
         if TH_STAR not in r1: ng(pid, f'北極星「{TH_STAR}」がない')
-        if TH_BRIDGE not in r1: ng(pid, '橋渡しの一行が固定文と違う（既視感チェックの対象外・7本同一）')
+        if pid >= BRIDGE_FROM and TH_BRIDGE not in r1:
+            ng(pid, '接続の一行が固定文と違う（既視感チェックの対象外・7本同一）')
         if TH_TAIL not in r1: ng(pid, f'「{TH_TAIL}」がない')
         if TH_TAIL_OLD in r1: ng(pid, f'診断リンクが旧文（「{TH_TAIL_OLD}」は2026-08-25に廃止）')
         if MEMBERSHIP in r1: ng(pid, '会員導線が返信欄にある（診断リンクの先にあるため置かない）')
