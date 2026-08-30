@@ -50,5 +50,10 @@
   ],
   "closing_push": "一つ断って、何も壊れないことを確かめるところから。 あなたなら、大丈夫。",
   "principle_no": "05",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "背負う人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "高"
+  }
 }

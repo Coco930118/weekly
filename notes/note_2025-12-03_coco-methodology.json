@@ -67,5 +67,8 @@
   "fix_required": true,
   "fix_reasons": [
     "本文を現行ルールで整え直しました（3,309字）。カードの「📄 本文をコピー」で全文を取って、note.comに貼り替えてください"
-  ]
+  ],
+  "plan_type": null,
+  "maai_axis": null,
+  "type_note": "型を持たない（無料マガジン行き＝常設案内・週次まとめ・土台記事）"
 }

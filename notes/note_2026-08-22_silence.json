@@ -51,5 +51,10 @@
   "principle_no": "06",
   "before_after_type": "事例なし",
   "closing_push": "今日は、話さなくていいことを話さずに、ただ隣にいる。\n大丈夫。沈黙は、距離じゃない。",
-  "published_confirmed": false
+  "published_confirmed": false,
+  "plan_type": "守る人",
+  "maai_axis": {
+    "温度": "低",
+    "距離": "低"
+  }
 }

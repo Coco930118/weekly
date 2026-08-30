@@ -57,10 +57,14 @@
   "closing_push": "月曜ひとつ、手元で止まっている一件に「ここが決まっていません」を付けて回す。\nあなたなら、粗いまま出せる。",
   "before_after_type": "合成相談（二層ルール準拠：相談者は合成、Cocoの実体験は使用していない。素材 E364 の型の範囲内で構成）",
   "image_prompt_full": "Horizontal 1280x670 watercolor illustration for a note header. Early September morning, cool and clear. Composition: Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, sliding a single unfinished sheet of paper across a wooden desk toward the viewer, with an unhurried, decided expression — the rest of the papers left in a quiet stack behind her. A small wise turtle (Shizuku, calm green, cream plastron) on the desk corner; a gentle white bird (Hiyori, pale blue-white) just lifting off from the window frame. Pampas grass and a dragonfly beyond the window in early September morning light. The upper third is left as a pale celadon-to-soft-steel-blue gradient for title text overlay. The main subject centred in the middle third, drawn large and readable at thumbnail size; lower third quiet. All characters grouped within the central third of the image's width, so that a square crop taken from the centre contains all of them. Watercolor style: soft transparent washes, muted dusty tones, Quiet Luxury. Palette of pale celadon, soft steel blue, cool ivory. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
-  "principle_no": "07",
+  "principle_no": "01",
   "image_prompt_short": "Horizontal 1280x670 note header. Early September morning. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern — sliding one unfinished sheet of paper across a wooden desk toward the viewer, the rest left in a quiet stack behind her. A small wise turtle on the desk corner; a gentle white bird lifting off from the window frame. Pampas grass and a dragonfly beyond the window. Characters centred in the middle third; upper third pale celadon gradient for title; lower third quiet. Palette: pale celadon, soft steel blue, cool ivory. Watercolor, soft transparent washes. No text, no chibi, no 3D, no photorealism.",
   "plan_type": "降りる人",
   "promise_map": {
     "粗いまま回すときに付ける一言の決め方": "粗いまま回すときに付ける一言の決め方"
+  },
+  "maai_axis": {
+    "温度": "低",
+    "距離": "低"
   }
 }

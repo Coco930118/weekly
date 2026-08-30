@@ -57,5 +57,10 @@
   "closing_push": "今夜、手が伸びたら、スマホを別の部屋へ。三十分後のあなたが、答えを持っている。 あなたなら、待てる。",
   "image_prompt_full": "9:16 vertical watercolor illustration (1080x1920) for a note thumbnail. Late-August summer night, the heat gone out of the air, a faint summer moon low in the sky. Composition: Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; smooth youthful complexion, dark brown bob, warm brown eyes; face fixed by the six reference images) sits on a shaded wooden veranda in a deep indigo cotton yukata with a fine white pattern, caught mid-gesture as she turns a small glass sand timer over on the low table with both hands — her phone is not with her, left behind on a shelf in the lit room far behind her, the sliding door closed. Her expression is calm and unhurried, the face of someone who has decided not to fill the quiet tonight. Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks) is curled against her knee; Shizuku (small wise watercolor turtle) rests beside the sand timer, unmoving and patient. Evening moonflowers (yugao) open pale on the fence, crape myrtle blossoms beyond, evening cicadas suggested by the deep quiet. The upper third is left as a soft night-indigo-to-pale-silver gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Refined palette of night indigo, moonlit silver, pale moonflower white, muted crape-myrtle rose, warm lamplight gold. Quiet Luxury watercolor with soft transparent washes. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
   "principle_no": "05",
-  "before_after_type": "合成相談（二層ルール準拠。実相談パターンから束ねた形で、実在の特定相談者ではない）"
+  "before_after_type": "合成相談（二層ルール準拠。実相談パターンから束ねた形で、実在の特定相談者ではない）",
+  "plan_type": "秘める人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "低"
+  }
 }

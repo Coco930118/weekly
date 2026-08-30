@@ -50,5 +50,10 @@
   ],
   "closing_push": "今日抑えた自分を、まず認めていい。 あなたなら、渡せる日が来る。",
   "principle_no": "02",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "秘める人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "低"
+  }
 }

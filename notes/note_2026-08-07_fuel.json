@@ -50,5 +50,10 @@
   ],
   "closing_push": "返さなかった日を、負けにしなくていい。 あなたなら、揺れずにいられる。",
   "principle_no": "01",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "背負う人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "高"
+  }
 }

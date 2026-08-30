@@ -53,5 +53,8 @@
   "scheduled_upload_date": "2026-09-03",
   "scheduled_upload_week": "2026-09-01_2026-09-07",
   "before_after_type": "事例なし",
-  "principle_no": "01"
+  "principle_no": "01",
+  "plan_type": null,
+  "maai_axis": null,
+  "type_note": "型を持たない（無料マガジン行き＝常設案内・週次まとめ・土台記事）"
 }

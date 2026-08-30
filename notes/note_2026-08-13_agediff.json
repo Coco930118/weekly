@@ -50,5 +50,10 @@
   ],
   "closing_push": "天秤のこちら側に何を載せるかは、あなたが決めていい。 あなたなら、決められる。",
   "principle_no": "07",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "秘める人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "低"
+  }
 }

@@ -54,5 +54,10 @@
   "closing_push": "今週の三つを、左と右に分けるところから。 あなたなら、選べる。",
   "image_prompt_full": "9:16 vertical watercolor illustration (1080x1920) for a note thumbnail. Late-summer morning in the last week of August, air still and clear before the heat. Composition: Coco (a refined young woman, brand age 40s but drawn to look early 30s — soft, gentle, approachable yet composed; never stern, no sharp eyes or furrowed brow; smooth youthful complexion, dark brown bob, warm brown eyes) in a pale water-blue ro-kimono of light summer weave, kneeling at a low wooden table on a shaded veranda, in the middle of an action: she has drawn a single line down the centre of one sheet of paper and is placing the third of three small folded notes onto the right-hand side, her hand still resting on it, her face calm and honest rather than troubled. Shiratama (fluffy round white long-haired cat, large gentle eyes, rosy cheeks) sits pressed against her knee watching the paper; Shizuku (small wise watercolor turtle) rests at the left edge of the sheet, quiet and unmoving. A branch of pale crape myrtle leans in from the garden, its blossoms loose and soft, and a single evening-glory vine climbs the veranda post. Cicada-song stillness suggested by the empty bright air. The upper third is left as a soft ivory-to-pale-blue gradient for title text overlay. The main subject — Coco and the animals — is centred in the middle third of the frame, drawn large and clearly readable at thumbnail size, with the lower third kept as quiet, uncluttered space. Refined palette of pale water-blue, crape myrtle pink, soft ivory, warm late-summer gold. Quiet Luxury watercolor with soft transparent washes. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
   "principle_no": "03",
-  "before_after_type": "合成相談（二層ルール準拠。実相談パターンから束ねた形で、実在の特定相談者ではない）"
+  "before_after_type": "合成相談（二層ルール準拠。実相談パターンから束ねた形で、実在の特定相談者ではない）",
+  "plan_type": "秘める人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "低"
+  }
 }
