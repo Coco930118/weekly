@@ -16,7 +16,7 @@
   ロゴ  既存OG（og/kankei-08-31.png）の右下から円形マスクで切り出して再利用
 
 ■ 実測で確定した値（見出しは原本との平均画素差 1.06＝アンチエイリアスのみ）
-  見出し  Shippori Mincho B1 / 700 / 54px / 墨(43,38,32) / x85 / y200 / 行送り80 / 1行は全角9字まで
+  見出し  Shippori Mincho B1 / 700 / 54px（長い回は38pxまで自動縮小） / 墨(43,38,32) / x85 / y200 / 行送り80 / 1行は全角9字まで
   型名    Noto Sans JP 700 / 40px / 2列（x690・x950）× 2行（y218・y300）
   地色    kankei (251,248,241) ／ soshiki (241,236,225)
 """
@@ -43,9 +43,16 @@ def build(dom,out,l1,l2):
     d.text((85,110),f'{EYE[dom]}　──　間合い診断',font=ImageFont.truetype(NB,23),fill=BROWN,anchor='la')
     d.line((85,158,138,158),fill=BROWN,width=2)
     # 見出し
-    hf=ImageFont.truetype(SH,54)
-    d.text((85,200),l1,font=hf,fill=INK,anchor='la')
-    d.text((85,200+80),l2,font=hf,fill=INK,anchor='la')
+    # 見出しは自動縮小。型名の帯（x690〜）に食い込ませない
+    size=54
+    while size>38:
+        hf=ImageFont.truetype(SH,size)
+        if 85+max(hf.getbbox(l1)[2],hf.getbbox(l2)[2])<=660: break
+        size-=2
+    hf=ImageFont.truetype(SH,size); pitch=int(size*1.48)
+    top=200+(54-size)//2
+    d.text((85,top),l1,font=hf,fill=INK,anchor='la')
+    d.text((85,top+pitch),l2,font=hf,fill=INK,anchor='la')
     # 3匹（大きく・下段左）
     for i,n in enumerate(['shizuku','shiratama','hiyori']):
         a=Image.open(f'/home/user/shindan/assets/char/{n}-fig.png').convert('RGBA')
