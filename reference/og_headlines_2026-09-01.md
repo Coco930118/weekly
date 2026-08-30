@@ -16,4 +16,6 @@
 | 09-06 | 戻す最初の一言は、／ごめんじゃない | いつまでに、を／こちらが決めていた |
 | 09-07 | 減らしたら、／離れていく気がした | 報告されたのは、／起きたことの半分 |
 
-**反映**：`og/{kankei,soshiki}-09-0N.png` を置き、各HTMLの `og:image` を汎用（`kankei-og.png` / `soshiki-og.png`）から日別に差し替える。**shindan 側の持ち場**。
+**`home.title` もこの2行に差し替える**（2026-08-30 Coco判断）。OG画像だけ2行にすると、**カードとページで見出しが違う**状態になる。8/25週までは `home.title` 自体が2行20〜26字だったので、これは元の形に戻すこと。
+
+**反映**：`og/{kankei,soshiki}-09-0N.png` を置き、各HTMLの `og:image` を汎用（`kankei-og.png` / `soshiki-og.png`）から日別に差し替え、`home.title` を上の2行（`<br>` 区切り）にする。**shindan 側の持ち場**。デザインの正典は `rules/image.md`「間合い診断のOG画像」。
