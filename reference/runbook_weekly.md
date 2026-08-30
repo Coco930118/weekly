@@ -233,6 +233,8 @@ Threads診断7本を通しで読んで、グローアップしてください。
 
 **このセッションだけ、動かすリポジトリが違う。** `Coco930118/weekly` ではなく `cocomethodology/shindan` を起点に立てる。
 
+**診断サイト側の指示文4本の正本は `reference/runbook_shindan.md`。** 下のブロックはその①（週次反映）の写しなので、**変えるときは `runbook_shindan.md` を先に直す**。
+
 ```
 その週の診断を、診断サイトのアップ仕様に落としてください。
 対象：cocomethodology/shindan（サイト実装）／反映元は Coco930118/weekly の
