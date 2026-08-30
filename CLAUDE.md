@@ -48,7 +48,7 @@
 | **note** | `notes/` 配下＋ `reference/note_archive.json` ＋ `reference/note_fix_queue.json` |
 | **35投稿（X14・Threads21）** | `posts/week_*.json` |
 | **診断** | `posts/shindan_x_*.json` / `posts/shindan_th_*.json` |
-| **診断サイト反映**（別リポジトリ `cocomethodology/shindan`） | サイト側のファイルのみ。**言葉は作らない**——正典は `rules/type.md` と `rules/shindan.md`。指示文4本の正本は `reference/runbook_shindan.md` |
+| **診断サイト反映**（別リポジトリ `Coco930118/shindan`） | サイト側のファイルのみ。**言葉は作らない・直さない**（weekly の正典を読むのはよい。書き換えるのはしない）——正典は `rules/type.md` と `rules/shindan.md`。指示文4本の正本は `reference/runbook_shindan.md` |
 
 - 担当外に効く改善を見つけたら、**そのファイルを直さず、該当する `rules/*.md` にルールとして置いて担当セッションに渡す**
 - 作業報告でも、担当外の指摘（曜日配置・字数など）を持ち込まない
