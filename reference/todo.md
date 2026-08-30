@@ -26,6 +26,13 @@
 - **完了の判定**：全130本で `note_check.py` 0件／全130本に型が割り当て済み／`note_com_edit_list.md` の手作業が反映済み
 
 
+### 診断サイトのリポジトリが、Claudeから見えない（2026-08-30 検出・Cocoの作業）
+ルーティンの「リポジトリを選択」で `shindan` が出てこない。**原因は権限**——Claudeが見えているのは `Coco930118` の6リポジトリだけで、`cocomethodology` の組織が入っていない（`list_repos` で確認済み）。
+
+- [ ] **claude.ai の 設定 → コネクタ → GitHub を再接続し、`cocomethodology` を許可する**（All repositories か、`shindan` を明示的に選ぶ）
+- **クラウド環境の名前を `cocomethodology` にしても、リポジトリの権限は付かない。** 環境名とGitHub組織は別物
+- **それまでの回避策**：診断サイトの作業はルーティンにせず、Cocoが手でセッションを開いて `reference/runbook_shindan.md` から指示文を貼る
+
 ### note.comへのアップ
 - [ ] **💼『温度の整え方 —— 組織と仕事』の常設案内 → 9/1**
 - [ ] **💗『距離の整え方 —— 恋愛と関係』の常設案内 → 9/3**
