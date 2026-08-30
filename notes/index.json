@@ -79,9 +79,16 @@
   "note_2026-09-04_autumn.json",
   "note_2026-09-05_invisible.json",
   "note_2026-09-06_guide-soshiki.json",
-  "note_2026_04_26.json",
   "note_2026_06_09_boundary.json",
   "note_2026_06_09_distance.json",
-  "note_2026_06_09_words.json"
+  "note_2026_06_09_words.json",
+  "note_guide_type_himeru.json",
+  "note_guide_type_koraeru.json",
+  "note_guide_type_mamoru.json",
+  "note_guide_type_oriru.json",
+  "note_guide_type_sakini.json",
+  "note_guide_type_seou.json",
+  "note_guide_type_toke.json",
+  "note_guide_type_tsukusu.json"
  ]
 }
