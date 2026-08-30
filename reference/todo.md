@@ -197,6 +197,59 @@ CLAUDE.md「X診断7本は、いかなる場合も内容を変更しない」に
 
 ---
 
+## 【一度きり】診断サイトのOGを新デザインに差し替える（2026-08-30 Coco指示・診断の持ち場）
+
+**そのまま診断セッションに渡す指示文。** 2026-08-30 に本番へ上がった14枚は**旧デザイン**（型名なし・3匹が小さい・「あなたは、どの子？」）で、Cocoが「わくわくしない」と言ったカードそのもの。**画像を受け取る必要はない。生成器が weekly にあるので、回せば出る。**
+
+```
+【間合い診断のOGを新デザインに差し替える】
+
+正典は weekly の rules/image.md「間合い診断のOG画像」。まずそこを読む。
+
+■ 準備
+  cd <weekly> && git pull origin main        # tools/oggen.py・tools/ogshare.py が新デザイン
+  フォントを取る（CDNは塞がれている。CSS APIに聞いて実URLを叩く2段）
+    for F in "Shippori+Mincho+B1:wght@700" "Noto+Sans+JP:wght@400" "Noto+Sans+JP:wght@700"; do
+      U=$(curl -sSL "https://fonts.googleapis.com/css2?family=$F" \
+          | grep -o 'https://fonts.gstatic.com[^)]*' | head -1); curl -sSL -o <名前>.ttf "$U"
+    done
+  ファイル名は ShipporiB1-700.ttf / NotoSansJP-400.ttf / NotoSansJP-700.ttf。
+  素材の場所は環境変数 SHINDAN_DIR（既定はカレント）。shindan のルートで回すなら指定不要。
+
+■ ① 結果シェアOG 10枚（これが最優先）
+  tools/ogshare.py で 恋愛4・組織4・中央2 を焼く。
+  型名／一行タグ／代表キャラは shindan の data-w8.js と assets/shindan.js から引く。
+  中央の一行だけは weekly rules/type.md の「どちらにも寄せずに、真ん中を保ってきた人。」を使う
+  （旧「配合で生きてきた人」は廃止）。
+  置き場所は og/share-{dom}-{HH|HL|LH|LL|center}.png。
+
+■ ② 型別の共有ページを作り、SHARE.url を差し替える
+  クエリ（?t=LL）では静的OGは切り替わらない。型ごとに小さな静的ページを作る。
+  ページが持つのは og:image と一行と「8問 / 約1分」ボタンだけ。
+  リダイレクトにしない。結果の中身は出さない（一行タグまで）。
+
+■ ③ 入口カード112枚を焼き直す
+  tools/oggen.py。見出しは各ページの home.title を <br> で割り、2行目の句点を落とす。
+  98ページは home.title が既に2行なので機械的に回せる。
+  9/1週の14ページだけ home.title が1行なので、weekly の
+  reference/og_headlines_2026-09-01.md の2行を使う。
+  見出しは自動縮小が入っている（54px→38px）ので、長い回も型名の帯に食い込まない。
+
+■ ④ 9/1週の home.title を2行に差し替える（判断済み・未着手）
+  og_headlines_2026-09-01.md の14本。画像だけ直すと、カードとページで見出しが食い違う。
+
+■ ⑤ 急ぐ理由
+  Threads / X はOGカードをキャッシュする。効くのは新規投稿から。
+  9/1週の配信が始まる前に差し替えれば、旧デザインがキャッシュされずに済む。
+
+■ 検査
+  ・全枚数で、型名の帯（x662〜690・y190〜360）に見出しが食い込んでいないか
+  ・14ページの og:image が日別を指しているか
+  ・共有URLが型別ページになっているか
+```
+
+---
+
 ## 一度きりの作業
 
 ### 【大】既存note全130本の書き直し（2026-08-30 Coco決定・分割せず一度で）

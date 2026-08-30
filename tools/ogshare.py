@@ -14,9 +14,12 @@ SH='ShipporiB1-700.ttf'; NS='NotoSansJP-400.ttf'; NB='NotoSansJP-700.ttf'
 BG={'kankei':(251,248,241),'soshiki':(241,236,225)}
 EYE={'kankei':'恋愛と関係','soshiki':'組織と仕事'}
 INK=(43,38,32); BROWN=(150,106,62); SUB=(126,118,106); RULE=(196,184,164)
-CH='/home/user/shindan/assets/char/'
+import os
+SHINDAN=os.environ.get('SHINDAN_DIR','.')
+def _p(rel): return os.path.join(SHINDAN,rel)
+CH=_p('assets/char')+'/'
 def _logo():
-    src=Image.open('/home/user/shindan/og/kankei-08-31.png').convert('RGB').crop((1050,489,1161,595))
+    src=Image.open(_p('og/kankei-08-31.png')).convert('RGB').crop((1050,489,1161,595))
     m=Image.new('L',src.size,0); ImageDraw.Draw(m).ellipse((2,2,src.size[0]-3,src.size[1]-3),fill=255)
     return src,m
 def wrap(tag):

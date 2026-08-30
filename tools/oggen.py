@@ -11,9 +11,11 @@
     from oggen import build
     build('kankei', 'og/kankei-09-01.png', '誘うのはいつも、', 'こちらからだった')
 
-■ 素材
-  3匹  /home/user/shindan/assets/char/{shizuku,shiratama,hiyori}-fig.png
-  ロゴ  既存OG（og/kankei-08-31.png）の右下から円形マスクで切り出して再利用
+■ 素材（shindan リポジトリ内）
+  3匹  assets/char/{shizuku,shiratama,hiyori}-fig.png
+  ロゴ  og/kankei-08-31.png の右下から円形マスクで切り出して再利用
+  場所は環境変数 SHINDAN_DIR で指定する（既定はカレントディレクトリ）。
+  shindan のルートで回すなら指定不要。
 
 ■ 実測で確定した値（見出しは原本との平均画素差 1.06＝アンチエイリアスのみ）
   見出し  Shippori Mincho B1 / 700 / 54px（長い回は38pxまで自動縮小） / 墨(43,38,32) / x85 / y200 / 行送り80 / 1行は全角9字まで
@@ -28,10 +30,14 @@ INK=(43,38,32); BROWN=(150,106,62); SUB=(126,118,106); RULE=(196,184,164)
 T={'kankei':['溶ける人','秘める人','尽くす人','守る人'],
    'soshiki':['背負う人','こらえる人','先に動く人','降りる人']}
 LOGO=None
+import os
+SHINDAN = os.environ.get('SHINDAN_DIR', '.')   # shindan リポジトリの場所。既定はカレント
+def _p(rel): return os.path.join(SHINDAN, rel)
+
 def logo():
     global LOGO
     if LOGO is None:
-        src=Image.open('/home/user/shindan/og/kankei-08-31.png').convert('RGB').crop((1050,489,1161,595))
+        src=Image.open(_p('og/kankei-08-31.png')).convert('RGB').crop((1050,489,1161,595))
         m=Image.new('L',src.size,0); dm=ImageDraw.Draw(m); dm.ellipse((2,2,src.size[0]-3,src.size[1]-3),fill=255)
         LOGO=(src,m)
     return LOGO
@@ -55,7 +61,7 @@ def build(dom,out,l1,l2):
     d.text((85,top+pitch),l2,font=hf,fill=INK,anchor='la')
     # 3匹（大きく・下段左）
     for i,n in enumerate(['shizuku','shiratama','hiyori']):
-        a=Image.open(f'/home/user/shindan/assets/char/{n}-fig.png').convert('RGBA')
+        a=Image.open(_p(f'assets/char/{n}-fig.png')).convert('RGBA')
         a.thumbnail((200,200)); im.alpha_composite(a,(70+i*192,370))
     # 型名 2×2（右・大きく）
     tf=ImageFont.truetype(NB,40); names=T[dom]
