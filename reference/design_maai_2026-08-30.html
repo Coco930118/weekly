@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- 2026-08-30 のセッションで作った「間合いの設計図」を、リポジトリに保存したもの。
+     アーティファクト版：https://claude.ai/code/artifact/87cb20c9-96ef-437f-a131-072206d917ee
+     これは記録であって正典ではない。ルールの正典は CLAUDE.md と rules/。 -->
+<title>間合いの設計図</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap">
+<style>
+:root{
+  --ground:#FAF7F1; --surface:#FFFFFF; --surface-2:#F3EFE7;
+  --ink:#2A2724; --ink-2:#5C564D; --ink-3:#8A8378;
+  --rule:#E2DACB; --rule-2:#D3C8B4;
+  --soshiki:#2F3E5C; --soshiki-soft:#E7EAF1;
+  --renai:#B07886; --renai-soft:#F5E8EA;
+  --gold:#A8873F;
+  --stop:#8C4A3F;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#191714; --surface:#211E1A; --surface-2:#2A2622;
+    --ink:#EFE9DF; --ink-2:#BDB4A6; --ink-3:#8F877A;
+    --rule:#332E28; --rule-2:#463F36;
+    --soshiki:#9DB2D8; --soshiki-soft:#232A38;
+    --renai:#D9A3AE; --renai-soft:#332327;
+    --gold:#D2B472;
+    --stop:#D08878;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#191714; --surface:#211E1A; --surface-2:#2A2622;
+  --ink:#EFE9DF; --ink-2:#BDB4A6; --ink-3:#8F877A;
+  --rule:#332E28; --rule-2:#463F36;
+  --soshiki:#9DB2D8; --soshiki-soft:#232A38;
+  --renai:#D9A3AE; --renai-soft:#332327;
+  --gold:#D2B472;
+  --stop:#D08878;
+}
+*{box-sizing:border-box}
+body{
+  background:var(--ground); color:var(--ink);
+  font-family:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN",system-ui,sans-serif;
+  font-size:15px; line-height:1.85; margin:0;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:800px; margin:0 auto; padding:0 22px 96px}
+h1,h2,h3,.mincho{font-family:"Shippori Mincho B1","Hiragino Mincho ProN",serif}
+h1{font-size:clamp(30px,6.2vw,46px); line-height:1.34; margin:0 0 18px; text-wrap:balance; font-weight:700}
+h2{font-size:clamp(20px,3.4vw,25px); line-height:1.5; margin:0 0 6px; text-wrap:balance; font-weight:700}
+h3{font-size:16px; margin:0 0 8px; font-weight:700; line-height:1.6}
+p{margin:0 0 14px; max-width:64ch}
+.lede{font-size:17px; color:var(--ink-2); max-width:60ch}
+strong{font-weight:700}
+.em{color:var(--gold); font-weight:700}
+
+header{padding:70px 0 40px; border-bottom:1px solid var(--rule)}
+.eyebrow{font-size:11px; letter-spacing:.22em; color:var(--ink-3); margin:0 0 20px; font-weight:500}
+.thesis{
+  margin:30px 0 0; padding:22px 24px; background:var(--surface);
+  border:1px solid var(--rule); border-left:3px solid var(--gold);
+}
+.thesis p{margin:0; font-size:17px; line-height:1.8}
+
+section{padding:52px 0; border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:0}
+.num{
+  font-size:11px; letter-spacing:.2em; color:var(--ink-3);
+  font-variant-numeric:tabular-nums; margin:0 0 10px; font-weight:500;
+}
+.sub{color:var(--ink-2); margin:14px 0 26px; max-width:62ch}
+
+/* 現在地 */
+.stats{display:grid; grid-template-columns:repeat(auto-fit,minmax(132px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule); margin:0 0 20px}
+.stat{background:var(--surface); padding:16px 16px 14px}
+.stat dt{font-size:11.5px; color:var(--ink-3); margin:0 0 6px; letter-spacing:.05em}
+.stat dd{margin:0; font-size:25px; font-weight:700; font-variant-numeric:tabular-nums; line-height:1.2; font-family:"Shippori Mincho B1",serif}
+.stat dd small{font-size:12px; font-weight:500; color:var(--ink-3); margin-left:3px; font-family:"Zen Kaku Gothic New",sans-serif}
+.zero{color:var(--stop)}
+
+/* 2軸グリッド */
+.axis{display:grid; grid-template-columns:auto 1fr 1fr; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:22px 0 14px; overflow-x:auto}
+.axis>div{background:var(--surface); padding:13px 14px}
+.axis .hd{background:var(--surface-2); font-size:11.5px; color:var(--ink-3); letter-spacing:.06em; display:flex; align-items:center; line-height:1.5}
+.axis .rowlabel{background:var(--surface-2); font-size:12px; color:var(--ink-2); font-weight:500; min-width:96px; display:flex; align-items:center; line-height:1.5}
+.tname{font-family:"Shippori Mincho B1",serif; font-weight:700; font-size:16.5px; display:block; margin-bottom:3px}
+.t-s .tname{color:var(--soshiki)} .t-r .tname{color:var(--renai)}
+.pct{font-size:11px; color:var(--ink-3); font-variant-numeric:tabular-nums}
+.lack{font-size:12px; color:var(--ink-2); margin-top:6px; line-height:1.6}
+.axis-note{font-size:12.5px; color:var(--ink-3); margin:0}
+
+/* 役割テーブル */
+.roles{width:100%; border-collapse:collapse; margin:6px 0 0; font-size:13.5px}
+.roles th{
+  text-align:left; font-size:11px; letter-spacing:.1em; color:var(--ink-3);
+  font-weight:500; padding:0 12px 9px 0; border-bottom:1px solid var(--rule-2);
+}
+.roles td{padding:13px 12px 13px 0; border-bottom:1px solid var(--rule); vertical-align:top; line-height:1.65}
+.roles td:first-child{font-weight:700; white-space:nowrap; font-family:"Shippori Mincho B1",serif; font-size:15px}
+.was{color:var(--ink-3)}
+.now{font-weight:500}
+.mark-s{color:var(--soshiki)} .mark-r{color:var(--renai)}
+
+/* 3ステップ */
+.steps{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:20px 0 16px}
+.step{background:var(--surface); padding:17px 18px; display:grid; grid-template-columns:auto 1fr; gap:16px; align-items:start}
+.glyph{font-size:26px; line-height:1.1}
+.step h3{margin:0 0 3px}
+.step .role{font-size:12.5px; color:var(--ink-3); margin:0 0 8px}
+.step .quote{font-family:"Shippori Mincho B1",serif; font-size:14px; color:var(--ink-2); margin:0; line-height:1.7}
+.pr{display:inline-block; font-size:10.5px; letter-spacing:.08em; color:var(--gold); border:1px solid var(--rule-2); padding:1px 7px; margin-right:5px; font-variant-numeric:tabular-nums}
+
+.layers{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule); margin:0 0 24px}
+.layer{background:var(--surface); padding:14px 18px; display:grid; grid-template-columns:96px 1fr auto; gap:14px; align-items:baseline}
+.layer b{font-family:"Shippori Mincho B1",serif; font-size:15px}
+.layer span{font-size:13px; color:var(--ink-2); line-height:1.6}
+.layer em{font-size:11.5px; color:var(--ink-3); font-style:normal; white-space:nowrap}
+
+/* フェーズ */
+.phase{display:grid; grid-template-columns:104px 1fr; gap:22px; padding:22px 0; border-bottom:1px solid var(--rule)}
+.phase:last-child{border-bottom:0}
+.pmeta .pnum{font-family:"Shippori Mincho B1",serif; font-size:13px; font-weight:700; letter-spacing:.05em; margin:0 0 2px}
+.pmeta .pdate{font-size:11.5px; color:var(--ink-3); font-variant-numeric:tabular-nums; line-height:1.5}
+.phase h3{margin:0 0 10px; font-size:17px}
+.todo{list-style:none; margin:0; padding:0; display:grid; gap:9px}
+.todo li{position:relative; padding-left:20px; font-size:13.5px; line-height:1.7; color:var(--ink-2)}
+.todo li::before{content:""; position:absolute; left:0; top:9px; width:7px; height:7px; border:1px solid var(--rule-2); background:var(--surface)}
+.todo li.key{color:var(--ink); font-weight:500}
+.todo li.key::before{background:var(--gold); border-color:var(--gold)}
+.todo li b{font-weight:700}
+
+/* やめる */
+.stops{display:grid; gap:1px; background:var(--rule); border:1px solid var(--rule)}
+.stops div{background:var(--surface); padding:14px 18px; font-size:13.5px; line-height:1.7}
+.stops b{display:block; font-family:"Shippori Mincho B1",serif; font-size:15px; color:var(--stop); margin-bottom:3px}
+.stops span{color:var(--ink-2)}
+
+/* 指標 */
+.kpis{display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:1px; background:var(--rule); border:1px solid var(--rule)}
+.kpi{background:var(--surface); padding:17px 18px}
+.kpi .k{font-size:11px; letter-spacing:.14em; color:var(--ink-3); margin:0 0 7px; font-variant-numeric:tabular-nums}
+.kpi h3{margin:0 0 6px; font-size:15px}
+.kpi p{font-size:12.5px; color:var(--ink-2); margin:0; line-height:1.65}
+
+.callout{background:var(--surface-2); border:1px solid var(--rule); padding:18px 20px; margin:24px 0 0}
+.callout p:last-child{margin-bottom:0}
+.callout p{font-size:14px}
+
+.sample{
+  background:var(--surface); border:1px solid var(--rule); border-left:3px solid var(--renai);
+  padding:18px 20px; margin:18px 0; font-family:"Shippori Mincho B1",serif; line-height:1.95; font-size:15px;
+}
+.sample .tag{display:block; color:var(--renai); font-size:13px; margin-top:10px; font-family:"Zen Kaku Gothic New",sans-serif}
+
+footer{padding:44px 0 0; color:var(--ink-3); font-size:12px; line-height:1.8}
+@media (max-width:640px){
+  .phase{grid-template-columns:1fr; gap:10px}
+  .layer{grid-template-columns:1fr; gap:4px}
+  .layer em{white-space:normal}
+  .axis{grid-template-columns:auto 1fr; }
+  .axis .hd:nth-child(3){display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <p class="eyebrow">COCO METHODOLOGY ／ 2026-08-30</p>
+  <h1>ぜんぶ「間合い」で<br>束ね直す</h1>
+  <p class="lede">X・Threads・診断・note が、いま別々の顔をしている。ひとつの言葉で束ね直して、9月からの順番に落とした。</p>
+  <div class="thesis">
+    <p>作る量は足りている。<strong>足りていないのは、4媒体を貫く1本の言葉</strong>。それが「間合い」で、その言葉はもう診断サイトに実装されている。</p>
+  </div>
+</header>
+
+<section>
+  <p class="num">01 ── 現在地</p>
+  <h2>作りすぎている。届いていない。</h2>
+  <p class="sub">週58本（投稿49＋note9）を作って、月8,000インプレ。1本あたり42。数字は少ないが、壊れてはいない——<strong>強いものが、届かない場所に置かれている</strong>だけ。</p>
+  <dl class="stats">
+    <div class="stat"><dt>X フォロワー</dt><dd>35</dd></div>
+    <div class="stat"><dt>Threads フォロワー</dt><dd>40</dd></div>
+    <div class="stat"><dt>note フォロワー</dt><dd>6</dd></div>
+    <div class="stat"><dt>メンバーシップ会員</dt><dd class="zero">0</dd></div>
+    <div class="stat"><dt>月間インプレ</dt><dd>7,800<small>目標比 0.8%</small></dd></div>
+  </dl>
+  <div class="callout">
+    <p><strong>いちばん強いコピーが、4クリックの先に埋まっている。</strong> 型診断の一行タグ——「言いたいことはある。線も引けている。ただ、まだ一度も言っていない型。」——は、いまのリポジトリで最も鋭い文章なのに、投稿→コメント→URL→8問、を越えないと出会えない。</p>
+    <p><strong>note在庫130本が、ほぼ死蔵。</strong> 8/24に旧記事を再編集したら週間ビューが29→170に跳ね、編集を止めたら166で止まった。<span class="em">効くと分かっている作業が、追いついていないだけ。</span></p>
+  </div>
+</section>
+
+<section>
+  <p class="num">02 ── 打ち出しの核</p>
+  <h2>「間合い」だけが、職場と恋愛の両方に使える</h2>
+  <p class="sub">2本の柱を持つことのコストは、これまで「変数が2倍・ルールが4象限」として払ってきた。<strong>「間合い」は、そのコストを強みに変える唯一の語</strong>。上司との間合いも、好きな人との間合いも、同じ言葉で言える。</p>
+
+  <div class="axis">
+    <div class="hd"></div>
+    <div class="hd mark-s">💼 組織と仕事（X）</div>
+    <div class="hd mark-r">💗 恋愛と関係（Threads）</div>
+
+    <div class="rowlabel">温度 高 × 距離 高</div>
+    <div class="t-s"><span class="tname">背負う人</span><span class="pct">27.4%</span><p class="lack">自分の分が残らない</p></div>
+    <div class="t-r"><span class="tname">溶ける人</span><span class="pct">30.7%</span><p class="lack">自分の分が残らない</p></div>
+
+    <div class="rowlabel">温度 高 × 距離 低</div>
+    <div class="t-s"><span class="tname">こらえる人</span><span class="pct">19.4%</span><p class="lack">相手がいない（届いていない）</p></div>
+    <div class="t-r"><span class="tname">秘める人</span><span class="pct">15.9%</span><p class="lack">相手がいない（届いていない）</p></div>
+
+    <div class="rowlabel">温度 低 × 距離 高</div>
+    <div class="t-s"><span class="tname">先に動く人</span><span class="pct">26.0%</span><p class="lack">自分がいない（渡すのが役割）</p></div>
+    <div class="t-r"><span class="tname">尽くす人</span><span class="pct">17.3%</span><p class="lack">自分がいない（渡すのが役割）</p></div>
+
+    <div class="rowlabel">温度 低 × 距離 低</div>
+    <div class="t-s"><span class="tname">降りる人</span><span class="pct">23.8%</span><p class="lack">閉じたまま動かしていない</p></div>
+    <div class="t-r"><span class="tname">守る人</span><span class="pct">25.2%</span><p class="lack">閉じたまま動かしていない</p></div>
+
+    <div class="rowlabel">中央</div>
+    <div class="t-s"><span class="tname">保つ人</span><span class="pct">3.4%</span><p class="lack">CTAは出さず、恋愛側へ送る</p></div>
+    <div class="t-r"><span class="tname">保つ人</span><span class="pct">10.9%</span><p class="lack">CTAは出さず、組織側へ送る</p></div>
+  </div>
+  <p class="axis-note">1人が2つの型を持つ。「恋愛は溶ける人／仕事は降りる人」——MBTIにない構造で、根拠は読者定義の「職場と家で同時に走る」。</p>
+</section>
+
+<section>
+  <p class="num">03 ── 媒体の役割</p>
+  <h2>4媒体を、ひとつの導線に並べ替える</h2>
+  <p class="sub">いまは4つが独立して回っている。役割を「型に出会う → 名前をもらう → 続きを読む」の一列に並べ直す。</p>
+  <div style="overflow-x:auto">
+  <table class="roles">
+    <thead><tr><th>媒体</th><th>いままで</th><th>これから</th></tr></thead>
+    <tbody>
+      <tr><td class="mark-r">Threads</td><td class="was">恋愛の投稿</td><td class="now"><b>型に出会う場所。</b>型の一行タグを冒頭に置く</td></tr>
+      <tr><td class="mark-s">X</td><td class="was">組織の投稿</td><td class="now"><b>型に出会う場所。</b>同上（組織4型）</td></tr>
+      <tr><td>日替わり4択</td><td class="was">その日のクイズ</td><td class="now"><b>型への1問目。</b>接続の一行は現状維持</td></tr>
+      <tr><td>間合い診断</td><td class="was">公開待機中</td><td class="now"><b>名前をもらう場所。</b>ここだけが読者の側から広がる</td></tr>
+      <tr><td>note</td><td class="was">テーマ別の深堀り</td><td class="now"><b>型別の続き。</b>在庫130本を型で束ね直す</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <div class="sample">
+    「言いたいことはある。線も引けている。<br>ただ、まだ一度も言っていない。」
+    <span class="tag">── これ、こらえる人の型。あなたの間合いは、どの型？</span>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink-2)">4段階が1段階になる。<strong>すでに書いてあるものを、前に出すだけ</strong>——新しく書く量はゼロ。</p>
+</section>
+
+<section>
+  <p class="num">04 ── キャラクター</p>
+  <h2>3匹は、七つの原理の3段階だった</h2>
+  <p class="sub">元のキャラ設計の担当ステージが、そのまま原理に対応している。後から当てたのではなく、最初から入っていた。</p>
+
+  <div class="layers">
+    <div class="layer"><b>Coco</b><span>型を見立てる人。結果画面の「核」がこの声</span><em>変わらない</em></div>
+    <div class="layer"><b>型</b><span>読者の立ち位置。読者が名乗るもの</span><em>変わらない</em></div>
+    <div class="layer"><b>3匹</b><span>型から動くために、いま要る声</span><em>毎週変わる</em></div>
+  </div>
+
+  <div class="steps">
+    <div class="step">
+      <div class="glyph">🐈‍⬛</div>
+      <div>
+        <h3>しらたま ── 受け止める</h3>
+        <p class="role"><span class="pr">原理 06</span><span class="pr">原理 07</span>自己受容・感情ケア</p>
+        <p class="quote">「だめだなって思える日は、やさしくなるチャンスかも。」</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="glyph">🐢</div>
+      <div>
+        <h3>しずく ── 整える</h3>
+        <p class="role"><span class="pr">原理 02</span><span class="pr">原理 03</span><span class="pr">原理 05</span>内省・整える</p>
+        <p class="quote">「答えはね、静かな時間の中にあるよ。」</p>
+      </div>
+    </div>
+    <div class="step">
+      <div class="glyph">🕊</div>
+      <div>
+        <h3>ひより ── 動く</h3>
+        <p class="role"><span class="pr">原理 01</span><span class="pr">原理 04</span>選択・飛び立つ</p>
+        <p class="quote">「正解じゃなくて、"いま選びたい方"でいいんだよ。」</p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:13.5px;color:var(--ink-2)">この順番を入れ替えない。そして<strong>3匹は「変わる層」</strong>だから、毎週更新できる。「今週の、溶ける人へ」＋その週の声——これで<span class="em">型が毎週の配信の宛先になる</span>。会員価値の「ぐるぐるした時に開く場所」が、「自分の型のページがある場所」になる。</p>
+  <div class="callout">
+    <p><strong>画像は従来どおり Coco＋動物。</strong> 動物の7周期・アングルの5周期は触らない。型に合わせて動物を選ぶと巡回の均等が崩れて機械チェックが落ちるので、やるなら実測とツール変更をセットで。</p>
+  </div>
+</section>
+
+<section>
+  <p class="num">05 ── 段取り</p>
+  <h2>出す → 測る → 束ねる → 売る</h2>
+  <p class="sub">新しく作るものは、ほぼない。<strong>順番を変えるだけ</strong>。</p>
+
+  <div class="phase">
+    <div class="pmeta"><p class="pnum">PHASE 0</p><p class="pdate">9/1 — 9/7<br>出す</p></div>
+    <div>
+      <h3>埋まっているものを、前に出す</h3>
+      <ul class="todo">
+        <li class="key"><b>9/1、間合い診断を公開。</b> noindex を外して、TOPに導線を開く</li>
+        <li class="key"><b>型の一行タグを使った投稿を、X2本・Threads2本。</b> 本数は増やさず、既存枠の差し替えで試す</li>
+        <li>旧noteの再編集を再開。<b>編集した記事のタイトルを毎週残す</b>（5.9倍の再現条件がまだ不明）</li>
+        <li>無料まとめ①（💼組織）を公開</li>
+        <li>④-b 診断サイト反映をルーティンで初回実行。KVの数字を表で出す</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="pmeta"><p class="pnum">PHASE 1</p><p class="pdate">9/8 — 9/28<br>測る</p></div>
+    <div>
+      <h3>3週で、型が効くかを判定する</h3>
+      <ul class="todo">
+        <li class="key"><b>型タグ投稿の実測。</b> 中央値で比べる（平均は外れ値に支配される）</li>
+        <li>無料まとめ②③（💼組織で連続）。9/22に交互へ戻すか判定</li>
+        <li>間合い診断の完了数を、毎週KVから。<b>テストアクセスは件数と型を必ず明記</b></li>
+        <li>「今週の、◯◯人へ」を1本だけ試作して、会員価値の形を確かめる</li>
+        <li>再編集の記録が2週たまったら、新規note9本の一部を再編集に振り替えるか提案</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="pmeta"><p class="pnum">PHASE 2</p><p class="pdate">10月<br>束ねる</p></div>
+    <div>
+      <h3>note在庫130本を、型で組み替える</h3>
+      <ul class="todo">
+        <li class="key"><b>130本に型を割り当てる。</b> テーマ別から型別へ。「溶ける人が読む8本」の形にする</li>
+        <li>無料まとめを「型別まとめ」に切り替える。再編集の順番も型に紐づけて決まる</li>
+        <li>プラン記号のない23本を振り分ける（上位20本に3本混ざっている）</li>
+        <li>35投稿に型を割り当てる運用へ。原理配分の隣に型を1つ書くだけ</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="pmeta"><p class="pnum">PHASE 3</p><p class="pdate">11月〜<br>売る</p></div>
+    <div>
+      <h3>型を、会員価値そのものにする</h3>
+      <ul class="todo">
+        <li class="key"><b>型別の週次配信を、メンバーシップの中身にする</b></li>
+        <li>会員導線を、診断の結果ページから型別ページへ</li>
+        <li>noteフォローの一段を導線に入れる（いまフォロー6人＝売り場に人がいない）</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <p class="num">06 ── 切り捨て</p>
+  <h2>やらないことを、先に決める</h2>
+  <div class="stops">
+    <div><b>週49本を増やさない</b><span>型タグ投稿は差し替えで試す。作る量は足りている</span></div>
+    <div><b>診断サイトの文言最適化に時間を使わない</b><span>実読者20〜40人ではCTR2〜3%でも期待値0.5〜1クリック。0は異常ではなく、判定できないだけ</span></div>
+    <div><b>新規noteを増やさない</b><span>在庫130本の再編集が先。効くと分かっている作業を、まだやり切っていない</span></div>
+    <div><b>100万インプレを月次目標にしない</b><span>1本4,739表示が必要で、歴代最高が3,299。<span class="em">「月に3本の3,000超え」に置き換える</span></span></div>
+  </div>
+</section>
+
+<section>
+  <p class="num">07 ── 指標</p>
+  <h2>見るのは、3つだけ</h2>
+  <p class="sub">5指標のうち2つが4週とも空だった。増やさずに、答えの出るものへ絞る。</p>
+  <div class="kpis">
+    <div class="kpi"><p class="k">01</p><h3>間合い診断の完了数</h3><p>週次。型が広がっているかの唯一の直接指標。いま実質0</p></div>
+    <div class="kpi"><p class="k">02</p><h3>Threads拡散帯の中央値</h3><p>平均ではなく中央値。8/18週61 → 8/25週22</p></div>
+    <div class="kpi"><p class="k">03</p><h3>noteフォロワー</h3><p>会員の手前の指標。いま6人。ここが動かないと会員は動かない</p></div>
+  </div>
+  <div class="callout">
+    <p><strong>会員0は「売れていない」ではなく「まだ人が来ていない」。</strong> 診断サイトは実質0、funnel転換は2.4%、noteフォロワーは6人。売り場に立っている人が実質ゼロなので、直すのは価格でもCTAでもなく<span class="em">売り場に人を運ぶ装置</span>——それが間合い診断。</p>
+  </div>
+</section>
+
+<footer>
+  <p>正典：<code>rules/type.md</code>（間合い診断）／<code>rules/shindan.md</code>（日替わり4択）／<code>CLAUDE.md</code>（判断の土台）<br>
+  実装：<code>cocomethodology/shindan</code>（サイト）。手順は <code>reference/runbook_weekly.md</code> の ④-b<br>
+  実測：<code>reference/weekly_metrics.json</code>／試験と判定期日：<code>reference/todo.md</code></p>
+</footer>
+</div>
+</body>
+</html>
