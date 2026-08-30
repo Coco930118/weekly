@@ -60,6 +60,12 @@ note.comに投稿していない下書きの置き場。**サイトには出さ�
 - **X診断・Threads診断は image_prompt を持たない**（2026-08-05 画像プロンプト廃止）
 - **X診断・Threads診断とも `axis_map` を持つ**（2026-08-30 追加）。A〜Dそれぞれの `temp`／`dist`（高／低）。**選択肢を型に割り当てるのは言葉の判断なので weekly が決める**——無いと診断サイト側が結果ページを組めずに止まる。定義は `rules/shindan.md`「診断サイトの結果ページに渡すもの」
 
+### noteJSONの構造（funnel note の必須項目・2026-08-31 追加）
+`notes/note_YYYY-MM-DD_slug.json`
+- **`funnel_targets`**：予告した投稿のID配列（例 `["th_03"]`）。無料の案内記事は空
+- **`promise_map`**：`{"約束の一片": "回収した見出し"}`。投稿の `self_replies[-1]` を `と、` で割った各片がキー、`## 見出し` が値。**`note_check.py --week` がこの4つを見る**（noteの有無／`promise_map` の有無／キーの一致／見出しの実在）。定義は `rules/note.md`「約束したものを、見出しで回収する」
+- `source_week` は `"YYYY-MM-DD_YYYY-MM-DD"`。**`episode_check.py --week` はこれで週のnoteを集める**ので、ここが空だと素材の横断カウントから落ちる
+
 ---
 
 ## 週次スケジュール（2026-08-30 訂正・実配信と一致させた）

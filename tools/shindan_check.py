@@ -17,8 +17,10 @@ import json, re, sys, glob, os, collections, unicodedata
 import e373
 
 BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れる', '明け渡す',
-          '渡す', '渡し', '恋人', '寄り添', 'んです', 'と言えるでしょう', 'いかがでしょうか',
+          '恋人', '寄り添', 'んです', 'と言えるでしょう', 'いかがでしょうか',
           '大切なのは', '台所']   # 「大切なのは」＝CLAUDE.md 文体のAI定型。note_check にしか無かった（2026-08-29 補完）
+# 活用形まで見る（2026-08-31 Coco決定・恒久ルール）。full_check.py と同じ定義を持つ
+BANNED_RE = [r'渡[すしせさそっ]']
 STYLE_ONLY = ['んです', 'と言えるでしょう', 'いかがでしょうか', '寄り添']
 # 設問の主語（rules/shindan.md「文体」・2026-08-25 Coco決定／9/1週から適用）
 # frame だけを見る：解説の地の文で語そのものを説明する場合があり、そこは射程外
@@ -64,7 +66,8 @@ def width(s):
 
 def banned_in(text):
     naked = re.sub(r'「[^」]*」', '', text)   # 読者の声の引用内は文体ルールの対象外
-    return [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in text)]
+    hit = [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in text)]
+    return hit + sorted({m for r in BANNED_RE for m in re.findall(r, text)})
 
 
 def subject_in(frame, date):

@@ -29,7 +29,8 @@ BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れ
 # 二択になり、rules/check.md「ツールに合わせて本文を書き換えたら、それは欠陥の報告」が
 # 警告している状態そのものを作る。**候補として出し、比喩かどうかは目視で決める。**
 # 短文（35投稿・診断）は比喩の可能性が高く過検出もほぼ無いので、そちらは要修正のまま。
-WATASU = ['渡す', '渡し']
+# 活用形まで数える（2026-08-31 Coco決定・恒久ルール）。note では要修正ではなく参考カウントのまま
+WATASU_RE = r'渡[すしせさそっ]'
 PROMISE = 'メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。'
 PAYWALL = '―――― ここから先は、メンバーシップの中で読めます ――――'
 PLAN = {'X': '💼', 'Threads': '💗'}
@@ -54,6 +55,7 @@ MONTH_MOTIF = {
 
 issues = []
 sig_over = []
+funnel_ref = []
 def ng(nid, *m): issues.append(f'{nid}: ' + ' '.join(str(x) for x in m))
 
 
@@ -115,7 +117,7 @@ def check(d, path, titles):
     body = re.sub(r'「[^」]*」', '', body)   # 読者の声・過去記事タイトルの引用内は文体ルールの対象外
     hit = [w for w in BANNED if w in body]
     if hit: ng(nid, '禁止語', '／'.join(hit))
-    watasu = sum(body.count(w) for w in WATASU)   # 参考カウント（比喩かどうかは目視）
+    watasu = len(re.findall(WATASU_RE, body))   # 参考カウント（比喩かどうかは目視）
 
     # 2 一人称
     p = len(re.findall(r'(?<![私])私(?!たち)', naked))
@@ -198,10 +200,74 @@ def check(d, path, titles):
         if not any(k in ip.lower() for k in ok):
             ng(nid, f'季節モチーフが公開月（{mth}月）と合っていない：{MONTH_MOTIF[mth]}')
     return {'nid': nid, 'plan': plan, 'watasu': watasu, 'push': (d.get('closing_push') or '').split('\n')[-1],
+            'file': os.path.basename(path),
+            'targets': d.get('funnel_targets') or [],
+            'promise_map': d.get('promise_map'),
+            'heads': re.findall(r'^##+\s*(.+?)\s*$', md, re.M),
             'leads': re.findall(r'^(.+)\n→「', md[i:], re.M) if i > 0 else [],
             'being': being_open(md, i, d.get('closing_push') or ''),
             'sig_fixed': 'でしかない' in being_section(md, i, d.get('closing_push') or ''),
             'week': d.get('source_week') or ''}
+
+
+def promise_parts(reply):
+    """funnel返信の約束を、回収すべき単位に割る。
+    形は決まっている：「〜をnoteに書きました」。『と、』が単位の区切り。"""
+    m = re.search(r'^(.*)を、?\s*note\s*に書きました', reply)
+    if not m: return []
+    return [p.strip() for p in m.group(1).split('と、') if p.strip()]
+
+
+def funnel_check(rows):
+    """約束と回収の突き合わせ（2026-08-31 Coco決定・恒久ルール）
+
+    funnel投稿の返信2で「AとBをnoteに書きました」と約束したら、note側は
+    `promise_map` で「どの見出しでAを回収し、どの見出しでBを回収したか」を明示する。
+    機械が見るのは**構造**だけ——約束の写しが投稿と一致するか、挙げた見出しが実在するか。
+    意味が本当に回収できているかは目視だが、**書けないなら回収していない**ので、
+    書かせること自体が空手形を止める。
+
+    背景：2026-08-31 のWチェックで、9/1週の funnel 8本のうち4本（th_03・th_06・th_07・x_10）が
+    約束の半分を書かずに公開待ちになっていた。3つのツールはどれも自分のファイルしか読まないため、
+    投稿とnoteをまたぐこの穴は構造的に検出できなかった。
+    """
+    weeks = {r['week'] for r in rows if r['week'] and r['week'] != 'standing_guide'}
+    # 複数週をまとめて見るとき（--all）は参考出力にする。配信済みの週には遡及しない（CLAUDE.md）
+    single = len(weeks) == 1
+    out = ng if single else (lambda nid, *m: funnel_ref.append(f'{nid}: ' + ' '.join(str(x) for x in m)))
+    for wk in sorted(weeks):
+        wp = os.path.join(REPO, 'posts', f'week_{wk.replace("-", "_")}.json')
+        if not os.path.exists(wp):
+            # 配信から30日で posts/ は消える（rules/ops.md）。過去週で無いのは正常なので黙る。
+            # 今まさに見ている1週だけは、無いこと自体が事故なので言う
+            if single:
+                print(f'  ! {wk}: 35投稿のファイルが無く、約束の突き合わせを回せない（{os.path.basename(wp)}）')
+            continue
+        posts = json.load(open(wp, encoding='utf-8')).get('posts', [])
+        for p in posts:
+            if not p.get('note_funnel'): continue
+            reply = (p.get('self_replies') or [''])[-1]
+            parts = promise_parts(reply)
+            if not parts:
+                out(p['id'], 'funnel返信2から約束を取り出せない（「〜をnoteに書きました」の形にする）')
+                continue
+            hit = [r for r in rows if p['id'] in r['targets']]
+            if not hit:
+                out(p['id'], f'約束したnoteが無い（空手形）: {" ／ ".join(parts)}')
+                continue
+            for r in hit:
+                pm = r['promise_map']
+                if not isinstance(pm, dict) or not pm:
+                    out(r['nid'], f'promise_map が無い（{p["id"]} の約束 {len(parts)}件をどの見出しで回収したか書く）')
+                    continue
+                if set(pm) != set(parts):
+                    miss = [x for x in parts if x not in pm]
+                    extra = [x for x in pm if x not in parts]
+                    if miss: out(r['nid'], f'{p["id"]} の約束が promise_map に無い: ' + ' ／ '.join(miss))
+                    if extra: out(r['nid'], f'promise_map に投稿の約束と違う項目: ' + ' ／ '.join(extra))
+                for k, v in pm.items():
+                    if v not in r['heads']:
+                        out(r['nid'], f'promise_map「{k}」が指す見出し「{v}」が本文に無い')
 
 
 def main(paths):
@@ -231,6 +297,8 @@ def main(paths):
             if len(weeks) == 1: ng(wk, msg)
             else: sig_over.append(f'{wk}: {msg}')
 
+    funnel_check(rows)
+
     lead = collections.Counter(l for r in rows for l in r['leads'])
     dup = [k for k, v in lead.items() if v > 1]
     if dup: ng('週内', 'あわせて読むの導入文が重複: ' + ' / '.join(x[:28] for x in dup[:4]))
@@ -248,6 +316,11 @@ def main(paths):
         print(f'  「渡す/渡し」候補: {sum(n for _, n in w)}箇所 / {len(w)}本 {w}')
         print('    ※禁止しているのは**比喩的な用法**だけ（言う／頼む／話す／送る／伝える に置換）。')
         print('    　仕事や物を実際に渡す記述は対象外。**比喩かどうかは目視で決める**')
+    for m in funnel_ref:
+        print(f'  ! 約束と回収: {m}')
+    if funnel_ref:
+        print('    （複数週をまとめて見ているので参考。配信済みの週には遡及しない。'
+              '直すのは、その週を --week で見たとき）')
     for m in sig_over:
         print(f'  ! {m}\n    （配信済みの週は遡及しない。note_fix_queue の deferred 済み）')
 
