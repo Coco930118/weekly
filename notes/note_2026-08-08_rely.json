@@ -50,5 +50,10 @@
   ],
   "closing_push": "小さな一つから、今日はじめられる。 あなたなら、頼れる。",
   "principle_no": "07",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "尽くす人",
+  "maai_axis": {
+    "温度": "低",
+    "距離": "高"
+  }
 }

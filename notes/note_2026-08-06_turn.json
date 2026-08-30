@@ -51,5 +51,10 @@
   ],
   "closing_push": "その二週間は、相手のためじゃなく、あなたのために空ける時間。 あなたなら、決められる。",
   "principle_no": "05",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "守る人",
+  "maai_axis": {
+    "温度": "低",
+    "距離": "低"
+  }
 }

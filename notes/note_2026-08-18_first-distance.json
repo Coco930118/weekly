@@ -50,5 +50,10 @@
   "principle_no": "07",
   "before_after_type": "事例なし",
   "closing_push": "次に会うとき、本当の感想を一つだけ混ぜる。\n大丈夫。少しずつで、間に合う。",
-  "published_confirmed": false
+  "published_confirmed": false,
+  "plan_type": "溶ける人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "高"
+  }
 }

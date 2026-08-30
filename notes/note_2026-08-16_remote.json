@@ -50,5 +50,10 @@
   ],
   "closing_push": "不安の正体は、遅れたときの自分が決まっていないこと。 あなたなら、置ける。",
   "principle_no": "05",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "先に動く人",
+  "maai_axis": {
+    "温度": "低",
+    "距離": "高"
+  }
 }

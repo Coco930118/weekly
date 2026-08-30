@@ -50,5 +50,10 @@
   ],
   "closing_push": "今夜の三十分は、誰にも断らずに使っていい。 あなたなら、戻ってこられる。",
   "principle_no": "01",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "秘める人",
+  "maai_axis": {
+    "温度": "高",
+    "距離": "低"
+  }
 }

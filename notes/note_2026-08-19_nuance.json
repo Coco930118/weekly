@@ -50,5 +50,10 @@
   "principle_no": "06",
   "before_after_type": "事例なし",
   "closing_push": "今日ひとつ、「引っかかった」とだけ声に出す。\nあなたなら、守れる。",
-  "published_confirmed": false
+  "published_confirmed": false,
+  "plan_type": "守る人",
+  "maai_axis": {
+    "温度": "低",
+    "距離": "低"
+  }
 }

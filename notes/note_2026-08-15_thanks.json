@@ -50,5 +50,10 @@
   ],
   "closing_push": "そっけない返事は、拒絶じゃなくリハビリの音。 あなたなら、始められる。",
   "principle_no": "01",
-  "before_after_type": "事例なし"
+  "before_after_type": "事例なし",
+  "plan_type": "尽くす人",
+  "maai_axis": {
+    "温度": "低",
+    "距離": "高"
+  }
 }
