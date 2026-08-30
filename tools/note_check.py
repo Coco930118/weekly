@@ -19,8 +19,17 @@ import json, re, sys, glob, os, collections
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れる', '明け渡す',
-          '渡す', '渡し', '恋人', '寄り添', 'んです', 'と言えるでしょう',
+          '恋人', '寄り添', 'んです', 'と言えるでしょう',
           'いかがでしょうか', '大切なのは', '台所']
+# 「渡す／渡し」は要修正から参考カウントへ（2026-08-30 Coco決定）。
+# rules/posts.md が禁じているのは**比喩的な用法**だけで、置き換え先は「言う／頼む／話す／送る／伝える」。
+# ところが note では「仕事を人に渡す＝委譲」という**実際の行為**として使われ、130本中11本・
+# 延べ128箇所に出る（記事タイトルにも入っている：「答えを渡すのをやめた日」「教えると、伝わらない。
+# 渡すと、その人のものになる」）。これを要修正で出し続けると、通すために本文を曲げるか無視するかの
+# 二択になり、rules/check.md「ツールに合わせて本文を書き換えたら、それは欠陥の報告」が
+# 警告している状態そのものを作る。**候補として出し、比喩かどうかは目視で決める。**
+# 短文（35投稿・診断）は比喩の可能性が高く過検出もほぼ無いので、そちらは要修正のまま。
+WATASU = ['渡す', '渡し']
 PROMISE = 'メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。'
 PAYWALL = '―――― ここから先は、メンバーシップの中で読めます ――――'
 PLAN = {'X': '💼', 'Threads': '💗'}
@@ -106,6 +115,7 @@ def check(d, path, titles):
     body = re.sub(r'「[^」]*」', '', body)   # 読者の声・過去記事タイトルの引用内は文体ルールの対象外
     hit = [w for w in BANNED if w in body]
     if hit: ng(nid, '禁止語', '／'.join(hit))
+    watasu = sum(body.count(w) for w in WATASU)   # 参考カウント（比喩かどうかは目視）
 
     # 2 一人称
     p = len(re.findall(r'(?<![私])私(?!たち)', naked))
@@ -187,7 +197,7 @@ def check(d, path, titles):
         if day >= 26: ok += MONTH_MOTIF[1 if mth == 12 else mth + 1]
         if not any(k in ip.lower() for k in ok):
             ng(nid, f'季節モチーフが公開月（{mth}月）と合っていない：{MONTH_MOTIF[mth]}')
-    return {'nid': nid, 'plan': plan, 'push': (d.get('closing_push') or '').split('\n')[-1],
+    return {'nid': nid, 'plan': plan, 'watasu': watasu, 'push': (d.get('closing_push') or '').split('\n')[-1],
             'leads': re.findall(r'^(.+)\n→「', md[i:], re.M) if i > 0 else [],
             'being': being_open(md, i, d.get('closing_push') or ''),
             'sig_fixed': 'でしかない' in being_section(md, i, d.get('closing_push') or ''),
@@ -233,6 +243,11 @@ def main(paths):
 
     c = collections.Counter(r['plan'] for r in rows)
     print(f'\n■ 参考カウント\n  プラン別: {dict(c)}')
+    w = [(r['nid'], r['watasu']) for r in rows if r.get('watasu')]
+    if w:
+        print(f'  「渡す/渡し」候補: {sum(n for _, n in w)}箇所 / {len(w)}本 {w}')
+        print('    ※禁止しているのは**比喩的な用法**だけ（言う／頼む／話す／送る／伝える に置換）。')
+        print('    　仕事や物を実際に渡す記述は対象外。**比喩かどうかは目視で決める**')
     for m in sig_over:
         print(f'  ! {m}\n    （配信済みの週は遡及しない。note_fix_queue の deferred 済み）')
 
