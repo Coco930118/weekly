@@ -20,12 +20,17 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
+      "plan_type": "溶ける人",
       "principle_no": 1,
       "cluster_topic": "返信待ちの夜の使い方——送った後に夜の予定を先に入れると、待つ場所が自分の側に戻る三日間の作り方",
       "linked_principle": "待つ場所を自分の側に戻すのは追わないことではなく、自分の時間の中で待てる状態を作ること。軸ができた人から、裏返せる夜になる",
       "funnel_targets": [
         "th_03"
       ],
+      "promise_map": {
+        "追わない夜の作り方": "三日分の決め方",
+        "追いたくなった日の戻り方": "追いたくなった日に、戻る場所"
+      },
       "note_url": "",
       "file": "note_2026-09-01_flip.json",
       "in_index": true
@@ -37,12 +42,16 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "flagship",
+      "plan_type": "背負う人",
       "principle_no": 1,
-      "cluster_topic": "管理職の孤独・五分書く技術——上にも下にも横にも話せない構造を、自分宛の一件で抜け出す",
+      "cluster_topic": "管理職の孤独・五分書く技術——上にも下にも横にも話せない席を、自分宛の一件で抜け出す",
       "linked_principle": "誰の許可もいらない、今日の一手。書き先が自分だけでも、頭の整理は始まる",
       "funnel_targets": [
         "x_03"
       ],
+      "promise_map": {
+        "誰にも言えない一件を軽くする、夜五分の書き方": "五分で書く、三行の型"
+      },
       "note_url": "",
       "file": "note_2026-09-02_alone.json",
       "in_index": true
@@ -54,12 +63,16 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
+      "plan_type": "先に動く人",
       "principle_no": 3,
-      "cluster_topic": "怒りの混入・状態を返す——正しいことを言っても届かない時、事実より先に相手の状態を一行返す技術",
-      "linked_principle": "事実と感情を分離する。相手の状態を先に返してから、こちらの話に入る",
+      "cluster_topic": "怒りの混入・自分の状態を返す——内容に触れず「それは、今は受け取れません」で場を閉じ、怒りが去ってから事実の形で正論を出す順番",
+      "linked_principle": "事実と感情を分ける。その場は自分の状態だけ返し、正論は怒りが去ってから事実の形で出す",
       "funnel_targets": [
         "x_04"
       ],
+      "promise_map": {
+        "怒りが去ってから正論を出す順番": "怒りが去ってから、正論を出す"
+      },
       "note_url": "",
       "file": "note_2026-09-02_freeze.json",
       "in_index": true
@@ -71,12 +84,17 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
-      "principle_no": 4,
-      "cluster_topic": "本音が言えた夜と言えなかった夜（夫婦・パートナー）——翌朝に自分あてに一行残すことで、未処理を「処理した」状態にする",
-      "linked_principle": "判断を読者へ返す。言えなかったことを、まず自分の中で受け取る",
+      "plan_type": "秘める人",
+      "principle_no": 6,
+      "cluster_topic": "本音が言えた夜と言えなかった夜（夫婦・パートナー）——言わないを選んだ夜にして、翌朝の一行から一つだけ選んで言い直す",
+      "linked_principle": "悩みの意味を反転して定義し直す。「言えなかった夜」を「言わないを選んだ夜」に置き直すと、翌朝に残るものが変わる",
       "funnel_targets": [
         "th_06"
       ],
+      "promise_map": {
+        "言えなかった夜の選び方": "言えなかった夜を、選んだ夜にする",
+        "翌朝の伝え直し方": "翌朝、どこまで言い直すか"
+      },
       "note_url": "",
       "file": "note_2026-09-02_morning.json",
       "in_index": true
@@ -88,31 +106,40 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
-      "principle_no": 2,
-      "cluster_topic": "言いたいことが言えないまま次の日になる——できていることを先に確認してから言えていないことに向かう、順番の技術",
-      "linked_principle": "扱える大きさに。できていることから先に始めると、言えていないことの重さが変わる",
+      "plan_type": "尽くす人",
+      "principle_no": 4,
+      "cluster_topic": "言いたいことが言えないまま次の日になる——できていること・「こうなると嬉しいな」・「これは無理？」の三段と、逆から入った夜の立て直し",
+      "linked_principle": "決断を相手に返す（原理04）。言い切らず「これは無理？」で置いて、最後の判断を相手に選ばせる",
       "funnel_targets": [
         "th_07"
       ],
+      "promise_map": {
+        "プラスから入る順番の作り方": "プラスから入る、三つの順番",
+        "逆にしてしまった時の立て直し": "逆から入ってしまった夜の、立て直し"
+      },
       "note_url": "",
       "file": "note_2026-09-03_order.json",
       "in_index": true
     },
     {
-      "title": "💼振り返りは「よかったか悪かったか」ではない。引っかかりを一つ来週へ持ち込まないことだ",
+      "title": "💼上司は完成度を見ていない。どこが決まっていないかだけを見ている",
       "publish_date": "2026-09-04",
       "platform_origin": "X",
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
-      "principle_no": 1,
-      "cluster_topic": "振り返りの技術——「何を振り返ればいいか分からない」を「引っかかりを一つ来週に持ち込まない」で解決する",
-      "linked_principle": "今日の一手。引っかかりを一つ見つけて、来週の最初の一手に変える",
+      "plan_type": "降りる人",
+      "principle_no": 7,
+      "cluster_topic": "固めてから出すのをやめる——粗いまま回すときに付ける一言（決まっていない場所を一つ／事実の形で／こちらの次の一手）",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。固めている間その案は一度も見られていない、を先に置く",
       "funnel_targets": [
         "x_08"
       ],
+      "promise_map": {
+        "粗いまま回すときに付ける一言の決め方": "粗いまま回すときに付ける一言の決め方"
+      },
       "note_url": "",
-      "file": "note_2026-09-04_review.json",
+      "file": "note_2026-09-04_rough.json",
       "in_index": true
     },
     {
@@ -122,12 +149,17 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "flagship",
+      "plan_type": "守る人",
       "principle_no": 1,
       "cluster_topic": "秋の入口に整えるなら——持ち越さない区切り・友達関係の整理・今の自分に必要な距離の確認",
       "linked_principle": "今日の一手。関係の距離を「切る」か「続ける」の二択ではなく、「今の自分に必要な距離」を確認する第三の軸",
       "funnel_targets": [
         "th_12"
       ],
+      "promise_map": {
+        "感情を持ち越さない秋の入口の整え方": "感情を持ち越さない、秋の区切りの作り方",
+        "切らずに選び直す手順": "切らずに、距離を選び直す手順"
+      },
       "note_url": "",
       "file": "note_2026-09-04_autumn.json",
       "in_index": true
@@ -139,14 +171,35 @@
       "source_week": "2026-09-01_2026-09-07",
       "week_group": "今週分",
       "tier": "member_entry",
+      "plan_type": "こらえる人",
       "principle_no": 3,
-      "cluster_topic": "頑張ったはずなのに思い出せない——飲み込んだ回数・三つ書き出す技術で、見えない仕事を事実として扱う",
+      "cluster_topic": "頑張ったはずなのに思い出せない——飲み込んだ場面を三つ事実で書き出し、繰り返しそうな一件を来週の一手に変えて、面談で言える記録にする",
       "linked_principle": "事実と感情を分離する。飲み込んだことを感情ではなく事実として数える",
       "funnel_targets": [
         "x_10"
       ],
+      "promise_map": {
+        "飲み込んだ場面を三つ書き出して来週の一手に変えるやり方": "三つを、来週の一手に変える"
+      },
       "note_url": "",
       "file": "note_2026-09-05_invisible.json",
+      "in_index": true
+    },
+    {
+      "title": "💼週のどこで折れるかは、だいたい決まっている",
+      "publish_date": "2026-09-06",
+      "platform_origin": "X",
+      "source_week": "2026-09-01_2026-09-07",
+      "week_group": "今週分",
+      "tier": "free_entry",
+      "plan_type": "背負う人",
+      "principle_no": 5,
+      "cluster_topic": "週次の無料まとめ（型A・組織）——詰まる曜日ごとに既存の💼10本を並べ直した目次。中身は要約まで、手当ては各記事へ送る",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。「全部読むか、読まないか」ではなく「折れる曜日で選ぶ」に測る対象を変える",
+      "funnel_targets": [],
+      "promise_map": null,
+      "note_url": "",
+      "file": "note_2026-09-06_guide-soshiki.json",
       "in_index": true
     },
     {

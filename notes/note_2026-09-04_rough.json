@@ -1,0 +1,66 @@
+{
+  "note_id": "note_20260904_rough",
+  "title": "💼上司は完成度を見ていない。どこが決まっていないかだけを見ている",
+  "date": "2026-09-04",
+  "publish_date": "2026-09-04",
+  "platform_origin": "X",
+  "generated_at": "2026-08-28T10:00:00+09:00",
+  "source_week": "2026-09-01_2026-09-07",
+  "cluster_topic": "固めてから出すのをやめる——粗いまま回すときに付ける一言（決まっていない場所を一つ／事実の形で／こちらの次の一手）",
+  "tier": "member_entry",
+  "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。固めている間その案は一度も見られていない、を先に置く",
+  "unresolved_question": "【実体験募集】粗いまま回して、返ってきたもので案が変わった場面はあるか。付けた一言の実際の文面があると読者の行動イメージが上がる。なくても記事は成立する。",
+  "echoed_scene": "「まだ粗いので、もう少し固めてから出します」と言ったまま週が過ぎる。手元で磨き続けて、出した瞬間に前提から覆される。直した回数が誰にも見られていない",
+  "funnel_targets": [
+    "x_08"
+  ],
+  "episode_ref": "E364",
+  "visibility": "members_only",
+  "price": "0",
+  "free_ratio": "0.10",
+  "outcome_promise": "固めてから出すのをやめて、粗いまま回すときに付ける一言を、その場で自分で決められるようになる",
+  "framework": "固めている間その案は見られていない → 決裁する側が見ているのは「決まっていない場所」→ 一言の決め方三段 → 一言から外すもの",
+  "practice_tool": "手元で止まっている一件に「◯◯が決まっていません」を付けて、月曜に一件だけ回す",
+  "before_after": [
+    {
+      "before": "粗いまま出すのが怖くて、手元で三週間磨いた。出した日に前提から覆されて、磨いた分がまるごと消えた",
+      "after": "「単価が決まっていません。金曜までに何もなければA案で進めます」と付けて回した。返ってきたのは単価の話だけで、その日のうちに決まった"
+    }
+  ],
+  "membership_hook": "続きは、メンバーシップ「チームCoco」で。毎週深堀りが増えて、過去の整え方もぜんぶ読めます。",
+  "note_url": "",
+  "membership_url": "https://note.com/coconocanvas/membership",
+  "image_prompt": "Horizontal 1280x670 watercolor illustration for a note header. Early September morning, cool and clear. Composition: Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, sliding a single unfinished sheet of paper across a wooden desk toward the viewer, with an unhurried, decided expression — the rest of the papers left in a quiet stack behind her. A small wise turtle (Shizuku, calm green, cream plastron) on the desk corner; a gentle white bird (Hiyori, pale blue-white) just lifting off from the window frame. Pampas grass and a dragonfly beyond the window in early September morning light. The upper third is left as a pale celadon-to-soft-steel-blue gradient for title text overlay. The main subject centred in the middle third, drawn large and readable at thumbnail size; lower third quiet. All characters grouped within the central third. Watercolor style: soft transparent washes, muted dusty tones, Quiet Luxury. Palette of pale celadon, soft steel blue, cool ivory. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
+  "hashtags": [
+    "#温度の整え方",
+    "#管理職",
+    "#仕事の進め方",
+    "#先送り",
+    "#組織",
+    "#チームCoco"
+  ],
+  "description": "「もう少し固めてから出します」の一言のあとに、そのまま月曜が来る。決裁する側が見ているのは完成度ではなく、決まっていない場所のほう。粗いまま回すときに付ける一言の決め方。",
+  "content_markdown": "「まだ粗いので、もう少し固めてから出します」\n\nこの一言のあとに、そのまま月曜が来る。翌週も、その次の週も。\n\n先に切ってしまう。**固めている間、その案は一度も見られていない**。直した回数が価値になるのは、外に出したあとだけ。内側で磨いているあいだは、回数がゼロのまま増えない。\n\n出す、見てもらう、問題が出る、直す。順番はそれしかない。\n\n---\n\n**―――― ここから先は、メンバーシップの中で読めます ――――**\n\n---\n\n## 決裁する側が見ているもの\n\n見ているのは、完成度ではない。**どこが決まっていて、どこが決まっていないか**のほう。\n\n決まっていない場所が書いてあれば、そこだけ答えれば済む。書いていなければ、全部を疑うところから始めることになる。だから「粗いまま」より「粗さの場所が分からない」ほうが、返事が遅い。\n\n磨いてから出した案が、出した瞬間に前提から覆されることがある。あれは運が悪かったのではない。**前提を確かめる工程を、磨く工程の後ろに置いた**というだけのこと。\n\n## 粗いまま回すときに付ける一言の決め方\n\n一言だけ付ける。決め方は三段。\n\n**一：決まっていない場所を一つに絞る**\n\n粗い箇所は複数ある。全部書くと、相手はどこから見ればいいか分からない。**いま返事がほしい一つ**だけを選ぶ。選べないときは、その案の中でいちばん後戻りが高くつく場所を取る。\n\n**二：「決まっていません」の形で書く**\n\n「ここが決まっていません」と書く。「ご意見をいただけますと」でも「未完成ですが」でもない。前者は範囲がなく、後者は謝罪になる。**決まっていない、は事実の報告**。事実で書くと、相手は判断だけ返せばよくなる。\n\n**三：返事の期限ではなく、こちらの次の一手を添える**\n\n「今週中にお願いします」ではなく、「返事がなければ金曜にA案で進めます」と書く。相手の予定を縛らずに、こちらの手が止まらない。返ってこない案もある。返ってこなかったのも、一つの答えとして受け取れる。\n\nまとめると、一言はこうなる。\n\n> 「◯◯が決まっていません。金曜までに何もなければ、A案で進めます」\n\nこれで一件、外に出た。\n\n## 一言から外すもの\n\n**謝らない。** 「粗くてすみません」を付けると、相手は品質の話から読み始める。読ませたいのは、決まっていない場所のほう。\n\n**言い訳を足さない。** 「時間がなくて」は、判断の材料にならない情報を一つ増やすだけ。\n\n**二つ以上聞かない。** 二つ聞くと、返ってくるのは軽いほうの一つになる。重いほうを一つ聞く。\n\n外すものが決まると、一言は短くなる。短いほど、返事が早い。\n\n## 変化までの時間感\n\n月曜から使える。一件目で返事の速さが変わるとは限らない。三件回すと、自分の中で「これは決まっていない」と言える範囲が広がる。手元で止まる案が目に見えて減るのは、一ヶ月くらい先。\n\n## この整え方が向かない場面\n\n出す前に一度は誰かの目が要ると決まっている案には向かない。承認の順番が固定されている書類や、外に出れば取り消せない案がそれにあたる。その場合は、粗いまま回す先を「外」ではなく「隣の席の一人」にする。回す先を小さくすれば、同じ手が使える。\n\n---\n\n粗いまま出すのは、雑さではなく、直される場所を自分で名指しする行為だ。名指しできる範囲が、そのままその人の引き受けている範囲になる。\n\n---\n\n月曜ひとつ、手元で止まっている一件に「ここが決まっていません」を付けて回す。\n\nあなたなら、粗いまま出せる。\n\n---\n\n## あわせて読む\n\n- [💼「来週こそ」は決意じゃない。先送りの、いちばん丁寧な言い方だ](note_2026-08-21_friday.json) — 2026-08-21\n- [💼上司は要求を聞いていない。リターンだけを聞いている](note_2026-08-12_sandwich.json) — 2026-08-12\n\n---\n\nメンバーシップ「チームCoco」\n温度の整え方 —— 組織と仕事\n\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。\n\n月額1,500円。",
+  "content_html": "<p>「まだ粗いので、もう少し固めてから出します」</p><p>この一言のあとに、そのまま月曜が来る。翌週も、その次の週も。</p><p>先に切ってしまう。<strong>固めている間、その案は一度も見られていない</strong>。直した回数が価値になるのは、外に出したあとだけ。内側で磨いているあいだは、回数がゼロのまま増えない。</p><p>出す、見てもらう、問題が出る、直す。順番はそれしかない。</p><hr><p><strong>―――― ここから先は、メンバーシップの中で読めます ――――</strong></p><hr><h2>決裁する側が見ているもの</h2><p>見ているのは、完成度ではない。<strong>どこが決まっていて、どこが決まっていないか</strong>のほう。</p><p>決まっていない場所が書いてあれば、そこだけ答えれば済む。書いていなければ、全部を疑うところから始めることになる。だから「粗いまま」より「粗さの場所が分からない」ほうが、返事が遅い。</p><p>磨いてから出した案が、出した瞬間に前提から覆されることがある。あれは運が悪かったのではない。<strong>前提を確かめる工程を、磨く工程の後ろに置いた</strong>というだけのこと。</p><h2>粗いまま回すときに付ける一言の決め方</h2><p>一言だけ付ける。決め方は三段。</p><p><strong>一：決まっていない場所を一つに絞る</strong></p><p>粗い箇所は複数ある。全部書くと、相手はどこから見ればいいか分からない。<strong>いま返事がほしい一つ</strong>だけを選ぶ。選べないときは、その案の中でいちばん後戻りが高くつく場所を取る。</p><p><strong>二：「決まっていません」の形で書く</strong></p><p>「ここが決まっていません」と書く。「ご意見をいただけますと」でも「未完成ですが」でもない。前者は範囲がなく、後者は謝罪になる。<strong>決まっていない、は事実の報告</strong>。事実で書くと、相手は判断だけ返せばよくなる。</p><p><strong>三：返事の期限ではなく、こちらの次の一手を添える</strong></p><p>「今週中にお願いします」ではなく、「返事がなければ金曜にA案で進めます」と書く。相手の予定を縛らずに、こちらの手が止まらない。返ってこない案もある。返ってこなかったのも、一つの答えとして受け取れる。</p><p>まとめると、一言はこうなる。</p><p>> 「◯◯が決まっていません。金曜までに何もなければ、A案で進めます」</p><p>これで一件、外に出た。</p><h2>一言から外すもの</h2><p><strong>謝らない。</strong> 「粗くてすみません」を付けると、相手は品質の話から読み始める。読ませたいのは、決まっていない場所のほう。</p><p><strong>言い訳を足さない。</strong> 「時間がなくて」は、判断の材料にならない情報を一つ増やすだけ。</p><p><strong>二つ以上聞かない。</strong> 二つ聞くと、返ってくるのは軽いほうの一つになる。重いほうを一つ聞く。</p><p>外すものが決まると、一言は短くなる。短いほど、返事が早い。</p><h2>変化までの時間感</h2><p>月曜から使える。一件目で返事の速さが変わるとは限らない。三件回すと、自分の中で「これは決まっていない」と言える範囲が広がる。手元で止まる案が目に見えて減るのは、一ヶ月くらい先。</p><h2>この整え方が向かない場面</h2><p>出す前に一度は誰かの目が要ると決まっている案には向かない。承認の順番が固定されている書類や、外に出れば取り消せない案がそれにあたる。その場合は、粗いまま回す先を「外」ではなく「隣の席の一人」にする。回す先を小さくすれば、同じ手が使える。</p><hr><p>粗いまま出すのは、雑さではなく、直される場所を自分で名指しする行為だ。名指しできる範囲が、そのままその人の引き受けている範囲になる。</p><hr><p>月曜ひとつ、手元で止まっている一件に「ここが決まっていません」を付けて回す。</p><p>あなたなら、粗いまま出せる。</p><hr><h2>あわせて読む</h2><p>- [💼「来週こそ」は決意じゃない。先送りの、いちばん丁寧な言い方だ](note_2026-08-21_friday.json) — 2026-08-21<br>- [💼上司は要求を聞いていない。リターンだけを聞いている](note_2026-08-12_sandwich.json) — 2026-08-12</p><hr><p>メンバーシップ「チームCoco」<br>温度の整え方 —— 組織と仕事</p><p>メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。</p><p>月額1,500円。</p>",
+  "cta_text": "毎週深堀りが増えて、過去の整え方もぜんぶ読めます。月額1,500円。",
+  "sns_hooks": {
+    "x": "「まだ粗いので、もう少し固めてから出します」。この一言のあとに、そのまま月曜が来る。固めている間、その案は一度も見られていない。粗いまま回すときに付ける一言の決め方、noteに書きました。"
+  },
+  "micro_adjustment_points": [
+    "粗いまま回して案が変わった実際の場面——Cocoの実体験があると読者の行動イメージが上がる（実体験募集済み）",
+    "「決まっていません」を書きにくい相手（社外・上位者）向けの言い換えを一つ持てると、使える幅が広がる"
+  ],
+  "internal_links": [
+    "💼「来週こそ」は決意じゃない。先送りの、いちばん丁寧な言い方だ",
+    "💼上司は要求を聞いていない。リターンだけを聞いている"
+  ],
+  "closing_push": "月曜ひとつ、手元で止まっている一件に「ここが決まっていません」を付けて回す。\nあなたなら、粗いまま出せる。",
+  "before_after_type": "合成相談（二層ルール準拠：相談者は合成、Cocoの実体験は使用していない。素材 E364 の型の範囲内で構成）",
+  "image_prompt_full": "Horizontal 1280x670 watercolor illustration for a note header. Early September morning, cool and clear. Composition: Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern, sliding a single unfinished sheet of paper across a wooden desk toward the viewer, with an unhurried, decided expression — the rest of the papers left in a quiet stack behind her. A small wise turtle (Shizuku, calm green, cream plastron) on the desk corner; a gentle white bird (Hiyori, pale blue-white) just lifting off from the window frame. Pampas grass and a dragonfly beyond the window in early September morning light. The upper third is left as a pale celadon-to-soft-steel-blue gradient for title text overlay. The main subject centred in the middle third, drawn large and readable at thumbnail size; lower third quiet. All characters grouped within the central third of the image's width, so that a square crop taken from the centre contains all of them. Watercolor style: soft transparent washes, muted dusty tones, Quiet Luxury. Palette of pale celadon, soft steel blue, cool ivory. No POP, no vivid colors, no chibi, no thick outlines, no 3D, no photorealism. No text, no letters, no signage.",
+  "principle_no": "07",
+  "image_prompt_short": "Horizontal 1280x670 note header. Early September morning. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, calm and warm, never stern — sliding one unfinished sheet of paper across a wooden desk toward the viewer, the rest left in a quiet stack behind her. A small wise turtle on the desk corner; a gentle white bird lifting off from the window frame. Pampas grass and a dragonfly beyond the window. Characters centred in the middle third; upper third pale celadon gradient for title; lower third quiet. Palette: pale celadon, soft steel blue, cool ivory. Watercolor, soft transparent washes. No text, no chibi, no 3D, no photorealism.",
+  "plan_type": "降りる人",
+  "promise_map": {
+    "粗いまま回すときに付ける一言の決め方": "粗いまま回すときに付ける一言の決め方"
+  }
+}
