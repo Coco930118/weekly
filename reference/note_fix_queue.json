@@ -3154,23 +3154,6 @@
       "note_com_edit_needed": true
     },
     {
-      "file": "note_2026_04_26.json",
-      "note_id": null,
-      "date": "2026-04-26",
-      "title": "💗「もういいや」は、諦めじゃなかった",
-      "plan": "Threads",
-      "visibility": "members_only",
-      "items": [
-        {
-          "rule": "この回の型の貼り足し",
-          "detail": "末尾に「## この回の型」ブロックを足した（型・3匹・型マガジン・間合い診断への導線）。本文の中身は未変更なので、note.com では末尾に貼り足すだけで済む",
-          "severity": "高",
-          "status": "open"
-        }
-      ],
-      "note_com_edit_needed": true
-    },
-    {
       "file": "note_2026_06_09_distance.json",
       "note_id": "note_2026_06_09_distance",
       "date": null,
