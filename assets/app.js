@@ -496,7 +496,7 @@ let notesLoaded = false;
 
 // noteの本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
 // 一覧（notes/index.json）は no-cache で毎回聞き直すので、ここに含めない。
-const NOTE_V = '20260831t';
+const NOTE_V = '20260831u';
 
 async function loadNotes() {
   const container = document.getElementById('notesContainer');
