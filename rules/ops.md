@@ -56,7 +56,8 @@ note.comに投稿していない下書きの置き場。**サイトには出さ�
   - 太字の4つが旧定義から漏れていた。**`full_check.py` はこの4つを直接読む**（id＝指摘の宛先／episode_id＝30日除外と佇まい枠／note_funnel＝週8本・土日回避・返信2プロミス／self_replies＝禁止語の3箇所横断）。ここを見てJSONを組むと、機械チェックが回らない
   - 2026-08-29に診断側（下の2行）の同じ欠落を直したとき、35投稿側が残っていた
 - **X診断（`shindan_x_*`）は2026-08-25週から新形式**：frame / choices / **comment（1通）** / shindan_url / technique（＋該当回のみ tatazumai_episode_ref）。旧 comment_1・comment_2 の2通構成は廃止（詳細は「X診断の新形式」）
-- **Threads診断（`shindan_th_*`）は2026-08-24週から新形式**：frame / choices / reply_1 / **takeaway_line**（本文の持ち帰れる一行）/ **bridge_line**（橋渡しの一行・7本同一）/ question_type / theme_title / shindan_url / episode_ref。旧「frame / choices / reply_1 の3つだけ」は廃止（2026-08-29 訂正。takeaway_line・bridge_line は2026-08-24 Coco決定の必須要素なのに、JSONの形の定義から漏れていた）
+- **Threads診断（`shindan_th_*`）は2026-08-24週から新形式**：frame / choices / reply_1 / **takeaway_line**（本文の持ち帰れる一行）/ **bridge_line**（**間合い診断への接続の一行**・7本同一）/ question_type / theme_title / shindan_url / episode_ref。旧「frame / choices / reply_1 の3つだけ」は廃止（2026-08-29 訂正。takeaway_line・bridge_line は2026-08-24 Coco決定の必須要素なのに、JSONの形の定義から漏れていた）
+  - ⚠️ **`bridge_line` は旧称のまま残っているフィールド名**（2026-08-31 明記）。**中身の正典は `rules/shindan.md`「間合い診断への接続」の reply_1 用の一行**で、2026-08-30 に旧「橋渡しの一行」から置き換わっている。**フィールド名だけが旧称**なので、名前を見て旧文を入れない
 - **X診断・Threads診断は image_prompt を持たない**（2026-08-05 画像プロンプト廃止）
 - **X診断・Threads診断とも `axis_map` を持つ**（2026-08-30 追加）。A〜Dそれぞれの `temp`／`dist`（高／低）。**選択肢を型に割り当てるのは言葉の判断なので weekly が決める**——無いと診断サイト側が結果ページを組めずに止まる。定義は `rules/shindan.md`「診断サイトの結果ページに渡すもの」
 
