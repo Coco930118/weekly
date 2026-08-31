@@ -12,6 +12,7 @@ Claudeはこの出力を使って必ず目視で埋めること。機械チェ�
 """
 import json, re, sys, collections, datetime, glob, os
 import e373
+import maai
 
 BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れる', '明け渡す',
           '恋人', '寄り添', 'んです', 'と言えるでしょう', 'いかがでしょうか',
@@ -53,9 +54,52 @@ WIT_SYNTAX = ['お茶を飲', 'コーヒーを飲', '一杯飲', 'ごはんを�
               '甘いもの', '寝ていい', 'それだけ。']
 WIT_HINTS = e373.elements() + WIT_SYNTAX
 
+# 経過・回数・期間の数字（目で見る6の材料）。
+# check.md：「機械はここを1〜2割しか拾えない」——素材にその数字があるかは
+# 在庫を読んで意味を照合しないと判定できないため、**判定は目視**。
+# ここがやるのは「どの投稿のどこに数字があるか」を漏れなく並べることだけ。
+# 実測（2026-08-27）：機械5本に対し目視39本が素材の裏づけなしに数字を書いていた。
+# 拾えていなかったのは検出そのものではなく、照合すべき候補の一覧が無かったこと。
+#
+# 【単位を絞ってある】拾うのは「経過・期間・回数」だけ。処方の粒度（一つ・五分・
+# 一件・二人）は拾わない。最初は単位を広く取ったところ 35本中23本が当たり、
+# check.md ⑧が機械化を見送った状態（25〜32本が当たる）と同じになった。
+# **ほとんどが素通りする一覧は、無い一覧より悪い**——読む側が全部OKだと思い込む。
+# 迷ったら拾う側に倒すが、「つ・分・件・人・本・通・枚」は処方の粒度なので外す。
+NUM_UNITS = '日目|日|週間|週|ヶ月|か月|カ月|ケ月|ヵ月|年|晩|回目|回|度目|度'
+NUM_RE = re.compile(r'[0-9０-９一二三四五六七八九十百千]+\s*(?:' + NUM_UNITS + r')')
+
 issues = []
 def ng(pid, *msg):
     issues.append(f'{pid}: ' + ' '.join(str(m) for m in msg))
+
+
+def scan_numbers(p):
+    """本文・ひとこと・返信を横断して、経過・回数・期間の数字を拾う。
+    許可数字の4つ（CLAUDE.md）は上の check 4 が別に見ているので、ここでは除く"""
+    parts = [p.get('content', ''), p.get('quote', '')]
+    parts += [str(r) for r in (p.get('self_replies') or [])]
+    found, seen = [], set()
+    for text in parts:
+        for m in NUM_RE.finditer(text):
+            s = m.group(0)
+            if any(n in s for n in NUMS) or s in seen:
+                continue
+            seen.add(s)
+            found.append(s)
+    return found
+
+
+def prev_week_file(path):
+    """前週の週次ファイル（週またぎの突き合わせ用）。無ければ None"""
+    d = os.path.dirname(path) or '.'
+    weeks = sorted(f for f in glob.glob(os.path.join(d, 'week_2*.json'))
+                   if re.search(r'week_\d{4}[_-]\d{2}[_-]\d{2}', os.path.basename(f)))
+    try:
+        i = weeks.index(path if path in weeks else os.path.join(d, os.path.basename(path)))
+    except ValueError:
+        return None
+    return weeks[i - 1] if i > 0 else None
 
 def band(hh):
     return 'morning' if hh < 12 else ('evening' if hh < 21 else 'night')
@@ -424,20 +468,67 @@ def main(path):
     print(f'  許可数字: {used}')
 
     # ===== 判断チェック用の出力（ここを埋めないと完了にしない） =====
+    #
+    # 【設計】ここに条件・閾値・型名を書き写さない。出すのは「8つの枠」と
+    # 「その枠を埋めるための材料（機械にしか作れないもの）」だけ。
+    # 判定条件は rules/check.md「目で見る8つ」を見に行かせる。
+    # 条文をツールに複製すると、正典を直したときに必ず片方が古くなる
+    # （2026-08-31 の整合チェックで、この形の事故を6件処理したばかり）。
+    #
+    # 旧版は①②③の3ブロックしか出しておらず、check.md が8項目に増えた後も
+    # 追随していなかった。ルールはあるのに実行の入口が無い状態で、
+    # ⑤型の充足・⑥数字の全数照合・⑦質問候補・⑧抽象語の置き場所が
+    # 毎週の運用から落ちていた（9/1週の35投稿に型が1つも残っていなかったのと同じ経路）。
     print('\n' + '=' * 60)
-    print('【判断チェック】以下はスクリプトでは判定できない。必ず目視で埋めること')
+    print('【判断チェック】機械では判定できない8つ。正典は rules/check.md「目で見る8つ」')
+    print('条件はここに書かない。下にあるのは「枠」と「材料」だけ。判定は check.md を見て行う')
     print('=' * 60)
-    print('\n① 処方の言い換え重複チェック — 各投稿の「今日の一手」を一行で書き出して並べ、')
-    print('   語が違うだけの同じ処方が3本以上ないか確認する（語の検索では検出できない）')
+
+    print('\n① 処方の言い換え重複 — 材料：各投稿の最終行。')
+    print('   語が違うだけの同じ処方が3本以上ないか（語の検索では検出できない）')
     for p in posts:
         body = p['content'].split('感情はある。')[0].strip()
         lines = [l for l in body.split('\n') if l.strip()]
         tail = lines[-1] if lines else ''
         print(f'  {p["id"]}({p["platform"][:1]}) {tail[:46]}')
-    print('\n② 原理配分チェック — 35本すべてに原理01〜07を割り当て、')
-    print('   1プラットフォームで同じ原理が5本以上に偏っていないか数える（該当なしは書き直し）')
-    print('\n③ そのほか目視項目：比喩一本化／再発パターン3型／8割読み切り／')
-    print('   ブランド整合性（X=翻訳者・Threads=慈愛の哲学者）／佇まい枠の4点セット除外')
+
+    t = maai.types()
+    print('\n② 原理と型の配分 — check.md ⑤を回す。材料：宛先の型（rules/type.md から読んだ）')
+    print(f'   X{len(X)}本の宛先＝組織4型：' + '／'.join(t['組織'] or ['(type.md を読めなかった)']))
+    print(f'   Threads{len(TH)}本の宛先＝恋愛4型：' + '／'.join(t['恋愛'] or ['(type.md を読めなかった)']))
+    print(f'   中央「{maai.center()}」は割り当てない。**週内で4型が全部出ているか**を見る')
+    prev = prev_week_file(path)
+    print(f'   前週ファイル（週またぎの突き合わせ用）：{prev or "(見つからない)"}')
+    print('   → ID → 原理(01〜07) → 型 の一覧を、この検査の出力に書く（JSONには保存しない）')
+
+    print('\n③ 比喩の一本化 — check.md 目で見る3 →「6項目チェック③比喩一本化プロトコル」を回す')
+    print('\n④ 8割読み切り — check.md 目で見る4 →「6項目チェック⑥-3」を回す')
+    print('\n⑤ ブランド整合性 — check.md 目で見る5 →「6項目チェック⑥-1」を回す')
+
+    print('\n⑥ 数字の全数照合 — 材料：経過・回数・期間の数字と、割り当てエピソード。')
+    print('   1つ残らず素材と突き合わせる。素材に無ければ落とすか、伝聞マーカーで相談者に帰属させる')
+    print('   （許可数字の4つは上の「許可数字」で別に見ている。ここは経過の数字だけ）')
+    hits = 0
+    for p in posts:
+        found = scan_numbers(p)
+        if found:
+            hits += 1
+            ep = p.get('episode_id') or p.get('episode_ref') or '(素材なし)'
+            print(f'  {p["id"]}({p["platform"][:1]}) [{ep}] ' + '／'.join(found[:8]))
+    if not hits:
+        print('  （経過・回数・期間の数字は検出ゼロ。両方提示だけで閉じている）')
+
+    print('\n⑦ Cocoへの質問候補（3件まで）— 作法は CLAUDE.md「Cocoへの質問の作法」。')
+    print('   通しで読んだ後に出す。聞く前に episodes_soshiki.json を検索して在庫ゼロを確かめる')
+
+    print('\n⑧ 抽象語の置き場所 — 材料：冒頭2行と〈ひとこと〉。')
+    print('   その投稿内で定義していない語が、冒頭2行・処方の起動条件・ひとことに無いか')
+    for p in posts:
+        body = p['content'].split('感情はある。')[0].strip()
+        lines = [l for l in body.split('\n') if l.strip()]
+        head = ' / '.join(lines[:2])
+        print(f'  {p["id"]}({p["platform"][:1]}) 冒頭｜{head[:40]}')
+        print(f'         ひとこと｜{(p.get("quote") or "(なし)")[:40]}')
     return 1 if issues else 0
 
 if __name__ == '__main__':
