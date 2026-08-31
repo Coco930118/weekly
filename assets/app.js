@@ -25,18 +25,25 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
+// 35投稿の本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
+// 一覧（posts/index.json）は no-cache で毎回聞き直すので、ここに含めない。
+const POST_V = '20260831b';
+
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./posts/index.json?v=20260731c');
+    // 一覧は必ずサーバに聞き直す（notes/index.json と同じ理由）。
+    // ここをキャッシュさせると、新しく足した週が「ファイルはあるのに週フィルタに
+    // 出ない」状態になる（2026-08-31：?v= を 20260731c で固定したままだった）
+    const indexRes = await fetch('./posts/index.json', { cache: 'no-cache' });
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=20260803p`);
+        const res = await fetch(`./posts/${filename}?v=${POST_V}`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -487,18 +494,25 @@ let allNotes = [];
 let activeNoteFilters = { tier: 'all', week: 'all', fixOnly: false };
 let notesLoaded = false;
 
+// noteの本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
+// 一覧（notes/index.json）は no-cache で毎回聞き直すので、ここに含めない。
+const NOTE_V = '20260831x';
+
 async function loadNotes() {
   const container = document.getElementById('notesContainer');
   container.innerHTML = '<p class="loading">読み込み中…</p>';
 
   try {
-    const indexRes = await fetch('./notes/index.json?v=20260803a');
+    // 一覧は必ずサーバに聞き直す。ここをキャッシュさせると、
+    // 新しく足したnoteが「ファイルはあるのに週フィルタに出ない」状態になる
+    // （2026-08-31：?v= を固定したまま週を足していたため、9/1週と8/18週が出なかった）
+    const indexRes = await fetch('./notes/index.json', { cache: 'no-cache' });
     if (!indexRes.ok) throw new Error('notes/index.json not found');
     const index = await indexRes.json();
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}?v=20260803p`);
+        const res = await fetch(`./notes/${filename}?v=${NOTE_V}`);
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })

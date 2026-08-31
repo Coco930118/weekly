@@ -17,7 +17,7 @@
 - **noteも保持期間は「配信終了から4週間（30日）」**。配信中の週・未来の週・終了から30日以内の週は、`notes/index.json` から外さない・ファイルも消さない。noteは公開日一致で出すため、配信中の週が消えると当日の公開作業ができなくなる
 - 計算は投稿側と同じ**その週の最終日＋30日**（投稿側と同じ）
 - **消す時は `notes/index.json` から外すのとファイル削除をセットで行う**。noteの週フィルタの項目名は各noteの`source_week`から作られるため、片方だけ残すと終わった週の項目名（例：8/11〜8/17）がサイトに残り続ける
-- 常設案内note（`source_week: standing_guide`）はこの削除対象外（週に紐づかないため常時掲載）
+- 常設案内note（`source_week: standing_guide`）と型の道案内note（`source_week: type_guide`）はこの削除対象外（週に紐づかないため常時掲載）
 
 #### 書いた日と、アップした日を分ける（2026-08-24 Coco指摘・恒久ルール）
 サイトのnoteカードは `date` をそのまま日付として出す。**`date` に書いた日を入れたまま置くと、note.comに上げていない記事が「その日に公開済み」に見える**（実例：常設案内2本が2026-08-17公開として表示されていた）。
@@ -56,7 +56,8 @@ note.comに投稿していない下書きの置き場。**サイトには出さ�
   - 太字の4つが旧定義から漏れていた。**`full_check.py` はこの4つを直接読む**（id＝指摘の宛先／episode_id＝30日除外と佇まい枠／note_funnel＝週8本・土日回避・返信2プロミス／self_replies＝禁止語の3箇所横断）。ここを見てJSONを組むと、機械チェックが回らない
   - 2026-08-29に診断側（下の2行）の同じ欠落を直したとき、35投稿側が残っていた
 - **X診断（`shindan_x_*`）は2026-08-25週から新形式**：frame / choices / **comment（1通）** / shindan_url / technique（＋該当回のみ tatazumai_episode_ref）。旧 comment_1・comment_2 の2通構成は廃止（詳細は「X診断の新形式」）
-- **Threads診断（`shindan_th_*`）は2026-08-24週から新形式**：frame / choices / reply_1 / **takeaway_line**（本文の持ち帰れる一行）/ **bridge_line**（橋渡しの一行・7本同一）/ question_type / theme_title / shindan_url / episode_ref。旧「frame / choices / reply_1 の3つだけ」は廃止（2026-08-29 訂正。takeaway_line・bridge_line は2026-08-24 Coco決定の必須要素なのに、JSONの形の定義から漏れていた）
+- **Threads診断（`shindan_th_*`）は2026-08-24週から新形式**：frame / choices / reply_1 / **takeaway_line**（本文の持ち帰れる一行）/ **bridge_line**（**間合い診断への接続の一行**・7本同一）/ question_type / theme_title / shindan_url / episode_ref。旧「frame / choices / reply_1 の3つだけ」は廃止（2026-08-29 訂正。takeaway_line・bridge_line は2026-08-24 Coco決定の必須要素なのに、JSONの形の定義から漏れていた）
+  - ⚠️ **`bridge_line` は旧称のまま残っているフィールド名**（2026-08-31 明記）。**中身の正典は `rules/shindan.md`「間合い診断への接続」の reply_1 用の一行**で、2026-08-30 に旧「橋渡しの一行」から置き換わっている。**フィールド名だけが旧称**なので、名前を見て旧文を入れない
 - **X診断・Threads診断は image_prompt を持たない**（2026-08-05 画像プロンプト廃止）
 - **X診断・Threads診断とも `axis_map` を持つ**（2026-08-30 追加）。A〜Dそれぞれの `temp`／`dist`（高／低）。**選択肢を型に割り当てるのは言葉の判断なので weekly が決める**——無いと診断サイト側が結果ページを組めずに止まる。定義は `rules/shindan.md`「診断サイトの結果ページに渡すもの」
 
@@ -65,6 +66,9 @@ note.comに投稿していない下書きの置き場。**サイトには出さ�
 - **`funnel_targets`**：予告した投稿のID配列（例 `["th_03"]`）。無料の案内記事は空
 - **`promise_map`**：`{"約束の一片": "回収した見出し"}`。投稿の `self_replies[-1]` を `と、` で割った各片がキー、`## 見出し` が値。**`note_check.py --week` がこの4つを見る**（noteの有無／`promise_map` の有無／キーの一致／見出しの実在）。定義は `rules/note.md`「約束したものを、見出しで回収する」
 - `source_week` は `"YYYY-MM-DD_YYYY-MM-DD"`。**`episode_check.py --week` はこれで週のnoteを集める**ので、ここが空だと素材の横断カウントから落ちる
+- **`plan_type`**：8型のどれか1つ（`rules/type.md`「記事を型に振り分ける手順」）。常設案内・週次の無料まとめ・土台記事は `null`
+- **`maai_axis`**：`{"温度":"高|低","距離":"高|低"}`。型をそう判定した根拠。型を持たない記事は `null`
+- **`source_week` の非週次の値は2つ**：`standing_guide`（常設案内）と `type_guide`（型の道案内）。どちらも30日削除の対象外で、`note_check.py` の約束の突き合わせからも外れる
 
 ---
 

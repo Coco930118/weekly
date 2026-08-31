@@ -33,6 +33,7 @@ BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れ
 WATASU_RE = r'渡[すしせさそっ]'
 PROMISE = 'メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。'
 PAYWALL = '―――― ここから先は、メンバーシップの中で読めます ――――'
+MEMBERSHIP_URL = 'https://note.com/coconocanvas/membership'
 PLAN = {'X': '💼', 'Threads': '💗'}
 NUMS = ['20年', '5万人', '40名', '月商']
 # 画像プロンプト（rules/image.md ／ 正典は reference/image_prompt_rules.json）
@@ -137,6 +138,10 @@ def check(d, path, titles):
     if PROMISE not in md: ng(nid, '定番プロミスがない')
     if re.search(r'月\s*\d+\s*本', md): ng(nid, '本数の約束が残っている（達成できない月に嘘になる）')
 
+    # 5-2 本文の最終行はメンバーシップURL（rules/note.md）
+    if md.rstrip().split('\n')[-1].strip() != MEMBERSHIP_URL:
+        ng(nid, f'本文の最終行がメンバーシップURLでない（読み終わった場所に入口がない）: 「{md.rstrip().split(chr(10))[-1].strip()[:28]}」')
+
     # 6 在り方署名 → 背中押し → あわせて読む の順
     i = md.find('あわせて読む')
     if i < 0:
@@ -173,7 +178,9 @@ def check(d, path, titles):
         for f in glob.glob(os.path.join(REPO, 'notes', 'note_*.json')):
             o = json.load(open(f, encoding='utf-8'))
             if o.get('title', '').lstrip('💼💗') == t.lstrip('💼💗'):
-                if o.get('platform_origin') not in (plan, 'both', None) and o.get('source_week') != 'standing_guide':
+                # 自分が both（両プランの土台）なら、どちらのプランへ張ってもよい
+                if plan != 'both' and o.get('platform_origin') not in (plan, 'both', None) \
+                        and o.get('source_week') != 'standing_guide':
                     ng(nid, f'あわせて読むがプラン跨ぎ: 「{t[:24]}」')
                 break
 
@@ -231,7 +238,8 @@ def funnel_check(rows):
     約束の半分を書かずに公開待ちになっていた。3つのツールはどれも自分のファイルしか読まないため、
     投稿とnoteをまたぐこの穴は構造的に検出できなかった。
     """
-    weeks = {r['week'] for r in rows if r['week'] and r['week'] != 'standing_guide'}
+    # standing_guide（常設案内）と type_guide（型の道案内）は週に紐づかず funnel も持たない
+    weeks = {r['week'] for r in rows if r['week'] and r['week'] not in ('standing_guide', 'type_guide')}
     # 複数週をまとめて見るとき（--all）は参考出力にする。配信済みの週には遡及しない（CLAUDE.md）
     single = len(weeks) == 1
     out = ng if single else (lambda nid, *m: funnel_ref.append(f'{nid}: ' + ' '.join(str(x) for x in m)))
