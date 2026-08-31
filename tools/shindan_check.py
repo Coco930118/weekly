@@ -47,6 +47,12 @@ LIGHT_FROM = '2026-09-01'
 CURE_Q = re.compile(r'(手放す|やめる|捨てる|変える|減らす)\s*[？?]\s*$')
 # 権威の数字。正典は CLAUDE.md「使える数字は4つだけ」。診断のコメントは置き場所として数えない
 AUTHORITY = ['20年', '5万人', '40名', '月商']
+# X診断の comment の長さ（rules/shindan.md「X診断の comment は 700字前後・上限800字」）。
+# 9/1週の実測は 973〜1,169字で、Threads の reply_1（436〜512）の2.3倍だった。
+# Threadsは2026-08-24に4行へ圧縮したのに、X診断だけ圧縮前の形式が生き残っていた。
+X_COMMENT_MAX = 800
+# 「3点まとめ」の番号リスト。各選択肢の「明日の一手」の再掲になっていたので廃止した
+NUM_LIST = re.compile(r'^\s*[1-3][.．]\s*\S', re.M)
 X_FRAME_HOOK = '型の名前は、あと7問で出るよ。'      # X＝本文（frame）に一句（31幅）
 X_BRIDGE = 'さっきの4択は、間合い診断の1問目。'      # X＝コメント末尾のブロックの先頭行
 X_TAIL = '▼ 8問 / 約1分'
@@ -115,6 +121,23 @@ def ask_line(frame, drop=''):
     for l in frame.replace(drop, '').split('\n'):
         if l.strip().endswith(('？', '?')): return l.strip()
     return ''
+
+
+def x_weight(pid, cm):
+    """X診断の答えの重さ（2026-08-31 Coco決定・9/1週から）。
+
+    rules/shindan.md「積まない」「X診断の comment は 700字前後・上限800字」。
+    削るのは説明であって処方ではないので、「明日の一手」の本数は数えない——
+    4つとも残すのが正しい。"""
+    if pid < LIGHT_FROM: return
+    n = len(cm)
+    if n > X_COMMENT_MAX:
+        ng(pid, f'commentが{n}字（目安700・上限{X_COMMENT_MAX}）。'
+                '削るのは評価文と二度目のまとめ。「見るのは一点」「明日の一手」は4つとも残す')
+    m = NUM_LIST.findall(cm)
+    if m:
+        ng(pid, f'「3点まとめ」の番号リストが残っている（{len(m)}行）。'
+                '各選択肢の「明日の一手」の再掲なので廃止した')
 
 
 def light_check(pid, frame, answer, choices, drop=''):
@@ -186,6 +209,7 @@ def check_x(posts, label):
         sb = subject_in(fr, pid)
         if sb: ng(pid, '設問に主語', '／'.join(sb), '（frame限定・9/1週から）')
         light_check(pid, fr, cm, p.get('choices') or [], X_CTA)
+        x_weight(pid, cm)
 
         # 8 参考カウント
         if any(k in cm for k in WIT_HINTS): wit.append(pid)
