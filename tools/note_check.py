@@ -178,7 +178,9 @@ def check(d, path, titles):
         for f in glob.glob(os.path.join(REPO, 'notes', 'note_*.json')):
             o = json.load(open(f, encoding='utf-8'))
             if o.get('title', '').lstrip('💼💗') == t.lstrip('💼💗'):
-                if o.get('platform_origin') not in (plan, 'both', None) and o.get('source_week') != 'standing_guide':
+                # 自分が both（両プランの土台）なら、どちらのプランへ張ってもよい
+                if plan != 'both' and o.get('platform_origin') not in (plan, 'both', None) \
+                        and o.get('source_week') != 'standing_guide':
                     ng(nid, f'あわせて読むがプラン跨ぎ: 「{t[:24]}」')
                 break
 
