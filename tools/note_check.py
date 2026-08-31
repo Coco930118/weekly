@@ -33,6 +33,7 @@ BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れ
 WATASU_RE = r'渡[すしせさそっ]'
 PROMISE = 'メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。'
 PAYWALL = '―――― ここから先は、メンバーシップの中で読めます ――――'
+MEMBERSHIP_URL = 'https://note.com/coconocanvas/membership'
 PLAN = {'X': '💼', 'Threads': '💗'}
 NUMS = ['20年', '5万人', '40名', '月商']
 # 画像プロンプト（rules/image.md ／ 正典は reference/image_prompt_rules.json）
@@ -136,6 +137,10 @@ def check(d, path, titles):
     # 5 定番プロミス
     if PROMISE not in md: ng(nid, '定番プロミスがない')
     if re.search(r'月\s*\d+\s*本', md): ng(nid, '本数の約束が残っている（達成できない月に嘘になる）')
+
+    # 5-2 本文の最終行はメンバーシップURL（rules/note.md）
+    if md.rstrip().split('\n')[-1].strip() != MEMBERSHIP_URL:
+        ng(nid, f'本文の最終行がメンバーシップURLでない（読み終わった場所に入口がない）: 「{md.rstrip().split(chr(10))[-1].strip()[:28]}」')
 
     # 6 在り方署名 → 背中押し → あわせて読む の順
     i = md.find('あわせて読む')
