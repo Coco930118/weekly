@@ -47,10 +47,15 @@ LIGHT_FROM = '2026-09-01'
 CURE_Q = re.compile(r'(手放す|やめる|捨てる|変える|減らす)\s*[？?]\s*$')
 # 権威の数字。正典は CLAUDE.md「使える数字は4つだけ」。診断のコメントは置き場所として数えない
 AUTHORITY = ['20年', '5万人', '40名', '月商']
-# X診断の comment の長さ（rules/shindan.md「X診断の comment は 700字前後・上限800字」）。
+# X診断の comment の長さ（rules/shindan.md「接続ブロックより前を600字以内」）。
 # 9/1週の実測は 973〜1,169字で、Threads の reply_1（436〜512）の2.3倍だった。
 # Threadsは2026-08-24に4行へ圧縮したのに、X診断だけ圧縮前の形式が生き残っていた。
-X_COMMENT_MAX = 800
+#
+# **測るのは接続ブロックより前だけ。** 末尾の接続ブロックは262字の固定（7本同一）で
+# 削れないため、全体を測ると削れない262字を毎回数え直すことになる。
+# 最初は「全体800字」で入れたが、262字を勘定に入れておらず、守ると「見るのは一点」か
+# 「明日の一手」を削るしかない数字になっていた（＝「処方は減らさない」と自分でぶつかる）。
+X_BODY_MAX = 600
 # 「3点まとめ」の番号リスト。各選択肢の「明日の一手」の再掲になっていたので廃止した
 NUM_LIST = re.compile(r'^\s*[1-3][.．]\s*\S', re.M)
 X_FRAME_HOOK = '型の名前は、あと7問で出るよ。'      # X＝本文（frame）に一句（31幅）
@@ -126,13 +131,14 @@ def ask_line(frame, drop=''):
 def x_weight(pid, cm):
     """X診断の答えの重さ（2026-08-31 Coco決定・9/1週から）。
 
-    rules/shindan.md「積まない」「X診断の comment は 700字前後・上限800字」。
+    rules/shindan.md「積まない」「接続ブロックより前を600字以内」。
     削るのは説明であって処方ではないので、「明日の一手」の本数は数えない——
     4つとも残すのが正しい。"""
     if pid < LIGHT_FROM: return
-    n = len(cm)
-    if n > X_COMMENT_MAX:
-        ng(pid, f'commentが{n}字（目安700・上限{X_COMMENT_MAX}）。'
+    body = cm.split(X_BRIDGE)[0]      # 接続ブロックより前＝自分で動かせる部分だけ測る
+    n = len(body)
+    if n > X_BODY_MAX:
+        ng(pid, f'接続ブロックより前が{n}字（上限{X_BODY_MAX}／comment全体は{len(cm)}字）。'
                 '削るのは評価文と二度目のまとめ。「見るのは一点」「明日の一手」は4つとも残す')
     m = NUM_LIST.findall(cm)
     if m:
