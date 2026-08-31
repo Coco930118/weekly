@@ -35,6 +35,18 @@ X_FOUR = '四つとも、間違いではない。'
 # 型の名前を言い切る形に変わっている。**ツールが旧版を持ったままだったので、
 # 正典どおりに書いた9/1週が14件落ちていた**（2026-08-31 Wチェックが反映）。
 BRIDGE_FROM = '2026-09-01'   # 接続の適用は9/1週から。配信済みの週には遡及しない（CLAUDE.md）
+# 「深さの層」＝流し見で軽くうなずける（CLAUDE.md／2026-08-31 Coco決定・恒久ルール）。
+# 作り方は rules/shindan.md「設問は症状を聞く」「語尾を4つそろえない」「積まない」。
+# 適用は9/1週から。8/25週以前は配信済みなので遡及しない。
+LIGHT_FROM = '2026-09-01'
+# 処方の動詞。設問に置いた時点で「そうすべきだ」を先に渡している（＝小テストになる）。
+# 「直す」は外した——「見つめ直す」「やり直す」のような複合に当たり、
+# 9/1週 09-05「まず何から見つめ直す？」を誤検出した。見つめ直すは観察の側。
+# 過検出はツールに本文を曲げさせる（rules/check.md「ツールに合わせて本文を書き換えたら、
+# それは欠陥の報告」）。**迷ったら網を細くせず、目視に返す。**
+CURE_Q = re.compile(r'(手放す|やめる|捨てる|変える|減らす)\s*[？?]\s*$')
+# 権威の数字。正典は CLAUDE.md「使える数字は4つだけ」。診断のコメントは置き場所として数えない
+AUTHORITY = ['20年', '5万人', '40名', '月商']
 X_FRAME_HOOK = '型の名前は、あと7問で出るよ。'      # X＝本文（frame）に一句（31幅）
 X_BRIDGE = 'さっきの4択は、間合い診断の1問目。'      # X＝コメント末尾のブロックの先頭行
 X_TAIL = '▼ 8問 / 約1分'
@@ -92,6 +104,39 @@ def subject_in(frame, date):
     return [w for w in SUBJECT_NG if w in naked]
 
 
+def first_line(t):
+    for l in t.split('\n'):
+        if l.strip(): return l.strip()
+    return ''
+
+
+def ask_line(frame, drop=''):
+    """設問文＝「？」で終わる行。固定CTAは設問ではないので落とす"""
+    for l in frame.replace(drop, '').split('\n'):
+        if l.strip().endswith(('？', '?')): return l.strip()
+    return ''
+
+
+def light_check(pid, frame, answer, choices, drop=''):
+    """「流し見で軽くうなずける」を機械で見られるところだけ（2026-08-31 Coco決定）。
+
+    CLAUDE.md「深さの層」／rules/shindan.md「設問は症状を聞く」「語尾を4つそろえない」「積まない」。
+    言い切りの本数は意味を読まないと数えられないので、ここでは見ない（目視）。"""
+    if pid < LIGHT_FROM: return
+    q = ask_line(frame, drop)
+    if q and CURE_Q.search(q):
+        ng(pid, f'設問に処方が入っている: 「{q}」（症状を聞く。処方はコメントが持つ）')
+    if len(choices) == 4:
+        a, b = choices[0], choices[-1]
+        n = 0
+        while n < min(len(a), len(b)) and a[-1 - n] == b[-1 - n]: n += 1
+        tail = a[len(a) - n:] if n else ''
+        if n >= 3 and all(c.endswith(tail) for c in choices):
+            ng(pid, f'4択の語尾がそろっている（末尾「{tail}」）。読み比べになって一秒で選べない')
+    hit = [x for x in AUTHORITY if x in answer]
+    if hit: ng(pid, '権威の数字がコメントにある', '／'.join(hit), '（答え合わせの前に壁を置かない）')
+
+
 def check_x(posts, label):
     print(f'--- X診断 {len(posts)}本 ---')
     wit, qt = [], []
@@ -140,6 +185,7 @@ def check_x(posts, label):
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
         sb = subject_in(fr, pid)
         if sb: ng(pid, '設問に主語', '／'.join(sb), '（frame限定・9/1週から）')
+        light_check(pid, fr, cm, p.get('choices') or [], X_CTA)
 
         # 8 参考カウント
         if any(k in cm for k in WIT_HINTS): wit.append(pid)
@@ -181,7 +227,11 @@ def check_th(posts, label):
         # 2 持ち帰れる一行
         if not p.get('takeaway_line'): ng(pid, 'takeaway_line がない')
         elif p['takeaway_line'] not in fr: ng(pid, 'takeaway_line が本文に入っていない')
-        elif p['takeaway_line'] in r1: ng(pid, '持ち帰れる一行がコメントと同じ文（本文＝言い切り／コメント＝理由で角度を変える）')
+        # 句点・空白を落としてから比べる。8/25週 08-31 は「勝ち負けは、片方が乗らなければ
+        # 成立しない」が本文とコメントの両方にあったのに、コメント側に「。」が無いだけで
+        # すり抜けていた（2026-08-31 Wチェック検出）。一字の差で検査が無効になっていた
+        elif p['takeaway_line'].rstrip('。 　') in r1.replace('。', '').replace(' ', ''):
+            ng(pid, '持ち帰れる一行がコメントにもある（本文＝言い切り／コメント＝理由で角度を変える）')
 
         # 3 返信欄の並び
         b = r1.count('・')
@@ -210,6 +260,12 @@ def check_th(posts, label):
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
         sb = subject_in(fr, pid)
         if sb: ng(pid, '設問に主語', '／'.join(sb), '（frame限定・9/1週から）')
+        light_check(pid, fr, r1, p.get('choices') or [])
+        # reply_1 の1行目を frame と同じ文にしない（2026-08-31 Coco決定・恒久ルール）。
+        # 同じ文が画面上で連続して2回並ぶと「同じ投稿が2回来た」に見える。
+        # 旧指示「本文＝frameと同じ書き出し」は rules/shindan.md から削除済み
+        if pid >= LIGHT_FROM and first_line(fr) and first_line(fr) == first_line(r1):
+            ng(pid, '返信の1行目が本文と同じ文（同じ場面に戻せばよく、同じ文でなくていい）')
 
         # 7 既視感：フックの書き出しと受け口
         opens.append((pid, fr.strip()[:12], r1.strip()[:14]))
