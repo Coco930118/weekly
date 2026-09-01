@@ -11,7 +11,17 @@ python3 tools/full_check.py    posts/week_*.json            # 35投稿
 python3 tools/shindan_check.py posts/shindan_*_YYYY-MM-DD.json   # 診断14本
 python3 tools/note_check.py    --week YYYY-MM-DD_YYYY-MM-DD      # note＋約束と回収の突き合わせ
 python3 tools/episode_check.py --week YYYY-MM-DD                 # E373素材の週内カウント（35投稿・診断・note横断／Wチェックで回す）
+python3 tools/profile_check.py                                   # 各媒体のプロフィール文面（Wチェックで回す）
 ```
+
+### プロフィールは、どのツールの対象でもなかった（2026-09-02 Coco決定・恒久ルール）
+
+**いちばん人目に触れる4行が、一度も検査されていなかった。** `full_check` は `posts/`、`note_check` は `notes/`、`shindan_check` は診断、`episode_check` は素材しか見ない。**`reference/brand_profile.json` の `profile_text` を開くツールが1つも無かった。**
+
+- **実測（2026-09-02）**：Xのプロフィールに**禁止語が2語**（「心理的距離感の**設計**士」「▼**渡し**方の**設計**は note に」）。手で読んで初めて見つかった
+- **禁止語の定義は `full_check.py` からインポートする。`profile_check.py` に複製を置かない**
+- 運用対象外の媒体（`in_scope: false`）は検査しない。判定は `brand_profile.json` の `meta` が持つ
+- **数字は「延べ5万人を超える」で固定。**「約5万人」「5万人超」「5万人以上」「五万人」は誤り（`CLAUDE.md`「使える数字は4つだけ」が正典。ここに複製を置かない）
 
 **媒体をまたぐ検査は2つだけ**（2026-08-31 明記）。`note_check.py --week` が**約束と回収**（35投稿 ↔ note）を、`episode_check.py --week` が**素材の重複と生活描写**（35投稿 ↔ 診断 ↔ note）を見る。この2つ以外は自分のファイルしか読まないので、**媒体をまたぐ指摘をそこに期待しない**。
 
