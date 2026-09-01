@@ -61,6 +61,12 @@ AUTHORITY = ['20年', '5万人', '40名', '月商']
 X_BODY_MAX = 600
 # 「3点まとめ」の番号リスト。各選択肢の「明日の一手」の再掲になっていたので廃止した
 NUM_LIST = re.compile(r'^\s*[1-3][.．]\s*\S', re.M)
+# Threads診断 reply_1 の4行の答え合わせ（rules/shindan.md「reply_1 の並び」3）
+ANSWER_LINE = re.compile(r'^[A-D]｜', re.M)
+# 行頭記号を戻したのは2026-09-01。8/25週以前は「・」で配信済みなので遡及しない。
+# BRIDGE_FROM / LIGHT_FROM と同じ値だが**別に持つ**——これは別々のルールで、
+# どれか一つを実測で戻すときに他まで動いてはいけない。
+ANSWER_FROM = '2026-09-01'
 X_FRAME_HOOK = 'あなたの型に、名前がつくよ。'        # X＝本文（frame）に一句（28幅）
 X_BRIDGE = 'さっきの4択は、間合い診断の1問目。'      # X＝コメント末尾のブロックの先頭行
 X_TAIL = '▼ 8問 / 約1分'
@@ -266,9 +272,15 @@ def check_th(posts, label):
         elif p['takeaway_line'].rstrip('。 　') in r1.replace('。', '').replace(' ', ''):
             ng(pid, '持ち帰れる一行がコメントにもある（本文＝言い切り／コメント＝理由で角度を変える）')
 
-        # 3 返信欄の並び
-        b = r1.count('・')
-        if b < 4: ng(pid, f'4行の箇条書きが{b}行（A〜Dを全部肯定で拾う）')
+        # 3 返信欄の並び：4行の答え合わせ（rules/shindan.md「reply_1 の並び」3）
+        # **行頭で数える。** 2026-09-01 に行頭記号を「・」から `A｜` に戻した
+        # （本文は記号で答えさせているのに、コメント側が記号なしだと、読者は自分が選んだ文を
+        #  思い出して照合することになる＝一文字で答えさせて答え合わせは文章マッチング）。
+        # 旧 count('・') は本文中の中黒まで数えていた——9/1週 09-05「やめる・やめないより先に」で
+        # 5 と数えていた（b < 4 しか見ていないので素通り）。行頭で数えれば起きない。
+        if pid >= ANSWER_FROM:
+            b = len(ANSWER_LINE.findall(r1))
+            if b != 4: ng(pid, f'4行の答え合わせが{b}行（`A｜`〜`D｜` の4本・A〜Dを全部肯定で拾う）')
         if TH_STAR not in r1: ng(pid, f'北極星「{TH_STAR}」がない')
         if pid >= BRIDGE_FROM and TH_BRIDGE not in r1:
             ng(pid, '接続の一行が固定文と違う（既視感チェックの対象外・7本同一）')
@@ -283,7 +295,7 @@ def check_th(posts, label):
         elif url not in r1: ng(pid, '返信欄に診断URLがない')
 
         # 5 廃止したもの
-        if '──────────────' in r1: ng(pid, '旧形式の区切り線が残っている（4行の箇条書きに圧縮する）')
+        if '──────────────' in r1: ng(pid, '旧形式の区切り線が残っている（`A｜`〜`D｜` の4行に圧縮する）')
         if p.get('image_prompt'): ng(pid, 'image_prompt を持っている（診断は画像プロンプト廃止）')
 
         # 6 禁止語・混入文字
