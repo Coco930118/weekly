@@ -31,8 +31,8 @@ function escapeHtml(str) {
 // 「反映された？」の確認が要る状態になっていた。**守られない運用は、運用ではなく設計の問題。**
 // 札そのものを外して、思い出さなくても新しい本文が出るようにした。
 // no-cache は「毎回取り直す」ではなく「毎回聞き直す」（変わっていなければ 304 で返る）。
-// ⚠️ note側は NOTE_V の札のままで、いまは手で上げられている。同じ上げ忘れが起きたら、
-//    ここと同じ形に寄せる（`reference/todo.md`）
+// note側（NOTE_V）も 2026-09-03 に同じ形へ寄せた（loadNotes を見て）。
+// 札はもう投稿側にもnote側にも無い。新しく足さない。
 
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
@@ -499,9 +499,11 @@ let allNotes = [];
 let activeNoteFilters = { tier: 'all', week: 'all', fixOnly: false };
 let notesLoaded = false;
 
-// noteの本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
-// 一覧（notes/index.json）は no-cache で毎回聞き直すので、ここに含めない。
-const NOTE_V = '20260903a';
+// noteの本文も index.json と同じく毎回サーバに聞き直す（下の fetch の cache: 'no-cache'）。
+// 2026-09-03：ここには手で上げる札（NOTE_V）を置いていたが、9/1〜9/3 の3日で4回上げていて、
+// 一度でも忘れると「直したのに変わっていない」になる。35投稿側（POST_V）は 2026-09-02 に
+// 同じ理由で札を外している。**守られない運用は、運用ではなく設計の問題。**
+// no-cache は「毎回ダウンロード」ではなく「毎回聞き直す」（変わっていなければ 304 で返る）。
 
 async function loadNotes() {
   const container = document.getElementById('notesContainer');
@@ -517,7 +519,7 @@ async function loadNotes() {
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}?v=${NOTE_V}`);
+        const res = await fetch(`./notes/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
