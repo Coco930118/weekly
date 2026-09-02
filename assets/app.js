@@ -25,9 +25,14 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-// 35投稿の本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
-// 一覧（posts/index.json）は no-cache で毎回聞き直すので、ここに含めない。
-const POST_V = '20260831b';
+// 週データは index.json と同じく毎回サーバに聞き直す（下の fetch の cache: 'no-cache'）。
+// 2026-09-02：ここには手で上げる札（POST_V）を置いていたが、**上げ忘れが2回続いた**
+// （8/31 と 9/1〜9/2）。9/1〜9/2 だけで9/1週の本文を4回差し替えていて、そのたびに
+// 「反映された？」の確認が要る状態になっていた。**守られない運用は、運用ではなく設計の問題。**
+// 札そのものを外して、思い出さなくても新しい本文が出るようにした。
+// no-cache は「毎回取り直す」ではなく「毎回聞き直す」（変わっていなければ 304 で返る）。
+// ⚠️ note側は NOTE_V の札のままで、いまは手で上げられている。同じ上げ忘れが起きたら、
+//    ここと同じ形に寄せる（`reference/todo.md`）
 
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
@@ -43,7 +48,7 @@ async function loadPosts() {
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=${POST_V}`);
+        const res = await fetch(`./posts/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
