@@ -24,6 +24,7 @@
 - **note.comに上げていない記事は `published_confirmed: false` を持たせる。** サイトは日付の代わりに **「未アップ」** と出す
 - 書いた日は `written_date` に退避し、`publish_date` は**空にする**（推測で埋めない）
 - 上げたら、Cocoから実際の公開日を受け取って `date` / `publish_date` に入れ、`published_confirmed: true` にする
+  <!-- この手順の正典はこの行。reference/todo.md には複製を置かない -->
 - 新規に週次noteを作るときは、`publish_date` ＝ 予告した投稿の投稿日（予定日）。**予定日は `published_confirmed` を立てない**——立てるのは実際に上げたと確認できたときだけ
 - アップする日が決まっている未アップ記事は `scheduled_upload_date` を持たせる。サイトは **「未アップ（◯/◯予定）」** と出す。上げたらこの項目を消して `published_confirmed: true` にする
 
