@@ -2,7 +2,7 @@
 
 週次SNS投稿カレンダー。X（14本）+ Threads（21本）+ 各診断（7本×2）= 週49本、＋note週9本。
 常設の**間合い診断**（8問の型診断・`rules/type.md`）は週次ではなく、診断サイトに常設。
-公開URL: https://coco930118.github.io/weekly/ ／ 開発ブランチ `claude/ecstatic-euler-e3u25a` → 本番 `main`（GitHub Pages）
+公開URL: https://coco930118.github.io/weekly/ ／ 開発はセッションごとの `claude/*` ブランチ → 本番 `main`（GitHub Pages）。**起点は毎回 `main`**（`rules/note.md`「note作成の土台ルール」が正典）
 
 ---
 
