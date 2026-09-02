@@ -234,8 +234,8 @@ E429・E431・E432・E434・E435・E436。
   posts/shindan_th_2026-09-01.json（7本）
 
 ■ この週かぎりの例外
-CLAUDE.md「X診断7本は、いかなる場合も内容を変更しない」に対する
-2026-08-30 Coco承認の例外。対象はこの1週のこの作業だけ。恒久ルールは変えない。
+CLAUDE.md「X診断7本は、セッションの判断で内容を変更しない」に対する
+2026-08-30 Coco承認の名指しの指示。対象はこの1週のこの作業だけ。恒久ルールは変えない。
 ①〜⑥は提案ではなく実施する。ただし設問の焦点が崩れる削り方になるときは、
 削らずにCocoへ二択で確認する（rules/shindan.md「禁止語の回避」と同じ作法）。
 
@@ -381,11 +381,11 @@ CLAUDE.md「X診断7本は、いかなる場合も内容を変更しない」に
 
 ---
 
-## 【Cocoの手作業】Xのプロフィールを新しい文面に差し替える（2026-09-02 Coco決定・A案）
+## 【完了】Xのプロフィールを新しい文面に差し替えた（2026-09-02 Coco決定・A案／同日 Coco実施）
 
-**リポジトリは直したが、X本体はまだ旧版。** `reference/brand_profile.json` を直しても、Xのプロフィールは自動では変わらない（note.com の手作業と同じ形）。
+**X本体への反映は 2026-09-02 に完了。** `reference/brand_profile.json` の `platforms.X.profile_text` が正典で、X側もこれと同じ文面になっている。
 
-**差し替える文面**（`brand_profile.json` の `platforms.X.profile_text` が正典。ここに複製を置かない——コピーは下のコマンドで出す）
+**現行の文面を出すコマンド**（ここに複製を置かない）
 
 ```
 python3 -c "import json;print(json.load(open('reference/brand_profile.json'))['platforms']['X']['profile_text'])"
