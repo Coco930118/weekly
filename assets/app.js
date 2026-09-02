@@ -496,7 +496,7 @@ let notesLoaded = false;
 
 // noteの本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
 // 一覧（notes/index.json）は no-cache で毎回聞き直すので、ここに含めない。
-const NOTE_V = '20260901h';
+const NOTE_V = '20260902a';
 
 async function loadNotes() {
   const container = document.getElementById('notesContainer');
@@ -763,9 +763,13 @@ function renderNoteCard(note) {
   }
 
   if (note.sns_hooks) {
+    // キーの大文字・小文字はデータ側で揺れている（threads/Threads・x/X）。
+    // 92本中78本が小文字なので、読む側でどちらも拾う。
+    const hookThreads = note.sns_hooks.Threads || note.sns_hooks.threads;
+    const hookX = note.sns_hooks.X || note.sns_hooks.x;
     let hooksHtml = '';
-    if (note.sns_hooks.Threads) {
-      const esc = escapeHtml(note.sns_hooks.Threads);
+    if (hookThreads) {
+      const esc = escapeHtml(hookThreads);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-threadsdiag">Threads</span>
@@ -775,8 +779,8 @@ function renderNoteCard(note) {
           </div>
         </div>`;
     }
-    if (note.sns_hooks.X) {
-      const esc = escapeHtml(note.sns_hooks.X);
+    if (hookX) {
+      const esc = escapeHtml(hookX);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-x">X</span>
