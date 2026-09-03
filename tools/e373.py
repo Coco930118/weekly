@@ -45,3 +45,21 @@ def count_in(text, els=None):
     """text に出てくる E373 要素を返す（重複なし）"""
     els = elements() if els is None else els
     return [e for e in els if e in text]
+
+
+def tatazumai_ids(path=EPISODES):
+    """佇まい枠の素材IDを、台帳の band から拾って返す。
+
+    【なぜ直書きしないか】2026-09-03、th_21 の episode_id を E373 → E454 に
+    変えたところ、full_check.py の佇まい枠カウントが `== 'E373'` の直書きだった
+    ため、**2本あった枠が0本に見えた**。E454 は台帳で band が「拡散帯（佇まい枠）」
+    なので、台帳が答えを持っている。elements() と同じで、素材の正典は台帳だけ。
+    **佇まい素材が増えたときにツールを直す必要が無い形にする。**
+    """
+    try:
+        d = json.load(open(path, encoding='utf-8'))
+    except (OSError, ValueError):
+        return {'E373'}
+    out = {o['id'] for o in _walk(d)
+           if isinstance(o, dict) and o.get('id') and '佇まい枠' in str(o.get('band', ''))}
+    return out or {'E373'}

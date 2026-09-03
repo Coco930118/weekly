@@ -224,6 +224,20 @@ def main(path):
         if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
     if len(skel) > 2:
         ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
+    # 骨格の2つ目「〜のは、」で主語を立てる形。機械は「否定→断定」しか数えていなかった。
+    # 2026-09-03、35投稿セッションが目視で「〜のは、〜まで／だけ」の増殖に気づいた。
+    # ⚠️ **まで／だけで数えると1本しか出ない。** 実際に収束しているのは「〜のは、」そのもので、
+    # 同日の実測は **35本中13本（37%）**。狭く取ると、通っているように見えて何も見ていない
+    # （canon_check の②を検出力ゼロで書いたのと同じ失敗をしかけた）。
+    # **最終行だけを見る**（最終2行にすると本文の説明文まで当たる）。
+    # **上限は置かない。参考カウントで出す**——用量を作るのは CLAUDE.md
+    # 「実測でしか配分を変えない」に従って Coco の判断
+    NAME_SKEL = re.compile(r'のは[、，]')
+    rng = []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0].strip()
+        ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
+        if ls and NAME_SKEL.search(ls[-1]): rng.append(p['id'])
     # 「だ。」の連発（2026-08-27 Coco決定：1投稿1回まで／締めの「〜だ。」は週3本まで）
     da_over, da_tail = [], []
     for p in posts:
@@ -407,8 +421,13 @@ def main(path):
     # 佇まい枠は「整った側の風景」で、素材は E373。処方が無いだけでは佇まい枠ではない
     # （unresolved の回は「答えが出ていないから処方を書けない」だけで、風景ではない。
     #  2026-08-29 Wチェック：th_10＝E298・unresolved を誤って枠に数えていた）
+    # 佇まい素材のIDは台帳の band から拾う（e373.tatazumai_ids）。
+    # 2026-09-03：ここは `== 'E373'` の直書きだった。th_21 の episode_id を E454 に
+    # 変えた瞬間、**2本あった枠が0本に見えた**。素材が増えるたびにツールを直す形は、
+    # 必ず追随し損なう（elements を台帳から読むようにしたのと同じ理由）
+    TATA = e373.tatazumai_ids()
     tatazumai = [p['id'] for p in TH if '感情はある。' in p['content'] and not p.get('note_funnel')
-                 and p.get('episode_id') == 'E373'
+                 and p.get('episode_id') in TATA
                  and not re.search(ACT, p['content'].split('感情はある。')[0])]
     # ①ウィット一滴（週5〜6）と②佇まい枠（週2〜3）はルール4の別項目なので、二重に数えない。
     # 佇まい枠は本文まるごとが「整った側の風景」で、必ず素材語が当たるため（2026-08-29）
@@ -489,6 +508,7 @@ def main(path):
     if over200:
         print(f'  200字超: {len(over200)}本 {over200}（目安150〜200・上限230。削除ではなく統合で縮める）')
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
+    print(f'  締めの骨格「〜のは、」: {len(rng)}本/{len(posts)} {rng}（参考・上限未設定。散らす素材は rules/posts.md 命名締めの5型）')
     print(f'  X観察締め: {len(obs)}本 {obs}（上限4）')
     print(f'  funnel: {[p["id"] for p in fun]}')
     print(f'  許可数字: {used}')
