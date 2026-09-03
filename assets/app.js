@@ -241,6 +241,30 @@ function renderCard(post) {
         </div>
       </div>`;
   }
+  // 35投稿（X14・Threads21）の返信。診断は reply_1、35投稿は self_replies（配列）で持つ。
+  // 2026-09-03 まで描画していなかったため、全35本の返信が公開サイトから見えていなかった。
+  if (Array.isArray(post.self_replies) && post.self_replies.length) {
+    const marks = ['①', '②', '③'];
+    post.self_replies.forEach((reply, i) => {
+      if (!reply) return;
+      const rEscaped = escapeHtml(reply);
+      // funnel回のX2本目は note案内（定番プロミス。正典は CLAUDE.md「定番プロミス」）
+      const isCta = reply.indexOf('メンバーシップは、毎週深堀りが増えて') !== -1;
+      extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">${isCta ? '💍' : '📝'} 返信${marks[i] || (i + 1)}${isCta ? '（note案内）' : ''}</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${rEscaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${rEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+    });
+  }
   if (post.choices && post.choices.length) {
     const labels = ['A', 'B', 'C', 'D'];
     const choicesHtml = post.choices.map((choice, i) => {
@@ -437,6 +461,12 @@ function buildCategoryCopyText(weekId, platform) {
 
     const parts = [head, p.content || ''];
     if (p.quote) parts.push('', `〈ひとこと〉${p.quote}`);
+    // 返信も週コピーに入れる（2026-09-03。入っていなかったので、貼るときに毎回落ちていた）
+    if (Array.isArray(p.self_replies)) {
+      p.self_replies.forEach((r, i) => {
+        if (r) parts.push('', `【返信${['①', '②', '③'][i] || (i + 1)}】`, r);
+      });
+    }
     return parts.join('\n');
   });
 
