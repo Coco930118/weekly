@@ -439,9 +439,13 @@ def main(path):
     # 10 エピソード
     eids = [p.get('episode_id') for p in posts]
     if any(not e for e in eids): ng('WEEK', f'エピソード未紐づけ {sum(1 for e in eids if not e)}本')
-    # E373は佇まい枠の唯一の素材で、週2〜3本の佇まい枠に付けると必ず重複する。
-    # 用量はE373側の usage_limit（1投稿1〜2要素・同じ要素は週内1回）で担保（2026-08-27 Coco決定）
-    dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1 and k != 'E373']
+    # 週内重複の対象外は「要素の袋」だけ（e373.bag_ids＝台帳で elements を持つ素材）。
+    # 袋は週2〜3本に付いても中身が違うので重複にならない。用量は袋側の usage_limit
+    # （1投稿1〜2要素・同じ要素は週内1回）で担保（2026-08-27 Coco決定）。
+    # 2026-09-03：ここは `!= 'E373'` の直書きだった。**「佇まい枠だから除外」には開かない**
+    # ——E454 のような場面つきの実体験は袋ではないので、週内2回は本当の重複
+    BAG = e373.bag_ids()
+    dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1 and k not in BAG]
     if dup: ng('WEEK', 'エピソード重複', dup)
     try:
         u = json.load(open('reference/episode_usage_log.json', encoding='utf-8'))

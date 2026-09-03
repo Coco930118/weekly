@@ -63,3 +63,20 @@ def tatazumai_ids(path=EPISODES):
     out = {o['id'] for o in _walk(d)
            if isinstance(o, dict) and o.get('id') and '佇まい枠' in str(o.get('band', ''))}
     return out or {'E373'}
+
+
+def bag_ids(path=EPISODES):
+    """「要素の袋」になっている素材のIDを返す（elements を持つエピソード）。
+
+    週内重複の対象外にしてよいのは、**要素が入れ替わる袋**だけ。E373 は袋なので
+    週に2〜3本付いても中身が違う。E454 のような**場面つきの実体験は袋ではない**ので、
+    週内に2回出たらそれは本当の重複。2026-09-03：ここは `!= 'E373'` の直書きだった。
+    「佇まい枠だから除外」に開くと、場面素材まで重複を素通りさせることになる。
+    """
+    try:
+        d = json.load(open(path, encoding='utf-8'))
+    except (OSError, ValueError):
+        return {'E373'}
+    out = {o['id'] for o in _walk(d)
+           if isinstance(o, dict) and o.get('id') and o.get('elements')}
+    return out or {'E373'}
