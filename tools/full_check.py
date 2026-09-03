@@ -436,6 +436,27 @@ def main(path):
     obs = [p['id'] for p in X if re.search(r'(それだけだ。|それだけの習慣だ。|ことにしてる。|してる。それだけ。)', p['content'][-60:])]
     if len(obs) > 4: ng('WEEK', f'X観察締めが{len(obs)}本（上限4）', obs)
 
+    # 主語の引き継ぎ（2026-09-03 Coco決定・rules/posts.md ルール3③）
+    # 「わたしは〜」の直後にゼロ主語の両方提示を置くと、主語が引き継がれて
+    # **わたしが失敗している側に置かれる**。切り方は2つ——あいだに処方を挟むか、主語を明示するか。
+    # **要修正にせず参考カウントで出す。** 実測（2026-09-03・3週）で当たり3件のうち
+    # 本物は1件（9/1週 th_13）。x_02・x_10 は「わたしの別の習慣」で害がない。
+    # 精度が3分の1なので ng にすると rules/check.md「ツールに合わせて本文を書き換えたら、
+    # それは欠陥の報告」の過検出そのものになる。**候補を出して、判定は目視。**
+    CARRY_BOTH = re.compile(r'(もあれば|日もある|夜もある|月もある|年もある|朝もある'
+                            r'|も(?:い|あっ)た(?:ら?し|みたい)?|かった日|なかった(?:日|夜|月|相手|人))')
+    CARRY_SUBJ = re.compile(r'(その人|相手|みたい|らしい|って|わたし|部下|お相手さま)')
+    CARRY_RX = re.compile(r'(今日ひとつ|今夜ひとつ|今週ひとつ|明日ひとつ|てみる？|てみて|てみる。)')
+    carry = []
+    for p in posts:
+        ls = [l.strip() for l in p['content'].split('\n') if l.strip()]
+        for i, l in enumerate(ls[:-1]):
+            nxt = ls[i + 1]
+            if ('わたし' in l and CARRY_BOTH.search(nxt)
+                    and not CARRY_SUBJ.search(nxt) and not CARRY_RX.search(nxt)):
+                carry.append(p['id'])
+                break
+
     # 10 エピソード
     eids = [p.get('episode_id') for p in posts]
     if any(not e for e in eids): ng('WEEK', f'エピソード未紐づけ {sum(1 for e in eids if not e)}本')
@@ -514,6 +535,8 @@ def main(path):
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
     print(f'  締めの骨格「〜のは、」: {len(rng)}本/{len(posts)} {rng}（参考・上限未設定。散らす素材は rules/posts.md 命名締めの5型）')
     print(f'  X観察締め: {len(obs)}本 {obs}（上限4）')
+    print(f'  主語の引き継ぎ 候補: {len(carry)}本 {carry}'
+          f'（rules/posts.md ルール3③「わたしの宣言と、ゼロ主語の両方提示を隣り合わせにしない」・要目視）')
     print(f'  funnel: {[p["id"] for p in fun]}')
     print(f'  許可数字: {used}')
 
