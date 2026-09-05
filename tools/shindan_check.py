@@ -72,7 +72,8 @@ X_FRAME_HOOK = 'あなたの型に、名前がつくよ。'        # X＝本文�
 X_BRIDGE = 'さっきの4択は、間合い診断の1問目。'      # X＝コメント末尾のブロックの先頭行
 X_TAIL = '▼ 8問 / 約1分'
 TH_FRAME_HOOK = 'これ、間合い診断の1問目。'          # Threads＝本文（frame）末尾の1行（旧3行108字→37字）
-TH_BRIDGE = 'さっきの4択が1問目。次に出るのは、答えじゃなくて、あなたの型の名前。'
+TH_BRIDGE = 'さっきの4択が1問目。次に出るのは、答えじゃなくて、あなたの型の名前。\n溶ける人／秘める人／尽くす人／守る人。'   # 2行で1つ。正典は rules/shindan.md「reply_1 は一行だけ差し替える」（2026-09-05 型名4つを2行目に追加・9/8週から）
+TH_NAMES_FROM = '2026-09-08'   # 型名の2行目は9/8週から。9/1週（配信済み）には遡及しない
 TH_STAR = '感情はある。依存はしない。'
 TH_TAIL = '▼ 8問 / 約1分'          # 正文（2026-08-25 Coco決定・8/25週から）。
 TH_TAIL_OLD = '▼ 8問 / 約1分で、いまどこに立っているか'   # 旧文。橋渡しの一行と約束が重なるため廃止
@@ -290,7 +291,9 @@ def check_th(posts, label):
         if pid >= REPLY_FROM and len(r1) > REPLY_MAX:
             ng(pid, f'reply_1 が{len(r1)}字（上限{REPLY_MAX}）。削るのは説明。処方は減らさない')
         if TH_STAR not in r1: ng(pid, f'北極星「{TH_STAR}」がない')
-        if pid >= BRIDGE_FROM and TH_BRIDGE not in r1:
+        # 9/1週は1行目だけ（配信済み・遡及しない）。9/8週から型名の2行目まで固定文（rules/shindan.md）
+        th_bridge_expected = TH_BRIDGE if pid >= TH_NAMES_FROM else TH_BRIDGE.split('\n')[0]
+        if pid >= BRIDGE_FROM and th_bridge_expected not in r1:
             ng(pid, '接続の一行が固定文と違う（既視感チェックの対象外・7本同一）')
         if TH_TAIL not in r1: ng(pid, f'「{TH_TAIL}」がない')
         if TH_TAIL_OLD in r1: ng(pid, f'診断リンクが旧文（「{TH_TAIL_OLD}」は2026-08-25に廃止）')
