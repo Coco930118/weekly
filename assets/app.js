@@ -25,9 +25,14 @@ function escapeHtml(str) {
     .replace(/"/g, '&quot;');
 }
 
-// 35投稿の本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
-// 一覧（posts/index.json）は no-cache で毎回聞き直すので、ここに含めない。
-const POST_V = '20260831b';
+// 週データは index.json と同じく毎回サーバに聞き直す（下の fetch の cache: 'no-cache'）。
+// 2026-09-02：ここには手で上げる札（POST_V）を置いていたが、**上げ忘れが2回続いた**
+// （8/31 と 9/1〜9/2）。9/1〜9/2 だけで9/1週の本文を4回差し替えていて、そのたびに
+// 「反映された？」の確認が要る状態になっていた。**守られない運用は、運用ではなく設計の問題。**
+// 札そのものを外して、思い出さなくても新しい本文が出るようにした。
+// no-cache は「毎回取り直す」ではなく「毎回聞き直す」（変わっていなければ 304 で返る）。
+// note側（NOTE_V）も 2026-09-03 に同じ形へ寄せた（loadNotes を見て）。
+// 札はもう投稿側にもnote側にも無い。新しく足さない。
 
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
@@ -43,7 +48,7 @@ async function loadPosts() {
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}?v=${POST_V}`);
+        const res = await fetch(`./posts/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -235,6 +240,30 @@ function renderCard(post) {
           </div>
         </div>
       </div>`;
+  }
+  // 35投稿（X14・Threads21）の返信。診断は reply_1、35投稿は self_replies（配列）で持つ。
+  // 2026-09-03 まで描画していなかったため、全35本の返信が公開サイトから見えていなかった。
+  if (Array.isArray(post.self_replies) && post.self_replies.length) {
+    const marks = ['①', '②', '③'];
+    post.self_replies.forEach((reply, i) => {
+      if (!reply) return;
+      const rEscaped = escapeHtml(reply);
+      // funnel回のX2本目は note案内（定番プロミス。正典は CLAUDE.md「定番プロミス」）
+      const isCta = reply.indexOf('メンバーシップは、毎週深堀りが増えて') !== -1;
+      extraSections += `
+      <div class="card-section">
+        <div class="card-section-header">
+          <span class="card-section-title">${isCta ? '💍' : '📝'} 返信${marks[i] || (i + 1)}${isCta ? '（note案内）' : ''}</span>
+          <span class="card-section-toggle">▼</span>
+        </div>
+        <div class="card-section-body">
+          <p>${rEscaped}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-copy="${rEscaped}">コピー</button>
+          </div>
+        </div>
+      </div>`;
+    });
   }
   if (post.choices && post.choices.length) {
     const labels = ['A', 'B', 'C', 'D'];
@@ -432,6 +461,12 @@ function buildCategoryCopyText(weekId, platform) {
 
     const parts = [head, p.content || ''];
     if (p.quote) parts.push('', `〈ひとこと〉${p.quote}`);
+    // 返信も週コピーに入れる（2026-09-03。入っていなかったので、貼るときに毎回落ちていた）
+    if (Array.isArray(p.self_replies)) {
+      p.self_replies.forEach((r, i) => {
+        if (r) parts.push('', `【返信${['①', '②', '③'][i] || (i + 1)}】`, r);
+      });
+    }
     return parts.join('\n');
   });
 
@@ -494,9 +529,11 @@ let allNotes = [];
 let activeNoteFilters = { tier: 'all', week: 'all', fixOnly: false };
 let notesLoaded = false;
 
-// noteの本文を取り直させたいときは、ここだけ上げる（本文を直した日付でよい）。
-// 一覧（notes/index.json）は no-cache で毎回聞き直すので、ここに含めない。
-const NOTE_V = '20260901h';
+// noteの本文も index.json と同じく毎回サーバに聞き直す（下の fetch の cache: 'no-cache'）。
+// 2026-09-03：ここには手で上げる札（NOTE_V）を置いていたが、9/1〜9/3 の3日で4回上げていて、
+// 一度でも忘れると「直したのに変わっていない」になる。35投稿側（POST_V）は 2026-09-02 に
+// 同じ理由で札を外している。**守られない運用は、運用ではなく設計の問題。**
+// no-cache は「毎回ダウンロード」ではなく「毎回聞き直す」（変わっていなければ 304 で返る）。
 
 async function loadNotes() {
   const container = document.getElementById('notesContainer');
@@ -512,7 +549,7 @@ async function loadNotes() {
 
     allNotes = await Promise.all(
       index.notes.map(async (filename) => {
-        const res = await fetch(`./notes/${filename}?v=${NOTE_V}`);
+        const res = await fetch(`./notes/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
         return res.json();
       })
@@ -763,9 +800,13 @@ function renderNoteCard(note) {
   }
 
   if (note.sns_hooks) {
+    // キーの大文字・小文字はデータ側で揺れている（threads/Threads・x/X）。
+    // 92本中78本が小文字なので、読む側でどちらも拾う。
+    const hookThreads = note.sns_hooks.Threads || note.sns_hooks.threads;
+    const hookX = note.sns_hooks.X || note.sns_hooks.x;
     let hooksHtml = '';
-    if (note.sns_hooks.Threads) {
-      const esc = escapeHtml(note.sns_hooks.Threads);
+    if (hookThreads) {
+      const esc = escapeHtml(hookThreads);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-threadsdiag">Threads</span>
@@ -775,8 +816,8 @@ function renderNoteCard(note) {
           </div>
         </div>`;
     }
-    if (note.sns_hooks.X) {
-      const esc = escapeHtml(note.sns_hooks.X);
+    if (hookX) {
+      const esc = escapeHtml(hookX);
       hooksHtml += `
         <div class="hook-item">
           <span class="hook-platform platform-badge platform-x">X</span>

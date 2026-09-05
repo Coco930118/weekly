@@ -25,9 +25,11 @@ BANNED_RE = [r'渡[すしせさそっ]']
 # Xの折り畳み位置（rules/posts.md「折り畳み位置（280幅）までに、判定先出しを言い切る」）。
 # X診断は280幅上限を守っているのに、35投稿のX14本は誰も測っていなかった。
 # 9/1週の実測は522〜770幅＝2.3倍で、折り畳み前に見えるのは6〜7段落中の2〜3段落だけ。
-# 適用は9/8週の生成から。9/1週は配信中なので遡及しない。
+# 適用は**9/2から**（2026-09-02 Coco決定。9/8週 → 9/1週 → さらに 9/2 を名指し）。
+# 「配信済みだけど 9/2 の 6:00・7:00・10:00 のものを修正する」という指示なので、
+# 配信済みを直さない原則に、この週かぎりの例外を置いた。9/1（x_01・x_02）は対象外。
 FOLD = 280
-FOLD_FROM = '2026-09-08'
+FOLD_FROM = '2026-09-02'
 # X投稿の全体の上限（rules/posts.md 同節）。他の枠は全部上限を持っていたのに、
 # X投稿14本だけ定めが無かった（「下書きの半分以下」は相対指定で測れない）。
 # 根拠は「短いほうが伸びる」ではない——それを測ったデータは無い。
@@ -222,6 +224,20 @@ def main(path):
         if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
     if len(skel) > 2:
         ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
+    # 骨格の2つ目「〜のは、」で主語を立てる形。機械は「否定→断定」しか数えていなかった。
+    # 2026-09-03、35投稿セッションが目視で「〜のは、〜まで／だけ」の増殖に気づいた。
+    # ⚠️ **まで／だけで数えると1本しか出ない。** 実際に収束しているのは「〜のは、」そのもので、
+    # 同日の実測は **35本中13本（37%）**。狭く取ると、通っているように見えて何も見ていない
+    # （canon_check の②を検出力ゼロで書いたのと同じ失敗をしかけた）。
+    # **最終行だけを見る**（最終2行にすると本文の説明文まで当たる）。
+    # **上限は置かない。参考カウントで出す**——用量を作るのは CLAUDE.md
+    # 「実測でしか配分を変えない」に従って Coco の判断
+    NAME_SKEL = re.compile(r'のは[、，]')
+    rng = []
+    for p in posts:
+        b = p['content'].split('感情はある。')[0].strip()
+        ls = [l for l in b.split('\n') if l.strip() and 'note' not in l]
+        if ls and NAME_SKEL.search(ls[-1]): rng.append(p['id'])
     # 「だ。」の連発（2026-08-27 Coco決定：1投稿1回まで／締めの「〜だ。」は週3本まで）
     da_over, da_tail = [], []
     for p in posts:
@@ -405,8 +421,13 @@ def main(path):
     # 佇まい枠は「整った側の風景」で、素材は E373。処方が無いだけでは佇まい枠ではない
     # （unresolved の回は「答えが出ていないから処方を書けない」だけで、風景ではない。
     #  2026-08-29 Wチェック：th_10＝E298・unresolved を誤って枠に数えていた）
+    # 佇まい素材のIDは台帳の band から拾う（e373.tatazumai_ids）。
+    # 2026-09-03：ここは `== 'E373'` の直書きだった。th_21 の episode_id を E454 に
+    # 変えた瞬間、**2本あった枠が0本に見えた**。素材が増えるたびにツールを直す形は、
+    # 必ず追随し損なう（elements を台帳から読むようにしたのと同じ理由）
+    TATA = e373.tatazumai_ids()
     tatazumai = [p['id'] for p in TH if '感情はある。' in p['content'] and not p.get('note_funnel')
-                 and p.get('episode_id') == 'E373'
+                 and p.get('episode_id') in TATA
                  and not re.search(ACT, p['content'].split('感情はある。')[0])]
     # ①ウィット一滴（週5〜6）と②佇まい枠（週2〜3）はルール4の別項目なので、二重に数えない。
     # 佇まい枠は本文まるごとが「整った側の風景」で、必ず素材語が当たるため（2026-08-29）
@@ -415,12 +436,37 @@ def main(path):
     obs = [p['id'] for p in X if re.search(r'(それだけだ。|それだけの習慣だ。|ことにしてる。|してる。それだけ。)', p['content'][-60:])]
     if len(obs) > 4: ng('WEEK', f'X観察締めが{len(obs)}本（上限4）', obs)
 
+    # 主語の引き継ぎ（2026-09-03 Coco決定・rules/posts.md ルール3③）
+    # 「わたしは〜」の直後にゼロ主語の両方提示を置くと、主語が引き継がれて
+    # **わたしが失敗している側に置かれる**。切り方は2つ——あいだに処方を挟むか、主語を明示するか。
+    # **要修正にせず参考カウントで出す。** 実測（2026-09-03・3週）で当たり3件のうち
+    # 本物は1件（9/1週 th_13）。x_02・x_10 は「わたしの別の習慣」で害がない。
+    # 精度が3分の1なので ng にすると rules/check.md「ツールに合わせて本文を書き換えたら、
+    # それは欠陥の報告」の過検出そのものになる。**候補を出して、判定は目視。**
+    CARRY_BOTH = re.compile(r'(もあれば|日もある|夜もある|月もある|年もある|朝もある'
+                            r'|も(?:い|あっ)た(?:ら?し|みたい)?|かった日|なかった(?:日|夜|月|相手|人))')
+    CARRY_SUBJ = re.compile(r'(その人|相手|みたい|らしい|って|わたし|部下|お相手さま)')
+    CARRY_RX = re.compile(r'(今日ひとつ|今夜ひとつ|今週ひとつ|明日ひとつ|てみる？|てみて|てみる。)')
+    carry = []
+    for p in posts:
+        ls = [l.strip() for l in p['content'].split('\n') if l.strip()]
+        for i, l in enumerate(ls[:-1]):
+            nxt = ls[i + 1]
+            if ('わたし' in l and CARRY_BOTH.search(nxt)
+                    and not CARRY_SUBJ.search(nxt) and not CARRY_RX.search(nxt)):
+                carry.append(p['id'])
+                break
+
     # 10 エピソード
     eids = [p.get('episode_id') for p in posts]
     if any(not e for e in eids): ng('WEEK', f'エピソード未紐づけ {sum(1 for e in eids if not e)}本')
-    # E373は佇まい枠の唯一の素材で、週2〜3本の佇まい枠に付けると必ず重複する。
-    # 用量はE373側の usage_limit（1投稿1〜2要素・同じ要素は週内1回）で担保（2026-08-27 Coco決定）
-    dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1 and k != 'E373']
+    # 週内重複の対象外は「要素の袋」だけ（e373.bag_ids＝台帳で elements を持つ素材）。
+    # 袋は週2〜3本に付いても中身が違うので重複にならない。用量は袋側の usage_limit
+    # （1投稿1〜2要素・同じ要素は週内1回）で担保（2026-08-27 Coco決定）。
+    # 2026-09-03：ここは `!= 'E373'` の直書きだった。**「佇まい枠だから除外」には開かない**
+    # ——E454 のような場面つきの実体験は袋ではないので、週内2回は本当の重複
+    BAG = e373.bag_ids()
+    dup = [k for k, v in collections.Counter([e for e in eids if e]).items() if v > 1 and k not in BAG]
     if dup: ng('WEEK', 'エピソード重複', dup)
     try:
         u = json.load(open('reference/episode_usage_log.json', encoding='utf-8'))
@@ -487,7 +533,10 @@ def main(path):
     if over200:
         print(f'  200字超: {len(over200)}本 {over200}（目安150〜200・上限230。削除ではなく統合で縮める）')
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
+    print(f'  締めの骨格「〜のは、」: {len(rng)}本/{len(posts)} {rng}（参考・上限未設定。散らす素材は rules/posts.md 命名締めの5型）')
     print(f'  X観察締め: {len(obs)}本 {obs}（上限4）')
+    print(f'  主語の引き継ぎ 候補: {len(carry)}本 {carry}'
+          f'（rules/posts.md ルール3③「わたしの宣言と、ゼロ主語の両方提示を隣り合わせにしない」・要目視）')
     print(f'  funnel: {[p["id"] for p in fun]}')
     print(f'  許可数字: {used}')
 

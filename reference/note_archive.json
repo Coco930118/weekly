@@ -2775,6 +2775,190 @@
         "温度": "高",
         "距離": "高"
       }
+    },
+    {
+      "title": "💗疲れたと言うかどうかは、相手ではなく場面で決めている",
+      "publish_date": "2026-09-08",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "member_entry",
+      "plan_type": "溶ける人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 3,
+      "cluster_topic": "疲れたを弱音ではなく状況の共有として使う——言う場面を相手ではなく場面そのもので決め、言わなかった夜は翌朝に引きずらない",
+      "linked_principle": "事実と感情を分ける。記録に残すのは事実だけ（原理03）。疲れたを弱音ではなく状況の伝達として扱い直す",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-08_tired-timing.json",
+      "in_index": true
+    },
+    {
+      "title": "💼早いからやる、を続けるほど、誰かの席がなくなる",
+      "publish_date": "2026-09-08",
+      "platform_origin": "X",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "flagship",
+      "plan_type": "背負う人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 6,
+      "cluster_topic": "自分がやったほうが早いという理由で仕事を引き取り続ける管理職へ。引き取る前に確認するかどうかが、任せると放置を分ける",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）と、悩みの意味を反転して定義し直す（原理06）の両方——早さの問題ではなく席の問題だと置き直す",
+      "funnel_targets": [
+        "x_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-08_confirm-before-take.json",
+      "in_index": true
+    },
+    {
+      "title": "💼飲み込んだ件は、外に出さない限り、なかったことになる",
+      "publish_date": "2026-09-10",
+      "platform_origin": "X",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "member_entry",
+      "plan_type": "こらえる人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 3,
+      "cluster_topic": "飲み込んで済ませた件を、感情を抜いた事実の一行として外に出す。出さなかった分は自分の中にだけ溜まり続ける",
+      "linked_principle": "事実と感情を分ける。記録に残すのは事実だけ（原理03）",
+      "funnel_targets": [
+        "x_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-10_swallowed-line.json",
+      "in_index": true
+    },
+    {
+      "title": "💗正しさで言うと、相手は逃げ場を失う",
+      "publish_date": "2026-09-10",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "member_entry",
+      "plan_type": "秘める人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 5,
+      "cluster_topic": "正しさを主語にすると相手の受け取り方の選択肢を奪う。主語を自分の気持ちに戻し、気持ちを一つだけ置く順番と、言えなかった夜の翌朝の言い直し方",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。「正しさで言う／黙る」の二択ではなく「気持ちで言う」を置く",
+      "funnel_targets": [
+        "th_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-10_subject-back-to-self.json",
+      "in_index": true
+    },
+    {
+      "title": "💗断れたのは、その相手が切れない相手だったから",
+      "publish_date": "2026-09-11",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "member_entry",
+      "plan_type": "尽くす人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 1,
+      "cluster_topic": "頼まれた分を全部引き受け続けてきた人へ。NGを出せたのは信頼の証拠で、断ったあとも会える相手とそこで切れる相手の線の見分け方",
+      "linked_principle": "決断を相手に返す。詰めない、選ばせる（原理04）に近い、今日決められることを一つだけ渡す原理01の実装",
+      "funnel_targets": [
+        "th_12"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-11_stay-close-after-no.json",
+      "in_index": true
+    },
+    {
+      "title": "💼相談が来ないのは、信頼がないからではなく、まだ検算中なだけ",
+      "publish_date": "2026-09-11",
+      "platform_origin": "X",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "flagship",
+      "plan_type": "先に動く人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 6,
+      "cluster_topic": "相談してもらえないと悩む人へ。相談は信頼の証というより安全性の検算結果で、損をさせない実績を積むことでしか近道はない",
+      "linked_principle": "悩みの意味を反転して定義し直す（原理06）。相談されないことを『信頼の欠如』ではなく『検算の途中』として置き直す",
+      "funnel_targets": [
+        "x_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-11_trust-audit.json",
+      "in_index": true
+    },
+    {
+      "title": "💼上司が何も言わないのは、安心している証拠とは限らない",
+      "publish_date": "2026-09-14",
+      "platform_origin": "X",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "flagship",
+      "plan_type": "降りる人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 7,
+      "cluster_topic": "うまく回っている現場ほど上から何も言われない理由。上司の関心の総量は変わらず困っている側に向くだけで、成果の要因を自分から一行外に出さない限り伝わらない",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。関心の総量は変わらないという現実を先に認め、その中で要因を外に出すという動き方を渡す",
+      "funnel_targets": [
+        "x_13"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-14_quiet-is-not-safe.json",
+      "in_index": true
+    },
+    {
+      "title": "💗ありがとうは、返ってくるかどうかで、言う言わないを決めるものじゃない",
+      "publish_date": "2026-09-14",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "member_entry",
+      "plan_type": "守る人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 1,
+      "cluster_topic": "感謝を伝えても反応が薄い相手に、伝え続けるかどうか迷う人へ。ありがとうは反応を引き出す道具ではなく、伝えるかどうかは相手ではなく自分の気持ちで決める",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。反応の有無に関係なく、こちらの側で続けられることだけを渡す",
+      "funnel_targets": [
+        "th_20"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-14_thanks-without-return.json",
+      "in_index": true
+    },
+    {
+      "title": "💼今日は、熱くなっている日か、乾いている日か",
+      "publish_date": "2026-09-13",
+      "platform_origin": "X",
+      "source_week": "2026-09-08_2026-09-14",
+      "tier": "free_entry",
+      "plan_type": null,
+      "maai_axis": null,
+      "principle_no": 5,
+      "cluster_topic": "週次の無料まとめ（型A・組織）——怒り・不満が出ている『熱い日』向けと、もう事実として片づけたい『乾いた日』向けに既存の💼9本を並べ直した目次。中身は要約まで、手当ては各記事へ送る",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。『全部読むか、読まないか』ではなく『今日の温度で選ぶ』に測る対象を変える",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-09-13_guide-soshiki.json",
+      "in_index": true
     }
   ]
 }

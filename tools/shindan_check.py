@@ -66,6 +66,8 @@ ANSWER_LINE = re.compile(r'^[A-D]｜', re.M)
 # BRIDGE_FROM / LIGHT_FROM と同じ値だが**別に持つ**——これは別々のルールで、
 # どれか一つを実測で戻すときに他まで動いてはいけない。
 ANSWER_FROM = '2026-09-01'
+REPLY_MAX = 500        # 正典は rules/shindan.md「reply_1 は500字以内」
+REPLY_FROM = '2026-09-01'
 X_FRAME_HOOK = 'あなたの型に、名前がつくよ。'        # X＝本文（frame）に一句（28幅）
 X_BRIDGE = 'さっきの4択は、間合い診断の1問目。'      # X＝コメント末尾のブロックの先頭行
 X_TAIL = '▼ 8問 / 約1分'
@@ -280,6 +282,13 @@ def check_th(posts, label):
         if pid >= ANSWER_FROM:
             b = len(ANSWER_LINE.findall(r1))
             if b != 4: ng(pid, f'4行の答え合わせが{b}行（`A｜`〜`D｜` の4本・A〜Dを全部肯定で拾う）')
+        # reply_1 の字数（rules/shindan.md「reply_1 は500字以内」が正典）。
+        # 2026-08-30 に「ツールに字数チェックが一つも無い」と検出されてから、
+        # rules/check.md の一覧には載っているのに**実装が無いまま**だった
+        # （＝チェックがあると書いてある側だけが増えた状態）。2026-09-02 に足した。
+        # 8/25週は516・521字で入れると遡及してしまうので日付で切る（9/1週は364〜428で全本内側）
+        if pid >= REPLY_FROM and len(r1) > REPLY_MAX:
+            ng(pid, f'reply_1 が{len(r1)}字（上限{REPLY_MAX}）。削るのは説明。処方は減らさない')
         if TH_STAR not in r1: ng(pid, f'北極星「{TH_STAR}」がない')
         if pid >= BRIDGE_FROM and TH_BRIDGE not in r1:
             ng(pid, '接続の一行が固定文と違う（既視感チェックの対象外・7本同一）')
@@ -346,7 +355,7 @@ def main(paths):
     print('② 舐められず好かれる — 効く選択肢が「芯がある」と「角が立たない」を両方満たすか。')
     print('   誤答は感情的な批判ではなく構造的な理由で説明できているか')
     print('③ 既視感ゼロ — 7本を横断して、似た表現・似た構文がないか。前週とも突き合わせる')
-    print('   （北極星と橋渡しの一行は固定要素。対象外）')
+    print('   （北極星と「間合い診断への接続」は固定要素。対象外）')
     print('④ 比喩ゼロ・言い切り — 診断は比喩を使わない。核心はそのままの言葉で言い切る')
     print('⑤ 答えの位置 — 効く選択肢の位置（A/B/C/D）が前回までと変わっているか。')
     print('   正解を1つに絞らない回も混ざっているか')
@@ -357,4 +366,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print(__doc__); sys.exit(2)
     fs = [f for a in sys.argv[1:] for f in sorted(glob.glob(a))]
+    if not fs:
+        sys.exit(f'該当ファイルなし: {sys.argv[1:]}（存在しないパスを渡すと0件と誤表示するため明示エラーにする）')
     sys.exit(main(fs))
