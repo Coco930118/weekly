@@ -360,4 +360,6 @@ if __name__ == '__main__':
               if json.load(open(f, encoding='utf-8')).get('source_week') == a[1]]
     else:
         fs = [f for x in a for f in sorted(glob.glob(x))]
+    if not fs:
+        sys.exit(f'該当ファイルなし: {a}（存在しない指定だと0件と誤表示するため明示エラーにする）')
     sys.exit(main(fs))

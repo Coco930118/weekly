@@ -366,4 +366,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print(__doc__); sys.exit(2)
     fs = [f for a in sys.argv[1:] for f in sorted(glob.glob(a))]
+    if not fs:
+        sys.exit(f'該当ファイルなし: {sys.argv[1:]}（存在しないパスを渡すと0件と誤表示するため明示エラーにする）')
     sys.exit(main(fs))

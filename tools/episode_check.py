@@ -193,4 +193,6 @@ if __name__ == '__main__':
         fs = [f for pat in a[1:] for f in sorted(glob.glob(pat))]
     else:
         fs = [f for pat in a for f in sorted(glob.glob(pat))]
+    if not fs:
+        sys.exit(f'該当ファイルなし: {a}（存在しない指定だと0件と誤表示するため明示エラーにする）')
     sys.exit(main(fs))
