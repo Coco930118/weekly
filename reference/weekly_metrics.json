@@ -540,6 +540,55 @@
    ]
   }
  ],
+ "threads_impressions_reports": [
+  {
+   "received": "2026-09-06 Coco実測（チャットで2回に分けて受領：①投稿数・インプレッション、②返信数）",
+   "period": "2026-08-24_2026-09-06（14日間・週区切りとは一致しないローリング窓。8/25週と9/1週の両方にまたがる）",
+   "total_posts": 55,
+   "total_impressions": 1325,
+   "avg_impressions_per_post": 24.1,
+   "total_replies": 50,
+   "posts_with_replies": 34,
+   "reply_count_note": "返信数は自分の投稿についた返信（受信側）。Coco申告：以後、毎週金曜の自動レポートにも返信数と返信の多い投稿を追加する",
+   "daily": {
+    "08-24": { "posts": 3, "impressions": 38, "avg": 12.7, "replies": 4 },
+    "08-25": { "posts": 5, "impressions": 196, "avg": 39.2, "replies": 3 },
+    "08-26": { "posts": 4, "impressions": 50, "avg": 12.5, "replies": 1 },
+    "08-27": { "posts": 4, "impressions": 59, "avg": 14.8, "replies": 0 },
+    "08-28": { "posts": 4, "impressions": 111, "avg": 27.8, "replies": 1 },
+    "08-29": { "posts": 4, "impressions": 121, "avg": 30.3, "replies": 0 },
+    "08-30": { "posts": 4, "impressions": 52, "avg": 13.0, "replies": 1 },
+    "08-31": { "posts": 4, "impressions": 183, "avg": 45.8, "replies": 2 },
+    "09-01": { "posts": 3, "impressions": 56, "avg": 18.7, "replies": 5 },
+    "09-02": { "posts": 5, "impressions": 28, "avg": 5.6, "replies": 6 },
+    "09-03": { "posts": 4, "impressions": 40, "avg": 10.0, "replies": 9 },
+    "09-04": { "posts": 4, "impressions": 181, "avg": 45.3, "replies": 6 },
+    "09-05": { "posts": 4, "impressions": 152, "avg": 38.0, "replies": 7 },
+    "09-06": { "posts": 3, "impressions": 58, "avg": 19.3, "replies": 5 }
+   },
+   "top_posts_by_impressions": [
+    { "rank": 1, "date": "09-04", "hour": "22時", "opening": "「月に一回しか会えないんですけど、少なすぎますか」", "views": 147 },
+    { "rank": 2, "date": "08-31", "hour": "22時", "opening": "「会いたい」と言うのは、いつもこちらから。", "views": 134 },
+    { "rank": 3, "date": "09-05", "hour": "22時", "opening": "「これ、何ていう関係なんですかね」", "views": 110 },
+    { "rank": 4, "date": "08-29", "hour": "10時", "opening": "別れて一年たって、もうなんともないと思っていた。", "views": 82 },
+    { "rank": 5, "date": "08-28", "hour": "1時", "opening": "「これ伝えていいのかな」を、何度もくり返した。", "views": 76 },
+    { "rank": 6, "date": "08-25", "hour": "1時", "opening": "喧嘩になりそうな時だけ、椅子から立ってキッチンへ行く。", "views": 65 },
+    { "rank": 7, "date": "08-25", "hour": "22時", "opening": "感情を持つことと、感情に乗っかることは違う。", "views": 58 },
+    { "rank": 8, "date": "08-25", "hour": "10時", "opening": "「あなたにしか話せない」と言われるのが、最初は嬉しかった。", "views": 43 },
+    { "rank": 9, "date": "08-27", "hour": "1時", "opening": "傷ついたのに、怒鳴らなかった日があった。", "views": 39 },
+    { "rank": 10, "date": "09-01", "hour": "11時", "opening": "昔は、返信が来るまでスマホを裏返せなかった。", "views": 31 }
+   ],
+   "top_posts_by_replies": [
+    { "date": "09-03", "opening": "気になる人からの短い「うん」ひとつで…", "replies": 4, "views": 11 },
+    { "date": "09-01", "opening": "「今週どこか空いてる？」と送ったのは…", "replies": 3, "views": 18 },
+    { "date": "09-04", "opening": "「月に一回しか会えないんですけど…」", "replies": 2, "views": 147 },
+    { "date": "09-05", "opening": "「これ、何ていう関係なんですかね」", "replies": 2, "views": 110 },
+    { "date": "09-06", "opening": "言いたいことがあるのに、切り出すと…", "replies": 2, "views": 29 }
+   ],
+   "coco_observation": "現時点では上位3投稿がすべて22時台。「会えない」「こちらからばかり」「名前のない関係」のような、関係性の違和感を具体的な一言で始めた投稿が強く出ている。診断型よりも、実話・相談から始まる投稿のほうがインプレッションを取りやすい傾向が見える（Coco所見・2026-09-06）",
+   "caveat": "この14日間の窓は既存の週別レコード（08-25_08-31・09-01_09-07想定）の期間と重複しており、単純に週次と突き合わせない。返信数トップの投稿（9/3・9/1）はインプレッション自体は低い（11・18）が返信率が高く、インプレッション上位（9/4・9/5）とは別の勝ち方をしている可能性がある——次回、この2軸を分けて型判定する"
+  }
+ ],
  "historical_winners": {
   "note": "Coco自身が2026年2月後半に投稿した実測上位。週次実測とは別枠の、アカウント固有の勝ち型サンプル（2026-08-23受領・スクショ/本文確認済み）",
   "posts": [
