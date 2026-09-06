@@ -5,7 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <!-- 2026-08-30 のセッションで作った「間合いの設計図」を、リポジトリに保存したもの。
      アーティファクト版：https://claude.ai/code/artifact/87cb20c9-96ef-437f-a131-072206d917ee
-     これは記録であって正典ではない。ルールの正典は CLAUDE.md と rules/。 -->
+     これは記録であって正典ではない。ルールの正典は CLAUDE.md と rules/。
+     2026-09-06 追記：02の型テーブルと05のPHASE 2が、その後の正典改定に置き去りになっていた。
+     本文は履歴として残し、ずれている箇所に「その後」の注記を入れた（下の .stale ブロック）。 -->
 <title>間合いの設計図</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -156,6 +158,15 @@ section:last-of-type{border-bottom:0}
 .sample .tag{display:block; color:var(--renai); font-size:13px; margin-top:10px; font-family:"Zen Kaku Gothic New",sans-serif}
 
 footer{padding:44px 0 0; color:var(--ink-3); font-size:12px; line-height:1.8}
+.stale{
+  background:var(--surface-2); border:1px solid var(--rule); border-left:3px solid var(--stop);
+  padding:14px 17px; margin:18px 0; font-size:13px; line-height:1.75; color:var(--ink-2);
+}
+.stale b{display:block; color:var(--stop); font-size:12px; letter-spacing:.06em; margin-bottom:6px;
+  font-family:"Zen Kaku Gothic New",sans-serif; font-weight:700}
+.stale p{margin:0 0 7px; font-size:13px; max-width:none}
+.stale p:last-child{margin-bottom:0}
+.stale code{font-size:12px; background:var(--surface); border:1px solid var(--rule); padding:1px 5px}
 @media (max-width:640px){
   .phase{grid-template-columns:1fr; gap:10px}
   .layer{grid-template-columns:1fr; gap:4px}
@@ -224,6 +235,17 @@ footer{padding:44px 0 0; color:var(--ink-3); font-size:12px; line-height:1.8}
     <div class="t-r"><span class="tname">保つ人</span><span class="pct">10.9%</span><p class="lack">CTAは出さず、組織側へ送る</p></div>
   </div>
   <p class="axis-note">1人が2つの型を持つ。「恋愛は溶ける人／仕事は降りる人」——MBTIにない構造で、根拠は読者定義の「職場と家で同時に走る」。</p>
+
+  <div class="stale">
+    <b>その後（2026-09-06 追記）── この表は上の3点が古い。型の正典は <code>rules/type.md</code></b>
+    <p><strong>① 出現率（%）は 2026-08-30 に正典から削除された。</strong>中央の定義が <code>|Δ|≦1</code> だった頃の理論値で、閾値を 温24／距24 にした時点で古くなる。<strong>理論分布は判断に使わない</strong>——分布を見るならKVの実測を読む。</p>
+    <p><strong>② 欠落文は、行で共有しない。ドメインごとに違う。</strong>上の表は左右で同じ文を置いているが、08-30 に「組織と恋愛は声が違う」として4行とも別文に改定された。現行は——<br>
+    溶ける人「近づいた分だけ、自分が薄くなる」／背負う人「渡せたはずの一件を、自分で抱えている」<br>
+    秘める人「言葉は毎晩できているのに、宛先が自分のまま」／こらえる人「飲み込んだ回数が、どこにも残っていない」<br>
+    尽くす人「出す側でいるあいだ、受け取る席が空いたまま」／先に動く人「作業は渡せているのに、決定のほうを返していない」<br>
+    守る人「閉じたまま、まだ一度も動かしていない」／降りる人「やった分を、まだ一度も外に戻していない」</p>
+    <p><strong>③「自分の分が残らない」は 08-31 に名指しで廃した。</strong>型名「溶ける」＝境目が消える絵、「分が残らない」＝配分が枯れる絵で、<strong>比喩が2本混ざって像が結ばない</strong>。欠落文は型名の動詞と同じ絵で書く。</p>
+  </div>
 </section>
 
 <section>
@@ -247,6 +269,11 @@ footer{padding:44px 0 0; color:var(--ink-3); font-size:12px; line-height:1.8}
     <span class="tag">── これ、こらえる人の型。あなたの間合いは、どの型？</span>
   </div>
   <p style="font-size:13.5px;color:var(--ink-2)">4段階が1段階になる。<strong>すでに書いてあるものを、前に出すだけ</strong>——新しく書く量はゼロ。</p>
+  <div class="stale">
+    <b>その後（2026-09-06 追記）── 間合い診断は「公開待機中」ではない。公開済み</b>
+    <p><strong>9/1に noindex が外れ、TOP導線も開いている</strong>（<code>Coco930118/shindan</code> の <code>index.html</code> に robots メタ無し、<code>vercel.json</code> に X-Robots-Tag 無し、TOPから <code>/kankei</code> <code>/soshiki</code> の2枚のカードで到達できる）。<strong>この設計図がいちばんの制約として書いた「4クリックの先に埋まっている」は、もう解けている。</strong></p>
+    <p>つまり 07 の指標①（間合い診断の完了数）は、<strong>いま測れる状態にある</strong>。次に効くのは入口ではなく<strong>出口＝型別の結果シェア</strong>（<code>reference/todo.md</code>「出口（診断結果のシェア）」）。</p>
+  </div>
 </section>
 
 <section>
@@ -335,6 +362,12 @@ footer{padding:44px 0 0; color:var(--ink-3); font-size:12px; line-height:1.8}
         <li>プラン記号のない23本を振り分ける（上位20本に3本混ざっている）</li>
         <li>35投稿に型を割り当てる運用へ。原理配分の隣に型を1つ書くだけ</li>
       </ul>
+      <div class="stale">
+        <b>その後（2026-09-06 追記）── この4つのうち2つは、8/31に前倒しで終わっている</b>
+        <p><strong>「130本に型を割り当てる」は 08-31 に実施済み。</strong>サイト掲載83本のうち78本に型が付き、原理の欠落ゼロ、24枠（8型×3ステップ）が全部埋まった。<strong>本文の書き直しを待つ必要が無かった</strong>のが理由——待つと、その間ずっと診断の出口が行き止まりのままになる。手順は <code>rules/type.md</code>「記事を型に振り分ける手順」。</p>
+        <p><strong>「35投稿に型を割り当てる運用へ」も 08-31 に恒久ルール化。9月から毎週回る。</strong>実行場所は <code>rules/check.md</code> の6項目チェック⑤（週内で4型が全部出ているか。1型でも欠けたら要修正）。<strong>この設計図どおりに「10月から」と読むと、いま毎週回すべき検査が止まる。</strong></p>
+        <p>残っているのは「無料まとめを型別まとめに切り替える」と「プラン記号のない記事の振り分け」の2つ。<strong>note在庫の本数は 130 ではなく、着手時点の全件</strong>（週9本を止めないので毎週増える。09-06 時点で147本）。</p>
+      </div>
     </div>
   </div>
 
@@ -378,7 +411,7 @@ footer{padding:44px 0 0; color:var(--ink-3); font-size:12px; line-height:1.8}
 
 <footer>
   <p>正典：<code>rules/type.md</code>（間合い診断）／<code>rules/shindan.md</code>（日替わり4択）／<code>CLAUDE.md</code>（判断の土台）<br>
-  実装：<code>cocomethodology/shindan</code>（サイト）。手順は <code>reference/runbook_weekly.md</code> の ④-b<br>
+  実装：<code>Coco930118/shindan</code>（サイト。2026-08-30 に <code>cocomethodology</code> から移管）。手順は <code>reference/runbook_weekly.md</code> の ④-b<br>
   実測：<code>reference/weekly_metrics.json</code>／試験と判定期日：<code>reference/todo.md</code></p>
 </footer>
 </div>
