@@ -79,7 +79,12 @@ def being_section(md, i, push):
     head = md[:i]
     first = re.split(r'[\n　 ]+', push.strip())[0] if push else ''
     j = head.rfind(first) if first else -1
-    return head[:j if j > 0 else len(head)].rsplit('\n---\n', 1)[-1].strip()
+    seg = head[:j if j > 0 else len(head)]
+    # seg は closing_push の直前で切れるため、素朴に rsplit すると
+    # 最後の --- の"あと"（closing_push直前の空行だけ）を拾って常に空文字になる。
+    # 空でない最後のブロックを在り方署名として拾う（2026-09-06 Wチェックで検出・修正）
+    parts = [p.strip() for p in seg.split('\n---\n') if p.strip()]
+    return parts[-1] if parts else ''
 
 
 def being_open(md, i, push):
