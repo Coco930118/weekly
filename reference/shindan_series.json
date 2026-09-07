@@ -9,10 +9,10 @@
     "rule": "2026-06-09の週を第1週とし、1週=7本の連番。frame末尾に「#温度の4択 NNN」（3桁ゼロ埋め）を置く。",
     "week_1_start": "2026-06-09",
     "posts_per_week": 7,
-    "last_assigned_no": 91,
-    "last_assigned_week": "2026-09-01_2026-09-07",
-    "next_no": 92,
-    "next_week": "2026-09-08_2026-09-14"
+    "last_assigned_no": 105,
+    "last_assigned_week": "2026-09-15_2026-09-21",
+    "next_no": 106,
+    "next_week": "2026-09-22_2026-09-28"
   },
   "frame_constraint": {
     "max_weighted_chars": 280,
@@ -271,6 +271,90 @@
       "date": "2026-09-07",
       "technique": "欠落の方向を見る",
       "layer": "manager"
+    },
+    {
+      "no": 92,
+      "date": "2026-09-08",
+      "technique": "困らせて気づかせる",
+      "layer": "manager"
+    },
+    {
+      "no": 93,
+      "date": "2026-09-09",
+      "technique": "感情の動きと事実を分ける",
+      "layer": "manager"
+    },
+    {
+      "no": 94,
+      "date": "2026-09-10",
+      "technique": "外せない一点だけ先に置く",
+      "layer": "owner"
+    },
+    {
+      "no": 95,
+      "date": "2026-09-11",
+      "technique": "途中を見落とさない",
+      "layer": "manager"
+    },
+    {
+      "no": 96,
+      "date": "2026-09-12",
+      "technique": "評価軸に乗らない",
+      "layer": "owner"
+    },
+    {
+      "no": 97,
+      "date": "2026-09-13",
+      "technique": "責任の着地点を先に決める",
+      "layer": "owner"
+    },
+    {
+      "no": 98,
+      "date": "2026-09-14",
+      "technique": "判断は一緒に立って伝える",
+      "layer": "manager"
+    },
+    {
+      "no": 99,
+      "date": "2026-09-15",
+      "technique": "引用は記録になる",
+      "layer": "manager"
+    },
+    {
+      "no": 100,
+      "date": "2026-09-16",
+      "technique": "肩代わりをやめる",
+      "layer": "owner"
+    },
+    {
+      "no": 101,
+      "date": "2026-09-17",
+      "technique": "結果だけで測る",
+      "layer": "manager"
+    },
+    {
+      "no": 102,
+      "date": "2026-09-18",
+      "technique": "困っている側を見極める",
+      "layer": "manager"
+    },
+    {
+      "no": 103,
+      "date": "2026-09-19",
+      "technique": "手順が両方を守る",
+      "layer": "owner"
+    },
+    {
+      "no": 104,
+      "date": "2026-09-20",
+      "technique": "言い分を理由にしない",
+      "layer": "manager"
+    },
+    {
+      "no": 105,
+      "date": "2026-09-21",
+      "technique": "整合のずれを放置しない",
+      "layer": "manager"
     }
   ],
   "reader_layer_log": {
@@ -377,6 +461,51 @@
             "date": "2026-09-05",
             "episode": "E390",
             "theme": "変数は人だと見る"
+          }
+        ]
+      },
+      {
+        "week": "2026-09-08_2026-09-14",
+        "manager": 4,
+        "owner": 3,
+        "owner_posts": [
+          {
+            "no": 94,
+            "date": "2026-09-10",
+            "episode": "E161",
+            "theme": "外せない一点だけ先に置く"
+          },
+          {
+            "no": 96,
+            "date": "2026-09-12",
+            "episode": "E358",
+            "theme": "評価軸に乗らない"
+          },
+          {
+            "no": 97,
+            "date": "2026-09-13",
+            "episode": "E44",
+            "theme": "責任の着地点を先に決める"
+          }
+        ],
+        "note": "2026-09-06生成時点の記録漏れを事後反映（2026-09-07 Wチェック検出）。owner_postsは3本（09-10・09-12・09-13）だがmanager5・owner2の目標配分に対し実際は連続日09-12・09-13が2本続き、週内で離す原則から外れていた。次週の生成時に留意"
+      },
+      {
+        "week": "2026-09-15_2026-09-21",
+        "manager": 5,
+        "owner": 2,
+        "owner_posts": [
+          {
+            "no": 100,
+            "date": "2026-09-16",
+            "episode": "E470",
+            "theme": "肩代わりをやめる"
+          },
+          {
+            "no": 103,
+            "date": "2026-09-19",
+            "episode": "E349",
+            "theme": "手順が両方を守る"
           }
         ]
       }
