@@ -163,7 +163,11 @@ def main(path):
         l1 = p['content'].split('\n')[0]
         last = p['content'].strip().split('\n')[-1]
         naked = re.sub(r'「[^」]*」', '', p['content'])
-        if not l1.startswith('「'): ng(p['id'], '1行目が読者の声引用でない')
+        # 1行目の形は rules/posts.md ルール2（2026-09-07 改定）で2つになった。
+        # 「」引用は機械で拾えるが、もう一方（読者の身体が知っている瞬間・主語なし）は
+        # 意味を読まないと判定できない。旧「1行目が読者の声引用でない」を要修正で出すと、
+        # ルールどおりに書いた新しい形を弾く。だから要修正から外し、形の内訳だけ出す。
+        # 判定は目視（rules/check.md）。
         if last.rstrip().endswith(('？', '?', 'ですか。')): ng(p['id'], '末尾が明示質問')
         if '私' in naked: ng(p['id'], '一人称「私」（わたしに統一）')
         if '💎' in p.get('quote', ''): ng(p['id'], 'quoteに💎（絵文字は2026-08-24廃止）')
@@ -525,6 +529,11 @@ def main(path):
         print('■ 機械チェック: 要修正 0件')
 
     print(f'\n■ 参考カウント')
+    # Xの1行目の形（rules/posts.md ルール2＝2形。正典はあちら。ここに条文を書かない）
+    quoted = [p['id'] for p in X if p['content'].split('\n')[0].startswith('「')]
+    moment = [p['id'] for p in X if not p['content'].split('\n')[0].startswith('「')]
+    print(f'  Xの1行目: 「」読者の声 {len(quoted)}本 / それ以外 {len(moment)}本 {moment}'
+          f'（2形のどちらでもよい。**どちらでもない形は目視で弾く**・rules/posts.md ルール2）')
     print(f'  ウィット一滴 候補: {len(wit)}本 {wit}（目安5〜6・**目視で確定すること**）')
     print(f'    ※語が当たっただけの空振りが混ざる（例：「それだけ。」に当たるが生活の描写ゼロ）。'
           f'目安の判定は目視の実数で行う')
