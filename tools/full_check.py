@@ -550,10 +550,10 @@ def main(path):
     #
     # 旧版は①②③の3ブロックしか出しておらず、check.md が8項目に増えた後も
     # 追随していなかった。ルールはあるのに実行の入口が無い状態で、
-    # ⑤型の充足・⑥数字の全数照合・⑦質問候補・⑧抽象語の置き場所が
+    # ⑤型の充足・⑥数字の全数照合・⑦質問候補・⑧抽象語の置き場所・⑨背中押しが
     # 毎週の運用から落ちていた（9/1週の35投稿に型が1つも残っていなかったのと同じ経路）。
     print('\n' + '=' * 60)
-    print('【判断チェック】機械では判定できない8つ。正典は rules/check.md「目で見る8つ」')
+    print('【判断チェック】機械では判定できない9つ。正典は rules/check.md「目で見る9つ」')
     print('条件はここに書かない。下にあるのは「枠」と「材料」だけ。判定は check.md を見て行う')
     print('=' * 60)
 
@@ -602,6 +602,18 @@ def main(path):
         head = ' / '.join(lines[:2])
         print(f'  {p["id"]}({p["platform"][:1]}) 冒頭｜{head[:40]}')
         print(f'         ひとこと｜{(p.get("quote") or "(なし)")[:40]}')
+
+    # ⑨ 背中押しの一行（2026-09-11 Coco決定・恒久ルール）
+    # 条件の正典は rules/posts.md「背中押しの一行」。ここに条文を書き写さない。
+    # 機械では判定できない（本文に溶けるため語で拾えない）。材料＝締めの直後の2行。
+    print('\n⑨ 背中押しの一行 — 材料：締め（終盤の並び4番）から後ろの行。')
+    print('   全35本にあるか／同調になっていないか／週内で形が1つに寄っていないか')
+    for p in posts:
+        body = p['content'].split('感情はある。')[0].strip()
+        lines = [l for l in body.split('\n') if l.strip()]
+        tail = ' / '.join(lines[-2:]) if len(lines) >= 2 else (lines[-1] if lines else '')
+        print(f'  {p["id"]}({p["platform"][:1]}) 終盤｜{tail[:56]}')
+
     return 1 if issues else 0
 
 if __name__ == '__main__':
