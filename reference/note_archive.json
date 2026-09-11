@@ -6,9 +6,9 @@
     "platform_origin_note": "2026-06以前のnoteには platform_origin フィールドがなかったため unknown。推測で埋めない。2026-07以降は X / Threads が入る。",
     "principle_no_note": "Coco Methodology 原理01〜07の番号。既存分は未判定で null。今後作るnoteでは必須。",
     "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
-    "count": 119,
+    "count": 156,
     "week_group_note": "week_group='過去分' は、プラン振り分けをしていなかった4〜6月のnote。保持期間30日削除の対象外としてサイトに残す（CLAUDE.md「過去分」参照）。source_week は元の週のまま残す。",
-    "last_updated": "2026-08-24",
+    "last_updated": "2026-09-11",
     "draft_pool": "notes/drafts/ は、note.comに投稿していない下書きの置き場。サイトには出さない。新規note作成時の素材として読む（切り口・処方・言い回し）。note_archive.json には status=未公開・素材 で残す",
     "deleted_2026-08-24": "保持期間超過4週 29本を notes/ から削除（2026-06-09_2026-06-15, 2026-06-30_2026-07-06, 2026-07-07_2026-07-13, 2026-07-14_2026-07-20）。note_archive.json の行は索引として残す"
   },
@@ -2958,6 +2958,190 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-09-13_guide-soshiki.json",
+      "in_index": true
+    },
+    {
+      "title": "💼本当に困っているなら、その人はとっくに自分で日程を出している",
+      "publish_date": "2026-09-15",
+      "platform_origin": "X",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "背負う人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 1,
+      "cluster_topic": "予定調整のたびに自分が先に日程を出してしまう先回りが、相手から当事者性を奪っている。困る前に助けると、その人は困らないから直らない。先回りをやめた翌朝に何が戻ってくるか、戻ってこなかった時に何を置くか",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。相手の同意も上司の許可も要らない、先回りをやめて待つという今日決められる一手を渡す",
+      "funnel_targets": [
+        "x_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-15_handoff-morning.json",
+      "in_index": true
+    },
+    {
+      "title": "💗曖昧なままには戻らないと決めた日、重心は自分へ移る",
+      "publish_date": "2026-09-15",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "秘める人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 1,
+      "cluster_topic": "曖昧なままの関係には戻らないと決めても、相手には何も言わない。連絡を待つ比重が下がり、自分がどう過ごすかへ重心が移っていく。連絡が来ない夜に何を先に決めておくか、決めた線が揺れた時にどう戻るか",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。相手の同意も反応も待たず、自分の側だけで今日決められる線を一本引くという一手を渡す",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-15_undeclared-line.json",
+      "in_index": true
+    },
+    {
+      "title": "💼『やってる感』があるのに、面談で話すことがない理由",
+      "publish_date": "2026-09-16",
+      "platform_origin": "X",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "降りる人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 3,
+      "cluster_topic": "月末にまとめて書き出そうとすると手が止まる。拾わなかった案件は記録に残らないのに、動いた形跡だけは残るから『やってる感』が先に成立してしまう。拾った一件を面談で出せる形にするまでの書き方、書いたのに誰も触れなかった時の置き場所",
+      "linked_principle": "事実と感情を分ける。記録に残すのは事実だけ（原理03）。判断や評価を混ぜず、拾った事実の日付と一行だけを記録に残す",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-16_dated-line.json",
+      "in_index": true
+    },
+    {
+      "title": "💗乗り越えるか見切るか、今日はどちらも選ばない",
+      "publish_date": "2026-09-16",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "守る人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 5,
+      "cluster_topic": "倦怠期を、乗り越えるか見切るかの二択で迫られる。今日はどちらも選ばず、一旦頭から離して別のことに熱中してみると見えてくる。連絡が減った週にどこへ時間を置くか、離したまま戻らなかった時の見切り方",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。乗り越えるか見切るかの二択を選ばず、測る対象を『関係の外で熱中できたか』に置き替える",
+      "funnel_targets": [
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-16_not-deciding-yet.json",
+      "in_index": true
+    },
+    {
+      "title": "💼言い返すか黙るかの前に、残すか残さないかがある",
+      "publish_date": "2026-09-17",
+      "platform_origin": "X",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "こらえる人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 5,
+      "cluster_topic": "会議で言い返すか黙るかの二択に迫られる。反論で空気が悪くなるなら出る幕ではないし、黙って変な案が通るなら通った事実だけ残す。言い返せなかった翌朝にどの一行を残すか、残した一行が使われなかった時の扱い",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。言い返すか黙るかの二択を選ばず、測る対象を『記録に残ったかどうか』に置き替える",
+      "funnel_targets": [
+        "x_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-17_leave-what-decided.json",
+      "in_index": true
+    },
+    {
+      "title": "💗小さい不満ほど、その日のうちに話したほうがいい",
+      "publish_date": "2026-09-17",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "溶ける人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 7,
+      "cluster_topic": "言うほどでもない不満を飲み込むのを優しさだと思っていた。小さな不満は消えない。積もると形が変わるから、小さいうちにその日のうちに話す。言えなかった夜の翌朝に何から話すか、話したのに伝わらなかった時の言い直し方",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。小さな不満は消えないという現実を先に認め、その中で今日話すという動き方を渡す",
+      "funnel_targets": [
+        "th_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-17_small-before-it-piles.json",
+      "in_index": true
+    },
+    {
+      "title": "💼詰めると言い訳が育つ。選ばせると結果を持つ",
+      "publish_date": "2026-09-18",
+      "platform_origin": "X",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "先に動く人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 4,
+      "cluster_topic": "部下の言い訳を、詰めるか流すかで迷う。詰めると言い訳が育ち、流しっぱなしだと同じことが繰り返される。正当な理由かどうかは聞き流し、解決策を二つ出して選ばせる。言い訳を聞いた面談のあとに二つ目へ何を置くか、二つとも断られた時の三つ目の出し方",
+      "linked_principle": "決断を相手に返す。詰めない、選ばせる（原理04）。答えを押しつけず二択で出して選ばせ、最後は本人に『どうしたい？』を返す",
+      "funnel_targets": [
+        "x_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-18_two-options-excuse.json",
+      "in_index": true
+    },
+    {
+      "title": "💗復縁ではなく、違うお付き合いの始まり",
+      "publish_date": "2026-09-18",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "flagship",
+      "plan_type": "尽くす人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 6,
+      "cluster_topic": "一度終わった関係にもう一度戻りたくなる。前と同じ形をもう一度作ると、別れた理由まで一緒に持ち越すことになる。復縁ではなく、同じ人と違う関係を始めるという定義に変える。もう一度連絡する前に何を決めておくか、決めたことが守れなかった時の戻り方",
+      "linked_principle": "悩みの意味を反転して定義し直す（原理06）。『復縁』という悩みの意味を、『同じ人との違う関係の始まり』へ反転して定義し直す",
+      "funnel_targets": [
+        "th_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-18_different-relationship.json",
+      "in_index": true
+    },
+    {
+      "title": "💼今日は、記録する日か。待つ日か。渡す日か",
+      "publish_date": "2026-09-20",
+      "platform_origin": "X",
+      "source_week": "2026-09-15_2026-09-21",
+      "tier": "free_entry",
+      "plan_type": null,
+      "maai_axis": null,
+      "principle_no": 5,
+      "cluster_topic": "週次の無料まとめ（型A・組織）——①事実として記録する日 ②まだ動かないと決める日 ③決断を相手に渡す日、の三つの入口で既存の💼記事を並べ直した目次。中身は要約まで、手当ては各記事へ送る",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。『読むか読まないか』ではなく『今日どの動き方をしたいか』に測る対象を変える",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-09-20_guide-soshiki.json",
       "in_index": true
     }
   ]
