@@ -6117,6 +6117,62 @@
       "theme": "予測は覆さない。期限切れになるのを待つ",
       "platform": "X",
       "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E340",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-15_handoff-morning（x_02のfunnel回収。先回りをやめた翌朝に戻ってくるもの／戻ってこなかった時に置く一行）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E287",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-15_undeclared-line（th_03のfunnel回収。usage_limit準拠＝内面の変化と時間の使い方の範囲のみ）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E342",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-16_dated-line（x_03のfunnel回収。拾った一件を面談で出せる形にする書き方／触れられなかった時の置き場所）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E272",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-16_not-deciding-yet（th_05のfunnel回収。連絡が減った週にどこへ時間を置くか／離したまま戻らなかった時の見切り方）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E219",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-17_leave-what-decided（x_05のfunnel回収。言い返せなかった翌朝に残す一行／使われなかった時の扱い）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E278",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-17_small-before-it-piles（th_09のfunnel回収。言えなかった夜の翌朝に何から話すか／伝わらなかった時の言い直し方）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E214",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-18_two-options-excuse（x_08のfunnel回収。二つ目へ置くもの／二つとも断られた時の三つ目の出し方）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
+    },
+    {
+      "episode_ref": "E281",
+      "date": "2026-09-11",
+      "theme": "note_2026-09-18_different-relationship（th_11のfunnel回収。もう一度連絡する前に決めておくこと／決めたことが守れなかった時の戻り方）",
+      "platform": "note",
+      "week": "2026-09-15_2026-09-21"
     }
   ],
   "registered": [
