@@ -932,6 +932,115 @@ function renderNoteCard(note) {
     </article>`;
 }
 
+// ─── Docs section（申し送り・やること・指示文）────────────────────────────────
+//
+// 次のセッションに渡すために、まるごとコピーできる状態で置く。
+// 出す並びは `reference/index.json`（ファイルを足したらそこに1行足す。**この配列を
+// コードに持たない**——持つと、申し送りを書くたびにここも直すことになる）。
+// 本文はコピー用にそのまま出す（markdownを整形しない。貼る先で崩れるのを避ける）。
+
+let allDocs = [];
+let docsLoaded = false;
+let activeDocGroup = 'all';
+
+async function loadDocs() {
+  const container = document.getElementById('docsContainer');
+  container.innerHTML = '<p class="loading">読み込み中…</p>';
+
+  try {
+    // 一覧も本文も毎回サーバに聞き直す（投稿・noteと同じ理由。札は置かない）
+    const indexRes = await fetch('./reference/index.json', { cache: 'no-cache' });
+    if (!indexRes.ok) throw new Error('reference/index.json not found');
+    const index = await indexRes.json();
+
+    allDocs = await Promise.all(
+      index.docs.map(async (d) => {
+        const res = await fetch(`./reference/${d.file}`, { cache: 'no-cache' });
+        const text = res.ok ? await res.text() : '';
+        return { ...d, text, title: docTitle(text, d.file) };
+      })
+    );
+
+    docsLoaded = true;
+    renderDocGroupFilter();
+    renderDocs();
+  } catch (err) {
+    container.innerHTML = `<p class="error-state">データの読み込みに失敗しました<br><small>${err.message}</small></p>`;
+  }
+}
+
+// 見出し（# の1行目）をタイトルにする。無ければファイル名
+function docTitle(text, file) {
+  const m = text.match(/^#\s+(.+)$/m);
+  return m ? m[1].trim() : file;
+}
+
+function renderDocGroupFilter() {
+  const row = document.getElementById('docGroupFilterRow');
+  if (!row || row.querySelector('.filter-btn')) return;
+
+  const groups = ['all', ...new Set(allDocs.map(d => d.group))];
+  row.insertAdjacentHTML('beforeend', groups.map(g =>
+    `<button class="filter-btn${g === 'all' ? ' active' : ''}" data-doc-group="${escapeHtml(g)}">${g === 'all' ? '全て' : escapeHtml(g)}</button>`
+  ).join(''));
+
+  row.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn[data-doc-group]');
+    if (!btn) return;
+    row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeDocGroup = btn.dataset.docGroup;
+    renderDocs();
+  });
+}
+
+function renderDocs() {
+  const container = document.getElementById('docsContainer');
+  const stats = document.getElementById('docStatsBar');
+  const docs = allDocs.filter(d => activeDocGroup === 'all' || d.group === activeDocGroup);
+
+  if (stats) stats.textContent = `${docs.length}件（本文まるごとコピーできます）`;
+
+  if (!docs.length) {
+    container.innerHTML = '<p class="empty-state">該当なし</p>';
+    return;
+  }
+
+  container.innerHTML = docs.map((d, i) => {
+    const chars = d.text.length.toLocaleString();
+    return `
+      <article class="card">
+        <div class="card-header">
+          <div class="card-meta-left">
+            <span class="platform-badge platform-other">${escapeHtml(d.group)}</span>
+            <span class="card-time">${escapeHtml(d.file)}</span>
+          </div>
+          <span class="purpose-badge">${chars}字</span>
+        </div>
+        <div class="card-body">
+          <p class="card-content">${escapeHtml(d.title)}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-doc-copy="${i}">まるごとコピー</button>
+          </div>
+        </div>
+        <div class="card-section">
+          <div class="card-section-header">
+            <span class="card-section-title">📄 本文を開く</span>
+            <span class="card-section-toggle">▼</span>
+          </div>
+          <div class="card-section-body">
+            <pre class="doc-text">${escapeHtml(d.text)}</pre>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+
+  // 本文は data 属性に載せず、描画時に配列から引く（申し送りは数万字になる）
+  container.querySelectorAll('[data-doc-copy]').forEach(btn => {
+    btn.dataset.copy = docs[Number(btn.dataset.docCopy)].text;
+  });
+}
+
 // ─── Tab switching ────────────────────────────────────────────────────────────
 
 function setupTabs() {
@@ -948,9 +1057,13 @@ function setupTabs() {
     const tab = btn.dataset.tab;
     document.getElementById('postsSection').hidden = tab !== 'posts';
     document.getElementById('notesSection').hidden = tab !== 'notes';
+    document.getElementById('docsSection').hidden = tab !== 'docs';
 
     if (tab === 'notes' && !notesLoaded) {
       loadNotes();
+    }
+    if (tab === 'docs' && !docsLoaded) {
+      loadDocs();
     }
   });
 }

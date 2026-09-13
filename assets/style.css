@@ -590,6 +590,19 @@ body {
   margin-bottom: 8px;
 }
 
+/* 申し送り・やること・指示文の本文（そのまま出す。markdownは整形しない） */
+.doc-text {
+  font-family: inherit;
+  font-size: 0.78rem;
+  line-height: 1.85;
+  color: var(--text-secondary);
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin: 0;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
 /* 4択 choices */
 .choices-list {
   display: flex;
