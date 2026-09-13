@@ -34,6 +34,32 @@ function escapeHtml(str) {
 // note側（NOTE_V）も 2026-09-03 に同じ形へ寄せた（loadNotes を見て）。
 // 札はもう投稿側にもnote側にも無い。新しく足さない。
 
+// X短文（観察の切れ味）は、本文とは別の投稿として1枚のカードにする。
+// 媒体は X のまま（新しいカテゴリを作らない）。時刻はここが持つが、
+// **正典は rules/ops.md「週次スケジュール」**（X短文 06:00／22:00・X本文 08:00／23:00）。
+// 食い違ったら正典を採る。JSONの `x_short` が無い回は、本文カードだけが出る。
+const X_SHORT_SLOT = { morning: '06:00', evening: '22:00' };
+
+function expandXShort(post) {
+  if (post.platform !== 'X' || !post.x_short) return [post];
+  const isMorning = Number(post.time.slice(0, 2)) < 12;
+  const short = {
+    ...post,
+    id: `${post.id}_short`,
+    time: isMorning ? X_SHORT_SLOT.morning : X_SHORT_SLOT.evening,
+    purpose: 'X短文（観察の切れ味）',
+    content: post.x_short,
+    // 短文は二文で終わる枠。ひとこと・返信・画像・note導線は持たない
+    // （適用外の正典は rules/posts.md「X短文（観察の切れ味）」）
+    quote: '',
+    self_replies: [],
+    image_prompt: '',
+    note_funnel: false
+  };
+  delete short.x_short;
+  return [short, post];
+}
+
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
   container.innerHTML = '<p class="loading">読み込み中…</p>';
@@ -56,6 +82,7 @@ async function loadPosts() {
 
     allPosts = weekDataArr
       .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
+      .flatMap(expandXShort)
       .sort((a, b) => {
         const tA = new Date(`${a.date}T${a.time}:00`);
         const tB = new Date(`${b.date}T${b.time}:00`);
