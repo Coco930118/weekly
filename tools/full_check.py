@@ -133,6 +133,17 @@ def prev_week_file(path):
 def band(hh):
     return 'morning' if hh < 12 else ('evening' if hh < 21 else 'night')
 
+
+def fold_cut(c):
+    """折り畳み（表示幅 FOLD）の内側に入る文字数。全部入るなら None。
+    幅の数え方は1か所だけに置く（折り畳み位置の検査と、X短文の重複検査が同じ境界を見る）"""
+    w = 0
+    for i, ch in enumerate(c):
+        w += 1 if unicodedata.east_asian_width(ch) in 'HNa' or ch == '\n' else 2
+        if w > FOLD:
+            return i
+    return None
+
 def main(path):
     d = json.load(open(path, encoding='utf-8'))
     posts = d['posts']
@@ -153,10 +164,8 @@ def main(path):
         if m: ng(p['id'], '混入文字（キリル・ハングル）', sorted(set(m)))
         # Xの折り畳み位置。切れ目が段落の途中に落ちていないか（文の途中で切れるのが最悪）
         if p['platform'] == 'X' and p['date'] >= FOLD_FROM:
-            c, w, cutat = p['content'], 0, None
-            for i, ch in enumerate(c):
-                w += 1 if unicodedata.east_asian_width(ch) in 'HNa' or ch == '\n' else 2
-                if w > FOLD: cutat = i; break
+            c = p['content']
+            cutat = fold_cut(c)
             if cutat is not None:
                 tail = c[:cutat].rsplit('\n', 1)[-1].strip()
                 if tail and not tail.endswith(('。', '？', '?', '！', '!')):
@@ -194,6 +203,35 @@ def main(path):
         if len(lines) > 7: ng(p['id'], f'X本文が{len(lines)}行（5〜7行に圧縮する）')
         if p['date'] >= FOLD_FROM and len(p['content']) > X_MAX:
             ng(p['id'], f'X本文が{len(p["content"])}字（上限{X_MAX}）。型は266字で成立している（x_05）')
+
+    # 2.5 X短文（観察の切れ味）。正典は rules/posts.md「X短文（観察の切れ味）」。ここに条文を複製しない。
+    # runbook ⑥-b の目視「本文の1行目と同じ文になっていないか照合する」をここへ移した
+    # （2026-09-13 Coco決定。目視は1つ減る）。1行目だけを見ていたので、2行目や3段落目を
+    # そのまま使う形が通っていた——9/8週の初稿では14本中7本が該当していた。
+    # 見るのは折り畳み（表示幅 FOLD）の内側全部。**外側は先出しの価値があるので対象にしない**。
+    # ⚠️ **2文目が1文目と逆側の条件から来ていないかは、ここでは見えない**
+    # （9/8週 x_04 の事故は字数・二文・禁止語・重複を全部通っている）。あれは生成ルール側。
+    XS_MIN, XS_MAX = 30, 40
+    xs_tails = collections.Counter()
+    for p in X:
+        s = (p.get('x_short') or '').strip().replace('\n', '')
+        if not s: continue
+        n = len(s)
+        if not (XS_MIN <= n <= XS_MAX):
+            ng(p['id'], f'X短文が{n}字（{XS_MIN}〜{XS_MAX}字）', s)
+        sents = [x.strip() for x in re.split(r'(?<=。)', s) if x.strip()]
+        if len(sents) != 2 or not s.endswith('。'):
+            ng(p['id'], f'X短文が{len(sents)}文（症状＋観察の二文で終わる）', s)
+        cutat = fold_cut(p['content'])
+        head = p['content'] if cutat is None else p['content'][:cutat]
+        inside = {x.strip() for x in re.split(r'(?<=。)|\n', head) if x and x.strip()}
+        dup = [x for x in sents if x in inside]
+        if dup:
+            ng(p['id'], f'X短文が折り畳み内（{FOLD}幅）の本文と同じ文', dup)
+        for x in sents:
+            xs_tails[x[-4:]] += 1
+    # 文末の重なりは**参考カウント**（用量を作るのは Coco・CLAUDE.md「実測でしか配分を変えない」）
+    xs_over = sorted(((k, v) for k, v in xs_tails.items() if v >= 3), key=lambda kv: -kv[1])
 
     # 3 Threads形式
     for p in TH:
@@ -574,6 +612,9 @@ def main(path):
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
     print(f'  締めの骨格「〜のは、」: {len(rng)}本/{len(posts)} {rng}（参考・上限未設定。散らす素材は rules/posts.md 命名締めの5型）')
     print(f'  X観察締め: {len(obs)}本 {obs}（上限4）')
+    xs_n = len([p for p in X if (p.get('x_short') or '').strip()])
+    print(f'  X短文: {xs_n}本（字数・二文・折り畳み内との重複は上の要修正で見ている）'
+          + (f' ／ 文末が同じ形で3本以上: {xs_over}（参考・上限未設定）' if xs_over else ''))
     print(f'  主語の引き継ぎ 候補: {len(carry)}本 {carry}'
           f'（rules/posts.md ルール3③「わたしの宣言と、ゼロ主語の両方提示を隣り合わせにしない」・要目視）')
     print(f'  funnel: {[p["id"] for p in fun]}')
