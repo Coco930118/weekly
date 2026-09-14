@@ -34,7 +34,7 @@ function escapeHtml(str) {
 // note側（NOTE_V）も 2026-09-03 に同じ形へ寄せた（loadNotes を見て）。
 // 札はもう投稿側にもnote側にも無い。新しく足さない。
 
-// X短文（観察の切れ味）は、本文とは別の投稿として1枚のカードにする。
+// X短文（観察とコメント）は、本文とは別の投稿として1枚のカードにする。
 // 媒体は X のまま（新しいカテゴリを作らない）。時刻はここが持つが、
 // **正典は rules/ops.md「週次スケジュール」**（X短文 06:00／22:00・X本文 08:00／23:00）。
 // 食い違ったら正典を採る。JSONの `x_short` が無い回は、本文カードだけが出る。
@@ -47,10 +47,10 @@ function expandXShort(post) {
     ...post,
     id: `${post.id}_short`,
     time: isMorning ? X_SHORT_SLOT.morning : X_SHORT_SLOT.evening,
-    purpose: 'X短文（観察の切れ味）',
+    purpose: 'X短文（観察とコメント）',
     content: post.x_short,
     // 短文は二文で終わる枠。ひとこと・返信・画像・note導線は持たない
-    // （適用外の正典は rules/posts.md「X短文（観察の切れ味）」）
+    // （適用外の正典は rules/posts.md「X短文（観察とコメント）」）
     quote: '',
     self_replies: [],
     image_prompt: '',
