@@ -27,6 +27,54 @@
 
 ---
 
+## 【noteセッションへ】th_01〜th_07 の添削で、紐づくnote2本がずれた（2026-09-15 起票・35投稿セッションからの引き継ぎ）
+
+Threads th_01〜th_07 をCocoの添削で直した。**このうちnoteが紐づくのは funnel の th_03 と th_05 の2本。**
+`note_2026-09-15_undeclared-line`（th_03）は 2026-09-14 に一度直してもらったが、**残り2点ある。**
+
+### 指示文（noteセッションに貼る・一度きり）
+
+```
+9/15週のnote2本を、直したThreads本文に合わせてください。
+対象：notes/note_2026-09-15_undeclared-line.json（funnel_targets: th_03）
+　　　notes/note_2026-09-16_not-deciding-yet.json（funnel_targets: th_05）
+
+【最重要】作り方と検査の正典は rules/note.md と rules/check.md です。
+この指示文にルールを書きません。必ずファイルを読んでください。
+投稿側（posts/week_2026_09_15_2026_09_21.json）は読むだけ。書き換えないでください。
+
+■ 直すもの（実物を突き合わせて確認したずれ）
+
+1. not-deciding-yet（th_05）content_markdown / content_html の
+   「見極める時期にも、名前はある。決めていないのではなく、いまはまだ見極めの時期というだけ。」
+   → 投稿のひとことが「決めない時期にも、名前はある。」から
+     「ときめかない日は、見極めの日。」に変わった。noteが消えた一行を引用している状態
+
+2. undeclared-line（th_03）sns_hooks.x の「決めた線が揺れた時の戻り方」
+   → 同じファイルの description・framework・promise_map は
+     「決めた予定を崩した時の戻し方」に直っているが、sns_hooks.x だけ旧版のまま
+
+■ 判断が要るもの（直すかどうかはnoteセッションが決める。迷えばCocoに聞く）
+
+3. undeclared-line（th_03）の title・echoed_scene・content_markdown 冒頭が
+   「曖昧なままには戻らない」「抜け出せずにいる」で始まっている。
+   投稿の1行目は「それだけ大切な人に出逢えたということ」＝肯定から入る形に変わったので、
+   投稿からnoteへ来た読者が、同じ話だと分かりにくい可能性がある。
+   ただし「曖昧なままには戻らない」は E287 の言葉なので、
+   残すか、有料側へ下げるかの判断が要る（rules/source.md「素材の言葉を変えない」）
+
+4. th_05 の締めが「見極めた先は、一緒にいなくても幸せで、一緒にいるとさらに幸せと思える
+   相手と出逢える。」に変わっている。not-deciding-yet の outcome_promise は
+   見切り方までで止まっていて、この先が入っていない。足すかどうかの判断
+
+■ 触らないもの
+・posts/week_2026_09_15_2026_09_21.json（35投稿セッションの持ち場）
+・th_09（small-before-it-piles）と th_11（different-relationship）
+  ——この2本の投稿は本文を直していないので、noteもそのまま
+・X由来のnote4本（handoff-morning・load-shows-first・leave-what-decided・two-options-excuse）
+  ——2026-09-14 の引き継ぎぶん。今回の対象ではない
+```
+
 ## 【X短文セッション⑥-bへ】9/15週のX短文14本は、本文が変わったので選び直しが要る（2026-09-14 起票・持ち場外からの引き継ぎ）
 
 9/15週のX本文14本を Coco の添削で作り直した（`posts/week_2026_09_15_2026_09_21.json`）。
