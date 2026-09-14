@@ -22,7 +22,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) resting calmly beside her; they share a quiet moment; one hand resting on a closed folder, the other turned upward as if placing a single sentence before speaking; a quiet engawa facing a small garden; soft morning light. Refined palette of pale ash blue, muted sage-grey, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🐢しずく｜追及に聞こえたかどうかの記録は、相手の側にしかない。\n最後に「詰められた」と言われたのは、どの場面？"
-      ]
+      ],
+      "x_short": "身構えている相手には、丁寧に教えても追及に聞こえる。\n前置きを一つ置いた日は、最後まで話が続いた。置かない日は途中で切れた👸"
     },
     {
       "id": "x_02",
@@ -39,7 +40,8 @@
       "self_replies": [
         "🕊ひより｜困る前に助けると、困らないから直らない。\nいま、いちばん長く自分の机に乗っている一件は？",
         "先回りをやめた翌朝に何が戻ってくるかと、戻ってこなかった時に置く一行をnoteに書きました。抱え直さずに待てる期間の見方まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-      ]
+      ],
+      "x_short": "補うのをやめた日から、日程はその人が出すものになる。\n責任者が出すものか、こちらが出すものか。そこで分かれる🐢"
     },
     {
       "id": "x_03",
@@ -72,7 +74,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori) perched near her shoulder; they share a quiet moment; her hand closing a folder without opening it again, shoulders lowered; a night room with a paper lantern and a harvest moon in the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🕊ひより｜同意で受けると、相手の次の一手が余る。\nいちばん長く言い返し続けている相手は、誰？"
-      ]
+      ],
+      "x_short": "批判は、押し返すものがないと押す先をなくす。\n土俵に上がるかどうか、そこは先に決めておける🕊"
     },
     {
       "id": "x_05",
@@ -89,7 +92,8 @@
       "self_replies": [
         "🐢しずく｜言い返すか黙るかの前に、残すか残さないかがある。\n今週いちばん飲み込んだのは、どの場面？",
         "言い返せなかった翌朝にどの一行を残すかと、残した一行が使われなかった時の扱いをnoteに書きました。三回目で何が変わるかまで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-      ]
+      ],
+      "x_short": "反論できずに黙った回にも、置き場所はある。\n判断と、決まったこと。残せるのは後ろのほう🐢"
     },
     {
       "id": "x_06",
@@ -105,7 +109,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) resting calmly beside her; they share a quiet moment; a single sheet of printed conditions held out at arm's length, her expression even; a night office corner with a paper lantern and a dragonfly ornament; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🕊ひより｜条件が先にあると、断る役をこちらが引き受けずに済む。\nいま、断り方をいちばん迷っている一件は？"
-      ]
+      ],
+      "x_short": "決めてもらう形にすると、断った人が消える。\n条件だけ並べた回は、断られた記憶になってなかった👸"
     },
     {
       "id": "x_07",
@@ -121,7 +126,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with cosmos flower pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks curled close to her; they share a quiet moment; her hand setting one finished document aside and reaching for a blank sheet; an early morning desk by a window with cosmos outside; soft morning light. Refined palette of pale celadon, soft steel blue, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🐢しずく｜取り返した一件と、次に出した一件は、重さが違う。\n取り返しにいって、実際に戻ってきたものは何だった？"
-      ]
+      ],
+      "x_short": "横取りで減るのは、名前のほうだけ。\n取り返したくなるのは、手をかけた一件だからかも🐈‍⬛"
     },
     {
       "id": "x_08",
@@ -138,7 +144,8 @@
       "self_replies": [
         "🕊ひより｜答えを聞くためではなく、流すために聞く質問がある。\nいちばん長く同じ理由が続いている案件は、どれ？",
         "言い訳を聞いた面談のあとに二つ目へ何を置くかと、二つとも断られた時の三つ目の出し方をnoteに書きました。選んだあとに結果が動かない時の見方まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-      ]
+      ],
+      "x_short": "詰めると言い訳が育ち、流すと来月また同じことが起きる。\n二つ出して選んでもらった回は、結果を自分で持って帰ってた👸"
     },
     {
       "id": "x_09",
@@ -154,7 +161,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with small hagi sprig pattern, seen from the shoulders up together with a small wise turtle (Shizuku), a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks, and a small soft white bird (Hiyori) all together; they share a quiet moment; her hand raised in a small greeting, turned toward someone just out of frame; an early morning entrance with hagi by the door; soft morning light. Refined palette of pale ash blue, muted sage-grey, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🐢しずく｜選んで言うと、その言葉に評価が混ざる。\n今週いちばん自然に出た「ありがとう」は、誰に？"
-      ]
+      ],
+      "x_short": "よくやったを選んで言うから、選ばれなかった人が生まれる。\n入ったばかりの人にも、毎回言うことにしてる👸"
     },
     {
       "id": "x_10",
@@ -170,7 +178,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks settled beside her; they share a quiet moment; her hand closing a locker door quietly, coat already over her arm; a night hallway with a single lamp and a harvest moon through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🕊ひより｜職場は、話せる人がいる前提で回っていない。\n職場で話す相手を、何で選んでいる？"
-      ]
+      ],
+      "x_short": "本音を話せる相手がいないのは、欠けている状態ではない。\n話す相手は、仕事が回るかで選んできた。それで回ってる👸"
     },
     {
       "id": "x_11",
@@ -186,7 +195,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori) close by; they share a quiet moment; one key set down on the table between two seats, her hand already away from it; a morning room with cosmos in a small cup; soft morning light. Refined palette of pale celadon, soft steel blue, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🐢しずく｜使うかどうかを決めない支援は、貸しにならない。\n最後に「使っていいよ」と言えたのは、どの場面？"
-      ]
+      ],
+      "x_short": "使った側も使わなかった側も、貸しは負っていない。\n許可だけ出して、あとは本人にまかせてる。すぐ使った人も、使わなかった人もいた👸"
     },
     {
       "id": "x_12",
@@ -218,7 +228,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori) perched near her shoulder; they share a quiet moment; her hand resting on a closed file she does not open, chair turned toward the door; a morning meeting room with cosmos on the sill; soft morning light. Refined palette of pale ash blue, muted sage-grey, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🐢しずく｜聞かないと決めた範囲があると、聞ける話が増える。\n今週、中身に入らずに済ませたのはどの件？"
-      ]
+      ],
+      "x_short": "済んだ件の中身に入ると、その人はもう何も言わなくなる。\n済んだ件と、これから先。動かせるのは後ろだけ🐢"
     },
     {
       "id": "x_14",
@@ -234,7 +245,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with small hagi sprig pattern, seen from the shoulders up together with a small wise turtle (Shizuku), a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks, and a small soft white bird (Hiyori) all together; they share a quiet moment; her hand turning a calendar page forward, unhurried; a night window with a harvest moon and susuki silhouettes; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, and cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🕊ひより｜言い返した予測は残る。期限切れになった予測は消える。\nいちばん長く覚えている「どうせ」は、誰の言葉？"
-      ]
+      ],
+      "x_short": "「どうせ続かない」は、だめにならない年が続くと静かに切れる。\n何年も残ってるのは、本気でやってきたからかも🐈‍⬛"
     },
     {
       "id": "th_01",
