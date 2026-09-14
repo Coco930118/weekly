@@ -224,6 +224,12 @@ def main(path):
     # 「〜ましょう」は活用の頭を固定しない（「口に出してみましょう」は「しましょう」を含まない）。
     # 禁止語を動詞で持つのと同じ理由——書き手は活用して書く（BANNED_RE のコメント参照）
     ADVICE = ['ましょう', 'すべき', 'ほうがいい', 'ください', '必要があります', 'なさい']
+    # 上から目線は助言形だけではない（2026-09-14 Coco指摘）。点をつける側に立つ評価語と、
+    # 一般化の断定でも同じように出る。正典は rules/posts.md「X短文」書き方5・6。
+    # 「すごい」は入れない——Cocoの実物の返信が「すごいことですよね」の形で肯定に使っていて、
+    # 拾うと正しい側を弾く（BANNED の STYLE_ONLY と同じ考え方で、語ではなく立ち位置で分ける）
+    JUDGE = ['えらい', '偉い', '立派', 'さすが', '感心', 'よくできて']
+    GENERAL = ['みんな', '普通は', '当然', '絶対', 'なものです', 'に決まって']
     xs_speaker = collections.Counter()
     for p in X:
         s_raw = (p.get('x_short') or '').strip()
@@ -239,6 +245,10 @@ def main(path):
         if hit: ng(p['id'], 'X短文に禁止語', hit)
         adv = [w for w in ADVICE if w in flat]
         if adv: ng(p['id'], 'X短文が助言の形（上から目線・押し付け）', adv)
+        jd = [w for w in JUDGE if w in flat]
+        if jd: ng(p['id'], 'X短文が評価の語（肯定は評価ではなく事実で置く）', jd)
+        gn = [w for w in GENERAL if w in flat]
+        if gn: ng(p['id'], 'X短文が一般化の断定（押し付けになる）', gn)
         if new_form:
             if not (XS_MIN <= n <= XS_MAX):
                 ng(p['id'], f'X短文が{n}字（{XS_MIN}〜{XS_MAX}字）', flat)
