@@ -85,7 +85,7 @@ rules/posts.md「X短文（観察とコメント）」が正典です。この�
 funnel4本（x_02・x_03・x_05・x_08）の返信2（約束）が変わり、対応するnoteの`promise_map`と食い違った。
 `python3 tools/note_check.py --week 2026-09-15_2026-09-21` が要修正6件を検出している（x_08は0件）。
 
-- [ ] **x_03（`notes/note_2026-09-16_dated-line.json`）がいちばん大きい。投稿の主題そのものが変わっている。** 旧x_03は「面談で話すことがない／記録を面談で出せる形にする」だったが、いまは「手が止まる日＝負荷が先に出た日の見分け方（仕事かプライベートか）・頼るか自分でやるか」に差し替わっている。noteのtitle・description・framework・practice_tool・outcome_promise・episode_ref・本文すべてが旧テーマを指しており、**`promise_map`の書き換えだけでは足りない。主題ごと作り直しが要る**
+- [ ] **x_03（`notes/note_2026-09-16_load-shows-first.json`）がいちばん大きい。投稿の主題そのものが変わっている。** 旧x_03は「面談で話すことがない／記録を面談で出せる形にする」だったが、いまは「手が止まる日＝負荷が先に出た日の見分け方（仕事かプライベートか）・頼るか自分でやるか」に差し替わっている。noteのtitle・description・framework・practice_tool・outcome_promise・episode_ref・本文すべてが旧テーマを指しており、**`promise_map`の書き換えだけでは足りない。主題ごと作り直しが要る**
 - [ ] **x_02（`notes/note_2026-09-15_handoff-morning.json`）は主題は同じ（先回りをやめる）だが、約束の中身が変わった。** 旧promiseは「先回りをやめた翌朝に戻ってくるもの」だったが、いまの投稿の約束は「部下に戻すときと上司に戻すときの戻し方の違い」＋「戻したのに動かなかった時に置く一行」＋「抱え直さずに待てる期間の見方」。**「戻す相手が部下か上司かで戻し方が変わる」という軸がnote側に無い可能性が高い**（本文を読んで確認すること）。**公開日が今日（2026-09-15）なので最優先で見る**
 - [ ] **x_05（`notes/note_2026-09-17_leave-what-decided.json`）は主題・約束の骨格は同じだが、語が変わった。** Coco決定でXの本文から「残る／残す」が一旦禁止された（commit `1eb9f9d`。**X限定の暫定ルールで、noteへの遡及は指示されていない**）。投稿の約束は「書いておくか」「書いた一行」に変わったが、noteのtitle・description・framework・promise_mapは「残すか」「残した一行」のまま。**語を投稿に合わせて『書く』系へ統一するか、noteは『残す』のままにするかはCocoの好みの判断。**（`rules/note.md` の禁止語に「残る」は入っていないため、note側の「残す」自体はルール違反ではない）
 - [ ] **x_08（`notes/note_2026-09-18_two-options-excuse.json`）は確認のみでよい。** `note_check.py`で0件、promise_mapと投稿の約束が完全一致している
@@ -95,7 +95,7 @@ funnel4本（x_02・x_03・x_05・x_08）の返信2（約束）が変わり、�
 ```
 9/15週のfunnel note4本を、修正済みのX投稿の約束に合わせ直してください。
 対象：notes/note_2026-09-15_handoff-morning.json（x_02）
-      notes/note_2026-09-16_dated-line.json（x_03）
+      notes/note_2026-09-16_load-shows-first.json（x_03）
       notes/note_2026-09-17_leave-what-decided.json（x_05）
       notes/note_2026-09-18_two-options-excuse.json（x_08・確認のみ）
 
