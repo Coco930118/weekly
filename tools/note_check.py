@@ -20,7 +20,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 禁止語の定義は full_check.py が正典。**ここに複製を置かない**（2026-09-02 統一）。
 # note だけ「渡す／渡し」を参考カウントに回すので、WATASU_RE は下で別に持つ
-from full_check import BANNED
+from full_check import BANNED, ZAN_RE, ZAN_FROM
 # rules/posts.md が禁じているのは**比喩的な用法**だけで、置き換え先は「言う／頼む／話す／送る／伝える」。
 # ところが note では「仕事を人に渡す＝委譲」という**実際の行為**として使われ、130本中11本・
 # 延べ128箇所に出る（記事タイトルにも入っている：「答えを渡すのをやめた日」「教えると、伝わらない。
@@ -122,6 +122,11 @@ def check(d, path, titles):
     body = re.sub(r'「[^」]*」', '', body)   # 読者の声・過去記事タイトルの引用内は文体ルールの対象外
     hit = [w for w in BANNED if w in body]
     if hit: ng(nid, '禁止語', '／'.join(hit))
+    # 「残る／残す」（正典は CLAUDE.md 文体。定義は full_check が持つ）。
+    # **公開日で遡及を切る**——既存115本中84本が当たるので、切らないと一斉に要修正になる
+    if str(d.get('publish_date') or d.get('date') or '') >= ZAN_FROM:
+        z = sorted(set(ZAN_RE.findall(body)))
+        if z: ng(nid, '「残る／残す」（CLAUDE.md 文体）', '／'.join(z))
     watasu = len(re.findall(WATASU_RE, body))   # 参考カウント（比喩かどうかは目視）
 
     # 2 一人称

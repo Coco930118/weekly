@@ -22,6 +22,13 @@ BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れ
 # X診断 09-06「渡っている」が、どちらも要修正のまま無検出で通過）。
 # 書き手は活用して書くのだから、検出も活用形まで見る。
 BANNED_RE = [r'渡[すしせさそっ]']
+# 「残る／残す」の禁止（2026-09-14 Coco決定・恒久ルール・全媒体）。条文の正典は CLAUDE.md「文体」。
+# ここに理由を書かない。持つのは検出のパターンと、適用の開始日だけ。
+# **BANNED に入れていないのは、遡及しないため**——BANNED は日付を見ないので、
+# 入れると過去記事（note 115本中84本）まで一斉に要修正になる。
+# note_check / shindan_check / profile_check はこの2つを import して、各自の日付で当てる。
+ZAN_RE = re.compile(r'残[るらりれっさしせ]')
+ZAN_FROM = '2026-09-15'
 # Xの折り畳み位置（rules/posts.md「折り畳み位置（280幅）までに、判定先出しを言い切る」）。
 # X診断は280幅上限を守っているのに、35投稿のX14本は誰も測っていなかった。
 # 9/1週の実測は522〜770幅＝2.3倍で、折り畳み前に見えるのは6〜7段落中の2〜3段落だけ。
@@ -159,6 +166,9 @@ def main(path):
         hit = [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in t)]
         hit += sorted({m for r in BANNED_RE for m in re.findall(r, t)})
         if hit: ng(p['id'], '禁止語', hit)
+        if p['date'] >= ZAN_FROM:
+            z = sorted(set(ZAN_RE.findall(re.sub(r'「[^」]*」', '', t))))
+            if z: ng(p['id'], '「残る／残す」（CLAUDE.md 文体・2026-09-15から）', z)
         # 混入文字：キリル・ハングルは日本語の投稿に出ない。手打ち経路で紛れると目視で気づけない
         m = re.findall(r'[Ѐ-ӿ가-힣]', t)
         if m: ng(p['id'], '混入文字（キリル・ハングル）', sorted(set(m)))
