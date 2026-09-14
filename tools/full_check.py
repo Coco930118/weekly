@@ -10,7 +10,7 @@
 Claudeはこの出力を使って必ず目視で埋めること。機械チェックだけで
 「全項目クリア」と報告してはいけない（実際にそれで重複を3回見逃した）。
 """
-import json, re, sys, collections, datetime, glob, os, unicodedata
+import json, re, sys, collections, datetime, difflib, glob, os, unicodedata
 import e373
 import maai
 
@@ -27,7 +27,7 @@ BANNED_RE = [r'渡[すしせさそっ]']
 # **BANNED に入れていないのは、遡及しないため**——BANNED は日付を見ないので、
 # 入れると過去記事（note 115本中84本）まで一斉に要修正になる。
 # note_check / shindan_check / profile_check はこの2つを import して、各自の日付で当てる。
-ZAN_RE = re.compile(r'残[るらりれっさしせ]')
+ZAN_RE = re.compile(r'残[るらりれっさしすせそ]')   # 「残す」「残そう」＝す・そ を落としていた（2026-09-14 修正）
 ZAN_FROM = '2026-09-15'
 # Xの折り畳み位置（rules/posts.md「折り畳み位置（280幅）までに、判定先出しを言い切る」）。
 # X診断は280幅上限を守っているのに、35投稿のX14本は誰も測っていなかった。
@@ -229,6 +229,11 @@ def main(path):
     # （9/8週 x_04 の事故は字数・文数・禁止語・重複を全部通っている）。あれは生成ルール側。
     XSHORT_FORM_FROM = '2026-09-15'
     XS_MIN, XS_MAX = 40, 70
+    XS_SIM = 0.5
+    # 語の置き去り検査の除外。**中身を指していない漢語**だけを外す（本文に無くて当然）。
+    # 実測（2026-09-14）：これを入れないと x_05・x_08 の「以外」が要修正で出る
+    XS_STOP = {'以外', '以上', '以下', '場合', '本当', '普通', '一緒', '結局',
+               '最後', '最初', '自体', '一方'}
     CHARS = ['👸', '🐢', '🐈\u200d⬛', '🕊']          # Coco／しずく／しらたま／ひより
     # 上から目線・押し付けの禁止を、機械で見える形に翻訳したもの（rules/posts.md 書き方4）
     # 「〜ましょう」は活用の頭を固定しない（「口に出してみましょう」は「しましょう」を含まない）。
@@ -253,6 +258,9 @@ def main(path):
         hit = [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in flat)]
         hit += sorted({m for r in BANNED_RE for m in re.findall(r, flat)})
         if hit: ng(p['id'], 'X短文に禁止語', hit)
+        if p['date'] >= ZAN_FROM:
+            z = sorted(set(ZAN_RE.findall(re.sub(r'「[^」]*」', '', flat))))
+            if z: ng(p['id'], 'X短文に「残る／残す」（CLAUDE.md 文体）', z)
         adv = [w for w in ADVICE if w in flat]
         if adv: ng(p['id'], 'X短文が助言の形（上から目線・押し付け）', adv)
         jd = [w for w in JUDGE if w in flat]
@@ -272,14 +280,31 @@ def main(path):
                 xs_speaker[spk[0]] += 1
             if sum(flat.count(c) for c in CHARS) > 1:
                 ng(p['id'], 'X短文にキャラの絵文字が2つ以上（末尾に1つだけ）', flat)
-        # 折り畳み内（表示幅 FOLD）の本文と同じ文を使っていないか（新旧どちらの形でも効く）
+        # 折り畳み内（表示幅 FOLD）の本文と、似すぎていないか（新旧どちらの形でも効く）。
+        # **完全一致から類似度に変えた（2026-09-14）。** 語尾だけ変えて使う形が通っていて、
+        # 9/14 の実測で 0.91・0.78・0.73・0.73・0.68 の5本が完全一致検査を素通りした。
+        # 閾値0.5の根拠：**直したあとの14本の最大が0.42**。正しい側を1本も弾かない
+        # **適用は新形式の週から**（XSHORT_FORM_FROM）。9/8週は旧形式・配信済みで、
+        # 類似度で測ると14本中12本が当たる——遡及しない（CLAUDE.md）
+        if not new_form: continue
         cutat = fold_cut(p['content'])
         head = p['content'] if cutat is None else p['content'][:cutat]
-        inside = {x.strip() for x in re.split(r'(?<=。)|\n', head) if x and x.strip()}
+        inside = [x.strip() for x in re.split(r'(?<=。)|\n', head) if x and x.strip()]
         sents = [x.strip() for x in re.split(r'(?<=。)|\n', s_raw) if x and x.strip()]
-        dup = [x for x in sents if x in inside]
-        if dup:
-            ng(p['id'], f'X短文が折り畳み内（{FOLD}幅）の本文と同じ文', dup)
+        for x in sents:
+            hi = max((difflib.SequenceMatcher(None, x, y).ratio() for y in inside), default=0)
+            if hi >= XS_SIM:
+                near = max(inside, key=lambda y: difflib.SequenceMatcher(None, x, y).ratio())
+                ng(p['id'], f'X短文が折り畳み内（{FOLD}幅）の本文と類似 {hi:.2f}'
+                            f'（上限{XS_SIM}）', f'短文「{x}」／本文「{near}」')
+        # 短文の語が、いまの本文に残っているか（2026-09-14 追加）。
+        # **本文が組み直されると、短文だけが古い語を指したまま置き去りになる。**
+        # 9/14 は1日で本文が4回動き、5本がこれで壊れた（補う／置き場所／横取り／言い訳が育つ）。
+        # 拾うのは漢字2字以上・カタカナ2字以上だけ——助詞や活用で誤検出しないため
+        body_all = p['content'] + p.get('quote', '') + ' '.join(p.get('self_replies') or [])
+        for w in set(re.findall(r'[一-龥]{2,}|[ァ-ヶー]{2,}', flat)):
+            if w not in body_all and w not in XS_STOP:
+                ng(p['id'], 'X短文の語が本文に無い（本文が動いて置き去りになっている）', w)
 
     # 3 Threads形式
     for p in TH:
