@@ -161,6 +161,36 @@ def num_check(docs):
     return out
 
 
+def num_same_file(docs):
+    """④ 同じ数値が、**同じファイルの中**で2回以上、規定として立っていないか。
+
+    ②はファイルをまたいだ一致しか見ていない（`len({x[0] for x in v}) < 2: continue`）。
+    そこが 2026-09-15 の実害になった——`rules/posts.md` の点検で人が拾った10件は、
+    **1件も②に出ていない**。候補が36件のまま動かなかったのはそのため。
+    3ファイルを人が通しで読んで初めて出たので、**このままでは再現できない**。
+
+    見出し行は除く（`#`）。**正典側の見出しが数を名前として持っている形**
+    （「同じ構文を週内で3本以上使わない」）は、指す側が数を書き写しても
+    避けようがないため。ポインタ行と、数値を持たない行も除く。
+    """
+    out = []
+    for f, lines in docs.items():
+        where = collections.defaultdict(list)
+        for i, l in enumerate(lines, 1):
+            if l.strip().startswith(('#', '```')):
+                continue
+            if any(p in l for p in POINTER):
+                continue
+            if not any(n in l for n in NORMATIVE):
+                continue
+            for tok in set(NUM.findall(l)):
+                where[tok].append((i, l.strip()))
+        for tok, v in sorted(where.items()):
+            if 2 <= len(v) <= RARE:
+                out.append((rel(f), tok, v))
+    return out
+
+
 # ─────────────────────────────────────────────
 # ③ 近い文が、別のファイルで復唱されていないか
 # ─────────────────────────────────────────────
@@ -281,6 +311,21 @@ def main(argv):
         if len(e) > 30:
             print(f'   （ほか {len(e) - 30} 組）')
         n += len(e)
+
+    if not only or '--samefile' in only:
+        d4 = num_same_file(docs)
+        print('\n④ 同じ数値が、同じファイルの中で2回以上、規定として立っていないか')
+        print('   ——②はファイルをまたいだ一致しか見ない。2026-09-15 に人が拾った10件は')
+        print('     1件も②に出なかった。見出し行とポインタ行は除いてある')
+        if not d4:
+            print('   なし')
+        for f, tok, v in d4[:30]:
+            print(f'   ⚠ {f}  {tok}')
+            for i, l in v:
+                print(f'      :{i}  {l[:84]}')
+        if len(d4) > 30:
+            print(f'   （ほか {len(d4) - 30} 組）')
+        n += len(d4)
 
     print(f'\n■ 候補: {n}件')
     print('  **これは候補であって判定ではない。** 片方が正典・片方がポインタなら正しい形。')
