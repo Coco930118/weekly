@@ -112,10 +112,15 @@ def ghost_check(docs):
 
 
 STRIP = re.compile(r'[*`｜|、。「」『』（）()\[\]\s・:：—\-#>＝=／/]')
+# ファイル名・パスは「復唱」ではない。同じファイルを指す行が2箇所にあるのは当たり前で、
+# ③⑦はそこで一致して大量に当たっていた（2026-09-15 実測：③の18件中15件が
+# `reference/weekly_metrics.json` などのパス一致だけで、中身は全部別の話だった）。
+# **比べる前にパスを落とす。** 残りが短すぎる行は、そもそも比べない
+PATH = re.compile(r'[\w/]+\.(?:json|md|py|html|js|css|png|txt)')
 
 
 def norm(s):
-    return STRIP.sub('', s)
+    return STRIP.sub('', PATH.sub('', s))
 
 
 # ─────────────────────────────────────────────

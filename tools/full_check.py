@@ -666,6 +666,7 @@ def main(path):
         for p in posts:
             e = p.get('episode_id')
             if not e or e in exempt: continue
+            # 30日：正典は rules/source.md「直近30日以内に使用したエピソードは除外」
             cut = (datetime.date(*map(int, p['date'].split('-'))) - datetime.timedelta(days=30)).isoformat()
             # 投稿日より前の使用だけ数える（後の週での使用は、その週を検査するときに判定される）
             prev = [x for x in hist.get(e, []) if x < p['date']]
@@ -704,6 +705,7 @@ def main(path):
 
     for p in posts:
         q = p.get('quote', '').rstrip('💎🫶').strip()
+        # 23字・15〜20字：正典は rules/posts.md「〈ひとこと〉の作り方」
         if len(q) > 23:
             ng(p['id'], f'ひとことが{len(q)}字（上限23字・理想15〜20字。縦書き画像で読めなくなる）')
 
@@ -726,6 +728,7 @@ def main(path):
     over200 = [(p['id'], len(p['content'].split('感情はある。')[0].strip().replace('\n', '')))
                for p in TH if len(p['content'].split('感情はある。')[0].strip().replace('\n', '')) > 200]
     if over200:
+        # 150〜200・230：正典は rules/posts.md「拡散帯の勝ち型」
         print(f'  200字超: {len(over200)}本 {over200}（目安150〜200・上限230。削除ではなく統合で縮める）')
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
     print(f'  締めの骨格「〜のは、」: {len(rng)}本/{len(posts)} {rng}（参考・上限未設定。散らす素材は rules/posts.md 命名締めの5型）')
