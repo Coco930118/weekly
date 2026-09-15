@@ -235,6 +235,13 @@ def leak_check(docs):
     for l in cl[0]:
         if l.strip().startswith(('#', '```')):
             continue
+        # **記録の行は読まない。** ⚠️ 行は削除・訂正の記録＝履歴で、規定ではない
+        # （CLAUDE.md「⚠️ 行は記録」）。ここを読むと、削除した数字を
+        # 「CLAUDE.md が持っている値」として数え直して、全ファイルに誤検出が出る
+        # （2026-09-15 実測：150〜200字を削除した記録を書いた直後、その数字で
+        # rules/posts.md の正典3行が候補に上がった）
+        if '⚠️' in l or any(e in l for e in ('実測', '実例', '旧')):
+            continue
         for t in NUM_ANY.findall(l):
             if len(re.sub(r'[^\d]', '', t)) >= 3:
                 toks.add(t)
