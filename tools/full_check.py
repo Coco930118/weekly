@@ -43,6 +43,10 @@ FOLD_FROM = '2026-09-02'
 # 直せる側（CLAUDE.md Wチェック）。実測：9/15週4本・9/8週3本・8/18週2本が該当し、
 # 8/25週と9/1週は0本＝過検出なし。
 GROWTH_FROM = '2026-09-15'
+# 引き算の動詞の用量（正典は rules/posts.md ルール1「既視感ゼロ」）。ここに条文を書かない。
+# 適用は 9/22週から（9/15週は承認済み・配信直前）
+SUBTRACT_VERBS = ['やめ', '畳ん', '畳む', '降ろ', '外す', '外し', '切る', '切っ', '手放']
+SUBTRACT_FROM = '2026-09-22'
 # X投稿の全体の上限（rules/posts.md 同節）。他の枠は全部上限を持っていたのに、
 # X投稿14本だけ定めが無かった（「下書きの半分以下」は相対指定で測れない）。
 # 根拠は「短いほうが伸びる」ではない——それを測ったデータは無い。
@@ -184,8 +188,9 @@ def main(path):
 
     # 1.5 ゼロ主語基本（「わたし」は週2本まで）／効能締めの禁止（2026-08-27 Coco決定）
     # 「わたし」2回以上＝主題がCocoの回（週2本まで）。1回だけ＝「相談＋対応例」型の対応行なので数えない
-    watashi = [p['id'] for p in TH if p['content'].count('わたし') >= 2]
-    if len(watashi) > 2: ng('WEEK', f'Threadsで主題がCocoの回が{len(watashi)}本（「わたし」2回以上・上限2）', watashi)
+    # 射程は**全投稿**（2026-09-15 Coco決定。旧はThreadsだけで、条文は全投稿の節にあった）
+    watashi = [p['id'] for p in posts if p['content'].count('わたし') >= 2]
+    if len(watashi) > 2: ng('WEEK', f'主題がCocoの回が{len(watashi)}本（「わたし」2回以上・上限2）', watashi)
     KOUNO = ['が減る', 'がラクに', 'が楽に', '気持ちが軽', 'しやすくなる', 'がなくなる']
     for p in posts:
         body = p['content'].split('感情はある。')[0].strip()
@@ -489,8 +494,26 @@ def main(path):
     for label, arr in [('X', X), ('Th', TH)]:
         yame = [p['id'] for p in arr if re.search(r'(やめる|やめてみる|やめた)。?.$', p.get('quote', ''))]
         if len(yame) > 2: ng('WEEK', f'{label} quote「やめる」型 {len(yame)}本', yame)
-    ab = [p['id'] for p in TH if re.search(r'[^\n]+でも、[^\n]+でも。|[^\n]+にも、[^\n]+にも。', p['content'])]
-    if len(ab) > 5: ng('WEEK', f'「AでもBでも」構文 {len(ab)}本（上限5）', ab)
+        # 引き算の動詞は本文でも数える（2026-09-15 Coco決定。正典は rules/posts.md ルール1）。
+        # 旧はquoteの「やめる」系3語だけで、**本文も他の動詞も見ていなかった**。
+        # 適用は 2026-09-22 から——9/15週は承認済み・配信直前で、いま当てると壊れる
+        # （実測：9/15週は「やめ」が11本。上限3に対して4倍近い＝これが見えていなかった量）
+        if arr and arr[0]['date'] >= SUBTRACT_FROM:
+            vc = collections.Counter()
+            for p in arr:
+                for v in SUBTRACT_VERBS:
+                    if v in p['content']: vc[v] += 1
+            over = {k: v for k, v in vc.items() if v > 2}
+            if over: ng('WEEK', f'{label} 引き算の動詞が同じ形で3本以上', over)
+    # 「AでもBでも、〜しない」の形＝週3本まで（正典は rules/posts.md ルール3②の⚠️）。
+    # ⚠️ 2026-09-15 に3つ直した：①上限5 → **条文どおり3** ②Threadsだけ → **X含む全投稿**
+    # （条文が挙げている実例が x_11・x_12・x_14＝**Xの回**だった）③検出式。
+    # 旧式 `〜でも、〜でも。` は条文の形と一致しておらず、**一度も発火していなかった**。
+    # 新式は 9/8週 x_11「届いても届かなくても、」x_12「収まっても超えても、」を拾う
+    AB_RE = re.compile(r'(で|て)も[^\n]{0,15}(で|て)も[、。]')
+    ab = [p['id'] for p in posts
+          if any(AB_RE.search(l) for l in [x for x in p['content'].split('\n') if x.strip()][-2:])]
+    if len(ab) > 3: ng('WEEK', f'「AでもBでも」構文 {len(ab)}本（上限3・最終2行）', ab)
     heads = collections.Counter()
     for p in TH:
         l1 = p['content'].split('\n')[0]
