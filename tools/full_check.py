@@ -191,7 +191,9 @@ def main(path):
         body = p['content'].split('感情はある。')[0].strip()
         tail = [l for l in body.split('\n') if l.strip()]
         if tail and any(k in tail[-1] for k in KOUNO):
-            ng(p['id'], '効能で締めている（名前をつける一行にする）', tail[-1][:28])
+            # 締めは「名前をつける一行 → 切り替えた先」の二段（rules/posts.md「終盤の並び」4番）。
+            # 最終行＝切り替えた先は**状態**で書く。効能で書くとここで落ちる
+            ng(p['id'], '効能で締めている（切り替えた先は状態で書く）', tail[-1][:28])
 
     # 2 X形式
     for p in X:
