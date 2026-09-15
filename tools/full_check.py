@@ -10,7 +10,7 @@
 Claudeはこの出力を使って必ず目視で埋めること。機械チェックだけで
 「全項目クリア」と報告してはいけない（実際にそれで重複を3回見逃した）。
 """
-import json, re, sys, collections, datetime, glob, os, unicodedata
+import json, re, sys, collections, datetime, difflib, glob, os, unicodedata
 import e373
 import maai
 
@@ -22,6 +22,13 @@ BANNED = ['設計', '構造', '体制', '仕組み', '熱量', '消耗', '削れ
 # X診断 09-06「渡っている」が、どちらも要修正のまま無検出で通過）。
 # 書き手は活用して書くのだから、検出も活用形まで見る。
 BANNED_RE = [r'渡[すしせさそっ]']
+# 「残る／残す」の禁止（2026-09-14 Coco決定・恒久ルール・全媒体）。条文の正典は CLAUDE.md「文体」。
+# ここに理由を書かない。持つのは検出のパターンと、適用の開始日だけ。
+# **BANNED に入れていないのは、遡及しないため**——BANNED は日付を見ないので、
+# 入れると過去記事（note 115本中84本）まで一斉に要修正になる。
+# note_check / shindan_check / profile_check はこの2つを import して、各自の日付で当てる。
+ZAN_RE = re.compile(r'残[るらりれっさしすせそ]')   # 「残す」「残そう」＝す・そ を落としていた（2026-09-14 修正）
+ZAN_FROM = '2026-09-15'
 # Xの折り畳み位置（rules/posts.md「折り畳み位置（280幅）までに、判定先出しを言い切る」）。
 # X診断は280幅上限を守っているのに、35投稿のX14本は誰も測っていなかった。
 # 9/1週の実測は522〜770幅＝2.3倍で、折り畳み前に見えるのは6〜7段落中の2〜3段落だけ。
@@ -30,6 +37,12 @@ BANNED_RE = [r'渡[すしせさそっ]']
 # 配信済みを直さない原則に、この週かぎりの例外を置いた。9/1（x_01・x_02）は対象外。
 FOLD = 280
 FOLD_FROM = '2026-09-02'
+# 成長物語（「昔は〜だった。今は〜」）の禁止。正典は rules/posts.md「語り手ルール」の
+# 絶対条件（2026-09-12 Coco決定）。ここに条文を複製しない。
+# 適用は 9/15週から——配信済みには遡及しない（CLAUDE.md）が、9/15週は生成済み・未配信で
+# 直せる側（CLAUDE.md Wチェック）。実測：9/15週4本・9/8週3本・8/18週2本が該当し、
+# 8/25週と9/1週は0本＝過検出なし。
+GROWTH_FROM = '2026-09-15'
 # X投稿の全体の上限（rules/posts.md 同節）。他の枠は全部上限を持っていたのに、
 # X投稿14本だけ定めが無かった（「下書きの半分以下」は相対指定で測れない）。
 # 根拠は「短いほうが伸びる」ではない——それを測ったデータは無い。
@@ -127,6 +140,17 @@ def prev_week_file(path):
 def band(hh):
     return 'morning' if hh < 12 else ('evening' if hh < 21 else 'night')
 
+
+def fold_cut(c):
+    """折り畳み（表示幅 FOLD）の内側に入る文字数。全部入るなら None。
+    幅の数え方は1か所だけに置く（折り畳み位置の検査と、X短文の重複検査が同じ境界を見る）"""
+    w = 0
+    for i, ch in enumerate(c):
+        w += 1 if unicodedata.east_asian_width(ch) in 'HNa' or ch == '\n' else 2
+        if w > FOLD:
+            return i
+    return None
+
 def main(path):
     d = json.load(open(path, encoding='utf-8'))
     posts = d['posts']
@@ -142,15 +166,16 @@ def main(path):
         hit = [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in t)]
         hit += sorted({m for r in BANNED_RE for m in re.findall(r, t)})
         if hit: ng(p['id'], '禁止語', hit)
+        if p['date'] >= ZAN_FROM:
+            z = sorted(set(ZAN_RE.findall(re.sub(r'「[^」]*」', '', t))))
+            if z: ng(p['id'], '「残る／残す」（CLAUDE.md 文体・2026-09-15から）', z)
         # 混入文字：キリル・ハングルは日本語の投稿に出ない。手打ち経路で紛れると目視で気づけない
         m = re.findall(r'[Ѐ-ӿ가-힣]', t)
         if m: ng(p['id'], '混入文字（キリル・ハングル）', sorted(set(m)))
         # Xの折り畳み位置。切れ目が段落の途中に落ちていないか（文の途中で切れるのが最悪）
         if p['platform'] == 'X' and p['date'] >= FOLD_FROM:
-            c, w, cutat = p['content'], 0, None
-            for i, ch in enumerate(c):
-                w += 1 if unicodedata.east_asian_width(ch) in 'HNa' or ch == '\n' else 2
-                if w > FOLD: cutat = i; break
+            c = p['content']
+            cutat = fold_cut(c)
             if cutat is not None:
                 tail = c[:cutat].rsplit('\n', 1)[-1].strip()
                 if tail and not tail.endswith(('。', '？', '?', '！', '!')):
@@ -173,7 +198,7 @@ def main(path):
         l1 = p['content'].split('\n')[0]
         last = p['content'].strip().split('\n')[-1]
         naked = re.sub(r'「[^」]*」', '', p['content'])
-        # ルール2（2026-09-07 改定）＝1行目は2形。「」引用と、主語なしの「読者の身体が知っている瞬間」。
+        # ルール2（2026-09-13 改定）＝1行目は条件＋決断。条件の作り方が「」引用と、主語なしの「読者の身体が知っている瞬間」。
         # 旧実装は「」で始まらなければ要修正としており、**正典が認めた側の形を弾いていた**。
         # どちらの形かは意味の判断なので機械化しない。機械が見るのは、正典が名指しで
         # 廃止した「受け口」と「判定の額縁」が冒頭2行に残っていないかだけ。
@@ -188,6 +213,98 @@ def main(path):
         if len(lines) > 7: ng(p['id'], f'X本文が{len(lines)}行（5〜7行に圧縮する）')
         if p['date'] >= FOLD_FROM and len(p['content']) > X_MAX:
             ng(p['id'], f'X本文が{len(p["content"])}字（上限{X_MAX}）。型は266字で成立している（x_05）')
+
+    # 2.5 X短文（観察とコメント）。正典は rules/posts.md「X短文（観察とコメント）」。
+    # ここに条文を複製しない。
+    # runbook ⑥-b の目視「本文の1行目と同じ文になっていないか照合する」をここへ移した
+    # （2026-09-13 Coco決定。目視は1つ減る）。1行目だけを見ていたので、2行目や3段落目を
+    # そのまま使う形が通っていた——9/8週の初稿では14本中7本が該当していた。
+    # 見るのは折り畳み（表示幅 FOLD）の内側全部。**外側は先出しの価値があるので対象にしない**。
+    #
+    # ⚠️ **2026-09-14 Coco決定で形が変わった。** 旧〈症状〉＋〈観察〉の二文30〜40字 →
+    # 〈観察〉＋〈キャラのコメント〉40〜70字。旧基準（2文・30〜40字）はここから削除した。
+    # 新形式は 9/15週から。**9/8週の14本は旧形式のまま残す**（遡及しない・CLAUDE.md）。
+    #
+    # ⚠️ **観察が本文と逆側の条件から来ていないかは、ここでは見えない**
+    # （9/8週 x_04 の事故は字数・文数・禁止語・重複を全部通っている）。あれは生成ルール側。
+    XSHORT_FORM_FROM = '2026-09-15'
+    XS_MIN, XS_MAX = 40, 70
+    XS_SIM = 0.5
+    # 語の置き去り検査の除外。**中身を指していない漢語**だけを外す（本文に無くて当然）。
+    # 実測（2026-09-14）：これを入れないと x_05・x_08 の「以外」が要修正で出る
+    XS_STOP = {'以外', '以上', '以下', '場合', '本当', '普通', '一緒', '結局',
+               '最後', '最初', '自体', '一方'}
+    CHARS = ['👸', '🐢', '🐈\u200d⬛', '🕊']          # Coco／しずく／しらたま／ひより
+    # 上から目線・押し付けの禁止を、機械で見える形に翻訳したもの（rules/posts.md 書き方4）
+    # 「〜ましょう」は活用の頭を固定しない（「口に出してみましょう」は「しましょう」を含まない）。
+    # 禁止語を動詞で持つのと同じ理由——書き手は活用して書く（BANNED_RE のコメント参照）
+    ADVICE = ['ましょう', 'すべき', 'ほうがいい', 'ください', '必要があります', 'なさい']
+    # 上から目線は助言形だけではない（2026-09-14 Coco指摘）。点をつける側に立つ評価語と、
+    # 一般化の断定でも同じように出る。正典は rules/posts.md「X短文」書き方5・6。
+    # 「すごい」は入れない——Cocoの実物の返信が「すごいことですよね」の形で肯定に使っていて、
+    # 拾うと正しい側を弾く（BANNED の STYLE_ONLY と同じ考え方で、語ではなく立ち位置で分ける）
+    JUDGE = ['えらい', '偉い', '立派', 'さすが', '感心', 'よくできて']
+    GENERAL = ['みんな', '普通は', '当然', '絶対', 'なものです', 'に決まって']
+    xs_speaker = collections.Counter()
+    for p in X:
+        s_raw = (p.get('x_short') or '').strip()
+        if not s_raw: continue
+        new_form = p['date'] >= XSHORT_FORM_FROM
+        flat = s_raw.replace('\n', '')
+        n = len(flat)
+        # 禁止語・AI定型は x_short も見る（2026-09-14 追加。それまで content/quote/self_replies
+        # しか見ておらず、短文だけが素通りしていた）
+        naked = re.sub(r'「[^」]*」', '', flat)
+        hit = [w for w in BANNED if (w in naked if w in STYLE_ONLY else w in flat)]
+        hit += sorted({m for r in BANNED_RE for m in re.findall(r, flat)})
+        if hit: ng(p['id'], 'X短文に禁止語', hit)
+        if p['date'] >= ZAN_FROM:
+            z = sorted(set(ZAN_RE.findall(re.sub(r'「[^」]*」', '', flat))))
+            if z: ng(p['id'], 'X短文に「残る／残す」（CLAUDE.md 文体）', z)
+        adv = [w for w in ADVICE if w in flat]
+        if adv: ng(p['id'], 'X短文が助言の形（上から目線・押し付け）', adv)
+        jd = [w for w in JUDGE if w in flat]
+        if jd: ng(p['id'], 'X短文が評価の語（肯定は評価ではなく事実で置く）', jd)
+        gn = [w for w in GENERAL if w in flat]
+        if gn: ng(p['id'], 'X短文が一般化の断定（押し付けになる）', gn)
+        if new_form:
+            if not (XS_MIN <= n <= XS_MAX):
+                ng(p['id'], f'X短文が{n}字（{XS_MIN}〜{XS_MAX}字）', flat)
+            lines = [l for l in s_raw.split('\n') if l.strip()]
+            if len(lines) != 2:
+                ng(p['id'], f'X短文が{len(lines)}行（観察とコメントの2行）', flat)
+            spk = [c for c in CHARS if flat.endswith(c)]
+            if not spk:
+                ng(p['id'], 'X短文の末尾にキャラの絵文字がない（👸🐢🐈‍⬛🕊のどれか1つ）', flat[-12:])
+            else:
+                xs_speaker[spk[0]] += 1
+            if sum(flat.count(c) for c in CHARS) > 1:
+                ng(p['id'], 'X短文にキャラの絵文字が2つ以上（末尾に1つだけ）', flat)
+        # 折り畳み内（表示幅 FOLD）の本文と、似すぎていないか（新旧どちらの形でも効く）。
+        # **完全一致から類似度に変えた（2026-09-14）。** 語尾だけ変えて使う形が通っていて、
+        # 9/14 の実測で 0.91・0.78・0.73・0.73・0.68 の5本が完全一致検査を素通りした。
+        # 閾値0.5の根拠：**直したあとの14本の最大が0.42**。正しい側を1本も弾かない
+        # **適用は新形式の週から**（XSHORT_FORM_FROM）。9/8週は旧形式・配信済みで、
+        # 類似度で測ると14本中12本が当たる——遡及しない（CLAUDE.md）
+        if not new_form: continue
+        cutat = fold_cut(p['content'])
+        head = p['content'] if cutat is None else p['content'][:cutat]
+        inside = [x.strip() for x in re.split(r'(?<=。)|\n', head) if x and x.strip()]
+        sents = [x.strip() for x in re.split(r'(?<=。)|\n', s_raw) if x and x.strip()]
+        for x in sents:
+            hi = max((difflib.SequenceMatcher(None, x, y).ratio() for y in inside), default=0)
+            if hi >= XS_SIM:
+                near = max(inside, key=lambda y: difflib.SequenceMatcher(None, x, y).ratio())
+                ng(p['id'], f'X短文が折り畳み内（{FOLD}幅）の本文と類似 {hi:.2f}'
+                            f'（上限{XS_SIM}）', f'短文「{x}」／本文「{near}」')
+        # 短文の語が、いまの本文に残っているか（2026-09-14 追加）。
+        # **本文が組み直されると、短文だけが古い語を指したまま置き去りになる。**
+        # 9/14 は1日で本文が4回動き、5本がこれで壊れた（補う／置き場所／横取り／言い訳が育つ）。
+        # 拾うのは漢字2字以上・カタカナ2字以上だけ——助詞や活用で誤検出しないため
+        body_all = p['content'] + p.get('quote', '') + ' '.join(p.get('self_replies') or [])
+        for w in set(re.findall(r'[一-龥]{2,}|[ァ-ヶー]{2,}', flat)):
+            if w not in body_all and w not in XS_STOP:
+                ng(p['id'], 'X短文の語が本文に無い（本文が動いて置き去りになっている）', w)
 
     # 3 Threads形式
     for p in TH:
@@ -528,7 +645,18 @@ def main(path):
         elif re.search(r'(た。|かった。|ていた。|だった。)$', tail): pov = '?曖昧'
         else: pov = '③観察'
         if pov == '?曖昧':
-            ng(p['id'], '目線が曖昧（ゼロ主語＋過去形＝わたしの話に読まれる。伝聞マーカーか「昔は/わたしは」を付ける）')
+            # 直し方の正典は rules/posts.md「目線の一貫性」。
+            # 「昔は」は 2026-09-12 に禁止（同ファイル「絶対条件」＝成長物語にしない）ので勧めない。
+            ng(p['id'], '目線が曖昧（ゼロ主語＋過去形＝わたしの話に読まれる。伝聞マーカーか「わたしは」を付ける）')
+    for p in posts:
+        if p['date'] < GROWTH_FROM: continue
+        body = p.get('content', '')
+        head = [l for l in body.split('\n') if l.strip()]
+        if head and head[0].lstrip().startswith('昔は'):
+            ng(p['id'], '1行目が「昔は」開き（成長物語にしない・2026-09-12）')
+        elif '昔は' in body and ('今は' in body or 'いまは' in body):
+            ng(p['id'], '「昔は」と「今は」を対で並べている（成長物語にしない・2026-09-12）')
+
     for p in posts:
         q = p.get('quote', '').rstrip('💎🫶').strip()
         if len(q) > 23:
@@ -542,6 +670,11 @@ def main(path):
         print('■ 機械チェック: 要修正 0件')
 
     print(f'\n■ 参考カウント')
+    # Xの1行目の形（rules/posts.md ルール2＝条件＋決断。正典はあちら。ここに条文を書かない）
+    quoted = [p['id'] for p in X if p['content'].split('\n')[0].startswith('「')]
+    moment = [p['id'] for p in X if not p['content'].split('\n')[0].startswith('「')]
+    print(f'  Xの1行目: 「」読者の声 {len(quoted)}本 / それ以外 {len(moment)}本 {moment}'
+          f'（条件の作り方は2つ。**決断が無い1行目は目視で弾く**・rules/posts.md ルール2）')
     print(f'  ウィット一滴 候補: {len(wit)}本 {wit}（目安5〜6・**目視で確定すること**）')
     print(f'    ※語が当たっただけの空振りが混ざる（例：「それだけ。」に当たるが生活の描写ゼロ）。'
           f'目安の判定は目視の実数で行う')
@@ -552,6 +685,12 @@ def main(path):
     print(f'  佇まい枠 候補: {len(tatazumai)}本 {tatazumai}（目安2〜3・要目視）')
     print(f'  締めの骨格「〜のは、」: {len(rng)}本/{len(posts)} {rng}（参考・上限未設定。散らす素材は rules/posts.md 命名締めの5型）')
     print(f'  X観察締め: {len(obs)}本 {obs}（上限4）')
+    xs_n = len([p for p in X if (p.get('x_short') or '').strip()])
+    if xs_n:
+        who = '／'.join(f'{k}{v}' for k, v in xs_speaker.most_common()) or '—'
+        print(f'  X短文: {xs_n}本（字数・行数・末尾の絵文字・助言形・禁止語・'
+              f'折り畳み内との重複は上の要修正）／話者: {who}'
+              '（参考・上限未設定。偏りの判断は Coco・CLAUDE.md「実測でしか配分を変えない」）')
     print(f'  主語の引き継ぎ 候補: {len(carry)}本 {carry}'
           f'（rules/posts.md ルール3③「わたしの宣言と、ゼロ主語の両方提示を隣り合わせにしない」・要目視）')
     print(f'  funnel: {[p["id"] for p in fun]}')
@@ -559,18 +698,18 @@ def main(path):
 
     # ===== 判断チェック用の出力（ここを埋めないと完了にしない） =====
     #
-    # 【設計】ここに条件・閾値・型名を書き写さない。出すのは「8つの枠」と
+    # 【設計】ここに条件・閾値・型名を書き写さない。出すのは「9つの枠」と
     # 「その枠を埋めるための材料（機械にしか作れないもの）」だけ。
-    # 判定条件は rules/check.md「目で見る8つ」を見に行かせる。
+    # 判定条件は rules/check.md「目で見る9つ」を見に行かせる。
     # 条文をツールに複製すると、正典を直したときに必ず片方が古くなる
     # （2026-08-31 の整合チェックで、この形の事故を6件処理したばかり）。
     #
     # 旧版は①②③の3ブロックしか出しておらず、check.md が8項目に増えた後も
     # 追随していなかった。ルールはあるのに実行の入口が無い状態で、
-    # ⑤型の充足・⑥数字の全数照合・⑦質問候補・⑧抽象語の置き場所が
+    # ⑤型の充足・⑥数字の全数照合・⑦質問候補・⑧抽象語の置き場所・⑨背中押しが
     # 毎週の運用から落ちていた（9/1週の35投稿に型が1つも残っていなかったのと同じ経路）。
     print('\n' + '=' * 60)
-    print('【判断チェック】機械では判定できない8つ。正典は rules/check.md「目で見る8つ」')
+    print('【判断チェック】機械では判定できない9つ。正典は rules/check.md「目で見る9つ」')
     print('条件はここに書かない。下にあるのは「枠」と「材料」だけ。判定は check.md を見て行う')
     print('=' * 60)
 
@@ -619,6 +758,19 @@ def main(path):
         head = ' / '.join(lines[:2])
         print(f'  {p["id"]}({p["platform"][:1]}) 冒頭｜{head[:40]}')
         print(f'         ひとこと｜{(p.get("quote") or "(なし)")[:40]}')
+
+    # ⑨ 背中押しの一行（2026-09-11 Coco決定・恒久ルール）
+    # 条件の正典は rules/posts.md「背中押しの一行」。ここに条文を書き写さない。
+    # 機械では判定できない（本文に溶けるため語で拾えない）。
+    # 置き場所が固定されていないので、材料は本文まるごとになる。
+    # 末尾だけを出すと、前のほうに置いた回を見落とす。
+    print('\n⑨ 背中押しの一行 — 材料：本文まるごと（置き場所は固定しない）。')
+    print('   全35本に1つあるか／同調になっていないか／週内で形と置き場所が寄っていないか')
+    for p in posts:
+        body = p['content'].split('感情はある。')[0].strip()
+        flat = ' / '.join(l.strip() for l in body.split('\n') if l.strip())
+        print(f'  {p["id"]}({p["platform"][:1]}) {flat}')
+
     return 1 if issues else 0
 
 if __name__ == '__main__':

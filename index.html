@@ -17,6 +17,7 @@
   <nav class="tab-nav">
     <button class="tab-btn active" data-tab="posts">投稿カレンダー</button>
     <button class="tab-btn" data-tab="notes">note</button>
+    <button class="tab-btn" data-tab="docs">申し送り</button>
   </nav>
 
   <!-- Posts section -->
@@ -55,6 +56,17 @@
     <main class="notes-container" id="notesContainer"></main>
   </div>
 
-  <script src="./assets/app.js?v=60"></script>
+  <!-- Docs section（申し送り・やること・指示文） -->
+  <div id="docsSection" hidden>
+    <div class="filters">
+      <div class="filter-row" id="docGroupFilterRow">
+        <span class="filter-label">種別</span>
+      </div>
+    </div>
+    <div class="stats-bar" id="docStatsBar">読み込み中…</div>
+    <main class="notes-container" id="docsContainer"></main>
+  </div>
+
+  <script src="./assets/app.js?v=62"></script>
 </body>
 </html>

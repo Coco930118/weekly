@@ -34,6 +34,32 @@ function escapeHtml(str) {
 // note側（NOTE_V）も 2026-09-03 に同じ形へ寄せた（loadNotes を見て）。
 // 札はもう投稿側にもnote側にも無い。新しく足さない。
 
+// X短文（観察とコメント）は、本文とは別の投稿として1枚のカードにする。
+// 媒体は X のまま（新しいカテゴリを作らない）。時刻はここが持つが、
+// **正典は rules/ops.md「週次スケジュール」**（X短文 06:00／22:00・X本文 08:00／23:00）。
+// 食い違ったら正典を採る。JSONの `x_short` が無い回は、本文カードだけが出る。
+const X_SHORT_SLOT = { morning: '06:00', evening: '22:00' };
+
+function expandXShort(post) {
+  if (post.platform !== 'X' || !post.x_short) return [post];
+  const isMorning = Number(post.time.slice(0, 2)) < 12;
+  const short = {
+    ...post,
+    id: `${post.id}_short`,
+    time: isMorning ? X_SHORT_SLOT.morning : X_SHORT_SLOT.evening,
+    purpose: 'X短文（観察とコメント）',
+    content: post.x_short,
+    // 短文は二文で終わる枠。ひとこと・返信・画像・note導線は持たない
+    // （適用外の正典は rules/posts.md「X短文（観察とコメント）」）
+    quote: '',
+    self_replies: [],
+    image_prompt: '',
+    note_funnel: false
+  };
+  delete short.x_short;
+  return [short, post];
+}
+
 async function loadPosts() {
   const container = document.getElementById('postsContainer');
   container.innerHTML = '<p class="loading">読み込み中…</p>';
@@ -56,6 +82,7 @@ async function loadPosts() {
 
     allPosts = weekDataArr
       .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
+      .flatMap(expandXShort)
       .sort((a, b) => {
         const tA = new Date(`${a.date}T${a.time}:00`);
         const tB = new Date(`${b.date}T${b.time}:00`);
@@ -905,6 +932,115 @@ function renderNoteCard(note) {
     </article>`;
 }
 
+// ─── Docs section（申し送り・やること・指示文）────────────────────────────────
+//
+// 次のセッションに渡すために、まるごとコピーできる状態で置く。
+// 出す並びは `reference/index.json`（ファイルを足したらそこに1行足す。**この配列を
+// コードに持たない**——持つと、申し送りを書くたびにここも直すことになる）。
+// 本文はコピー用にそのまま出す（markdownを整形しない。貼る先で崩れるのを避ける）。
+
+let allDocs = [];
+let docsLoaded = false;
+let activeDocGroup = 'all';
+
+async function loadDocs() {
+  const container = document.getElementById('docsContainer');
+  container.innerHTML = '<p class="loading">読み込み中…</p>';
+
+  try {
+    // 一覧も本文も毎回サーバに聞き直す（投稿・noteと同じ理由。札は置かない）
+    const indexRes = await fetch('./reference/index.json', { cache: 'no-cache' });
+    if (!indexRes.ok) throw new Error('reference/index.json not found');
+    const index = await indexRes.json();
+
+    allDocs = await Promise.all(
+      index.docs.map(async (d) => {
+        const res = await fetch(`./reference/${d.file}`, { cache: 'no-cache' });
+        const text = res.ok ? await res.text() : '';
+        return { ...d, text, title: docTitle(text, d.file) };
+      })
+    );
+
+    docsLoaded = true;
+    renderDocGroupFilter();
+    renderDocs();
+  } catch (err) {
+    container.innerHTML = `<p class="error-state">データの読み込みに失敗しました<br><small>${err.message}</small></p>`;
+  }
+}
+
+// 見出し（# の1行目）をタイトルにする。無ければファイル名
+function docTitle(text, file) {
+  const m = text.match(/^#\s+(.+)$/m);
+  return m ? m[1].trim() : file;
+}
+
+function renderDocGroupFilter() {
+  const row = document.getElementById('docGroupFilterRow');
+  if (!row || row.querySelector('.filter-btn')) return;
+
+  const groups = ['all', ...new Set(allDocs.map(d => d.group))];
+  row.insertAdjacentHTML('beforeend', groups.map(g =>
+    `<button class="filter-btn${g === 'all' ? ' active' : ''}" data-doc-group="${escapeHtml(g)}">${g === 'all' ? '全て' : escapeHtml(g)}</button>`
+  ).join(''));
+
+  row.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn[data-doc-group]');
+    if (!btn) return;
+    row.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeDocGroup = btn.dataset.docGroup;
+    renderDocs();
+  });
+}
+
+function renderDocs() {
+  const container = document.getElementById('docsContainer');
+  const stats = document.getElementById('docStatsBar');
+  const docs = allDocs.filter(d => activeDocGroup === 'all' || d.group === activeDocGroup);
+
+  if (stats) stats.textContent = `${docs.length}件（本文まるごとコピーできます）`;
+
+  if (!docs.length) {
+    container.innerHTML = '<p class="empty-state">該当なし</p>';
+    return;
+  }
+
+  container.innerHTML = docs.map((d, i) => {
+    const chars = d.text.length.toLocaleString();
+    return `
+      <article class="card">
+        <div class="card-header">
+          <div class="card-meta-left">
+            <span class="platform-badge platform-other">${escapeHtml(d.group)}</span>
+            <span class="card-time">${escapeHtml(d.file)}</span>
+          </div>
+          <span class="purpose-badge">${chars}字</span>
+        </div>
+        <div class="card-body">
+          <p class="card-content">${escapeHtml(d.title)}</p>
+          <div class="copy-btn-content">
+            <button class="copy-btn" data-doc-copy="${i}">まるごとコピー</button>
+          </div>
+        </div>
+        <div class="card-section">
+          <div class="card-section-header">
+            <span class="card-section-title">📄 本文を開く</span>
+            <span class="card-section-toggle">▼</span>
+          </div>
+          <div class="card-section-body">
+            <pre class="doc-text">${escapeHtml(d.text)}</pre>
+          </div>
+        </div>
+      </article>`;
+  }).join('');
+
+  // 本文は data 属性に載せず、描画時に配列から引く（申し送りは数万字になる）
+  container.querySelectorAll('[data-doc-copy]').forEach(btn => {
+    btn.dataset.copy = docs[Number(btn.dataset.docCopy)].text;
+  });
+}
+
 // ─── Tab switching ────────────────────────────────────────────────────────────
 
 function setupTabs() {
@@ -921,9 +1057,13 @@ function setupTabs() {
     const tab = btn.dataset.tab;
     document.getElementById('postsSection').hidden = tab !== 'posts';
     document.getElementById('notesSection').hidden = tab !== 'notes';
+    document.getElementById('docsSection').hidden = tab !== 'docs';
 
     if (tab === 'notes' && !notesLoaded) {
       loadNotes();
+    }
+    if (tab === 'docs' && !docsLoaded) {
+      loadDocs();
     }
   });
 }
