@@ -320,6 +320,14 @@ def main(path):
             if w not in body_all and w not in XS_STOP:
                 ng(p['id'], 'X短文の語が本文に無い（本文が動いて置き去りになっている）', w)
 
+    # 語尾は同じ形を3本以上並べない（2026-09-15 Coco指示。正典は rules/posts.md「X短文」）。
+    # 実測：Cocoが選定した10本は語尾が10通りで、一つも重なっていない。
+    # ⚠️ 2026-09-15、xs_tails を数えるだけで**一度も読み出していなかった**（別セッションの点検で発覚）。
+    # ルールが「機械が見ている」と言っているのに機械が見ていない＝CLAUDE.md「機械か、生成か」②の状態
+    for k, v in sorted(xs_tails.items(), key=lambda kv: -kv[1]):
+        if v >= 3:
+            ng('WEEK', f'X短文の語尾「…{k}」が{v}本（同じ語尾は3本以上並べない）')
+
     # 3 Threads形式
     for p in TH:
         last = p['content'].strip().split('\n')[-1]
