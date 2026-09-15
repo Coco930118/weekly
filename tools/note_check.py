@@ -302,15 +302,19 @@ def main(paths):
         c = collections.Counter(r[key] for r in rows if r[key])
         dup = [k for k, v in c.items() if v > lim]
         if dup: ng('週内', f'{name}が重複: ' + ' / '.join(x[:28] for x in dup))
-    # 在り方署名の①定型は週3本まで（広い定義＝語尾「でしかない」で締めるものを全部数える）
+    # 在り方署名の①定型の上限（広い定義＝語尾「でしかない」で締めるものを全部数える）
+    # 正典は rules/note.md「在り方署名の①定型は週3本まで」——**上限の数字はここが持つ**
     # 週ごとに数える。--all で全記事をまとめて数えない。過去分・常設案内は週の単位を持たないので対象外
     # 配信済みの週には遡及しないので、--all では要修正にせず参考として出す
+    SIG_MAX = 3       # ①定型の上限（本／週）
+    WEEK_MIN = 7      # **そろった週だけ判定する。** 生成が途中の週（3〜4本）で上限を
+                      # 当てると、残りを作った時点で消える要修正が出る（週9本が満了）
     weeks = sorted({r['week'] for r in rows if r['week'] and r['week'] != 'standing_guide'})
     for wk in weeks:
         grp = [r for r in rows if r['week'] == wk]
         fixed = [r['nid'] for r in grp if r.get('sig_fixed')]
-        if len(grp) >= 7 and len(fixed) > 3:
-            msg = f'在り方署名の定型（〜でしかない）が{len(fixed)}本（上限3本）: ' + ' / '.join(fixed)
+        if len(grp) >= WEEK_MIN and len(fixed) > SIG_MAX:
+            msg = f'在り方署名の定型（〜でしかない）が{len(fixed)}本（上限{SIG_MAX}本）: ' + ' / '.join(fixed)
             if len(weeks) == 1: ng(wk, msg)
             else: sig_over.append(f'{wk}: {msg}')
 

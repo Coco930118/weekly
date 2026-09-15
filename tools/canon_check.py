@@ -24,6 +24,9 @@ CLAUDE.md「正典はひとつ。復唱しない」の機械側。
     python3 tools/canon_check.py --ghost    # ①だけ（否定した旧指示の生き残り）
     python3 tools/canon_check.py --num      # ②だけ（数値の二重持ち）
     python3 tools/canon_check.py --echo     # ③だけ（近い文の復唱）
+    python3 tools/canon_check.py --samefile # ④だけ（同じファイル内の数値の重複）
+    python3 tools/canon_check.py --pointer  # ⑤だけ（ポインタ行が数値を連れている）
+    python3 tools/canon_check.py --leak     # ⑥だけ（CLAUDE.md の数値の流出）
 """
 import os
 import re
@@ -122,6 +125,8 @@ def norm(s):
 # ことになるので、**取りこぼすほうを選ぶ**（2026-09-02 実測：1桁を入れると
 # 「1本」だけで18行出て、うち規定の二重持ちは0件だった）
 NUM = re.compile(r'(?:週)?\d[\d,]*\d(?:幅|字|本|円|%|人|問|日|回)')
+# ⑥用。1桁も拾う（⑥は3桁以上に自分で絞るので、2桁縛りは要らない）
+NUM_ANY = re.compile(r'\d[\d,]*(?:幅|字|本|円|%|人|問|日|回)')
 # 正典を指している行・履歴を語っている行は数えない
 POINTER = ('正典', '複製を置かない', 'ここに数字を書かない', '実例', '実測',
            '旧', '参考', '根拠', '背景', '——', 'だった')
@@ -158,6 +163,93 @@ def num_check(docs):
         # 検出力ゼロのチェックは、安心だけ配ってこのルールを邪魔する。だから捨てた
         if len(v) <= RARE:
             out.append((tok, v))
+    return out
+
+
+def pointer_num(docs):
+    """⑤ ポインタだと名乗っている行が、数値を連れていないか。
+
+    ②④は `POINTER` に当たる行を**最初に捨てている**（「正典は◯◯」「ここに複製を
+    置かない」と書いてある行は、片付いている印だとみなしていた）。
+    そこが 2026-09-15 の実害になった——`rules/note.md` の点検で人が拾った10件のうち、
+    **6件がこの形**（正典は `CLAUDE.md` と書いてある行が、括弧の中に価格と会員数を
+    連れていた）。②にも④にも1件も出ていない。`rules/posts.md` 96行も同じ形だった。
+
+    **「ここに複製を置かない」と書いた当の行が、複製を持っている。**
+    片付いている印が、いちばん見落とされる。
+
+    実測は除く（表示回数・実際に何本あったか）。**あれは履歴なので古くならない**
+    ——CLAUDE.md「数と一覧は、正典以外に書き写さない」の例外。
+    """
+    # 「この行はポインタです」と名乗っている合図
+    DECLARE = ('正典', '複製を置かない', 'ここに数字を書かない', 'ここに数を書かない',
+               '書き写さない', 'そちらが正典', '複製を置いていない')
+    # 履歴（古くならない）と、数そのものが主題の行は除く
+    EXEMPT = ('実測', '実例', '旧', '履歴', '時点', '閾値はツールが持つ',
+              # **その行自身が正典だと名乗っている**形。数を持っていて正しい
+              'ここが', 'この行が', 'この節が', 'この表')
+    # 正典の**節の名前**が数を含んでいるだけの引用は数えない。
+    # CLAUDE.md「指すときは、数ではなく名前で指す」に従った結果そうなるので、
+    # ここで叩くと「名前で指すな」という逆の指摘になる
+    QUOTE = re.compile(r'(?:正典は|上の|下の)?\s*(?:`[^`]+`)?\s*「[^」]*」')
+    # 履歴の括弧（「（2026-09-13：…）」）。中の数は事故の記録なので古くならない
+    RECORD = re.compile(r'（20\d\d-\d\d-\d\d[^）]*）')
+    out = []
+    for f, lines in docs.items():
+        # 機械（tools/*.py）は値を持ってよい。**コメントに正典の場所を書く**のが
+        # 正しい形なので、ここで叩くと正しい形を叩くことになる
+        if f.endswith('.py'):
+            continue
+        for i, l in enumerate(lines, 1):
+            if l.strip().startswith(('#', '```')):
+                continue
+            if not any(d in l for d in DECLARE):
+                continue
+            if any(e in l for e in EXEMPT):
+                continue
+            toks = sorted(set(NUM.findall(QUOTE.sub('', RECORD.sub('', l)))))
+            if toks:
+                out.append((rel(f), i, toks, l.strip()))
+    return out
+
+
+def leak_check(docs):
+    """⑥ `CLAUDE.md` が持っている珍しい数値が、他のファイルにも立っていないか。
+
+    ②は両方の行が「規定として立っている合図」（上限・まで・固定…）を持つ組しか
+    見ない。**表の行や、理由を述べている行は合図を持たない**ので落ちる。
+    2026-09-15 の実害がまさにそれだった——`rules/note.md` の価格表の行
+    （`| 価格 | 月額1,500円 |`）と会員数の6箇所は、②にも④にも⑤にも出ていない。
+
+    **数値の一覧をここに持たない。** `CLAUDE.md` の本文から拾うので、
+    CLAUDE.md の数字が変われば、この検査が見る数字も一緒に変わる
+    （CLAUDE.md「数と一覧は、正典以外に書き写さない」）。
+
+    **珍しい数値だけを見る**（3桁以上）。1本・3回のような数は主題が違っても
+    必ずぶつかる——②が1桁を捨てたのと同じ理由。
+    """
+    cl = [l for f, l in docs.items() if os.path.basename(f) == 'CLAUDE.md']
+    if not cl:
+        return []
+    toks = set()
+    for l in cl[0]:
+        if l.strip().startswith(('#', '```')):
+            continue
+        for t in NUM_ANY.findall(l):
+            if len(re.sub(r'[^\d]', '', t)) >= 3:
+                toks.add(t)
+    out = []
+    for f, lines in docs.items():
+        if os.path.basename(f) == 'CLAUDE.md' or f.endswith('.py'):
+            continue
+        for i, l in enumerate(lines, 1):
+            if l.strip().startswith(('#', '```')):
+                continue
+            if any(e in l for e in ('実測', '実例', '旧', '履歴', '時点')):
+                continue
+            hit = sorted({t for t in NUM_ANY.findall(l) if t in toks})
+            if hit:
+                out.append((rel(f), i, hit, l.strip()))
     return out
 
 
@@ -326,6 +418,34 @@ def main(argv):
         if len(d4) > 30:
             print(f'   （ほか {len(d4) - 30} 組）')
         n += len(d4)
+
+    if not only or '--pointer' in only:
+        d5 = pointer_num(docs)
+        print('\n⑤ ポインタだと名乗っている行が、数値を連れていないか')
+        print('   ——②④はこの形の行を最初に捨てている。2026-09-15 に人が拾った10件のうち')
+        print('     6件がここだった。「複製を置かない」と書いた当の行が複製を持つ形')
+        if not d5:
+            print('   なし')
+        for f, i, toks, l in d5[:30]:
+            print(f'   ⚠ {f}:{i}  {"・".join(toks)}')
+            print(f'      {l[:96]}')
+        if len(d5) > 30:
+            print(f'   （ほか {len(d5) - 30} 行）')
+        n += len(d5)
+
+    if not only or '--leak' in only:
+        d6 = leak_check(docs)
+        print('\n⑥ `CLAUDE.md` が持つ珍しい数値（3桁以上）が、他のファイルにも立っていないか')
+        print('   ——②は「上限・まで・固定」の合図を持つ行しか見ない。表の行と理由の行は')
+        print('     合図を持たないので落ちる。2026-09-15 の価格・会員数6件がこれだった')
+        if not d6:
+            print('   なし')
+        for f, i, hit, l in d6[:40]:
+            print(f'   ⚠ {f}:{i}  {"・".join(hit)}')
+            print(f'      {l[:96]}')
+        if len(d6) > 40:
+            print(f'   （ほか {len(d6) - 40} 行）')
+        n += len(d6)
 
     print(f'\n■ 候補: {n}件')
     print('  **これは候補であって判定ではない。** 片方が正典・片方がポインタなら正しい形。')
