@@ -27,6 +27,7 @@ CLAUDE.md「正典はひとつ。復唱しない」の機械側。
     python3 tools/canon_check.py --samefile # ④だけ（同じファイル内の数値の重複）
     python3 tools/canon_check.py --pointer  # ⑤だけ（ポインタ行が数値を連れている）
     python3 tools/canon_check.py --leak     # ⑥だけ（CLAUDE.md の数値の流出）
+    python3 tools/canon_check.py --selfecho # ⑦だけ（同じファイル内の復唱）
 """
 import os
 import re
@@ -211,6 +212,78 @@ def pointer_num(docs):
             if toks:
                 out.append((rel(f), i, toks, l.strip()))
     return out
+
+
+def self_echo(docs, thresh=0.70, minlen=30):
+    """⑦ 近い文が、**同じファイルの中**で繰り返されていないか。
+
+    ③は同じファイル内の組を捨てている（`if rows[a][0] == rows[b][0]: continue`）。
+    ②と④で同じことが起きたのと同じ穴で、**毎回読むファイルの中の復唱**は
+    ここでしか見えない。2026-09-15 実測：`rules/note.md` が
+    「content_markdown と content_html の両方に入れる」を**5箇所**で言い切っていた。
+
+    **毎回読むファイルだけを見る**（`CLAUDE.md` と `rules/`）。
+    `reference/` は履歴と指示文で、同じ話が何度も出るのが正常。
+
+    ③より閾値を上げてある（0.70）。同じファイルの中は語彙がそろうので、
+    ③の 0.62 だと節の入れ子で当たり前に当たる。
+    """
+    out = []
+    for f, lines in docs.items():
+        if not f.endswith('.md'):
+            continue
+        if os.sep + 'rules' + os.sep not in f and os.path.basename(f) != 'CLAUDE.md':
+            continue
+        rows = []
+        fence = 0          # ``` の中にいるか。0 なら外、>0 ならその開始行
+        for i, l in enumerate(lines, 1):
+            s = l.strip()
+            if s.startswith('```'):
+                fence = 0 if fence else i
+                continue
+            if s.startswith(('#', '|')):
+                continue
+            n = norm(s)
+            if len(n) < minlen:
+                continue
+            # 注記は「この行の直前2行」を見る。ただし **``` の中にいるときは
+            # ブロックの開始行の直前を見る**——貼り付け用の見本は1行ではなく
+            # ブロック単位で置かれるので、注記もブロックの上に付く
+            # （2026-09-15：`rules/note.md` の💼組織の見本に注記を足しても、
+            #  注記がブロックの4行上にあって届いていなかった）
+            top = fence if fence else i
+            near = ' '.join(lines[max(0, top - 3):top]) + ' ' + l
+            rows.append((i, s, n, any(m in near for m in SETTLED)))
+        idx = collections.defaultdict(set)
+        for k, (_, _, n, _) in enumerate(rows):
+            for a in range(0, len(n) - 11, 4):
+                idx[n[a:a + 12]].add(k)
+        seen = set()
+        for _, ks in idx.items():
+            if len(ks) < 2 or len(ks) > 40:
+                continue
+            ks = sorted(ks)
+            for x in range(len(ks)):
+                for y in range(x + 1, len(ks)):
+                    a, b = ks[x], ks[y]
+                    if (a, b) in seen:
+                        continue
+                    seen.add((a, b))
+                    na, nb = rows[a][2], rows[b][2]
+                    sa = {na[t:t + 8] for t in range(len(na) - 7)}
+                    sb = {nb[t:t + 8] for t in range(len(nb) - 7)}
+                    if not sa or not sb:
+                        continue
+                    r = len(sa & sb) / min(len(sa), len(sb))
+                    if r < thresh:
+                        continue
+                    if rows[a][3] or rows[b][3]:
+                        continue    # 隣に注記がある＝承知のうえで置いた見本
+                    if all(any(m in rows[k][1] for m in SETTLED) for k in (a, b)):
+                        continue    # 両方がポインタか記録
+                    out.append((round(r, 2), rel(f), rows[a][0], rows[a][1],
+                                rows[b][0], rows[b][1]))
+    return sorted(out, reverse=True)
 
 
 def leak_check(docs):
@@ -453,6 +526,21 @@ def main(argv):
         if len(d6) > 40:
             print(f'   （ほか {len(d6) - 40} 行）')
         n += len(d6)
+
+    if not only or '--selfecho' in only:
+        d7 = self_echo(docs)
+        print('\n⑦ 近い文が、同じファイルの中で繰り返されていないか（毎回読むファイルだけ）')
+        print('   ——③は同じファイル内の組を捨てている。②④と同じ穴で、')
+        print('     毎回読むファイルの中の復唱はここでしか見えない')
+        if not d7:
+            print('   なし')
+        for r, f, i, a, j, b in d7[:30]:
+            print(f'   ⚠ 一致度 {r}  {f}:{i} / :{j}')
+            print(f'      {a[:92]}')
+            print(f'      {b[:92]}')
+        if len(d7) > 30:
+            print(f'   （ほか {len(d7) - 30} 組）')
+        n += len(d7)
 
     print(f'\n■ 候補: {n}件')
     print('  **これは候補であって判定ではない。** 片方が正典・片方がポインタなら正しい形。')
