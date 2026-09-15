@@ -19,7 +19,7 @@ import e373
 # 禁止語の定義は full_check.py が正典。**ここに複製を置かない**（2026-09-02 統一）。
 # 3ツールが自前でコピーを持っていたため、実際に片方だけ古くなった実績がある
 # （「大切なのは」が note_check にしか無く、2026-08-29 に補完）。
-from full_check import BANNED, BANNED_RE
+from full_check import BANNED, BANNED_RE, ZAN_RE, ZAN_FROM
 STYLE_ONLY = ['んです', 'と言えるでしょう', 'いかがでしょうか', '寄り添']
 # 設問の主語（rules/shindan.md「文体」・2026-08-25 Coco決定／9/1週から適用）
 # frame だけを見る：解説の地の文で語そのものを説明する場合があり、そこは射程外
@@ -220,6 +220,10 @@ def check_x(posts, label):
         # 7 禁止語・混入文字
         h = banned_in(fr + cm)
         if h: ng(pid, '禁止語', '／'.join(h))
+        # 「残る／残す」（正典は CLAUDE.md 文体。定義は full_check が持つ）。遡及しない
+        if str(pid) >= ZAN_FROM:
+            z = sorted(set(ZAN_RE.findall(re.sub(r'「[^」]*」', '', fr + cm))))
+            if z: ng(pid, '「残る／残す」（CLAUDE.md 文体）', '／'.join(z))
         m = MOJI.findall(fr + cm)
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
         sb = subject_in(fr, pid)
@@ -309,6 +313,9 @@ def check_th(posts, label):
         # 6 禁止語・混入文字
         h = banned_in(fr + r1)
         if h: ng(pid, '禁止語', '／'.join(h))
+        if str(pid) >= ZAN_FROM:
+            z = sorted(set(ZAN_RE.findall(re.sub(r'「[^」]*」', '', fr + r1))))
+            if z: ng(pid, '「残る／残す」（CLAUDE.md 文体）', '／'.join(z))
         m = MOJI.findall(fr + r1)
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
         sb = subject_in(fr, pid)

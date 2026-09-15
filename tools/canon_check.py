@@ -42,7 +42,13 @@ def targets():
     fs += sorted(glob.glob(os.path.join(REPO, 'rules', '*.md')))
     fs += sorted(glob.glob(os.path.join(REPO, 'reference', '*.md')))
     fs += sorted(glob.glob(os.path.join(REPO, 'tools', '*.py')))
-    skip = ('decisions.md', 'handover_', 'handoff_', 'canon_check.py')
+    # 履歴は外す（正典は CLAUDE.md「正典はひとつ」の例外①）。
+    # report_ は 2026-09-14 に追加——新しい報告書1本で候補が 38→45 に増えた。
+    # 報告書は handover と同じ履歴で、旧文をそのまま残すのが仕事
+    # og_headlines_ は週ごとのデータ。週が増えるたびに前週と当たり、1週で候補が7件増える
+    # （2026-09-14 実測：9/15週ぶんが入って 38→45）。似ているのが正常なので外す
+    skip = ('decisions.md', 'handover_', 'handoff_', 'report_', 'og_headlines_',
+            'canon_check.py')
     return [f for f in fs if not any(s in os.path.basename(f) for s in skip)]
 
 

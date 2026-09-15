@@ -17,7 +17,7 @@ episode_check は素材しか見ない。**いちばん人目に触れる4行が
 import json, re, sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from full_check import BANNED, BANNED_RE          # 定義は1箇所。ここに複製しない
+from full_check import BANNED, BANNED_RE, ZAN_RE  # 定義は1箇所。ここに複製しない
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROFILE = os.path.join(REPO, 'reference', 'brand_profile.json')
@@ -49,6 +49,9 @@ def main():
         hit = [w for w in BANNED if w in naked]
         hit += sorted({m for r in BANNED_RE for m in re.findall(r, naked)})
         if hit: ng(name, '禁止語', '／'.join(hit))
+        # 「残る／残す」（CLAUDE.md 文体）。プロフィールは常に「いまの看板」なので日付で切らない
+        z = sorted(set(ZAN_RE.findall(naked)))
+        if z: ng(name, '「残る／残す」（CLAUDE.md 文体）', '／'.join(z))
 
         bad = [w for w in NUM_NG if w in t]
         if bad: ng(name, '数字の表記が誤り', '／'.join(bad), '（正は「延べ5万人を超える」）')
