@@ -94,7 +94,7 @@
         "🐢しずく｜言い返すか黙るかの前に、書いておくか書かないかがある。\n今週いちばん飲み込んだのは、どの場面？",
         "言い返せなかった翌朝にどの一行を書いておくかと、書いた一行が使われなかった時の扱いをnoteに書きました。三回目で何が変わるかまで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
       ],
-      "x_short": "誰が決めたか書いておくと、変な結果になった回ほど押し付けられずに済む。\n黙った回にも、誰が決めたかは書けてる。あとで確かめられるかも🐈‍⬛"
+      "x_short": "誰が決めたか書いておくと、変な結果になった回ほど押し付けられずに済む。\n翌朝に開く一行は、黙った回のぶんも書けてる🐈‍⬛"
     },
     {
       "id": "x_06",
@@ -128,7 +128,7 @@
       "self_replies": [
         "🐢しずく｜取り返した一件と、次に出した一件は、重さが違う。\n取り返しにいって、実際に戻ってきたものは何だった？"
       ],
-      "x_short": "名前を取られても、次の一件はもう出せる。\n取り返す時間を、そのまま次の一件に回せてる。そういう回のほうが多いかも🐢"
+      "x_short": "名前を取られても、次の一件はもう出せる。\n取り返しにいかない分、次の一件に時間が回った。夜、普通に眠くなった🐢"
     },
     {
       "id": "x_08",
@@ -180,7 +180,7 @@
       "self_replies": [
         "🕊ひより｜職場は、話せる人がいる前提で回っていない。\n職場で話す相手を、何で選んでいる？"
       ],
-      "x_short": "打ち解けないままでも、仕事は回っていく。\n線を引いてから雑談が楽になった日もあった。そういう日、ちょっと好きかも🕊"
+      "x_short": "打ち解けないままでも、仕事は回っていく。\n線を引いてから雑談が楽になった日もある。帰り道に買うのは、豆乳を一本だけ🕊"
     },
     {
       "id": "x_11",
@@ -214,7 +214,7 @@
       "self_replies": [
         "🕊ひより｜言い訳の数だけ、相手の言うことが増える。\n最後に図星を指されたのは、どんな一言だった？"
       ],
-      "x_short": "図星を指されるほど、近くで見られている。\n認めたあとに、アイスを一つ開けて終わり。そういう閉じ方、けっこう好きかも🐈‍⬛"
+      "x_short": "図星を指されるほど、近くで見られている。\n認めたあとは、アイスを一つ開けて終わり。次のことばが出てこないのは、相手のほう🐈‍⬛"
     },
     {
       "id": "x_13",
@@ -420,7 +420,7 @@
       "time": "10:00",
       "purpose": "返信獲得",
       "character": "🐈‍⬛しらたま",
-      "episode_id": "E281",
+      "episode_id": "E281+E628",
       "content": "復縁したのに前と同じ理由でぶつかるなら、愛ではなく情で戻っただけ。\n\n愛なら前と同じ形は作らない。復縁ではなく、新しいお付き合いとして始める。\n\n今日ひとつ、前回どこで止まったかを一行だけ書いてみる？\n\n書いてから会いに行った人も、書いた時点で会わずに済んだ人もいる。二つとも、前回の反省を先に書いていた。洗濯物を、先に干せる。\n\n戻りたくなるのは、ちゃんと好きだったから。同じ人と、違う関係を始める。\n\nもう一度連絡する前に何を決めておくか。決め方だけ、返信に置いた。\n\n感情はある。依存はしない。近すぎず、遠すぎず。その温度をここに💍",
       "quote": "復縁ではなく、違うお付き合いの始まり。",
       "note_funnel": true,
@@ -549,13 +549,13 @@
       "time": "07:00",
       "purpose": "共感獲得",
       "character": "🐢しずく",
-      "episode_id": "E395",
-      "content": "あの人が使った言葉をそのまま借りて返すと、次からもその言葉で聞かれる。\n\nそのままは返さない。自分が使っていない言葉は、自分の言い方に置き直して返す。\n\n今日ひとつ、相手の言葉を一つだけ、自分の言い方に置き直してみる？\n\n一行で終わったやりとりも、元の言い方に戻った相手もいたらしい。乗ったまま返した回は、三往復目に言い直すまで続いた。返したあとの昼、ごはんが進む。\n\n合わせたと分かる人は、言葉を持っている。自分の言い方で返すほど、次から一行で済む。\n\n感情はある。依存はしない。近すぎず、遠すぎず。その温度をここに💍",
-      "quote": "乗った言葉は、三往復目まで続く。",
+      "episode_id": "E152+E478",
+      "content": "子どもに先回りして手を出してしまうなら、手が出るのは、その子が大切だから。\n\nやめられない自分を責めるのはやめる。決めるのは、どうなってほしいかのほう。\n\n自立してほしいなら、自立している前提で接する。何か起きたら、そのとき考えればいい。\n\nそのために、こちらも自分のことに集中する。今日ひとつ、自分のことを一つ進めてみる？\n\n自分でやり始めた子も、何も進まない子もいるって。どちらも、先に決めた形になっている。朝から、普通に身支度ができる。\n\n大切なままで、手を止められる。\n\n感情はある。依存はしない。近すぎず、遠すぎず。その温度をここに💍",
+      "quote": "大事だから手が出る。",
       "note_funnel": false,
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks settled beside her; they share a quiet moment; her hand turning a written note face-down before answering; a morning desk by a window with dragonflies over the grass; soft morning light. Refined palette of pale peach, soft coral, and warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
-        "🐢しずく｜受け入れたほうが面倒がないと思うと、先送りになるだけ。\n相手の言葉のまま返して、あとで面倒になったのはどんな話？"
+        "🐢しずく｜どうなってほしいかを先に決めると、手の出し方が変わる。\n自立してほしいのは、どんな場面？"
       ]
     },
     {
@@ -565,13 +565,13 @@
       "time": "10:00",
       "purpose": "保存喚起",
       "character": "🐈‍⬛しらたま",
-      "episode_id": "E152+E478",
-      "content": "子どもとの距離が近すぎて手が出てしまうのは、その子が大切だから。\n\n先回りして手を出さない。手を出すほど、どこまでが自分でどこからが相手か、分からなくなる。\n\n今日ひとつ、自分のためだけの予定を入れてみる？\n\nそれで軽くなった日もあれば、落ち着かないまま終わった日もある。起きたことは違っても、自分の時間は戻ってきている。朝から、普通に身支度ができる。\n\n近すぎた日を、失敗にしなくていい。大切なままで、手を止められる。\n\n感情はある。依存はしない。今日もその練習を、ここに置いていく💍",
-      "quote": "大事だから手が出る。",
+      "episode_id": "E395",
+      "content": "あの人が使った言葉をそのまま借りて返すと、次からもその言葉で聞かれる。\n\nそのままは返さない。自分が使っていない言葉は、自分の言い方に置き直して返す。\n\n今日ひとつ、相手の言葉を一つだけ、自分の言い方に置き直してみる？\n\n一行で終わったやりとりも、元の言い方に戻った相手もいた。乗ったまま返した回は、三往復目に言い直すまで続いた。返したあとの昼、ごはんが進む。\n\n合わせたと分かる人は、言葉を持っている。自分の言い方で返すほど、次から一行で済む。\n\n感情はある。依存はしない。今日もその練習を、ここに置いていく💍",
+      "quote": "乗った言葉は、三往復目まで続く。",
       "note_funnel": false,
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori) close by; they share a quiet moment; her hand placing one book on her own side of the table; a bright room with a cosmos stem on the table; soft morning light. Refined palette of pale rose, soft gold, and warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
-        "🐈‍⬛しらたま｜離れるためではなく、自分の時間を戻すために間を置く。\n自分のためだけに使えた時間は、いつだった？"
+        "🐈‍⬛しらたま｜受け入れたほうが面倒がないと思うと、先送りになるだけ。\n相手の言葉のまま返して、あとで面倒になったのはどんな話？"
       ]
     },
     {
