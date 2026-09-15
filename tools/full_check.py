@@ -246,8 +246,14 @@ def main(path):
     # 「すごい」は入れない——Cocoの実物の返信が「すごいことですよね」の形で肯定に使っていて、
     # 拾うと正しい側を弾く（BANNED の STYLE_ONLY と同じ考え方で、語ではなく立ち位置で分ける）
     JUDGE = ['えらい', '偉い', '立派', 'さすが', '感心', 'よくできて']
+    # 敬語の語尾と「減らない」（2026-09-15 Coco指示。正典は rules/posts.md「X短文」書き方3）。
+    # **Cocoが選定した10本に敬語はゼロ**——敬語は他アカウントへの返信の文体で、
+    # 自分の投稿には宛先がいない。短文は常体で書く
+    KEIGO = ['ですよね', 'ますよね', 'もんね', 'かも']
+    XS_ABSTRACT = ['減らない']
     GENERAL = ['みんな', '普通は', '当然', '絶対', 'なものです', 'に決まって']
     xs_speaker = collections.Counter()
+    xs_tails = collections.Counter()
     for p in X:
         s_raw = (p.get('x_short') or '').strip()
         if not s_raw: continue
@@ -269,6 +275,12 @@ def main(path):
         if jd: ng(p['id'], 'X短文が評価の語（肯定は評価ではなく事実で置く）', jd)
         gn = [w for w in GENERAL if w in flat]
         if gn: ng(p['id'], 'X短文が一般化の断定（押し付けになる）', gn)
+        if new_form:
+            kg = [w for w in KEIGO if w in flat]
+            if kg: ng(p['id'], 'X短文が敬語の語尾（常体で書く）', kg)
+            ab = [w for w in XS_ABSTRACT if w in flat]
+            if ab: ng(p['id'], 'X短文に抽象語', ab)
+            xs_tails[flat.rstrip(''.join(CHARS)).rstrip('。')[-4:]] += 1
         if new_form:
             if not (XS_MIN <= n <= XS_MAX):
                 ng(p['id'], f'X短文が{n}字（{XS_MIN}〜{XS_MAX}字）', flat)
