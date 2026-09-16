@@ -33,6 +33,10 @@ WATASU_RE = r'渡[すしせさそっ]'
 PROMISE = 'メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。'
 PAYWALL = '―――― ここから先は、メンバーシップの中で読めます ――――'
 MEMBERSHIP_URL = 'https://note.com/coconocanvas/membership'
+# 6段構成⑥の締め。正典は rules/note.md「note記事の6段構成」
+# 2026-09-16 Coco決定。**生成済み・公開済みには遡及しない**ので日付で門を置く
+CLOSE_LINE = '感情はある。依存はしない。'
+SIX_FROM = '2026-09-22'
 PLAN = {'X': '💼', 'Threads': '💗'}
 NUMS = ['20年', '5万人', '40名', '月商']
 # 画像プロンプト（rules/image.md ／ 正典は reference/image_prompt_rules.json）
@@ -150,6 +154,17 @@ def check(d, path, titles):
     # 5-2 本文の最終行はメンバーシップURL（rules/note.md）
     if md.rstrip().split('\n')[-1].strip() != MEMBERSHIP_URL:
         ng(nid, f'本文の最終行がメンバーシップURLでない（読み終わった場所に入口がない）: 「{md.rstrip().split(chr(10))[-1].strip()[:28]}」')
+
+    # 6-0 6段構成⑥の締め（rules/note.md「note記事の6段構成」）
+    #     置き場所は「背中押しのあと・あわせて読むの前」＝記事本文の最終行
+    if str(d.get('publish_date') or d.get('date') or '') >= SIX_FROM \
+            and d.get('source_week') != 'standing_guide':
+        k = md.find('あわせて読む')
+        head6 = md[:k] if k >= 0 else md
+        if CLOSE_LINE not in head6:
+            ng(nid, f'6段構成⑥の締めがない（「{CLOSE_LINE}」＋テーマ＋💍）')
+        elif '💍' not in head6[head6.find(CLOSE_LINE):]:
+            ng(nid, '6段構成⑥の締めに 💍 がない')
 
     # 6 在り方署名 → 背中押し → あわせて読む の順
     i = md.find('あわせて読む')
