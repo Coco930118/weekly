@@ -42,7 +42,16 @@ def logo():
         LOGO=(src,m)
     return LOGO
 
+# 見出しに置かない語。正典は rules/image.md「間合いの診断のOG画像」と rules/type.md
+# （出るのは型であってキャラではない／「配合」は /type の全員集合型と衝突する）
+# 2026-09-16：coverage_check が「条文にあるのにどのツールも見ていない」として拾った
+OG_BANNED = ['どの子', '配合']
+
+
 def build(dom,out,l1,l2):
+    hit=[w for w in OG_BANNED if w in (l1 or '')+(l2 or '')]
+    if hit: raise ValueError('OG見出しに置かない語: ' + '／'.join(hit)
+                             + '（正典は rules/image.md）')
     bg=BG[dom]; im=Image.new('RGBA',(1200,630),bg+(255,)); d=ImageDraw.Draw(im)
     d.rectangle((27,27,1172,602),outline=(214,201,178),width=2)          # 枠
     # アイブロウ

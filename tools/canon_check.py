@@ -111,6 +111,9 @@ def ghost_check(docs):
     return hits
 
 
+# 印の行。中身ではないので③⑦は見ない（⚠️ と同じ扱い）
+MARKERS = ('〔ルールを直すとき〕', '**〔ルールを直すとき〕')
+
 STRIP = re.compile(r'[*`｜|、。「」『』（）()\[\]\s・:：—\-#>＝=／/]')
 # ファイル名・パスは「復唱」ではない。同じファイルを指す行が2箇所にあるのは当たり前で、
 # ③⑦はそこで一致して大量に当たっていた（2026-09-15 実測：③の18件中15件が
@@ -246,7 +249,7 @@ def self_echo(docs, thresh=0.70, minlen=30):
             if s.startswith('```'):
                 fence = 0 if fence else i
                 continue
-            if s.startswith(('#', '|')):
+            if s.startswith(('#', '|')) or s.startswith(MARKERS):
                 continue
             n = norm(s)
             if len(n) < minlen:
@@ -390,7 +393,7 @@ def echo_check(docs, thresh=0.62, minlen=28):
             continue
         for i, l in enumerate(lines, 1):
             s = l.strip()
-            if s.startswith(('#', '|', '```', '//', '#!')):
+            if s.startswith(('#', '|', '```', '//', '#!')) or s.startswith(MARKERS):
                 continue
             # ファイル名の羅列は「復唱」ではない（読み込むものの一覧が
             # 指示文と検査表の両方に出るのは当たり前）。パスが2つ以上あって
