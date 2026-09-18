@@ -1,580 +1,591 @@
 {
- "week": "2026-09-22_2026-09-28",
- "generated_at": "2026-09-16T00:00:00+09:00",
- "source": "weekly_sns_run",
- "trend_summary": [
-  "下期の引き継ぎ・評価面談が重なる時期——「やった分の判断が誰のものか」が曖昧なまま積み重なる管理職が増える。",
-  "連休明けの関係の仕分け——夏に近くなった距離を、続けるか見切るかではなく、何で測るかから決め直す動きが出る。",
-  "初秋の間合い戻し——予定が詰まった数日のあと、気になる人・友達との距離を自分の側で引き直す週。"
- ],
- "posts": [
-  {
-   "id": "x_01",
-   "date": "2026-09-22",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "保存喚起",
-   "character": "🐢しずく",
-   "episode_id": "E635",
-   "content": "現場ではいつも先にこう思う。部下の判断が心配なとき、口を出したくなるとき、自分がやれば早いと思うときは、決めるところだけ手を出さない。\n\nルートまでは作ってアシストする。でも決めるところには手を出さない。判断まで引き受けると、決める練習の番が回ってこない。\n\n手を出すのは、ここまで。気になる場面は、今日ひとつ、「どうする？」と聞いて、答えが出るまで黙っておく。\n\n数字が落ちた週も、落ちなかった週もある。どちらも練習になる。手を出さないことは、放置じゃない。決めるのは本人に返す。挟まなかった週のほうが、次の相談は早い。",
-   "quote": "ルートは作る。決めるのは、本人。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜決めさせないほど、決める力は育たない。\nいちばん最近、手を出さずにいられた場面は？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; one hand pausing above an open folder, then drawing back without touching the pen; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_02",
-   "date": "2026-09-22",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "権威提示",
-   "character": "🕊ひより",
-   "episode_id": "E655",
-   "content": "何度もそのたびに、いつも思う。使われたことは気にならない、でもありがとうの一言がないとき、名前が誰にも見えていないと気づくときは、出どころを自分から言わない。\n\n2年前の案件で、担当分は十二万円、上の担当分は一万二千円だった。その差を全員のボーナスに回してほしいと言われて、応じた。後から「配ったのは自分だ」という言い方になっていた。確認までは、しなかった。出どころは、配った人の記憶からいちばん先に消える。\n\n説明しにいくのは、もうやめる。気になる場面は、今日ひとつ、金額だけを事実として書いておく。\n\n確認して終わった話も、そのままの話もある。どちらも事実は手元に置いてある。会議のあとに揉めた時の伝え方と、伝えなかった時の書き方だけ、続きは返信に。",
-   "quote": "出どころは、配った人から消える。",
-   "note_funnel": true,
-   "self_replies": [
-    "🕊ひより｜出どころを覚えているのは、配った側じゃない。\nいちばん最近、名前が消えたと感じたのは、どの場面？",
-    "翌朝の言い方の作り方と、伝えなかった時に書いておく型をnoteに書きました。読み返したときに使える形まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand setting a small folded receipt down, eyes lowered; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_03",
-   "date": "2026-09-23",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "保存喚起",
-   "character": "🐢しずく",
-   "episode_id": "E608",
-   "content": "現場をいつも見ていると、また同じ場面で気づく。報告が急に減った、辞める人はまだ出ていない、頼みやすい人にばかり集まっている、そう思うときは、抱え込む前に数を戻す。\n\n崩れる時は、辞める人が出るより先に、報告が上がってこなくなる。できる人ほど、次が決まってから辞めるので間がなくなる。頼みやすい人に集まるので、断らない限り減らない。報告が減った日ほど、あとで大きな穴になって出てくる。\n\n抱え込むのは、今日でやめる。気になる報告が減ったら、今日ひとつ、「最近どう？」と聞いてみる。\n\n何も出なかった日も、話がひとつ出てきた日もある。どちらも確かめた分だけ早い。聞くタイミングを面談の前に置くか後に置くかだけ、続きは返信に。",
-   "quote": "報告の数が、崩れの先ぶれ。",
-   "note_funnel": true,
-   "self_replies": [
-    "🐢しずく｜報告が減った時点で、もう兆候は出ている。\n最近、いちばん静かになった相談の窓口はどこ？",
-    "聞くタイミングを面談の前に置くか後に置くかの決め方と、聞いても出てこなかった時の次の一手をnoteに書きました。頼みやすい人が変わる瞬間まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her finger resting on a short list, most of the page still blank; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_04",
-   "date": "2026-09-23",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "権威提示",
-   "character": "🕊ひより",
-   "episode_id": "E619",
-   "content": "「なぜそうしたのか」とつい聞きたくなる、答えを急がせたくなる、上には事実だけ通したいと思うときは、聞き方を置き換える。\n\n「なぜそうしたんですか」は、答えを出す仕事を相手に投げつける。「議題にしてもらえれば話せました」と置くだけなら、読み取るのは相手の中で起きる。説明では届かない。部下には気づきを、上には事実を置く。\n\n問い詰めるのは、今日はしない。気になったら、今日ひとつ、事実だけを一行にして置く先を選ぶ。\n\n自分で直した回も、そのまま流れた回もある。どちらも投げつけていない分だけ、次の話が早く済む。事実だけ置いた日は、翌日の報告がひとりで戻ってくる。",
-   "quote": "気づきは部下に、事実は上に置く。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜投げつけた問いは、答えではなく防御を連れてくる。\n最近、事実だけを置いて済んだ場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand placing a single printed agenda page face up on the desk; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_05",
-   "date": "2026-09-24",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "保存喚起",
-   "character": "🐢しずく",
-   "episode_id": "E621",
-   "content": "決めるたびに、思う。納得していない決定を自分の名前で下ろしたくなる、揉めそうで黙っていたくなる、それでも従うと決めているときは、決める人の名前を先に確認する。\n\n意見は伝える。理由も事実で置く。そのうえで「決めるなら、あなたの名前で決めてください」と返す。従うことは先に伝えておく。揉めても、同じ言葉を使う。\n\n自分の名前で下ろすのは、ここまで。気になる決定が来たら、今日ひとつ、「名前は誰にしますか」と聞いてみる。\n\n決定が変わった回も、そのまま通った回もある。どちらも結果を持つ人は変わる。会議のあとに揉めた時の伝え方の順番だけ、続きは返信に。",
-   "quote": "決めるなら、決める人の名前で。",
-   "note_funnel": true,
-   "self_replies": [
-    "🐢しずく｜決定権を返すと、結果の持ち主も変わる。\n最近、名前を先に確認できずに引き受けた決定は？",
-    "名前をどう確認するかの言い方と、揉めた時に何を先に伝えるかをnoteに書きました。従うと決めたあとの振る舞い方まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand sliding a signature line across the desk toward an empty chair; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_06",
-   "date": "2026-09-24",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E624",
-   "content": "毎回強く思う。反応がないと苦しくなる、期待した分だけ怒りが出る、それでも波風にしたくないと思うときは、先に期待を外す。\n\n怒りは、相手に期待しているから出る。期待を外すと、怒る理由がその分減る。事実だけを淡々と置ける。\n\n期待をあてにするのは、今日で手放す。小さく確かめてから、動く。気になる場面は、今日ひとつ、期待している一点だけ書き出してみる。\n\n怒らずに済んだ日も、ムッとした日もある。どちらも期待した分だけの反応。期待していない人には、いちばん自然な静けさ。外した日は、反応をいちいち数えなくてすむ。",
-   "quote": "期待を外すと、怒る理由も消える。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜怒らない静けさは、期待していない人にいちばん自然。\n最近、期待を外せずに怒ってしまった場面は？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her shoulders staying level as she sets an unopened envelope aside; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_07",
-   "date": "2026-09-25",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E626",
-   "content": "平等にしてと言われて条件を削られる、続けてきた分が努力に見えない、下に合わせるのが平等だと言われるときは、平等の向きを確認する。\n\n平等がどちらを向いているかを見る。回っている側を回らなくなった側に合わせるのは、下に揃えているだけ。整えてきた条件を削るのは、努力の結果を削ること。\n\n下に揃える平等には、今日から乗らない。気になる場面は、今日ひとつ、削られる条件が何のためについたのか書き出してみる。\n\n条件が戻った回も、そのまま通った回もある。どちらも向きを確認した分だけ話の土台がはっきりする。削る前に確認していい。向きを確認した日は、条件も話し合いの土台に戻ってくる。",
-   "quote": "平等の向きは、削る前に確かめる。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜下に揃えるのは平等の顔をした、ただの削減。\n最近、条件が削られかけた場面はどれ？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand holding two sheets of conditions level, neither raised above the other; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_08",
-   "date": "2026-09-25",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "保存喚起",
-   "character": "🕊ひより",
-   "episode_id": "E640",
-   "content": "急ぎだからすぐ電話したくなる、早い手段がいちばんだとつい思いたくなる、それでも返ってこない連絡があるときは、相手が返せる手段を選ぶ。\n\nその相手は必ずメールを送ってから電話をくれる人だった。緊急の時だけメールなしで電話が来る。だからメールにした。根拠も先に共有した。短い文で送った。それでも「悠長すぎる」と返ってきた。\n\n速さを優先するのは、今日で切る。急ぎの連絡が来たら、今日ひとつ、相手がふだん使う手段から選んでみる。\n\n即対応してもらえた回も、変わらなかった回もある。面談を待たずに、根拠の共有の仕方だけ、続きは返信に。",
-   "quote": "速い手段より、届く手段を選ぶ。",
-   "note_funnel": true,
-   "self_replies": [
-    "🕊ひより｜速い手段ではなく、届く手段を選んでいる。\n最近、連絡手段で行き違った場面はある？",
-    "根拠を先に共有する言い方と、反論されたあとの返し方をnoteに書きました。相手側の手順に入り込むまでの流れも入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her thumb hovering over a phone screen, choosing the quieter message icon; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_09",
-   "date": "2026-09-26",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "権威提示",
-   "character": "🐢しずく",
-   "episode_id": "E641",
-   "content": "現場にいつも立つたびに思う。前例のない提案に反論したくなる、うちは大丈夫だと言いたくなる、それでも従う立場だと分かっているときは、判断の場所だけ確定させる。\n\n他のエリアのトラブルをもとに、写真報告を提案された。閉め忘れは一度も起きていない。反論せず、「現時点で何も起きていません。統一の指示でしたら従います」と返した。反論はしなかった。\n\n反論するのは、ここまで。似た提案が来たら、今日ひとつ、「統一の指示ですか」とだけ確認してみる。\n\n全店の話だった回も、一店だけの話だった回もある。どちらも確認した時点で決めた人がはっきりする。決めた場所まで、あとから戻れる。",
-   "quote": "従うことで、判断の場所を確定させる。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜反対しないほうが、誰が決めたのかがはっきり分かる。\n最近、統一かどうかを確認せずに従った場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand resting flat on a closed logbook, calm and unhurried; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_10",
-   "date": "2026-09-26",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E609",
-   "content": "自分がやったほうが早いとつい思ってしまう、指示のほうが確実だと思いたくなる、それでも人が育たないと感じるときは、事実だけ先に置いて、決めるのは相手に任せる。\n\n動かすのが上手い人は、指示ではなく事実を先に置く。決めるのは相手のほうに置く。だから自分が何もしていない時間が長く見える。速い人は仕事が終わる。動かせる人は、あとに人が育つ。\n\n指示から入るのは、今日はしない。気になる場面は、今日ひとつ、事実だけを置いて黙って待ってみる。\n\n早く動いた回も、時間がかかった回もある。どちらも増えているのは判断力。事実だけ置いて待った日は、相手が先に動いている。",
-   "quote": "動かせる人は、終わったあとに人が育つ。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜速い人は自分の仕事が終わる。動かせる人は、終わったあとに人が育つ。\n最近、指示より先に事実だけ置けた場面は？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand withdrawing from a finished report, leaving the next one untouched; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_11",
-   "date": "2026-09-27",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E622",
-   "content": "自分だけ特別扱いされてありがたいとつい思う、でも部下の条件はそのままにされていると気づく、線引きを聞かれて困るときは、配慮と同意を分けて返す。\n\n「あなただけは今のままでいい」という配慮は受け取る。でも守られることと条件が変わることは別の話。部下に求める線を自分にも同じように引く。\n\n配慮を同意にするのは、今日で外す。気になる場面は、今日ひとつ、感謝と意見を別の文で伝えてみる。\n\n条件が動いた回も、そのまま通った回もある。分けて伝えた分だけ立場は保てる。配慮は受け取っていい。同意は預けなくていい。次に同じ話が来ても、答えはもう決まっている。",
-   "quote": "配慮は受け取る。同意は預けない。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜配慮への感謝と、条件への意見は、別の文で伝えていい。\n最近、配慮と同意を混ぜて返してしまった場面は？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand placing two folded notes side by side, neither favoured; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_12",
-   "date": "2026-09-27",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "権威提示",
-   "character": "🕊ひより",
-   "episode_id": "E636",
-   "content": "振り返り思う。数字が落ちた日を失敗だと思ってしまう、酷評されると自信を失いそうになる、それでも誰かが育っていると分かるときは、評価をふたつ持つ。\n\n責任者が不在で、若手ふたりが主体で回した営業だった。上からは酷評された。でも以前なら聞きに来ていたふたりが、要所で自分で判断していた。そこは見ていた。だから大金星だと伝えた。\n\n数字だけで一日を判定するのは、今日で降りる。気になる場面は、今日ひとつ、数字とは別の変化を一つ書き出してみる。\n\n伸びた日も、伸びなかった日もある。根拠は行動の変化のほう。育ったかは、その日にしか見えない。伝えた日は、次の営業でも判断が止まらない。",
-   "quote": "同じ日の評価は、ふたつあっていい。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜下がった日に何が育ったかは、その日にしか見えない。\n最近、酷評された日に見つけた育ちはある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand setting down a red evaluation slip beside a small handwritten note; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_13",
-   "date": "2026-09-28",
-   "platform": "X",
-   "time": "08:00",
-   "purpose": "保存喚起",
-   "character": "🐢しずく",
-   "episode_id": "E643",
-   "content": "原因が外にあるのに社内ルールを増やしたくなる、証明作業だけが積み重なっていく、それでも再発は止まらないと分かるときは、直す場所を先に見極める。\n\n原因が外部にあると読めた時点で、社内でルールを足す話には乗らなかった。実際、再発防止は相手側の手順に入って解決した。社内は動かなかった。起きていない問題への対策は、証明作業だけを増やす。\n\n内側でルールを足すのは、今日で切る。気になる再発は、今日ひとつ、原因が内と外どちらかだけ確認してみる。\n\n相手側で直った回も、時間がかかった回もある。増やさなかった分だけ現場は軽い。直す場所が外なら、内は増やさない。書類が増えないまま話が終わる。",
-   "quote": "直す場所が外なら、内は増やさない。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜起きていない問題への対策は、現場に証明作業だけを増やす。\n最近、原因が外にあると気づけた再発はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand closing a binder without adding a single new page; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "x_14",
-   "date": "2026-09-28",
-   "platform": "X",
-   "time": "23:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E627",
-   "content": "全部話せる相手をつい探してしまう、誰にも本音を預けられないと感じる、核心をひとりで抱えていると気づくときは、相手ごとに話す範囲を決める。\n\n全部話せる相手を探さない。この人にはここまでと決めておく。隠しているのではなく、相手に負わせないための距離。核心の置き場所を自分に持っている。\n\n探すのは、今日で終える。気になる相手には、今日ひとつ、「ここまでは話す」と線を引いてみる。\n\n話してよかった回も、話さなくてよかった回もある。線を引いた分だけ次の関係が軽くなる。核心は自分に持っていい。誰といても、同じ落ち着きで話せる。",
-   "quote": "核心は、人ではなく自分に置く。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜核心の置き場所を自分に持てば、誰にも寄りかからずに済む。\n最近、話す範囲を決めずに全部話してしまった相手は？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand resting on her own collarbone, palm turned inward; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_01",
-   "date": "2026-09-22",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E645",
-   "content": "気になる人に褒められて否定するべきか迷う、下心があるのかもと勘ぐってしまう、素直に受け取れないときは、褒め言葉は言ってくれた行為のほうを受け取る。\n\n「可愛い」には「あら優しい」、「モテてるでしょう」には「実感ないですねー」と答える。強く言われても答えは変わらない。\n\n否定するのは、今日でやめる。気になる褒め言葉は、今日ひとつ、「ありがとう」より軽い一言で受けてみる。\n\n流れた日も、次の話につながった日もある。否定していない分だけ、誰も引っ込めなくて済む。\n\n感情はある。依存はしない。💍",
-   "quote": "言ってくれたことを、受け取る。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜中身ではなく、言ってくれた行為のほうを受け取っている。\n最近、褒め言葉をつい否定してしまった場面は？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her chin tilting slightly, a light smile settling before she answers; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_02",
-   "date": "2026-09-22",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "保存喚起",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E616",
-   "content": "平日の昼、気分だけでカフェかホテルを選ぶ。行き先はインスタで見つけた、次の休みの場所。\n\n気になる人からの返事を待つ日も、場所が決まっていれば手は止まらない。ノートパソコンを開いて、調べものや先のことをやる。\n\n整える前に、まず好きな雰囲気の中に自分を置く。それ自体が、もう整え方になっている。\n\n今日は何も決めない。それも、整え方のひとつ。\n\n感情はある。依存はしない。💍",
-   "quote": "好きな雰囲気に、自分を置く。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐈‍⬛しらたま｜好きな雰囲気に自分を置くこと自体が、整え方。\n最近、行き先を先に決めてから待てた日はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand resting on a closed laptop beside an untouched cup; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_03",
-   "date": "2026-09-22",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "保存喚起",
-   "character": "🕊ひより",
-   "episode_id": "E630",
-   "content": "お相手さまに言えずに一晩過ごした、気まずさを翌朝まで持っていきたくない、仲直りの言葉から入るのが苦手なときは、甘えるところから先に入る。\n\n「おはよ〜」って甘えて、「昨日いけなかったんだけど」とさらっと伝えて、「以上っ」って切り上げる。希望くらいの重さで足す。\n\n重くして伝えるのは、今日でやめる。気になることは、今日ひとつ、甘えてから一言だけ足してみる。\n\n終わった朝も、話が続いた朝もある。言えた分だけ次の日が軽い。順番の決め方だけ、翌朝、続きは返信に。\n\n感情はある。依存はしない。💍",
-   "quote": "甘えてから、さらっと伝える。",
-   "note_funnel": true,
-   "self_replies": [
-    "🕊ひより｜言えなかった翌朝は、甘えるところから先に入っている。\n最近、言えずに一晩過ごしたことは？",
-    "どの順番で伝えるかの型と、話が続いた時の切り上げ方をnoteに書きました。積もらせない伝え方の続きも入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her arms opening for a light embrace, one foot already turning away; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_04",
-   "date": "2026-09-23",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E618",
-   "content": "「わたしたち似てるよね」と言われて笑って頷いてしまう、断ったら嫌われそうで断れない、次に誘われる理由が減るのが怖いときは、真ん中の返し方を探す。\n\n同じと括られると、断る理由が減っていく気がする。断るか合わせるかの二択だと、いつも合わせるほうに寄る。\n\n二択で決めるのは、今日で外す。気になる人からの誘いは、今日ひとつ、「その日は分からない」と置いておく。\n\n流れた話も、あとで聞かれた話もある。即答しなかった分だけ、次に選べる余地が増える。\n\n感情はある。依存はしない。💍",
-   "quote": "答えは、二択の外に置く。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜断ると合わせるの間に、置いておく場所がある。\n最近、二択のまま即答してしまった誘いは？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand hovering over a phone, choosing not to type an answer yet; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_05",
-   "date": "2026-09-23",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "保存喚起",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E648",
-   "content": "誘いを断ると気まずくなりそうで迷う、はっきり断ると関係が変わる気がする、それでも同じ誘いが続くのは困るときは、断らずに応じない。\n\n外で会わない相手には、五年、応じていない。断りの言葉は返さず、スタンプだけ返す。言葉で断ると、出来事が相手の中に生まれる。\n\n断りの言葉を用意するのは、今日で外す。気になる誘いは、今日ひとつ、話を進めない返し方をしてみる。\n\n誘われ続けた日も、自然に減った日もある。流し方だけ、休みの前に、続きは返信に。\n\n感情はある。依存はしない。💍",
-   "quote": "断らずに、応じない。",
-   "note_funnel": true,
-   "self_replies": [
-    "🐈‍⬛しらたま｜断った記憶がなくても、応じなければ線は守れている。\n最近、断らずに流せた誘いはある？",
-    "断った形にしない流し方の型と、それでも関係が続いた理由をnoteに書きました。線を守ったまま続く距離の作り方まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her thumb tapping a single small sticker instead of typing a reply; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_06",
-   "date": "2026-09-23",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E653",
-   "content": "怒らせてしまって気まずい、機嫌を直してもらうまで安心できない、仲直りできるまで気になって仕方ないときは、仲直りを求めない。\n\n怒られたから、もう嫌われたかなと思った。それだけ。だから「わたし、嫌でしょうから」で始める。楽しく過ごしてほしい、それしかない。\n\n仲直りを求めるのは、今日で手放す。気になる人を怒らせたら、今日ひとつ、一緒に楽しく過ごすことを先に置いてみる。\n\n機嫌が戻った日も、静かな時間になった日もある。求めなかった日は、相手が自分のペースで戻ってくる。\n\n感情はある。依存はしない。💍",
-   "quote": "仲直りより、楽しい時間を優先する。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜仲直りを求めると、目的が関係の回復に変わる。\n最近、機嫌を直させようとしてしまった場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand smoothing her own sleeve, shoulders soft and unhurried; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of ash rose, pale apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_07",
-   "date": "2026-09-24",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E644",
-   "content": "冗談なのか本気なのか分からない言葉に困る、深読みして疲れてしまう、素直に受け取ると軽く見られそうで迷うときは、言葉どおりに返す。\n\n「勝手に飲んでる」と言われて「反省して自粛しています」と答えると、「勝手に飲みなよ」と返ってくる。矛盾を指摘すると、反論の余地が生まれる。\n\n深読みするのは、今日で切る。気になる人の言葉は、今日ひとつ、深読みせず言葉どおりに返してみる。\n\n笑って終わった日も、言い直した日もある。深読みしなかった分だけ、次の一言も軽い。\n\n感情はある。依存はしない。💍",
-   "quote": "言葉の奥は読まない。言葉どおりに返す。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜言葉どおりに従うと、相手が自分で訂正してくれる。\n最近、深読みして疲れてしまった一言はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her head tilting with a small, untroubled smile at an unseen message; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_08",
-   "date": "2026-09-24",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "保存喚起",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E613",
-   "content": "今の関係にしがみついていないか不安になる、いつでも出られる自信がないと不安、自分磨きが言い訳っぽく感じるときは、いつでも出られる状態を先に整える。\n\n自分のためにスキルを上げて、いつでも出られる状態にする。相手のためではなく、自分の選べる範囲を広げるため。\n\n出られない前提で我慢するのは、ここでいったん置く。気になる関係は、今日ひとつ、自分の時間で何かひとつ学んでみる。\n\n変わらなかった週も、時間が増えた週もある。選べる範囲が広がった日から、言葉にも余裕が出る。\n\n感情はある。依存はしない。💍",
-   "quote": "いつでも出られる状態を、自分のために持つ。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐈‍⬛しらたま｜出られる状態を持つのは、選べる範囲を広げるため。\n最近、自分のために何かを積み上げられた時間はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand turning the page of a small notebook of her own; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_09",
-   "date": "2026-09-24",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "保存喚起",
-   "character": "🕊ひより",
-   "episode_id": "E617",
-   "content": "友達に話してもすっきりしない、核心には結局届かない、話したはずなのに解決していない気がするときは、核心は自分に宛てて書く。\n\n友達に会った帰り道、すっきりしたのに何も解決していない。話せるのは一部分だけ。核心は、自分に宛てて書き出したときだけ最後まで書ける。\n\n人に預けるのは、今日はしない。気になることは、今日ひとつ、会う前に自分宛てのメモを書いてみる。\n\n笑いに行けた日も、解決に行けた日もある。休みの前に、会う前に決めておくことだけ、続きは返信に。\n\n感情はある。依存はしない。💍",
-   "quote": "核心は、自分に宛てて書く。",
-   "note_funnel": true,
-   "self_replies": [
-    "🕊ひより｜核心は、自分に宛てて書いたときだけ最後まで書ける。\n最近、話しても核心に届かなかった相手はいる？",
-    "自分宛てに書くときの型と、会う前に決めておくことをnoteに書きました。解決するか笑うかを選んでから会う流れまで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her pen resting mid-line on a page written to no one else; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_10",
-   "date": "2026-09-25",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E603",
-   "content": "友達グループのどちらにもつかないと孤立して見える、浮いていると思われたくない、それでも肩入れしたくないときは、中立の立場をそのまま保つ。\n\n派閥に入らない人は孤立して見える。実際は、中立だから頼まれる立場にいる。属さない代わりに、判断の時だけ必ず呼ばれる。\n\n肩入れするのは、今日はしない。気になるグループの揉め事は、今日ひとつ、聞かれたことだけに答えてみる。\n\n呼ばれなかった週も、真ん中に呼ばれた週もある。属さなかった分だけ、頼まれる場面は続いている。\n\n感情はある。依存はしない。💍",
-   "quote": "属さないから、頼まれる立場になる。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜属さないからこそ、判断の時だけ声がかかる。\n最近、どちらの側にも立たずに済んだ揉め事はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hands loosely folded, equally turned toward two unseen friends; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_11",
-   "date": "2026-09-25",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "権威提示",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E597",
-   "content": "結婚をゴールのように考えてしまう、そのあとの長さを想像していない、感情だけで続けられるか不安になるときは、尊敬できるかどうかで測る。\n\n結婚は通過点で、そのあとのほうが長い。感情に加えて、人として尊敬し合えるかどうかが、そのあとの長さを決める。\n\n感情だけで測るのは、今日はしない。気になる相手は、今日ひとつ、尊敬できる場面を一つ思い出してみる。\n\n続かなかった関係も、穏やかになった関係もある。感情が続かない夜の測り方だけ、続きは返信に。\n\n感情はある。依存はしない。💍",
-   "quote": "尊敬し合えるかどうかで、長さが決まる。",
-   "note_funnel": true,
-   "self_replies": [
-    "🐈‍⬛しらたま｜感情に加えて、尊敬し合えるかどうかが長さを決める。\n最近、尊敬できると思えた場面はある？",
-    "感情が続かない夜の測り方と、通過点のあとに何を積み重ねるかをnoteに書きました。穏やかな関係が長く続く条件まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand resting over her own heart, calm and steady; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_12",
-   "date": "2026-09-25",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E598",
-   "content": "数字を出しても何も言われないと寂しくなる、困っている時ばかり気にかけてもらえる気がする、うまくいっている時の反応が薄いときは、承認の来る場所を見直す。\n\n人が反応するのは困っている場所だと思ってきた。逆だった。うまくいっている時に来てくれた人を、ずっと覚えている。\n\n困っている時だけ気にかけるのは、今日はここまでにする。気になる人には、今日ひとつ、困っていなくても声をかけてみる。\n\n反応が薄かった相手も、覚えていた相手もいる。来た分だけ、関係に効く。\n\n感情はある。依存はしない。💍",
-   "quote": "承認は、うまくいっている時に効く。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜うまくいっている時に来てくれた人を、ずっと覚えている。\n最近、うまくいっている時に声をかけられた場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand lifting a small cup toward someone unseen, without hesitation; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of ash rose, pale apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_13",
-   "date": "2026-09-26",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E552",
-   "content": "好きな気持ちだけで関係を測ってしまう、気分が下がると不安になる、穏やかでいられる理由が分からないときは、尊敬を事実で積み重ねる。\n\n好きは気分に左右される。尊敬は、事実の積み重ね。感情と事実を分けて見ると、関係の長さが見えてくる。\n\n気分だけで測るのは、今日はしない。気になる相手は、今日ひとつ、尊敬できた事実を一つ書き出してみる。\n\n上がった日も、下がった日もある。事実の積み重ねがある日は、気分が下がった日も関係は揺れない。\n\n感情はある。依存はしない。💍",
-   "quote": "尊敬は、静かに積み重なるもの。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜好きは気分、尊敬は事実の積み重ね。\n最近、尊敬できると思えた小さな事実はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her fingertip tracing one line in a small notebook, unhurried; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_14",
-   "date": "2026-09-26",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "共感獲得",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E611",
-   "content": "からかわれてムッとした顔をしたくない、言い返すと相手の土俵に乗る気がする、悪く思われたくないときは、肯定も否定もせず、ニコッで返す。\n\n肯定も否定もせず、無言でニコッと返す。言い返すと相手の土俵に乗ってしまう。返さないほうが、言った側があとで気にする。\n\n言い返すのは、今日はしない。気になる一言は、今日ひとつ、無言でニコッと返してみる。\n\n終わった日も、あとで謝られた日もある。言い返さなかった分だけ、次にからかわれる回数も減っていく。\n\n感情はある。依存はしない。💍",
-   "quote": "肯定も否定もせず、ニコッで返す。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐈‍⬛しらたま｜言い返さないほうが、言った側があとで気にする。\n最近、ニコッで返せずに言い返してしまった一言はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her lips curving into a light, closed-mouth smile, chin lifted slightly; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_15",
-   "date": "2026-09-26",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "保存喚起",
-   "character": "🕊ひより",
-   "episode_id": "E558",
-   "content": "土曜の夕方は、行き先だけ決めて外に出る。旅先でも、近くのヨガでも構わない。\n\n連絡を追いかけない時間は、静かな空白ではなく、違う空気を吸ってできている。物理的に動くだけで、頭のほうが先に切り替わる。\n\n気になる人のことを考えない時間も、ちゃんと自分の時間になっている。\n\n今日は、それだけ。\n\n感情はある。依存はしない。💍",
-   "quote": "違う空気を吸うことも、整え方のひとつ。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜違う景色に身を置くこと自体が、もう自分の時間。\n最近、行き先だけ決めて出かけられた日はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand trailing along a train window ledge, gaze drifting outward; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_16",
-   "date": "2026-09-27",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E557",
-   "content": "この関係を続けるべきか迷い続ける、離れる決心がつかない、見極めがついたのかどうか自分でも分からないときは、三つの合図で確かめる。\n\n自分勝手だと思う懸念が頭から離れなかった、自分でなくても大丈夫そうと思った、喧嘩ができなかった。三つ重なったら、見極めはついている。\n\n迷い続けるのは、いったん保留にする。気になる関係は、今日ひとつ、この三つに当てはまるか数えてみる。\n\n一つだけ当たった関係も、三つとも当たった関係もある。数えた時点で、答えははっきりしてくる。\n\n感情はある。依存はしない。💍",
-   "quote": "見極めは、三つの合図で確かめる。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜見極めは、感覚ではなく三つの合図で確かめる。\n最近、この三つのうちいくつが当たっている関係はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her fingers folding down three small tally marks, one by one; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_17",
-   "date": "2026-09-27",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "共感獲得",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E559",
-   "content": "曖昧な関係にはもう戻りたくない、伝えたいことがあるのに言えない、はっきり言うと関係が壊れそうで迷うときは、許容できないことだけ明確に伝える。\n\n曖昧な関係には戻らないと決めたとき、これは許容できない、と明確に言っている。それ以外は、だいたい合わせられる。\n\n全部を伝えるのは、今日はしない。気になる相手には、今日ひとつ、許容できない一点だけを伝えてみる。\n\n関係が変わった日も、変わらなかった日もある。一点だけ伝えた日から、それ以外は自然に合わせられる。\n\n感情はある。依存はしない。💍",
-   "quote": "許容できないことだけ、明確に伝える。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐈‍⬛しらたま｜許容できない一点だけ、明確に伝えている。\n最近、曖昧なまま流してしまったことはある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand resting flat on the table, drawing one calm line in the air; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_18",
-   "date": "2026-09-27",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E612",
-   "content": "傷ついたり怒ったりする姿を待たれている気がする、いつまでも気にしていると思われたくない、相手が求める反応を作りたくないときは、反省だけして忘れる。\n\n傷ついたり怒ったりするのを待たれているように感じるときは、反省するところだけして忘れる。それ以上、相手が求める反応は作らない。\n\n反応を作り続けるのは、今日はしない。気になる場面で反省したら、今日ひとつ、そこで終わらせて忘れてみる。\n\n忘れられた日も、時間がかかった日もある。反応を作らなかった分だけ、次の場面が軽くなる。\n\n感情はある。依存はしない。💍",
-   "quote": "反省はする。反応は作らない。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜反省はする。求められた反応までは作らない。\n最近、反省したのに反応まで作ってしまった場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her shoulders settling, one hand closing a small notebook softly; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of ash rose, pale apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_19",
-   "date": "2026-09-28",
-   "platform": "Threads",
-   "time": "07:00",
-   "purpose": "共感獲得",
-   "character": "🐢しずく",
-   "episode_id": "E607",
-   "content": "言っていることと行動が違う人に振り回される、共感で押されると断れない、アドバイスに納得できないまま従うときは、言葉より行動を見る。\n\n「傷ついた側は一生戦う」と書く人が、直接話すときは「忘れるのが一番」と言う。本人は書き続けている。言葉と行動は別のところにある。\n\n言葉だけで判断するのは、今日はしない。気になる人の助言は、今日ひとつ、実際にやっていることのほうを見てみる。\n\n言葉どおりだった人も、そうでなかった人もいる。行動を見た分だけ、次の判断が早くなる。\n\n感情はある。依存はしない。💍",
-   "quote": "言葉より、行動のほうを見る。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐢しずく｜共感の言葉と、実際の行動は、別のところにあることがある。\n最近、言葉と行動が違うと感じた場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her head tilting, eyes following someone's hands rather than their words; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_20",
-   "date": "2026-09-28",
-   "platform": "Threads",
-   "time": "10:00",
-   "purpose": "保存喚起",
-   "character": "🐈‍⬛しらたま",
-   "episode_id": "E594",
-   "content": "今しかないと焦って動いてしまう、タイミングを逃したら終わりだと思ってしまう、必要な時に必要な人と会えるか不安になるときは、縁は振り返ってから分かるものにする。\n\nだいたいなんとかなるし、ならない時はなんとかする。切れたと思っても、何年も連絡していない人から急に連絡が来ることもある。\n\n焦るのは、今日はしない。気になる縁は、今日ひとつ、焦らずいまできることだけをやってみる。\n\nすぐつながった縁も、時間がかかった縁もある。振り返ったときにだけ、意味がはっきり見える。\n\n感情はある。依存はしない。💍",
-   "quote": "縁は、振り返ってから分かる。",
-   "note_funnel": false,
-   "self_replies": [
-    "🐈‍⬛しらたま｜縁とタイミングは、あとから振り返って分かる。\n最近、あとになって意味が分かった縁はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her gaze lifting toward a window, unhurried, hands still; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  },
-  {
-   "id": "th_21",
-   "date": "2026-09-28",
-   "platform": "Threads",
-   "time": "19:00",
-   "purpose": "共感獲得",
-   "character": "🕊ひより",
-   "episode_id": "E595",
-   "content": "誰にも全部を分かってもらえないのが寂しい、どの時期の自分も知っている人がいないと不安なときは、知らないくらいがちょうどいいと決める。\n\n全部を見てる人がいないのは寂しいけど楽でもある。どの時期の自分も知っているのは自分だけ。それは贅沢でもある。\n\n全部知ってほしいと望むのは、今日はしない。気になる人とは、今日ひとつ、知らない部分があってもいいと決めてみる。\n\n寂しく感じた日も、楽だと思えた日もある。全部を求めなかった分だけ、関係は続きやすい。\n\n感情はある。依存はしない。💍",
-   "quote": "誰も全部は見ていない、くらいがいい。",
-   "note_funnel": false,
-   "self_replies": [
-    "🕊ひより｜どの時期の自分も知っているのは、自分だけ。\n最近、全部を知られていなくて楽だと思えた場面はある？"
-   ],
-   "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand resting lightly on her own knee, gaze calm and unfocused; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
-  }
- ]
+  "week": "2026-09-22_2026-09-28",
+  "generated_at": "2026-09-18T00:00:00+09:00",
+  "source": "weekly_sns_run",
+  "trend_summary": [
+    "言いにくいことが言えない管理職——ハラスメントを恐れて声をかけられず、若手のほうは歯切れの悪さに不服。板挟みより「言いにくいフィードバック」が先にこたえているという調査が出た。",
+    "教え方に確信が持てないまま、正解だけを求められる——Z世代の育成に確信が持てない管理職が6割超。部下がいちばんきついのも「何が正解か分からない」で、上司と同じ場所で詰まっている。",
+    "確かめたい衝動の置きどころ——既読と未読を数える側に立つと、会う頻度も連絡の量も相手の都合で決まっていく。待つ時間を何に使うかだけが、こちらの持ち物。",
+    "恋愛への興味そのものが下がっている——未婚の4人に3人が交際相手なし、興味ありは5割を切った。好きかどうか分からないのは怠けではなく、期待の量を下げた結果。"
+  ],
+  "posts": [
+    {
+      "id": "x_01",
+      "date": "2026-09-22",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "保存喚起",
+      "character": "🐢しずく",
+      "episode_id": "E571",
+      "content": "言いにくい注意は、人格ではなく動作のほうに当てる。\n\n前に日時を間違えた人に、もう一度お願いすることになった。言い方は先に三つ考えた。「気をつけて」は人格のほうに届く。届いた時点で、相手は守りに入る。だから使ったのは「カレンダーだけは、二度見でお願いしますね」という一言だけのほう。\n\n指しているのは動作だけ。『も』を足して「今回は日にちのほうも、万全でいきましょう」にすると、実力は前提として認めたことになる。\n\n言い方を先に決めた回は、返事が短くなった。決めずに言った回は、同じ間違いがもう一度出た。\n\n次に言いにくいことが出たら、指す動作の名前を一つだけ決めてみる？\n\nやわらかく言うのは、甘いからではありません。指す先を動作に置くと、人格の席は空く。空いたぶん、話が一度で終わる。",
+      "quote": "『も』が、実力を先に認める。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜人格に届いた注意は、内容より先に守りを呼ぶ。\n最近、言い方を先に決めてから伝えた場面は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; one hand pausing above a calendar, one finger marking a single date twice; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_02",
+      "date": "2026-09-22",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "権威提示",
+      "character": "🕊ひより",
+      "episode_id": "E456",
+      "content": "責めていないのに、こちらのせいにはできない流れになる。\n\nクレームでは前に出て、名指しされたスタッフを後ろに置いた。管轄外の件は、中身に入らなかった。先に決めるのは、誰が対応するかと、どこまでを自分が扱うか。そこを決めてから、起きたことをそのまま置く。時刻と、発言と、順序だけ置く。\n\n矛盾が出たら、本人を疑う形にしない。「終電が2パターンあるの？」と、事実の側に置いて聞く。こちらに非があるぶんは、先に認めて片づける。\n\n要求をゼロにした回は、本人が自分で話し始めた。詰めた回は、言い訳が伸びた。\n\n次に矛盾が出たら、事実の側に置いて聞いてみる？\n\n責める相手を作らないと、内省のほうが始まる。報告だけして、と置いて閉じる。\n\n会議のあとに矛盾が出た時の、その聞き方だけ、返信に置いた。",
+      "quote": "要求はゼロ。置くのは事実だけ。",
+      "note_funnel": true,
+      "self_replies": [
+        "🕊ひより｜攻撃対象がないと、内省のほうが先に始まる。\n最近、事実の側に置いて聞けた矛盾は？",
+        "矛盾が出たときに本人を疑わずに聞く言い方と、こちらの非を先に片づける順番をnoteに書きました。要求をゼロにしたまま責任の場所だけ確かめる七つの段まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her fingertip resting on a timeline of three noted hours; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_03",
+      "date": "2026-09-23",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "保存喚起",
+      "character": "🐢しずく",
+      "episode_id": "E498",
+      "content": "求められる基準は示されるのに、答えのほうは示されない。\n\n唯一無二であってほしいと求められた。何をすればそうなるのかは、誰も教えてくれなかった。基準を出す側は、基準までしか持っていない。そこから先は、見て考えた人の中にしか生まれない。だから、聞ける相手がそもそもどこにもいなかった。\n\nだから聞かないことにした。自分で見て、自分で考えた。合っているかどうかは、あとで結果のほうが答えた。\n\n待った時期は何も始まらなかった。決めた回は、外れた日もあったけれど動いていた。\n\n今日ひとつ、自分の基準を一行だけ書いてみる？\n\n基準を出した人は、答えまで持っていない。決めた人のところに、経験のほうがたまっていく。\n\n唯一無二と言われて放り出された朝の、最初の一行の決め方だけ、返信にまとめた。",
+      "quote": "基準は示される。答えは自分の中にしかない。",
+      "note_funnel": true,
+      "self_replies": [
+        "🐢しずく｜基準を出す側は、基準までしか持っていない。\n最近、答えを待たずに自分で決めた一件は？",
+        "唯一無二と言われた朝に最初の一行をどう置くかと、外れた日の戻し方をnoteに書きました。待っていた時期と決めた時期で、手元に何がたまるかまで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand writing a single short line on an otherwise blank sheet; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_04",
+      "date": "2026-09-23",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "権威提示",
+      "character": "🕊ひより",
+      "episode_id": "E620",
+      "content": "感情的だと言われたくない人ほど、感情がないわけじゃない。\n\n重い話を事実のまま並べると、並べた側が熱く見えることがある。それは中身が重いだけ。感情を言葉にすることと、感情的になることは別のこと。熱が出た瞬間は、その日のうちに自分で引き取っている。出すのは、そのあとでいいと決めてる。\n\n整えてから、置き直す。言うことは変えない。変えるのは置き場所だけ。\n\nその日のうちに出した回は、話が中身から離れていった。一日おいた回は、同じ言葉のまま通った。\n\n熱が出たと気づいたら、その日は書くだけにして、出すのは明日にしてみる？\n\n熱があるまま出すのをやめてから、あとはお茶を一杯飲んで閉じている。それだけ。",
+      "quote": "変えるのは中身ではなく、置き場所。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜熱があることと、熱のまま出すことは別。\n最近、一日おいてから出した話は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand closing a notebook and setting a teacup beside it; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_05",
+      "date": "2026-09-24",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "保存喚起",
+      "character": "🐢しずく",
+      "episode_id": "E486",
+      "content": "正解が分からなくても、任せることは先にできてしまう。\n\n高額の品を出してよいか聞かれた。自分にも正解は分からなかった。分からないのに任せられるのは、外れたときに戻せる範囲が見えているから。返したのは「これは絶対NG。それ以外は出しても大丈夫だと思われます」。絶対の一本だけ先に決めた。\n\n最終の判断は、お客様と話す人にしてほしいと足した。断言できないことは断言しない。\n\n外れた回もあった。どれも戻せる範囲だった。範囲を切らずに任せた回だけ、戻すのに時間がかかった。\n\n任せる前に、今日ひとつ、絶対にやらないことを一つだけ決めてみる？\n\n降ろすのは判断のほうではなく、完璧な正解のほう。線が一本あれば、中は自由にできる。\n\n任せる前の夜に、絶対NGの一本をどこに引くかだけ、続きは返信に。",
+      "quote": "線が一本あれば、中は自由にできる。",
+      "note_funnel": true,
+      "self_replies": [
+        "🐢しずく｜正解がなくても、戻せる範囲は先に決められる。\n最近、絶対にやらない一つを決めた場面は？",
+        "高額の判断を任せるときに絶対NGの一本をどこに引くかと、外れたときに戻す手順をnoteに書きました。断言できないことを断言しないままで任せる言い方まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand drawing one short line across a page, leaving the rest blank; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_06",
+      "date": "2026-09-24",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E388",
+      "content": "その場で足したのは、事実として一つだけだった。\n\n他の場所で起きた事故を、自分は関係ないから先に帰れたと嘲笑う人がいた。言い返す言葉はいくつも浮かぶ。並べれば勝てる。ただ並べた時点で、こちらが責める側に移ってしまう。勝ったところで、笑っていた本人のほうは、もうその場に立っていない。\n\nだから、笑われた側がその夜に何をして帰ったかを、事実として一つだけ置いた。相手は言葉に詰まった。\n\n思い浮かばなかった二つ目は、後から足さなかった。足した回は、話が言い合いになって終わった。\n\n言い返したくなったら、今日ひとつ、事実を一つだけ選んで置いてみる？\n\n言い返す席を、こちらで畳む。一つ置いたら、あとは黙って帰れる。",
+      "quote": "二つ目は、後から足さない。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜一つ置いて黙ると、二つ目は要らなくなる。\n最近、一つだけ置いて済んだ場面は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand laying a single dated memo face-up, the rest of the desk bare; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_07",
+      "date": "2026-09-25",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E596",
+      "content": "見張られていると手が止まり、見守られていると勝手に動く。\n\n同じ「見ている」なのに、手の動きが逆になる。見張るは、間違いを探している目。見守るは、任せたあとの目。受け取る側は、どちらの目かを先に読んでいる。読まれたうえで、手が止まるか動くかが決まる。こちらの目のほうが先に出ている。\n\nだから見てはいるけれど、言わない時間を作ることにした。これはなかなかしんどい。失敗する可能性まで含めて任せると、うまくいかなかったときに本人が次を決められる。\n\n黙っていた回は、翌日に本人から報告が来た。口を出した回は、次も聞きに来た。\n\n気になる場面が来たら、今日ひとつ、言わずに見ている時間を作ってみる？\n\n動くかどうかを決めているのは、見られている側。だから見てはいるけど、言わずにいる。それだけ。",
+      "quote": "見張る目と、見守る目は別。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜見てはいる。言わない時間のほうが、しんどい。\n最近、言わずに見ていられた場面は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hands resting still in her lap, eyes steady on the middle distance; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_08",
+      "date": "2026-09-25",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "保存喚起",
+      "character": "🕊ひより",
+      "episode_id": "E577",
+      "content": "褒め言葉としても読める指摘は、いちばん届かないまま流れる。\n\n議題に「最近落ち着いた営業になっている」と書いた伝えたかったのは、勢いが落ちている懸念だった。読む側は、褒められたと受け取る。受け取れる形で出したぶん、こちらの懸念はどこにも届かないまま、議題の並びのほうを流れていく。\n\nだから書き直した。「営業に、最近勢いが落ちているように感じる点について」。落ち着いた、を外した。\n\n書き直した回は、その場で話が始まった。前の書き方をした回は、同じ温度で流れた。\n\n議題を出す前に、今日ひとつ、褒め言葉に読める言い方が混ざっていないか見てみる？\n\nやわらかさと読み替えの余地は別のもの。余地だけ外すと、言いたかった一点だけが届く。\n\n面談の議題に書きかけた言い換えの、外し方だけ、返信に置いた。",
+      "quote": "やわらかさと、読み替えの余地は別。",
+      "note_funnel": true,
+      "self_replies": [
+        "🕊ひより｜読み替えられる余地は、やわらかさではない。\n最近、書き直してから出した議題は？",
+        "落ち着いたと書きかけた議題の言い換えの外し方と、並びで流されないための置き方をnoteに書きました。同じ温度で流れた回と、その場で話が始まった回の差まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her pen crossing out one word and writing a plainer one above it; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_09",
+      "date": "2026-09-26",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "権威提示",
+      "character": "🐢しずく",
+      "episode_id": "E491",
+      "content": "明示しただけで、目の色が変わった若手が二人いた。\n\n責任者が休みの日、運営を任せた日のこと。「この判断なんて自分ですぐしていいよ、わかるでしょ」。そう言ったら、「まぁそうですね」と返ってきて、目が輝いてた。実際には、前から判断していい範囲だった。権限として増えたものは何ひとつない。\n\n増えた権限は一つもない。明示しただけで、手の動きが変わった。\n\nその日は、聞きに来る回数が減っていた。明示しなかった日は、同じ範囲でも一つずつ確認が来ていた。\n\n任せているつもりの相手に、今日ひとつ、もう決めていい範囲を言葉にしてみる？\n\n決められないのは、権限が足りないからではありません。決めていいと、まだ言われていないだけ。言葉にした日から、確認の数が変わる。",
+      "quote": "増やしたのは権限ではなく、明示。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜前から決めていい範囲だった。足したのは言葉だけ。\n最近、決めていい範囲を言葉にできた相手は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand open and turned upward, as if naming a boundary in the air; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_10",
+      "date": "2026-09-26",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E605",
+      "content": "良かれと思って言った言葉が、終わりかけを指すことがある。\n\n花屋の薔薇は、開ききる前が商品価値のピーク。開ききったものは、散る直前。「開ききってる」は、褒めているつもりで言える。受け取る側には、もう終わりだと言われたように届いてしまう。言った側に、その自覚がまったくないままになる。\n\nだから、勢いや状態を褒めるときは、いまどの手前にいるかで言葉を選ぶことにした。\n\n言葉を選んだ回は、そのまま話が続いた。選ばずに言った回は、返事が一段静かになった。\n\n褒めようとした言葉が出たら、今日ひとつ、それが手前を指しているか確かめてみる？\n\n悪気がないのに刺さるのは、指している場所が少し先すぎるだけ。いまどこにいるかを見て選んでる。それだけ。",
+      "quote": "褒め言葉は、指す場所で変わる。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜褒めたつもりの一語が、終わりの合図になることがある。\n最近、言葉を選び直してから褒めた場面は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand cupped just below a half-open rose, not touching it; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_11",
+      "date": "2026-09-27",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E505",
+      "content": "きれいに整えて任されるほど、動けなかった理由は自分に戻る。\n\n範囲は決まっている。失敗しても戻せる。矢面には立つと言われている。そこまで揃っていると、動けなかったときに挙げられる理由が一つもなくなる。逃げ場が消えるのは、任せ方が雑だったときではない。むしろ丁寧なときのほうが消える。\n\nだから任せるときは、整えたことを言わないようにした。整えた分は見せずに、範囲だけ伝える。\n\n言わずに任せた回は、相手が自分の言葉で動いた。全部説明した回は、動く前に確認が増えた。\n\n任せる前に、今日ひとつ、伝える範囲を一行に縮めてみる？\n\n説明のほうを、こちらで畳む。整えた分を見せないでおくと、動き出しはその人のものになる。",
+      "quote": "整えた分は、見せないでおく。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜整えたことを言うと、逃げ場のほうが先に消える。\n最近、説明を削って任せた一件は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand sliding a thick folder out of sight, keeping one card in view; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_12",
+      "date": "2026-09-27",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "権威提示",
+      "character": "🕊ひより",
+      "episode_id": "E226",
+      "content": "「迷ったんだけど、これはやっぱり言っておきたくて」。\n\n結果を出した相手に何と声をかけるか迷った日、そのまま前に置いた。承認の言葉は、なんであれ嬉しい。だから迷ったこと自体を、隠さずに出すことにしている。うまい言い方を探している時間のほうが、たぶん伝わらない。そこは毎回同じだった。\n\nそのあとに足すのは、前に自分が言った言葉のほう。「去年ここで止まってたよね」と引くと、伸びた分が本人の中で見える。\n\n引いた回は、その場で本人が続きを話し始めた。言葉だけ褒めた回は、ありがとうで終わった。\n\n伝えるものが決まらない日は、今日ひとつ、迷っていることをそのまま言葉にしてみる？\n\nうまい言い方を探す席は、こちらで畳んだ。迷ったと言って、昔の自分の言葉を引いてる。それだけ。",
+      "quote": "迷ったことを、そのまま前に置く。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜うまい言い方より、迷ったことのほうが先に届く。\n最近、昔かけた言葉を引いて伝えた相手は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand turning back to an earlier page in her own notebook; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_13",
+      "date": "2026-09-28",
+      "platform": "X",
+      "time": "08:00",
+      "purpose": "保存喚起",
+      "character": "🐢しずく",
+      "episode_id": "E303",
+      "content": "与えられた独立と、自分から取りにいった独立は別もの。\n\n任せる範囲を分ける話は、こちらから出したものではなかった。任される側の一人が、自分から言い出した。人は、与えられたものは手放せる。自分から取りにいったものは守る。同じ範囲でも、出どころが違うと扱いのほうがまるごと変わってくる。\n\nだから、こちらから分ける話はしなかった。周りの同意が揃うところまで、本人に進めてもらった。\n\n言い出すのを待った回は、そのあと誰も戻してこなかった。こちらから分けた回は、うまくいかない時期に相談が戻ってきた。\n\n任せたい相手がいたら、今日ひとつ、こちらから言うのをやめて聞くだけにしてみる？\n\n育てた側の姿が消えるところまでが、育成。手を引いた分だけ、続きは本人の手で進む。",
+      "quote": "取りにいったものは、その人が守る。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜こちらから分けると、うまくいかない時期に戻ってくる。\n最近、相手から出てくるのを待てた一件は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand lowering, stepping back from a shared document on the table; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "x_14",
+      "date": "2026-09-28",
+      "platform": "X",
+      "time": "23:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E625",
+      "content": "担当を分けたら、その数字は一度必ず落ちる時期が来る。\n\n分けるということは、そこから先の判断をその人に預けるということ。分けたのに前に出続けたら、分けた意味が消える。落ちた時期に手を出すと、判断のほうがこちらに戻ってきてしまう。分けた日のところまで戻るだけで、意味はそこで消えてる。\n\nだから、落ちることまで含めて先に共有した。落ちる時期は来ますと言ってから分けた。\n\n先に言っておいた回は、落ちた月に本人から立て直しの案が出た。言わずに分けた回は、落ちた時点で相談が来た。\n\n分けるときは、今日ひとつ、落ちる時期の話も一緒に伝えてみる？\n\n降ろすのは、落ちない前提のほう。本人が現実を知った分だけ、次は自分で決められる。",
+      "quote": "落ちる時期も、先に共有しておく。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜落ちる時期を先に言うと、立て直しは本人から出る。\n最近、落ちる話まで含めて任せた場面は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand tracing a dipping line on a small chart, then resting beyond it; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_01",
+      "date": "2026-09-22",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E522",
+      "content": "返信を待って一日考えていても、それで早まることはない。\n\n好きな人からの返事が遅いだけで、その日が全部それになった夜があったって。\n\n考えるのを止める話ではないみたい。考えながらでいいから、違うことを始める。\n\n今日ひとつ、考えながらでいいから、別のことを始めてみる？\n\n早く来た日もあれば、翌朝までなかった日もあるそう。どちらの日も、やりかけていたことは進んでいる。\n\n感情はある。依存はしない。💍",
+      "quote": "考えながらでいい。手だけ動かす。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜考えを止めなくていい。手のほうを先に動かす。\n最近、待ちながら進められたことは？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her chin tilting slightly, one hand already reaching for a book; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_02",
+      "date": "2026-09-22",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "保存喚起",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E569",
+      "content": "出かける気分ではない土曜は、近場の温泉施設まででいい。\n\n遠出は、移動の段取りが全部こちら持ちになる。近場なら、着いた瞬間から休める。\n\n館内着のまま岩盤浴に入って、露天風呂で秋の匂いに気づく。移動に払う分を、そのままのんびりに回した日。\n\n好きな人からの返事を待つ日でも、ここまで来れば手は空いている。\n\n予定を守るより、気持ちよさを取っていい。\n\n感情はある。依存はしない。💍",
+      "quote": "移動に払う分を、のんびりに回す。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐈‍⬛しらたま｜近場なら、着いた瞬間から休めている。\n最近、近場で済ませてよかった休みはある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her shoulders easing in a warm outdoor bath, steam rising past her; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_03",
+      "date": "2026-09-22",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "保存喚起",
+      "character": "🕊ひより",
+      "episode_id": "E532",
+      "content": "気づく力は消せないから、拾うかどうかだけを選ぶ。\n\n受け身で流すのと、選んで拾わないのは別のこと。選んでやる無視は、立派な一手になる。\n\n気づいたことを、全部拾わなくていい。感覚を閉じるのとも違う。気づいたまま、手だけ出さない。\n\n今日ひとつ、気づいたことを一つだけ拾わずに置いてみる？\n\n拾わなかった夜も、結局拾った夜もある。拾わなかったぶんだけ、大切な人との時間が静かでいる。\n\n気づいたのに拾わない夜の、その選び方だけ、返信に置いた。\n\n感情はある。依存はしない。💍",
+      "quote": "気づいたことを、全部は拾わない。",
+      "note_funnel": true,
+      "self_replies": [
+        "🕊ひより｜気づく力は消さない。拾うかどうかだけ選ぶ。\n最近、拾わずに置けたことは？",
+        "気づいたのに拾わない夜の選び方と、受け身で流すのとの違いをnoteに書きました。感覚を閉じずに手だけ出さない形まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand hovering near a phone, then settling on the table instead; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_04",
+      "date": "2026-09-23",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E283",
+      "content": "言わせた時点で意味がないと思うなら、選ぶ相手のほうを変える。\n\n好きな人に察してほしいが抜けない、と話してくれた人がいたって。\n\n言ったところで、そんなに変わりはないみたい。ただ、言わせなくても伝わる人を選ぶ、という道のほうがある。\n\n今日ひとつ、言わずに伝わった場面を一つ思い出してみる？\n\n思い出せた人もいれば、出てこなかった人もいるそう。価値観も育った環境も違う相手と生きるなら、向き合う姿勢のほうが要る。\n\n感情はある。依存はしない。💍",
+      "quote": "言わせなくても伝わる人を、選ぶ。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜察してほしいを抜くより、相手を選ぶほうが早い。\n最近、言わずに伝わった場面はある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hands loosely folded, head inclined in unhurried listening; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_05",
+      "date": "2026-09-23",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "保存喚起",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E521",
+      "content": "ほかの時間に熱中していると、一緒にいなくても幸せでいられる。\n\n大切な人と会えない時間を埋めようとしていた頃は、予定がぜんぶ待ち時間になっていた。\n\nだから、埋めるのを手放して熱中する先を作った。埋めるための時間と、熱中している時間は、同じ長さでも中身が違う。\n\n今日ひとつ、会えない日に熱中できることを一つ決めてみる？\n\nその状態で出逢うのが、一緒にいるとさらに幸せという相手になる。\n\n会えない時間を熱中に変えるまでの順番だけ、続きは返信に。\n\n感情はある。依存はしない。💍",
+      "quote": "埋める時間と、熱中は違う。",
+      "note_funnel": true,
+      "self_replies": [
+        "🐈‍⬛しらたま｜埋める時間と、熱中している時間は中身が違う。\n最近、熱中できたことは一つある？",
+        "会えない時間を埋めるのをやめて熱中に変えるまでの順番と、待ち時間に戻りかけたときの立て直し方をnoteに書きました。一緒にいなくても幸せな状態で出逢う相手の見分け方まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand turning a page of a workbook, fully absorbed; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_06",
+      "date": "2026-09-23",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E524",
+      "content": "大切な人の一日が見えなくなった夜は、見なくていい。\n\n見えないと、確かめたくなる。確かめたくなるのは、大事に思っているから。\n\nただ、見えないことと、大切にされていないことは別のところにある。どちらの結論も、まだ出ていない。\n\n今夜ひとつ、見えない一日を、見ないままにしておく？\n\n翌朝に分かる日もあれば、何も分からないままの朝もある。どちらの朝も、眠れてはいる。\n\n感情はある。依存はしない。💍",
+      "quote": "見えないことと、大切さは別。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜確かめたくなるのは、大事に思っているから。\n最近、確かめずに朝まで置けた夜はある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand lowering a phone face-down onto a folded cloth; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of ash rose, pale apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_07",
+      "date": "2026-09-24",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E543",
+      "content": "誰も自分のことをそこまで見ていない、と気づくと楽になる。\n\n好きな人にどう思われているかで、一日が決まっていたと話してくれた人がいたって。\n\n見られている量を、実際より多く見積もっていたみたい。悩みの多くは、自分を大事にしすぎるところから来ている。\n\n今日ひとつ、見られていると思っていたことを一つ手放してみる？\n\n減らせた人もいれば、まだ気になる人もいるそう。誰も見ていないと分かった日から、着る服が自由になっている。\n\n感情はある。依存はしない。💍",
+      "quote": "見られている量は、思うより少ない。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜見られている量を、多く見積もっているだけ。\n最近、気にしなくなれたことはある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her gaze lifting toward a window, unhurried and unselfconscious; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_08",
+      "date": "2026-09-24",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "保存喚起",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E531",
+      "content": "動けない日は、失敗ではなく動かないと決めた日にしている。\n\n好きな人に連絡できなかった日も、同じように数える。抜いたのに動けない、という後悔がそもそも起きない。動けない日は、動かないと決めているから。\n\n休んだだけで一つ、と数えている。前日の評価は今日に持ち越さない。日に新た。\n\n今日ひとつ、動けなかった日も一つとして数えてみる？\n\n続いているかどうかの定義を、やめていない日のほうに置いた。考えた日も一歩と数えると、また違って見える。\n\n感情はある。依存はしない。💍",
+      "quote": "やめていない日も、続いている日。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐈‍⬛しらたま｜休んだ日も一つと数える。前日の評価は持ち越さない。\n最近、動けなかった日をどう数えた？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand resting on an open planner with one day left blank; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_09",
+      "date": "2026-09-24",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "保存喚起",
+      "character": "🕊ひより",
+      "episode_id": "E371",
+      "content": "「落ち着いたら連絡するね」のその日は、いつまでも来ない。\n\n会うべき人には全部会って、会いたかった友達にはその一行を送っていた。\n\n金曜の夜に、あまり乗り気じゃない食事会の日程だけが先に確定していく月が、何ヶ月も続いた。\n\n今日ひとつ、会いたい人の予定を、先に一つ置いてみる？\n\n置いた月は会えた。置かなかった月は、また落ち着いたらになる。先に埋まった予定が、そのまま順位になっている。\n\n金曜の夜に予定が埋まる前の、先に置く順番だけ、続きは返信に。\n\n感情はある。依存はしない。💍",
+      "quote": "先に埋まる予定が、優先順位。",
+      "note_funnel": true,
+      "self_replies": [
+        "🕊ひより｜先に埋まった予定が、そのまま順位になっている。\n最近、先に置いておけた予定は？",
+        "会いたい人の予定を先に置く順番と、乗り気じゃない誘いを流す返し方をnoteに書きました。置いた月と置かなかった月で何が変わったかまで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand placing one card at the front of a small row of cards; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_10",
+      "date": "2026-09-25",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E545",
+      "content": "やめるほうが、始めるより勇気が要る。\n\n好きな人のために足していたことを、一つ外すのが怖いと話してくれた人がいたって。\n\n始めるのは前向きに見えるから、周りも褒めてくれる。やめるほうは、誰も褒めてくれない。\n\n今日ひとつ、足していたことを一つだけ外してみる？\n\n外せた日もあれば、戻した日もあるそう。慣れてくると、引き算のほうが楽しくなるらしい。\n\n感情はある。依存はしない。💍",
+      "quote": "引き算のほうが、あとで楽しくなる。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜始めるのは褒められる。やめるほうは、誰も褒めない。\n最近、一つ外せたことはある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her fingers releasing a single thread, letting it fall; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_11",
+      "date": "2026-09-25",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "権威提示",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E541",
+      "content": "自分の幸せは自分のもので、誰の許可も要らない。\n\n親や家族と距離を置きたいのに、罪悪感で連絡してしまう。その相談は届き続けている。\n\n責任という言い方をすると重くなる。要は、誰の許可も要らないということ。\n\n今日ひとつ、許可を取らずに決める予定を一つ作ってみる？\n\n決められた週もあれば、また聞いてしまった週もある。許可を取らなかった週のほうが、電話が短くなっている。\n\n実家から連絡が来た日の、許可を取らずに決める言い方だけ、続きは返信に。\n\n感情はある。依存はしない。💍",
+      "quote": "責任ではなく、許可が要らないということ。",
+      "note_funnel": true,
+      "self_replies": [
+        "🐈‍⬛しらたま｜重いのは責任という言い方のほう。要は許可が要らない。\n最近、許可を取らずに決められたことは？",
+        "許可を取らずに決めるときの言い方と、罪悪感が戻ってきた日の置き方をnoteに書きました。責任という言葉を使わずに距離を保つ形まで入っている。メンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand setting a single cup at the centre of the table; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_12",
+      "date": "2026-09-25",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E277",
+      "content": "顔を見たい夜は起きていて、そうでない夜は寝たふりでいい。\n\n大切な人の帰りに合わせて、おかえりを言うかどうかで迷った夜がある。\n\n迷っていた理由は、言わなければいけないと思っていたところにあった。\n\n今夜ひとつ、起きているか寝ているかを、自分の都合で決めてみる？\n\n起きていた夜も、寝たふりの夜もある。こうしなければならないを外すと、どちらの夜も重荷ではなくなる。\n\n感情はある。依存はしない。💍",
+      "quote": "こうしなければならない、を外す。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜起きるか寝るかを、自分の都合で決めていい。\n最近、自分の都合で決められた夜はある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand resting on a light blanket, eyes half-closed and calm; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of ash rose, pale apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_13",
+      "date": "2026-09-26",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E535",
+      "content": "自分にだけ態度が悪い人は、他の人にはいい顔をしているかもしれない。\n\n好きな人の友達に、なぜか冷たくされると話してくれた人がいたって。\n\nどこにでも一人はいる、この役回りをする人。そう思ってから、怒りに乗らなくなったみたい。\n\n今日ひとつ、その人の外向きの顔のほうを想像してみる？\n\n想像できた日もあれば、やっぱり腹が立った日もあるそう。役回りだと思えた日は、こちらの機嫌が保てている。\n\n感情はある。依存はしない。💍",
+      "quote": "怒りではなく、外向きの顔を疑う。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜どこにでも一人はいる、この役回りをする人。\n最近、怒りに乗らずに済んだ場面は？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her head tilting with a small, untroubled breath; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_14",
+      "date": "2026-09-26",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "共感獲得",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E649",
+      "content": "気まずくならない断り方を続けるのは、一貫性とは違う。\n\n曖昧に流すやり方は、これからも顔を合わせる友達にだけ効く。普通に接していれば、断りの言葉が要らないから。\n\n会う機会がなくなる相手には、その前提が消える。流したつもりの返事が、返事として受け取られる。\n\n今日ひとつ、いまも会う相手かどうかだけ、確かめてみる？\n\n切り替えた回は、そこで話が終わった。流したままの回は、同じ誘いが月をまたいで来る。やんわり伝えるのは、また会う人にしか効かない。\n\n感情はある。依存はしない。💍",
+      "quote": "条件が変わったら、形を変える。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐈‍⬛しらたま｜やんわり伝えるのは、また会う人にしか効かない。\n最近、形を変えて断れた誘いはある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her lips curving into a light, closed-mouth decline, gaze level; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_15",
+      "date": "2026-09-26",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "保存喚起",
+      "character": "🕊ひより",
+      "episode_id": "E593",
+      "content": "何もしない一日を、そのまま回復にあてる土曜がある。\n\nキャンセルできる予定は、前の日に全部外しておく。真っ白にしてから、一日を始める。\n\n起きる時間も決めない。気になる人からの通知も、見る時間を決めていない。\n\n昼過ぎにお茶をいれて、窓の近くに座る。それだけで、月曜の朝のほうが軽い。\n\n真っ白な一日は、そのまま回復にあてた一日になっている。\n\n感情はある。依存はしない。💍",
+      "quote": "何もしない、をそのまま選ぶ。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜真っ白にしてから始める日が、いちばん効いている。\n最近、予定を外して空けられた日はある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand resting on an empty calendar page, nothing written on it; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_16",
+      "date": "2026-09-27",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E382",
+      "content": "愚痴を言う相手は誰でもよくて、判断を預ける相手だけ選ぶ。\n\n友達に何をどこまで言うかで迷う、と話してくれた人がいたって。\n\n愚痴は判断を動かさないから、相手を選ぶ必要がないみたい。選ぶ必要があるのは、聞いた人に判断まで預ける場合のほう。\n\n今日ひとつ、これは判断を預ける話かどうかだけ分けてみる？\n\n分けられた日もあれば、混ざった日もあるそう。陰で言わずに本人にも同じことを言えている人は、いない場所でも安心でいる。\n\n感情はある。依存はしない。💍",
+      "quote": "愚痴は、判断を動かさない。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜愚痴は判断を動かさない。だから相手を選ばなくていい。\n最近、判断まで預けてしまった相手はいる？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand dividing two small notes to left and right; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_17",
+      "date": "2026-09-27",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "共感獲得",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E550",
+      "content": "お金は増やせても、時間だけは増やせない。\n\n物と経験を、買い直せるかどうかで分けている。買い直せるものは、後悔にならない。\n\nだから、迷ったときは経験のほうを取る。好きな人と過ごす時間は、買い直せない側に入っている。\n\n今日ひとつ、買い直せない予定を一つ先に入れてみる？\n\n取った日もあれば、物を選んだ日もある。買い直せない側を取った日のほうが、あとで思い出している。\n\n感情はある。依存はしない。💍",
+      "quote": "買い直せるものは、後悔にならない。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐈‍⬛しらたま｜買い直せるかどうかで、物と経験を分けている。\n最近、買い直せない側を取れた日はある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand closing a small purse, turning toward the door instead; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_18",
+      "date": "2026-09-27",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E520",
+      "content": "謝るのが苦手な相手には、できる形を先に決めておく。\n\n謝罪の言葉を探すのが苦手な大切な人に、別の解決手段を先に一つ決めた。\n\nできない形を求め続けると、こじれたまま冷戦になる。要求の水準を下げると、戻れる道のほうができる。\n\n今夜ひとつ、相手ができる形を一つだけ決めてみる？\n\n決めておいた夜は、言葉がなくても戻れた。決めていなかった夜は、二日かかる。求める形を変えるだけで、戻る速さが変わる。\n\n感情はある。依存はしない。💍",
+      "quote": "できない形を、求め続けない。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜謝れないのではなく、その形ができないだけ。\n最近、戻れた形は何だった？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand setting two cups side by side without a word; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of ash rose, pale apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_19",
+      "date": "2026-09-28",
+      "platform": "Threads",
+      "time": "07:00",
+      "purpose": "共感獲得",
+      "character": "🐢しずく",
+      "episode_id": "E433",
+      "content": "話したうえでも動かない一線があったら、一度ちゃんと終わらせる。\n\nこうだと嫌、こうしたい。それは大切な人に常に話していたと聞いた。\n\nそれでも動かない一線が出てきたときに、一度ちゃんと終わらせたことがあるそう。\n\n今日ひとつ、動かない一線がどこかだけ、書き出してみる？\n\n書けた人もいれば、まだ言葉にならない人もいるみたい。終わらせると、選べる状態になる。\n\n感情はある。依存はしない。💍",
+      "quote": "終わらせると、選べる状態になる。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐢しずく｜常に話したうえで、それでも動かない一線があった。\n最近、動かない一線に気づいたことは？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, head-and-shoulders view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with susuki grass pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand closing a door softly, palm flat against it; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale peach, soft coral, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_20",
+      "date": "2026-09-28",
+      "platform": "Threads",
+      "time": "10:00",
+      "purpose": "保存喚起",
+      "character": "🐈‍⬛しらたま",
+      "episode_id": "E615",
+      "content": "返事が来ない、既読のまま、そんな日はコップを置く音が大きい。\n\n静かに置けた日は、たいてい機嫌がいい。音のほうが先に、急いでいることを教えてくれる。\n\n急がされている時は、好きな人に送るか送らないかの二択に見えてくる。二択に見えるのは、だいたい急いでいるときだけ。\n\n今日ひとつ、音が大きかったら、その夜は決めずに置いてみる？\n\n置いた夜も、そのまま決めた夜もある。置いた夜のほうが、朝には選べる数が増えている。\n\n感情はある。依存はしない。💍",
+      "quote": "今は決めない、も選択のひとつ。",
+      "note_funnel": false,
+      "self_replies": [
+        "🐈‍⬛しらたま｜音のほうが先に、急いでいることを教えてくれる。\n最近、静かにコップを置けた日はある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand lowering a cup onto a coaster without a sound; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    },
+    {
+      "id": "th_21",
+      "date": "2026-09-28",
+      "platform": "Threads",
+      "time": "19:00",
+      "purpose": "共感獲得",
+      "character": "🕊ひより",
+      "episode_id": "E546",
+      "content": "断れない人ほど、自分が何を好きなのか分からなくなる。\n\n全部受け入れていた時期は、誘いの内容で迷ったことがなかった。迷う前に、行くと決まっていたから。\n\n断るようになってから、好きなものの輪郭が出てきた。拒絶と品位は、同じところから出ている。\n\n今日ひとつ、行かない日を一つだけ決めてみる？\n\n言った日は、次の誘いの内容が変わった。好きな人からの誘いでも、行かない日は行かないと言っている。\n\n感情はある。依存はしない。💍",
+      "quote": "断れる分だけ、好きがはっきりする。",
+      "note_funnel": false,
+      "self_replies": [
+        "🕊ひより｜断るほうから、好きの輪郭が出てくる。\n最近、行かないと言えた誘いはある？"
+      ],
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand resting lightly on her own closed planner; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+    }
+  ],
+  "trend_queries": [
+    "X：管理職 板挟み 部下 育成 話題（Web検索・Web担当者Forum／アルー管理職調査レポート2026）",
+    "X：評価面談 部下 フィードバック 言いにくい（検索候補・HR系メディア）",
+    "X：Z世代 部下 叱れない 注意できない パワハラ 怖い（Web検索・東洋経済オンライン／LAZYSTYLE）",
+    "X：組織 人手不足 中途採用 早期離職 現場（Web検索・日本経済新聞／マイナビキャリアリサーチLab）",
+    "Threads：恋愛 悩み 曖昧な関係 既読 距離（検索候補・明治安田総合研究所／恋愛系note）",
+    "Threads：恋愛・結婚アンケート 独身 交際（Web検索・明治安田総合研究所 2026年調査）",
+    "Threads：秋 婚活 出会い 増える（Web検索・マッチングアプリ市場データ2026）",
+    "Threads：Threads 恋愛 投稿 人気 女性 共感（Web検索・RASA JAPAN 利用実態レポート2026）"
+  ]
 }
