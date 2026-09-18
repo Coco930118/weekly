@@ -256,7 +256,7 @@ def main(path):
         if p['date'] >= FOLD_FROM and len(p['content']) > X_MAX:
             ng(p['id'], f'X本文が{len(p["content"])}字（上限{X_MAX}）。型は266字で成立している（x_05）')
 
-    # 2.5 X短文（観察とコメント）。正典は rules/posts.md「X短文（観察とコメント）」。
+    # 2.5 X短文（観察）。正典は rules/posts.md「X短文（観察）」。
     # ここに条文を複製しない。
     # runbook ⑥-b の目視「本文の1行目と同じ文になっていないか照合する」をここへ移した
     # （2026-09-13 Coco決定。目視は1つ減る）。1行目だけを見ていたので、2行目や3段落目を
@@ -270,13 +270,17 @@ def main(path):
     # ⚠️ **観察が本文と逆側の条件から来ていないかは、ここでは見えない**
     # （9/8週 x_04 の事故は字数・文数・禁止語・重複を全部通っている）。あれは生成ルール側。
     XSHORT_FORM_FROM = '2026-09-15'
-    XS_MIN, XS_MAX = 40, 70
+    # 2026-09-18 Coco指示でキャラのコメントを外した。観察だけになったので字数も下げた。
+    # 25〜40：**Cocoの見本8本の実測が26〜36字**（2026-09-18 受領）。正典は rules/posts.md「X短文」
+    XS_NOCHAR_FROM = '2026-09-22'
+    XS_MIN, XS_MAX = 25, 40
+    XS_MIN_OLD, XS_MAX_OLD = 40, 70        # キャラのコメントがあった週（9/15週・9/22週の生成分）
     XS_SIM = 0.5
     # 語の置き去り検査の除外。**中身を指していない漢語**だけを外す（本文に無くて当然）。
     # 実測（2026-09-14）：これを入れないと x_05・x_08 の「以外」が要修正で出る
     XS_STOP = {'以外', '以上', '以下', '場合', '本当', '普通', '一緒', '結局',
                '最後', '最初', '自体', '一方'}
-    CHARS = ['👸', '🐢', '🐈\u200d⬛', '🕊']          # Coco／しずく／しらたま／ひより
+    CHARS = ['👸', '🐢', '🐈\u200d⬛', '🕊']          # 2026-09-18 に短文からは外した（返信1には残る）
     # 上から目線・押し付けの禁止を、機械で見える形に翻訳したもの（rules/posts.md 書き方4）
     # 「〜ましょう」は活用の頭を固定しない（「口に出してみましょう」は「しましょう」を含まない）。
     # 禁止語を動詞で持つのと同じ理由——書き手は活用して書く（BANNED_RE のコメント参照）
@@ -322,20 +326,25 @@ def main(path):
             if ab: ng(p['id'], 'X短文に抽象語', ab)
             xs_tails[flat.rstrip(''.join(CHARS)).rstrip('。')[-4:]] += 1
         if new_form:
-            if not (XS_MIN <= n <= XS_MAX):
-                ng(p['id'], f'X短文が{n}字（{XS_MIN}〜{XS_MAX}字）', flat)
+            nochar = p['date'] >= XS_NOCHAR_FROM
+            lo, hi = (XS_MIN, XS_MAX) if nochar else (XS_MIN_OLD, XS_MAX_OLD)
+            if not (lo <= n <= hi):
+                ng(p['id'], f'X短文が{n}字（{lo}〜{hi}字）', flat)
             # 2026-09-18 Coco指示で「2行固定」→「2〜4行」に開いた。
-            # 正典は rules/posts.md「X短文（観察とコメント）」。ここは数だけ持つ
+            # 正典は rules/posts.md「X短文（観察）」。ここは数だけ持つ
             lines = [l for l in s_raw.split('\n') if l.strip()]
             if not (2 <= len(lines) <= 4):
                 ng(p['id'], f'X短文が{len(lines)}行（2〜4行）', flat)
-            spk = [c for c in CHARS if flat.endswith(c)]
-            if not spk:
-                ng(p['id'], 'X短文の末尾にキャラの絵文字がない（👸🐢🐈‍⬛🕊のどれか1つ）', flat[-12:])
+            # キャラは 2026-09-18 Coco指示で外した。**入っていたら要修正**（返信1だけに残る）
+            if nochar:
+                if any(c in flat for c in CHARS):
+                    ng(p['id'], 'X短文にキャラの絵文字（2026-09-18 に外した。キャラは返信1だけ）', flat[-12:])
             else:
-                xs_speaker[spk[0]] += 1
-            if sum(flat.count(c) for c in CHARS) > 1:
-                ng(p['id'], 'X短文にキャラの絵文字が2つ以上（末尾に1つだけ）', flat)
+                spk = [c for c in CHARS if flat.endswith(c)]
+                if not spk:
+                    ng(p['id'], 'X短文の末尾にキャラの絵文字がない', flat[-12:])
+                else:
+                    xs_speaker[spk[0]] += 1
         # 折り畳み内（表示幅 FOLD）の本文と、似すぎていないか（新旧どちらの形でも効く）。
         # **完全一致から類似度に変えた（2026-09-14）。** 語尾だけ変えて使う形が通っていて、
         # 9/14 の実測で 0.91・0.78・0.73・0.73・0.68 の5本が完全一致検査を素通りした。
