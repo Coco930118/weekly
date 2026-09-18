@@ -94,6 +94,15 @@ UKEGUCHI = ['相談されたことがある', '打ち明けられたことがあ
             '立場が上がるほど', 'とても多い',
             '結論を言う', '結論から言うと', 'はっきり言う', '正直に言う', '一つだけ言う']
 
+# 冒頭フック（rules/posts.md ルール2）。**条文と理由はあちらが正典。ここは数と語だけ**
+HOOK_MIN, HOOK_MAX = 25, 35          # 一文で完結させる目安
+HOOK_FROM = '2026-09-22'             # 生成済み・未配信の週から当てる（Coco指示 2026-09-18）
+# 冒頭に置かない語。前置き・一般論・「いつも思う」系
+HOOK_NG = ['いつも思う', 'いつも先に', 'いつも見て', '毎回強く思う', '毎回思う',
+           '振り返り思う', '振り返って思う', 'たび思う', 'たびに思う', 'たびに、思う',
+           'そのたびに', '現場では', '現場に立つ',
+           '知らないと損', '衝撃の事実', '特徴5選', '悩んでいる人へ']
+
 # 経過・回数・期間の数字（目で見る6の材料）。
 # check.md：「機械はここを1〜2割しか拾えない」——素材にその数字があるかは
 # 在庫を読んで意味を照合しないと判定できないため、**判定は目視**。
@@ -200,6 +209,32 @@ def main(path):
             # 最終行＝切り替えた先は**状態**で書く。効能で書くとここで落ちる
             ng(p['id'], '効能で締めている（切り替えた先は状態で書く）', tail[-1][:28])
 
+    # 2-0 冒頭フック（rules/posts.md ルール2。25〜35字・一文・5型・〈ひとこと〉と重ねない）
+    #     x_short は別枠（短文の1行目は観察）なので対象外
+    over = []
+    for p in posts:
+        if p.get('date', '') < HOOK_FROM:
+            continue          # 配信済みの週には遡及しない
+        l1 = (p.get('content') or '').strip().split('\n')[0].strip()
+        if not l1:
+            continue
+        if len(l1) > HOOK_MAX:
+            over.append((p['id'], len(l1)))
+        hit = [w for w in HOOK_NG if w in l1]
+        if hit:
+            ng(p['id'], '冒頭に置かない語（rules/posts.md ルール2）', '／'.join(hit))
+        # フックと〈ひとこと〉が同じことを言っていないか（8文字窓の重なり）
+        q = (p.get('quote') or '').strip()
+        if len(q) >= 8 and len(l1) >= 8:
+            a8 = {l1[i:i + 8] for i in range(len(l1) - 7)}
+            b8 = {q[i:i + 8] for i in range(len(q) - 7)}
+            if a8 & b8:
+                ng(p['id'], '冒頭フックと〈ひとこと〉が重なっている（冒頭で結論を回収すると本文を読む理由が消える）',
+                   sorted(a8 & b8)[0])
+    if over:
+        ng('WEEK', f'冒頭フックが{HOOK_MAX}字超: {len(over)}本 ' +
+           '／'.join(f'{i}({n}字)' for i, n in over[:12]))
+
     # 2 X形式
     for p in X:
         l1 = p['content'].split('\n')[0]
@@ -289,9 +324,11 @@ def main(path):
         if new_form:
             if not (XS_MIN <= n <= XS_MAX):
                 ng(p['id'], f'X短文が{n}字（{XS_MIN}〜{XS_MAX}字）', flat)
+            # 2026-09-18 Coco指示で「2行固定」→「2〜4行」に開いた。
+            # 正典は rules/posts.md「X短文（観察とコメント）」。ここは数だけ持つ
             lines = [l for l in s_raw.split('\n') if l.strip()]
-            if len(lines) != 2:
-                ng(p['id'], f'X短文が{len(lines)}行（観察とコメントの2行）', flat)
+            if not (2 <= len(lines) <= 4):
+                ng(p['id'], f'X短文が{len(lines)}行（2〜4行）', flat)
             spk = [c for c in CHARS if flat.endswith(c)]
             if not spk:
                 ng(p['id'], 'X短文の末尾にキャラの絵文字がない（👸🐢🐈‍⬛🕊のどれか1つ）', flat[-12:])
