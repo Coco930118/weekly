@@ -164,9 +164,56 @@ def fold_cut(c):
             return i
     return None
 
+# テーマの決め方（rules/posts.md「テーマの決め方」＝直近4週と重複させない）の機械側。
+# **2026-09-18 まで、trend_summary はどのルールにも定義されておらず、どのツールも
+# 見ていなかった。** 実測：9/22週の3本が 9/15週の言い換えで、一致度 0.50／0.51／0.79。
+# 「直近4週と重複させない」は 2026-09-15 からあったのに、一度も止まっていない
+TREND_FROM = '2026-09-29'      # 次の生成から。9/22週は生成済みなので遡及しない
+TREND_SIM = 0.5                # x_short の類似度と同じ基準
+
+
+def prev_week_path(path):
+    """前週の週ファイル。`week_YYYY_MM_DD_YYYY_MM_DD.json` の開始日を7日戻す"""
+    m = re.search(r'week_(\d{4})_(\d{2})_(\d{2})_', os.path.basename(path))
+    if not m:
+        return None
+    st = datetime.date(*map(int, m.groups())) - datetime.timedelta(days=7)
+    en = st + datetime.timedelta(days=6)
+    q = os.path.join(os.path.dirname(path),
+                     f'week_{st:%Y_%m_%d}_{en:%Y_%m_%d}.json')
+    return q if os.path.exists(q) else None
+
+
+def check_trend(d, path):
+    if (d.get('week') or '')[:10] < TREND_FROM:
+        return
+    if not d.get('trend_queries'):
+        ng('WEEK', 'trend_queries が無い（その週に実際に打った検索語と、見た場所。'
+                   '空ならテーマがトレンドから決まっていない・rules/ops.md）')
+    cur = d.get('trend_summary')
+    if not cur:
+        ng('WEEK', 'trend_summary が無い（rules/ops.md）')
+        return
+    q = prev_week_path(path)
+    if not q:
+        return
+    prev = (json.load(open(q, encoding='utf-8')).get('trend_summary') or [])
+    if not prev:
+        return
+    hit = []
+    for i, c in enumerate(cur, 1):
+        r = max(difflib.SequenceMatcher(None, c, x).ratio() for x in prev)
+        if r >= TREND_SIM:
+            hit.append(f'{i}本目 一致度{r:.2f}')
+    if hit:
+        ng('WEEK', 'trend_summary が前週の言い換え（直近4週と重複させない・'
+                   'rules/posts.md「テーマの決め方」）: ' + '／'.join(hit))
+
+
 def main(path):
     d = json.load(open(path, encoding='utf-8'))
     posts = d['posts']
+    check_trend(d, path)
     X = [p for p in posts if p['platform'] == 'X']
     TH = [p for p in posts if p['platform'] == 'Threads']
     print(f'=== 機械チェック: {os.path.basename(path)} （X {len(X)} / Threads {len(TH)}）===\n')
