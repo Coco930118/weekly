@@ -1,72 +1,76 @@
 {
- "docs": [
-  {
-   "file": "shijibun_2026-09-19_ryogawa_0920.md",
-   "group": "指示文"
-  },
-  {
-   "file": "shijibun_2026-09-19_ryogawa_0922.md",
-   "group": "指示文"
-  },
-  {
-   "file": "report_2026-09-17_growup_2026-09-22.md",
-   "group": "報告書"
-  },
-  {
-   "file": "report_2026-09-14_xshort.md",
-   "group": "報告書"
-  },
-  {
-   "file": "handover_2026-09-13_xshort.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-13.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-08.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-06.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-05.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-03.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-02.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-09-01.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handover_2026-08-30.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "handoff_2026-08-27.md",
-   "group": "申し送り"
-  },
-  {
-   "file": "todo.md",
-   "group": "やること・判断待ち"
-  },
-  {
-   "file": "runbook_weekly.md",
-   "group": "指示文"
-  },
-  {
-   "file": "runbook_shindan.md",
-   "group": "指示文"
-  }
- ]
+  "docs": [
+    {
+      "file": "shijibun_2026-09-19_ryogawa_0920.md",
+      "group": "指示文"
+    },
+    {
+      "file": "shijibun_2026-09-19_ryogawa_0922.md",
+      "group": "指示文"
+    },
+    {
+      "file": "report_2026-09-19_ryogawa.md",
+      "group": "報告書"
+    },
+    {
+      "file": "report_2026-09-17_growup_2026-09-22.md",
+      "group": "報告書"
+    },
+    {
+      "file": "report_2026-09-14_xshort.md",
+      "group": "報告書"
+    },
+    {
+      "file": "handover_2026-09-13_xshort.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-13.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-08.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-06.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-05.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-03.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-02.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-09-01.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handover_2026-08-30.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "handoff_2026-08-27.md",
+      "group": "申し送り"
+    },
+    {
+      "file": "todo.md",
+      "group": "やること・判断待ち"
+    },
+    {
+      "file": "runbook_weekly.md",
+      "group": "指示文"
+    },
+    {
+      "file": "runbook_shindan.md",
+      "group": "指示文"
+    }
+  ]
 }
