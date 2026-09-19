@@ -162,8 +162,9 @@ function renderPosts() {
   const container = document.getElementById('postsContainer');
   const filtered = getFilteredPosts();
 
+  const feCounts = finalEditorStatusCounts(filtered);
   document.getElementById('statsBar').textContent =
-    `${filtered.length}件 / 全${allPosts.length}件`;
+    `${filtered.length}件 / 全${allPosts.length}件 ｜ Final：公開OK ${feCounts.public_ok}・軽微 ${feCounts.minor_fix}・要再編集 ${feCounts.reedit}・編集中 ${feCounts.pending}・未判定 ${feCounts.none}`;
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
@@ -360,7 +361,10 @@ function renderCard(post) {
           <span class="card-time">${post.time}</span>
           <span class="card-character">${escapeHtml(post.character)}</span>
         </div>
-        <span class="purpose-badge">${escapeHtml(post.purpose)}</span>
+        <div class="card-meta-right">
+          ${finalEditorStatusBadge(post)}
+          <span class="purpose-badge">${escapeHtml(post.purpose)}</span>
+        </div>
       </div>
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
@@ -372,7 +376,8 @@ function renderCard(post) {
             data-final-editor-week="${escapeHtml(post.weekId || '')}"
             data-final-editor-date="${escapeHtml(post.date || '')}"
             data-final-editor-time="${escapeHtml(post.time || '')}"
-          >Final Editor</button>
+          >Final Editorで編集</button>
+          ${finalEditorStatusSelect(post)}
         </div>
       </div>
       ${extraSections}
@@ -453,6 +458,92 @@ function setupCopyHandler() {
 }
 
 // ─── Coco Final Editor ────────────────────────────────────────────────────────
+// 保存先はブラウザの localStorage。GitHub Pages からリポジトリへ直接書き込まない。
+// 端末ごとの保存だが、公開サイトに認証トークンを置かずに安全に状態を保持できる。
+const FINAL_EDITOR_STORAGE_KEY = 'coco-final-editor-status-v1';
+const FINAL_EDITOR_STATUSES = {
+  pending: { label: '編集中', cls: 'fe-status-pending' },
+  public_ok: { label: '公開OK', cls: 'fe-status-ok' },
+  minor_fix: { label: '軽微修正', cls: 'fe-status-minor' },
+  reedit: { label: '要再編集', cls: 'fe-status-reedit' }
+};
+
+function finalEditorPostKey(post) {
+  return [post.weekId || '', post.id || '', post.date || '', post.time || ''].join('::');
+}
+
+function loadFinalEditorStatuses() {
+  try {
+    const raw = localStorage.getItem(FINAL_EDITOR_STORAGE_KEY);
+    return raw ? JSON.parse(raw) : {};
+  } catch {
+    return {};
+  }
+}
+
+function saveFinalEditorStatuses(map) {
+  try {
+    localStorage.setItem(FINAL_EDITOR_STORAGE_KEY, JSON.stringify(map));
+    return true;
+  } catch {
+    return false;
+  }
+}
+
+function getFinalEditorStatus(post) {
+  const map = loadFinalEditorStatuses();
+  return map[finalEditorPostKey(post)] || '';
+}
+
+function setFinalEditorStatus(post, status) {
+  const map = loadFinalEditorStatuses();
+  const key = finalEditorPostKey(post);
+  if (!status) delete map[key];
+  else map[key] = status;
+  return saveFinalEditorStatuses(map);
+}
+
+function finalEditorStatusBadge(post) {
+  const status = getFinalEditorStatus(post);
+  const meta = FINAL_EDITOR_STATUSES[status];
+  if (!meta) return '<span class="final-editor-status fe-status-none">未判定</span>';
+  return `<span class="final-editor-status ${meta.cls}">${meta.label}</span>`;
+}
+
+function finalEditorStatusSelect(post) {
+  const current = getFinalEditorStatus(post);
+  const options = [
+    ['', '未判定'],
+    ['public_ok', '公開OK'],
+    ['minor_fix', '軽微修正'],
+    ['reedit', '要再編集']
+  ].map(([value, label]) =>
+    `<option value="${value}"${current === value ? ' selected' : ''}>${label}</option>`
+  ).join('');
+
+  return `<label class="final-editor-status-control">
+    <span>結果</span>
+    <select
+      class="final-editor-status-select"
+      data-final-editor-status-id="${escapeHtml(post.id || '')}"
+      data-final-editor-status-week="${escapeHtml(post.weekId || '')}"
+      data-final-editor-status-date="${escapeHtml(post.date || '')}"
+      data-final-editor-status-time="${escapeHtml(post.time || '')}"
+      aria-label="Final Editorの結果"
+    >${options}</select>
+  </label>`;
+}
+
+function finalEditorStatusCounts(posts) {
+  const counts = { public_ok: 0, minor_fix: 0, reedit: 0, pending: 0, none: 0 };
+  posts.forEach(post => {
+    const s = getFinalEditorStatus(post);
+    if (Object.prototype.hasOwnProperty.call(counts, s)) counts[s] += 1;
+    else counts.none += 1;
+  });
+  return counts;
+}
+
 //
 // ここは「ルールを増やす場所」ではなく、生成 + full_check を通った投稿の最終編集層。
 // GitHub Pages から外部AI APIを直接呼ばない（APIキーをブラウザに置かない）。
@@ -590,7 +681,22 @@ function setupFinalEditor() {
     const launchBtn = e.target.closest('.final-editor-btn');
     if (launchBtn) {
       const post = findFinalEditorPost(launchBtn);
-      if (post) openFinalEditor(post);
+      if (!post) return;
+
+      const prompt = buildFinalEditorPrompt(post);
+      setFinalEditorStatus(post, 'pending');
+      renderPosts();
+
+      // ChatGPT の新規チャットへ対象投稿と編集指示を渡す。
+      // ?q= は新規チャットの入力欄へプロンプトを渡す用途で利用する。
+      // クライアント側の挙動で自動送信されない場合でも、内容は入力済みの状態になる。
+      const targetUrl = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
+      const chatWindow = window.open(targetUrl, '_blank', 'noopener');
+      if (!chatWindow) {
+        const ok = await copyToClipboard(prompt);
+        if (ok) alert('ChatGPTを開けなかったため、Final Editorの指示をコピーしました。');
+        else alert('ChatGPTを開けませんでした。ポップアップ許可を確認してください。');
+      }
       return;
     }
 
@@ -617,6 +723,22 @@ function setupFinalEditor() {
         alert('ChatGPTを開けませんでした。ポップアップ許可を確認してください。プロンプトはコピー済みです。');
       }
     }
+  });
+
+  document.addEventListener('change', e => {
+    const select = e.target.closest('.final-editor-status-select');
+    if (!select) return;
+
+    const post = allPosts.find(p =>
+      String(p.id || '') === String(select.dataset.finalEditorStatusId || '') &&
+      String(p.weekId || '') === String(select.dataset.finalEditorStatusWeek || '') &&
+      String(p.date || '') === String(select.dataset.finalEditorStatusDate || '') &&
+      String(p.time || '') === String(select.dataset.finalEditorStatusTime || '')
+    );
+    if (!post) return;
+
+    setFinalEditorStatus(post, select.value);
+    renderPosts();
   });
 
   document.addEventListener('keydown', e => {
