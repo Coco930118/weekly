@@ -1615,3 +1615,96 @@ body.modal-open {
   .final-editor-prompt { min-height: 300px; font-size: 0.74rem; }
   .final-editor-actions > button { width: 100%; }
 }
+
+
+/* ===== Coco Final Editor status v2 ===== */
+.card-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.final-editor-status {
+  display: inline-flex;
+  align-items: center;
+  min-height: 22px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.fe-status-none {
+  color: var(--text-muted);
+  background: rgba(120, 120, 130, 0.06);
+}
+
+.fe-status-pending {
+  color: #8fb7df;
+  border-color: rgba(90, 145, 200, 0.35);
+  background: rgba(90, 145, 200, 0.10);
+}
+
+.fe-status-ok {
+  color: #7bd3a7;
+  border-color: rgba(70, 180, 120, 0.35);
+  background: rgba(70, 180, 120, 0.10);
+}
+
+.fe-status-minor {
+  color: #e0b467;
+  border-color: rgba(212, 160, 60, 0.36);
+  background: rgba(212, 160, 60, 0.10);
+}
+
+.fe-status-reedit {
+  color: #ef8a8a;
+  border-color: rgba(200, 60, 60, 0.40);
+  background: rgba(200, 60, 60, 0.10);
+}
+
+.final-editor-status-control {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.67rem;
+  color: var(--text-muted);
+}
+
+.final-editor-status-select {
+  appearance: auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-secondary);
+  padding: 5px 7px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.final-editor-status-select:focus {
+  outline: 1px solid rgba(201, 169, 110, 0.55);
+  outline-offset: 1px;
+}
+
+@media (max-width: 560px) {
+  .card-meta-right {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .card-actions {
+    align-items: center;
+  }
+  .final-editor-status-control {
+    width: 100%;
+    justify-content: space-between;
+  }
+  .final-editor-status-select {
+    flex: 1;
+  }
+}
