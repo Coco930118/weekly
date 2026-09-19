@@ -364,8 +364,15 @@ function renderCard(post) {
       </div>
       <div class="card-body">
         <p class="card-content">${contentEscaped}</p>
-        <div class="copy-btn-content">
+        <div class="copy-btn-content card-actions">
           <button class="copy-btn" data-copy="${escapeHtml(frameText)}">コピー</button>
+          <button
+            class="final-editor-btn"
+            data-final-editor-id="${escapeHtml(post.id || '')}"
+            data-final-editor-week="${escapeHtml(post.weekId || '')}"
+            data-final-editor-date="${escapeHtml(post.date || '')}"
+            data-final-editor-time="${escapeHtml(post.time || '')}"
+          >Final Editor</button>
         </div>
       </div>
       ${extraSections}
@@ -442,6 +449,178 @@ function setupCopyHandler() {
 
     const ok = await copyToClipboard(text);
     flashCopyState(btn, ok);
+  });
+}
+
+// ─── Coco Final Editor ────────────────────────────────────────────────────────
+//
+// ここは「ルールを増やす場所」ではなく、生成 + full_check を通った投稿の最終編集層。
+// GitHub Pages から外部AI APIを直接呼ばない（APIキーをブラウザに置かない）。
+// 投稿ごとに専用プロンプトを作り、ChatGPTへ渡すところまでをサイト側が担当する。
+
+function buildFinalEditorPrompt(post) {
+  const body = post.frame || post.content || '';
+  const replies = Array.isArray(post.self_replies)
+    ? post.self_replies.filter(Boolean)
+    : [];
+  const extras = [];
+
+  if (post.quote) extras.push(`〈ひとこと〉${post.quote}`);
+  replies.forEach((r, i) => extras.push(`【返信${['①', '②', '③'][i] || (i + 1)}】\n${r}`));
+
+  return `あなたは「Coco Final Editor」です。
+この投稿は、生成後に full_check を通過したものとして扱ってください。
+役割は「新しいルールを作ること」ではなく、この1本を公開できる完成度まで整えることです。
+
+【運用の固定】
+- 順番は「生成 → full_check → Final Editor → 再 full_check」。
+- 新しい要求はルール化しない。まずこの投稿だけの個別修正として扱う。
+- 同じ問題が3回目に再発した場合だけ「恒久ルール候補」とする。1回目は「今回だけ」、2回目は「再発2回目」。
+- 既存ルール同士の明確な矛盾は「既存矛盾修正候補」として別枠で指摘してよい。
+- 過去投稿への遡及修正は提案しない。
+- 実体験・素材にない出来事や結果は作らない。
+
+【Cocoの最終編集基準】
+1. 一読で、何を言いたい投稿か分かるか。
+2. Coco自身の選択が、読者への「正解の押しつけ」になっていないか。
+3. 感情・存在は肯定しつつ、行動や距離の選択権が本人に返っているか。
+4. 「相手をどう動かすか」という操作技法ではなく、「自分は何を選ぶか」になっているか。
+5. 「うまい」より「ある」。実際に起きたことの手触りがあるか。
+6. 冷たさ、説教臭さ、強がり、説明しすぎが出ていないか。
+7. 選択肢が2つある投稿は、素材に両側の先があるなら両方を見せる。素材に無ければ捏造しない。
+8. ウィット一滴は、意味が成立したあとに置き、説明しない。新しい論点にしない。
+9. 最後に残る言葉が、Coco Methodologyの「存在は肯定する。選択は未来から決める。」と矛盾していないか。
+10. Xなら折り畳み前に必要な判断・先が届く設計を壊さない。Threadsは余白と自然な温度を優先する。
+
+【出力形式】
+判定：公開OK／軽微修正／要再編集
+
+一言診断：
+（1〜2文）
+
+修正箇所：
+（必要な場合だけ。最大2箇所）
+- before：
+- after：
+- 理由：
+
+完成全文：
+（公開OKなら原文をそのまま。修正する場合は完成版全文）
+
+ルール化判定：
+今回だけ／再発2回目／恒久ルール候補／既存矛盾修正候補
+※同じ問題が3回目か確認できない場合は「今回だけ」にする。
+
+再チェック：
+完成版は必ず full_check をもう一度通す。
+
+【対象】
+媒体：${post.platform || ''}
+投稿ID：${post.id || ''}
+週：${post.weekId || ''}
+日時：${post.date || ''} ${post.time || ''}
+
+【本文】
+${body}${extras.length ? `\n\n${extras.join('\n\n')}` : ''}`;
+}
+
+function ensureFinalEditorModal() {
+  let modal = document.getElementById('finalEditorModal');
+  if (modal) return modal;
+
+  modal = document.createElement('div');
+  modal.id = 'finalEditorModal';
+  modal.className = 'final-editor-modal';
+  modal.hidden = true;
+  modal.innerHTML = `
+    <div class="final-editor-backdrop" data-final-editor-close="1"></div>
+    <section class="final-editor-panel" role="dialog" aria-modal="true" aria-labelledby="finalEditorTitle">
+      <div class="final-editor-head">
+        <div>
+          <p class="final-editor-kicker">公開前の最終編集</p>
+          <h2 id="finalEditorTitle">Coco Final Editor</h2>
+        </div>
+        <button class="final-editor-close" type="button" data-final-editor-close="1" aria-label="閉じる">×</button>
+      </div>
+      <p class="final-editor-flow">生成 → full_check → <strong>Final Editor</strong> → 再 full_check</p>
+      <p class="final-editor-note">ルールは増やしません。まず1本だけを整え、3回目の再発だけを恒久ルール候補にします。</p>
+      <div class="final-editor-target" id="finalEditorTarget"></div>
+      <textarea id="finalEditorPrompt" class="final-editor-prompt" readonly></textarea>
+      <div class="final-editor-actions">
+        <button type="button" class="final-editor-copy" data-final-editor-copy="1">プロンプトをコピー</button>
+        <button type="button" class="final-editor-open" data-final-editor-open="1">コピーしてChatGPTを開く</button>
+      </div>
+      <p class="final-editor-foot">ChatGPTで完成版が出たら、JSONへ反映する前に full_check をもう一度通します。</p>
+    </section>`;
+  document.body.appendChild(modal);
+  return modal;
+}
+
+function findFinalEditorPost(btn) {
+  return allPosts.find(p =>
+    String(p.id || '') === String(btn.dataset.finalEditorId || '') &&
+    String(p.weekId || '') === String(btn.dataset.finalEditorWeek || '') &&
+    String(p.date || '') === String(btn.dataset.finalEditorDate || '') &&
+    String(p.time || '') === String(btn.dataset.finalEditorTime || '')
+  );
+}
+
+function openFinalEditor(post) {
+  const modal = ensureFinalEditorModal();
+  const prompt = buildFinalEditorPrompt(post);
+  const target = document.getElementById('finalEditorTarget');
+  const textarea = document.getElementById('finalEditorPrompt');
+
+  target.textContent = `${post.platform || ''}｜${post.id || ''}｜${post.date || ''} ${post.time || ''}`;
+  textarea.value = prompt;
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+  setTimeout(() => textarea.focus(), 0);
+}
+
+function closeFinalEditor() {
+  const modal = document.getElementById('finalEditorModal');
+  if (!modal) return;
+  modal.hidden = true;
+  document.body.classList.remove('modal-open');
+}
+
+function setupFinalEditor() {
+  document.addEventListener('click', async e => {
+    const launchBtn = e.target.closest('.final-editor-btn');
+    if (launchBtn) {
+      const post = findFinalEditorPost(launchBtn);
+      if (post) openFinalEditor(post);
+      return;
+    }
+
+    if (e.target.closest('[data-final-editor-close]')) {
+      closeFinalEditor();
+      return;
+    }
+
+    const copyBtn = e.target.closest('[data-final-editor-copy]');
+    if (copyBtn) {
+      const text = document.getElementById('finalEditorPrompt')?.value || '';
+      const ok = await copyToClipboard(text);
+      flashCopyState(copyBtn, ok);
+      return;
+    }
+
+    const openBtn = e.target.closest('[data-final-editor-open]');
+    if (openBtn) {
+      const text = document.getElementById('finalEditorPrompt')?.value || '';
+      const chatWindow = window.open('https://chatgpt.com/', '_blank', 'noopener');
+      const ok = await copyToClipboard(text);
+      flashCopyState(openBtn, ok);
+      if (!chatWindow) {
+        alert('ChatGPTを開けませんでした。ポップアップ許可を確認してください。プロンプトはコピー済みです。');
+      }
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeFinalEditor();
   });
 }
 
@@ -1074,6 +1253,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setupPlatformFilter();
   setupSectionToggle();
   setupCopyHandler();
+  setupFinalEditor();
   setupWeekCopyHandler();
   setupTabs();
   setupNoteTierFilter();
