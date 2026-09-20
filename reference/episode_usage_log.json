@@ -6618,6 +6618,62 @@
       "theme": "会う回数は二人で決める。会えない間の過ごし方は、自分で決める",
       "platform": "Threads",
       "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E456",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-22_fact-not-person（x_02のfunnel回収。事実の側に置いて聞く／責任の所在を相手の言葉で確定／要求はゼロ／相手の反応を判定に使わない）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E532",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-22_notice-then-choose（th_03のfunnel回収。気づく力は消さず、拾うかどうかだけ選ぶ。抽象的な原則発言として使用）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E498",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-23_no-answer-given（x_03のfunnel回収。基準は示されるが答えは示されない。最初の一行は処方の形で記述し、実体験としては書いていない）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E521",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-23_waiting-to-absorbed（th_05のfunnel回収。ほかの時間に熱中する／一緒にいなくても幸せ／三つ目はnoteでのみ記述）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E486",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-24_one-line-not-answer（x_05のfunnel回収。絶対NGの一本／治る範囲か／断言できないことは断言しない「思われます」）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E371",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-24_put-it-first（th_09のfunnel回収。「落ち着いたら連絡するね」の日は来ない／乗り気じゃない予定が先に確定する）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E577",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-25_soft-but-clear（x_08のfunnel回収。褒め言葉としても読める一行／書き直した議題／同じ温度で流される可能性）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
+    },
+    {
+      "episode_ref": "E541",
+      "date": "2026-09-20",
+      "theme": "note_2026-09-25_no-permission-needed（th_11のfunnel回収。責任ではなく許可が要らない。抽象的な原則発言として使用）",
+      "platform": "note",
+      "week": "2026-09-22_2026-09-28"
     }
   ],
   "registered": [

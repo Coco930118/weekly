@@ -6,9 +6,9 @@
     "platform_origin_note": "2026-06以前のnoteには platform_origin フィールドがなかったため unknown。推測で埋めない。2026-07以降は X / Threads が入る。",
     "principle_no_note": "Coco Methodology 原理01〜07の番号。既存分は未判定で null。今後作るnoteでは必須。",
     "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
-    "count": 156,
+    "count": 165,
     "week_group_note": "week_group='過去分' は、プラン振り分けをしていなかった4〜6月のnote。保持期間30日削除の対象外としてサイトに残す（CLAUDE.md「過去分」参照）。source_week は元の週のまま残す。",
-    "last_updated": "2026-09-15",
+    "last_updated": "2026-09-20",
     "draft_pool": "notes/drafts/ は、note.comに投稿していない下書きの置き場。サイトには出さない。新規note作成時の素材として読む（切り口・処方・言い回し）。note_archive.json には status=未公開・素材 で残す",
     "deleted_2026-08-24": "保持期間超過4週 29本を notes/ から削除（2026-06-09_2026-06-15, 2026-06-30_2026-07-06, 2026-07-07_2026-07-13, 2026-07-14_2026-07-20）。note_archive.json の行は索引として残す"
   },
@@ -3142,6 +3142,190 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-09-20_guide-soshiki.json",
+      "in_index": true
+    },
+    {
+      "title": "💼こちらの非は先に片づける。それ以外は、背負わない",
+      "publish_date": "2026-09-22",
+      "platform_origin": "X",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "背負う人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 3,
+      "cluster_topic": "話が食い違ったとき、誰が悪いかを決めようとして結局こちらが全部かぶる。人を疑うのではなく事実のほうを見て、こちらの非は先に片づけ、それ以外は背負わない。矛盾が出たときに本人を疑わずに聞く言い方と、こちらの非を先に片づける順番",
+      "linked_principle": "事実と感情を分ける。記録に置くのは事実だけ（原理03）。主語を人から事実に移すと、責めずに確認できる。そのうえで判断は相手に返す（原理04）",
+      "funnel_targets": [
+        "x_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-22_fact-not-person.json",
+      "in_index": true
+    },
+    {
+      "title": "💗気づく力は消さなくていい。拾うかどうかだけ、選ぶ",
+      "publish_date": "2026-09-22",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "守る人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 2,
+      "cluster_topic": "気づいたことを全部拾いにいって疲れる。気づく力を消すのでも、感覚ごと閉じるのでもなく、気づいたあとに拾うかどうかだけを選ぶ。反応する前に何を見るかと、拾わないと決めた夜の過ごし方",
+      "linked_principle": "悩みを消さない。扱えるようにする（原理02）。気づく力は消さず、気づいたあとの行動だけを選べる形にして手元に置く",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-22_notice-then-choose.json",
+      "in_index": true
+    },
+    {
+      "title": "💼基準は示される。答えのほうは、示されない",
+      "publish_date": "2026-09-23",
+      "platform_origin": "X",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "降りる人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 1,
+      "cluster_topic": "「唯一無二であってほしい」と求められたのに、何をすればそうなるかは誰も教えてくれない。答えを待つのをやめて、自分で見て決めて動く。最初の一行の置き方と、外れた日の戻し方",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを置く（原理01）。基準を出す人が答えまで持っているとは限らないので、動かせるのは自分の一行のほう",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-23_no-answer-given.json",
+      "in_index": true
+    },
+    {
+      "title": "💗待ち時間をやめると、会えない日が自分の日になる",
+      "publish_date": "2026-09-23",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "溶ける人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 6,
+      "cluster_topic": "会えない時間を埋めようとして、予定がぜんぶ待ち時間になっていた。埋めるのをやめて熱中する先を作るまでの順番と、待ち時間に戻りかけたときの立て直し方。一緒にいなくても幸せな状態で出逢うということ",
+      "linked_principle": "悩みの意味を反転して定義し直す（原理06）。会えない時間は「埋める時間」ではなく、自分が熱中する時間として置き直す",
+      "funnel_targets": [
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-23_waiting-to-absorbed.json",
+      "in_index": true
+    },
+    {
+      "title": "💼任せる側は、正解を持っていない。持っているのは戻せる線だけ",
+      "publish_date": "2026-09-24",
+      "platform_origin": "X",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "先に動く人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 4,
+      "cluster_topic": "高額の判断を任せるとき、正解が分からないままでも任せられる。絶対NGの一本だけ決めて、中の判断は本人に置く。線の引き方と、外れたときに戻す手順、断言できないことを断言しないまま任せる言い方",
+      "linked_principle": "決断を相手に返す。詰めない、選ばせる（原理04）。こちらが判定を握らず、越えない線だけを示して、中の判断は本人のものにする",
+      "funnel_targets": [
+        "x_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-24_one-line-not-answer.json",
+      "in_index": true
+    },
+    {
+      "title": "💗「落ち着いたら連絡するね」の日は、いつまでも来ない",
+      "publish_date": "2026-09-24",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "尽くす人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 1,
+      "cluster_topic": "会うべき人には全部会って、会いたかった人には「落ち着いたら連絡するね」。先に埋まった予定がそのまま優先順位になっている。会いたい人の予定を先に置く順番と、乗り気じゃない誘いを流す返し方",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを置く（原理01）。誘いの数は動かせないので、先に置く一件のほうを動かす",
+      "funnel_targets": [
+        "th_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-24_put-it-first.json",
+      "in_index": true
+    },
+    {
+      "title": "💼やわらかく言うと、いちばん伝えたいところまでやわらかくなる",
+      "publish_date": "2026-09-25",
+      "platform_origin": "X",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "こらえる人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 3,
+      "cluster_topic": "議題に書いた一行が褒め言葉として受け取られていた。配慮のつもりで言葉をやわらげると、意図まで薄まる。やわらかさは外さずに読み替えの余地だけを外す言い換えと、議題の置き方",
+      "linked_principle": "事実と感情を分ける。記録に置くのは事実だけ（原理03）。評価語を外して、観察できる事実の形にすると、配慮を落とさずに意図が通る",
+      "funnel_targets": [
+        "x_08"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-25_soft-but-clear.json",
+      "in_index": true
+    },
+    {
+      "title": "💗罪悪感が出るのは、それだけ家族だから",
+      "publish_date": "2026-09-25",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "flagship",
+      "plan_type": "秘める人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 6,
+      "cluster_topic": "親や家族と距離を置きたいのに、罪悪感で連絡してしまう。責任という言い方をすると重くなるが、要は誰の許可も要らないということ。許可を取らずに決めるときの言い方と、罪悪感が戻ってきた日の置き方",
+      "linked_principle": "悩みの意味を反転して定義し直す（原理06）。「自分の幸せに責任を持つ」という重い言い方を、「誰の許可も要らない」に置き直す",
+      "funnel_targets": [
+        "th_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-25_no-permission-needed.json",
+      "in_index": true
+    },
+    {
+      "title": "💗夜に開くか、送る前に開くか、翌朝に開くか",
+      "publish_date": "2026-09-27",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-22_2026-09-28",
+      "tier": "free_entry",
+      "plan_type": null,
+      "maai_axis": null,
+      "principle_no": 7,
+      "cluster_topic": "週次の無料まとめ（型A・恋愛）——①ぐるぐるが始まった夜 ②送る前の三十分 ③言ったあとの翌朝、の三つの時間帯で既存の💗記事を並べ直した目次。中身は要約まで、手当ては各記事へ送る",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。夜と朝では使える手が違うという現実を先に認めて、開く記事を時間帯で分ける",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-09-27_guide-kankei.json",
       "in_index": true
     }
   ]
