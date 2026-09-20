@@ -76,12 +76,13 @@ async function loadPosts() {
       index.weeks.map(async (filename) => {
         const res = await fetch(`./posts/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
-        return res.json();
+        const data = await res.json();
+        return { ...data, _sourceFile: filename };
       })
     );
 
     allPosts = weekDataArr
-      .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week })))
+      .flatMap(w => w.posts.map(p => ({ ...p, weekId: w.week, _sourceFile: w._sourceFile })))
       .flatMap(expandXShort)
       .sort((a, b) => {
         const tA = new Date(`${a.date}T${a.time}:00`);
@@ -164,7 +165,7 @@ function renderPosts() {
 
   const feCounts = finalEditorStatusCounts(filtered);
   document.getElementById('statsBar').textContent =
-    `${filtered.length}件 / 全${allPosts.length}件 ｜ Final：公開OK ${feCounts.public_ok}・軽微 ${feCounts.minor_fix}・要再編集 ${feCounts.reedit}・編集中 ${feCounts.pending}・未判定 ${feCounts.none}`;
+    `${filtered.length}件 / 全${allPosts.length}件 ｜ Final：公開OK ${feCounts.public_ok}・軽微 ${feCounts.minor_fix}・要再編集 ${feCounts.reedit}・編集中 ${feCounts.pending}・再check ${feCounts.pending_check}・未判定 ${feCounts.none}`;
 
   if (filtered.length === 0) {
     container.innerHTML = '<p class="empty-state">該当する投稿がありません</p>';
@@ -463,6 +464,7 @@ function setupCopyHandler() {
 const FINAL_EDITOR_STORAGE_KEY = 'coco-final-editor-status-v1';
 const FINAL_EDITOR_STATUSES = {
   pending: { label: '編集中', cls: 'fe-status-pending' },
+  pending_check: { label: '再full_check中', cls: 'fe-status-pending' },
   public_ok: { label: '公開OK', cls: 'fe-status-ok' },
   minor_fix: { label: '軽微修正', cls: 'fe-status-minor' },
   reedit: { label: '要再編集', cls: 'fe-status-reedit' }
@@ -491,6 +493,7 @@ function saveFinalEditorStatuses(map) {
 }
 
 function getFinalEditorStatus(post) {
+  if (post.final_editor_status) return post.final_editor_status;
   const map = loadFinalEditorStatuses();
   return map[finalEditorPostKey(post)] || '';
 }
@@ -535,7 +538,7 @@ function finalEditorStatusSelect(post) {
 }
 
 function finalEditorStatusCounts(posts) {
-  const counts = { public_ok: 0, minor_fix: 0, reedit: 0, pending: 0, none: 0 };
+  const counts = { public_ok: 0, minor_fix: 0, reedit: 0, pending: 0, pending_check: 0, none: 0 };
   posts.forEach(post => {
     const s = getFinalEditorStatus(post);
     if (Object.prototype.hasOwnProperty.call(counts, s)) counts[s] += 1;
@@ -604,16 +607,14 @@ A/B共通
 - 2案が近くても必ず両方表示する。差を作るためだけの言い換えはしない。
 - 原文が公開可能で、A/B作成のための整理しかしていない場合、判定は「公開OK」。別案が作れること自体を「軽微修正」の理由にしない。
 
-【本文確定後の連動編集｜この節が唯一の正典】
-CocoがAまたはBの本文を選んだら、その本文を確定版として、同じ投稿に付く〈ひとこと〉・返信①以降・CTA・note導線などの付随文を自動的に連動編集する。Cocoに「返信も直す？」と確認を取り直さない。
-- 付随文は、確定本文の判断軸・温度・語彙に合わせる。旧本文の言い回しや結論を惰性で残さない。
-- 本文ですでに言い切った内容を返信で復唱しない。返信は補助・別角度・余韻・対話の役割を保つ。
-- 元から存在しない返信やCTAを、新しく必要だと決めつけて増やさない。既存の付随要素だけを必要に応じて編集する。
-- 本文がAならAに、BならBに合わせて編集する。Bを選んだのに返信だけ説明過多な旧構成へ戻さない。
-- 素材にない事実・結果は足さない。各付随要素の既存ルールはそのまま適用する。
-- 連動編集後は、本文＋付随文を一組として再 full_check する。
-- Cocoが選んだ本文と連動編集した付随文を実データへ反映し、再 full_check が通った時点でFinal Editor工程は完了。その投稿のFinal Editor結果を「公開OK」にする。「軽微修正」「要再編集」「編集中」を残したまま完了扱いにしない。
-- 反映または再 full_check が未完了・失敗なら「公開OK」にはしない。公開OKは「編集案を出した」ではなく「選択済み完成版を反映し、再チェックまで通過した」の意味に統一する。
+【本文確定後の連動編集と反映｜この節が唯一の正典】
+Cocoが「Aで反映して」「Bで反映して」など本文を選んだら、確認質問を挟まず、その応答内で反映処理まで進める。
+- 選択本文を確定版にし、同じ投稿に既存の〈ひとこと〉・返信①以降・CTA・note導線があれば、その本文の判断軸・温度・語彙に合わせて連動編集する。
+- 本文ですでに言い切った内容を返信で復唱しない。元から存在しない返信やCTAは新設しない。
+- Bを選んだのに返信だけ説明過多な旧構成へ戻さない。素材にない事実・結果は足さない。
+- GitHub接続が使える場合は、下記【反映先】の投稿JSONを実際に更新する。本文・既存付随文を反映し、その投稿に final_editor_status: pending_check を保存する。
+- pending_check の保存後はGitHub Actionsが既存の full_check を実行し、成功時だけ public_ok に更新する。Final Editor自身がチェック未実行のまま public_ok を書いてはいけない。
+- GitHub更新を実行できなかった場合は「反映済み」「公開OK」と言わず、反映できなかったことだけを明示する。
 
 【出力形式】
 判定：公開OK／軽微修正／要再編集
@@ -650,13 +651,20 @@ CocoがA/Bを選んだ次の応答で、確定本文に合わせた〈ひとこ�
 ※同じ問題が3回目か確認できない場合は「今回だけ」にする。
 
 再チェック：
-選んだ完成版と連動編集した付随文を反映後、必ず full_check をもう一度通す。通過したらFinal Editor結果を「公開OK」に更新して完了する。反映前または再チェック未通過なら「公開OK」にしない。
+選択後は投稿JSONへ pending_check として反映する。再 full_check と public_ok への更新はGitHub Actionsに任せる。Actionsが失敗した場合は公開OKにしない。
 
 【対象】
 媒体：${post.platform || ''}
 投稿ID：${post.id || ''}
 週：${post.weekId || ''}
 日時：${post.date || ''} ${post.time || ''}
+
+【反映先】
+GitHub repository：Coco930118/weekly
+branch：main
+投稿JSON：posts/${post._sourceFile || ''}
+対象投稿ID：${post.id || ''}
+※CocoがA/Bを選ぶまではGitHubを書き換えない。選択後だけ上記ファイルの対象投稿を更新する。
 
 【本文】
 ${body}${extras.length ? `\n\n${extras.join('\n\n')}` : ''}`;
@@ -723,6 +731,44 @@ function closeFinalEditor() {
   document.body.classList.remove('modal-open');
 }
 
+async function refreshFinalEditorStatusesFromRepo() {
+  try {
+    const indexRes = await fetch('./posts/index.json', { cache: 'no-cache' });
+    if (!indexRes.ok) return;
+    const index = await indexRes.json();
+    const weeks = await Promise.all(index.weeks.map(async filename => {
+      const res = await fetch('./posts/' + filename, { cache: 'no-cache' });
+      if (!res.ok) return null;
+      return res.json();
+    }));
+    const repoStatuses = new Map();
+    weeks.filter(Boolean).forEach(w => {
+      (w.posts || []).forEach(p => {
+        const key = [w.week || '', p.id || '', p.date || '', p.time || ''].join('::');
+        repoStatuses.set(key, p.final_editor_status || '');
+      });
+    });
+    let changed = false;
+    allPosts.forEach(post => {
+      const repoStatus = repoStatuses.get(finalEditorPostKey(post)) || '';
+      const launchStatus = post._finalEditorRepoStatusAtLaunch;
+      if (launchStatus !== undefined && repoStatus === launchStatus) return;
+      if (repoStatus && post.final_editor_status !== repoStatus) {
+        post.final_editor_status = repoStatus;
+        delete post._finalEditorRepoStatusAtLaunch;
+        setFinalEditorStatus(post, '');
+        changed = true;
+      }
+    });
+    if (changed) renderPosts();
+  } catch {}
+}
+
+window.addEventListener('focus', () => {
+  refreshFinalEditorStatusesFromRepo();
+  setTimeout(refreshFinalEditorStatusesFromRepo, 4000);
+});
+
 function setupFinalEditor() {
   document.addEventListener('click', async e => {
     const launchBtn = e.target.closest('.final-editor-btn');
@@ -731,6 +777,8 @@ function setupFinalEditor() {
       if (!post) return;
 
       const prompt = buildFinalEditorPrompt(post);
+      post._finalEditorRepoStatusAtLaunch = post.final_editor_status || '';
+      post.final_editor_status = 'pending';
       setFinalEditorStatus(post, 'pending');
       renderPosts();
 
