@@ -1,0 +1,62 @@
+name: Final Editor publish check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'posts/*.json'
+      - 'tools/full_check.py'
+      - 'tools/final_editor_publish.py'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Find posts awaiting recheck
+        id: pending
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json, glob, os
+          files=[]
+          for path in glob.glob('posts/*.json'):
+              try:
+                  data=json.load(open(path, encoding='utf-8'))
+              except Exception:
+                  continue
+              if any(p.get('final_editor_status') == 'pending_check' for p in data.get('posts', [])):
+                  files.append(path)
+          open('/tmp/pending_files.txt','w',encoding='utf-8').write('\n'.join(files))
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write('has_pending=' + ('true' if files else 'false') + '\n')
+          print('pending files:', files)
+          PY
+      - name: Re-run full_check
+        if: steps.pending.outputs.has_pending == 'true'
+        shell: bash
+        run: |
+          while IFS= read -r file; do
+            [ -z "$file" ] && continue
+            python tools/full_check.py "$file"
+          done < /tmp/pending_files.txt
+      - name: Mark checked posts public OK
+        if: steps.pending.outputs.has_pending == 'true'
+        run: python tools/final_editor_publish.py
+      - name: Commit public OK status
+        if: steps.pending.outputs.has_pending == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add posts/*.json
+          git commit -m "Mark Final Editor posts public OK"
+          git push
