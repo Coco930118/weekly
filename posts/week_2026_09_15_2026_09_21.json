@@ -215,7 +215,7 @@
         "🕊ひより｜刺さった瞬間と、事実かどうかは別。\nいったん自分に戻すと、認めるか認めないかを自分で選べる。"
       ],
       "x_short": "刺さったからといって、全部が正しいとは限らない。\n反射で返す前に、いったん自分に戻す。",
-      "final_editor_status": "pending_check"
+      "final_editor_status": "public_ok"
     },
     {
       "id": "x_13",
@@ -233,7 +233,7 @@
         "🐢しずく｜聞かないと決めるのも、関わり方のひとつ。\n次に見るなら、何が起きたかより、そのあと何を選ぶか。"
       ],
       "x_short": "起きたことは変えられない。\n\nでも、\nそこから何を受け取ったかは、\nこれからに出る。",
-      "final_editor_status": "pending_check"
+      "final_editor_status": "public_ok"
     },
     {
       "id": "x_14",
@@ -544,7 +544,7 @@
         "🕊ひより｜一緒にいるのに、\nそれぞれの時間もちゃんとある。\nそんな距離は、少し軽い。"
       ],
       "frame": "旅先の夜。\n\n「そろそろ時間だね」で、\nみんなが立ち上がる。\n\n誰かが急かすでもなく、\n決まった時間に合わせて個室食へ向かう。\n\n近すぎず、離れてもいない。\n今日は、そういう夜。",
-      "final_editor_status": "pending_check"
+      "final_editor_status": "public_ok"
     },
     {
       "id": "th_19",
@@ -561,7 +561,7 @@
       "self_replies": [
         "🐢しずく｜手を出さないと決めても、大切じゃなくなるわけじゃない。\n見ている時間も、関わり方のひとつ。"
       ],
-      "final_editor_status": "pending_check"
+      "final_editor_status": "public_ok"
     },
     {
       "id": "th_20",
@@ -578,7 +578,7 @@
       "self_replies": [
         "🐈‍⬛しらたま｜合わせることも、合わせないことも選べる。\nどちらを選んでも、相手の反応まで引き受けなくていい。"
       ],
-      "final_editor_status": "pending_check"
+      "final_editor_status": "public_ok"
     },
     {
       "id": "th_21",
@@ -595,7 +595,7 @@
       "self_replies": [
         "🕊ひより｜自分で過ごす時間は、会えない時間の埋め合わせじゃない。\n今週、自分のために取った時間はどこ？"
       ],
-      "final_editor_status": "pending_check"
+      "final_editor_status": "public_ok"
     }
   ]
 }
