@@ -214,7 +214,8 @@
       "self_replies": [
         "🕊ひより｜刺さった瞬間と、事実かどうかは別。\nいったん自分に戻すと、認めるか認めないかを自分で選べる。"
       ],
-      "x_short": "刺さったからといって、全部が正しいとは限らない。\n反射で返す前に、いったん自分に戻す。"
+      "x_short": "刺さったからといって、全部が正しいとは限らない。\n反射で返す前に、いったん自分に戻す。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_13",
@@ -231,7 +232,8 @@
       "self_replies": [
         "🐢しずく｜聞かないと決めるのも、関わり方のひとつ。\n次に見るなら、何が起きたかより、そのあと何を選ぶか。"
       ],
-      "x_short": "起きたことは変えられない。\n\nでも、\nそこから何を受け取ったかは、\nこれからに出る。"
+      "x_short": "起きたことは変えられない。\n\nでも、\nそこから何を受け取ったかは、\nこれからに出る。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_14",
@@ -539,8 +541,10 @@
       "note_funnel": false,
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a ash rose ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) resting calmly beside her; they share a quiet moment; the two of them stepping into a corridor, her hand lightly on the sliding door; an evening inn corridor with soft lantern light; soft evening light. Refined palette of ash rose, pale apricot, and warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
-        "🕊ひより｜誰も相手を動かさなくていい時間は、\n距離まで少し軽くなる。"
-      ]
+        "🕊ひより｜一緒にいるのに、\nそれぞれの時間もちゃんとある。\nそんな距離は、少し軽い。"
+      ],
+      "frame": "旅先の夜。\n\n「そろそろ時間だね」で、\nみんなが立ち上がる。\n\n誰かが急かすでもなく、\n決まった時間に合わせて個室食へ向かう。\n\n近すぎず、離れてもいない。\n今日は、そういう夜。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "th_19",
@@ -555,8 +559,9 @@
       "note_funnel": false,
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early autumn morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale peach ro-kimono with dragonfly pattern, seen from the shoulders up together with a small wise turtle (Shizuku) resting calmly beside her; she pauses with her hands gently resting in her own lap instead of reaching toward something off-frame, her expression warm and attentive; a quiet morning room by a window with dragonflies over the grass, her own small notebook and getting-ready items nearby; soft morning light. Refined palette of pale peach, soft coral, and warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
-        "🐢しずく｜見ている時間も、関わり方のひとつ。\n先に手を出さないぶん、その子がどう動くかを見られる。"
-      ]
+        "🐢しずく｜手を出さないと決めても、大切じゃなくなるわけじゃない。\n見ている時間も、関わり方のひとつ。"
+      ],
+      "final_editor_status": "pending_check"
     },
     {
       "id": "th_20",
@@ -572,7 +577,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early September morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori) close by; they share a quiet moment; her hand placing one book on her own side of the table; a bright room with a cosmos stem on the table; soft morning light. Refined palette of pale rose, soft gold, and warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🐈‍⬛しらたま｜合わせることも、合わせないことも選べる。\nどちらを選んでも、相手の反応まで引き受けなくていい。"
-      ]
+      ],
+      "final_editor_status": "pending_check"
     },
     {
       "id": "th_21",
@@ -588,7 +594,8 @@
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with cosmos and susuki pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori) beside her; they share a quiet moment; she holds a single wrapped flower, walking without hurry; an evening street with low amber light and a flower shop awning; soft evening light. Refined palette of dusty rose, warm apricot, and warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "self_replies": [
         "🕊ひより｜自分で過ごす時間は、会えない時間の埋め合わせじゃない。\n今週、自分のために取った時間はどこ？"
-      ]
+      ],
+      "final_editor_status": "pending_check"
     }
   ]
 }
