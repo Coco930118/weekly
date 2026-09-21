@@ -9,10 +9,10 @@
     "rule": "2026-06-09の週を第1週とし、1週=7本の連番。frame末尾に「#温度の4択 NNN」（3桁ゼロ埋め）を置く。",
     "week_1_start": "2026-06-09",
     "posts_per_week": 7,
-    "last_assigned_no": 112,
-    "last_assigned_week": "2026-09-22_2026-09-28",
-    "next_no": 113,
-    "next_week": "2026-09-29_2026-10-05"
+    "last_assigned_no": 119,
+    "last_assigned_week": "2026-09-29_2026-10-05",
+    "next_no": 120,
+    "next_week": "2026-10-06_2026-10-12"
   },
   "frame_constraint": {
     "max_weighted_chars": 280,
@@ -396,6 +396,48 @@
       "no": 112,
       "date": "2026-09-28",
       "technique": "答えは出さず現実に委ねる",
+      "layer": "owner"
+    },
+    {
+      "no": 113,
+      "date": "2026-09-29",
+      "technique": "同じ返事の重さを見分ける",
+      "layer": "manager"
+    },
+    {
+      "no": 114,
+      "date": "2026-09-30",
+      "technique": "決定権の名前を返す",
+      "layer": "manager"
+    },
+    {
+      "no": 115,
+      "date": "2026-10-01",
+      "technique": "境界線と承認を両方持つ",
+      "layer": "owner"
+    },
+    {
+      "no": 116,
+      "date": "2026-10-02",
+      "technique": "評価は行動で測る",
+      "layer": "manager"
+    },
+    {
+      "no": 117,
+      "date": "2026-10-03",
+      "technique": "基準の順番を疑う",
+      "layer": "manager"
+    },
+    {
+      "no": 118,
+      "date": "2026-10-04",
+      "technique": "選ばない報告をする",
+      "layer": "owner"
+    },
+    {
+      "no": 119,
+      "date": "2026-10-05",
+      "technique": "決められる範囲かどうかで決める",
       "layer": "owner"
     }
   ],
