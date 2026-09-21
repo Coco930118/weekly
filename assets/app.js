@@ -1198,7 +1198,8 @@ Final Editor＝完成稿の価値が、クリック・読了・保存・回遊�
 - 修正不要な項目を別案目的で書き換えない。
 変更理由：各変更がクリック／読了／保存／回遊／継続のどれに効くかを一言で。
 ルール化判定：原則「不要」。同じ独立事例が3回確認された場合のみ候補。
-再チェック：Cocoが「反映して」と言ったら下記反映先へ実データを更新し、note_checkを再実行する。通過した場合だけ note_final_editor_status を public_ok にする。失敗・未実行なら公開OKにしない。
+反映：Cocoが「反映して」と言ったら、下記反映先のnote JSONへ完成版を実データとして更新し、同じコミットで note_final_editor_status を pending_check にする。content_markdown を変更した場合は、既存ルールどおり content_html も同期する。ここでは public_ok を書かない。
+再チェック：GitHub Actionsが既存の tools/note_check.py を自動実行する。要修正0件なら自動で note_final_editor_status = public_ok、要修正があれば check_failed にする。Final Editor自身はチェック結果を推測して公開OKにしない。
 
 【反映先】
 GitHub repository：Coco930118/weekly
@@ -1223,7 +1224,7 @@ ${body}`;
 
 function noteFinalEditorStatusBadge(note) {
   const s = note.note_final_editor_status || '';
-  const labels = { pending: '編集中', public_ok: '公開OK', sales_adjust: '販売調整', reedit: '再編集', source_check: '素材確認' };
+  const labels = { pending: '編集中', pending_check: '再note_check中', public_ok: '公開OK', check_failed: '要修正', sales_adjust: '販売調整', reedit: '再編集', source_check: '素材確認' };
   if (!s) return '<span class="final-editor-status fe-status-none">未判定</span>';
   return `<span class="final-editor-status ${s === 'public_ok' ? 'fe-status-ok' : 'fe-status-pending'}">${labels[s] || s}</span>`;
 }

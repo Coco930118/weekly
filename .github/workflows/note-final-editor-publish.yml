@@ -1,0 +1,54 @@
+name: Note Final Editor publish check
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'notes/*.json'
+      - 'tools/note_check.py'
+      - 'tools/full_check.py'
+      - 'tools/note_final_editor_publish.py'
+
+permissions:
+  contents: write
+
+jobs:
+  finalize-note:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Find notes awaiting recheck
+        id: pending
+        shell: bash
+        run: |
+          python - <<'PY'
+          import glob, json, os
+          files=[]
+          for path in glob.glob('notes/note_*.json'):
+              try:
+                  data=json.load(open(path, encoding='utf-8'))
+              except Exception:
+                  continue
+              if data.get('note_final_editor_status') == 'pending_check':
+                  files.append(path)
+          with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
+              f.write('has_pending=' + ('true' if files else 'false') + '\n')
+          print('pending notes:', files)
+          PY
+      - name: Re-run note_check and finalize statuses
+        if: steps.pending.outputs.has_pending == 'true'
+        run: python tools/note_final_editor_publish.py
+      - name: Commit note Final Editor status
+        if: steps.pending.outputs.has_pending == 'true'
+        shell: bash
+        run: |
+          if git diff --quiet; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add notes/*.json
+          git commit -m "Finalize note Final Editor status"
+          git push
