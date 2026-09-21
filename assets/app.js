@@ -1260,6 +1260,9 @@ function renderNoteCard(note) {
     ? `<p class="note-outcome">${escapeHtml(note.outcome_promise)}</p>`
     : '';
   const headHtml = note.content_html ? descHtml + outcomeHtml : '';
+  // ハッシュタグも本文の末尾へ（2026-09-21 Coco指示）。並びは noteCopyText と同じ。
+  const tagsBlock = hashtags ? `<div class="note-tags">${hashtags}</div>` : '';
+  const footHtml = note.content_html ? tagsBlock : '';
   const frameworkHtml = note.framework
     ? `<p class="note-meta-line"><span class="meta-label">構造：</span>${escapeHtml(note.framework)}</p>`
     : '';
@@ -1310,6 +1313,7 @@ function renderNoteCard(note) {
         </div>
         <div class="card-section-body">
           <div class="note-content">${headHtml}${note.content_html}</div>
+          ${footHtml}
           ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
         </div>
       </div>`;
@@ -1434,7 +1438,7 @@ function renderNoteCard(note) {
         ${note.content_html ? '' : descHtml + outcomeHtml}
         ${frameworkHtml}
         ${toolHtml}
-        ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
+        ${note.content_html ? '' : tagsBlock}
       </div>
       ${sections}
     </article>`;
