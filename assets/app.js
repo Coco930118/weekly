@@ -974,7 +974,8 @@ async function loadNotes() {
       index.notes.map(async (filename) => {
         const res = await fetch(`./notes/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
-        return res.json();
+        const data = await res.json();
+        return { ...data, _sourceFile: filename };
       })
     );
 
@@ -1126,6 +1127,87 @@ document.addEventListener('click', e => {
     setTimeout(() => { btn.textContent = o; }, 1600);
   });
 });
+
+function buildNoteSalesFinalEditorPrompt(note) {
+  const body = note.content_markdown || '';
+  return `あなたはCoco Methodologyのnote専用Final Editorです。
+Claudeが既存の型・ルールに沿って完成させた原稿を、内容を別物にせず「売れるnote」へ最終調整してください。
+
+【役割分担】
+Claude＝Coco Methodologyの型に沿って記事を作る。
+Final Editor＝完成稿の価値が、クリック・読了・保存・回遊・メンバーシップ継続につながるよう販売面を整える。
+既存ルールをもう一度増やしたり、文章をうまく見せるためだけに全面改稿したりしない。
+
+【最優先】
+- 原稿にある事実・実体験・数字・結果・会話だけを使う。
+- 素材にないエピソード、成果、心理、読者の声、具体例、権威づけを創作しない。
+- 売るために事実を強く見せたり、保証・断定を足したりしない。
+- 売上に影響する修正だけ行う。「別案がある」は修正理由にしない。
+- 必要な素材が足りず、補わないと販売上の重要箇所を直せない場合は、推測せずCocoへ質問する。質問は必要最小限、最大3問。その回答が来るまで該当箇所を創作して埋めない。
+- 素材不足でない箇所は質問せず、その場で完成させる。
+- Cocoらしい静かな熱、押しつけない判断軸、実体験の言葉を守る。
+
+【販売編集で見る順番】
+1. タイトル：検索性だけでなく、今開く理由があるか。
+2. 冒頭：早い段階で「自分のこと」と感じ、続きを読みたくなるか。
+3. 読了：重複・説明過多・同じ結論の言い換えで離脱させていないか。
+4. 価値の山場：ここだけでも読んでよかった、と思える判断軸・整理・実践があるか。
+5. 保存価値：次に同じことが起きたとき使える問い・判断軸・手順があるか。
+6. 有料価値：有料/メンバー記事なら、価格や継続に見合う再現性が伝わるか。無料記事なら自然な次の一歩があるか。
+7. 回遊・CTA：売り込み臭くせず、関連記事・メンバーシップ・次の記事へ進む理由が自然か。
+8. タイトル・description・outcome_promise・CTA・SNS導線と本文の約束が一致しているか。
+
+【触らないもの】
+- Claudeの型を、Final Editor独自の新しい型へ置換しない。
+- Cocoの実体験の強い言葉を、一般論やブランド説明に薄めない。
+- SEOキーワードを不自然に詰め込まない。
+- 情報量を増やすためだけの加筆をしない。
+- 有料価値を作るために素材を捏造しない。
+
+【判定】
+公開OK：販売上の重大な詰まりがなく、そのまま出せる。
+販売調整：内容は完成している。売上に影響するタイトル・冒頭・順序・重複・価値提示・CTA等だけ直す。
+再編集：読者が価値を受け取れない構造的問題があり、部分調整では直らない。
+素材確認：必要な事実が不足し、創作せずCocoへの確認が必要。
+
+【出力】
+判定：
+売上を止めている箇所：最大3点。なければ「なし」。
+素材確認：必要な場合だけ最大3問。不要なら「なし」。
+完成版：
+- 修正が必要なら、タイトル・description・outcome_promise・本文・CTA・SNS導線のうち「実際に変更するものだけ」を完成形で出す。
+- 修正不要な項目を別案目的で書き換えない。
+変更理由：各変更がクリック／読了／保存／回遊／継続のどれに効くかを一言で。
+ルール化判定：原則「不要」。同じ独立事例が3回確認された場合のみ候補。
+再チェック：Cocoが「反映して」と言ったら下記反映先へ実データを更新し、note_checkを再実行する。通過した場合だけ note_final_editor_status を public_ok にする。失敗・未実行なら公開OKにしない。
+
+【反映先】
+GitHub repository：Coco930118/weekly
+branch：main
+note JSON：notes/${note._sourceFile || ''}
+note_id：${note.note_id || ''}
+※Cocoが「反映して」と言うまではGitHubを書き換えない。
+
+【対象note】
+タイトル：${note.title || ''}
+公開区分：${note.visibility || ''}
+価格：${note.price || ''}
+tier：${note.tier || ''}
+description：${note.description || ''}
+outcome_promise：${note.outcome_promise || ''}
+CTA：${note.cta_text || ''}
+SNS導線：${JSON.stringify(note.sns_hooks || {}, null, 2)}
+
+【本文】
+${body}`;
+}
+
+function noteFinalEditorStatusBadge(note) {
+  const s = note.note_final_editor_status || '';
+  const labels = { pending: '編集中', public_ok: '公開OK', sales_adjust: '販売調整', reedit: '再編集', source_check: '素材確認' };
+  if (!s) return '<span class="final-editor-status fe-status-none">未判定</span>';
+  return `<span class="final-editor-status ${s === 'public_ok' ? 'fe-status-ok' : 'fe-status-pending'}">${labels[s] || s}</span>`;
+}
 
 function renderNoteCard(note) {
   const tierClass = note.tier === 'flagship' ? 'tier-flagship' : 'tier-member';
@@ -1314,6 +1396,10 @@ function renderNoteCard(note) {
       </div>
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
+        <div class="copy-btn-content card-actions">
+          <button class="final-editor-btn note-sales-final-editor-btn" data-note-sales-id="${escapeHtml(note.note_id || note.title)}">note Final Editor</button>
+          ${noteFinalEditorStatusBadge(note)}
+        </div>
         ${note.fix_required === true && (note.fix_reasons || []).length
           ? `<ul class="fix-reasons">${note.fix_reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`
           : ''}
@@ -1327,6 +1413,25 @@ function renderNoteCard(note) {
       ${sections}
     </article>`;
 }
+
+document.addEventListener('click', async e => {
+  const btn = e.target.closest('.note-sales-final-editor-btn');
+  if (!btn) return;
+  const note = allNotes.find(n => String(n.note_id || n.title) === String(btn.dataset.noteSalesId || ''));
+  if (!note) return;
+
+  const prompt = buildNoteSalesFinalEditorPrompt(note);
+  note.note_final_editor_status = 'pending';
+  renderNotes();
+
+  const targetUrl = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
+  const chatWindow = window.open(targetUrl, '_blank', 'noopener');
+  if (!chatWindow) {
+    const ok = await copyToClipboard(prompt);
+    if (ok) alert('ChatGPTを開けなかったため、note Final Editorの指示をコピーしました。');
+    else alert('ChatGPTを開けませんでした。ポップアップ許可を確認してください。');
+  }
+});
 
 // ─── Docs section（申し送り・やること・指示文）────────────────────────────────
 //
