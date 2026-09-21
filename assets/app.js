@@ -1428,6 +1428,7 @@ function renderNoteCard(note) {
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
         <div class="copy-btn-content card-actions">
+          <button class="copy-btn" data-copy="${escapeHtml(note.title)}">タイトルをコピー</button>
           <button class="final-editor-btn note-sales-final-editor-btn" data-note-sales-id="${escapeHtml(note.note_id || note.title)}">note Final Editor</button>
           ${noteFinalEditorStatusBadge(note)}
         </div>
