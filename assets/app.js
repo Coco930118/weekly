@@ -1249,9 +1249,17 @@ function renderNoteCard(note) {
     ? `<span class="free-ratio-badge">無料${Math.round(parseFloat(note.free_ratio) * 100)}%公開</span>`
     : '';
 
+  // description と outcome_promise は「📄 本文」の先頭に置く（2026-09-21 Coco指示）。
+  // 読む位置とコピーされる位置を揃えるため（noteCopyText と同じ並び）。
+  // content_html を持たないnote（2026-04・06 の funnel 2本）だけは、行き先が無いので
+  // 従来どおりタイトル下に出す。
+  const descHtml = note.description
+    ? `<p class="note-description">${escapeHtml(note.description)}</p>`
+    : '';
   const outcomeHtml = note.outcome_promise
     ? `<p class="note-outcome">${escapeHtml(note.outcome_promise)}</p>`
     : '';
+  const headHtml = note.content_html ? descHtml + outcomeHtml : '';
   const frameworkHtml = note.framework
     ? `<p class="note-meta-line"><span class="meta-label">構造：</span>${escapeHtml(note.framework)}</p>`
     : '';
@@ -1301,7 +1309,7 @@ function renderNoteCard(note) {
           <span class="card-section-toggle">▼</span>
         </div>
         <div class="card-section-body">
-          <div class="note-content">${note.content_html}</div>
+          <div class="note-content">${headHtml}${note.content_html}</div>
           ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
         </div>
       </div>`;
@@ -1423,8 +1431,7 @@ function renderNoteCard(note) {
           ? `<ul class="fix-reasons">${note.fix_reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`
           : ''}
         ${renderFixPatch(note)}
-        <p class="note-description">${escapeHtml(note.description)}</p>
-        ${outcomeHtml}
+        ${note.content_html ? '' : descHtml + outcomeHtml}
         ${frameworkHtml}
         ${toolHtml}
         ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
