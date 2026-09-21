@@ -1200,8 +1200,15 @@ Final Editor＝完成稿の価値が、クリック・読了・保存・回遊�
 - 修正不要な項目を別案目的で書き換えない。
 変更理由：各変更がクリック／読了／保存／回遊／継続のどれに効くかを一言で。
 ルール化判定：原則「不要」。同じ独立事例が3回確認された場合のみ候補。
-反映：Cocoが「反映して」と言ったら、下記反映先のnote JSONへ完成版を実データとして更新し、同じコミットで note_final_editor_status を pending_check にする。content_markdown を変更した場合は、既存ルールどおり content_html も同期する。ここでは public_ok を書かない。
-再チェック：GitHub Actionsが既存の tools/note_check.py を自動実行する。要修正0件なら自動で note_final_editor_status = public_ok、要修正があれば check_failed にする。Final Editor自身はチェック結果を推測して公開OKにしない。
+【「反映して」と言われた後の必須実行】
+これは説明ではなく実行指示。会話上で「反映しました」と答えるだけで終えてはいけない。
+1. GitHub連携を使い、下記の exact note JSON を main から取得する。
+2. Final Editorで確定した変更だけをJSONの対応フィールドへ反映する。title→title、description→description、outcome_promise→outcome_promise、本文→content_markdown、CTA→cta_text、SNS導線→sns_hooks。
+3. content_markdown を変更した場合は、rules/note.md と既存 note_check.py の規約に合わせて content_html も同期する。変更していないフィールドは勝手に書き換えない。
+4. 同じJSONに note_final_editor_status = "pending_check" を必ず保存する。sales_adjust / sales_adjustment / pending のまま保存しない。ここでは public_ok を書かない。
+5. GitHubへの更新が実際に成功したことを確認する。更新できない場合は「反映済み」「公開OK」と言わず、失敗理由をCocoへ伝える。
+6. 更新成功後は「反映済み。再note_check待ち」とだけ扱う。GitHub Actionsが既存の tools/note_check.py を自動実行し、要修正0件なら public_ok、要修正があれば check_failed にする。
+7. Final Editor自身は note_check の成功を推測して public_ok にしない。public_ok は自動チェック通過後のJSONだけを正とする。
 
 【反映先】
 GitHub repository：Coco930118/weekly
@@ -1226,7 +1233,7 @@ ${body}`;
 
 function noteFinalEditorStatusBadge(note) {
   const s = note.note_final_editor_status || '';
-  const labels = { pending: '編集中', pending_check: '再note_check中', public_ok: '公開OK', check_failed: '要修正', sales_adjust: '販売調整', reedit: '再編集', source_check: '素材確認' };
+  const labels = { pending: '編集中', pending_check: '再note_check中', public_ok: '公開OK', check_failed: '要修正', sales_adjust: '販売調整', sales_adjustment: '販売調整', reedit: '再編集', source_check: '素材確認' };
   if (!s) return '<span class="final-editor-status fe-status-none">未判定</span>';
   return `<span class="final-editor-status ${s === 'public_ok' ? 'fe-status-ok' : 'fe-status-pending'}">${labels[s] || s}</span>`;
 }
