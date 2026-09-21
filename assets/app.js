@@ -17,6 +17,21 @@ function formatDate(dateStr) {
   return `${month}${day}日（${dow}）`;
 }
 
+// 「本文をコピー」が渡す範囲（2026-09-21 Coco指示）。note.com にそのまま貼れる形にする。
+// 並びは description → outcome_promise → 区切り線 → 本文 → hashtags で固定。
+// **文はJSONから引くだけで、ここで作らない**（`CLAUDE.md`「正典はひとつ」）。
+// 区切り線は `---`＝content_markdown が既に使っている形に合わせている。
+// outcome_promise が無い古いnote（2026-06 の3本）は、その行を飛ばす。
+function noteCopyText(note) {
+  const head = [note.description, note.outcome_promise].filter(Boolean);
+  const tags = Array.isArray(note.hashtags) ? note.hashtags.filter(Boolean) : [];
+  const blocks = [];
+  if (head.length) blocks.push(head.join('\n\n'), '---');
+  blocks.push(note.content_markdown);
+  if (tags.length) blocks.push(tags.join('\n'));
+  return blocks.join('\n\n');
+}
+
 function escapeHtml(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -1278,7 +1293,7 @@ function renderNoteCard(note) {
   }
 
   if (note.content_html) {
-    const mdEsc = note.content_markdown ? escapeHtml(note.content_markdown) : '';
+    const mdEsc = note.content_markdown ? escapeHtml(noteCopyText(note)) : '';
     sections += `
       <div class="card-section">
         <div class="card-section-header">
