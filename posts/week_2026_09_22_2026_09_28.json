@@ -501,13 +501,14 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E593",
-      "content": "何もしない一日を、そのまま回復にあてる土曜がある。\n\nキャンセルできる予定は、前の日に全部外しておく。真っ白にしてから、一日を始める。\n\n起きる時間も決めない。気になる人からの通知も、見る時間を決めていない。\n\n昼過ぎにお茶をいれて、窓の近くに座る。それだけで、月曜の朝のほうが軽い。\n\n真っ白な一日は、そのまま回復にあてた一日になっている。\n\n感情はある。依存はしない。💍",
+      "content": "何もしない土曜を、選ぶ。\n\n予定を外して、\n起きる時間も決めない。\n\n昼過ぎにお茶をいれて、\n窓の近くに座る。\n\n真っ白な一日が、\n月曜の朝を少し軽くする。\n\n感情はある。依存はしない。💍",
       "quote": "何もしない、をそのまま選ぶ。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜真っ白にしてから始める日が、いちばん効いている。\n最近、予定を外して空けられた日はある？"
+        "🕊ひより｜何もしない日を、予定として先に置く。\n最近、真っ白なまま残せた日はある？"
       ],
-      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand resting on an empty calendar page, nothing written on it; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
+      "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her hand resting on an empty calendar page, nothing written on it; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "th_16",
