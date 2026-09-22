@@ -39,7 +39,7 @@ jobs:
               f.write('has_pending=' + ('true' if files else 'false') + '\n')
           print('pending notes:', files)
           PY
-      - name: Re-run note_check and finalize statuses
+      - name: Run Final Editor technical check and finalize statuses
         if: steps.pending.outputs.has_pending == 'true'
         run: python tools/note_final_editor_publish.py
       - name: Commit note Final Editor status
