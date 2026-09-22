@@ -1227,8 +1227,10 @@ Final Editorで販売価値を上げるために意図して行った改行・�
 4. 反映直前に、変更後の完成稿全体を対象として3軸をもう一度個別確認する。①売れるか ②商品としての販売価値 ③Coco Methodologyとのブランド整合性、の3つすべてを明示的にOKと確認できた場合だけ反映する。初回判定がOKでも、編集後の完成稿で再確認を省略しない。1つでもNGなら反映せず、その箇所を直して再度3軸確認する。素材不足ならCocoへ確認する。
 5. 同じJSONに note_final_editor_status = "pending_check" を必ず保存する。sales_adjust / sales_adjustment / pending のまま保存しない。ここでは public_ok を書かない。
 6. GitHubへの更新が実際に成功したことを確認する。更新できない場合は「反映済み」「公開OK」と言わず、失敗理由をCocoへ伝える。
-7. 更新成功後は「反映済み。技術チェック待ち」と扱う。GitHub ActionsはFinal Editorの文章をClaude基準で再審査せず、JSON構造・必須フィールド・content_markdown/content_html同期など公開データとして壊れていないかだけを確認する。
-8. 技術チェック通過後に自動で note_final_editor_status = public_ok にする。技術エラー時だけ check_failed にする。
+7. 更新成功後、main上の反映済みnote JSONをもう一度取得し、保存された実データ（title / description / outcome_promise / content_markdown / cta_text / sns_hooks）そのものを対象に、①売れるか ②商品としての販売価値 ③Coco Methodologyとのブランド整合性、を再度個別にOK/NG判定する。反映前の完成稿を見て済ませず、必ず反映後データを読む。
+8. 反映後3軸がすべてOKなら「反映後3点チェック：すべてOK」と確認し、技術チェック待ちとする。1つでもNG、反映漏れ、意図しない差分があれば public_ok 扱いにせず、必要箇所を修正して再反映し、反映後3軸チェックをやり直す。
+9. GitHub ActionsはFinal Editorの文章をClaude基準で再審査せず、JSON構造・必須フィールド・content_markdown/content_html同期など公開データとして壊れていないかだけを確認する。
+10. 反映後3軸がすべてOKであることを確認したうえで、技術チェック通過後に note_final_editor_status = public_ok とする。技術エラー時は check_failed にする。
 
 【反映先】
 GitHub repository：Coco930118/weekly
