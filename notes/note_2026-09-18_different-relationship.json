@@ -66,5 +66,8 @@
     "もう一度連絡する前に何を決めておくか": "もう一度連絡する前に、決めておくこと",
     "決めたことが守れなかった時の戻り方": "決めたことが、守れなかった時の戻り方"
   },
-  "note_final_editor_status": "pending_check"
+  "note_final_editor_status": "check_failed",
+  "note_final_editor_check_errors": [
+    "content_markdown と content_html がずれている"
+  ]
 }
