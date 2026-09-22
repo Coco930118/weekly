@@ -1205,7 +1205,12 @@ Final Editorで販売価値を上げるために意図して行った改行・�
 素材確認：3点を満たすために必要な事実が不足し、創作せずCocoへの確認が必要。
 
 【出力】
-判定：
+3点最終確認：
+① 売れるか：OK / NG — 理由を1〜2文
+② 商品としての販売価値：OK / NG — 理由を1〜2文
+③ Coco Methodologyとのブランド整合性：OK / NG — 理由を1〜2文
+総合判定：3点すべてOKの場合だけ「公開OK」。1つでもNGなら「販売調整」「再編集」「素材確認」のいずれか。
+※「なんとなくOK」にせず、完成稿そのものを読んで3点を個別に確認してから総合判定する。
 売上を止めている箇所：最大3点。なければ「なし」。
 素材確認：必要な場合だけ最大3問。不要なら「なし」。
 完成版：
@@ -1219,7 +1224,7 @@ Final Editorで販売価値を上げるために意図して行った改行・�
 1. GitHub連携を使い、下記の exact note JSON を main から取得する。
 2. Final Editorで確定した変更だけをJSONの対応フィールドへ反映する。title→title、description→description、outcome_promise→outcome_promise、本文→content_markdown、CTA→cta_text、SNS導線→sns_hooks。
 3. content_markdown を変更した場合は、rules/note.md と既存 note_check.py の規約に合わせて content_html も同期する。変更していないフィールドは勝手に書き換えない。
-4. 上の3軸がすべて公開OKと判定できた完成稿だけを反映する。素材確認・再編集が残る場合は反映せずCocoへ確認する。
+4. 反映直前に、変更後の完成稿全体を対象として3軸をもう一度個別確認する。①売れるか ②商品としての販売価値 ③Coco Methodologyとのブランド整合性、の3つすべてを明示的にOKと確認できた場合だけ反映する。初回判定がOKでも、編集後の完成稿で再確認を省略しない。1つでもNGなら反映せず、その箇所を直して再度3軸確認する。素材不足ならCocoへ確認する。
 5. 同じJSONに note_final_editor_status = "pending_check" を必ず保存する。sales_adjust / sales_adjustment / pending のまま保存しない。ここでは public_ok を書かない。
 6. GitHubへの更新が実際に成功したことを確認する。更新できない場合は「反映済み」「公開OK」と言わず、失敗理由をCocoへ伝える。
 7. 更新成功後は「反映済み。技術チェック待ち」と扱う。GitHub ActionsはFinal Editorの文章をClaude基準で再審査せず、JSON構造・必須フィールド・content_markdown/content_html同期など公開データとして壊れていないかだけを確認する。
