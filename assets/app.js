@@ -569,6 +569,8 @@ function finalEditorStatusCounts(posts) {
 
 function buildFinalEditorPrompt(post) {
   const body = post.frame || post.content || '';
+  const isDiagnosis = /診断/.test(post.platform || '');
+  const diagnosisComment = post.comment || post.reply_1 || '';
   const replies = Array.isArray(post.self_replies)
     ? post.self_replies.filter(Boolean)
     : [];
@@ -576,6 +578,7 @@ function buildFinalEditorPrompt(post) {
 
   if (post.quote) extras.push(`〈ひとこと〉${post.quote}`);
   replies.forEach((r, i) => extras.push(`【返信${['①', '②', '③'][i] || (i + 1)}】\n${r}`));
+  if (isDiagnosis && diagnosisComment) extras.push(`【診断の解説コメント｜本文とセットで編集対象】\n${diagnosisComment}`);
 
   return `あなたは「Coco Final Editor」です。
 この投稿は、生成後に full_check を通過したものとして扱ってください。
@@ -589,6 +592,15 @@ function buildFinalEditorPrompt(post) {
 - 過去投稿への遡及修正は提案しない。
 - 編集方針を更新するときは、同じ主題の旧指示を残して新旧併記にしない。新しい方針へ置換し、必要な履歴は旧条文を復唱しない墓標だけにする。
 - 実体験・素材にない出来事や結果は作らない。
+
+【診断投稿の前提】
+- 媒体がX診断またはThreads診断の場合、通常投稿ではなく「間合い診断」への入口として扱う。
+- 診断の世界観は、温度（感情をどれだけ出すか）×距離（相手をどれだけ入れるか）の2軸から、自分の間合いの型に名前をつけるもの。
+- X診断＝組織と仕事、Threads診断＝恋愛と関係。職場と家では別の型が出てもよい。
+- 「ダメだった」ではなく「型があっただけ」という自己理解につなげる。型を優劣・正解不正解で裁かない。
+- 投稿本文だけでなく、X診断の comment／Threads診断の reply_1 を「解説コメント」として必ずセットでFinal Editorする。
+- 解説コメント内のA〜D各解説、見るポイント／一手、結び、診断への接続まで含めて本文との整合を見る。本文だけ直して解説コメントを旧内容のまま残さない。
+- ただし素材にない診断結果・心理・エピソードは作らない。既存のaxis_mapや診断URL等のデータは勝手に変更しない。
 
 【Final Editorの最上位3軸｜最終合否はこの3点で決める】
 ① ファン化につながるか
@@ -641,8 +653,9 @@ Cocoが「Aで反映して」「Bで反映して」など本文を選んだら�
 - 本文ですでに言い切った内容を返信で復唱しない。元から存在しない返信やCTAは新設しない。
 - Bを選んだのに返信だけ説明過多な旧構成へ戻さない。素材にない事実・結果は足さない。
 - A/B選択後、確定本文と連動編集した既存付随文を対象に、①ファン化 ②noteへの布石 ③ブランド整合性をもう一度個別に確認する。3点すべてOKになるまで反映しない。
+- 診断投稿では、選択したA/B本文に合わせて解説コメント（X診断=comment、Threads診断=reply_1）も必ず完成版へ連動編集する。解説コメントも3軸チェックの対象に含める。
 - GitHub接続が使える場合は、下記【反映先】の投稿JSONを実際に更新する。本文・既存付随文を反映し、その投稿に final_editor_status: pending_check を保存する。
-- 反映後はmain上の実際に保存された対象投稿を再取得し、保存済みの本文・〈ひとこと〉・返信・CTA・note導線を対象に、①ファン化 ②noteへの布石 ③ブランド整合性を再度個別に確認する。反映前の文章だけを見て済ませない。
+- 反映後はmain上の実際に保存された対象投稿を再取得し、保存済みの本文・〈ひとこと〉・返信・CTA・note導線を対象に、①ファン化 ②noteへの布石 ③ブランド整合性を再度個別に確認する。診断投稿では解説コメント（comment / reply_1）も必ず再取得・再確認する。反映前の文章だけを見て済ませない。
 - 反映後3点すべてOKであることを確認したうえで、GitHub Actionsの既存 full_check を技術・既存ルール確認として実行し、成功時だけ public_ok に更新する。反映漏れ・意図しない差分・3軸NGがあれば公開OKにせず修正→再反映→再確認する。Final Editor自身がチェック未実行のまま public_ok を書いてはいけない。
 - GitHub更新を実行できなかった場合は「反映済み」「公開OK」と言わず、反映できなかったことだけを明示する。
 
