@@ -1387,9 +1387,9 @@ function renderNoteCard(note) {
           <span class="card-section-toggle">▼</span>
         </div>
         <div class="card-section-body">
+          ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
           <div class="note-content">${headHtml}${note.content_html}</div>
           ${footHtml}
-          ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
         </div>
       </div>`;
   }
