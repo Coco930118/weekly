@@ -570,6 +570,10 @@ function finalEditorStatusCounts(posts) {
 function buildFinalEditorPrompt(post) {
   const body = post.frame || post.content || '';
   const isDiagnosis = /診断/.test(post.platform || '');
+  const isThreeChoiceSocial = !isDiagnosis && /^(X短文|X|Threads)$/.test(post.platform || '');
+  const requiredChoiceInstruction = isThreeChoiceSocial
+    ? '【今回の必須選択肢】この投稿は通常SNS投稿です。①A｜いつもの構成 ②B｜澄んだ短文 ③C｜Cocoのぼやき の3案を必ず出してください。2案で終える回答は未完了です。表示方法は従来の選択表示を維持し、Cだけを追加してください。'
+    : '【今回の必須選択肢】この投稿はA/Bの2案です。Cは出しません。';
   const diagnosisComment = post.comment || post.reply_1 || '';
   const replies = Array.isArray(post.self_replies)
     ? post.self_replies.filter(Boolean)
@@ -584,8 +588,7 @@ function buildFinalEditorPrompt(post) {
 この投稿は、生成後に full_check を通過したものとして扱ってください。
 役割は「新しいルールを作ること」ではなく、この1本を公開できる完成度まで整えることです。
 
-【運用の固定】
-- 順番は「生成 → full_check → Final Editor → 再 full_check」。
+${requiredChoiceInstruction}\n\n【運用の固定】\n- 順番は「生成 → full_check → Final Editor → 再 full_check」。
 - 新しい要求はルール化しない。まずこの投稿だけの個別修正として扱う。
 - 同じ問題が3回目に再発した場合だけ「恒久ルール候補」とする。1回目は「今回だけ」、2回目は「再発2回目」。
 - 既存ルール同士の明確な矛盾は「既存矛盾修正候補」として別枠で指摘してよい。
@@ -636,7 +639,7 @@ Xは組織と仕事、Threadsはプライベートな人間関係を扱う。検
 - 素材に両側の先がある選択は両方見せる。素材になければ捏造しない。
 - ウィットは意味が成立したあとに一滴だけ置き、新しい論点にしない。
 - Xは折り畳み前に情報を詰め込むのではなく、「さらに表示」の直前までに意味が一度着地し、小さな読後感（なるほど／続きが気になる）が成立するよう整える。結論を全部出し切る必要はないが、説明の途中で切らない。Threadsは余白と自然な温度を優先する。
-- A/Bの作り分けは次節だけを正典とし、ここに条件を複製しない。
+- 選択肢の作り分けは次節だけを正典とし、ここに条件を複製しない。
 
 【最終編集の出し方｜この節が選択肢の唯一の正典】
 最終回答では、判定が「公開OK」「軽微修正」「要再編集」のどれでも、対象媒体に必要な完成案をすべて出す。判定や修正説明だけで終了してはいけない。表示形式はこれまでのFinal Editorで使っている選択表示をそのまま維持し、X短文・通常X・通常Threadsだけは既存のA/B表示にCを1案追加する。診断・noteのA/B表示は変更しない。
@@ -708,7 +711,7 @@ Bの残るもの：
 （一言）
 
 C｜Cocoのぼやき：
-（X短文・通常X・通常Threadsのときだけ完成全文を出す。X診断・Threads診断ではこの項目自体を出さない）
+（媒体がX短文・X・Threadsで、診断投稿ではない場合は必須。必ず完成全文を出す。A/Bだけで終了しない。X診断・Threads診断ではこの項目自体を出さない）
 
 Cの残るもの：
 （Cを出したときだけ一言）
