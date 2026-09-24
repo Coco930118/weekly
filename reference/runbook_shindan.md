@@ -84,6 +84,8 @@ weekly のファイルは**1文字も書き換えない**（読み取り専用�
      `tools/oggen.py`（結果カードは `tools/ogshare.py`）。**`SHINDAN_DIR` に shindan の
      パスを渡すと、shindan の `/og/` に書かれる**
    ・**仕様の正典は weekly `rules/image.md`「間合い診断のOG画像」。ここに写さない**
+   ・**見出しの起草もこの枠**（2026-09-24 Coco決定）。**承認はCoco**。決まった14本は
+     **weekly の `reference/og_headlines_YYYY-MM-DD.md` に記録する**（その週の初日＝火曜の日付）
    ・**旧版は「揃っているか確認する」だけで、作る担当がどこにも無かった**（2026-09-24 Coco決定で
      この枠に決めた）。**確認で終わらせない**
 4. **出荷前チェック（shindan `CLAUDE.md` §0）を、新しい週について全部通す**
