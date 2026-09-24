@@ -20,7 +20,7 @@ REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # 禁止語の定義は full_check.py が正典。**ここに複製を置かない**（2026-09-02 統一）。
 # note だけ「渡す／渡し」を参考カウントに回すので、WATASU_RE は下で別に持つ
-from full_check import BANNED, ZAN_RE, ZAN_FROM, MODOSHI_RE, MODOSHI_FROM
+from full_check import BANNED, ZAN_RE, ZAN_FROM, MODOSHI_RE, MODOSHI_FROM, OKU_RE, OKU_FROM
 # rules/posts.md が禁じているのは**比喩的な用法**だけで、置き換え先は「言う／頼む／話す／送る／伝える」。
 # ところが note では「仕事を人に渡す＝委譲」という**実際の行為**として使われ、130本中11本・
 # 延べ128箇所に出る（記事タイトルにも入っている：「答えを渡すのをやめた日」「教えると、伝わらない。
@@ -134,6 +134,9 @@ def check(d, path, titles):
     if str(d.get('publish_date') or d.get('date') or '') >= MODOSHI_FROM:
         mo = sorted(set(MODOSHI_RE.findall(body)))
         if mo: ng(nid, '「戻す」（比喩なら置き換える。具体の出来事ならそのまま・目視）', mo)
+    if str(d.get('publish_date') or d.get('date') or '') >= OKU_FROM:
+        ok = sorted(set(OKU_RE.findall(body)))
+        if ok: ng(nid, '「置かれる／置いてある」（状態の言い方。起きたことで書く）', ok)
     watasu = len(re.findall(WATASU_RE, body))   # 参考カウント（比喩かどうかは目視）
 
     # 2 一人称
