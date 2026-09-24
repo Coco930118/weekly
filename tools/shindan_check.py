@@ -19,7 +19,7 @@ import e373
 # 禁止語の定義は full_check.py が正典。**ここに複製を置かない**（2026-09-02 統一）。
 # 3ツールが自前でコピーを持っていたため、実際に片方だけ古くなった実績がある
 # （「大切なのは」が note_check にしか無く、2026-08-29 に補完）。
-from full_check import BANNED, BANNED_RE, ZAN_RE, ZAN_FROM, MODOSHI_RE, MODOSHI_FROM
+from full_check import BANNED, BANNED_RE, ZAN_RE, ZAN_FROM, MODOSHI_RE, MODOSHI_FROM, OKU_RE, OKU_FROM
 STYLE_ONLY = ['んです', 'と言えるでしょう', 'いかがでしょうか', '寄り添']
 # 設問の主語（rules/shindan.md「文体」・2026-08-25 Coco決定／9/1週から適用）
 # frame だけを見る：解説の地の文で語そのものを説明する場合があり、そこは射程外
@@ -227,6 +227,9 @@ def check_x(posts, label):
         if str(pid) >= MODOSHI_FROM:
             mo = sorted(set(MODOSHI_RE.findall(re.sub(r'「[^」]*」', '', fr + cm))))
             if mo: ng(pid, '「戻す」（比喩なら置き換える・目視）', '／'.join(mo))
+        if str(pid) >= OKU_FROM:
+            ok = sorted(set(OKU_RE.findall(re.sub(r'「[^」]*」', '', fr + cm))))
+            if ok: ng(pid, '「置かれる／置いてある」（状態の言い方・目視）', '／'.join(ok))
         m = MOJI.findall(fr + cm)
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
         sb = subject_in(fr, pid)
@@ -322,6 +325,9 @@ def check_th(posts, label):
         if str(pid) >= MODOSHI_FROM:
             mo = sorted(set(MODOSHI_RE.findall(re.sub(r'「[^」]*」', '', fr + r1))))
             if mo: ng(pid, '「戻す」（比喩なら置き換える・目視）', '／'.join(mo))
+        if str(pid) >= OKU_FROM:
+            ok = sorted(set(OKU_RE.findall(re.sub(r'「[^」]*」', '', fr + r1))))
+            if ok: ng(pid, '「置かれる／置いてある」（状態の言い方・目視）', '／'.join(ok))
         m = MOJI.findall(fr + r1)
         if m: ng(pid, '混入文字（キリル・ハングル）', '／'.join(sorted(set(m))))
         sb = subject_in(fr, pid)

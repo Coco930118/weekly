@@ -17,7 +17,7 @@ episode_check は素材しか見ない。**いちばん人目に触れる4行が
 import json, re, sys, os
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from full_check import BANNED, BANNED_RE, ZAN_RE, MODOSHI_RE  # 定義は1箇所。ここに複製しない
+from full_check import BANNED, BANNED_RE, ZAN_RE, MODOSHI_RE, OKU_RE  # 定義は1箇所。ここに複製しない
 
 REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PROFILE = os.path.join(REPO, 'reference', 'brand_profile.json')
@@ -55,6 +55,9 @@ def main():
         # 「戻す」の比喩的な用法。ここも日付で切らない（いまの看板なので）
         mo = sorted(set(MODOSHI_RE.findall(naked)))
         if mo: ng(name, '「戻す」（比喩なら置き換える・目視）', '／'.join(mo))
+        # 「置かれる／置いてある」（状態の言い方）。ここも日付で切らない（いまの看板なので）
+        ok = sorted(set(OKU_RE.findall(naked)))
+        if ok: ng(name, '「置かれる／置いてある」（状態の言い方・目視）', '／'.join(ok))
 
         bad = [w for w in NUM_NG if w in t]
         if bad: ng(name, '数字の表記が誤り', '／'.join(bad), '（正は「延べ5万人を超える」）')
