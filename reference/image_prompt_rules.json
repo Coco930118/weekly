@@ -197,7 +197,7 @@
       "note": "旧プール（プラットフォーム共通16色＋夜6色）はこの分割で置き換え。X に rose/peach/coral/gold 系、Threads に blue/indigo/slate/celadon 系は使わない"
     },
     "platform_palette": {
-      "why": "X＝組織・仕事（寒色／冷徹な軍師）、Threads＝恋愛・関係（暖色／慈愛の哲学者）。ブランドの媒体役割を色でも分ける。一覧で2グループに割れることが目的なので、温度をまたぐ色（Xに rose 系、Threadsに indigo/blue 系）は使わない",
+      "why": "X＝組織・仕事（寒色／凛とした軍師）、Threads＝恋愛・関係（暖色／慈愛の哲学者）。ブランドの媒体役割を色でも分ける。一覧で2グループに割れることが目的なので、温度をまたぐ色（Xに rose 系、Threadsに indigo/blue 系）は使わない",
       "closing_neutral": {
         "X": "cool ivory",
         "Threads": "warm ivory"
