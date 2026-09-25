@@ -26,7 +26,7 @@ python3 tools/note_check.py notes/note_2026-09-25_soft-but-clear.json
 
 1. **x_08 の返信2から約束を取り直して、`promise_map` を作り直す**（手順は `rules/note.md`。`note_check.py` の突き合わせが通ればOK）
 2. **禁止ワードも2件出ています**（「残し」「置いてあ」）。機械の出力を見てください
-3. **`content_markdown` を直したら `content_html` も作り直す**（`note_check.py` の `md2html`）
+3. **`content_markdown` と `content_html` の扱いは `rules/note.md` の冒頭が正典**（「この行が正典。各節で書かない」）。**ここにも書き写しません**
 
 ## 本文の温度は、直さなくてよい
 
