@@ -3327,6 +3327,190 @@
       "note_url": "",
       "file": "note_2026-09-27_guide-kankei.json",
       "in_index": true
+    },
+    {
+      "title": "💼評価を上げにいく部下より、結果を出す部下を、上司はちゃんと見ている",
+      "publish_date": "2026-09-29",
+      "platform_origin": "X",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "こらえる人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 1,
+      "cluster_topic": "評価されている自信がなくて、誤解を解こうとする時間を使ってしまう。説明を重ねるより、結果を出すほうに集中先を変える。聞きすぎないための止め方まで",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。評価を追いかけるのをやめて、自分の時間の使い方を変える",
+      "funnel_targets": [
+        "x_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-29_focus-on-results.json",
+      "in_index": true
+    },
+    {
+      "title": "💗言えないなら、それが今の距離。無理に埋めなくていい",
+      "publish_date": "2026-09-29",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "秘める人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 6,
+      "cluster_topic": "大切な人に言いたいのに言えない。言えないまま日が経っている。無理に近づこうとせず、然るべき人に相談しながら探る。言えないままでいいと決めた夜にしていたことと、名前をつけると止まる理由",
+      "linked_principle": "悩みの意味を反転して定義し直す（原理06）。言えないことを弱さではなく「いまの距離」と呼び直す",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-29_that-is-the-distance.json",
+      "in_index": true
+    },
+    {
+      "title": "💼急かされて出した答えは、こちらの答えになる",
+      "publish_date": "2026-09-30",
+      "platform_origin": "X",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "先に動く人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 4,
+      "cluster_topic": "急かされると、材料より先に答えを出したくなる。それでも材料だけ置いて、判断は相手に返す。急かされたときに何を出すか・何を出さないかの分け方",
+      "linked_principle": "決断を相手に返す。詰めない、選ばせる（原理04）。急かされても、答えではなく材料を渡して判断は本人に持たせる",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-30_materials-not-answers.json",
+      "in_index": true
+    },
+    {
+      "title": "💗すっきりしたのに解決していない夜は、話す相手を間違えていない",
+      "publish_date": "2026-09-30",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "守る人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 5,
+      "cluster_topic": "友達に会った帰り道、すっきりしたのに何も解決していない。話せるのは一部分だけで核心には届かない。核心は自分に宛てて書く。解決しに行く日と笑いに行く日、それぞれ何を書くか",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。話す・話さないの二択ではなく、自分に宛てて書くという三つ目の軸を置く",
+      "funnel_targets": [
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-09-30_write-to-myself.json",
+      "in_index": true
+    },
+    {
+      "title": "💼心配は、届けても期限を持たない",
+      "publish_date": "2026-10-01",
+      "platform_origin": "X",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "背負う人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 1,
+      "cluster_topic": "数字が落ちた部下に、いつもの「どうした？」に行かず、期限つきの仕事を渡した。翌朝に何を聞きに行かなかったか、期限つきで何を任せたか",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。心配を届けるのではなく、今日渡せる範囲の仕事に変えて渡す",
+      "funnel_targets": [
+        "x_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-01_deadline-not-worry.json",
+      "in_index": true
+    },
+    {
+      "title": "💗静かになった気持ちを、無いことにしなくていい",
+      "publish_date": "2026-10-01",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "尽くす人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 2,
+      "cluster_topic": "大切な人への気持ちが静かになっている。無くなったのかもと不安になるが、背景に沈むのと本当に無くなるのは外から同じに見える。区別がつくのは失うかもしれない場面が来たときだけ",
+      "linked_principle": "悩みを消さない。扱えるようにする（原理02）。静かになった気持ちを消えたと決めつけず、そのまま扱う",
+      "funnel_targets": [
+        "th_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-01_quiet-is-not-gone.json",
+      "in_index": true
+    },
+    {
+      "title": "💼見守っているだけでは、会議という場までは届かない",
+      "publish_date": "2026-10-02",
+      "platform_origin": "X",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "降りる人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 7,
+      "cluster_topic": "見守っているつもりでも、会議ではそれが伝わらず議題が流された。危機感を持っているはずだと思って待った時期と、言い方を変えた週。その境目の決め方",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。会議では意図までは伝わらないという現実を先に認めた上で、言い方を変える",
+      "funnel_targets": [
+        "x_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-02_when-to-stop-watching.json",
+      "in_index": true
+    },
+    {
+      "title": "💗向かい合って戦わない。隣に並んで、同じ方向を見る",
+      "publish_date": "2026-10-02",
+      "platform_origin": "Threads",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "flagship",
+      "plan_type": "溶ける人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 5,
+      "cluster_topic": "大切な人と意見がぶつかって疲れる。向かい合って戦わず、隣に並んで同じ方向を見る。マウントは受け取らず愛は受け取る、その分け方と隣に動いた場面",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。戦うか黙るかの二択ではなく、隣に並ぶという三つ目の位置を置く",
+      "funnel_targets": [
+        "th_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-02_stand-beside-not-against.json",
+      "in_index": true
+    },
+    {
+      "title": "💼今日は、見る日か。見られる日か。渡す日か",
+      "publish_date": "2026-10-04",
+      "platform_origin": "X",
+      "source_week": "2026-09-29_2026-10-05",
+      "tier": "free_entry",
+      "plan_type": null,
+      "maai_axis": null,
+      "principle_no": 5,
+      "cluster_topic": "週次の無料まとめ（型A・組織）——①評価する側として見る日 ②評価される側として気にする日 ③指示や仕事を渡す日、の三つの入口で既存の💼記事を並べ直した目次。中身は要約まで、手当ては各記事へ送る",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。『読むか読まないか』ではなく『今日どの立ち位置で読みたいか』に測る対象を変える",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-10-04_guide-soshiki.json",
+      "in_index": true
     }
   ]
 }
