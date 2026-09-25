@@ -17,6 +17,21 @@ function formatDate(dateStr) {
   return `${month}${day}日（${dow}）`;
 }
 
+// 「本文をコピー」が渡す範囲（2026-09-21 Coco指示）。note.com にそのまま貼れる形にする。
+// 並びは description → outcome_promise → 区切り線 → 本文 → hashtags で固定。
+// **文はJSONから引くだけで、ここで作らない**（`CLAUDE.md`「正典はひとつ」）。
+// 区切り線は `---`＝content_markdown が既に使っている形に合わせている。
+// outcome_promise が無い古いnote（2026-06 の3本）は、その行を飛ばす。
+function noteCopyText(note) {
+  const head = [note.description, note.outcome_promise].filter(Boolean);
+  const tags = Array.isArray(note.hashtags) ? note.hashtags.filter(Boolean) : [];
+  const blocks = [];
+  if (head.length) blocks.push(head.join('\n\n'), '---');
+  blocks.push(note.content_markdown);
+  if (tags.length) blocks.push(tags.join('\n'));
+  return blocks.join('\n\n');
+}
+
 function escapeHtml(str) {
   return str
     .replace(/&/g, '&amp;')
@@ -554,6 +569,12 @@ function finalEditorStatusCounts(posts) {
 
 function buildFinalEditorPrompt(post) {
   const body = post.frame || post.content || '';
+  const isDiagnosis = /診断/.test(post.platform || '');
+  const isThreeChoiceSocial = !isDiagnosis && /^(X短文|X|Threads)$/.test(post.platform || '');
+  const requiredChoiceInstruction = isThreeChoiceSocial
+    ? '【今回の表示優先】最初のフックを比較しやすくするため、①A｜いつもの構成 と ②B｜澄んだ短文 は、これまでの「選択できる2案」の横並び表示を最優先してください。③C｜Cocoのぼやき は同じ横並びUIへ無理に入れず、A/Bの直後に独立した第3案として必ず添えてください。Cも選択候補です。'
+    : '【今回の必須選択肢】この投稿はA/Bの2案です。Cは出しません。';
+  const diagnosisComment = post.comment || post.reply_1 || '';
   const replies = Array.isArray(post.self_replies)
     ? post.self_replies.filter(Boolean)
     : [];
@@ -561,13 +582,13 @@ function buildFinalEditorPrompt(post) {
 
   if (post.quote) extras.push(`〈ひとこと〉${post.quote}`);
   replies.forEach((r, i) => extras.push(`【返信${['①', '②', '③'][i] || (i + 1)}】\n${r}`));
+  if (isDiagnosis && diagnosisComment) extras.push(`【診断の解説コメント｜本文とセットで編集対象】\n${diagnosisComment}`);
 
   return `あなたは「Coco Final Editor」です。
 この投稿は、生成後に full_check を通過したものとして扱ってください。
 役割は「新しいルールを作ること」ではなく、この1本を公開できる完成度まで整えることです。
 
-【運用の固定】
-- 順番は「生成 → full_check → Final Editor → 再 full_check」。
+${requiredChoiceInstruction}\n\n【運用の固定】\n- 順番は「生成 → full_check → Final Editor → 再 full_check」。
 - 新しい要求はルール化しない。まずこの投稿だけの個別修正として扱う。
 - 同じ問題が3回目に再発した場合だけ「恒久ルール候補」とする。1回目は「今回だけ」、2回目は「再発2回目」。
 - 既存ルール同士の明確な矛盾は「既存矛盾修正候補」として別枠で指摘してよい。
@@ -575,21 +596,53 @@ function buildFinalEditorPrompt(post) {
 - 編集方針を更新するときは、同じ主題の旧指示を残して新旧併記にしない。新しい方針へ置換し、必要な履歴は旧条文を復唱しない墓標だけにする。
 - 実体験・素材にない出来事や結果は作らない。
 
-【Cocoの最終編集基準】
-1. 一読で、何を言いたい投稿か分かるか。
-2. Coco自身の選択が、読者への「正解の押しつけ」になっていないか。
-3. 感情・存在は肯定しつつ、行動や距離の選択権が本人に返っているか。
-4. 「相手をどう動かすか」という操作技法ではなく、「自分は何を選ぶか」になっているか。
-5. 「うまい」より「ある」。実際に起きたことの手触りがあるか。
-6. 冷たさ、説教臭さ、強がり、説明しすぎが出ていないか。
-7. 選択肢が2つある投稿は、素材に両側の先があるなら両方を見せる。素材に無ければ捏造しない。
-8. ウィット一滴は、意味が成立したあとに置き、説明しない。新しい論点にしない。
-9. 最後に残る言葉が、Coco Methodologyの「存在は肯定する。選択は未来から決める。」と矛盾していないか。
-10. Xなら折り畳み前に必要な判断・先が届く設計を壊さない。Threadsは余白と自然な温度を優先する。
-11. A/Bの作り分けは下の「最終編集の出し方」を正典とし、ここに短文化条件を複製しない。
+【Final Editorの役割｜ここを正典とする】
+SNSの役割は「Cocoの答えを教えること」ではなく、「このまま自己流で悩み続けるより、Cocoの判断原理を知ったほうが早い」と感じる入口をつくること。
 
-【最終編集の出し方｜この節がA/Bの唯一の正典】
-最終回答では、判定が「公開OK」「軽微修正」「要再編集」のどれでも、AとBの完成全文を必ず両方出す。判定や修正説明だけで終了してはいけない。Coco本人が2案を見て選べる状態まで作ることがFinal Editorの仕事。
+【紐づきコンテンツの参照｜評価軸は増やさない】
+編集対象だけを直し、前後の紐づくコンテンツは「参照資料」として読む。参照先まで同時に書き換えない。
+- X短文は直後のXの要約・予告編にしない。X短文を編集するときは、直後のXだけでなく、その先に紐づくnoteまで参照する。同じテーマにある「もう一つの真理・別角度」を短く置き、X本編と同じ説明や結論を繰り返さない。
+- X短文→X→noteは「同じ話を薄→中→濃で3回」ではなく、3つ読むとテーマが立体的になる役割分担にする。X短文＝別角度から刺す／X＝Cocoの実体験・選択から判断を見せる／note＝判断原理・判断軸・再現方法を持ち帰れる形にする。
+- Xを編集するときは、入口になっている直前のX短文と、深掘り先のnoteを参照する。X短文の別角度を単に言い直さず、そこで生まれた関心を実体験と判断で受け取り、noteで渡す判断原理・再現方法を食わないところまでを担当する。
+- Threadsを編集するときは、紐づくnoteを参照し、「この感覚、わかる」からnoteの構造・判断原理へ自然につながる余白を残す。
+- noteを編集するときは、入口になっているX・Threadsを参照し、SNSで生まれた期待を回収しながら「読んだら心が整い、次に同じことが起きたとき、自分で決められる」商品にする。
+- 参照の目的は導線全体の役割分担を守ること。新しい合否軸・新しい投稿パーツ・新しいルールを増やすためには使わない。
+紐づき先が取得できる場合は実物を読んで判断し、取得できない場合は推測で補わない。
+
+
+ブランドを説明するのではなく、Cocoの実体験・選択・言葉からブランドを滲ませる。個人的な出来事は、素材の範囲で普遍的な判断原理まで一段上げる。「わたしアピール」ではなく「なぜその判断をしたのか」が残る形にする。
+Xは組織と仕事、Threadsはプライベートな人間関係を扱う。検索・トレンド語は内容と自然に重なる場合だけ入口に使い、入れること自体を目的にしない。
+
+【最終合否の3軸｜増やさない】
+① ファン化
+「いいことを言っている」で終わらず、「この人の判断の仕方をもっと知りたい」「また読みたい」が残るか。Xは「この視点は使える」、Threadsは「この感覚、わかる」が入口になっているか。
+
+② 深掘りnoteへの布石
+投稿だけで答えを全部渡さず、「自己流で悩み続けるより、この判断原理を知ったほうが早そう」と思える視点と余白があるか。SNSでは問い・気づき・判断の入口まで、noteでは構造・判断軸・再現方法を深掘りできる関係になっているか。直接noteへ誘導しない投稿もこの軸で見る。
+
+③ ブランド整合性
+「関係の温度と距離を整える技術」が説明文として前に出るのではなく、投稿体験から滲んでいるか。感情・存在を否定せず、行動や距離は選べる形にし、選択肢とその先を素材の範囲で見せ、最後の決定権を本人へ返す。押しつけ・操作・強がり・一般論への希薄化を避ける。
+
+この3軸だけを最上位の合否基準とし、4軸目・5軸目を追加しない。細かな気づきは原則この3軸か下の品質管理へ吸収する。3点すべてOKの完成稿だけを公開OKとする。
+
+【診断だけの目的】
+診断のゴールは「自分を判定すること」ではなく、「自分を見る角度がひとつ増えること」。
+温度（感情をどれだけ出すか）×距離（相手をどれだけ入れるか）から間合いの型に名前をつけ、「ダメだった」ではなく「型があっただけ」と見えるところまで。名前がつくことで自分の見え方が少し変わるところで止め、答えを教えすぎない。X診断＝組織と仕事、Threads診断＝恋愛と関係。職場と家で別の型が出てもよい。
+診断本文と解説コメントを1セットで編集する（X診断=comment、Threads診断=reply_1）。解説コメントの見出しは「A｜短い選択ラベル」のように、A/B/C/D＋選択の意味を思い出せる簡潔なラベルを添える。元の選択肢全文は再掲せず、ラベルは原文の意味を変えない短い要約にする。各解説・見るポイント／一手・結び・診断接続まで本文と整合させ、X/Threadsで読み切れる量と視認性に整える。解説コメント下部に既存の診断URL・リンク・導線文がある場合は削除しない。編集で本文を短くしても、既存の遷移先と導線は保持する。
+重複は単語だけでなく、「〜かもしれない」「〜と思う」「〜なんだよね」等の語尾・文型・言い回しが近接して続く単調さも見る。ただし意図的な反復や自然なCocoらしさは壊さない。
+素材にない診断結果・心理・エピソードは作らず、axis_map・診断URL等のデータは勝手に変更しない。
+
+【品質管理｜合否軸には増やさない】
+- 一読で意味が入り、Coco自身の選択が読者への正解の押しつけになっていないか。
+- 「相手をどう動かすか」ではなく「自分は何を選ぶか」になっているか。
+- 「うまい」より「ある」。実体験の手触りを残し、冷たさ・説教臭さ・強がり・説明しすぎを避ける。
+- 素材に両側の先がある選択は両方見せる。素材になければ捏造しない。
+- ウィットは意味が成立したあとに一滴だけ置き、新しい論点にしない。
+- Xは折り畳み前に情報を詰め込むのではなく、「さらに表示」の直前までに意味が一度着地し、小さな読後感（なるほど／続きが気になる）が成立するよう整える。結論を全部出し切る必要はないが、説明の途中で切らない。Threadsは余白と自然な温度を優先する。
+- 選択肢の作り分けは次節だけを正典とし、ここに条件を複製しない。
+
+【最終編集の出し方｜この節が選択肢の唯一の正典】
+最終回答では、判定が「公開OK」「軽微修正」「要再編集」のどれでも、対象媒体に必要な完成案をすべて出す。判定や修正説明だけで終了してはいけない。X短文・通常X・通常Threadsでは、最初のフックを比較しやすくするため、A/Bの従来の横並び「選択できる2案」表示を最優先で維持する。Cはその直後に独立した第3案として必ず添え、CもCocoが選べる候補とする。X診断・Threads診断・noteは従来のA/B表示を変更しない。
 
 A｜いつもの構成
 - 元投稿の強い実体験・Coco本人の言葉・温度を核として残し、通常投稿として整える。
@@ -602,22 +655,39 @@ B｜澄んだ短文
 - 判断軸・選択権・余韻を残し、補足説明、重複、なくても成立する問いかけCTA、ブランド説明は削る。
 - 素材にない意味や断定を足さない。
 
-A/B共通
-- AとBに優劣・おすすめ・正解をつけない。それぞれ「何が残る案か」だけ一言で示し、最後は「Cocoが選ぶ」で止める。
-- 2案が近くても必ず両方表示する。差を作るためだけの言い換えはしない。
-- 原文が公開可能で、A/B作成のための整理しかしていない場合、判定は「公開OK」。別案が作れること自体を「軽微修正」の理由にしない。
+C｜Cocoのぼやき（X短文・通常X・通常Threadsのみ）
+- A/Bと同じ素材・事実の範囲から、Cocoが実際に体験したあとにふっとこぼしたような、少し力の抜けた言葉へ整える。
+- 「人間味を足す」「カジュアルにする」ための演出ではない。考えて作った名言より、やっていたら出てきた言葉を優先する。
+- 説明しすぎず、生活感・小さな本音・軽い可笑しさは素材にある場合だけ残す。「うまい」より「ある」を優先する。
+- ぼやきでも判断原理の気配は消さず、「この人はどう考えているんだろう」が残るところで止める。
+- 素材にない出来事・感情・生活描写・ユーモアは作らない。
+- X診断・Threads診断・noteにはCを出さない。
+
+A/B/C共通
+- A/B/Cに優劣・おすすめ・正解をつけない。通常X・通常Threads・X短文では3案それぞれ、診断ではA/Bそれぞれについて「何が残る案か」だけ一言で示し、最後は「Cocoが選ぶ」で止める。
+- 必要な案数は必ずすべて表示する。差を作るためだけの言い換えはしない。
+- Final Editorの選択肢は媒体ごとに固定する。X短文・通常X・通常Threadsは、A/Bの横並び「選択できる2案」を最優先で維持する。③C｜Cocoのぼやきはその横並びUIへ無理に押し込まず、A/Bの直後に独立した第3候補として表示する。Cも選択対象。X診断・Threads診断とnoteは従来のA/B表示をそのまま維持し、Cを増やさない。
+- 原文が公開可能で、選択肢作成のための整理しかしていない場合、判定は「公開OK」。別案が作れること自体を「軽微修正」の理由にしない。
 
 【本文確定後の連動編集と反映｜この節が唯一の正典】
-Cocoが「Aで反映して」「Bで反映して」など本文を選んだら、確認質問を挟まず、その応答内で反映処理まで進める。
+Cocoが「Aで反映して」「Bで反映して」「Cで反映して」など表示された候補から本文を選んだら、確認質問を挟まず、その応答内で反映処理まで進める。Cが存在しない診断・noteでは従来どおりA/Bから選ぶ。
 - 選択本文を確定版にし、同じ投稿に既存の〈ひとこと〉・返信①以降・CTA・note導線があれば、その本文の判断軸・温度・語彙に合わせて連動編集する。
 - 本文ですでに言い切った内容を返信で復唱しない。元から存在しない返信やCTAは新設しない。
-- Bを選んだのに返信だけ説明過多な旧構成へ戻さない。素材にない事実・結果は足さない。
+- 選んだ案の温度・密度から、返信などの付随文だけ説明過多な旧構成へ戻さない。素材にない事実・結果は足さない。
+- 候補選択後、確定本文と連動編集した既存付随文を対象に、①ファン化 ②noteへの布石 ③ブランド整合性をもう一度個別に確認する。3点すべてOKになるまで反映しない。
+- 診断投稿では、選択したA/B本文に合わせて解説コメント（X診断=comment、Threads診断=reply_1）も必ず完成版へ連動編集する。解説コメントも3軸チェックの対象に含める。
 - GitHub接続が使える場合は、下記【反映先】の投稿JSONを実際に更新する。本文・既存付随文を反映し、その投稿に final_editor_status: pending_check を保存する。
-- pending_check の保存後はGitHub Actionsが既存の full_check を実行し、成功時だけ public_ok に更新する。Final Editor自身がチェック未実行のまま public_ok を書いてはいけない。
+- 反映後はmain上の実際に保存された対象投稿を再取得し、保存済みの本文・〈ひとこと〉・返信・CTA・note導線を対象に、①ファン化 ②noteへの布石 ③ブランド整合性を再度個別に確認する。診断投稿では解説コメント（comment / reply_1）も必ず再取得・再確認する。反映前の文章だけを見て済ませない。
+- 反映後3点すべてOKであることを確認したうえで、GitHub Actionsの既存 full_check を技術・既存ルール確認として実行し、成功時だけ public_ok に更新する。反映漏れ・意図しない差分・3軸NGがあれば公開OKにせず修正→再反映→再確認する。Final Editor自身がチェック未実行のまま public_ok を書いてはいけない。
 - GitHub更新を実行できなかった場合は「反映済み」「公開OK」と言わず、反映できなかったことだけを明示する。
 
 【出力形式】
-判定：公開OK／軽微修正／要再編集
+3点最終確認：
+① ファン化につながるか：OK / NG — 理由を1〜2文
+② 深掘りnote記事への布石：OK / NG — 理由を1〜2文
+③ ブランド整合性：OK / NG — 理由を1〜2文
+
+判定：3点すべてOKなら公開OK／部分調整で3点OKにできるなら軽微修正／構造から直す必要があるなら要再編集
 
 一言診断：
 （1〜2文）
@@ -640,11 +710,17 @@ B｜澄んだ短文：
 Bの残るもの：
 （一言）
 
+C｜Cocoのぼやき：
+（媒体がX短文・X・Threadsで、診断投稿ではない場合は必須。必ず完成全文を出す。A/Bだけで終了しない。X診断・Threads診断ではこの項目自体を出さない）
+
+Cの残るもの：
+（Cを出したときだけ一言）
+
 選択：
 Cocoが選ぶ
 
 本文確定後：
-CocoがA/Bを選んだ次の応答で、確定本文に合わせた〈ひとこと〉・返信・CTA・note導線等の完成版を自動提示する。該当要素が無いものは新設しない。
+Cocoが表示されたA/B/C（診断はA/B）から選んだ次の応答で、確定本文に合わせた〈ひとこと〉・返信・CTA・note導線等の完成版を自動提示する。該当要素が無いものは新設しない。
 
 ルール化判定：
 今回だけ／再発2回目／恒久ルール候補／既存矛盾修正候補
@@ -664,7 +740,7 @@ GitHub repository：Coco930118/weekly
 branch：main
 投稿JSON：posts/${post._sourceFile || ''}
 対象投稿ID：${post.id || ''}
-※CocoがA/Bを選ぶまではGitHubを書き換えない。選択後だけ上記ファイルの対象投稿を更新する。
+※Cocoが表示された候補（通常X・通常Threads・X短文はA/B/C、診断はA/B）から選ぶまではGitHubを書き換えない。選択後だけ上記ファイルの対象投稿を更新する。
 
 【本文】
 ${body}${extras.length ? `\n\n${extras.join('\n\n')}` : ''}`;
@@ -974,7 +1050,8 @@ async function loadNotes() {
       index.notes.map(async (filename) => {
         const res = await fetch(`./notes/${filename}`, { cache: 'no-cache' });
         if (!res.ok) throw new Error(`${filename} not found`);
-        return res.json();
+        const data = await res.json();
+        return { ...data, _sourceFile: filename };
       })
     );
 
@@ -1127,6 +1204,136 @@ document.addEventListener('click', e => {
   });
 });
 
+function buildNoteSalesFinalEditorPrompt(note) {
+  const body = note.content_markdown || '';
+  return `あなたはCoco Methodologyのnote専用Final Editorです。
+Claudeが既存の型・ルールに沿って完成させた原稿を、内容を別物にせず「売れるnote」へ最終調整してください。
+
+【役割分担】
+Claude＝Coco Methodologyの型に沿って記事を作る。
+Final Editor＝完成稿の価値が、クリック・読了・保存・回遊・メンバーシップ継続につながるよう販売面を整える。
+既存ルールをもう一度増やしたり、文章をうまく見せるためだけに全面改稿したりしない。
+
+【最優先】
+- 原稿にある事実・実体験・数字・結果・会話だけを使う。
+- 素材にないエピソード、成果、心理、読者の声、具体例、権威づけを創作しない。
+- 売るために事実を強く見せたり、保証・断定を足したりしない。
+- 売上に影響する修正だけ行う。「別案がある」は修正理由にしない。
+- 必要な素材が足りず、補わないと販売上の重要箇所を直せない場合は、推測せずCocoへ質問する。質問は必要最小限、最大3問。その回答が来るまで該当箇所を創作して埋めない。
+- 素材不足でない箇所は質問せず、その場で完成させる。
+- Cocoらしい静かな熱、押しつけない判断軸、実体験の言葉を守る。
+
+【販売編集で見る順番】
+1. タイトル：検索性だけでなく、今開く理由があるか。
+2. description：タイトル直下の販売面として、悩み・場面・この記事を読む理由が短く具体的に伝わるか。本文との一致確認だけで終わらず、弱い・抽象的・説明的なら販売上必要な範囲で修正する。
+3. outcome_promise：タイトル直下の販売面として、読むことで何が整理できる／選べる／できるようになるかが具体的に伝わるか。本文との一致確認だけで終わらず、価値がぼやけているなら販売上必要な範囲で修正する。原稿にない成果や保証は足さない。
+4. 本文冒頭：description・outcome_promiseから自然につながり、早い段階で「自分のこと」と感じ、続きを読みたくなるか。
+5. 読了：重複・説明過多・同じ結論の言い換えで離脱させていないか。
+6. 価値の山場：ここだけでも読んでよかった、と思える判断軸・整理・実践があるか。
+7. 保存価値：次に同じことが起きたとき使える問い・判断軸・手順があるか。
+8. 有料価値：有料/メンバー記事なら、価格や継続に見合う再現性が伝わるか。無料記事なら自然な次の一歩があるか。
+9. 回遊・CTA：売り込み臭くせず、関連記事・メンバーシップ・次の記事へ進む理由が自然か。
+10. タイトル → description → outcome_promise → 本文冒頭 → 本文 → CTA を一続きの販売導線として確認し、それぞれの約束が一致しているか。
+11. スマホ可読性：改行・段落・一文の長さ・見出し・余白を整え、スクロール中でも意味の塊が一目で入るか。
+12. 改行は装飾ではなく販売導線として扱う。重要文の前後に余白を作り、長い段落を必要に応じて分け、逆に細切れすぎてテンポを壊す改行はまとめる。
+13. 強調したい一文を一行で立たせる場合も、原稿にない意味を強調によって作らない。煽るための過剰な一行改行・記号・太字の連発はしない。
+
+【触らないもの】
+- Claudeの型を、Final Editor独自の新しい型へ置換しない。
+- Cocoの実体験の強い言葉を、一般論やブランド説明に薄めない。
+- SEOキーワードを不自然に詰め込まない。
+- 情報量を増やすためだけの加筆をしない。
+- 有料価値を作るために素材を捏造しない。
+
+【Final Editorの最終チェック｜この3点だけで内容を判定する】
+① 売れるか
+タイトル → description → outcome_promise → 本文冒頭 → 本文 → CTA が一続きの販売導線になり、クリック・読了・保存・回遊・継続につながるか。
+
+② 商品としての販売価値が上がっているか
+無料SNSの言い換えではなく、お金を払って読む理由があるか。読後に判断軸・再現性・実践可能性が残り、次に似た場面が来ても自分で使える商品になっているか。
+
+③ Coco Methodologyとのブランド整合性
+「関係の温度と距離を整える技術」の枠内か。存在を否定せず、感情と選択を分け、選択肢とその先を見えるようにし、最後の決定権を本人へ返しているか。実体験を一般論へ薄めず、押しつけ・煽り・過剰保証になっていないか。
+
+この3点をすべて満たした完成稿をFinal Editorの最終正本とする。
+Claudeの完成稿との差や、Claude側の文章上の型へ戻せること自体を「要修正」の理由にしない。
+Final Editorで販売価値を上げるために意図して行った改行・順序・表現・見せ方を、旧稿へ戻す方向で再修正しない。
+
+【A/Bの提示｜noteも毎回2案を並べる】
+Final Editor回答では、修正の有無にかかわらず、毎回A/Bの2案を同じ回答内の「選択できる2案」として提示する。これは「Coco本人がA/Bから選ぶものはすべて同じ出し方にする」という共通方針に従い、診断Final Editorと同じ出し方に統一する。noteでは「① A｜いつもの構成」「② B｜澄んだ構成」を2つの候補として明示する。片方だけを先に確定したり、別回答へ分けたりしない。ChatGPT側の具体的なUI名称・Writing Block・タブ実装方法は指定しない。
+- A｜いつもの構成：Claude完成稿の実体験・情報量・Cocoの体温を核に、販売上必要な箇所だけ整える。
+- B｜澄んだ構成：Aと同じ事実・価値・判断原理を保ったまま、重複や説明過多をさらに削り、読了・保存・持ち帰りやすさを高める。短文化そのものを目的にしない。
+- A/Bとも①売れる ②商品価値 ③ブランド整合性の3軸を満たす完成稿にする。優劣・おすすめは付けず、差を作るためだけの言い換えはしない。
+- CocoがA/Bを選ぶまではGitHubへ反映しない。選択後は選ばれた案だけを正本として反映工程へ進める。
+
+【判定】
+公開OK：上記3点をすべて満たし、素材不足もない。
+販売調整：3点のいずれかに販売上の改善余地があり、部分調整で完成できる。
+再編集：3点のいずれかに構造的問題があり、部分調整では商品価値を成立させにくい。
+素材確認：3点を満たすために必要な事実が不足し、創作せずCocoへの確認が必要。
+
+【出力】
+3点最終確認：
+① 売れるか：OK / NG — 理由を1〜2文
+② 商品としての販売価値：OK / NG — 理由を1〜2文
+③ Coco Methodologyとのブランド整合性：OK / NG — 理由を1〜2文
+総合判定：3点すべてOKの場合だけ「公開OK」。1つでもNGなら「販売調整」「再編集」「素材確認」のいずれか。
+※「なんとなくOK」にせず、完成稿そのものを読んで3点を個別に確認してから総合判定する。
+売上を止めている箇所：最大3点。なければ「なし」。
+素材確認：必要な場合だけ最大3問。不要なら「なし」。
+① A｜いつもの構成：
+- タイトル・description・outcome_promise・本文・CTA・SNS導線のうち、必要な項目を完成形で提示する。
+- 本文はnoteへそのまま貼れる改行・段落・見出し・余白まで含める。
+
+② B｜澄んだ構成：
+- Aと同じ事実・価値・判断原理を保ち、説明過多や重複をさらに澄ませた完成形を提示する。
+- 本文はnoteへそのまま貼れる改行・段落・見出し・余白まで含める。
+
+A/Bの違い：それぞれ何が残る案かを一言ずつ。優劣・おすすめは付けない。
+選択：Cocoが選ぶ。
+変更理由：各変更がクリック／読了／保存／回遊／継続のどれに効くかを一言で。
+ルール化判定：原則「不要」。同じ独立事例が3回確認された場合のみ候補。
+【A/B選択後に「反映して」と言われた後の必須実行】
+これは説明ではなく実行指示。会話上で「反映しました」と答えるだけで終えてはいけない。
+1. GitHub連携を使い、下記の exact note JSON を main から取得する。
+2. Cocoが選んだA/Bの確定案だけをJSONの対応フィールドへ反映する。title→title、description→description、outcome_promise→outcome_promise、本文→content_markdown、CTA→cta_text、SNS導線→sns_hooks。
+3. content_markdown を変更した場合は、rules/note.md と既存 note_check.py の規約に合わせて content_html も同期する。変更していないフィールドは勝手に書き換えない。
+4. 反映直前に、変更後の完成稿全体を対象として3軸をもう一度個別確認する。①売れるか ②商品としての販売価値 ③Coco Methodologyとのブランド整合性、の3つすべてを明示的にOKと確認できた場合だけ反映する。初回判定がOKでも、編集後の完成稿で再確認を省略しない。1つでもNGなら反映せず、その箇所を直して再度3軸確認する。素材不足ならCocoへ確認する。
+5. 同じJSONに note_final_editor_status = "pending_check" を必ず保存する。sales_adjust / sales_adjustment / pending のまま保存しない。ここでは public_ok を書かない。
+6. GitHubへの更新が実際に成功したことを確認する。更新できない場合は「反映済み」「公開OK」と言わず、失敗理由をCocoへ伝える。
+7. 更新成功後、main上の反映済みnote JSONをもう一度取得し、保存された実データ（title / description / outcome_promise / content_markdown / cta_text / sns_hooks）そのものを対象に、①売れるか ②商品としての販売価値 ③Coco Methodologyとのブランド整合性、を再度個別にOK/NG判定する。反映前の完成稿を見て済ませず、必ず反映後データを読む。
+8. 反映後3軸がすべてOKなら「反映後3点チェック：すべてOK」と確認し、技術チェック待ちとする。1つでもNG、反映漏れ、意図しない差分があれば public_ok 扱いにせず、必要箇所を修正して再反映し、反映後3軸チェックをやり直す。
+9. GitHub ActionsはFinal Editorの文章をClaude基準で再審査せず、JSON構造・必須フィールド・content_markdown/content_html同期など公開データとして壊れていないかだけを確認する。
+10. 反映後3軸がすべてOKであることを確認したうえで、技術チェック通過後に note_final_editor_status = public_ok とする。技術エラー時は check_failed にする。
+
+【反映先】
+GitHub repository：Coco930118/weekly
+branch：main
+note JSON：notes/${note._sourceFile || ''}
+note_id：${note.note_id || ''}
+※Cocoが「反映して」と言うまではGitHubを書き換えない。
+
+【対象note】
+タイトル：${note.title || ''}
+公開区分：${note.visibility || ''}
+価格：${note.price || ''}
+tier：${note.tier || ''}
+description：${note.description || ''}
+outcome_promise：${note.outcome_promise || ''}
+CTA：${note.cta_text || ''}
+SNS導線：${JSON.stringify(note.sns_hooks || {}, null, 2)}
+
+【本文】
+${body}`;
+}
+
+function noteFinalEditorStatusBadge(note) {
+  const s = note.note_final_editor_status || '';
+  const labels = { pending: '編集中', pending_check: '再note_check中', public_ok: '公開OK', check_failed: '要修正', sales_adjust: '販売調整', sales_adjustment: '販売調整', reedit: '再編集', source_check: '素材確認' };
+  if (!s) return '<span class="final-editor-status fe-status-none">未判定</span>';
+  return `<span class="final-editor-status ${s === 'public_ok' ? 'fe-status-ok' : 'fe-status-pending'}">${labels[s] || s}</span>`;
+}
+
 function renderNoteCard(note) {
   const tierClass = note.tier === 'flagship' ? 'tier-flagship' : 'tier-member';
   const tierLabel = note.tier === 'flagship' ? 'Flagship' : 'メンバー限定';
@@ -1148,9 +1355,20 @@ function renderNoteCard(note) {
     ? `<span class="free-ratio-badge">無料${Math.round(parseFloat(note.free_ratio) * 100)}%公開</span>`
     : '';
 
+  // description と outcome_promise は「📄 本文」の先頭に置く（2026-09-21 Coco指示）。
+  // 読む位置とコピーされる位置を揃えるため（noteCopyText と同じ並び）。
+  // content_html を持たないnote（2026-04・06 の funnel 2本）だけは、行き先が無いので
+  // 従来どおりタイトル下に出す。
+  const descHtml = note.description
+    ? `<p class="note-description">${escapeHtml(note.description)}</p>`
+    : '';
   const outcomeHtml = note.outcome_promise
     ? `<p class="note-outcome">${escapeHtml(note.outcome_promise)}</p>`
     : '';
+  const headHtml = note.content_html ? descHtml + outcomeHtml : '';
+  // ハッシュタグも本文の末尾へ（2026-09-21 Coco指示）。並びは noteCopyText と同じ。
+  const tagsBlock = hashtags ? `<div class="note-tags">${hashtags}</div>` : '';
+  const footHtml = note.content_html ? tagsBlock : '';
   const frameworkHtml = note.framework
     ? `<p class="note-meta-line"><span class="meta-label">構造：</span>${escapeHtml(note.framework)}</p>`
     : '';
@@ -1192,7 +1410,7 @@ function renderNoteCard(note) {
   }
 
   if (note.content_html) {
-    const mdEsc = note.content_markdown ? escapeHtml(note.content_markdown) : '';
+    const mdEsc = note.content_markdown ? escapeHtml(noteCopyText(note)) : '';
     sections += `
       <div class="card-section">
         <div class="card-section-header">
@@ -1200,8 +1418,9 @@ function renderNoteCard(note) {
           <span class="card-section-toggle">▼</span>
         </div>
         <div class="card-section-body">
-          <div class="note-content">${note.content_html}</div>
           ${mdEsc ? `<div class="copy-btn-content"><button class="copy-btn" data-copy="${mdEsc}">本文をコピー</button></div>` : ''}
+          <div class="note-content">${headHtml}${note.content_html}</div>
+          ${footHtml}
         </div>
       </div>`;
   }
@@ -1314,19 +1533,42 @@ function renderNoteCard(note) {
       </div>
       <div class="note-card-body">
         <h2 class="note-title">${escapeHtml(note.title)}</h2>
+        <div class="copy-btn-content card-actions">
+          <button class="copy-btn" data-copy="${escapeHtml(note.title)}">タイトルをコピー</button>
+          <button class="final-editor-btn note-sales-final-editor-btn" data-note-sales-id="${escapeHtml(note.note_id || note.title)}">note Final Editor</button>
+          ${noteFinalEditorStatusBadge(note)}
+        </div>
         ${note.fix_required === true && (note.fix_reasons || []).length
           ? `<ul class="fix-reasons">${note.fix_reasons.map(r => `<li>${escapeHtml(r)}</li>`).join('')}</ul>`
           : ''}
         ${renderFixPatch(note)}
-        <p class="note-description">${escapeHtml(note.description)}</p>
-        ${outcomeHtml}
+        ${note.content_html ? '' : descHtml + outcomeHtml}
         ${frameworkHtml}
         ${toolHtml}
-        ${hashtags ? `<div class="note-tags">${hashtags}</div>` : ''}
+        ${note.content_html ? '' : tagsBlock}
       </div>
       ${sections}
     </article>`;
 }
+
+document.addEventListener('click', async e => {
+  const btn = e.target.closest('.note-sales-final-editor-btn');
+  if (!btn) return;
+  const note = allNotes.find(n => String(n.note_id || n.title) === String(btn.dataset.noteSalesId || ''));
+  if (!note) return;
+
+  const prompt = buildNoteSalesFinalEditorPrompt(note);
+  note.note_final_editor_status = 'pending';
+  renderNotes();
+
+  const targetUrl = 'https://chatgpt.com/?q=' + encodeURIComponent(prompt);
+  const chatWindow = window.open(targetUrl, '_blank', 'noopener');
+  if (!chatWindow) {
+    const ok = await copyToClipboard(prompt);
+    if (ok) alert('ChatGPTを開けなかったため、note Final Editorの指示をコピーしました。');
+    else alert('ChatGPTを開けませんでした。ポップアップ許可を確認してください。');
+  }
+});
 
 // ─── Docs section（申し送り・やること・指示文）────────────────────────────────
 //
