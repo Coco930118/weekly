@@ -506,6 +506,33 @@ def main(path):
         if any(re.search(NEG, l) for l in ls[-2:]): skel.append(p['id'])
     if len(skel) > 2:
         ng('WEEK', f'締めの骨格「否定→断定」が{len(skel)}本（最終2行・週3本以上重ねない）', skel)
+    # Threads の締めは実感で閉じる。判断の言葉（決める・選ぶ）で閉じるのは週2本まで。
+    # 正典は rules/posts.md「締めに、書き手の判断か実感が一文見える」の媒体別の行。
+    # ここに理由を書かない。持つのは検出のパターンと上限だけ（2026-09-25 Coco決定）。
+    KETSU_RE = re.compile(r'決め[るたてよ]|決まる|選[ぶんびべ]')
+    KETSU_MAX = 2
+    kime = []
+    for p in posts:
+        if p['platform'] != 'Threads':
+            continue
+        b2 = p['content'].split('感情はある。')[0].strip()
+        # 窓は締めの段落の、最後の一文だけ。
+        # ・一手の行（「今日ひとつ、〜決めてみる？」）は処方なので「決める」を含むのが正しい
+        # ・締めが2文のとき、前の文の「決めておいた夜は」は実感の描写
+        # 広く取ると全部当たる（2026-09-25 実測：最終2行なら12/12本、最終行なら7本）
+        blocks = [x.strip() for x in b2.split('\n\n') if x.strip() and 'note' not in x]
+        if not blocks:
+            continue
+        sents = [x for x in re.split(r'[。？！?!]', blocks[-1].replace('\n', '')) if x.strip()]
+        if not sents:
+            continue
+        # さらに最後の読点から後ろだけを見る。「ひと晩置くと決めてから、二択の夜は減っている」は
+        # 従属節に判断が出るだけで、閉じているのは実感のほう（2026-09-25 実測でこの形が3本）
+        if KETSU_RE.search(sents[-1].split('、')[-1]):
+            kime.append(p['id'])
+    if len(kime) > KETSU_MAX:
+        ng('WEEK', f'Threadsの締めが判断の言葉で閉じている{len(kime)}本'
+                   f'（週{KETSU_MAX}本まで・締めは実感で閉じる）', kime)
     # 骨格の2つ目「〜のは、」で主語を立てる形。機械は「否定→断定」しか数えていなかった。
     # 2026-09-03、35投稿セッションが目視で「〜のは、〜まで／だけ」の増殖に気づいた。
     # ⚠️ **まで／だけで数えると1本しか出ない。** 実際に収束しているのは「〜のは、」そのもので、
