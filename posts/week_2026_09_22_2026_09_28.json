@@ -201,15 +201,15 @@
       "purpose": "共感獲得",
       "character": "🐢しずく",
       "episode_id": "E505",
-      "content": "「これ、確認してもいいですか？」\n\nそんな一言が返ってくるときほど、\n私、先回りして\n説明しすぎてしまっているのかも。\n\n範囲は決める。\n失敗しても戻せるようにしておく。\n矢面には立つ。\n\nそこまでは、こっちの仕事なの。\n\nでも、\n準備した内容や判断の理由まで全部説明すると\n判断までこちらに戻ってくる。\n\nだから見せるのは、\n任せる範囲くらい。\n\n任せるって、\n準備より黙るほうが難しいのかも。",
-      "quote": "任せる範囲だけ、伝える。",
+      "content": "「ここまでは、自分で決めていいんですよね？」\n\nうん、そこまでで大丈夫。\n\n「じゃあ、これは？」\n「こっちは？」\n\nって続くと、\nあ、説明が足りなかったのかなって思って、\nつい先のことまで話してしまうの。\n\nでも本当は、\n失敗しても戻せるようにしておくことも、\n何かあったときに私が出ることも、\nこっちで持っていればいいのかも。\n\nそこまで説明し始めると、\n判断するところまで私が持ってしまう。\n\n任せるなら、先に決めるのは「どこまで任せるか」。",
+      "quote": "説明しすぎると、確認が増える。",
       "note_funnel": false,
       "self_replies": [
-        "🐢しずく｜任せる範囲は伝える。\n準備した内容や判断の理由までは、全部渡さない。\n\n最近、説明を減らして任せた一件は？"
+        "🐢しずく｜「ここまでは自分で決めていい」を先に伝える。\n失敗したときに戻せる準備と、何かあったときに出る責任は、こちらで持っておく。\n\n最近、任せる範囲を先に決めた仕事は？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with harvest moon pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her hand sliding a thick folder out of sight, keeping one card in view; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "x_short": "任せるって言ったのに、\nこっちで答えまで決めてたら、\nそれはちょっと違うよね。\n\n責任は持つ。\nでも、決めるのは相手に任せたい。",
-      "final_editor_status": "public_ok"
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_12",
