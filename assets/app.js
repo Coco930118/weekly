@@ -585,15 +585,7 @@ function buildFinalEditorPrompt(post) {
 この投稿は、生成後に full_check を通過したものとして扱ってください。
 役割は「新しいルールを作ること」ではなく、この1本を公開できる完成度まで整えることです。
 
-${choiceDisplayInstruction}\n\n【運用の固定】\n- 順番は「生成 → full_check → Final Editor → 再 full_check」。
-- 新しい要求はルール化しない。まずこの投稿だけの個別修正として扱う。
-- 同じ問題が3回目に再発した場合だけ「恒久ルール候補」とする。1回目は「今回だけ」、2回目は「再発2回目」。
-- 既存ルール同士の明確な矛盾は「既存矛盾修正候補」として別枠で指摘してよい。
-- 過去投稿への遡及修正は提案しない。
-- 編集方針を更新するときは、同じ主題の旧指示を残して新旧併記にしない。新しい方針へ置換し、必要な履歴は旧条文を復唱しない墓標だけにする。
-- 実体験・素材にない出来事や結果は作らない。
-
-【Final Editorの役割｜ここを正典とする】
+${choiceDisplayInstruction}\n\n【Final Editorの役割｜ここを正典とする】
 SNSの役割は「Cocoの答えを教えること」ではなく、「このまま自己流で悩み続けるより、Cocoの判断原理を知ったほうが早い」と感じる入口をつくること。
 
 【X・Threadsの声と締め｜正典を参照】
@@ -720,9 +712,6 @@ Cocoが選ぶ
 本文確定後：
 Cocoが表示されたA/Bから選んだ次の応答で、確定本文に合わせた〈ひとこと〉・返信・CTA・note導線等の完成版を自動提示する。該当要素が無いものは新設しない。
 
-ルール化判定：
-今回だけ／再発2回目／恒久ルール候補／既存矛盾修正候補
-※同じ問題が3回目か確認できない場合は「今回だけ」にする。
 
 再チェック：
 選択後は投稿JSONへ pending_check として反映する。再 full_check と public_ok への更新はGitHub Actionsに任せる。Actionsが失敗した場合は公開OKにしない。
@@ -763,7 +752,6 @@ function ensureFinalEditorModal() {
         <button class="final-editor-close" type="button" data-final-editor-close="1" aria-label="閉じる">×</button>
       </div>
       <p class="final-editor-flow">生成 → full_check → <strong>Final Editor</strong> → 再 full_check</p>
-      <p class="final-editor-note">ルールは増やしません。まず1本だけを整え、3回目の再発だけを恒久ルール候補にします。</p>
       <div class="final-editor-target" id="finalEditorTarget"></div>
       <textarea id="finalEditorPrompt" class="final-editor-prompt" readonly></textarea>
       <div class="final-editor-actions">
