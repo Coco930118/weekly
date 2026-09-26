@@ -570,7 +570,7 @@ function finalEditorStatusCounts(posts) {
 function buildFinalEditorPrompt(post) {
   const body = post.frame || post.content || '';
   const isDiagnosis = /診断/.test(post.platform || '');
-  const requiredChoiceInstruction = '【今回の表示優先】①A｜いつもの構成 と ②B｜澄んだ短文 の2案だけを、これまでの「選択できる2案」の横並び表示で提示してください。最初のフックを左右で比較できることを最優先にし、各案はその場で文章を編集できる形式にしてください。第3案は出しません。';
+  const requiredChoiceInstruction = '【今回の必須表示】X短文・X・Threadsを含むFinal Editorの本文候補は、①A｜いつもの構成 と ②B｜澄んだ短文 の2案だけです。旧C｜Cocoのぼやき は廃止済みで、候補・補足案・第3案として一切出さないでください。A/Bは従来の「選択できる2案」の横並び表示にし、最初のフックを左右で比較でき、各案をその場で文章編集できる形式にしてください。診断本文内のA/B/C/D回答ラベルは別物です。';
   const diagnosisComment = post.comment || post.reply_1 || '';
   const replies = Array.isArray(post.self_replies)
     ? post.self_replies.filter(Boolean)
@@ -653,7 +653,7 @@ Xは組織と仕事、Threadsはプライベートな人間関係を扱う。検
 
 【最終編集の出し方｜この節が選択肢の唯一の正典】
 最終回答では、判定が「公開OK」「軽微修正」「要再編集」のどれでも、A/Bの完成案を2案とも出す。判定や修正説明だけで終了してはいけない。
-表示は、これまで使っていた「選択できる2案」の横並びを最優先で維持する。AとBの最初のフックを左右で比較できることを目的とし、各案はその場で文章を編集できる形式にする。第3案は出さない。
+表示は、これまで使っていた「選択できる2案」の横並びを最優先で維持する。AとBの最初のフックを左右で比較できることを目的とし、各案はその場で文章を編集できる形式にする。X短文・X・Threadsの旧C｜Cocoのぼやきは廃止済みで、候補・補足案・第3案として出さない。診断本文内のA/B/C/D回答ラベルは別物として維持する。
 
 A｜いつもの構成
 - 元投稿の強い実体験・Coco本人の言葉・温度を核として残し、通常投稿として整える。
