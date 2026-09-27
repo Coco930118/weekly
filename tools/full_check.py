@@ -277,10 +277,10 @@ def main(path):
             # 最終行＝切り替えた先は**状態**で書く。効能で書くとここで落ちる
             ng(p['id'], '効能で締めている（切り替えた先は状態で書く）', tail[-1][:28])
 
-    # 2-0 冒頭（rules/posts.md ルール2。意味上の「具体動作」は目視。ここは字数・NG語・quote重複だけを見る）
+    # 2-0 通常Xの冒頭（rules/posts.md ルール2。意味上の「具体動作」は目視。ここは字数・NG語・quote重複だけを見る）
     #     x_short は別枠（短文の1行目は観察）なので対象外
     over = []
-    for p in posts:
+    for p in X:
         if p.get('date', '') < HOOK_FROM:
             continue          # 配信済みの週には遡及しない
         l1 = (p.get('content') or '').strip().split('\n')[0].strip()
