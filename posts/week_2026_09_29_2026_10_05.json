@@ -227,14 +227,15 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E504",
-      "content": "数字の話をせずに始めた面談は、精神論として受け取られる。\n\n落ちている、というだけを、感情抜きで先に置く。そのうえで、これをどうするかは二人で決める、とつなげる。\n\n数字は評価ではなく、判断の材料として置くと決めている。\n\n次の面談では、感情を先に出さずに、事実の一行だけを先に置く。\n\n事実だけで伝わった回も、そのあとの対話が長くなった回もある。責める材料に使わないと決めたぶんだけ、事実は置きやすい。\n\n置くのは事実だけ。どうするかは、二人の側に。\n\n事実を先に置いた回だけ、姿勢の話までたどり着いた。",
-      "quote": "置くのは事実。決めるのは二人。",
+      "content": "面談の最初に、直近の実績と目標との差を伝える。\n\n「そんなに落ちてたんですね」\n\nその一言を聞くと、\n説明したくなってしまっているの。\n\nでも、伝えるのは数字だけ。\n\n「で、ここからどうします？」\n\nそこから話せたら、それでいいのかも。\n\n数字は責めるためじゃなく、\n二人で決めるために伝えるもの。",
+      "quote": "数字は出す。答えは一緒に決める。",
       "note_funnel": false,
       "self_replies": [
-        "🐢しずく｜精神論になるのは、順番のせい。\n事実を先に置いた面談は、精神論に転ばない。"
+        "🐢しずく｜数字を先に置くと、話す順番が決まる。\nそのあと何を一緒に決めるかで、面談の中身が変わる。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her palm flat over a single sheet with one figure circled, nothing else marked; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "姿勢の話をしようとして、\n数字にはまだ触れていない回もある。"
+      "x_short": "姿勢の話をしようとして、\n数字にはまだ触れていない回もある。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_14",
