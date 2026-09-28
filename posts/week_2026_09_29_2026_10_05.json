@@ -87,14 +87,15 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E553",
-      "content": "自分にしかできないことは、いまの肩書きでなければできないことだけ。\n\nそれ以外は、素直に頼む。引き継ぐ時間が長くつくかどうかは、後回しにする理由にしない。\n\nわたしは、「これをやりたいから、これをお願いしたいんだよね」と、そのまま言った。\n\n仕事量を見てから頼む日も、見送る日もあった。どちらでも、頼まれた側はたいてい嬉しい。\n\n肩書きが持つのは、今日やることの範囲だけ。だからこちらは、今日頼める範囲のほうを先に決めている。",
-      "quote": "肩書きが持つのは、範囲だけ。",
+      "content": "自分にしかできない仕事だけ担当する。\n\n「これをやりたいから、これお願いしたいんだよね」\n最近は、わりとそのまま言ってしまっているの。\n\n引き継ぎに時間がかかると、\nつい自分でやったほうが早い気もするんだけど。\n\n仕事量を見て、今日は頼まない日もある。\nそのくらいのゆるさでいいのかも。\n\n肩書きは、抱える量じゃなくて、持つ範囲。",
+      "quote": "全部できる人ほど、全部やらない。",
       "note_funnel": false,
       "self_replies": [
-        "🐢しずく｜引き継ぎの時間は、頼まない理由にならない。\n頼られた側は、たいてい嬉しい。忘れているのは頼む側だけ。"
+        "🐢しずく｜任せる日は、仕事を減らす日じゃない。\n「これお願いできる？」が言えたぶん、次に持てる仕事が増える。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; one hand handing over a single folder, the other already turning a page; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "自分でなくてもできる仕事が、\n引き継ぎの長さだけで後回しになっていることもある。"
+      "x_short": "自分でなくてもできる仕事が、\n引き継ぎの長さだけで後回しになっていることもある。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_06",
