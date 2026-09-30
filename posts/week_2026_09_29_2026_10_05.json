@@ -73,15 +73,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E608",
-      "content": "辞める話が出た週を振り返ると、\nその前に報告の量が減っていたことがある。\n\n驚くくらい静かに進む。\n\nだからわたしは、\n毎週おなじ時間に、\n誰から報告が来ているかだけ見ている。\n\n増えた週も、\n少ないまま人が入れ替わった週もあった。\n\n頼みやすい人に仕事が集まっていたら、\nそのぶんはこちらから先に断る。\n\n見ているのは、\n誰から報告が来ているかと、その量の変化。\n\n書き終えたら、あとは瓶ビールを一本。",
-      "quote": "先週まで来ていた報告が、今週は来ていない。",
+      "content": "毎週おなじ時間に、\n誰から報告が来ているかを確認している。\n\n「ちょっと話したいことがあって」\n\n辞める話が出たあとに見返すと、\nその人からの報告、\n少し前から減ってたなってことがあるの。\n\n別に、\n報告が減ったら辞めるって話でもない。\n\nただ、\nいつも来てたものが来なくなると、\nちょっと気になるかも。\n\nそれで何かするわけでもなく、\n一応見ておく。\n\n何もなければ、\nそのまま瓶ビールを一本。\n\n違和感って、だいたい先に小さく出る。",
+      "quote": "会議はいつも通り。報告だけ、一人ぶん少ない。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜報告の量は、こちらが聞く前に動く。\n先週、いちばん報告が来なかったのは誰だった？"
+        "🕊ひより｜報告は、内容より先に回数が変わることもある。\n先週と比べて、減った報告はどれだった？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Late September night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with hagi blossom pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her eyes following a short list of names, one line left unmarked; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "x_short": "辞める話が耳に入ってくる前に、\n先に静かになる人がいる。",
-      "final_editor_status": "public_ok"
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_05",
