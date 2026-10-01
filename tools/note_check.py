@@ -38,7 +38,7 @@ MEMBERSHIP_URL = 'https://note.com/coconocanvas/membership'
 CLOSE_LINE = '感情はある。依存はしない。'
 SIX_FROM = '2026-09-22'
 PLAN = {'X': '💼', 'Threads': '💗'}
-NUMS = ['20年', '5万人', '40名', '月商']
+NUMS = ['20年', '5万人', '40名', '月商', '年商']
 # 画像プロンプト（rules/image.md ／ 正典は reference/image_prompt_rules.json）
 CANVA_NG = ['young woman', 'brand age 40s', 'drawn to look', 'youthful',
             'complexion', 'chest', 'bust-up', ' bust']
