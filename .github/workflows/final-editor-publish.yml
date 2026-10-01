@@ -43,7 +43,7 @@ jobs:
         if: steps.pending.outputs.has_pending == 'true'
         shell: bash
         run: |
-          while IFS= read -r file; do
+          while IFS= read -r file || [ -n "$file" ]; do
             [ -z "$file" ] && continue
             python tools/full_check.py "$file"
           done < /tmp/pending_files.txt
