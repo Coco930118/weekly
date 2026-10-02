@@ -6,9 +6,9 @@
     "platform_origin_note": "2026-06以前のnoteには platform_origin フィールドがなかったため unknown。推測で埋めない。2026-07以降は X / Threads が入る。",
     "principle_no_note": "Coco Methodology 原理01〜07の番号。既存分は未判定で null。今後作るnoteでは必須。",
     "duplicate_note": "title と publish_date が同じ行が複数あるものに duplicate_of_title: true を付けた。旧アンダースコア命名のファイルが残っているだけで、同じ記事を二重公開したわけではない。",
-    "count": 165,
+    "count": 183,
     "week_group_note": "week_group='過去分' は、プラン振り分けをしていなかった4〜6月のnote。保持期間30日削除の対象外としてサイトに残す（CLAUDE.md「過去分」参照）。source_week は元の週のまま残す。",
-    "last_updated": "2026-09-20",
+    "last_updated": "2026-10-03",
     "draft_pool": "notes/drafts/ は、note.comに投稿していない下書きの置き場。サイトには出さない。新規note作成時の素材として読む（切り口・処方・言い回し）。note_archive.json には status=未公開・素材 で残す",
     "deleted_2026-08-24": "保持期間超過4週 29本を notes/ から削除（2026-06-09_2026-06-15, 2026-06-30_2026-07-06, 2026-07-07_2026-07-13, 2026-07-14_2026-07-20）。note_archive.json の行は索引として残す"
   },
@@ -3510,6 +3510,190 @@
       "funnel_targets": [],
       "note_url": "",
       "file": "note_2026-10-04_guide-soshiki.json",
+      "in_index": true
+    },
+    {
+      "title": "💼「なぜ」と聞かずに、「議題にしていただければ」と置く",
+      "publish_date": "2026-10-06",
+      "platform_origin": "X",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "先に動く人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 4,
+      "cluster_topic": "上司に「なぜそうしたんですか」と聞くと身構えられる。答えを出す仕事を相手に投げつけず、事実を一行だけ置く。会議のあとに送る一行の置き方と、部下にも上にも同じことをしているという見方",
+      "linked_principle": "決断を相手に返す（原理04）。「なぜ」で答えを取りにいかず、事実を置いて、何を読み取るかを相手の中に返す",
+      "funnel_targets": [
+        "x_02"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-06_put-the-fact-not-why.json",
+      "in_index": true
+    },
+    {
+      "title": "💗返事を待つ夜は、先に自分の予定にしておく",
+      "publish_date": "2026-10-06",
+      "platform_origin": "Threads",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "守る人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 1,
+      "cluster_topic": "お相手さまの出方で一週間が決まっていた。やっていたことは昔も今も同じで、気にしなくなったら、先に予定にしてその行動にした。決める先が、相手の出方から自分の時間の使い方に移る。入れる予定を間違えたときの見分け方",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。相手の返事を変えようとせず、自分の今夜の予定を一つ先に決める",
+      "funnel_targets": [
+        "th_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-06_schedule-before-reply.json",
+      "in_index": true
+    },
+    {
+      "title": "💼「結論はいりません」と書くと、整理される前の声が届く",
+      "publish_date": "2026-10-07",
+      "platform_origin": "X",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "降りる人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "低"
+      },
+      "principle_no": 5,
+      "cluster_topic": "店長に議題を出すと、整理された結論しか上がってこない。「結論はいりません」「そのまま共有いただけますか」と書く頼み方と、測る対象を結論から声の温度に変える見方",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。「結論を出すか、出さないか」ではなく、測る対象を「声の温度が落ちる前に届いたか」に変える",
+      "funnel_targets": [
+        "x_03"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-07_no-conclusion-needed.json",
+      "in_index": true
+    },
+    {
+      "title": "💗秋の入口には、何も言わない。決めるのは、年末",
+      "publish_date": "2026-10-07",
+      "platform_origin": "Threads",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "秘める人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 7,
+      "cluster_topic": "秋の入口に特に何も言わない。夏が終わろうとしていたら会うことを選ばず、夏だったなと自分で振り返るだけ。もやもやしながら会っていない相手とは年末まで会ったり会わなかったりして、年末の気持ちで続けるか一線を引くかを決める",
+      "linked_principle": "現実を先に置いてから、その中での動き方を出す（原理07）。夏が終わる、季節は言わなくても進むという現実を先に認めてから、決める日を年末に置く",
+      "funnel_targets": [
+        "th_05"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-07_say-nothing-at-autumn.json",
+      "in_index": true
+    },
+    {
+      "title": "💗確かめたくなるのは、重くない。攻めずに、素直に聞く",
+      "publish_date": "2026-10-08",
+      "platform_origin": "Threads",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "溶ける人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 4,
+      "cluster_topic": "お相手さまに不安で確かめたくなるのは重くない。不安にさせる相手が悪い。確かめる時は攻めや攻撃ではなく、素直な気持ちを伝える。持っておく言葉と、相手に言う言葉を分ける。言えた日も言えなかった日も、不安になった自分は間違っていない",
+      "linked_principle": "決断を相手に返す（原理04）。こちらが決めるのは「素直な気持ちを言うところまで」で、返事は相手に返す",
+      "funnel_targets": [
+        "th_09"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-08_ask-honestly.json",
+      "in_index": true
+    },
+    {
+      "title": "💼任せるのは判断まで。責任は、こちらに置いたまま",
+      "publish_date": "2026-10-08",
+      "platform_origin": "X",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "背負う人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "高"
+      },
+      "principle_no": 1,
+      "cluster_topic": "店長に任せたいのに、任せたあとが心配で自分で抱えてしまう。「この範囲内で対応してもらえると助かります。何かあればまた連絡ください」と、矢面に立つ覚悟をあわせて伝える。連絡が来たときに前に出るかどうかで、空手形かどうかが決まる",
+      "linked_principle": "相手や環境を変えない。自分の側で今日決められることだけを渡す（原理01）。店長を変えようとせず、範囲を先に言うことと、連絡が来たときに前に出ることだけを自分の側で決める",
+      "funnel_targets": [
+        "x_06"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-08_judgment-not-responsibility.json",
+      "in_index": true
+    },
+    {
+      "title": "💼忘れていられるのは、誰かが黙って回しているから",
+      "publish_date": "2026-10-09",
+      "platform_origin": "X",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "こらえる人",
+      "maai_axis": {
+        "温度": "高",
+        "距離": "低"
+      },
+      "principle_no": 3,
+      "cluster_topic": "声をあげる人より、黙って回している人のほうが貴重。忘れていられる時間の分だけ、こちらは他のことに使える。評価の面談の前に見る一行と、上司が減らしてくれている分は部下には来ないので気づきようがない、という見方",
+      "linked_principle": "事実と感情を分ける。記録に残すのは事実だけ（原理03）。静かな人の仕事を、印象ではなく「忘れていられた仕事」という事実の一行で見る",
+      "funnel_targets": [
+        "x_07"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-09_forgotten-because-it-runs.json",
+      "in_index": true
+    },
+    {
+      "title": "💗冷たくなったのではなく、生きる道がズレただけのこともある",
+      "publish_date": "2026-10-09",
+      "platform_origin": "Threads",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "flagship",
+      "plan_type": "尽くす人",
+      "maai_axis": {
+        "温度": "低",
+        "距離": "高"
+      },
+      "principle_no": 6,
+      "cluster_topic": "「冷たくなった」と思う日は、好きな人にもある。冷たいのではなく、今の生きる道にズレが出ただけのこともある。相手の人格まで採点せず、冷たいと名前をつけるのはいったん置く。ズレが出た夜の切り出し方",
+      "linked_principle": "悩みの意味を反転して定義し直す（原理06）。「冷たくなった」を「ズレが出た」と定義し直し、責める先を「どこがズレたか」に変える",
+      "funnel_targets": [
+        "th_11"
+      ],
+      "note_url": "",
+      "file": "note_2026-10-09_not-cold-just-drifted.json",
+      "in_index": true
+    },
+    {
+      "title": "💗今日は、待つ日か。確かめる日か。距離を置く日か",
+      "publish_date": "2026-10-11",
+      "platform_origin": "Threads",
+      "source_week": "2026-10-06_2026-10-12",
+      "tier": "free_entry",
+      "plan_type": null,
+      "maai_axis": null,
+      "principle_no": 5,
+      "cluster_topic": "週次の無料まとめ（型A・恋愛）——①待つ日 ②確かめる日 ③距離を置く日、の三つの立ち位置で既存の💗記事を並べ直した目次。中身は要約まで、手当ては各記事へ送る",
+      "linked_principle": "二択のどちらも選ばず、三つ目の軸を置く（原理05）。『近づくか離れるか』ではなく『今日どの立ち位置にいるか』に、測る対象を変える",
+      "funnel_targets": [],
+      "note_url": "",
+      "file": "note_2026-10-11_guide-kankei.json",
       "in_index": true
     }
   ]

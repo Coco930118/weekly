@@ -7472,6 +7472,69 @@
       "theme": "急いだ日ほど、あとでやり直している",
       "platform": "Threads",
       "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E619",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-06_put-the-fact-not-why（x_02のfunnel回収。「なぜ」の代わりに事実を一行置く。「残る」は禁止語のため「深く入る」に言い換え）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E578",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-07_no-conclusion-needed（x_03のfunnel回収。「結論はいりません」と書く頼み方）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E485",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-08_judgment-not-responsibility（x_06のfunnel回収。判断は任せる・責任はこちらに置く。「渡す」は「任せる」に置換）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E589",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-09_forgotten-because-it-runs（x_07のfunnel回収。忘れていられた仕事を事実で一行書く）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E372",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-06_schedule-before-reply（th_03のfunnel回収。2026-09-03訂正反映＝気にしなくなってから先に予定にする。一段落まで）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E441",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-07_say-nothing-at-autumn（th_05のfunnel回収。年末の気持ちで決める。季節の区切りで連絡はしない）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E238",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-08_ask-honestly（th_09のfunnel回収。攻めずに素直な気持ちを伝える）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E242",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-09_not-cold-just-drifted（th_11のfunnel回収。冷たいのではなくズレただけ）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
+    },
+    {
+      "episode_ref": "E472",
+      "date": "2026-10-03",
+      "theme": "note_2026-10-06_schedule-before-reply／note_2026-10-07_say-nothing-at-autumn（ウィット一滴の語の出どころ＝炊きたての白飯・窓越しの紅葉。読者の一手として使用、Cocoの行為としては書いていない）",
+      "platform": "note",
+      "week": "2026-10-06_2026-10-12"
     }
   ],
   "registered": [
