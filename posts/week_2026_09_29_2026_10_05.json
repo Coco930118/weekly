@@ -147,15 +147,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E538",
-      "content": "会議でよく話していた人と、\n現場で実際に手を動かしていた人が、\n同じとは限らない。\n\nだから、\n声の大きさで頼る相手を決めるのは、やめた。\n\n今週、\n発言の量ではなく、\n実際に手が動いた回数だけ数えてみる。\n\n声の大きい人が動いていた週も、\n静かな人が動いていた週もある。\n\n数えているあいだは、\n誰も断罪しなくて済む。\n\n発言した回数と、\n実際に動いた回数は分けて見る。\n\n数え終えた週末は、\n散歩しながら来週の予定を立てる。",
-      "quote": "会議で話していた人と、現場で動いていた人が違った週がある。",
+      "content": "今週、\n発言した回数と、\n実際に手が動いた回数を分けて数える。\n\n会議ではよく話してたのに、\n現場ではそうでもなかった人がいた。\n\n逆に、\n静かなのに気づくと動いてる人もいたの。\n\nあれ、と思ってから、\n声の大きさで頼る相手を決めるのはやめた。\n\nなので今は、\nとりあえず回数を数えてる。\n\n会議の印象って、\n案外あてにならない。",
+      "quote": "会議ではよく話してた。現場では、そうでもなかった。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜静かな人の動きは、数えるまで見えない。\n静かなまま任せきれていない相手は、誰？"
+        "🕊ひより｜会議では静かだったのに、現場では気づくと手を動かしてた。\n発言の量と、動いた回数。いま見ているのはどっち？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with dragonfly pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her gaze lowered toward two hands quietly finishing a task, unremarked; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "x_short": "上に立ちたいと言う人と、\n役に立つ人は、同じ会議に座っている。",
-      "final_editor_status": "public_ok"
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_09",
