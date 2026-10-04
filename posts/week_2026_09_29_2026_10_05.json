@@ -237,7 +237,7 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E504",
-      "content": "面談の最初に、直近の実績と目標との差を伝える。\n\n「そんなに落ちてたんですね」\n\nその一言を聞くと、\n説明したくなってしまっているの。\n\nでも、伝えるのは数字だけ。\n\n「で、ここからどうします？」\n\nそこから話せたら、それでいいのかも。\n\n数字は責めるためじゃなく、\n二人で決めるために伝えるもの。",
+      "content": "面談の最初に、直近の実績と目標との差を伝えたら、「そんなに落ちてたんですね」と言われた。\nでも、伝えたのは数字だけだった。\nその面談では、数字を確認したあと、ここからどうするかを一緒に話した。\n\n数字を伝えたら、説明を足す前に次を決める。",
       "quote": "姿勢の話をしていて、数字はまだ机に出していない。",
       "note_funnel": false,
       "self_replies": [
@@ -245,7 +245,7 @@
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her palm flat over a single sheet with one figure circled, nothing else marked; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "x_short": "姿勢の話をしようとして、\n数字にはまだ触れていない回もある。",
-      "final_editor_status": "public_ok"
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_14",
