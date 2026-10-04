@@ -35,15 +35,16 @@
       "purpose": "深掘り誘導",
       "character": "🕊ひより",
       "episode_id": "E619",
-      "content": "上司に「なぜ」と聞く前に、「議題にしていただければ」と置く。\n\n「なぜそうしたんですか」は答えを出す仕事を相手に投げつけている。\n\n身構えられるのは、聞き方のほう。聞きたい気持ちは、そのままでいい。\n\n「議題にしていただければ、その場で話せました」\n何を読み取るかは、相手の中で起きる。\n\n会議のあとに送る一行を、返信に置いた。",
-      "quote": "「なぜ」の代わりに置いた一行。",
+      "content": "「気になることは共有して」と言われたのに、その場ではその話題に触れられなかったの。上司に「なぜそうしたんですか」と聞きたいことがあった。\n会議のあと、「議題にしていただければ、その場で話せました」と送った。\n上司から、その件について返信が来た。\n\n「議題にしていただければ」と置き、返信が来たらその内容を受け取り、来なければ次の会議で議題にする。",
+      "quote": "聞きたいのは理由。送ったのは事実。",
       "note_funnel": true,
       "self_replies": [
-        "🕊ひより｜聞き方を変えると、相手の答える場所が変わるの。\n「議題にしていただければ」のあと、相手はどう動いた？",
+        "🕊ひより｜聞きたいのは理由でも、先に置くのは事実。\n質問にする前に、一行で置ける事実はある？",
         "「なぜ」と聞かずに、事実を一行だけ置く言い方と、身構えさせない置き方を、noteに書きました。\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with ginkgo leaf pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her pen lifted above a single line on a page, a cup of tea cooling beside it; a quiet study with a low lamp and a stack of books beside a window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "「なぜ」と聞いた側は、\nただ聞いただけのつもりでいる。"
+      "x_short": "「なぜ」と聞いた側は、\nただ聞いただけのつもりでいる。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_03",
