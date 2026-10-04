@@ -219,15 +219,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E636",
-      "content": "同じ日の評価が、二つあっていい。\n\n店長が不在の日、\nアルバイトの二人が現場を回した。\n上司からは酷評された。\n\n数字が下がった日にも、\n行動が変わっていることがある。\n\n慰めではなく、\n実際にあった行動の変化を根拠に伝えた。\n\n数字だけでは、決めない。\n下がった数字の裏側で、\n何が変わったかを一つ見る。\n\n酷評だけで終わった日も、\n変わった行動を伝え直した日もある。\n\n以前なら一つずつ確認しに来ていた二人が、\n要所では自分で判断していた。\n\n伝え直した帰りに、\n花を一本だけ買って帰る。",
-      "quote": "数字は下がった。でも、二人の動きは前と違った。",
+      "content": "現場が数字を落とした日に、「全然なってない。ひどすぎる。」と評価されたの。\n慰めず、実際に変わった行動を根拠に、現場へできていることと課題を分けて伝えた。\nそのあと、誰かに聞く前に自分たちで決める場面が増え、現場から具体的な改善案が出た。\n\n評価を決める前に、数字の横に変わった行動を一つ置く。",
+      "quote": "上司は酷評。現場は自分で判断。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜酷評と、行動の変化は同じ日に起きる。\n数字だけで決めかけている評価は、どれ？"
+        "🕊ひより｜強い評価の言葉ほど、現場の変化はこぼれやすい。\n数字以外で、前と違った動きはどれ？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with ginkgo leaf pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand resting lightly on a closed ledger, chin lifted toward the window; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "x_short": "下がった日の評価は、\nひとつとは限らないことがある。",
-      "final_editor_status": "public_ok"
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_13",
