@@ -255,15 +255,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E562",
-      "content": "その評価をそのまま受け取らず、何が起きているかを事実で一つ書き出す。\n\n「機嫌で数字が落ちる」と言われた週も、実際に起きていたことは同じだった。\n\nみんなに起きていたことまで、ひとりの機嫌の話にすると、出来事が見えにくくなる。\n\n褒め言葉に見える一言ほど、そのまま受け取らないでおくと決めている。意地を張っているのではない。いま何が起きているのかを、事実で見ておきたいだけ。\n\n今週、その評価をそのまま受け取らず、何が起きているかを事実で一つ書き出してみるのはどう？\n\n受け取って抱え込んだ週も、事実で切り分けた週もある。どちらでも、起きていたことは同じだった。\n\n何にでも使える言葉は、評価の顔をした装置でしかない。\n\n事実のほうを先に書き出すことにしている。そうすると、話は人から出来事に移る。",
-      "quote": "何が起きても、同じ評価の言葉が返ってくる。",
+      "content": "「機嫌で数字が落ちる」と言われた週も、現場ではいつも通りの業務が続いていた。\n起きたことを事実ごとに切り分けた。\n基礎基本を崩さず、起きたことに一つずつみんなで対応していった。\n\n評価を聞いたら、人物の説明に進まず、確認できた事実を一つ書く。",
+      "quote": "数字は毎週違うのに、理由だけ毎週同じ。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜装置は、褒め言葉の形で来る。\n影響力があると言われた週ほど、事実は書き出したほうがいい。"
+        "🕊ひより｜評価の言葉と、現場で起きていることが一致しない週もある。\n人物の説明に進む前に、確認できた事実を一つ見る。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with harvest moon pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her chin resting on one hand, eyes on a lantern's small steady flame; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "x_short": "評価の形をしているのに、\n何が起きても同じことが言える。",
-      "final_editor_status": "public_ok"
+      "final_editor_status": "pending_check"
     },
     {
       "id": "th_01",
