@@ -17,14 +17,15 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E651",
-      "content": "上司から返事が来ないとき、「なければ続けます」と先に書いて送る。\n\n相談した返信が来ないまま、こう送った。\n「案があれば教えてください。なければ、曖昧なまま続けます」\n\n返ってきたのは、断っていいという判断と、断りの文面。\n\n来る日もあれば、来ない日もある。どちらでも、筋は通している。\n\n返事がない場合を先に書くと、答えなくても結論が出る形になる。\n急かさずに、次の仕事へ進んでいる。",
-      "quote": "来ない返事に、先に書いた一行。",
+      "content": "現場から「このお客様、今後も対応を続けるのか／断るのか」と相談が上がったのに、判断する側から返事は来なかったの。\n担当者は先に「案があれば教えてください。なければ、曖昧なまま続けます」と送っておいた。\n返ってきたのは、断っていいという判断と、断りの文面だった。\n\n返事が来ればその判断で進め、来なければ先に書いた進め方で動く。",
+      "quote": "返事がないので、返事が来た。",
       "note_funnel": false,
       "self_replies": [
         "🐢しずく｜待つことと、止まることは別なの。\n最後に返事が来たのは、どんな一行を送った時？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with cosmos flower pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand resting on a closed paper notebook beside a phone lying face down; a sunlit window seat with a small potted cosmos on the sill; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "返事がこないままだと、\nこちらの仕事まで止まって見える。"
+      "x_short": "返事がこないままだと、\nこちらの仕事まで止まって見える。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_02",
