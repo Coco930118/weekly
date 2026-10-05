@@ -85,6 +85,12 @@ class WorkspaceTests(unittest.TestCase):
         self.w.resolve_secretary(proposal['id'],'承認')
         self.assertEqual(self.w.desk()['queue'],[])
 
+    def test_route_stop_to_proposal(self):
+        stop=self.w.enqueue_secretary('停止案件','課長','X',{'投稿番号':'X01','停止工程':'②','不足・不明点':'現場で起きたこと','現在確認できる事実':'場面と行動','Cocoへの質問':'そのあと何が起きましたか？'},key=self.key,stage='②')
+        result=self.w.route_stop_to_proposal(stop['id'])
+        self.assertEqual(result['status'],'副社長整理待ち')
+        self.assertEqual(self.w.desk()['queue'],[])
+
     def test_direct_stop_edit_counts_as_resolution_and_correction(self):
         self.basis()
         stop=self.w.enqueue_secretary('停止案件','課長','X',{'投稿番号':'X01','停止工程':'②','不足・不明点':'現場で起きたこと','現在確認できる事実':'場面と行動','Cocoへの質問':'そのあと何が起きましたか？'},key=self.key,stage='②')
