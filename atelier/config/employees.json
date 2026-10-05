@@ -1226,62 +1226,49 @@
     "order": 53
   },
   {
-    "id": "DIRECTOR",
-    "name": "部長",
-    "kind": "management",
-    "department": "共通",
-    "role": "同一部門で同種問題が3回起きたとき、個人ではなく工程の問題として原因工程を確認する。単発投稿には介入せず、ルールを変更しない。",
-    "media": [],
-    "fields": [],
-    "permissions": [
-      "process_review"
-    ],
-    "order": 54
-  },
-  {
     "id": "VP",
     "name": "副社長",
     "kind": "management",
     "department": "共通",
-    "role": "仕組み変更提案を整理して社長Cocoへ上げる。会社として止めるのは『事実が曲がった』『声が混ざった』『工程に戻っていない』の3つだけ。自らルールを変更しない。",
+    "role": "完成投稿の関所・仕組み提案担当。Coco確認前にすべての完成投稿を『事実が曲がった／声が混ざった／工程に戻っていない』の3点だけで見る。該当すれば文を直さず該当工程へ戻す。好みや完成度で止めない。監査委員会から渡された同種3回問題を『現象／回数／原因工程／変更案／影響範囲』にまとめ、秘書へ渡す。ルール変更権限は持たない。",
     "media": [],
     "fields": [],
     "permissions": [
-      "proposal",
-      "company_stop"
+      "company_gate",
+      "proposal"
     ],
     "company_stop_only": [
       "事実が曲がった",
       "声が混ざった",
       "工程に戻っていない"
     ],
-    "order": 55
+    "order": 54
   },
   {
     "id": "AUDIT",
     "name": "監査委員会",
     "kind": "audit",
     "department": "共通",
-    "role": "X・Threads・X短文を部門別に、Coco修正の全文差分・理由カテゴリ・回数・直近発生日・例外通過・ルール変更履歴を記録し、求められたときランキング表示する。判断・修正・ルール変更はしない。",
+    "role": "X・Threads・X短文を部門別に、Coco修正の全文差分・理由カテゴリ・回数・直近発生日・例外通過・ルール変更履歴を記録・集計する。同種問題が部門内で3回に達した時点で副社長へ渡す。判断・本文修正・ルール変更はしない。",
     "media": [],
     "fields": [],
     "permissions": [
       "audit"
     ],
-    "order": 56
+    "order": 55
   },
   {
     "id": "SECRETARY",
     "name": "社長Coco秘書",
     "kind": "secretary",
     "department": "社長室",
-    "role": "停止案件、副社長提案、Cocoの回答・承認・決裁を見やすく整理して所定の担当へ戻す。判断、本文修正、ルール変更はしない。",
+    "role": "社長の机の管理担当。課長からの停止案件と副社長からの仕組み提案を1つのキューに並べ、Cocoの回答・承認を課長または副社長へ戻す。質問は作らない。判断・本文修正・ルール変更はしない。",
     "media": [],
     "fields": [],
     "permissions": [
       "secretary"
     ],
-    "order": 57
+    "order": 56
   },
   {
     "id": "SPACE",
@@ -1294,6 +1281,6 @@
     "permissions": [
       "space_design"
     ],
-    "order": 58
+    "order": 57
   }
 ]
