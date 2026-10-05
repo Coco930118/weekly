@@ -37,7 +37,7 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(self.w.get('notes/fixture.json#0')['candidates'].keys(),{'A','B'})
 
     def test_employee_count_and_roles(self):
-        self.assertEqual(len(self.w.employees),58)
+        self.assertEqual(len(self.w.employees),57)
         ids={e['id'] for e in self.w.employees}
         self.assertIn('X01',ids);self.assertIn('T21',ids);self.assertIn('XS14',ids)
         self.assertEqual(self.w.employee('BOARD_EDIT')['name'],'TOP OF 敏腕編集者')
@@ -46,8 +46,9 @@ class WorkspaceTests(unittest.TestCase):
     def test_workflow(self):
         workflow=json.loads((self.root/'atelier/config/workflow.json').read_text())
         stages=workflow['stages']
-        self.assertEqual([s['id'] for s in stages],['post_owner','board_or_complete','coco'])
+        self.assertEqual([s['id'] for s in stages],['post_owner','board_or_complete','vice_president_gate','coco'])
         self.assertEqual(stages[1]['employees'],['BOARD_EDIT','BOARD_WORD','BOARD_SNS'])
+        self.assertEqual(stages[2]['employees'],['VP'])
         self.assertEqual(workflow['note']['status'],'保留・未稼働')
         self.assertEqual(workflow['ai']['status'],'未接続・再開しない')
 
@@ -73,6 +74,24 @@ class WorkspaceTests(unittest.TestCase):
     def test_coco_correction_requires_reason(self):
         self.basis()
         self.assert_error('CORRECTION_REASON',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'修正'}}))
+
+    def test_secretary_queue_is_single_queue(self):
+        stop=self.w.enqueue_secretary('停止案件','課長','X',{'投稿番号':'X01','停止工程':'②','不足・不明点':'現場で起きたこと','現在確認できる事実':'場面と行動','Cocoへの質問':'そのあと何が起きましたか？'},key=self.key,stage='②')
+        proposal=self.w.enqueue_secretary('仕組み提案','副社長','X',{'現象':'同じ修正','回数':3,'原因工程':'④','変更案':'条件を追加','影響範囲':'X部門'})
+        queue=self.w.desk()['queue']
+        self.assertEqual([q['kind'] for q in queue],['停止案件','仕組み提案'])
+        self.w.resolve_secretary(stop['id'],'回答')
+        self.assertEqual(len(self.w.desk()['queue']),1)
+        self.w.resolve_secretary(proposal['id'],'承認')
+        self.assertEqual(self.w.desk()['queue'],[])
+
+    def test_direct_stop_edit_counts_as_resolution_and_correction(self):
+        self.basis()
+        stop=self.w.enqueue_secretary('停止案件','課長','X',{'投稿番号':'X01','停止工程':'②','不足・不明点':'現場で起きたこと','現在確認できる事実':'場面と行動','Cocoへの質問':'そのあと何が起きましたか？'},key=self.key,stage='②')
+        self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Cocoが直接修正'},'reason':'任意','stop_queue_id':stop['id']})
+        row=self.w.audit_summary()['rankings'][0]
+        self.assertEqual(row['reason'],'停止中の直接修正')
+        self.assertEqual(self.w.desk()['queue'],[])
 
     def test_basis_not_candidate_and_public_fields_not_editable(self):
         self.basis()
