@@ -1,5 +1,6 @@
 import {node,mutate,loadHistory,request} from './data.mjs';
 import {generationStatus} from './generation.mjs';
+const CORRECTION_REASONS=['事実','声','構成','読者への一手','禁止表現','停止中の直接修正'];
 export function previewDiff(before,after) {
  return Object.keys({...before,...after}).filter(k=>JSON.stringify(before[k])!==JSON.stringify(after[k])).map(k=>`${k}\n− ${JSON.stringify(before[k])}\n＋ ${JSON.stringify(after[k])}`).join('\n\n') || '変更なし';
 }
@@ -21,10 +22,12 @@ export function showEditor(container,state,onSave,onError) {
   }
   function values(){return Object.fromEntries(Object.entries(inputs).map(([f,e])=>[f,typeof candidate.fields[f]==='string'?e.value:JSON.parse(e.value)]));}
   const diff=node('pre','');const preview=node('button','diff確認');preview.onclick=()=>{try{diff.textContent=previewDiff(candidate.fields,values());}catch(e){onError(e);}};
-  const save=node('button','直接編集を保存');save.onclick=async()=>{try{const fields=values();diff.textContent=previewDiff(candidate.fields,fields);if(diff.textContent==='変更なし')throw new Error('変更がありません');const reason=prompt('この修正の理由を短く入力してください。監査委員会が部門別ランキングに集計します。');if(reason===null)return;if(!reason.trim())throw new Error('修正理由が必要です');if(!confirm(diff.textContent+'\n作業DBへ保存しますか？'))return;await onSave(await mutate(state,'edit',{candidate:name,candidate_revision:candidate.revision,fields,reason:reason.trim()}));}catch(e){onError(e);}};
+  const reason=node('select');reason.setAttribute('aria-label','修正理由カテゴリ');for(const value of CORRECTION_REASONS)reason.append(node('option',value,{value}));
+  const save=node('button','直接編集を保存');save.onclick=async()=>{try{const fields=values();diff.textContent=previewDiff(candidate.fields,fields);if(diff.textContent==='変更なし')throw new Error('変更がありません');if(!confirm(diff.textContent+'\n作業DBへ保存しますか？'))return;await onSave(await mutate(state,'edit',{candidate:name,candidate_revision:candidate.revision,fields,reason:reason.value}));}catch(e){onError(e);}};
   const adopt=node('button','Coco採用');adopt.onclick=async()=>{try{if(previewDiff(candidate.fields,values())!=='変更なし')throw new Error('直接編集を保存してから採用してください');await onSave(await mutate(state,'adopt',{candidate:name,candidate_revision:candidate.revision}));}catch(e){onError(e);}};
-  card.append(preview,save,adopt,diff);grid.append(card);
+  card.append(node('label','修正理由カテゴリ'),reason,preview,save,adopt,diff);grid.append(card);
  }
+ if(state.adopted&&state.status==='Coco採用済み'){const finalOk=node('button','最終確認OK');finalOk.onclick=async()=>{try{await onSave(await mutate(state,'finalize',{candidate:state.adopted}));document.dispatchEvent(new CustomEvent('atelier:desk-refresh'));}catch(e){onError(e);}};container.append(finalOk);}
  container.append(node('h3','Coco確認待ちの提案diff'),node('pre',JSON.stringify(state.proposals||[],null,2)));
  container.append(node('h3','レビュー'),node('pre',JSON.stringify(state.reviews,null,2)));
 }
