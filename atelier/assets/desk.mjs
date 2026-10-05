@@ -1,4 +1,4 @@
-import {loadDesk,node,resolveSecretary} from './data.mjs';
+import {loadDesk,node,resolveSecretary,routeStopToProposal} from './data.mjs';
 function groupRows(rows,key){
  const map=new Map();for(const row of rows){const k=row[key]||'未分類';if(!map.has(k))map.set(k,[]);map.get(k).push(row);}return map;
 }
@@ -18,7 +18,8 @@ export async function showDesk(container){
  );
  const answer=node('button','回答する');answer.onclick=async()=>{const value=prompt('Cocoの回答を入力してください。');if(value&&value.trim()){await resolveSecretary(row.id,value.trim());await showDesk(container);}};
  const proceed=node('button','このまま進める');proceed.onclick=async()=>{await resolveSecretary(row.id,'このまま進める');await showDesk(container);};
- card.append(answer,proceed);stop.append(card);}
+ const proposal=node('button','仕組み提案へ回す');proposal.onclick=async()=>{await routeStopToProposal(row.id);await showDesk(container);};
+ card.append(answer,proceed,proposal);stop.append(card);}
 
  const proposalsBlock=node('section');proposalsBlock.className='desk-block';proposalsBlock.append(node('h2',`Coco確認待ち（${proposals.length}）`));
  if(!proposals.length)proposalsBlock.append(node('p','仕組み変更の確認待ちはありません。'));
