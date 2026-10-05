@@ -189,8 +189,13 @@ try:
         card=editor.locator('.candidates article').first
         card.locator('textarea').first.fill('Cocoがブラウザで直接修正')
         reason.select_option(label='事実')
-        card.get_by_role('button',name='直接編集を保存').click()
-        page.wait_for_function("() => document.querySelector('#editor h2').textContent.includes('revision 3')")
+        with page.expect_response(lambda r: '/api/mutate' in r.url) as response_info:
+            card.get_by_role('button',name='直接編集を保存').click()
+        response=response_info.value
+        if response.status!=200:
+            raise AssertionError(f'J2 mutate failed: {response.status} {response.text()} / message={page.locator("#message").inner_text()}')
+        expected_revision=workspace.get(xkey)['revision']
+        page.wait_for_function("(r) => document.querySelector('#editor h2').textContent.includes('revision '+r)",arg=expected_revision)
         row=[r for r in workspace.audit_summary()['rankings'] if r['department']=='X' and r['reason']=='事実'][0]
         assert row['count']>=4
         with workspace.transaction() as db:
