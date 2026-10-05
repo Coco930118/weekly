@@ -62,6 +62,18 @@ class WorkspaceTests(unittest.TestCase):
     def test_candidate_revision_conflict(self):
         self.basis();self.assert_error('CONFLICT',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':99,'fields':{'content':'修正'},'reason':'表現修正'}))
 
+    def test_coco_correction_audit_and_threshold(self):
+        self.basis()
+        self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'修正A'},'reason':'4行目の戦略'})
+        self.w.mutate(self.key,2,'edit',{'candidate':'B','candidate_revision':0,'fields':{'content':'修正B'},'reason':'4行目の戦略'})
+        self.w.mutate(self.key,3,'edit',{'candidate':'C','candidate_revision':0,'fields':{'content':'修正C'},'reason':'4行目の戦略'})
+        row=self.w.audit_summary()['rankings'][0]
+        self.assertEqual(row['department'],'X');self.assertEqual(row['count'],3);self.assertTrue(row['rule_change_candidate'])
+
+    def test_coco_correction_requires_reason(self):
+        self.basis()
+        self.assert_error('CORRECTION_REASON',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'修正'}}))
+
     def test_basis_not_candidate_and_public_fields_not_editable(self):
         self.basis()
         for field in ['theme','axis','public_ok','episode_id','axis_map','maai_axis']:
