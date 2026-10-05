@@ -60,14 +60,11 @@ class Workspace:
               at TEXT DEFAULT CURRENT_TIMESTAMP);
             CREATE TABLE IF NOT EXISTS exceptions (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
               department TEXT NOT NULL, note TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
-            CREATE TABLE IF NOT EXISTS stops (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
-              department TEXT NOT NULL, stage TEXT NOT NULL, issue TEXT NOT NULL,
-              current_facts TEXT NOT NULL, question TEXT NOT NULL, status TEXT NOT NULL DEFAULT '回答待ち',
+            CREATE TABLE IF NOT EXISTS secretary_queue (id INTEGER PRIMARY KEY,
+              kind TEXT NOT NULL, source_role TEXT NOT NULL, department TEXT NOT NULL,
+              key TEXT, stage TEXT, payload TEXT NOT NULL,
+              status TEXT NOT NULL DEFAULT 'Coco確認待ち',
               response TEXT, at TEXT DEFAULT CURRENT_TIMESTAMP, updated_at TEXT DEFAULT CURRENT_TIMESTAMP);
-            CREATE TABLE IF NOT EXISTS rule_proposals (id INTEGER PRIMARY KEY, department TEXT NOT NULL,
-              phenomenon TEXT NOT NULL, occurrence_count INTEGER NOT NULL, cause_stage TEXT NOT NULL,
-              proposal TEXT NOT NULL, impact TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'Coco確認待ち',
-              at TEXT DEFAULT CURRENT_TIMESTAMP);
             CREATE TABLE IF NOT EXISTS rule_changes (id INTEGER PRIMARY KEY, department TEXT NOT NULL,
               old_rule TEXT NOT NULL, new_rule TEXT NOT NULL, reason TEXT NOT NULL,
               coco_approval TEXT NOT NULL, approval_date TEXT NOT NULL,
@@ -324,17 +321,17 @@ class Workspace:
 
     def desk(self):
         with self.transaction() as db:
-            stops=[dict(r) for r in db.execute(
-                "SELECT * FROM stops WHERE status='回答待ち' ORDER BY id")]
-            proposals=[dict(r) for r in db.execute(
-                "SELECT * FROM rule_proposals WHERE status='Coco確認待ち' ORDER BY id")]
+            queue=[dict(r) for r in db.execute(
+                """SELECT * FROM secretary_queue WHERE status='Coco確認待ち'
+                   ORDER BY CASE WHEN kind='停止案件' THEN 0 ELSE 1 END, id""")]
+            for item in queue:item['payload']=json.loads(item['payload'])
             completed=[]
             for row in db.execute('SELECT key,state FROM states ORDER BY key'):
                 state=json.loads(row['state'])
                 if state.get('status')=='Coco採用済み':
                     completed.append({'key':row['key'],'platform':state.get('platform'),
                                       'revision':state.get('revision'),'adopted':state.get('adopted')})
-        return {'stops':stops,'proposals':proposals,'completed':completed,'audit':self.audit_summary()}
+        return {'queue':queue,'completed':completed,'audit':self.audit_summary()}
 
     def record_exception(self,key,note):
         if not isinstance(note,str) or not note.strip():raise WorkspaceError('VALIDATION','例外通過の理由を入力してください')
@@ -343,6 +340,27 @@ class Workspace:
             if department=='対象外':raise WorkspaceError('VALIDATION','対象部門ではありません')
             db.execute('INSERT INTO exceptions(key,department,note) VALUES (?,?,?)',(key,department,note.strip()))
         return {'saved':True}
+
+    def enqueue_secretary(self,kind,source_role,department,payload,key=None,stage=None):
+        if kind not in {'停止案件','仕組み提案'}:raise WorkspaceError('VALIDATION','秘書キュー種別が不正です')
+        if source_role not in {'課長','副社長'}:raise WorkspaceError('VALIDATION','秘書キューの送信元が不正です')
+        if not isinstance(payload,dict):raise WorkspaceError('VALIDATION','秘書キュー内容が不正です')
+        required={'停止案件':{'投稿番号','停止工程','不足・不明点','現在確認できる事実','Cocoへの質問'},
+                  '仕組み提案':{'現象','回数','原因工程','変更案','影響範囲'}}[kind]
+        if not required<=set(payload):raise WorkspaceError('VALIDATION','秘書キューの必須項目が不足しています')
+        with self.transaction() as db:
+            cur=db.execute('INSERT INTO secretary_queue(kind,source_role,department,key,stage,payload) VALUES (?,?,?,?,?,?)',
+                (kind,source_role,department,key,stage,json.dumps(payload,ensure_ascii=False)))
+            return {'id':cur.lastrowid,'status':'Coco確認待ち'}
+
+    def resolve_secretary(self,item_id,response):
+        if not isinstance(response,str) or not response.strip():raise WorkspaceError('VALIDATION','Cocoの回答・承認が必要です')
+        with self.transaction() as db:
+            row=db.execute("SELECT * FROM secretary_queue WHERE id=? AND status='Coco確認待ち'",(item_id,)).fetchone()
+            if not row:raise WorkspaceError('NOT_FOUND','確認待ちの秘書キューが見つかりません')
+            db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",
+                       (response.strip(),item_id))
+        return {'id':item_id,'status':'解決済み'}
 
     def executions(self,key):
         with self.transaction() as db:
@@ -395,6 +413,10 @@ class Handler(BaseHTTPRequestHandler):
                 result=self.server.workspace.mutate(data['key'],data['revision'],data['action'],data['payload'])
             elif path=='/api/exception':
                 result=self.server.workspace.record_exception(data['key'],data['note'])
+            elif path=='/api/secretary/enqueue':
+                result=self.server.workspace.enqueue_secretary(data['kind'],data['source_role'],data['department'],data['payload'],data.get('key'),data.get('stage'))
+            elif path=='/api/secretary/resolve':
+                result=self.server.workspace.resolve_secretary(int(data['id']),data['response'])
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
