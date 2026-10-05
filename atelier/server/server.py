@@ -371,6 +371,14 @@ class Workspace:
                        (response.strip(),item_id))
         return {'id':item_id,'status':'解決済み'}
 
+    def route_stop_to_proposal(self,item_id):
+        with self.transaction() as db:
+            row=db.execute("SELECT * FROM secretary_queue WHERE id=? AND kind='停止案件' AND status='Coco確認待ち'",(item_id,)).fetchone()
+            if not row:raise WorkspaceError('NOT_FOUND','確認待ちの停止案件が見つかりません')
+            db.execute("UPDATE secretary_queue SET status='副社長整理待ち',response='仕組み提案へ回す',updated_at=CURRENT_TIMESTAMP WHERE id=?",
+                       (item_id,))
+        return {'id':item_id,'status':'副社長整理待ち'}
+
     def executions(self,key):
         with self.transaction() as db:
             return [dict(r) for r in db.execute('SELECT * FROM executions WHERE key=? ORDER BY id DESC',(key,))]
@@ -426,6 +434,8 @@ class Handler(BaseHTTPRequestHandler):
                 result=self.server.workspace.enqueue_secretary(data['kind'],data['source_role'],data['department'],data['payload'],data.get('key'),data.get('stage'))
             elif path=='/api/secretary/resolve':
                 result=self.server.workspace.resolve_secretary(int(data['id']),data['response'])
+            elif path=='/api/secretary/route-proposal':
+                result=self.server.workspace.route_stop_to_proposal(int(data['id']))
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
