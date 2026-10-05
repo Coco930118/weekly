@@ -3,7 +3,7 @@ name: Atelier CI
 on:
   push:
     branches:
-      - atelier/company-structure-v2
+      - 'atelier/**'
     paths:
       - 'atelier/**'
       - 'docs/coco_atelier_company_spec.md'
