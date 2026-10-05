@@ -1,4 +1,4 @@
-import {loadDesk,node} from './data.mjs';
+import {loadDesk,node,resolveSecretary} from './data.mjs';
 function groupRows(rows,key){
  const map=new Map();for(const row of rows){const k=row[key]||'未分類';if(!map.has(k))map.set(k,[]);map.get(k).push(row);}return map;
 }
@@ -15,7 +15,10 @@ export async function showDesk(container){
    node('p',p['不足・不明点']||''),
    node('p',`確認済みの事実：${p['現在確認できる事実']||''}`),
    node('p',`Cocoへの質問：${p['Cocoへの質問']||''}`)
- );stop.append(card);}
+ );
+ const answer=node('button','回答する');answer.onclick=async()=>{const value=prompt('Cocoの回答を入力してください。');if(value&&value.trim()){await resolveSecretary(row.id,value.trim());await showDesk(container);}};
+ const proceed=node('button','このまま進める');proceed.onclick=async()=>{await resolveSecretary(row.id,'このまま進める');await showDesk(container);};
+ card.append(answer,proceed);stop.append(card);}
 
  const proposalsBlock=node('section');proposalsBlock.className='desk-block';proposalsBlock.append(node('h2',`Coco確認待ち（${proposals.length}）`));
  if(!proposals.length)proposalsBlock.append(node('p','仕組み変更の確認待ちはありません。'));
@@ -24,7 +27,10 @@ export async function showDesk(container){
    node('p',`原因工程：${p['原因工程']||''}`),
    node('p',`変更案：${p['変更案']||''}`),
    node('p',`影響範囲：${p['影響範囲']||''}`)
- );proposalsBlock.append(card);}
+ );
+ const approve=node('button','承認する');approve.onclick=async()=>{await resolveSecretary(row.id,'承認');await showDesk(container);};
+ const reject=node('button','却下する');reject.onclick=async()=>{await resolveSecretary(row.id,'却下');await showDesk(container);};
+ card.append(approve,reject);proposalsBlock.append(card);}
 
  const completed=node('section');completed.className='desk-block';completed.append(node('h2',`完成投稿（${data.completed.length}）`));
  if(!data.completed.length)completed.append(node('p','Coco採用済みの作業投稿はまだありません。'));
