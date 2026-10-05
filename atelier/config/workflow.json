@@ -82,7 +82,6 @@
   ],
   "management": {
     "manager": "MANAGER",
-    "director": "DIRECTOR",
     "vice_president": "VP",
     "audit": "AUDIT",
     "secretary": "SECRETARY",
@@ -92,24 +91,29 @@
     "投稿社員",
     "必要時のみ取締役会",
     "完成",
+    "副社長（事実・声・工程の3点のみ）",
     "Coco最終確認"
   ],
   "stop_route": [
     "投稿社員",
-    "課長",
+    "課長（質問を作る）",
+    "秘書（社長の机に並べる）",
     "Coco",
+    "秘書",
     "課長",
     "同じ投稿社員が停止地点から再開"
   ],
   "improvement_route": [
     "同一部門で同種問題3回",
-    "部長",
+    "監査委員会が検知",
     "副社長",
+    "秘書",
     "Coco"
   ],
   "board_improvement_route": [
     "取締役会が仕組み上の改善点を発見",
     "実行せず副社長へ提案",
+    "秘書",
     "Coco"
   ],
   "employee_stop_on": [
@@ -144,8 +148,13 @@
       "回数",
       "直近発生日"
     ],
-    "threshold_action": "副社長が改善提案候補としてCocoへ提示",
-    "automatic_rule_change": false
+    "threshold_action": "監査委員会が同種3回を検知し、副社長へ渡す",
+    "automatic_rule_change": false,
+    "stopped_direct_edit": {
+      "count_as_stop_resolution": true,
+      "count_as_correction": true,
+      "reason_category": "停止中の直接修正"
+    }
   },
   "vice_president_company_stop_only": [
     "事実が曲がった",
@@ -224,33 +233,51 @@
         "BOARD_WORD",
         "BOARD_SNS"
       ],
-      "next": "coco",
+      "next": "vice_president_gate",
       "previous": "post_owner",
       "conditional": true,
       "no_ranking": true
+    },
+    {
+      "id": "vice_president_gate",
+      "name": "副社長3点関所",
+      "employees": [
+        "VP"
+      ],
+      "next": "coco",
+      "previous": "board_or_complete"
     },
     {
       "id": "coco",
       "name": "Coco最終確認",
       "employees": [],
       "next": null,
-      "previous": "board_or_complete"
+      "previous": "vice_president_gate"
     }
   ],
   "background_roles": [
     {
       "id": "stop",
-      "name": "停止時：課長 → Coco → 課長",
+      "name": "停止：課長 → 秘書 → Coco → 秘書 → 課長",
       "employees": [
-        "MANAGER"
+        "MANAGER",
+        "SECRETARY"
+      ]
+    },
+    {
+      "id": "gate",
+      "name": "完成後：副社長3点関所 → Coco",
+      "employees": [
+        "VP"
       ]
     },
     {
       "id": "improvement",
-      "name": "同種3回：部長 → 副社長 → Coco",
+      "name": "同種3回：監査 → 副社長 → 秘書 → Coco",
       "employees": [
-        "DIRECTOR",
-        "VP"
+        "AUDIT",
+        "VP",
+        "SECRETARY"
       ]
     },
     {
@@ -259,13 +286,25 @@
       "employees": [
         "AUDIT"
       ]
-    },
-    {
-      "id": "secretary",
-      "name": "社長室整理：秘書",
-      "employees": [
-        "SECRETARY"
-      ]
     }
-  ]
+  ],
+  "secretary_queue": {
+    "single_queue": true,
+    "types": [
+      "停止案件",
+      "仕組み提案"
+    ],
+    "question_author": "課長",
+    "decision_author": "Coco"
+  },
+  "vice_president_gate": {
+    "every_completed_post": true,
+    "checks": [
+      "事実が曲がった",
+      "声が混ざった",
+      "工程に戻っていない"
+    ],
+    "rewrite": false,
+    "preference_block": false
+  }
 }
