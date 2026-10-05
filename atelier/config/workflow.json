@@ -1,0 +1,89 @@
+{
+  "stages": [
+    {
+      "id": "media",
+      "name": "媒体担当",
+      "employees": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13
+      ],
+      "next": "specialist",
+      "previous": null
+    },
+    {
+      "id": "specialist",
+      "name": "専門編集・監査",
+      "employees": [
+        21,
+        22,
+        24
+      ],
+      "next": "top_of",
+      "previous": "media"
+    },
+    {
+      "id": "top_of",
+      "name": "TOP OF三者会議",
+      "employees": [
+        17,
+        18,
+        19
+      ],
+      "next": "chief",
+      "no_ranking": true,
+      "previous": "specialist"
+    },
+    {
+      "id": "chief",
+      "name": "制作統括・編集長",
+      "employees": [
+        1
+      ],
+      "next": "sns_finish",
+      "previous": "top_of"
+    },
+    {
+      "id": "sns_finish",
+      "name": "SNS最終仕上げ編集者",
+      "employees": [
+        20
+      ],
+      "next": "final_editor",
+      "previous": "chief"
+    },
+    {
+      "id": "final_editor",
+      "name": "Final Editor",
+      "employees": [
+        23
+      ],
+      "next": "coco",
+      "previous": "sns_finish"
+    },
+    {
+      "id": "coco",
+      "name": "Coco最終確認",
+      "employees": [],
+      "next": null,
+      "previous": "final_editor"
+    }
+  ],
+  "canon": "docs/coco_atelier_spec.md",
+  "reviewers": [
+    17,
+    18,
+    19,
+    21,
+    22,
+    23,
+    24
+  ]
+}

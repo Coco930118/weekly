@@ -1,3 +1,10 @@
 __pycache__/
 *.py[cod]
 .DS_Store
+
+# Atelier local working data and credentials
+atelier/.local/
+atelier/**/*.sqlite3
+atelier/**/*.sqlite3-*
+atelier/.env
+atelier/.env.*
