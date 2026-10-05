@@ -54,15 +54,16 @@
       "purpose": "深掘り誘導",
       "character": "🐢しずく",
       "episode_id": "E578",
-      "content": "議題を出すときは、「まとめなくていいです」と先に書く。\n\n「話し合って結論を出してほしい」と書いたことがある。\n本当に欲しかったのは、整理される前の意見そのものだった。\n\n店長は、良かれと思って整理してしまう。整理された時点で、スタッフの声の、温度は落ちる。\n\n「結論は必要ありません。出てきた意見を、そのまま共有いただけますか」に変えた。\n\n整理してくれる人を、責めなくていい。頼み方が変わると、声がそのまま届く。\n報告を整理させずに集める頼み方を、返信に置いた。",
-      "quote": "店長が整理すると、何が消える？",
+      "content": "「結論を出してほしい」と伝えたのに、本当に欲しかったのは整理される前の意見だったの。\nそこで「結論は必要ありません。出てきた意見を、そのまま共有いただけますか」に変えた。\n担当者の要約ではなく、現場で実際に出た言葉が共有された。\n\n欲しいのが結論ならまとめてもらい、声を見たいなら「結論は必要ありません」と先に書く。",
+      "quote": "それ、意見？それとも要約？",
       "note_funnel": true,
       "self_replies": [
-        "🐢しずく｜整理してくれる人は、良かれと思っているの。\n整理前の意見をそのまま見た時、いちばん驚いたのは何？",
+        "🐢しずく｜欲しかったものと、頼んだ言葉がずれていただけなの。\n結論と現場の声、いま欲しいのはどちら？",
         "「結論はいりません」と書くだけで、店長から整理前の声が届く頼み方を、noteに書きました。\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku), a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks, and a small soft white bird (Hiyori); they share a quiet moment; her fingers resting on a stack of loose handwritten slips laid side by side; a tidy wooden desk by a paper-screen window with a single chrysanthemum in a vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "「まとめて共有して」と頼むと、\n声のほうが先に、きれいに整ってしまう。"
+      "x_short": "「まとめて共有して」と頼むと、\n声のほうが先に、きれいに整ってしまう。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_04",
