@@ -310,3 +310,5 @@ class RoutingSimulationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+# Fixed-response simulation only; provider execution is intentionally absent.
