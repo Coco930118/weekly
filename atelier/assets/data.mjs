@@ -10,6 +10,11 @@ export const loadPosts = () => request('/api/posts');
 export const loadState = key => request(`/api/state?key=${encodeURIComponent(key)}`);
 export const loadHistory = key => request(`/api/history?key=${encodeURIComponent(key)}`);
 export const loadLogs = key => request(`/api/logs?key=${encodeURIComponent(key)}`);
+export const loadDesk = () => request('/api/desk');
+export const loadAudit = () => request('/api/audit');
+export const recordException = (key,note) => request('/api/exception',{key,note});
+export const resolveSecretary = (id,response) => request('/api/secretary/resolve',{id,response});
+export const routeStopToProposal = id => request('/api/secretary/route-proposal',{id});
 export const mutate = (state, action, payload) => request('/api/mutate', {key:state.key,revision:state.revision,action,payload});
 export function node(tag, text, attrs={}) { const e=document.createElement(tag); if(text!==undefined)e.textContent=text; Object.assign(e,attrs); return e; }
 export function filterPosts(posts,week,platform) { return posts.filter(p=>(!week || p.week===week)&&(!platform || p.platform===platform)); }

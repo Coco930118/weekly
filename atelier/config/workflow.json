@@ -1,89 +1,310 @@
 {
+  "version": "2.0-draft",
+  "purpose": "Cocoの現場の事実を、軍師と哲学者の声のまま、規則を破らずに出し続ける",
+  "canon": "docs/coco_atelier_company_spec.md",
+  "rule_priority": [
+    "全社共通ルール",
+    "媒体別正典",
+    "投稿個別素材"
+  ],
+  "departments": {
+    "X": {
+      "employees": [
+        "X01",
+        "X02",
+        "X03",
+        "X04",
+        "X05",
+        "X06",
+        "X07",
+        "X08",
+        "X09",
+        "X10",
+        "X11",
+        "X12",
+        "X13",
+        "X14"
+      ],
+      "voice": "親しみやすい凛とした軍師Coco",
+      "axis": "仕事・現場の「ん？」"
+    },
+    "Threads": {
+      "employees": [
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20",
+        "T21"
+      ],
+      "voice": "親しみやすい慈愛に満ちた哲学者Coco",
+      "axis": "感情と関係の「ん？」"
+    },
+    "X短文": {
+      "employees": [
+        "XS01",
+        "XS02",
+        "XS03",
+        "XS04",
+        "XS05",
+        "XS06",
+        "XS07",
+        "XS08",
+        "XS09",
+        "XS10",
+        "XS11",
+        "XS12",
+        "XS13",
+        "XS14"
+      ],
+      "source": "直後のX本文4行目"
+    }
+  },
+  "board": [
+    "BOARD_EDIT",
+    "BOARD_WORD",
+    "BOARD_SNS"
+  ],
+  "management": {
+    "manager": "MANAGER",
+    "vice_president": "VP",
+    "audit": "AUDIT",
+    "secretary": "SECRETARY",
+    "president": "Coco"
+  },
+  "normal_route": [
+    "投稿社員",
+    "必要時のみ取締役会",
+    "完成",
+    "副社長（事実・声・工程の3点のみ）",
+    "Coco最終確認"
+  ],
+  "stop_route": [
+    "投稿社員",
+    "課長（質問を作る）",
+    "秘書（社長の机に並べる）",
+    "Coco",
+    "秘書",
+    "課長",
+    "同じ投稿社員が停止地点から再開"
+  ],
+  "improvement_route": [
+    "同一部門で同種問題3回",
+    "監査委員会が検知",
+    "副社長",
+    "秘書",
+    "Coco"
+  ],
+  "board_improvement_route": [
+    "取締役会が仕組み上の改善点を発見",
+    "実行せず副社長へ提案",
+    "秘書",
+    "Coco"
+  ],
+  "employee_stop_on": [
+    "素材不足",
+    "事実不明",
+    "指示外"
+  ],
+  "board_rule": "指示文の中で判断に迷う場合は停止せず取締役会で判断し、指示文の範囲内で最適解を選んで進める",
+  "rule_change": {
+    "forbidden_without_coco": true,
+    "proposal_route": [
+      "副社長",
+      "社長Coco"
+    ],
+    "applies_from": "次の新規投稿",
+    "required_history": [
+      "旧ルール",
+      "新ルール",
+      "変更理由",
+      "Coco承認",
+      "承認日",
+      "適用開始",
+      "影響範囲"
+    ]
+  },
+  "coco_correction_loop": {
+    "group_by_department": true,
+    "threshold": 3,
+    "record": [
+      "全文差分",
+      "修正理由カテゴリ",
+      "回数",
+      "直近発生日"
+    ],
+    "threshold_action": "監査委員会が同種3回を検知し、副社長へ渡す",
+    "automatic_rule_change": false,
+    "stopped_direct_edit": {
+      "count_as_stop_resolution": true,
+      "count_as_correction": true,
+      "reason_category": "停止中の直接修正"
+    }
+  },
+  "vice_president_company_stop_only": [
+    "事実が曲がった",
+    "声が混ざった",
+    "工程に戻っていない"
+  ],
+  "note": {
+    "status": "保留・未稼働"
+  },
+  "ai": {
+    "status": "未接続・再開しない"
+  },
   "stages": [
     {
-      "id": "media",
-      "name": "媒体担当",
+      "id": "post_owner",
+      "name": "投稿社員",
       "employees": [
-        4,
-        5,
-        6,
-        7,
-        8,
-        9,
-        10,
-        11,
-        12,
-        13
+        "X01",
+        "X02",
+        "X03",
+        "X04",
+        "X05",
+        "X06",
+        "X07",
+        "X08",
+        "X09",
+        "X10",
+        "X11",
+        "X12",
+        "X13",
+        "X14",
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08",
+        "T09",
+        "T10",
+        "T11",
+        "T12",
+        "T13",
+        "T14",
+        "T15",
+        "T16",
+        "T17",
+        "T18",
+        "T19",
+        "T20",
+        "T21",
+        "XS01",
+        "XS02",
+        "XS03",
+        "XS04",
+        "XS05",
+        "XS06",
+        "XS07",
+        "XS08",
+        "XS09",
+        "XS10",
+        "XS11",
+        "XS12",
+        "XS13",
+        "XS14"
       ],
-      "next": "specialist",
+      "next": "board_or_complete",
       "previous": null
     },
     {
-      "id": "specialist",
-      "name": "専門編集・監査",
+      "id": "board_or_complete",
+      "name": "必要時のみ取締役会",
       "employees": [
-        21,
-        22,
-        24
+        "BOARD_EDIT",
+        "BOARD_WORD",
+        "BOARD_SNS"
       ],
-      "next": "top_of",
-      "previous": "media"
+      "next": "vice_president_gate",
+      "previous": "post_owner",
+      "conditional": true,
+      "no_ranking": true
     },
     {
-      "id": "top_of",
-      "name": "TOP OF三者会議",
+      "id": "vice_president_gate",
+      "name": "副社長3点関所",
       "employees": [
-        17,
-        18,
-        19
-      ],
-      "next": "chief",
-      "no_ranking": true,
-      "previous": "specialist"
-    },
-    {
-      "id": "chief",
-      "name": "制作統括・編集長",
-      "employees": [
-        1
-      ],
-      "next": "sns_finish",
-      "previous": "top_of"
-    },
-    {
-      "id": "sns_finish",
-      "name": "SNS最終仕上げ編集者",
-      "employees": [
-        20
-      ],
-      "next": "final_editor",
-      "previous": "chief"
-    },
-    {
-      "id": "final_editor",
-      "name": "Final Editor",
-      "employees": [
-        23
+        "VP"
       ],
       "next": "coco",
-      "previous": "sns_finish"
+      "previous": "board_or_complete"
     },
     {
       "id": "coco",
       "name": "Coco最終確認",
       "employees": [],
       "next": null,
-      "previous": "final_editor"
+      "previous": "vice_president_gate"
     }
   ],
-  "canon": "docs/coco_atelier_spec.md",
-  "reviewers": [
-    17,
-    18,
-    19,
-    21,
-    22,
-    23,
-    24
-  ]
+  "background_roles": [
+    {
+      "id": "stop",
+      "name": "停止：課長 → 秘書 → Coco → 秘書 → 課長",
+      "employees": [
+        "MANAGER",
+        "SECRETARY"
+      ]
+    },
+    {
+      "id": "gate",
+      "name": "完成後：副社長3点関所 → Coco",
+      "employees": [
+        "VP"
+      ]
+    },
+    {
+      "id": "improvement",
+      "name": "同種3回：監査 → 副社長 → 秘書 → Coco",
+      "employees": [
+        "AUDIT",
+        "VP",
+        "SECRETARY"
+      ]
+    },
+    {
+      "id": "audit",
+      "name": "裏側の記録：監査委員会",
+      "employees": [
+        "AUDIT"
+      ]
+    }
+  ],
+  "secretary_queue": {
+    "single_queue": true,
+    "types": [
+      "停止案件",
+      "仕組み提案"
+    ],
+    "question_author": "課長",
+    "decision_author": "Coco"
+  },
+  "vice_president_gate": {
+    "every_completed_post": true,
+    "checks": [
+      "事実が曲がった",
+      "声が混ざった",
+      "工程に戻っていない"
+    ],
+    "rewrite": false,
+    "preference_block": false
+  }
 }

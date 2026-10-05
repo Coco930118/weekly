@@ -55,6 +55,20 @@ class Workspace:
               before_state TEXT NOT NULL, after_state TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
             CREATE TABLE IF NOT EXISTS executions (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
               employee TEXT, candidate TEXT, status TEXT, code TEXT, at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS corrections (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
+              department TEXT NOT NULL, reason TEXT NOT NULL, diff TEXT NOT NULL,
+              at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS exceptions (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
+              department TEXT NOT NULL, note TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS secretary_queue (id INTEGER PRIMARY KEY,
+              kind TEXT NOT NULL, source_role TEXT NOT NULL, department TEXT NOT NULL,
+              key TEXT, stage TEXT, payload TEXT NOT NULL,
+              status TEXT NOT NULL DEFAULT 'Coco確認待ち',
+              response TEXT, at TEXT DEFAULT CURRENT_TIMESTAMP, updated_at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS rule_changes (id INTEGER PRIMARY KEY, department TEXT NOT NULL,
+              old_rule TEXT NOT NULL, new_rule TEXT NOT NULL, reason TEXT NOT NULL,
+              coco_approval TEXT NOT NULL, approval_date TEXT NOT NULL,
+              effective_from TEXT NOT NULL, impact TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
             ''')
 
     @contextlib.contextmanager
@@ -154,14 +168,29 @@ class Workspace:
             elif action=='edit':
                 c=payload.get('candidate');self.check_candidate_revision(state,c,payload.get('candidate_revision'))
                 fields=payload.get('fields',{});self.validate_fields(state,c,fields)
-                cand=state['candidates'][c]
+                reason=payload.get('reason')
+                if not isinstance(reason,str) or not reason.strip():
+                    raise WorkspaceError('CORRECTION_REASON','Coco修正の理由を入力してください')
+                cand=state['candidates'][c];changed={}
                 for field,value in fields.items():
                     old=cand['fields'].get(field)
                     if old!=value:
+                        changed[field]={'before':old,'after':value}
                         cand['protected'][field]={'revision':before['revision']+1,'candidate_revision':cand['revision']+1,
                             'ranges':self.changed_ranges(old,value),'value_digest':digest(value)}
                         cand['fields'][field]=value
+                if not changed:raise WorkspaceError('NO_CHANGE','変更がありません')
                 cand['revision']+=1;cand['status']='Coco修正中';self.invalidate(state)
+                stop_queue_id=payload.get('stop_queue_id')
+                audit_reason=reason.strip()
+                if stop_queue_id is not None:
+                    row=db.execute("SELECT kind,status FROM secretary_queue WHERE id=?",(int(stop_queue_id),)).fetchone()
+                    if not row or row['kind']!='停止案件' or row['status']!='Coco確認待ち':
+                        raise WorkspaceError('STOP_QUEUE','停止中の秘書キューが見つかりません')
+                    db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",
+                               ('Cocoが直接修正して通過',int(stop_queue_id)))
+                    audit_reason='停止中の直接修正'
+                self.record_correction(db,state,audit_reason,changed)
             elif action=='adopt':
                 c=payload.get('candidate');self.check_candidate_revision(state,c,payload.get('candidate_revision'))
                 if state['needs_split']:raise WorkspaceError('NEEDS_SPLIT','別テーマ箇所を確認してください')
@@ -274,6 +303,82 @@ class Workspace:
             item['diff']=field_diff(before,after);result.append(item)
         return result
 
+    @staticmethod
+    def department_for(state,fields=None):
+        fields=set(fields or [])
+        if 'x_short' in fields:return 'X短文'
+        if state.get('platform')=='Threads':return 'Threads'
+        if state.get('platform')=='X':return 'X'
+        return '対象外'
+
+    def record_correction(self,db,state,reason,changed):
+        department=self.department_for(state,changed.keys())
+        if department=='対象外':return
+        db.execute('INSERT INTO corrections(key,department,reason,diff) VALUES (?,?,?,?)',
+                   (state['key'],department,reason,json.dumps(changed,ensure_ascii=False)))
+
+    def audit_summary(self):
+        with self.transaction() as db:
+            rankings=[dict(r) for r in db.execute(
+                '''SELECT department,reason,COUNT(*) AS count,MAX(at) AS last_at
+                   FROM corrections GROUP BY department,reason
+                   ORDER BY department,count DESC,last_at DESC''')]
+            for row in rankings:row['rule_change_candidate']=row['count']>=3
+            exceptions=[dict(r) for r in db.execute('SELECT * FROM exceptions ORDER BY id DESC')]
+            rule_changes=[dict(r) for r in db.execute('SELECT * FROM rule_changes ORDER BY id DESC')]
+        return {'rankings':rankings,'exceptions':exceptions,'rule_changes':rule_changes}
+
+    def desk(self):
+        with self.transaction() as db:
+            queue=[dict(r) for r in db.execute(
+                """SELECT * FROM secretary_queue WHERE status='Coco確認待ち'
+                   ORDER BY CASE WHEN kind='停止案件' THEN 0 ELSE 1 END, id""")]
+            for item in queue:item['payload']=json.loads(item['payload'])
+            completed=[]
+            for row in db.execute('SELECT key,state FROM states ORDER BY key'):
+                state=json.loads(row['state'])
+                if state.get('status')=='Coco採用済み':
+                    completed.append({'key':row['key'],'platform':state.get('platform'),
+                                      'revision':state.get('revision'),'adopted':state.get('adopted')})
+        return {'queue':queue,'completed':completed,'audit':self.audit_summary()}
+
+    def record_exception(self,key,note):
+        if not isinstance(note,str) or not note.strip():raise WorkspaceError('VALIDATION','例外通過の理由を入力してください')
+        with self.transaction() as db:
+            state=self._load(db,key);department=self.department_for(state)
+            if department=='対象外':raise WorkspaceError('VALIDATION','対象部門ではありません')
+            db.execute('INSERT INTO exceptions(key,department,note) VALUES (?,?,?)',(key,department,note.strip()))
+        return {'saved':True}
+
+    def enqueue_secretary(self,kind,source_role,department,payload,key=None,stage=None):
+        if kind not in {'停止案件','仕組み提案'}:raise WorkspaceError('VALIDATION','秘書キュー種別が不正です')
+        if source_role not in {'課長','副社長'}:raise WorkspaceError('VALIDATION','秘書キューの送信元が不正です')
+        if not isinstance(payload,dict):raise WorkspaceError('VALIDATION','秘書キュー内容が不正です')
+        required={'停止案件':{'投稿番号','停止工程','不足・不明点','現在確認できる事実','Cocoへの質問'},
+                  '仕組み提案':{'現象','回数','原因工程','変更案','影響範囲'}}[kind]
+        if not required<=set(payload):raise WorkspaceError('VALIDATION','秘書キューの必須項目が不足しています')
+        with self.transaction() as db:
+            cur=db.execute('INSERT INTO secretary_queue(kind,source_role,department,key,stage,payload) VALUES (?,?,?,?,?,?)',
+                (kind,source_role,department,key,stage,json.dumps(payload,ensure_ascii=False)))
+            return {'id':cur.lastrowid,'status':'Coco確認待ち'}
+
+    def resolve_secretary(self,item_id,response):
+        if not isinstance(response,str) or not response.strip():raise WorkspaceError('VALIDATION','Cocoの回答・承認が必要です')
+        with self.transaction() as db:
+            row=db.execute("SELECT * FROM secretary_queue WHERE id=? AND status='Coco確認待ち'",(item_id,)).fetchone()
+            if not row:raise WorkspaceError('NOT_FOUND','確認待ちの秘書キューが見つかりません')
+            db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",
+                       (response.strip(),item_id))
+        return {'id':item_id,'status':'解決済み'}
+
+    def route_stop_to_proposal(self,item_id):
+        with self.transaction() as db:
+            row=db.execute("SELECT * FROM secretary_queue WHERE id=? AND kind='停止案件' AND status='Coco確認待ち'",(item_id,)).fetchone()
+            if not row:raise WorkspaceError('NOT_FOUND','確認待ちの停止案件が見つかりません')
+            db.execute("UPDATE secretary_queue SET status='副社長整理待ち',response='仕組み提案へ回す',updated_at=CURRENT_TIMESTAMP WHERE id=?",
+                       (item_id,))
+        return {'id':item_id,'status':'副社長整理待ち'}
+
     def executions(self,key):
         with self.transaction() as db:
             return [dict(r) for r in db.execute('SELECT * FROM executions WHERE key=? ORDER BY id DESC',(key,))]
@@ -295,6 +400,8 @@ class Handler(BaseHTTPRequestHandler):
             if url.path=='/api/revert-preview':return self.send_json(self.server.workspace.revert_preview(key,int(params.get('revision',['0'])[0])))
             if url.path=='/api/history':return self.send_json(self.server.workspace.history(key))
             if url.path=='/api/logs':return self.send_json(self.server.workspace.executions(key))
+            if url.path=='/api/desk':return self.send_json(self.server.workspace.desk())
+            if url.path=='/api/audit':return self.send_json(self.server.workspace.audit_summary())
             if url.path=='/api/status':return self.send_json({'ai':'未接続','enabled':False,'publish':'未実装','db':'SQLite作業DB','write_enabled':bool(self.server.token)})
             allowed={'/':'atelier/index.html','/atelier/':'atelier/index.html'}
             path=allowed.get(url.path,url.path.lstrip('/'))
@@ -321,6 +428,14 @@ class Handler(BaseHTTPRequestHandler):
             data=json.loads(self.rfile.read(length));path=urlparse(self.path).path
             if path=='/api/mutate':
                 result=self.server.workspace.mutate(data['key'],data['revision'],data['action'],data['payload'])
+            elif path=='/api/exception':
+                result=self.server.workspace.record_exception(data['key'],data['note'])
+            elif path=='/api/secretary/enqueue':
+                result=self.server.workspace.enqueue_secretary(data['kind'],data['source_role'],data['department'],data['payload'],data.get('key'),data.get('stage'))
+            elif path=='/api/secretary/resolve':
+                result=self.server.workspace.resolve_secretary(int(data['id']),data['response'])
+            elif path=='/api/secretary/route-proposal':
+                result=self.server.workspace.route_stop_to_proposal(int(data['id']))
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
