@@ -82,11 +82,15 @@ server=serve(0,root/'work.sqlite3');server.workspace=workspace;server.runtime=AI
 thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
 base=f'http://127.0.0.1:{server.server_port}'
 
+dialog_pages=set()
 def auth(page):
-    def dialog(d):
-        if d.type=='prompt': d.accept(TOKEN)
-        else: d.accept()
-    page.on('dialog',dialog)
+    key=id(page)
+    if key not in dialog_pages:
+        def dialog(d):
+            if d.type=='prompt': d.accept(TOKEN)
+            else: d.accept()
+        page.on('dialog',dialog)
+        dialog_pages.add(key)
     page.get_by_role('button',name='Coco操作の認証').click()
 
 def action_names(card):
