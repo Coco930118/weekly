@@ -334,20 +334,22 @@ class RoutingEngine:
         self.workspace.resolve_secretary(queue_id, decision)
         with self.workspace.transaction() as db:
             self._event(db, case_id, "Coco", f"仕組み提案{decision}", "秘書", queue_id=queue_id)
+            effective = "次の新規案件" if decision == "承認" else "適用なし"
+            cur = db.execute(
+                """INSERT INTO rule_versions(department,rule_key,old_rule,new_rule,reason,decision,effective_from)
+                   VALUES (?,?,?,?,?,?,?)""",
+                (department, rule_key, old_rule, new_rule, reason, decision, effective),
+            )
             if decision == "承認":
-                cur = db.execute(
-                    """INSERT INTO rule_versions(department,rule_key,old_rule,new_rule,reason,decision,effective_from)
-                       VALUES (?,?,?,?,?,?,?)""",
-                    (department, rule_key, old_rule, new_rule, reason, "承認", "次の新規案件"),
-                )
                 self._event(db, case_id, "秘書", "承認返却", "副社長", rule_version=cur.lastrowid)
             else:
-                self._event(db, case_id, "秘書", "却下返却", "副社長")
-        return {"decision": decision}
+                self._event(db, case_id, "秘書", "却下返却", "副社長", decision_record=cur.lastrowid)
+        return {"decision": decision, "history_id": cur.lastrowid}
 
     def record_exception(self, case_id, department, direction):
-        self.workspace.record_exception(case_id, direction)
         with self.workspace.transaction() as db:
+            db.execute("INSERT INTO exceptions(key,department,note) VALUES (?,?,?)",
+                       (case_id, department, direction))
             self._event(db, case_id, "監査委員会", "例外通過記録", None,
                         department=department, direction=direction)
             row = db.execute(
@@ -370,6 +372,18 @@ class RoutingEngine:
                 self._event(db, case_id, "監査委員会", "同方向例外3回検知", "副社長",
                             department=department, direction=direction, count=count, flag_id=flag_id)
         return {"count": count, "flag_id": flag_id if count >= 3 else None}
+
+    def vp_exception_check(self, case_id, direction, coco_passed):
+        current = self.case(case_id)
+        with self.workspace.transaction() as db:
+            self._event(db, case_id, "副社長", "過去判断との矛盾確認", "Coco", direction=direction)
+        if coco_passed:
+            with self.workspace.transaction() as db:
+                self._event(db, case_id, "Coco", "矛盾確認後も通過", "監査委員会", direction=direction)
+            return self.record_exception(case_id, current["department"], direction)
+        with self.workspace.transaction() as db:
+            self._event(db, case_id, "Coco", "矛盾判断を不通過", "副社長", direction=direction)
+        return {"count": 0, "flag_id": None}
 
     def validate_xshort(self, case_id, source_complete, has_fourth_line, fixed_response_valid):
         current = self.case(case_id)
