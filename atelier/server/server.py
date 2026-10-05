@@ -196,6 +196,11 @@ class Workspace:
                 if state['needs_split']:raise WorkspaceError('NEEDS_SPLIT','別テーマ箇所を確認してください')
                 if not state['theme'] or not state['axis']:raise WorkspaceError('BASIS_REQUIRED','theme／axisを確認してください')
                 state['adopted']=c;state['status']='Coco採用済み'
+            elif action=='finalize':
+                c=payload.get('candidate')
+                if not state.get('adopted') or c!=state.get('adopted'):
+                    raise WorkspaceError('FINALIZE','採用済み候補だけ最終確認できます')
+                state['status']='完了'
             elif action=='revert':
                 row=db.execute('SELECT after_state FROM history WHERE key=? AND revision=?',(key,payload.get('target_revision'))).fetchone()
                 if payload.get('target_revision')==0:
@@ -325,8 +330,12 @@ class Workspace:
                    ORDER BY department,count DESC,last_at DESC''')]
             for row in rankings:row['rule_change_candidate']=row['count']>=3
             exceptions=[dict(r) for r in db.execute('SELECT * FROM exceptions ORDER BY id DESC')]
+            exception_summary=[dict(r) for r in db.execute(
+                '''SELECT department,note AS direction,COUNT(*) AS count,MAX(at) AS last_at
+                   FROM exceptions GROUP BY department,note
+                   ORDER BY department,count DESC,last_at DESC''')]
             rule_changes=[dict(r) for r in db.execute('SELECT * FROM rule_changes ORDER BY id DESC')]
-        return {'rankings':rankings,'exceptions':exceptions,'rule_changes':rule_changes}
+        return {'rankings':rankings,'exceptions':exceptions,'exception_summary':exception_summary,'rule_changes':rule_changes}
 
     def desk(self):
         with self.transaction() as db:
@@ -338,8 +347,16 @@ class Workspace:
             for row in db.execute('SELECT key,state FROM states ORDER BY key'):
                 state=json.loads(row['state'])
                 if state.get('status')=='Coco採用済み':
-                    completed.append({'key':row['key'],'platform':state.get('platform'),
-                                      'revision':state.get('revision'),'adopted':state.get('adopted')})
+                    adopted=state.get('adopted');fields=(state.get('candidates',{}).get(adopted,{}).get('fields',{}) if adopted else {})
+                    label=self.source(row['key']).get('label',row['key'])
+                    platform=state.get('platform')
+                    department='Threads' if platform=='Threads' else ('X' if platform=='X' else platform)
+                    if department in {'X','Threads'}:
+                        completed.append({'key':row['key'],'platform':platform,'department':department,'label':label,
+                                          'revision':state.get('revision'),'adopted':adopted})
+                    if platform=='X' and 'x_short' in fields:
+                        completed.append({'key':row['key'],'platform':platform,'department':'X短文','label':label,
+                                          'revision':state.get('revision'),'adopted':adopted})
         return {'queue':queue,'completed':completed,'audit':self.audit_summary()}
 
     def record_exception(self,key,note):
@@ -362,6 +379,13 @@ class Workspace:
                 (kind,source_role,department,key,stage,json.dumps(payload,ensure_ascii=False)))
             return {'id':cur.lastrowid,'status':'Coco確認待ち'}
 
+    @staticmethod
+    def _workflow_event_if_available(db,case_id,actor,action,target=None,detail=None):
+        exists=db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'").fetchone()
+        if exists and case_id:
+            db.execute("INSERT INTO workflow_events(case_id,actor,action,target,detail) VALUES (?,?,?,?,?)",
+                       (case_id,actor,action,target,json.dumps(detail or {},ensure_ascii=False)))
+
     def resolve_secretary(self,item_id,response):
         if not isinstance(response,str) or not response.strip():raise WorkspaceError('VALIDATION','Cocoの回答・承認が必要です')
         with self.transaction() as db:
@@ -369,6 +393,9 @@ class Workspace:
             if not row:raise WorkspaceError('NOT_FOUND','確認待ちの秘書キューが見つかりません')
             db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",
                        (response.strip(),item_id))
+            if row['kind']=='停止案件':
+                self._workflow_event_if_available(db,row['key'],'Coco','停止案件回答','秘書',{'response':response.strip(),'queue_id':item_id})
+                self._workflow_event_if_available(db,row['key'],'秘書','回答返却','課長',{'queue_id':item_id})
         return {'id':item_id,'status':'解決済み'}
 
     def route_stop_to_proposal(self,item_id):
@@ -377,7 +404,23 @@ class Workspace:
             if not row:raise WorkspaceError('NOT_FOUND','確認待ちの停止案件が見つかりません')
             db.execute("UPDATE secretary_queue SET status='副社長整理待ち',response='仕組み提案へ回す',updated_at=CURRENT_TIMESTAMP WHERE id=?",
                        (item_id,))
+            self._workflow_event_if_available(db,row['key'],'Coco','仕組み提案へ回す','副社長',{'queue_id':item_id})
         return {'id':item_id,'status':'副社長整理待ち'}
+
+    def decide_proposal(self,item_id,decision):
+        if decision not in {'承認','却下'}:raise WorkspaceError('VALIDATION','承認か却下を指定してください')
+        with self.transaction() as db:
+            row=db.execute("SELECT * FROM secretary_queue WHERE id=? AND kind='仕組み提案' AND status='Coco確認待ち'",(item_id,)).fetchone()
+            if not row:raise WorkspaceError('NOT_FOUND','確認待ちの仕組み提案が見つかりません')
+            payload=json.loads(row['payload'])
+            effective='次の新規案件' if decision=='承認' else '適用なし'
+            db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",(decision,item_id))
+            db.execute('''INSERT INTO rule_changes(department,old_rule,new_rule,reason,coco_approval,approval_date,effective_from,impact)
+                          VALUES (?,?,?,?,?,date('now'),?,?)''',
+                       (row['department'],payload.get('旧ルール','現行ルール'),payload.get('新ルール',payload.get('変更案','')),
+                        payload.get('理由',payload.get('現象','')),decision,effective,payload.get('影響範囲','')))
+            self._workflow_event_if_available(db,row['key'],'Coco',f'仕組み提案{decision}','秘書',{'queue_id':item_id,'effective_from':effective})
+        return {'id':item_id,'status':'解決済み','decision':decision,'effective_from':effective}
 
     def executions(self,key):
         with self.transaction() as db:
@@ -436,6 +479,8 @@ class Handler(BaseHTTPRequestHandler):
                 result=self.server.workspace.resolve_secretary(int(data['id']),data['response'])
             elif path=='/api/secretary/route-proposal':
                 result=self.server.workspace.route_stop_to_proposal(int(data['id']))
+            elif path=='/api/secretary/decision':
+                result=self.server.workspace.decide_proposal(int(data['id']),data['decision'])
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
