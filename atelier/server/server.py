@@ -181,7 +181,16 @@ class Workspace:
                         cand['fields'][field]=value
                 if not changed:raise WorkspaceError('NO_CHANGE','変更がありません')
                 cand['revision']+=1;cand['status']='Coco修正中';self.invalidate(state)
-                self.record_correction(db,state,reason.strip(),changed)
+                stop_queue_id=payload.get('stop_queue_id')
+                audit_reason=reason.strip()
+                if stop_queue_id is not None:
+                    row=db.execute("SELECT kind,status FROM secretary_queue WHERE id=?",(int(stop_queue_id),)).fetchone()
+                    if not row or row['kind']!='停止案件' or row['status']!='Coco確認待ち':
+                        raise WorkspaceError('STOP_QUEUE','停止中の秘書キューが見つかりません')
+                    db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",
+                               ('Cocoが直接修正して通過',int(stop_queue_id)))
+                    audit_reason='停止中の直接修正'
+                self.record_correction(db,state,audit_reason,changed)
             elif action=='adopt':
                 c=payload.get('candidate');self.check_candidate_revision(state,c,payload.get('candidate_revision'))
                 if state['needs_split']:raise WorkspaceError('NEEDS_SPLIT','別テーマ箇所を確認してください')
