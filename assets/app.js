@@ -83,13 +83,14 @@ async function loadPosts() {
     // 一覧は必ずサーバに聞き直す（notes/index.json と同じ理由）。
     // ここをキャッシュさせると、新しく足した週が「ファイルはあるのに週フィルタに
     // 出ない」状態になる（2026-08-31：?v= を 20260731c で固定したままだった）
-    const indexRes = await fetch('./posts/index.json', { cache: 'no-cache' });
+    const cacheBust = Date.now();
+    const indexRes = await fetch(`./posts/index.json?v=${cacheBust}`, { cache: 'no-store' });
     if (!indexRes.ok) throw new Error('index not found');
     const index = await indexRes.json();
 
     const weekDataArr = await Promise.all(
       index.weeks.map(async (filename) => {
-        const res = await fetch(`./posts/${filename}`, { cache: 'no-cache' });
+        const res = await fetch(`./posts/${filename}?v=${cacheBust}`, { cache: 'no-store' });
         if (!res.ok) throw new Error(`${filename} not found`);
         const data = await res.json();
         return { ...data, _sourceFile: filename };
