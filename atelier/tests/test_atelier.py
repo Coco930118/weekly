@@ -37,14 +37,19 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(self.w.get('notes/fixture.json#0')['candidates'].keys(),{'A','B'})
 
     def test_employee_count_and_roles(self):
-        self.assertEqual(len(self.w.employees),27);self.assertEqual({e['id'] for e in self.w.employees},set(range(1,28)))
-        self.assertEqual(self.w.employee(20)['name'],'SNS最終仕上げ編集者')
-        self.assertEqual(self.w.employee(23)['fields'],[]);self.assertEqual(self.w.employee(24)['name'],'品質・ルール監査担当')
+        self.assertEqual(len(self.w.employees),58)
+        ids={e['id'] for e in self.w.employees}
+        self.assertIn('X01',ids);self.assertIn('T21',ids);self.assertIn('XS14',ids)
+        self.assertEqual(self.w.employee('BOARD_EDIT')['name'],'TOP OF 敏腕編集者')
+        self.assertEqual(self.w.employee('VP')['company_stop_only'],['事実が曲がった','声が混ざった','工程に戻っていない'])
 
     def test_workflow(self):
-        stages=json.loads((self.root/'atelier/config/workflow.json').read_text())['stages']
-        self.assertEqual([s['id'] for s in stages],['media','specialist','top_of','chief','sns_finish','final_editor','coco'])
-        self.assertEqual(stages[2]['employees'],[17,18,19]);self.assertEqual(stages[4]['employees'],[20])
+        workflow=json.loads((self.root/'atelier/config/workflow.json').read_text())
+        stages=workflow['stages']
+        self.assertEqual([s['id'] for s in stages],['post_owner','board_or_complete','coco'])
+        self.assertEqual(stages[1]['employees'],['BOARD_EDIT','BOARD_WORD','BOARD_SNS'])
+        self.assertEqual(workflow['note']['status'],'保留・未稼働')
+        self.assertEqual(workflow['ai']['status'],'未接続・再開しない')
 
     def test_direct_edit_history_and_conflict(self):
         self.basis();state=self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Cocoの本文'}})
@@ -64,54 +69,51 @@ class WorkspaceTests(unittest.TestCase):
         self.assert_error('VALIDATION',lambda:self.w.mutate(self.key,1,'basis',{'theme':'','axis':'x'}))
 
     def test_review_adoption_invalidated_on_basis_change(self):
-        self.basis();self.w.save_ai_result(self.key,'A',23,1,0,self.result())
+        self.basis();self.w.save_ai_result(self.key,'A','BOARD_EDIT',1,0,self.result())
         self.w.mutate(self.key,2,'adopt',{'candidate':'A','candidate_revision':0})
         state=self.w.mutate(self.key,3,'basis',{'theme':'new theme','axis':'new axis'})
         self.assertIsNone(state['adopted']);self.assertTrue(state['reviews'][0]['stale'])
         self.assertEqual(state['candidates']['A']['fields'],state['candidates']['B']['fields'])
 
     def test_needs_split_preserves_candidates_and_basis(self):
-        before=self.basis();after=self.w.save_ai_result(self.key,'A',23,1,0,self.result(theme='different',split_at='第2段落',fields={'content':'改稿'}))
+        before=self.basis();after=self.w.save_ai_result(self.key,'A','BOARD_EDIT',1,0,self.result(theme='different',split_at='第2段落',fields={'content':'改稿'}))
         self.assertEqual(after['theme'],before['theme']);self.assertEqual(after['candidates'],before['candidates'])
         self.assertEqual(after['status'],'NEEDS_SPLIT');self.assertEqual(after['needs_split']['split_at'],'第2段落')
         self.assert_error('NEEDS_SPLIT',lambda:self.w.mutate(self.key,2,'adopt',{'candidate':'A','candidate_revision':0}))
-        self.assert_error('NEEDS_SPLIT',lambda:self.w.save_ai_result(self.key,'A',4,2,0,self.result(fields={'content':'別案'})))
+        self.assert_error('NEEDS_SPLIT',lambda:self.w.save_ai_result(self.key,'A','X01',2,0,self.result(fields={'content':'別案'})))
 
     def test_split_requires_position(self):
-        self.basis();self.assert_error('VALIDATION',lambda:self.w.save_ai_result(self.key,'A',23,1,0,self.result(theme='other')))
+        self.basis();self.assert_error('VALIDATION',lambda:self.w.save_ai_result(self.key,'A','BOARD_EDIT',1,0,self.result(theme='other')))
         self.assertEqual(self.w.get(self.key)['revision'],1)
 
     def test_coco_protection_blocks_ai_and_logs(self):
         self.basis();self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Coco修正'}})
-        self.assert_error('COCO_PROTECTED',lambda:self.w.save_ai_result(self.key,'A',4,2,1,self.result(fields={'content':'AI変更'})))
+        self.assert_error('COCO_PROTECTED',lambda:self.w.save_ai_result(self.key,'A','X01',2,1,self.result(fields={'content':'AI変更'})))
         self.assertEqual(self.w.get(self.key)['candidates']['A']['fields']['content'],'Coco修正')
         self.assertEqual(self.w.executions(self.key)[0]['code'],'COCO_PROTECTED')
 
     def test_stale_ai_result(self):
         self.basis();self.w.mutate(self.key,1,'edit',{'candidate':'B','candidate_revision':0,'fields':{'content':'修正'}})
-        self.assert_error('CONFLICT',lambda:self.w.save_ai_result(self.key,'A',4,1,0,self.result(fields={'content':'古いAI結果'})))
+        self.assert_error('CONFLICT',lambda:self.w.save_ai_result(self.key,'A','X01',1,0,self.result(fields={'content':'古いAI結果'})))
 
     def test_permissions(self):
         self.basis()
-        for employee,fields in [(23,{'content':'変更'}),(24,{'quote':'変更'}),(4,{'quote':'変更'}),(8,{'content':'変更'})]:
+        for employee,fields in [('BOARD_EDIT',{'content':'変更'}),('AUDIT',{'quote':'変更'}),('T01',{'content':'変更'}),('XS01',{'quote':'変更'})]:
             self.assert_error('PERMISSION',lambda:self.w.save_ai_result(self.key,'A',employee,1,0,self.result(fields=fields)))
-        self.assert_error('PERMISSION',lambda:self.w.save_ai_result(self.key,'A',99,1,0,self.result()))
-        state=self.w.save_ai_result(self.key,'A',4,1,0,self.result(fields={'content':'テスト候補'}))
+        self.assert_error('PERMISSION',lambda:self.w.save_ai_result(self.key,'A','UNKNOWN',1,0,self.result()))
+        state=self.w.save_ai_result(self.key,'A','X01',1,0,self.result(fields={'content':'テスト候補'}))
         self.assertEqual(state['candidates']['A']['fields']['content'],'テスト候補')
         self.assertIsNone(state['adopted'])
 
-    def test_id20_unchanged_and_minimal_proposal(self):
-        self.basis();state=self.w.save_ai_result(self.key,'A',20,1,0,self.result())
+    def test_board_cannot_rewrite_post(self):
+        self.basis();state=self.w.save_ai_result(self.key,'A','BOARD_EDIT',1,0,self.result())
         self.assertEqual(state['candidates']['A']['revision'],0)
-        self.assert_error('MINIMAL_DIFF',lambda:self.w.save_ai_result(self.key,'A',20,2,0,self.result(fields={'content':'全面改稿'})))
-        state=self.w.save_ai_result(self.key,'A',20,2,0,self.result(fields={'content':'本文。'},change_kind='minimal_expression'))
-        self.assertEqual(state['candidates']['A']['fields']['content'],'本文');self.assertEqual(state['proposals'][0]['status'],'Coco確認待ち')
-        self.assertIn('content',state['proposals'][0]['diff'])
+        self.assert_error('PERMISSION',lambda:self.w.save_ai_result(self.key,'A','BOARD_EDIT',2,0,self.result(fields={'content':'全面改稿'})))
 
     def test_top_of_no_ranking(self):
         self.basis()
         for k in ['score','rank','winner','ranking']:
-            self.assert_error('NO_RANKING',lambda:self.w.save_ai_result(self.key,'A',17,1,0,self.result(**{k:1})))
+            self.assert_error('NO_RANKING',lambda:self.w.save_ai_result(self.key,'A','BOARD_EDIT',1,0,self.result(**{k:1})))
         self.assertEqual(self.w.get(self.key)['revision'],1)
 
     def test_revert_post_only_monotonic_revision(self):
@@ -123,7 +125,7 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(state['revision'],3);self.assertEqual(state['candidates']['A']['revision'],2)
         self.assertEqual(state['candidates']['A']['fields']['content'],'本文')
         self.assertEqual(self.w.get('posts/fixture.json#1'),other)
-        self.assert_error('CONFLICT',lambda:self.w.save_ai_result(self.key,'A',4,1,0,self.result(fields={'content':'古い結果'})))
+        self.assert_error('CONFLICT',lambda:self.w.save_ai_result(self.key,'A','X01',1,0,self.result(fields={'content':'古い結果'})))
 
     def test_db_reopen(self):
         state=self.basis();again=Workspace(self.root,self.root/'work.sqlite3');self.assertEqual(again.get(self.key),state)
@@ -145,7 +147,7 @@ class WorkspaceTests(unittest.TestCase):
     def test_disabled_provider_never_called(self):
         self.basis();runtime=AIRuntime(self.w)
         with patch.object(runtime.provider,'execute',side_effect=AssertionError('must not send')) as call:
-            with self.assertRaises(ProviderUnavailable):runtime.execute(self.key,'A',4,1,0)
+            with self.assertRaises(ProviderUnavailable):runtime.execute(self.key,'A','X01',1,0)
             call.assert_not_called()
         self.assertEqual(self.w.executions(self.key)[0]['code'],'AI_DISABLED')
         self.assertEqual(self.w.get(self.key)['revision'],1)
@@ -153,13 +155,13 @@ class WorkspaceTests(unittest.TestCase):
 
     def test_runtime_permission_failure_is_logged(self):
         self.basis();runtime=AIRuntime(self.w)
-        self.assert_error('PERMISSION',lambda:runtime.execute(self.key,'A',8,1,0))
+        self.assert_error('PERMISSION',lambda:runtime.execute(self.key,'A','T01',1,0))
         self.assertEqual(self.w.executions(self.key)[0]['code'],'PERMISSION')
 
     def test_review_findings_preserved_and_status_validated(self):
         self.basis()
-        self.assert_error('VALIDATION',lambda:self.w.save_ai_result(self.key,'A',4,1,0,self.result(status='公開済み')))
-        state=self.w.save_ai_result(self.key,'A',23,1,0,self.result(findings=['素材外の会話を確認']))
+        self.assert_error('VALIDATION',lambda:self.w.save_ai_result(self.key,'A','X01',1,0,self.result(status='公開済み')))
+        state=self.w.save_ai_result(self.key,'A','BOARD_EDIT',1,0,self.result(findings=['素材外の会話を確認']))
         self.assertEqual(state['reviews'][0]['findings'],['素材外の会話を確認'])
 
     def test_ranges_and_diff(self):
