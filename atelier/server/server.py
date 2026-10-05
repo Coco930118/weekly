@@ -55,6 +55,23 @@ class Workspace:
               before_state TEXT NOT NULL, after_state TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
             CREATE TABLE IF NOT EXISTS executions (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
               employee TEXT, candidate TEXT, status TEXT, code TEXT, at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS corrections (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
+              department TEXT NOT NULL, reason TEXT NOT NULL, diff TEXT NOT NULL,
+              at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS exceptions (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
+              department TEXT NOT NULL, note TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS stops (id INTEGER PRIMARY KEY, key TEXT NOT NULL,
+              department TEXT NOT NULL, stage TEXT NOT NULL, issue TEXT NOT NULL,
+              current_facts TEXT NOT NULL, question TEXT NOT NULL, status TEXT NOT NULL DEFAULT '回答待ち',
+              response TEXT, at TEXT DEFAULT CURRENT_TIMESTAMP, updated_at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS rule_proposals (id INTEGER PRIMARY KEY, department TEXT NOT NULL,
+              phenomenon TEXT NOT NULL, occurrence_count INTEGER NOT NULL, cause_stage TEXT NOT NULL,
+              proposal TEXT NOT NULL, impact TEXT NOT NULL, status TEXT NOT NULL DEFAULT 'Coco確認待ち',
+              at TEXT DEFAULT CURRENT_TIMESTAMP);
+            CREATE TABLE IF NOT EXISTS rule_changes (id INTEGER PRIMARY KEY, department TEXT NOT NULL,
+              old_rule TEXT NOT NULL, new_rule TEXT NOT NULL, reason TEXT NOT NULL,
+              coco_approval TEXT NOT NULL, approval_date TEXT NOT NULL,
+              effective_from TEXT NOT NULL, impact TEXT NOT NULL, at TEXT DEFAULT CURRENT_TIMESTAMP);
             ''')
 
     @contextlib.contextmanager
@@ -154,14 +171,20 @@ class Workspace:
             elif action=='edit':
                 c=payload.get('candidate');self.check_candidate_revision(state,c,payload.get('candidate_revision'))
                 fields=payload.get('fields',{});self.validate_fields(state,c,fields)
-                cand=state['candidates'][c]
+                reason=payload.get('reason')
+                if not isinstance(reason,str) or not reason.strip():
+                    raise WorkspaceError('CORRECTION_REASON','Coco修正の理由を入力してください')
+                cand=state['candidates'][c];changed={}
                 for field,value in fields.items():
                     old=cand['fields'].get(field)
                     if old!=value:
+                        changed[field]={'before':old,'after':value}
                         cand['protected'][field]={'revision':before['revision']+1,'candidate_revision':cand['revision']+1,
                             'ranges':self.changed_ranges(old,value),'value_digest':digest(value)}
                         cand['fields'][field]=value
+                if not changed:raise WorkspaceError('NO_CHANGE','変更がありません')
                 cand['revision']+=1;cand['status']='Coco修正中';self.invalidate(state)
+                self.record_correction(db,state,reason.strip(),changed)
             elif action=='adopt':
                 c=payload.get('candidate');self.check_candidate_revision(state,c,payload.get('candidate_revision'))
                 if state['needs_split']:raise WorkspaceError('NEEDS_SPLIT','別テーマ箇所を確認してください')
@@ -274,6 +297,53 @@ class Workspace:
             item['diff']=field_diff(before,after);result.append(item)
         return result
 
+    @staticmethod
+    def department_for(state,fields=None):
+        fields=set(fields or [])
+        if 'x_short' in fields:return 'X短文'
+        if state.get('platform')=='Threads':return 'Threads'
+        if state.get('platform')=='X':return 'X'
+        return '対象外'
+
+    def record_correction(self,db,state,reason,changed):
+        department=self.department_for(state,changed.keys())
+        if department=='対象外':return
+        db.execute('INSERT INTO corrections(key,department,reason,diff) VALUES (?,?,?,?)',
+                   (state['key'],department,reason,json.dumps(changed,ensure_ascii=False)))
+
+    def audit_summary(self):
+        with self.transaction() as db:
+            rankings=[dict(r) for r in db.execute(
+                '''SELECT department,reason,COUNT(*) AS count,MAX(at) AS last_at
+                   FROM corrections GROUP BY department,reason
+                   ORDER BY department,count DESC,last_at DESC''')]
+            for row in rankings:row['rule_change_candidate']=row['count']>=3
+            exceptions=[dict(r) for r in db.execute('SELECT * FROM exceptions ORDER BY id DESC')]
+            rule_changes=[dict(r) for r in db.execute('SELECT * FROM rule_changes ORDER BY id DESC')]
+        return {'rankings':rankings,'exceptions':exceptions,'rule_changes':rule_changes}
+
+    def desk(self):
+        with self.transaction() as db:
+            stops=[dict(r) for r in db.execute(
+                "SELECT * FROM stops WHERE status='回答待ち' ORDER BY id")]
+            proposals=[dict(r) for r in db.execute(
+                "SELECT * FROM rule_proposals WHERE status='Coco確認待ち' ORDER BY id")]
+            completed=[]
+            for row in db.execute('SELECT key,state FROM states ORDER BY key'):
+                state=json.loads(row['state'])
+                if state.get('status')=='Coco採用済み':
+                    completed.append({'key':row['key'],'platform':state.get('platform'),
+                                      'revision':state.get('revision'),'adopted':state.get('adopted')})
+        return {'stops':stops,'proposals':proposals,'completed':completed,'audit':self.audit_summary()}
+
+    def record_exception(self,key,note):
+        if not isinstance(note,str) or not note.strip():raise WorkspaceError('VALIDATION','例外通過の理由を入力してください')
+        with self.transaction() as db:
+            state=self._load(db,key);department=self.department_for(state)
+            if department=='対象外':raise WorkspaceError('VALIDATION','対象部門ではありません')
+            db.execute('INSERT INTO exceptions(key,department,note) VALUES (?,?,?)',(key,department,note.strip()))
+        return {'saved':True}
+
     def executions(self,key):
         with self.transaction() as db:
             return [dict(r) for r in db.execute('SELECT * FROM executions WHERE key=? ORDER BY id DESC',(key,))]
@@ -295,6 +365,8 @@ class Handler(BaseHTTPRequestHandler):
             if url.path=='/api/revert-preview':return self.send_json(self.server.workspace.revert_preview(key,int(params.get('revision',['0'])[0])))
             if url.path=='/api/history':return self.send_json(self.server.workspace.history(key))
             if url.path=='/api/logs':return self.send_json(self.server.workspace.executions(key))
+            if url.path=='/api/desk':return self.send_json(self.server.workspace.desk())
+            if url.path=='/api/audit':return self.send_json(self.server.workspace.audit_summary())
             if url.path=='/api/status':return self.send_json({'ai':'未接続','enabled':False,'publish':'未実装','db':'SQLite作業DB','write_enabled':bool(self.server.token)})
             allowed={'/':'atelier/index.html','/atelier/':'atelier/index.html'}
             path=allowed.get(url.path,url.path.lstrip('/'))
@@ -321,6 +393,8 @@ class Handler(BaseHTTPRequestHandler):
             data=json.loads(self.rfile.read(length));path=urlparse(self.path).path
             if path=='/api/mutate':
                 result=self.server.workspace.mutate(data['key'],data['revision'],data['action'],data['payload'])
+            elif path=='/api/exception':
+                result=self.server.workspace.record_exception(data['key'],data['note'])
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
