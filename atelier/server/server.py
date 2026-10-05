@@ -379,6 +379,13 @@ class Workspace:
                 (kind,source_role,department,key,stage,json.dumps(payload,ensure_ascii=False)))
             return {'id':cur.lastrowid,'status':'Coco確認待ち'}
 
+    @staticmethod
+    def _workflow_event_if_available(db,case_id,actor,action,target=None,detail=None):
+        exists=db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'").fetchone()
+        if exists and case_id:
+            db.execute("INSERT INTO workflow_events(case_id,actor,action,target,detail) VALUES (?,?,?,?,?)",
+                       (case_id,actor,action,target,json.dumps(detail or {},ensure_ascii=False)))
+
     def resolve_secretary(self,item_id,response):
         if not isinstance(response,str) or not response.strip():raise WorkspaceError('VALIDATION','Cocoの回答・承認が必要です')
         with self.transaction() as db:
@@ -386,6 +393,9 @@ class Workspace:
             if not row:raise WorkspaceError('NOT_FOUND','確認待ちの秘書キューが見つかりません')
             db.execute("UPDATE secretary_queue SET status='解決済み',response=?,updated_at=CURRENT_TIMESTAMP WHERE id=?",
                        (response.strip(),item_id))
+            if row['kind']=='停止案件':
+                self._workflow_event_if_available(db,row['key'],'Coco','停止案件回答','秘書',{'response':response.strip(),'queue_id':item_id})
+                self._workflow_event_if_available(db,row['key'],'秘書','回答返却','課長',{'queue_id':item_id})
         return {'id':item_id,'status':'解決済み'}
 
     def route_stop_to_proposal(self,item_id):
@@ -394,6 +404,7 @@ class Workspace:
             if not row:raise WorkspaceError('NOT_FOUND','確認待ちの停止案件が見つかりません')
             db.execute("UPDATE secretary_queue SET status='副社長整理待ち',response='仕組み提案へ回す',updated_at=CURRENT_TIMESTAMP WHERE id=?",
                        (item_id,))
+            self._workflow_event_if_available(db,row['key'],'Coco','仕組み提案へ回す','副社長',{'queue_id':item_id})
         return {'id':item_id,'status':'副社長整理待ち'}
 
     def decide_proposal(self,item_id,decision):
@@ -408,6 +419,7 @@ class Workspace:
                           VALUES (?,?,?,?,?,date('now'),?,?)''',
                        (row['department'],payload.get('旧ルール','現行ルール'),payload.get('新ルール',payload.get('変更案','')),
                         payload.get('理由',payload.get('現象','')),decision,effective,payload.get('影響範囲','')))
+            self._workflow_event_if_available(db,row['key'],'Coco',f'仕組み提案{decision}','秘書',{'queue_id':item_id,'effective_from':effective})
         return {'id':item_id,'status':'解決済み','decision':decision,'effective_from':effective}
 
     def executions(self,key):
