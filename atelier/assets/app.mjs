@@ -16,6 +16,8 @@ function showEmployees(employees){
 $('load').onclick=async()=>{try{if($('post').value)await display(await loadState($('post').value));}catch(e){error(e);}};
 $('week').onchange=filter;$('platform').onchange=filter;
 $('auth').onclick=()=>{const value=prompt('サーバー側に設定したCoco操作tokenを入力してください。ブラウザには永続保存しません。');if(value!==null)setToken(value);};
+document.addEventListener('atelier:open-post',async e=>{try{const key=e.detail?.key;if(!key)return;$('post').value=key;await display(await loadState(key));document.querySelector('main')?.scrollIntoView({block:'start'});}catch(err){error(err);}});
+document.addEventListener('atelier:desk-refresh',async()=>{try{await showDesk($('desk'));}catch(err){error(err);}});
 try {
  const [employees,workflow,rows]=await Promise.all([request('/atelier/config/employees.json'),request('/atelier/config/workflow.json'),loadPosts()]);posts=rows;
  showEmployees(employees);
