@@ -37,6 +37,7 @@ class AIRuntime:
 
     def execute(self, key, candidate, employee, expected_revision, expected_candidate_revision):
         error = None
+        provider_block = None
         prepared = None
         state_snapshot = None
         person = None
@@ -51,20 +52,19 @@ class AIRuntime:
                     raise WorkspaceError("PERMISSION", "担当媒体の権限がありません")
                 if not self.provider.connected:
                     self.workspace.log(db, key, employee, "blocked", "AI_DISABLED", candidate)
-                    raise ProviderUnavailable("AI未接続：AI実行は有効化されていません")
-                if str(person["id"]) != "X01" or state["platform"] != "X":
+                    provider_block = "AI未接続：AI実行は有効化されていません"
+                elif str(person["id"]) != "X01" or state["platform"] != "X":
                     self.workspace.log(db, key, employee, "blocked", "AI_SCOPE", candidate)
-                    raise ProviderUnavailable("初回OpenAI接続はX01のX投稿だけです")
-                prepared = self._prepare_x01_request(key, state, person)
-                state_snapshot = {
-                    "theme": state["theme"],
-                    "axis": state["axis"],
-                    "revision": state["revision"],
-                    "candidate_revision": state["candidates"][candidate]["revision"],
-                }
-                self.workspace.log(db, key, employee, "started", "OPENAI_X01", candidate)
-            except ProviderUnavailable:
-                raise
+                    provider_block = "初回OpenAI接続はX01のX投稿だけです"
+                else:
+                    prepared = self._prepare_x01_request(key, state, person)
+                    state_snapshot = {
+                        "theme": state["theme"],
+                        "axis": state["axis"],
+                        "revision": state["revision"],
+                        "candidate_revision": state["candidates"][candidate]["revision"],
+                    }
+                    self.workspace.log(db, key, employee, "started", "OPENAI_X01", candidate)
             except Exception as exc:
                 from .server import WorkspaceError
                 if not isinstance(exc, WorkspaceError):
@@ -73,6 +73,8 @@ class AIRuntime:
                 self.workspace.log(db, key, employee, "blocked", exc.code, candidate)
         if error:
             raise error
+        if provider_block:
+            raise ProviderUnavailable(provider_block)
 
         try:
             result = self.provider.execute(prepared)
