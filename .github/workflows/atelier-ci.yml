@@ -1,0 +1,34 @@
+name: Atelier CI
+
+on:
+  push:
+    branches:
+      - atelier/company-structure-v2
+    paths:
+      - 'atelier/**'
+      - 'docs/coco_atelier_company_spec.md'
+      - '.github/workflows/atelier-ci.yml'
+  pull_request:
+    paths:
+      - 'atelier/**'
+      - 'docs/coco_atelier_company_spec.md'
+      - '.github/workflows/atelier-ci.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Python tests
+        run: python3 -m unittest discover -s atelier/tests -v
+      - name: JavaScript tests
+        run: node --test atelier/tests/*.test.mjs
