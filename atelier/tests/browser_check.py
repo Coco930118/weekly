@@ -16,7 +16,7 @@ try:
   browser=p.chromium.launch(executable_path='/usr/bin/chromium',args=['--no-sandbox'])
   page=browser.new_page(viewport={'width':1440,'height':1100});page.on('pageerror',lambda e:errors.append(str(e)))
   page.goto(f'http://127.0.0.1:{server.server_port}/atelier/');page.wait_for_selector('.candidates article')
-  assert page.locator('#employees details').count()==58
+  assert page.locator('#employees .employee').count()==58
   assert page.locator('.candidates article').count()==3
   cards=page.locator('.candidates article');a=cards.nth(0).bounding_box();b=cards.nth(1).bounding_box()
   assert abs(a['y']-b['y'])<5,'A/B not simultaneous horizontal'
