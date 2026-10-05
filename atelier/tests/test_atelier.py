@@ -52,20 +52,20 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(workflow['ai']['status'],'未接続・再開しない')
 
     def test_direct_edit_history_and_conflict(self):
-        self.basis();state=self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Cocoの本文'}})
+        self.basis();state=self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Cocoの本文'},'reason':'表現修正'})
         self.assertEqual(state['revision'],2);self.assertEqual(state['candidates']['A']['revision'],1)
         self.assertIn('content',state['candidates']['A']['protected'])
         self.assertEqual(self.w.history(self.key)[0]['actor'],'Coco')
-        self.assert_error('CONFLICT',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'上書き'}}))
+        self.assert_error('CONFLICT',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'上書き'},'reason':'表現修正'}))
         self.assertEqual(self.w.get(self.key),state)
 
     def test_candidate_revision_conflict(self):
-        self.basis();self.assert_error('CONFLICT',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':99,'fields':{'content':'修正'}}))
+        self.basis();self.assert_error('CONFLICT',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':99,'fields':{'content':'修正'},'reason':'表現修正'}))
 
     def test_basis_not_candidate_and_public_fields_not_editable(self):
         self.basis()
         for field in ['theme','axis','public_ok','episode_id','axis_map','maai_axis']:
-            self.assert_error('FIELD',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{field:'変更'}}))
+            self.assert_error('FIELD',lambda:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{field:'変更'},'reason':'表現修正'}))
         self.assert_error('VALIDATION',lambda:self.w.mutate(self.key,1,'basis',{'theme':'','axis':'x'}))
 
     def test_review_adoption_invalidated_on_basis_change(self):
@@ -87,13 +87,13 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(self.w.get(self.key)['revision'],1)
 
     def test_coco_protection_blocks_ai_and_logs(self):
-        self.basis();self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Coco修正'}})
+        self.basis();self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Coco修正'},'reason':'事実'})
         self.assert_error('COCO_PROTECTED',lambda:self.w.save_ai_result(self.key,'A','X01',2,1,self.result(fields={'content':'AI変更'})))
         self.assertEqual(self.w.get(self.key)['candidates']['A']['fields']['content'],'Coco修正')
         self.assertEqual(self.w.executions(self.key)[0]['code'],'COCO_PROTECTED')
 
     def test_stale_ai_result(self):
-        self.basis();self.w.mutate(self.key,1,'edit',{'candidate':'B','candidate_revision':0,'fields':{'content':'修正'}})
+        self.basis();self.w.mutate(self.key,1,'edit',{'candidate':'B','candidate_revision':0,'fields':{'content':'修正'},'reason':'表現修正'})
         self.assert_error('CONFLICT',lambda:self.w.save_ai_result(self.key,'A','X01',1,0,self.result(fields={'content':'古いAI結果'})))
 
     def test_permissions(self):
@@ -118,7 +118,7 @@ class WorkspaceTests(unittest.TestCase):
 
     def test_revert_post_only_monotonic_revision(self):
         self.basis();other=self.w.get('posts/fixture.json#1')
-        self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'修正'}})
+        self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'修正'},'reason':'表現修正'})
         preview=self.w.revert_preview(self.key,0)
         self.assertEqual(preview['revision'],2);self.assertIn('candidates',preview['diff'])
         state=self.w.mutate(self.key,2,'revert',{'target_revision':0})
@@ -137,7 +137,7 @@ class WorkspaceTests(unittest.TestCase):
     def test_concurrent_edits_one_winner(self):
         self.basis();outcomes=[]
         def edit(text):
-            try:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':text}});outcomes.append('saved')
+            try:self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':text},'reason':'表現修正'});outcomes.append('saved')
             except WorkspaceError as e:outcomes.append(e.code)
         threads=[threading.Thread(target=edit,args=(text,)) for text in ['一','二']]
         for t in threads:t.start()
