@@ -186,3 +186,5 @@ try:
     print('President desk PC checks passed: M1-M4 at 1280x800 and 1920x1080; N1/N3; O1-O2')
 finally:
     server.shutdown();server.server_close();thread.join();tmp.cleanup()
+
+# PC regression: fixed data only; no provider execution.
