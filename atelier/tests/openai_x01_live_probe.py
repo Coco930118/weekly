@@ -1,7 +1,7 @@
-"""Live OpenAI X01 probe: P1 only.
+"""Live OpenAI X01 probe: P2 stop route only.
 
 Requires OPENAI_API_KEY and ATELIER_OPENAI_LIVE=1.
-P2/P3 remain unexecuted until P1 completes.
+P2 must stop for missing date, route through manager -> secretary -> president desk.
 No publish/x_06/E567 code is called. Generated prose is never printed.
 """
 import json
@@ -29,25 +29,25 @@ tmp=tempfile.TemporaryDirectory()
 root=Path(tmp.name)
 for folder in ["posts","notes","atelier/config","atelier/canon"]:
     (root/folder).mkdir(parents=True,exist_ok=True)
-for path in [
+for copy_path in [
     "atelier/config/employees.json",
     "atelier/config/workflow.json",
     "atelier/canon/x_post.md",
 ]:
-    target=root/path
+    target=root/copy_path
     target.parent.mkdir(parents=True,exist_ok=True)
-    target.write_bytes((ROOT/path).read_bytes())
+    target.write_bytes((ROOT/copy_path).read_bytes())
 
 fixtures=[
     {
-        "id":"P1",
+        "id":"P2",
         "platform":"X",
         "content":"",
         "quote":"",
         "theme":"現場の判断",
         "axis":"仕事・現場の「ん？」",
         "_probe_required_facts":["日付","誰が何を言ったか","わたしがしたこと","そのあと現場で起きたこと"],
-        "material":"2026年10月5日、店長が「この判断は自分で決めたい」と言ったあと、「どうしましょう」と最後の判断をこちらに戻してきた。私は条件と予算だけ伝え、最後の判断を店長に任せた。そのあと、店長から「この案で進めます」と返事があった。"
+        "material":"店長が「この判断は自分で決めたい」と言ったあと、「どうしましょう」と最後の判断をこちらに戻してきた。私は条件と予算だけ伝え、最後の判断を店長に任せた。そのあと、店長から「この案で進めます」と返事があった。日付は素材に書かれていない。"
     },
 ]
 (root/"posts/index.json").write_text(json.dumps({"weeks":["probe.json"]}))
@@ -72,6 +72,18 @@ def init_case(i):
     return key
 
 
+def route_stop(key,result):
+    six={
+        "部門":"X",
+        "投稿番号":fixtures[0]["id"],
+        "停止工程":result.get("stop_stage") or "素材確認・事実固定",
+        "不足・不明点":result.get("missing_or_unknown") or "不足・不明点あり",
+        "現在確認できる事実":result.get("confirmed_facts") or "素材内の明示事実のみ",
+        "Cocoへの質問":result.get("question_for_coco") or "日付を教えてください",
+    }
+    return routing.stop(key,result.get("stop_reason") or "事実不明",six), six
+
+
 def execute_case(i):
     key=init_case(i)
     state=workspace.get(key)
@@ -80,35 +92,30 @@ def execute_case(i):
 
 
 require_live_env()
-
-# P1 only. P2/P3 must not run until P1 completes successfully.
 key,result=execute_case(0)
-if result["kind"]!="complete":
-    print(json.dumps({
-        "P1_diagnostic": {
-            "kind": result.get("kind"),
-            "stop_reason": result.get("stop_reason"),
-            "stop_stage": result.get("stop_stage"),
-            "missing_or_unknown": result.get("missing_or_unknown"),
-            "question_for_coco": result.get("question_for_coco"),
-            "provider": result.get("provider"),
-        }
-    }, ensure_ascii=False))
-    raise AssertionError(f"P1 expected complete, got {result['kind']} / {result.get('stop_reason')}")
-routing.complete(key)
-routing.vp_gate(key,None)
-events=routing.events(key)
-desk=workspace.desk()
-if not any(x.get("key")==key and x.get("department")=="X" for x in desk["completed"]):
-    raise AssertionError("P1 did not appear in president desk completed posts")
-if [e["action"] for e in events][-2:]!=["完成","3点確認OK"]:
-    raise AssertionError("P1 route did not pass completion -> VP gate")
+if result["kind"]!="stop":
+    raise AssertionError("P2 missing date was completed instead of stopped")
+if result["stop_reason"] not in {"素材不足","事実不明"}:
+    raise AssertionError(f"P2 unexpected stop reason: {result['stop_reason']}")
 
-provider=result.get("provider",{})
+q,six=route_stop(key,result)
+desk=workspace.desk()
+if not desk["queue"]:
+    raise AssertionError("P2 stop did not reach president desk")
+top=desk["queue"][0]
+if top["id"]!=q["id"] or top["kind"]!="停止案件":
+    raise AssertionError("P2 stop is not at the top of president desk")
+required={"投稿番号","停止工程","不足・不明点","現在確認できる事実","Cocoへの質問"}
+payload=top["payload"]
+if not required<=set(payload) or not all(str(payload[k]).strip() for k in required):
+    raise AssertionError("P2 manager six fields are incomplete")
+if "日付" not in payload["Cocoへの質問"]:
+    raise AssertionError("P2 Coco question does not ask for the missing date")
+
 print(json.dumps({
-    "status":provider.get("status"),
-    "reasoning_tokens":provider.get("reasoning_tokens"),
-    "output_tokens":provider.get("output_tokens"),
-    "max_output_tokens":provider.get("max_output_tokens"),
+    "P2":"stopped",
+    "question_for_coco":payload["Cocoへの質問"],
+    "six_fields_complete":True,
+    "desk_position":"top",
 },ensure_ascii=False))
 tmp.cleanup()
