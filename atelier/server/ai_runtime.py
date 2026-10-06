@@ -11,7 +11,7 @@ class AIRuntime:
         self.workspace = workspace
         self.provider = OpenAIDriver()
 
-    def _prepare_x01_request(self, key, state, person):
+    def _prepare_x01_request(self, key, state, person, db=None):
         source_row = self.workspace.source(key)
         source = source_row["source"]
         prompt_path = self.workspace.root / person["prompt_ref"]
@@ -27,7 +27,7 @@ class AIRuntime:
             raise WorkspaceError("MATERIAL_REQUIRED", "OpenAIへ送る素材フィールドが明示されていません")
         required_facts = source.get("_probe_required_facts", [])
         coco_resolution = None
-        with self.workspace.transaction() as db:
+        if db is not None:
             has_events = db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'").fetchone()
             if has_events:
                 row = db.execute(
@@ -109,7 +109,7 @@ class AIRuntime:
                     self.workspace.log(db, key, employee, "blocked", "AI_SCOPE", candidate)
                     provider_block = "初回OpenAI接続はX01のX投稿だけです"
                 else:
-                    prepared = self._prepare_x01_request(key, state, person)
+                    prepared = self._prepare_x01_request(key, state, person, db)
                     state_snapshot = {
                         "theme": state["theme"],
                         "axis": state["axis"],
