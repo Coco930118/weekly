@@ -261,7 +261,15 @@ class AIRuntime:
                 facts_used = result["facts_used"]
             if stage_quote:
                 final_quote = stage_quote
-            final_content = stage_output
+            # ⑤ is a review result. "問題ありません" must not overwrite the
+            # completed body produced by ④. Canon text remains untouched.
+            if stage_name != "⑤":
+                final_content = stage_output
+            elif stage_output.strip() != "問題ありません":
+                self._log_stage(
+                    key, employee, "最終確認指摘", stage_name,
+                    {"review_output": stage_output},
+                )
             self._log_stage(key, employee, "工程完了", stage_name, {"index": stage_index})
 
         save_payload = {
