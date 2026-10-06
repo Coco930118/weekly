@@ -107,6 +107,7 @@ class OpenAIDriver:
         system_prompt = request.get("system_prompt", "")
         material = request.get("material", "")
         required_facts = request.get("required_facts", [])
+        coco_resolution = request.get("coco_resolution")
         if not isinstance(system_prompt, str) or not system_prompt.strip():
             raise ProviderError("system_prompt is required", technical=False)
         if not isinstance(material, str) or not material.strip():
@@ -118,10 +119,11 @@ class OpenAIDriver:
             "task": "X01の1投稿を、正典と素材の範囲だけで処理する",
             "required_facts_for_this_case": required_facts,
             "material": material,
+            "coco_resolution": coco_resolution,
             "output_contract": {
-                "complete": "必要事実がすべて素材にあり、素材外の事実を足さずに書ける場合だけ",
-                "stop": "必要事実が不足・矛盾・指示外なら推測せず停止",
-                "facts_used": "完成時に使った事実を、素材中の表現から抜き出して列挙する"
+                "complete": "通常は必要事実がすべて素材にあり、素材外の事実を足さずに書ける場合だけ。coco_resolution.action が proceed_without_missing_fact の場合だけ、そこに示された不足事実は推測も補完もせず、使わない形で完成させる",
+                "stop": "必要事実が不足・矛盾・指示外なら推測せず停止。ただしCocoが明示的に使わず進めると決めた不足事実だけは再停止理由にしない",
+                "facts_used": "完成時に使った事実を、素材中の表現から抜き出して列挙する。使わず進めるとされた不足事実を創作しない"
             }
         }
         body = {
