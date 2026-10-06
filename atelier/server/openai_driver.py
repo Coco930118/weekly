@@ -61,11 +61,15 @@ class OpenAIDriver:
                 "facts_used": {
                     "type": "array",
                     "items": {"type": "string"}
+                },
+                "checklist": {
+                    "type": "array",
+                    "items": {"type": "string"}
                 }
             },
             "required": [
                 "decision", "stop_reason", "stop_stage", "missing_or_unknown",
-                "confirmed_facts", "question_for_coco", "content", "quote", "facts_used"
+                "confirmed_facts", "question_for_coco", "content", "quote", "facts_used", "checklist"
             ],
             "additionalProperties": False
         }
@@ -142,16 +146,22 @@ class OpenAIDriver:
             "material": material,
             "prior_stage_outputs": prior_outputs,
             "coco_resolution": coco_resolution,
+            "completion_feedback": request.get("completion_feedback"),
             "stage_output_contract": {
                 "content": (
                     "この工程で得た成果物を返す。次工程で使えるよう、候補・選定結果・必ず残す事実・本文等、"
-                    "この工程が生成または確認した内容を省略しない。⑤では、問題がなければ④の完成本文をそのまま返し、"
-                    "修正が必要なら正典⑤の範囲で直した完成本文全体を返す。"
+                    "この工程が生成または確認した内容を省略しない。⑤は正典どおり、問題がなければ「問題ありません」と返し、"
+                    "外れがあれば正典⑤が指定する確認結果と修正案を返す。"
                 ),
                 "quote": "ひとことが確定している工程以降は、その確定ひとことを返す。未確定なら空文字。",
                 "complete": "この工程が正典どおり完了した場合。投稿全体の完成という意味ではない。",
                 "stop": "この工程で素材不足・事実不明・指示外に到達した場合だけ。推測で補わない。",
-                "facts_used": "②以降では【必ず残す事実】を素材中の表現から列挙する。未確定なら空配列。"
+                "facts_used": "②では【必ず残す事実】3点を素材中の表現から列挙する。以降も保持する。未確定なら空配列。",
+                "checklist": (
+                    "④だけ、正典の『出力前に』で番号が付いている確認項目を番号順に1件ずつ記録する。"
+                    "各要素は『① OK』のように番号と確認済みであることが分かる短い文字列にする。"
+                    "Threadsは14件、Xは13件。④以外は空配列。条件を満たせない場合はcompleteにせず正典どおり停止する。"
+                )
             }
         }
         body = {
