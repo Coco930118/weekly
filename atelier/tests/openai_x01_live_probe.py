@@ -182,3 +182,5 @@ print(json.dumps({
 tmp.cleanup()
 
 # rerun after OPENAI_API_KEY registration
+
+# rerun after prepaid credit top-up
