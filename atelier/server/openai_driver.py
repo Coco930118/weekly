@@ -115,7 +115,18 @@ class OpenAIDriver:
         if not isinstance(required_facts, list) or not all(isinstance(x, str) for x in required_facts):
             raise ProviderError("required_facts must be a string list", technical=False)
 
-        effective_system_prompt = system_prompt
+        stage_name = request.get("stage_name", "")
+        stage_prompt = request.get("stage_prompt", "")
+        prior_outputs = request.get("prior_stage_outputs", [])
+        canon_preamble = request.get("canon_preamble", "")
+        if not isinstance(stage_prompt, str) or not stage_prompt.strip():
+            raise ProviderError("stage_prompt is required", technical=False)
+
+        effective_system_prompt = (
+            canon_preamble
+            + "\n\n【今回実行する正典工程】\n"
+            + stage_prompt
+        )
         if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "proceed_without_missing_fact":
             missing = coco_resolution.get("missing_or_unknown", "")
             effective_system_prompt += (
@@ -127,14 +138,23 @@ class OpenAIDriver:
             )
 
         user_input = {
-            "task": f"{request.get('employee')}の{request.get('platform')}投稿1件を、正典と素材の範囲だけで処理する",
+            "task": f"{request.get('employee')}の{request.get('platform')}投稿の工程「{stage_name}」だけを実行する",
+            "stage_index": request.get("stage_index"),
+            "stage_count": request.get("stage_count"),
             "required_facts_for_this_case": required_facts,
             "material": material,
+            "prior_stage_outputs": prior_outputs,
             "coco_resolution": coco_resolution,
-            "output_contract": {
-                "complete": "通常は必要事実がすべて素材にあり、素材外の事実を足さずに書ける場合だけ。coco_resolution.action が proceed_without_missing_fact の場合だけ、そこに示された不足事実は推測も補完もせず、使わない形で完成させる",
-                "stop": "必要事実が不足・矛盾・指示外なら推測せず停止。ただしCocoが明示的に使わず進めると決めた不足事実だけは再停止理由にしない",
-                "facts_used": "完成時に使った事実を、素材中の表現から抜き出して列挙する。使わず進めるとされた不足事実を創作しない"
+            "stage_output_contract": {
+                "content": (
+                    "この工程で得た成果物を返す。次工程で使えるよう、候補・選定結果・必ず残す事実・本文等、"
+                    "この工程が生成または確認した内容を省略しない。⑤では、問題がなければ④の完成本文をそのまま返し、"
+                    "修正が必要なら正典⑤の範囲で直した完成本文全体を返す。"
+                ),
+                "quote": "ひとことが確定している工程以降は、その確定ひとことを返す。未確定なら空文字。",
+                "complete": "この工程が正典どおり完了した場合。投稿全体の完成という意味ではない。",
+                "stop": "この工程で素材不足・事実不明・指示外に到達した場合だけ。推測で補わない。",
+                "facts_used": "②以降では【必ず残す事実】を素材中の表現から列挙する。未確定なら空配列。"
             }
         }
         body = {
