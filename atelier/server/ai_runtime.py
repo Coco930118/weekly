@@ -26,6 +26,21 @@ class AIRuntime:
             from .server import WorkspaceError
             raise WorkspaceError("MATERIAL_REQUIRED", "OpenAIへ送る素材フィールドが明示されていません")
         required_facts = source.get("_probe_required_facts", [])
+        coco_resolution = None
+        with self.workspace.transaction() as db:
+            has_events = db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'").fetchone()
+            if has_events:
+                row = db.execute(
+                    "SELECT detail FROM workflow_events WHERE case_id=? AND action='このまま進める' ORDER BY id DESC LIMIT 1",
+                    (key,),
+                ).fetchone()
+                if row:
+                    import json
+                    detail = json.loads(row["detail"])
+                    coco_resolution = {
+                        "action": "proceed_without_missing_fact",
+                        "missing_or_unknown": detail.get("不足・不明点", ""),
+                    }
         return {
             "mode": "x01_initial_probe",
             "employee": person["id"],
@@ -33,6 +48,7 @@ class AIRuntime:
             "system_prompt": system_prompt,
             "material": material,
             "required_facts": required_facts,
+            "coco_resolution": coco_resolution,
         }
 
     def _record_technical_error(self, key, employee, candidate, exc):
