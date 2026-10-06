@@ -1,14 +1,15 @@
-"""Live OpenAI X01 P1 completion-gate probe.
+"""Live OpenAI Threads01 P1 completion-gate probe.
 
-Revalidates only the previously invalidated "completed" portion of X01 P1:
-- same X01 runs canon stages in order
-- mechanical exit gate requires 4 lines + 3 recorded facts
-- only after the exit gate passes may routing.complete / VP gate run
+Requires:
+- six canon stages in order
+- mechanical exit gate: 6 paragraphs + 14 recorded stage-④ checks
+- VP routing only after the gate passes
 No publish/x_06/E567 code is called.
 """
 import json
 import os
 from pathlib import Path
+import re
 import sys
 import tempfile
 
@@ -34,31 +35,31 @@ for folder in ["posts","notes","atelier/config","atelier/canon"]:
 for copy_path in [
     "atelier/config/employees.json",
     "atelier/config/workflow.json",
-    "atelier/canon/x_post.md",
+    "atelier/canon/threads_post.md",
 ]:
     target=root/copy_path
     target.parent.mkdir(parents=True,exist_ok=True)
     target.write_bytes((ROOT/copy_path).read_bytes())
 
 material=(
-    "2026年10月3日、店長が「この判断は自分で決めたい」と言ったあと、"
-    "「どうしましょう」と最後の判断をこちらに戻してきた。"
-    "私は条件と予算だけ伝え、最後の判断を店長に任せた。"
-    "そのあと、店長から「この案で進めます」と返事があった。"
+    "2026年10月3日、友人が「距離を置きたい」と言った。"
+    "私は映画を観た。"
+    "次に会う予定は入れなかった。"
+    "そのあと、翌週に友人から「話せる？」と連絡が来た。"
 )
 
 fixtures=[{
-    "id":"XP1",
-    "platform":"X",
+    "id":"TP1",
+    "platform":"Threads",
     "content":"",
     "quote":"",
-    "theme":"現場の判断",
-    "axis":"仕事・現場の「ん？」",
-    "_probe_required_facts":["日付","誰が何を言い、そのとき何が起きたか","わたしがしたこと","現場で起きたこと"],
+    "theme":"距離の取り方",
+    "axis":"感情と関係の「ん？」",
+    "_probe_required_facts":["日付","誰が何を言い何をしたか","わたしがしたこと","そのあと起きたこと"],
     "material":material,
 }]
 (root/"posts/index.json").write_text(json.dumps({"weeks":["probe.json"]}))
-(root/"posts/probe.json").write_text(json.dumps({"week":"openai-x01-completion-gate","posts":fixtures},ensure_ascii=False))
+(root/"posts/probe.json").write_text(json.dumps({"week":"openai-threads01-completion-gate","posts":fixtures},ensure_ascii=False))
 (root/"notes/index.json").write_text(json.dumps({"notes":[]}))
 
 workspace=Workspace(root,root/"work.sqlite3")
@@ -66,7 +67,7 @@ routing=RoutingEngine(workspace)
 runtime=AIRuntime(workspace)
 
 key="posts/probe.json#0"
-routing.register_case(key,"X","X01","素材確認・事実固定")
+routing.register_case(key,"Threads","T01","素材確認・事実固定")
 state=workspace.get(key)
 if not state["theme"] or not state["axis"]:
     workspace.mutate(
@@ -77,13 +78,13 @@ if not state["theme"] or not state["axis"]:
 require_live_env()
 state=workspace.get(key)
 result=runtime.execute(
-    key,"A","X01",
+    key,"A","T01",
     state["revision"],state["candidates"]["A"]["revision"]
 )
 
 if result["kind"]!="complete":
     print(json.dumps({
-        "X01_P1_diagnostic":{
+        "Threads01_P1_diagnostic":{
             "kind":result.get("kind"),
             "stop_reason":result.get("stop_reason"),
             "stop_stage":result.get("stop_stage"),
@@ -93,35 +94,35 @@ if result["kind"]!="complete":
             "question_for_coco":result.get("question_for_coco"),
         }
     },ensure_ascii=False))
-    raise AssertionError(f"X01 P1 expected format-complete, got {result['kind']}")
+    raise AssertionError(f"Threads01 P1 expected format-complete, got {result['kind']}")
 
 check=result.get("completion_check") or {}
 if not check.get("ok"):
-    raise AssertionError(f"X01 completion gate did not pass: {check}")
-if check.get("facts_count")!=3:
-    raise AssertionError(f"X01 expected 3 recorded facts: {check}")
+    raise AssertionError(f"Threads01 completion gate did not pass: {check}")
+if check.get("checklist_count")!=14:
+    raise AssertionError(f"Threads01 expected 14 recorded checks: {check}")
 
 saved=result["state"]
 body=saved["candidates"]["A"]["fields"].get("content","")
-lines=[line for line in body.splitlines() if line.strip()]
-if len(lines)!=4:
-    raise AssertionError(f"X01 final body is not 4 lines: {lines}")
+paragraphs=[p.strip() for p in re.split(r"\n\s*\n",body.strip()) if p.strip()]
+if len(paragraphs)!=6:
+    raise AssertionError(f"Threads01 final body is not 6 paragraphs: {paragraphs}")
 
-stage2=next(x for x in result["stage_outputs"] if x["stage"]=="②")
-facts=stage2.get("facts_used") or []
-if len(facts)!=3:
-    raise AssertionError(f"X01 stage ② facts are not exactly 3: {facts}")
+stage4=next(x for x in reversed(result["stage_outputs"]) if x["stage"]=="④")
+checklist=stage4.get("checklist") or []
+if len(checklist)!=14:
+    raise AssertionError(f"Threads01 stage ④ checklist is not 14: {checklist}")
 
 # VP is called only after the mechanical completion gate has passed.
 routing.complete(key)
 routing.vp_gate(key,None)
 desk=workspace.desk()
-if not any(x.get("key")==key and x.get("department")=="X" for x in desk["completed"]):
-    raise AssertionError("X01 P1 did not reach completed posts after format gate")
+if not any(x.get("key")==key and x.get("department")=="Threads" for x in desk["completed"]):
+    raise AssertionError("Threads01 P1 did not reach completed posts after format gate")
 
 events=routing.events(key)
 if [e["action"] for e in events][-2:]!=["完成","3点確認OK"]:
-    raise AssertionError("X01 route did not finish completion -> VP gate")
+    raise AssertionError("Threads01 route did not finish completion -> VP gate")
 
 with workspace.transaction() as db:
     exec_codes=[row["code"] for row in db.execute("SELECT code FROM executions ORDER BY id")]
@@ -130,12 +131,12 @@ for forbidden in {"PUBLISH","X_06","E567"}:
         raise AssertionError(f"Forbidden operation was recorded: {forbidden}")
 
 print(json.dumps({
-    "X01_P1":"passed",
-    "completion_gate":"4 lines + 3 facts",
-    "facts":facts,
+    "Threads01_P1":"passed",
+    "completion_gate":"6 paragraphs + 14 checks",
+    "checklist":checklist,
     "body":body,
-    "line_count":len(lines),
-    "facts_count":len(facts),
+    "paragraph_count":len(paragraphs),
+    "checklist_count":len(checklist),
     "vp_gate":"passed",
     "president_desk":"completed",
     "publish":"not called",
