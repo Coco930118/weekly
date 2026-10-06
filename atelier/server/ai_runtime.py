@@ -35,6 +35,42 @@ class AIRuntime:
             "required_facts": required_facts,
         }
 
+    def _record_technical_error(self, key, employee, candidate, exc):
+        attempts = getattr(exc, "attempts", []) or [{}]
+        last = attempts[-1]
+        with self.workspace.transaction() as db:
+            case = db.execute(
+                "SELECT stage FROM workflow_cases WHERE case_id=?", (key,)
+            ).fetchone() if db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_cases'"
+            ).fetchone() else None
+            stage = case["stage"] if case else "素材確認・事実固定"
+            self.workspace.log(db, key, employee, "failed", "TECHNICAL_ERROR", candidate)
+            if db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'"
+            ).fetchone():
+                import json
+                detail = {
+                    "発生工程": stage,
+                    "attempt番号": last.get("attempt"),
+                    "API完了状態": last.get("status"),
+                    "incomplete理由": last.get("incomplete_reason"),
+                    "output token数": last.get("output_tokens"),
+                    "reasoning token数": last.get("reasoning_tokens"),
+                    "上限値": last.get("max_output_tokens"),
+                    "エラー種別": last.get("error_type") or type(exc).__name__,
+                    "attempts": attempts,
+                }
+                db.execute(
+                    "INSERT INTO workflow_events(case_id,actor,action,target,detail) VALUES (?,?,?,?,?)",
+                    (key, employee, "技術エラー", None, json.dumps(detail, ensure_ascii=False)),
+                )
+            if case:
+                db.execute(
+                    "UPDATE workflow_cases SET status='未着手',updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
+                    (key,),
+                )
+
     def execute(self, key, candidate, employee, expected_revision, expected_candidate_revision):
         error = None
         provider_block = None
@@ -78,9 +114,16 @@ class AIRuntime:
 
         try:
             result = self.provider.execute(prepared)
-        except (ProviderUnavailable, ProviderError):
+        except ProviderUnavailable:
             with self.workspace.transaction() as db:
-                self.workspace.log(db, key, employee, "failed", "OPENAI_ERROR", candidate)
+                self.workspace.log(db, key, employee, "failed", "OPENAI_UNAVAILABLE", candidate)
+            raise
+        except ProviderError as exc:
+            if getattr(exc, "technical", True):
+                self._record_technical_error(key, employee, candidate, exc)
+            else:
+                with self.workspace.transaction() as db:
+                    self.workspace.log(db, key, employee, "failed", "OPENAI_PROVIDER_ERROR", candidate)
             raise
 
         provider_meta = result.pop("_provider", {})
