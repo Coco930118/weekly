@@ -4,7 +4,7 @@ Default remains OFF. Live calls require both:
 - ATELIER_OPENAI_LIVE=1
 - OPENAI_API_KEY
 
-The driver only accepts employee X01 / platform X / mode x01_initial_probe.
+The driver only accepts X01/X and T01/Threads live probe pairs.
 It never publishes, sends x_06/E567, or calls any tool.
 """
 import json
@@ -98,10 +98,10 @@ class OpenAIDriver:
     def execute(self, request):
         if not self.connected:
             raise ProviderUnavailable("OpenAI未接続：ATELIER_OPENAI_LIVE=1 と OPENAI_API_KEY が必要です")
-        if request.get("employee") != "X01" or request.get("platform") != "X":
-            raise ProviderUnavailable("初回接続はX01のX投稿だけに限定されています")
-        if request.get("mode") != "x01_initial_probe":
-            raise ProviderUnavailable("初回接続で許可されていない実行モードです")
+        if (request.get("employee"), request.get("platform")) not in {("X01","X"),("T01","Threads")}:
+            raise ProviderUnavailable("現在の接続範囲外の社員・媒体です")
+        if request.get("mode") != "initial_live_probe":
+            raise ProviderUnavailable("現在の接続で許可されていない実行モードです")
 
         api_key = os.environ.get("OPENAI_API_KEY", "")
         system_prompt = request.get("system_prompt", "")
@@ -127,7 +127,7 @@ class OpenAIDriver:
             )
 
         user_input = {
-            "task": "X01の1投稿を、正典と素材の範囲だけで処理する",
+            "task": f"{request.get('employee')}の{request.get('platform')}投稿1件を、正典と素材の範囲だけで処理する",
             "required_facts_for_this_case": required_facts,
             "material": material,
             "coco_resolution": coco_resolution,
