@@ -414,6 +414,26 @@ class Workspace:
             if row['kind']=='停止案件':
                 self._workflow_event_if_available(db,row['key'],'Coco','停止案件回答','秘書',{'response':response.strip(),'queue_id':item_id})
                 self._workflow_event_if_available(db,row['key'],'秘書','回答返却','課長',{'queue_id':item_id})
+                if response.strip()=='このまま進める':
+                    case=db.execute("SELECT employee,resume_stage,resume_employee,status FROM workflow_cases WHERE case_id=?",(row['key'],)).fetchone() if db.execute(
+                        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_cases'"
+                    ).fetchone() else None
+                    if case and case['status']=='停止中':
+                        employee=case['resume_employee'] or case['employee']
+                        stage=case['resume_stage'] or row['stage'] or '素材確認・事実固定'
+                        db.execute(
+                            "UPDATE workflow_cases SET status='稼働中',stage=?,employee=?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
+                            (stage,employee,row['key'])
+                        )
+                        payload=json.loads(row['payload'])
+                        self._workflow_event_if_available(
+                            db,row['key'],'Coco','このまま進める','課長',
+                            {'queue_id':item_id,'不足・不明点':payload.get('不足・不明点',''),'停止工程':payload.get('停止工程',stage)}
+                        )
+                        self._workflow_event_if_available(
+                            db,row['key'],'課長','停止地点から再開',employee,
+                            {'stage':stage,'proceed_without_missing_fact':True}
+                        )
         return {'id':item_id,'status':'解決済み'}
 
     def route_stop_to_proposal(self,item_id):
