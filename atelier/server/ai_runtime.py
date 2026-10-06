@@ -42,7 +42,7 @@ class AIRuntime:
                         "missing_or_unknown": detail.get("不足・不明点", ""),
                     }
         return {
-            "mode": "x01_initial_probe",
+            "mode": "initial_live_probe",
             "employee": person["id"],
             "platform": state["platform"],
             "system_prompt": system_prompt,
@@ -105,9 +105,9 @@ class AIRuntime:
                 if not self.provider.connected:
                     self.workspace.log(db, key, employee, "blocked", "AI_DISABLED", candidate)
                     provider_block = "AI未接続：AI実行は有効化されていません"
-                elif str(person["id"]) != "X01" or state["platform"] != "X":
+                elif (str(person["id"]), state["platform"]) not in {("X01","X"),("T01","Threads")}:
                     self.workspace.log(db, key, employee, "blocked", "AI_SCOPE", candidate)
-                    provider_block = "初回OpenAI接続はX01のX投稿だけです"
+                    provider_block = "現在のOpenAI接続はX01/XとT01/Threadsだけです"
                 else:
                     prepared = self._prepare_x01_request(key, state, person, db)
                     state_snapshot = {
