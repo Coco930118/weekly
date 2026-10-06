@@ -84,6 +84,16 @@ require_live_env()
 # P1 only. P2/P3 must not run until P1 completes successfully.
 key,result=execute_case(0)
 if result["kind"]!="complete":
+    print(json.dumps({
+        "P1_diagnostic": {
+            "kind": result.get("kind"),
+            "stop_reason": result.get("stop_reason"),
+            "stop_stage": result.get("stop_stage"),
+            "missing_or_unknown": result.get("missing_or_unknown"),
+            "question_for_coco": result.get("question_for_coco"),
+            "provider": result.get("provider"),
+        }
+    }, ensure_ascii=False))
     raise AssertionError(f"P1 expected complete, got {result['kind']} / {result.get('stop_reason')}")
 routing.complete(key)
 routing.vp_gate(key,None)
