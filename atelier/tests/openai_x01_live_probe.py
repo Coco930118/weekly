@@ -113,6 +113,9 @@ if completed_stage_events!=["①","ひとこと選び","②","③","④","⑤"]:
 
 state=result["state"]
 content=state["candidates"]["A"]["fields"].get("content","")
+stage4=next((x.get("content","") for x in stage_outputs if x.get("stage")=="④"),"")
+if not stage4 or content!=stage4:
+    raise AssertionError("Final saved content was not preserved from stage ④ through stage ⑤ review")
 provider=result.get("provider",{})
 
 with workspace.transaction() as db:
