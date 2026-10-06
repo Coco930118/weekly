@@ -180,3 +180,5 @@ print(json.dumps({
     "x_06_E567":"not called"
 },ensure_ascii=False))
 tmp.cleanup()
+
+# rerun after OPENAI_API_KEY registration
