@@ -115,6 +115,17 @@ class OpenAIDriver:
         if not isinstance(required_facts, list) or not all(isinstance(x, str) for x in required_facts):
             raise ProviderError("required_facts must be a string list", technical=False)
 
+        effective_system_prompt = system_prompt
+        if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "proceed_without_missing_fact":
+            missing = coco_resolution.get("missing_or_unknown", "")
+            effective_system_prompt += (
+                "\n\n【この案件だけのCoco判断】\n"
+                "Cocoが「このまま進める」を選択した。これは正典やルールの変更ではない。"
+                "この案件では、停止時に不足していた事実を推測・補完・創作せず、使わない形で進める。"
+                "その不足だけを理由に再停止しない。他の不足・矛盾・指示外があれば通常どおり停止する。"
+                f"\n停止時の不足内容: {missing}"
+            )
+
         user_input = {
             "task": "X01の1投稿を、正典と素材の範囲だけで処理する",
             "required_facts_for_this_case": required_facts,
@@ -130,7 +141,7 @@ class OpenAIDriver:
             "model": self.model,
             "store": False,
             "input": [
-                {"role": "system", "content": system_prompt},
+                {"role": "system", "content": effective_system_prompt},
                 {"role": "user", "content": json.dumps(user_input, ensure_ascii=False)}
             ],
             "reasoning": {"effort": self.reasoning_effort},
