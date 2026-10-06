@@ -152,6 +152,90 @@ class AIRuntime:
                     ),
                 )
 
+    @staticmethod
+    def _nonempty_lines(text):
+        return [line for line in text.splitlines() if line.strip()]
+
+    @staticmethod
+    def _paragraphs(text):
+        return [
+            part.strip()
+            for part in re.split(r"\n\s*\n", text.strip())
+            if part.strip()
+        ]
+
+    def _completion_check(self, platform, final_content, history):
+        stage2 = next((x for x in history if x.get("stage") == "②"), {})
+        stage4 = next((x for x in reversed(history) if x.get("stage") == "④"), {})
+        facts = stage2.get("facts_used") or []
+        checklist = stage4.get("checklist") or []
+
+        if platform == "X":
+            failures = []
+            if len(self._nonempty_lines(final_content)) != 4:
+                failures.append("本文が4行ではない")
+            if len(facts) != 3:
+                failures.append("【必ず残す事実】3点が記録されていない")
+            return {
+                "ok": not failures,
+                "failures": failures,
+                "continue_stage": "④",
+                "facts_count": len(facts),
+                "checklist_count": len(checklist),
+            }
+
+        if platform == "Threads":
+            failures = []
+            if len(self._paragraphs(final_content)) != 6:
+                failures.append("本文が6段構成ではない")
+            if len(checklist) != 14:
+                failures.append("14項目チェックが記録されていない")
+            return {
+                "ok": not failures,
+                "failures": failures,
+                "continue_stage": "④",
+                "facts_count": len(facts),
+                "checklist_count": len(checklist),
+            }
+
+        # X短文 is not in current live scope, but keep the approved definition
+        # here so its gate is explicit when that employee is connected.
+        if platform == "X短文":
+            failures = []
+            sentences = [x for x in re.split(r"[。！？!?]+", final_content.strip()) if x.strip()]
+            if len(sentences) != 1:
+                failures.append("本文が1文ではない")
+            return {
+                "ok": not failures,
+                "failures": failures,
+                "continue_stage": "本文作成",
+                "facts_count": len(facts),
+                "checklist_count": len(checklist),
+            }
+
+        return {
+            "ok": False,
+            "failures": ["完成形式が未定義の部門"],
+            "continue_stage": "④",
+            "facts_count": len(facts),
+            "checklist_count": len(checklist),
+        }
+
+    def _record_process_incomplete(self, key, employee, check):
+        self._log_stage(
+            key,
+            employee,
+            "工程未完了",
+            check.get("continue_stage") or "④",
+            {
+                "形式未達": check.get("failures", []),
+                "facts_count": check.get("facts_count"),
+                "checklist_count": check.get("checklist_count"),
+                "business_stop": False,
+                "technical_error": False,
+            },
+        )
+
     def execute(self, key, candidate, employee, expected_revision, expected_candidate_revision):
         error = None
         provider_block = None
@@ -256,6 +340,7 @@ class AIRuntime:
                 "content": stage_output,
                 "quote": stage_quote,
                 "facts_used": result.get("facts_used", []),
+                "checklist": result.get("checklist", []),
             })
             if result.get("facts_used"):
                 facts_used = result["facts_used"]
@@ -271,6 +356,98 @@ class AIRuntime:
                     {"review_output": stage_output},
                 )
             self._log_stage(key, employee, "工程完了", stage_name, {"index": stage_index})
+
+        completion = self._completion_check(prepared["platform"], final_content, history)
+        if not completion["ok"]:
+            self._record_process_incomplete(key, employee, completion)
+
+            # Mechanical continuation only: do not involve manager/secretary/VP.
+            # Re-run the content-producing stage and final review with the same employee.
+            base_history = [x for x in history if x.get("stage") not in {"④", "⑤"}]
+            retry_history = list(base_history)
+            retry_content = final_content
+            retry_quote = final_quote
+            for stage_index, (stage_name, stage_prompt) in enumerate(prepared["stages"], start=1):
+                if stage_name not in {"④", "⑤"}:
+                    continue
+                stage_request = {
+                    **{k: v for k, v in prepared.items() if k != "stages"},
+                    "stage_name": stage_name,
+                    "stage_index": stage_index,
+                    "stage_count": len(prepared["stages"]),
+                    "stage_prompt": stage_prompt,
+                    "prior_stage_outputs": retry_history,
+                    "completion_feedback": completion["failures"],
+                }
+                self._log_stage(
+                    key, employee, "工程続行", stage_name,
+                    {"reason": "工程未完了", "failures": completion["failures"]},
+                )
+                try:
+                    result = self.provider.execute(stage_request)
+                except ProviderUnavailable:
+                    with self.workspace.transaction() as db:
+                        self.workspace.log(db, key, employee, "failed", "OPENAI_UNAVAILABLE", candidate)
+                    raise
+                except ProviderError as exc:
+                    if getattr(exc, "technical", True):
+                        self._record_technical_error(key, employee, candidate, exc)
+                    else:
+                        with self.workspace.transaction() as db:
+                            self.workspace.log(db, key, employee, "failed", "OPENAI_PROVIDER_ERROR", candidate)
+                    raise
+
+                provider_meta = result.pop("_provider", {})
+                provider_runs.append({"stage": stage_name, "continuation": True, **provider_meta})
+                if result.get("decision") == "stop":
+                    self._log_stage(
+                        key, employee, "工程停止", stage_name,
+                        {"reason": result.get("stop_reason"), "missing": result.get("missing_or_unknown")},
+                    )
+                    with self.workspace.transaction() as db:
+                        self.workspace.log(db, key, employee, "stopped", result.get("stop_reason", "OPENAI_STOP"), candidate)
+                    return {
+                        "kind": "stop",
+                        "stop_reason": result["stop_reason"],
+                        "stop_stage": stage_name,
+                        "missing_or_unknown": result["missing_or_unknown"],
+                        "confirmed_facts": result["confirmed_facts"],
+                        "question_for_coco": result["question_for_coco"],
+                        "provider": provider_meta,
+                        "provider_runs": provider_runs,
+                    }
+                if result.get("decision") != "complete":
+                    raise ProviderError("OpenAI decision was neither complete nor stop")
+
+                stage_output = result.get("content", "")
+                stage_quote = result.get("quote", "")
+                retry_history.append({
+                    "stage": stage_name,
+                    "content": stage_output,
+                    "quote": stage_quote,
+                    "facts_used": result.get("facts_used", []),
+                    "checklist": result.get("checklist", []),
+                })
+                if stage_quote:
+                    retry_quote = stage_quote
+                if stage_name == "④":
+                    retry_content = stage_output
+                self._log_stage(key, employee, "工程完了", stage_name, {"continuation": True})
+
+            history = retry_history
+            final_content = retry_content
+            final_quote = retry_quote
+            completion = self._completion_check(prepared["platform"], final_content, history)
+            if not completion["ok"]:
+                self._record_process_incomplete(key, employee, completion)
+                return {
+                    "kind": "incomplete",
+                    "continue_stage": completion["continue_stage"],
+                    "format_failures": completion["failures"],
+                    "stage_outputs": history,
+                    "provider": provider_runs[-1] if provider_runs else {},
+                    "provider_runs": provider_runs,
+                }
 
         save_payload = {
             "theme": state_snapshot["theme"],
@@ -294,6 +471,7 @@ class AIRuntime:
             "stage_outputs": history,
             "provider": provider_runs[-1] if provider_runs else {},
             "provider_runs": provider_runs,
+            "completion_check": completion,
         }
 
     def save_result(self, key, candidate, employee, expected_revision,
