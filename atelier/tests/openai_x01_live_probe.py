@@ -99,14 +99,16 @@ if result["kind"]!="complete":
     },ensure_ascii=False))
     raise AssertionError(f"Threads01 P1 expected complete, got {result['kind']} / {result.get('stop_reason')}")
 
-routing.complete(key)
-routing.vp_gate(key,None)
 events=routing.events(key)
-desk=workspace.desk()
-if not any(x.get("key")==key and x.get("department")=="Threads" for x in desk["completed"]):
-    raise AssertionError("Threads01 P1 did not appear in completed posts")
-if [e["action"] for e in events][-2:]!=["完成","3点確認OK"]:
-    raise AssertionError("Threads01 P1 route did not pass completion -> VP gate")
+stage_outputs=result.get("stage_outputs",[])
+stage_names=[x.get("stage") for x in stage_outputs]
+if stage_names!=["①","ひとこと選び","②","③","④","⑤"]:
+    raise AssertionError(f"Threads01 orchestration order mismatch: {stage_names}")
+completed_stage_events=[
+    e["target"] for e in events if e["action"]=="工程完了"
+]
+if completed_stage_events!=["①","ひとこと選び","②","③","④","⑤"]:
+    raise AssertionError(f"workflow_events stage order mismatch: {completed_stage_events}")
 
 state=result["state"]
 content=state["candidates"]["A"]["fields"].get("content","")
@@ -119,15 +121,16 @@ for forbidden in {"PUBLISH","X_06","E567"}:
         raise AssertionError(f"Forbidden operation was recorded: {forbidden}")
 
 print(json.dumps({
-    "Threads01_P1":"completed",
+    "Threads01_orchestration":"passed",
     "material":material,
     "employee_output":content,
     "status":provider.get("status"),
     "reasoning_tokens":provider.get("reasoning_tokens"),
     "output_tokens":provider.get("output_tokens"),
     "max_output_tokens":provider.get("max_output_tokens"),
-    "vp_gate":"passed",
-    "president_desk":"completed",
+    "stage_order":["①","ひとこと選び","②","③","④","⑤"],
+    "vp_gate":"not tested in this step",
+    "president_desk":"not tested in this step",
     "publish":"not called",
     "x_06":"not called",
     "E567":"not called",
