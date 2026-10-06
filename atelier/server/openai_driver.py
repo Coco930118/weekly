@@ -104,12 +104,9 @@ class OpenAIDriver:
             raise ProviderUnavailable("現在の接続で許可されていない実行モードです")
 
         api_key = os.environ.get("OPENAI_API_KEY", "")
-        system_prompt = request.get("system_prompt", "")
         material = request.get("material", "")
         required_facts = request.get("required_facts", [])
         coco_resolution = request.get("coco_resolution")
-        if not isinstance(system_prompt, str) or not system_prompt.strip():
-            raise ProviderError("system_prompt is required", technical=False)
         if not isinstance(material, str) or not material.strip():
             raise ProviderError("material is required", technical=False)
         if not isinstance(required_facts, list) or not all(isinstance(x, str) for x in required_facts):
