@@ -1,54 +1,103 @@
 """Provider adapter boundary.
 
-Live provider use is OFF by default. The first live scope is intentionally narrow:
-X01 / X / one candidate execution only. Other employees remain blocked.
+Live provider use is OFF by default.
+Current live scope is intentionally narrow:
+- X01 / X
+- T01 / Threads
+
+The media canon itself is never rewritten here. For live generation, the runtime
+executes the canon's own stage headings in order and passes each stage output to
+the next stage for the same employee.
 """
+import json
+import re
+
 from .openai_driver import OpenAIDriver, ProviderUnavailable, ProviderError
 
 
 class AIRuntime:
+    LIVE_SCOPE = {("X01", "X"), ("T01", "Threads")}
+    STAGES = [
+        ("①", ("## ①🧳", "## ①💗")),
+        ("ひとこと選び", ("## ひとこと選び🧳", "## ひとこと選び💗")),
+        ("②", ("## ②🧳", "## ②💗")),
+        ("③", ("## ③🧳", "## ③💗")),
+        ("④", ("## ④🧳", "## ④💗")),
+        ("⑤", ("## ⑤ 最終確認",)),
+    ]
+
     def __init__(self, workspace):
         self.workspace = workspace
         self.provider = OpenAIDriver()
 
-    def _prepare_x01_request(self, key, state, person, db=None):
+    @staticmethod
+    def _section(prompt, starts):
+        lines = prompt.splitlines()
+        start = None
+        for i, line in enumerate(lines):
+            if any(line.startswith(prefix) for prefix in starts):
+                start = i
+                break
+        if start is None:
+            raise ProviderError(f"Canon stage not found: {starts}", technical=False)
+        end = len(lines)
+        for i in range(start + 1, len(lines)):
+            if lines[i].startswith("## "):
+                end = i
+                break
+        return "\n".join(lines[start:end]).strip()
+
+    def _canon_stages(self, prompt):
+        return [(name, self._section(prompt, starts)) for name, starts in self.STAGES]
+
+    def _coco_resolution(self, key, db):
+        if db is None:
+            return None
+        has_events = db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'"
+        ).fetchone()
+        if not has_events:
+            return None
+        row = db.execute(
+            "SELECT detail FROM workflow_events WHERE case_id=? AND action='このまま進める' ORDER BY id DESC LIMIT 1",
+            (key,),
+        ).fetchone()
+        if not row:
+            return None
+        detail = json.loads(row["detail"])
+        return {
+            "action": "proceed_without_missing_fact",
+            "missing_or_unknown": detail.get("不足・不明点", ""),
+        }
+
+    def _prepare_request(self, key, state, person, db=None):
         source_row = self.workspace.source(key)
         source = source_row["source"]
         prompt_path = self.workspace.root / person["prompt_ref"]
-        system_prompt = prompt_path.read_text()
+        full_canon = prompt_path.read_text()
         material = source.get("material")
         if not isinstance(material, str) or not material.strip():
             material = source.get("source_material")
         if not isinstance(material, str) or not material.strip():
             material = source.get("raw_material")
         if not isinstance(material, str) or not material.strip():
-            # Never silently send the whole source object. Live input must be explicit.
             from .server import WorkspaceError
             raise WorkspaceError("MATERIAL_REQUIRED", "OpenAIへ送る素材フィールドが明示されていません")
         required_facts = source.get("_probe_required_facts", [])
-        coco_resolution = None
-        if db is not None:
-            has_events = db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'").fetchone()
-            if has_events:
-                row = db.execute(
-                    "SELECT detail FROM workflow_events WHERE case_id=? AND action='このまま進める' ORDER BY id DESC LIMIT 1",
-                    (key,),
-                ).fetchone()
-                if row:
-                    import json
-                    detail = json.loads(row["detail"])
-                    coco_resolution = {
-                        "action": "proceed_without_missing_fact",
-                        "missing_or_unknown": detail.get("不足・不明点", ""),
-                    }
         return {
             "mode": "initial_live_probe",
             "employee": person["id"],
             "platform": state["platform"],
-            "system_prompt": system_prompt,
             "material": material,
             "required_facts": required_facts,
-            "coco_resolution": coco_resolution,
+            "coco_resolution": self._coco_resolution(key, db),
+            "canon_preamble": (
+                "以下はCoco確定正典の工程を、原文のまま順番に実行する。"
+                "各呼び出しでは指定された1工程だけを実行し、その工程で得た成果物を返す。"
+                "『本文には進まない』等の記述は、その呼び出し内で次工程を実行しないという意味であり、"
+                "投稿全体の終了を意味しない。素材不足・事実不明・指示外は正典どおり停止する。"
+            ),
+            "stages": self._canon_stages(full_canon),
         }
 
     def _record_technical_error(self, key, employee, candidate, exc):
@@ -65,7 +114,6 @@ class AIRuntime:
             if db.execute(
                 "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'"
             ).fetchone():
-                import json
                 detail = {
                     "発生工程": stage,
                     "attempt番号": last.get("attempt"),
@@ -87,6 +135,23 @@ class AIRuntime:
                     (key,),
                 )
 
+    def _log_stage(self, key, employee, action, stage_name, detail=None):
+        with self.workspace.transaction() as db:
+            exists = db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'"
+            ).fetchone()
+            if exists:
+                db.execute(
+                    "INSERT INTO workflow_events(case_id,actor,action,target,detail) VALUES (?,?,?,?,?)",
+                    (
+                        key,
+                        employee,
+                        action,
+                        stage_name,
+                        json.dumps(detail or {}, ensure_ascii=False),
+                    ),
+                )
+
     def execute(self, key, candidate, employee, expected_revision, expected_candidate_revision):
         error = None
         provider_block = None
@@ -105,18 +170,18 @@ class AIRuntime:
                 if not self.provider.connected:
                     self.workspace.log(db, key, employee, "blocked", "AI_DISABLED", candidate)
                     provider_block = "AI未接続：AI実行は有効化されていません"
-                elif (str(person["id"]), state["platform"]) not in {("X01","X"),("T01","Threads")}:
+                elif (str(person["id"]), state["platform"]) not in self.LIVE_SCOPE:
                     self.workspace.log(db, key, employee, "blocked", "AI_SCOPE", candidate)
                     provider_block = "現在のOpenAI接続はX01/XとT01/Threadsだけです"
                 else:
-                    prepared = self._prepare_x01_request(key, state, person, db)
+                    prepared = self._prepare_request(key, state, person, db)
                     state_snapshot = {
                         "theme": state["theme"],
                         "axis": state["axis"],
                         "revision": state["revision"],
                         "candidate_revision": state["candidates"][candidate]["revision"],
                     }
-                    self.workspace.log(db, key, employee, "started", "OPENAI_X01", candidate)
+                    self.workspace.log(db, key, employee, "started", "OPENAI_ORCHESTRATED", candidate)
             except Exception as exc:
                 from .server import WorkspaceError
                 if not isinstance(exc, WorkspaceError):
@@ -128,38 +193,76 @@ class AIRuntime:
         if provider_block:
             raise ProviderUnavailable(provider_block)
 
-        try:
-            result = self.provider.execute(prepared)
-        except ProviderUnavailable:
-            with self.workspace.transaction() as db:
-                self.workspace.log(db, key, employee, "failed", "OPENAI_UNAVAILABLE", candidate)
-            raise
-        except ProviderError as exc:
-            if getattr(exc, "technical", True):
-                self._record_technical_error(key, employee, candidate, exc)
-            else:
-                with self.workspace.transaction() as db:
-                    self.workspace.log(db, key, employee, "failed", "OPENAI_PROVIDER_ERROR", candidate)
-            raise
+        history = []
+        provider_runs = []
+        facts_used = []
+        final_content = ""
+        final_quote = ""
 
-        provider_meta = result.pop("_provider", {})
-        if result.get("decision") == "stop":
-            with self.workspace.transaction() as db:
-                self.workspace.log(db, key, employee, "stopped", result.get("stop_reason", "OPENAI_STOP"), candidate)
-            return {
-                "kind": "stop",
-                "stop_reason": result["stop_reason"],
-                "stop_stage": result["stop_stage"],
-                "missing_or_unknown": result["missing_or_unknown"],
-                "confirmed_facts": result["confirmed_facts"],
-                "question_for_coco": result["question_for_coco"],
-                "provider": provider_meta,
+        for stage_index, (stage_name, stage_prompt) in enumerate(prepared["stages"], start=1):
+            stage_request = {
+                **{k: v for k, v in prepared.items() if k != "stages"},
+                "stage_name": stage_name,
+                "stage_index": stage_index,
+                "stage_count": len(prepared["stages"]),
+                "stage_prompt": stage_prompt,
+                "prior_stage_outputs": history,
             }
+            self._log_stage(key, employee, "工程開始", stage_name, {"index": stage_index})
+            try:
+                result = self.provider.execute(stage_request)
+            except ProviderUnavailable:
+                with self.workspace.transaction() as db:
+                    self.workspace.log(db, key, employee, "failed", "OPENAI_UNAVAILABLE", candidate)
+                raise
+            except ProviderError as exc:
+                if getattr(exc, "technical", True):
+                    self._record_technical_error(key, employee, candidate, exc)
+                else:
+                    with self.workspace.transaction() as db:
+                        self.workspace.log(db, key, employee, "failed", "OPENAI_PROVIDER_ERROR", candidate)
+                raise
 
-        if result.get("decision") != "complete":
-            with self.workspace.transaction() as db:
-                self.workspace.log(db, key, employee, "failed", "OPENAI_DECISION", candidate)
-            raise ProviderError("OpenAI decision was neither complete nor stop")
+            provider_meta = result.pop("_provider", {})
+            provider_runs.append({"stage": stage_name, **provider_meta})
+
+            if result.get("decision") == "stop":
+                self._log_stage(
+                    key, employee, "工程停止", stage_name,
+                    {"reason": result.get("stop_reason"), "missing": result.get("missing_or_unknown")},
+                )
+                with self.workspace.transaction() as db:
+                    self.workspace.log(db, key, employee, "stopped", result.get("stop_reason", "OPENAI_STOP"), candidate)
+                return {
+                    "kind": "stop",
+                    "stop_reason": result["stop_reason"],
+                    "stop_stage": stage_name,
+                    "missing_or_unknown": result["missing_or_unknown"],
+                    "confirmed_facts": result["confirmed_facts"],
+                    "question_for_coco": result["question_for_coco"],
+                    "provider": provider_meta,
+                    "provider_runs": provider_runs,
+                }
+
+            if result.get("decision") != "complete":
+                with self.workspace.transaction() as db:
+                    self.workspace.log(db, key, employee, "failed", "OPENAI_DECISION", candidate)
+                raise ProviderError("OpenAI decision was neither complete nor stop")
+
+            stage_output = result.get("content", "")
+            stage_quote = result.get("quote", "")
+            history.append({
+                "stage": stage_name,
+                "content": stage_output,
+                "quote": stage_quote,
+                "facts_used": result.get("facts_used", []),
+            })
+            if result.get("facts_used"):
+                facts_used = result["facts_used"]
+            if stage_quote:
+                final_quote = stage_quote
+            final_content = stage_output
+            self._log_stage(key, employee, "工程完了", stage_name, {"index": stage_index})
 
         save_payload = {
             "theme": state_snapshot["theme"],
@@ -167,8 +270,8 @@ class AIRuntime:
             "status": "OK",
             "findings": [],
             "fields": {
-                "content": result["content"],
-                "quote": result["quote"],
+                "content": final_content,
+                "quote": final_quote,
             },
         }
         saved = self.save_result(
@@ -179,8 +282,10 @@ class AIRuntime:
         return {
             "kind": "complete",
             "state": saved,
-            "facts_used": result.get("facts_used", []),
-            "provider": provider_meta,
+            "facts_used": facts_used,
+            "stage_outputs": history,
+            "provider": provider_runs[-1] if provider_runs else {},
+            "provider_runs": provider_runs,
         }
 
     def save_result(self, key, candidate, employee, expected_revision,
