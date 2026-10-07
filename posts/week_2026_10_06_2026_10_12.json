@@ -73,14 +73,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E681",
-      "content": "曖昧な返事が来たときは、「①②」と番号を振って返す。\n\n先日、業者から「①納品は月曜か火曜か ②どちらの形か」と確認が来た。\n店長から来た返事は、②にだけ答えて、①は理由だけで結論がなかった。\n\n指摘はせずに、「①火曜日納品 ②（形）、こちらで回答します」と番号で整理し直して、返した。\n\n原因は、電話注文のときに「いつ・何を・いくつ」が揃っていなかったこと。\n読み手が推測する返事は、責める前に、並べ直せる。",
-      "quote": "①と②のどちらに答えている？",
+      "content": "二つ確認されたのに、返ってきたのは片方の答えと、もう片方の理由だけだったの。\nそこで、「①はこちら ②はこちら」と二つに分けて整理し直して返した。\nそのあと、追加の確認は来なかった。\n\n①②が埋まっていればそのまま返し、空いている番号があればそこだけ確認する。",
+      "quote": "二つ聞いて、答えは一つ。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜責める前に、番号で並べ直せるの。\n「いつ・何を・いくつ」、電話のとき揃っていなかったのはどれ？"
+        "🕊ひより｜二つ聞いたのに、返ってきた答えは一つだけだったの。\n返す前に、①②のどちらが空いているかだけ見る。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with autumn chrysanthemum pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her fingertip pointing at two numbered lines on a small delivery slip; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "返事を待つより、\nこちらから形を整えて返すほうが早いこともある。"
+      "x_short": "返事を待つより、\nこちらから形を整えて返すほうが早いこともある。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_05",
