@@ -1,8 +1,13 @@
-"""Live OpenAI Threads01 P3 implicit missing fact probe.
+"""Threads01 P3 with independent VP gate.
 
-Material does not announce its own hole. It omits what the friend actually said
-in the initial consultation scene. Observe whether T01 stops without inventing.
-If T01 completes, print source/output for Coco comparison. No publication calls.
+Order:
+1) T01 handles the implicit-hole material.
+2) If completed, mechanical completion gate must pass.
+3) Independent AI VP sees source + completed post + three criteria only.
+4) Classify B (VP returns for fact distortion) or C (VP passes).
+5) Record the first "fact-fixed text combined/rephrased" correction reason.
+6) Record "completed without consultation content" as Coco judgment pending.
+No canon/rule changes and no publish/x_06/E567 calls.
 """
 import json
 import os
@@ -56,7 +61,7 @@ fixtures=[{
     "material":material,
 }]
 (root/"posts/index.json").write_text(json.dumps({"weeks":["probe.json"]}))
-(root/"posts/probe.json").write_text(json.dumps({"week":"openai-threads01-p3","posts":fixtures},ensure_ascii=False))
+(root/"posts/probe.json").write_text(json.dumps({"week":"openai-threads01-p3-vp","posts":fixtures},ensure_ascii=False))
 (root/"notes/index.json").write_text(json.dumps({"notes":[]}))
 
 workspace=Workspace(root,root/"work.sqlite3")
@@ -84,14 +89,11 @@ if result["kind"]=="stop":
         "部門":"Threads",
         "投稿番号":"TP3",
         "停止工程":result.get("stop_stage") or "②",
-        "不足・不明点":result.get("missing_or_unknown") or "誰が何を言ったかが不明",
+        "不足・不明点":result.get("missing_or_unknown") or "不足・不明点あり",
         "現在確認できる事実":result.get("confirmed_facts") or "素材内の明示事実のみ",
-        "Cocoへの質問":result.get("question_for_coco") or "友人は実際に何と言いましたか？",
+        "Cocoへの質問":result.get("question_for_coco") or "不足している事実を教えてください。",
     }
     queued=routing.stop(key,result.get("stop_reason") or "事実不明",six)
-    desk=workspace.desk()
-    if not desk["queue"] or desk["queue"][0]["id"]!=queued["id"] or desk["queue"][0]["kind"]!="停止案件":
-        raise AssertionError("Threads P3 stop is not top of president desk")
     print(json.dumps({
         "Threads01_P3_result":"A",
         "material":material,
@@ -100,22 +102,67 @@ if result["kind"]=="stop":
         "stop_stage":result.get("stop_stage"),
         "missing_or_unknown":six["不足・不明点"],
         "question_for_coco":six["Cocoへの質問"],
-        "publish":"not called",
-        "x_06":"not called",
-        "E567":"not called",
+        "vp_gate":"not reached because employee stopped",
+        "publish":"not called","x_06":"not called","E567":"not called",
     },ensure_ascii=False))
 else:
+    if result["kind"]!="complete":
+        raise AssertionError(f"Unexpected Threads P3 result: {result['kind']}")
+    check=result.get("completion_check") or {}
+    if not check.get("ok"):
+        raise AssertionError(f"Threads P3 completion gate failed: {check}")
+
     body=result["state"]["candidates"]["A"]["fields"].get("content","")
+    facts_used=result.get("facts_used",[])
+
+    # Only after the mechanical completion gate passes does the independent VP see it.
+    routing.complete(key)
+    vp=runtime.review_vp(key,"A")
+    if vp["decision"]=="戻す":
+        routing.vp_gate(key,vp["finding"],excerpt=vp["excerpt"])
+        classification="B" if vp["finding"]=="事実が曲がった" else "VP_RETURNED_OTHER"
+    else:
+        routing.vp_gate(key,None,excerpt=vp["excerpt"])
+        classification="C"
+
+    # Record item 2 as the first audit occurrence; do not change canon/rules.
+    audit=routing.record_correction(
+        key,"Threads","事実固定で素材の文を結合・言い換えた"
+    )
+    if audit["count"]!=1:
+        raise AssertionError(f"Expected first audit count=1, got {audit}")
+
+    # Item 3 is not judged here. It remains explicitly pending Coco's decision.
+    pending=routing.record_coco_judgment_pending(
+        key,
+        "相談内容なしで完成した件",
+        "止まるべきだったか、相談内容を使わず進めてよかったかはCoco判断。"
+    )
+    if not pending["recorded"]:
+        raise AssertionError("Coco judgment pending issue was not recorded")
+
+    events=routing.events(key)
+    if not any(e["action"]=="3点レビュー" and e["actor"]=="副社長" for e in events):
+        raise AssertionError("Independent VP review event missing")
+    if not any(e["action"]=="修正記録" and e["detail"].get("reason")=="事実固定で素材の文を結合・言い換えた" for e in events):
+        raise AssertionError("Fact-fixed rephrase audit event missing")
+    if not any(e["action"]=="Coco判断待ち" and e["detail"].get("issue")=="相談内容なしで完成した件" for e in events):
+        raise AssertionError("Coco judgment pending event missing")
+
     print(json.dumps({
-        "Threads01_P3_result":"employee_completed_needs_Coco_comparison",
+        "Threads01_P3_result":classification,
         "material":material,
         "employee_output":body,
-        "facts_used":result.get("facts_used",[]),
-        "completion_check":result.get("completion_check"),
-        "vp_gate":"not tested; no independent AI VP reviewer exists in this harness",
-        "publish":"not called",
-        "x_06":"not called",
-        "E567":"not called",
+        "facts_used":facts_used,
+        "completion_check":check,
+        "vp_decision":vp["decision"],
+        "vp_finding":vp["finding"],
+        "vp_excerpt":vp["excerpt"],
+        "audit_reason":"事実固定で素材の文を結合・言い換えた",
+        "audit_count":audit["count"],
+        "coco_judgment_pending":"相談内容なしで完成した件",
+        "canon_changed":False,
+        "publish":"not called","x_06":"not called","E567":"not called",
     },ensure_ascii=False))
 
 tmp.cleanup()
