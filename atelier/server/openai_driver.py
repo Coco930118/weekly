@@ -65,11 +65,32 @@ class OpenAIDriver:
                 "checklist": {
                     "type": "array",
                     "items": {"type": "string"}
-                }
+                },
+                "public_material": {"type": "string"},
+                "source_map": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "candidates": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "selection": {"type": "string"},
+                "audit_tags": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "material_suggestions": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "final_check_round": {"type": "integer", "minimum": 0, "maximum": 2}
             },
             "required": [
                 "decision", "stop_reason", "stop_stage", "missing_or_unknown",
-                "confirmed_facts", "question_for_coco", "content", "quote", "facts_used", "checklist"
+                "confirmed_facts", "question_for_coco", "content", "quote", "facts_used", "checklist",
+                "public_material", "source_map", "candidates", "selection", "audit_tags",
+                "material_suggestions", "final_check_round"
             ],
             "additionalProperties": False
         }
@@ -201,6 +222,32 @@ class OpenAIDriver:
                     "④だけ、正典の『出力前に』で番号が付いている確認項目を番号順に1件ずつ記録する。"
                     "各要素は『① OK』のように番号と確認済みであることが分かる短い文字列にする。"
                     "Threadsは14件、Xは13件。④以外は空配列。条件を満たせない場合はcompleteにせず正典どおり停止する。"
+                ),
+                "public_material": (
+                    "v2の一般化工程だけ、原素材から核の事実3点を保持した公開用素材を返す。"
+                    "それ以外の工程では空文字。"
+                ),
+                "source_map": (
+                    "v2の一般化工程だけ、原素材↔公開用素材の対応を『原文 => 公開用』の文字列配列で返す。"
+                    "それ以外の工程では空配列。"
+                ),
+                "candidates": (
+                    "v2の④'以降で候補がある場合だけ、本文候補を順番どおり返す。候補が1つなら1件。"
+                    "v1または候補を扱わない工程では空配列。"
+                ),
+                "selection": (
+                    "v2で案A/B/Cや三者会議の選択が確定した工程だけ選択名を返す。"
+                    "同一なら『同一』。未選択は空文字。"
+                ),
+                "audit_tags": (
+                    "v2で『型外し（媒体・型名）』等の監査タグが発生した場合だけ記録する。なければ空配列。"
+                ),
+                "material_suggestions": (
+                    "素材不足・事実不明で停止するときだけ、素材に矛盾しない候補を3つ前後、"
+                    "各案の繋がり方を含めて返す。停止しない場合は空配列。"
+                ),
+                "final_check_round": (
+                    "v2で最終確認不備の修正ループに入った回数。通常は0、1回目なら1、2回目なら2。v1は0。"
                 )
             }
         }
