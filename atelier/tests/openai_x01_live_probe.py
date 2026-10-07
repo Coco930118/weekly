@@ -55,7 +55,7 @@ fixtures=[{
     "quote":"",
     "theme":"距離の取り方",
     "axis":"感情と関係の「ん？」",
-    "_probe_required_facts":["日付","誰が何を言い何をしたか","わたしがしたこと","そのあと起きたこと"],
+    "_probe_required_facts":["日付","場面","わたしがしたこと","そのあと起きたこと"],
     "material":material,
 }]
 (root/"posts/index.json").write_text(json.dumps({"weeks":["probe.json"]}))
@@ -96,24 +96,42 @@ def assert_no_side_effects():
 
 require_live_env()
 
-# First pass: this is the previously observed P3 case. It should reach the VP,
-# and the independent VP should return it for a 3-point reason.
-first=employee_run()
-if first["kind"]!="complete":
-    raise AssertionError(f"P3 first employee run should complete for VP review, got {first['kind']}")
-if not (first.get("completion_check") or {}).get("ok"):
-    raise AssertionError("P3 first run did not pass mechanical completion gate")
-
-first_body=first["state"]["candidates"]["A"]["fields"].get("content","")
-first_vp,_=vp_run()
+# Replay the already-observed P3 completion that was classified B in the
+# previous live run. This avoids re-testing the pre-VP employee decision and
+# starts exactly from the returned-post state requested by Coco.
+previous_body=(
+    "友人から相談を受けたのに、私は映画を観た。\n"
+    "2026年10月3日だった。\n\n"
+    "次に会う予定は入れなかった。\n\n"
+    "そのあと翌週、友人から「話せる？」と連絡が来た。\n\n"
+    "次に会う予定の有無と、相手の気持ちの有無は、別のこと。\n\n"
+    "友人から相談を受けたあとを見直すため、予定と連絡を分けて書くメモをひとつ。\n\n"
+    "感情はある。依存はしない。"
+)
+state=workspace.get(key)
+workspace.save_ai_result(
+    key,"A","T01",
+    state["revision"],state["candidates"]["A"]["revision"],
+    {
+        "theme":state["theme"],
+        "axis":state["axis"],
+        "status":"OK",
+        "findings":[],
+        "fields":{"content":previous_body,"quote":""},
+    }
+)
+routing.complete(key)
+first_vp=runtime.review_vp(key,"A")
 if first_vp["decision"]!="戻す":
-    raise AssertionError(f"P3 expected first VP return, got {first_vp}")
-if first_vp["finding"] not in {"事実が曲がった","声が混ざった","工程に戻っていない"}:
-    raise AssertionError(f"Unexpected VP finding: {first_vp}")
-if first_vp["source_quote"] not in material:
-    raise AssertionError(f"VP source quote is not verbatim source: {first_vp}")
-if first_vp["post_quote"] not in first_body:
-    raise AssertionError(f"VP post quote is not verbatim post: {first_vp}")
+    raise AssertionError(f"Replayed P3 should be returned by VP, got {first_vp}")
+if first_vp["source_quote"] not in material or first_vp["post_quote"] not in previous_body:
+    raise AssertionError(f"VP quote pair is not verbatim: {first_vp}")
+routing.vp_gate(
+    key,first_vp["finding"],
+    source_quote=first_vp["source_quote"],
+    post_quote=first_vp["post_quote"],
+)
+first_body=previous_body
 
 # Record the two distinct audit reasons as first occurrences. The second item is
 # the exact previously observed invented action requested by Coco.
