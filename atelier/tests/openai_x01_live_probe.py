@@ -170,17 +170,45 @@ for rerun_no in (1,2):
 
     run=employee_run()
     if run["kind"]!="complete":
+        if run["kind"]!="stop":
+            raise AssertionError(f"T01 rerun {rerun_no} unexpected result: {run.get('kind')}")
+        six={
+            "部門":"Threads",
+            "投稿番号":"TP3",
+            "停止工程":run.get("stop_stage") or routing.case(key)["stage"],
+            "不足・不明点":run.get("missing_or_unknown") or "正典条件を満たす素材が不足",
+            "現在確認できる事実":"素材原文の明示事実のみ",
+            "Cocoへの質問":run.get("question_for_coco") or "不足事実を教えてください。",
+        }
+        queued=routing.stop(key,run.get("stop_reason") or "素材不足",six)
+        desk=workspace.desk()
+        if not desk["queue"] or desk["queue"][0]["id"]!=queued["id"]:
+            raise AssertionError("T01 rerun business stop did not reach president desk")
+        assert_no_side_effects()
         print(json.dumps({
-            "T01_rerun_stop":{
-                "rerun":rerun_no,
-                "kind":run.get("kind"),
-                "stop_reason":run.get("stop_reason"),
-                "stop_stage":run.get("stop_stage"),
-                "missing_or_unknown":run.get("missing_or_unknown"),
-                "question_for_coco":run.get("question_for_coco"),
-            }
+            "Threads01_P3_rerun":"business_stop_before_second_VP",
+            "rerun":rerun_no,
+            "stop_reason":run.get("stop_reason"),
+            "stop_stage":run.get("stop_stage"),
+            "missing_or_unknown":run.get("missing_or_unknown"),
+            "question_for_coco":run.get("question_for_coco"),
+            "first_vp":{
+                "decision":first_vp["decision"],
+                "finding":first_vp["finding"],
+                "source_quote":first_vp["source_quote"],
+                "post_quote":first_vp["post_quote"],
+            },
+            "audit_counts":{
+                "事実固定で素材の文を結合・言い換えた":a1["count"],
+                "素材にない事実を足した":a2["count"],
+            },
+            "coco_judgment_pending":"相談内容なしで完成した件",
+            "second_vp":"not reached because T01 stopped under canon",
+            "canon_changed":False,
+            "publish":"not called","x_06":"not called","E567":"not called",
         },ensure_ascii=False))
-        raise AssertionError(f"T01 rerun {rerun_no} did not complete: {run.get('kind')}")
+        tmp.cleanup()
+        raise SystemExit(0)
     body=run["state"]["candidates"]["A"]["fields"].get("content","")
     vp,routed=vp_run()
     attempts.append({
