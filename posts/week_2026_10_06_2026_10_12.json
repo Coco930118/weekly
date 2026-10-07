@@ -80,7 +80,7 @@
         "🕊ひより｜二つ聞いたのに、返ってきた答えは一つだけだったの。\n返す前に、①②のどちらが空いているかだけ見る。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with autumn chrysanthemum pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her fingertip pointing at two numbered lines on a small delivery slip; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "①②が埋まっていればそのまま返す。",
+      "x_short": "空いている番号があればそこだけ確認する。",
       "final_editor_status": "pending_check"
     },
     {
