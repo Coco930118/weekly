@@ -44,6 +44,7 @@ material=(
     "そのあと、翌週に友人から「話せる？」と連絡が来た。"
 )
 coco_answer="この案件は「〜のに」を使わず、素材原文どおり二文に分けてよい。逆向きの事実は足さない。"
+coco_answer_fifth="5段目は読んだ人への一手として提案形で書く。Cocoがした行動のように読める形（「〜をひとつ。」で言い切る等）は使わない。"
 
 fixtures=[{
     "id":"TP3",
@@ -237,21 +238,56 @@ if vp["decision"]=="戻す":
             raise AssertionError(f"Third VP return should become manager stop: {case2}")
         desk=workspace.desk()
         stop_item=next((x for x in desk["queue"] if x["kind"]=="停止案件" and x.get("key")==key),None)
-        assert_no_side_effects()
-        print(json.dumps({
-            "Threads01_P3_v1":"third_VP_return_manager_stop",
-            "vp_history":vp_history,
-            "manager_stop":stop_item,
-            "canon_version":"v1",
-            "canon_changed":False,
-            "publish":"not called","x_06":"not called","E567":"not called",
-        },ensure_ascii=False))
-        tmp.cleanup()
-        raise SystemExit(0)
+        if not stop_item:
+            raise AssertionError("Third VP return did not create manager stop")
 
-    vp=vp2
-    routed=routed2
-    body=body2
+        # The P1 memo plus these two VP returns are the same fifth-paragraph
+        # phenomenon. Record the latter two as occurrences 2 and 3.
+        a2b=routing.record_correction(
+            key,"Threads","素材にない事実を足した",
+            diff={
+                "source":vp.get("source_quote",""),
+                "observed":vp.get("post_quote",""),
+                "location":"5段目",
+            }
+        )
+        a2c=routing.record_correction(
+            key,"Threads","素材にない事実を足した",
+            diff={
+                "source":vp2.get("source_quote",""),
+                "observed":vp2.get("post_quote",""),
+                "location":"5段目",
+            }
+        )
+        if a2b["count"]!=2 or a2c["count"]!=3:
+            raise AssertionError(f"Expected fifth-paragraph audit count to reach 3: {a2b}, {a2c}")
+
+        # Coco answers the manager stop to close v1 without changing canon.
+        resumed2=routing.resume(key,stop_item["id"],coco_answer_fifth)
+        if resumed2["employee"]!="T01" or resumed2["status"]!="稼働中":
+            raise AssertionError(f"Manager-stop answer did not resume same T01: {resumed2}")
+
+        completed3=employee_run()
+        if completed3["kind"]!="complete":
+            raise AssertionError(f"T01 did not complete after fifth-paragraph Coco answer: {completed3}")
+        body3=completed3["state"]["candidates"]["A"]["fields"].get("content","")
+        vp3,routed3=vp_run()
+        vp_history.append({
+            "decision":vp3["decision"],
+            "finding":vp3["finding"],
+            "source_quote":vp3.get("source_quote",""),
+            "post_quote":vp3.get("post_quote",""),
+            "body":body3,
+        })
+        if vp3["decision"]!="通す":
+            raise AssertionError(f"T01 v1 still did not pass VP after Coco fifth-paragraph answer: {vp3}")
+        vp=vp3
+        routed=routed3
+        body=body3
+    else:
+        vp=vp2
+        routed=routed2
+        body=body2
 
 if routed["status"]!="Coco確認待ち":
     raise AssertionError(f"VP pass did not reach president desk: {routed}")
@@ -267,6 +303,7 @@ assert_no_side_effects()
 print(json.dumps({
     "Threads01_P3_v1":"completed_after_Coco_answer",
     "coco_answer":coco_answer,
+    "coco_answer_fifth":coco_answer_fifth,
     "exception":{
         "direction":"型外し（Threads・1段目「〜のに」）",
         "count":exception["count"],
@@ -286,7 +323,7 @@ print(json.dumps({
     "final_route_status":routed["status"],
     "audit_counts":{
         "事実固定で素材の文を結合・言い換えた":1,
-        "素材にない事実を足した":1,
+        "素材にない事実を足した":3,
     },
     "canon_version":"v1",
     "canon_changed":False,
