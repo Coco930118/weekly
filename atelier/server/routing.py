@@ -207,7 +207,7 @@ class RoutingEngine:
             self._event(db, case_id, current["employee"], "完成", "副社長")
         return self.case(case_id)
 
-    def vp_gate(self, case_id, finding=None, return_stage=None):
+    def vp_gate(self, case_id, finding=None, return_stage=None, excerpt=""):
         current = self.case(case_id)
         if finding not in self.VP_FINDINGS and finding is not None:
             with self.workspace.transaction() as db:
@@ -223,7 +223,7 @@ class RoutingEngine:
                     "UPDATE workflow_cases SET status='Coco確認待ち',updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
                     (case_id,),
                 )
-                self._event(db, case_id, "副社長", "3点確認OK", "Coco")
+                self._event(db, case_id, "副社長", "3点確認OK", "Coco", excerpt=excerpt)
             return self.case(case_id)
 
         stage = self.VP_FINDINGS[finding] or return_stage or current["stage"]
@@ -236,8 +236,17 @@ class RoutingEngine:
                 (stage, case_id),
             )
             self._event(db, case_id, "副社長", "工程へ戻す", current["employee"],
-                        finding=finding, stage=stage)
+                        finding=finding, stage=stage, excerpt=excerpt)
         return self.case(case_id)
+
+    def record_coco_judgment_pending(self, case_id, issue, detail=""):
+        current = self.case(case_id)
+        with self.workspace.transaction() as db:
+            self._event(
+                db, case_id, "監査委員会", "Coco判断待ち", "Coco",
+                department=current["department"], issue=issue, detail=detail
+            )
+        return {"recorded": True, "issue": issue}
 
     def unauthorized_change(self, case_id, actor, change_kind, department, suggestion=""):
         if actor == "Coco":
