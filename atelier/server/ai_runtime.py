@@ -474,6 +474,74 @@ class AIRuntime:
             "completion_check": completion,
         }
 
+    def review_vp(self, key, candidate):
+        """Run the independent VP gate from source + completed post only."""
+        source_row = self.workspace.source(key)
+        source = source_row["source"]
+        material = source.get("material")
+        if not isinstance(material, str) or not material.strip():
+            material = source.get("source_material")
+        if not isinstance(material, str) or not material.strip():
+            material = source.get("raw_material")
+        if not isinstance(material, str) or not material.strip():
+            raise ProviderError("VP material is required", technical=False)
+
+        state = self.workspace.get(key)
+        completed_post = state["candidates"][candidate]["fields"].get("content", "")
+        if not isinstance(completed_post, str) or not completed_post.strip():
+            raise ProviderError("VP completed post is required", technical=False)
+
+        try:
+            result = self.provider.review_vp(material, completed_post)
+        except ProviderError as exc:
+            if getattr(exc, "technical", True):
+                attempts = getattr(exc, "attempts", []) or [{}]
+                last = attempts[-1]
+                self._log_stage(
+                    key,
+                    "副社長",
+                    "技術エラー",
+                    "副社長確認",
+                    {
+                        "発生工程": "副社長確認",
+                        "attempt番号": last.get("attempt"),
+                        "API完了状態": last.get("status"),
+                        "incomplete理由": last.get("incomplete_reason"),
+                        "output token数": last.get("output_tokens"),
+                        "reasoning token数": last.get("reasoning_tokens"),
+                        "上限値": last.get("max_output_tokens"),
+                        "エラー種別": last.get("error_type") or type(exc).__name__,
+                        "attempts": attempts,
+                    },
+                )
+            raise
+
+        provider_meta = result.pop("_provider", {})
+        decision = result.get("decision")
+        finding = result.get("finding")
+        excerpt = result.get("excerpt", "")
+        valid_findings = {"none", "事実が曲がった", "声が混ざった", "工程に戻っていない"}
+        if decision not in {"通す", "戻す"} or finding not in valid_findings:
+            raise ProviderError("VP decision schema was invalid", technical=False)
+        if decision == "通す" and finding != "none":
+            raise ProviderError("VP pass must use finding=none", technical=False)
+        if decision == "戻す" and finding == "none":
+            raise ProviderError("VP return requires one of the three findings", technical=False)
+
+        self._log_stage(
+            key,
+            "副社長",
+            "3点レビュー",
+            "副社長確認",
+            {"decision": decision, "finding": finding, "excerpt": excerpt},
+        )
+        return {
+            "decision": decision,
+            "finding": None if finding == "none" else finding,
+            "excerpt": excerpt,
+            "provider": provider_meta,
+        }
+
     def save_result(self, key, candidate, employee, expected_revision,
                     expected_candidate_revision, result):
         return self.workspace.save_ai_result(
