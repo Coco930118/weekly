@@ -152,6 +152,16 @@ for rerun_no in (1,2):
 
     run=employee_run()
     if run["kind"]!="complete":
+        print(json.dumps({
+            "T01_rerun_stop":{
+                "rerun":rerun_no,
+                "kind":run.get("kind"),
+                "stop_reason":run.get("stop_reason"),
+                "stop_stage":run.get("stop_stage"),
+                "missing_or_unknown":run.get("missing_or_unknown"),
+                "question_for_coco":run.get("question_for_coco"),
+            }
+        },ensure_ascii=False))
         raise AssertionError(f"T01 rerun {rerun_no} did not complete: {run.get('kind')}")
     body=run["state"]["candidates"]["A"]["fields"].get("content","")
     vp,routed=vp_run()
