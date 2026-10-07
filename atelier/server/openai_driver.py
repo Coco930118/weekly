@@ -75,6 +75,22 @@ class OpenAIDriver:
         }
 
     @staticmethod
+    def _vp_schema():
+        return {
+            "type": "object",
+            "properties": {
+                "decision": {"type": "string", "enum": ["通す", "戻す"]},
+                "finding": {
+                    "type": "string",
+                    "enum": ["none", "事実が曲がった", "声が混ざった", "工程に戻っていない"]
+                },
+                "excerpt": {"type": "string"}
+            },
+            "required": ["decision", "finding", "excerpt"],
+            "additionalProperties": False
+        }
+
+    @staticmethod
     def _extract_output_text(payload):
         for item in payload.get("output", []):
             if item.get("type") != "message":
@@ -270,3 +286,137 @@ class OpenAIDriver:
                     raise ProviderError(str(exc), attempts=attempts) from exc
 
         raise ProviderError("OpenAI technical error", attempts=attempts)
+
+
+    def review_vp(self, material, completed_post):
+        """Independent VP gate. Input is intentionally limited to source + final post."""
+        if not self.connected:
+            raise ProviderUnavailable("OpenAI未接続：副社長レビューを実行できません")
+        if not isinstance(material, str) or not material.strip():
+            raise ProviderError("VP material is required", technical=False)
+        if not isinstance(completed_post, str) or not completed_post.strip():
+            raise ProviderError("VP completed_post is required", technical=False)
+
+        api_key = os.environ.get("OPENAI_API_KEY", "")
+        criteria = {
+            "事実が曲がった": (
+                "素材原文にない事実の追加、素材の意味を変える言い換え、主語・時系列・発言内容の変形が"
+                "完成投稿にある場合。単なる語調の好みでは戻さない。"
+            ),
+            "声が混ざった": (
+                "完成投稿の声が、媒体の役割として明らかに混線している場合。"
+                "Xは凛とした軍師、Threadsは慈愛に満ちた哲学者という役割差を見る。"
+            ),
+            "工程に戻っていない": (
+                "完成投稿そのものに、直すべき不整合が残ったまま完成扱いになった痕跡が明確にある場合。"
+                "途中工程や社員の推論は見えないため、完成投稿から確認できる範囲だけで判定する。"
+            ),
+        }
+        system_prompt = (
+            "あなたはCoco Atelierの副社長。完成投稿をCoco確認前に3点だけで検査する。"
+            "本文を書き直してはいけない。好みや完成度では止めない。"
+            "入力は素材原文・完成投稿・3点基準だけであり、見えていない途中工程を推測しない。"
+            "問題がなければdecision=通す,finding=none,excerpt=空文字。"
+            "問題があればdecision=戻すとし、findingは3分類のどれか1つ、excerptには該当箇所を短くそのまま抜き出す。"
+        )
+        body = {
+            "model": self.model,
+            "store": False,
+            "input": [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": json.dumps({
+                    "素材原文": material,
+                    "完成投稿": completed_post,
+                    "3点基準": criteria,
+                }, ensure_ascii=False)}
+            ],
+            "reasoning": {"effort": self.reasoning_effort},
+            "text": {
+                "format": {
+                    "type": "json_schema",
+                    "name": "coco_atelier_vp_gate",
+                    "strict": True,
+                    "schema": self._vp_schema()
+                }
+            },
+            "max_output_tokens": self.max_output_tokens
+        }
+
+        attempts = []
+        total_attempts = 1 + self.max_retries
+        for attempt in range(1, total_attempts + 1):
+            req = urlrequest.Request(
+                self.endpoint,
+                data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
+                headers={
+                    "Authorization": f"Bearer {api_key}",
+                    "Content-Type": "application/json",
+                    "User-Agent": "coco-atelier-vp-gate/1.0"
+                },
+                method="POST"
+            )
+            payload = None
+            try:
+                with urlrequest.urlopen(req, timeout=90) as response:
+                    raw = response.read().decode("utf-8")
+                payload = json.loads(raw)
+                meta = self._response_meta(payload, attempt)
+                if payload.get("status") == "incomplete":
+                    attempts.append({**meta, "error_type": "incomplete"})
+                    if attempt < total_attempts:
+                        continue
+                    raise ProviderError(
+                        "VP response remained incomplete after retries",
+                        attempts=attempts,
+                    )
+                output_text = self._extract_output_text(payload)
+                result = json.loads(output_text)
+                result["_provider"] = {
+                    "response_id": payload.get("id"),
+                    "model": payload.get("model", self.model),
+                    **meta,
+                    "attempts": attempts + [{**meta, "error_type": None}],
+                }
+                return result
+            except HTTPError as exc:
+                detail = exc.read().decode("utf-8", errors="replace")
+                attempts.append({
+                    "attempt": attempt, "status": "http_error",
+                    "incomplete_reason": None, "output_tokens": None,
+                    "reasoning_tokens": None, "max_output_tokens": self.max_output_tokens,
+                    "error_type": f"HTTP_{exc.code}",
+                })
+                if attempt >= total_attempts:
+                    raise ProviderError(
+                        f"OpenAI HTTP {exc.code}: {detail[:500]}",
+                        attempts=attempts,
+                    ) from exc
+            except URLError as exc:
+                attempts.append({
+                    "attempt": attempt, "status": "connection_error",
+                    "incomplete_reason": None, "output_tokens": None,
+                    "reasoning_tokens": None, "max_output_tokens": self.max_output_tokens,
+                    "error_type": "connection_error",
+                })
+                if attempt >= total_attempts:
+                    raise ProviderError(
+                        f"OpenAI connection error: {exc}",
+                        attempts=attempts,
+                    ) from exc
+            except json.JSONDecodeError as exc:
+                meta = self._response_meta(payload or {}, attempt)
+                attempts.append({**meta, "error_type": "parse_error"})
+                if attempt >= total_attempts:
+                    raise ProviderError(
+                        "VP structured output could not be parsed after retries",
+                        attempts=attempts,
+                    ) from exc
+            except ProviderError as exc:
+                if not exc.technical:
+                    raise
+                meta = self._response_meta(payload or {}, attempt)
+                attempts.append({**meta, "error_type": "provider_error"})
+                if attempt >= total_attempts:
+                    raise ProviderError(str(exc), attempts=attempts) from exc
+
+        raise ProviderError("VP technical error", attempts=attempts)
