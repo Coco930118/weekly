@@ -1,0 +1,21 @@
+{
+  "approved_on": "2026-10-08",
+  "effective_from": "次の新規投稿",
+  "approved_by": "Coco",
+  "versions": {
+    "Threads": {
+      "rule_key": "canon_v2",
+      "old_rule": "Threads正典 v1",
+      "new_rule": "Threads正典 v2",
+      "reason": "一般化・④'・提案形の事実判定・⑤・⑦・停止時素材案・監査記録を統合",
+      "canon_ref": "atelier/canon/threads_post_v2.md"
+    },
+    "X": {
+      "rule_key": "canon_v2",
+      "old_rule": "X正典 v1",
+      "new_rule": "X正典 v2",
+      "reason": "一般化・④'・提案形の事実判定・⑤・⑦・停止時素材案・監査記録を統合",
+      "canon_ref": "atelier/canon/x_post_v2.md"
+    }
+  }
+}
