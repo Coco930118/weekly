@@ -67,6 +67,29 @@ class RoutingEngine:
             );
             """)
 
+            config_path = self.workspace.root / "atelier/config/canon_versions.json"
+            if config_path.exists():
+                config = json.loads(config_path.read_text())
+                for department, item in (config.get("versions") or {}).items():
+                    exists = db.execute(
+                        "SELECT id FROM rule_versions WHERE department=? AND rule_key=? AND decision='承認'",
+                        (department, item.get("rule_key", "canon_v2")),
+                    ).fetchone()
+                    if not exists:
+                        db.execute(
+                            """INSERT INTO rule_versions
+                               (department,rule_key,old_rule,new_rule,reason,decision,effective_from)
+                               VALUES (?,?,?,?,?,'承認',?)""",
+                            (
+                                department,
+                                item.get("rule_key", "canon_v2"),
+                                item.get("old_rule", ""),
+                                item.get("new_rule", ""),
+                                item.get("reason", ""),
+                                config.get("effective_from", "次の新規投稿"),
+                            ),
+                        )
+
     def _event(self, db, case_id, actor, action, target=None, **detail):
         db.execute(
             "INSERT INTO workflow_events(case_id,actor,action,target,detail) VALUES (?,?,?,?,?)",
