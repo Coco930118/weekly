@@ -91,14 +91,15 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E702",
-      "content": "指摘したあとは、帰り際に一言、できている部分を、名指しする。\n\nスタッフに元気がないこと・所作・お客様への話し方を指摘した。\n店長に伝えたのは、指摘のあとの動き。\n\n「さりげなく肯定してあげてください。そこを伸ばして欲しいので。」\n「これはわたしのやり方なので、店長カラーで構いません。」\n\n指摘のあとにフォローがあると、スタッフは指摘をプラスに変えてくれると思う。\n帰り際の一言は、「ありがとう、いいね〜！」でいい。",
-      "quote": "指摘した日の、帰り際の一言。",
+      "content": "「次から直します」と言ったあと、その場ではいつも通りだった。\n帰り際に、できていたところを一つだけ伝えた。\nその後、指摘したことを自分で直している人がいた。\n\n次の行動が変わっていればそのまま任せ、変わっていなければもう一度伝える。",
+      "quote": "直す話のあと、帰り際は別の話。",
       "note_funnel": false,
       "self_replies": [
-        "🐢しずく｜指摘で終わらせないのは、伸ばしたいところがあるから。\n帰り際の一言で、相手の顔が変わった場面はある？"
+        "🐢しずく｜その場で変わらなくても、返事だけで決めなくていいの。\n次の行動まで見てから、任せるか、もう一度伝えるかを決める。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with autumn chrysanthemum pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her hand holding a small wrapped sweet out toward the viewer near a doorway; a calm kitchen corner with a ceramic bowl of autumn persimmons; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "指摘する側の話し方は、\n指摘したあとの一言にいちばん出る。"
+      "x_short": "指摘する側の話し方は、\n指摘したあとの一言にいちばん出る。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_06",
