@@ -58,17 +58,40 @@ class AIRuntime:
         ).fetchone()
         if not has_events:
             return None
-        row = db.execute(
+
+        proceed = db.execute(
             "SELECT detail FROM workflow_events WHERE case_id=? AND action='このまま進める' ORDER BY id DESC LIMIT 1",
             (key,),
         ).fetchone()
-        if not row:
+        answer = db.execute(
+            "SELECT detail FROM workflow_events WHERE case_id=? AND actor='Coco' AND action='停止案件回答' ORDER BY id DESC LIMIT 1",
+            (key,),
+        ).fetchone()
+
+        candidates = []
+        if proceed:
+            detail = json.loads(proceed["detail"])
+            candidates.append({
+                "action": "proceed_without_missing_fact",
+                "missing_or_unknown": detail.get("不足・不明点", ""),
+                "_kind": "proceed",
+            })
+        if answer:
+            detail = json.loads(answer["detail"])
+            response = str(detail.get("response", "")).strip()
+            if response and response != "このまま進める":
+                candidates.append({
+                    "action": "case_instruction",
+                    "instruction": response,
+                    "_kind": "answer",
+                })
+        if not candidates:
             return None
-        detail = json.loads(row["detail"])
-        return {
-            "action": "proceed_without_missing_fact",
-            "missing_or_unknown": detail.get("不足・不明点", ""),
-        }
+        # Query order above is already latest-per-action. A concrete answer takes
+        # precedence over the generic proceed directive when both exist.
+        chosen = next((x for x in reversed(candidates) if x["_kind"] == "answer"), candidates[-1])
+        chosen.pop("_kind", None)
+        return chosen
 
     def _vp_return_feedback(self, key, db=None):
         owns_db = db is None
