@@ -25,6 +25,18 @@ class AIRuntime:
         ("④", ("## ④🧳", "## ④💗")),
         ("⑤", ("## ⑤ 最終確認",)),
     ]
+    STAGES_V2 = [
+        ("一般化", ("## 一般化工程",)),
+        ("①", ("## ①🧳", "## ①💗")),
+        ("ひとこと選び", ("## ひとこと選び🧳", "## ひとこと選び💗")),
+        ("②", ("## ②🧳", "## ②💗")),
+        ("③", ("## ③🧳", "## ③💗")),
+        ("④", ("## ④🧳", "## ④💗")),
+        ("④'", ("## ④'🧳", "## ④'💗")),
+        ("⑤", ("## ⑤🧳", "## ⑤💗")),
+        ("最終確認", ("## 最終確認🧳", "## 最終確認💗")),
+        ("⑦", ("## ⑦🧳", "## ⑦💗")),
+    ]
 
     def __init__(self, workspace):
         self.workspace = workspace
@@ -47,8 +59,9 @@ class AIRuntime:
                 break
         return "\n".join(lines[start:end]).strip()
 
-    def _canon_stages(self, prompt):
-        return [(name, self._section(prompt, starts)) for name, starts in self.STAGES]
+    def _canon_stages(self, prompt, canon_version="v1"):
+        stages = self.STAGES_V2 if canon_version == "v2" else self.STAGES
+        return [(name, self._section(prompt, starts)) for name, starts in stages]
 
     def _coco_resolution(self, key, db):
         if db is None:
@@ -125,7 +138,26 @@ class AIRuntime:
     def _prepare_request(self, key, state, person, db=None):
         source_row = self.workspace.source(key)
         source = source_row["source"]
-        prompt_path = self.workspace.root / person["prompt_ref"]
+
+        canon_version = "v1"
+        prompt_ref = person["prompt_ref"]
+        if db is not None:
+            case = db.execute(
+                "SELECT rule_version FROM workflow_cases WHERE case_id=?", (key,)
+            ).fetchone()
+            if case and int(case["rule_version"] or 0) > 0:
+                rule = db.execute(
+                    "SELECT rule_key FROM rule_versions WHERE id=?",
+                    (int(case["rule_version"]),),
+                ).fetchone()
+                if rule and rule["rule_key"] == "canon_v2":
+                    canon_version = "v2"
+                    if state["platform"] == "Threads":
+                        prompt_ref = "atelier/canon/threads_post_v2.md"
+                    elif state["platform"] == "X":
+                        prompt_ref = "atelier/canon/x_post_v2.md"
+
+        prompt_path = self.workspace.root / prompt_ref
         full_canon = prompt_path.read_text()
         material = source.get("material")
         if not isinstance(material, str) or not material.strip():
@@ -138,6 +170,8 @@ class AIRuntime:
         required_facts = source.get("_probe_required_facts", [])
         return {
             "mode": "initial_live_probe",
+            "canon_version": canon_version,
+            "canon_ref": prompt_ref,
             "employee": person["id"],
             "platform": state["platform"],
             "material": material,
@@ -150,7 +184,7 @@ class AIRuntime:
                 "『本文には進まない』等の記述は、その呼び出し内で次工程を実行しないという意味であり、"
                 "投稿全体の終了を意味しない。素材不足・事実不明・指示外は正典どおり停止する。"
             ),
-            "stages": self._canon_stages(full_canon),
+            "stages": self._canon_stages(full_canon, canon_version),
         }
 
     def _record_technical_error(self, key, employee, candidate, exc):
