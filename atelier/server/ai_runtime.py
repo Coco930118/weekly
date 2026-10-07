@@ -491,8 +491,25 @@ class AIRuntime:
         if not isinstance(completed_post, str) or not completed_post.strip():
             raise ProviderError("VP completed post is required", technical=False)
 
+        voice_rule = (
+            "完成投稿が凛とした軍師Cocoの声として明らかに混線している場合。"
+            if state["platform"] == "X"
+            else "完成投稿が慈愛に満ちた哲学者Cocoの声として明らかに混線している場合。"
+        )
+        criteria = {
+            "事実が曲がった": (
+                "素材原文にない事実の追加、素材の意味を変える言い換え、主語・時系列・発言内容の変形が"
+                "完成投稿にある場合。単なる語調の好みでは戻さない。"
+            ),
+            "声が混ざった": voice_rule,
+            "工程に戻っていない": (
+                "完成投稿そのものに、直すべき不整合が残ったまま完成扱いになった痕跡が明確にある場合。"
+                "途中工程や社員の推論は見えないため、完成投稿から確認できる範囲だけで判定する。"
+            ),
+        }
+
         try:
-            result = self.provider.review_vp(material, completed_post)
+            result = self.provider.review_vp(material, completed_post, criteria)
         except ProviderError as exc:
             if getattr(exc, "technical", True):
                 attempts = getattr(exc, "attempts", []) or [{}]
