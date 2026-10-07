@@ -1,11 +1,7 @@
-"""Threads01 P3: VP return -> same T01 rerun -> VP pass.
+"""Threads01 P3 v1: VP return -> business stop -> Coco answer -> same T01 -> VP pass.
 
-Also verifies:
-- VP evidence is source/post quote pairs.
-- "事実固定で素材の文を結合・言い換えた" is count 1.
-- "素材にない事実を足した" is a separate count 1 for the memo sentence.
-- If the VP returns twice and a third review also returns, routing escalates to manager stop.
-No canon changes and no publish/x_06/E567 calls.
+This probe intentionally remains on current Threads canon v1.
+No canon/rule mutation is performed here.
 """
 import json
 import os
@@ -47,6 +43,7 @@ material=(
     "次に会う予定は入れなかった。"
     "そのあと、翌週に友人から「話せる？」と連絡が来た。"
 )
+coco_answer="この案件は「〜のに」を使わず、素材原文どおり二文に分けてよい。逆向きの事実は足さない。"
 
 fixtures=[{
     "id":"TP3",
@@ -59,7 +56,7 @@ fixtures=[{
     "material":material,
 }]
 (root/"posts/index.json").write_text(json.dumps({"weeks":["probe.json"]}))
-(root/"posts/probe.json").write_text(json.dumps({"week":"openai-threads01-p3-vp-rerun","posts":fixtures},ensure_ascii=False))
+(root/"posts/probe.json").write_text(json.dumps({"week":"threads-p3-v1-resume","posts":fixtures},ensure_ascii=False))
 (root/"notes/index.json").write_text(json.dumps({"notes":[]}))
 
 workspace=Workspace(root,root/"work.sqlite3")
@@ -72,9 +69,11 @@ state=workspace.get(key)
 if not state["theme"] or not state["axis"]:
     workspace.mutate(key,state["revision"],"basis",{"theme":fixtures[0]["theme"],"axis":fixtures[0]["axis"]})
 
+
 def employee_run():
     state=workspace.get(key)
     return runtime.execute(key,"A","T01",state["revision"],state["candidates"]["A"]["revision"])
+
 
 def vp_run():
     routing.complete(key)
@@ -87,6 +86,7 @@ def vp_run():
     )
     return vp,routed
 
+
 def assert_no_side_effects():
     with workspace.transaction() as db:
         codes=[row["code"] for row in db.execute("SELECT code FROM executions ORDER BY id")]
@@ -94,11 +94,10 @@ def assert_no_side_effects():
         if forbidden in codes:
             raise AssertionError(f"Forbidden operation recorded: {forbidden}")
 
+
 require_live_env()
 
-# Replay the already-observed P3 completion that was classified B in the
-# previous live run. This avoids re-testing the pre-VP employee decision and
-# starts exactly from the returned-post state requested by Coco.
+# Reproduce the already-confirmed P3 B state under v1.
 previous_body=(
     "友人から相談を受けたのに、私は映画を観た。\n"
     "2026年10月3日だった。\n\n"
@@ -110,31 +109,23 @@ previous_body=(
 )
 state=workspace.get(key)
 workspace.save_ai_result(
-    key,"A","T01",
-    state["revision"],state["candidates"]["A"]["revision"],
+    key,"A","T01",state["revision"],state["candidates"]["A"]["revision"],
     {
-        "theme":state["theme"],
-        "axis":state["axis"],
-        "status":"OK",
-        "findings":[],
+        "theme":state["theme"],"axis":state["axis"],"status":"OK","findings":[],
         "fields":{"content":previous_body,"quote":""},
     }
 )
 routing.complete(key)
 first_vp=runtime.review_vp(key,"A")
 if first_vp["decision"]!="戻す":
-    raise AssertionError(f"Replayed P3 should be returned by VP, got {first_vp}")
-if first_vp["source_quote"] not in material or first_vp["post_quote"] not in previous_body:
-    raise AssertionError(f"VP quote pair is not verbatim: {first_vp}")
+    raise AssertionError(f"Expected first VP return, got {first_vp}")
 routing.vp_gate(
     key,first_vp["finding"],
     source_quote=first_vp["source_quote"],
     post_quote=first_vp["post_quote"],
 )
-first_body=previous_body
 
-# Record the two distinct audit reasons as first occurrences. The second item is
-# the exact previously observed invented action requested by Coco.
+# Preserve the two already-approved first audit counts.
 a1=routing.record_correction(
     key,"Threads","事実固定で素材の文を結合・言い換えた",
     diff={
@@ -150,135 +141,82 @@ a2=routing.record_correction(
     }
 )
 if a1["count"]!=1 or a2["count"]!=1:
-    raise AssertionError(f"Audit counts must be separate first occurrences: {a1}, {a2}")
+    raise AssertionError(f"Expected separate first audit counts: {a1}, {a2}")
 
-# "相談内容なしで完成した件" remains Coco judgment pending, not a correction count.
-routing.record_coco_judgment_pending(
-    key,
-    "相談内容なしで完成した件",
-    "止まるべきだったか、相談内容を使わず進めてよかったかはCoco判断。"
+# Same T01 rerun after VP return must discover the v1 shape/source conflict and stop.
+stopped=employee_run()
+if stopped["kind"]!="stop" or stopped.get("stop_stage")!="④":
+    raise AssertionError(f"Expected v1 T01 stop at ④, got {stopped}")
+six={
+    "部門":"Threads",
+    "投稿番号":"TP3",
+    "停止工程":stopped["stop_stage"],
+    "不足・不明点":stopped["missing_or_unknown"],
+    "現在確認できる事実":stopped.get("confirmed_facts") or "素材原文の明示事実のみ",
+    "Cocoへの質問":stopped["question_for_coco"],
+}
+queued=routing.stop(key,stopped["stop_reason"],six)
+
+# Coco answers the actual stop. Same employee/stage resumes.
+resumed=routing.resume(key,queued["id"],coco_answer)
+if resumed["employee"]!="T01" or resumed["stage"]!="素材確認・事実固定" or resumed["status"]!="稼働中":
+    raise AssertionError(f"Same T01 did not resume correctly: {resumed}")
+
+exception=routing.record_exception(
+    key,"Threads","型外し（Threads・1段目「〜のに」）"
 )
+if exception["count"]!=1:
+    raise AssertionError(f"Expected first type-off exception: {exception}")
 
-# Rerun the same T01 after the VP return. The runtime reads the latest VP return
-# pair from workflow_events and uses it only as per-case correction feedback.
-attempts=[]
-passed=None
-for rerun_no in (1,2):
-    case=routing.case(key)
-    if case["employee"]!="T01" or case["status"]!="稼働中":
-        raise AssertionError(f"Returned case is not assigned back to same T01: {case}")
+# Current v1 canon + Coco case instruction. No v2 files exist yet.
+completed=employee_run()
+if completed["kind"]!="complete":
+    raise AssertionError(f"T01 did not complete after Coco answer: {completed}")
+if not (completed.get("completion_check") or {}).get("ok"):
+    raise AssertionError(f"v1 completion gate failed: {completed.get('completion_check')}")
 
-    run=employee_run()
-    if run["kind"]!="complete":
-        if run["kind"]!="stop":
-            raise AssertionError(f"T01 rerun {rerun_no} unexpected result: {run.get('kind')}")
-        six={
-            "部門":"Threads",
-            "投稿番号":"TP3",
-            "停止工程":run.get("stop_stage") or routing.case(key)["stage"],
-            "不足・不明点":run.get("missing_or_unknown") or "正典条件を満たす素材が不足",
-            "現在確認できる事実":"素材原文の明示事実のみ",
-            "Cocoへの質問":run.get("question_for_coco") or "不足事実を教えてください。",
-        }
-        queued=routing.stop(key,run.get("stop_reason") or "素材不足",six)
-        desk=workspace.desk()
-        if not desk["queue"] or desk["queue"][0]["id"]!=queued["id"]:
-            raise AssertionError("T01 rerun business stop did not reach president desk")
-        assert_no_side_effects()
-        print(json.dumps({
-            "Threads01_P3_rerun":"business_stop_before_second_VP",
-            "rerun":rerun_no,
-            "stop_reason":run.get("stop_reason"),
-            "stop_stage":run.get("stop_stage"),
-            "missing_or_unknown":run.get("missing_or_unknown"),
-            "question_for_coco":run.get("question_for_coco"),
-            "first_vp":{
-                "decision":first_vp["decision"],
-                "finding":first_vp["finding"],
-                "source_quote":first_vp["source_quote"],
-                "post_quote":first_vp["post_quote"],
-            },
-            "audit_counts":{
-                "事実固定で素材の文を結合・言い換えた":a1["count"],
-                "素材にない事実を足した":a2["count"],
-            },
-            "coco_judgment_pending":"相談内容なしで完成した件",
-            "second_vp":"not reached because T01 stopped under canon",
-            "canon_changed":False,
-            "publish":"not called","x_06":"not called","E567":"not called",
-        },ensure_ascii=False))
-        tmp.cleanup()
-        raise SystemExit(0)
-    body=run["state"]["candidates"]["A"]["fields"].get("content","")
-    vp,routed=vp_run()
-    attempts.append({
-        "rerun":rerun_no,
-        "body":body,
-        "vp_decision":vp["decision"],
-        "vp_finding":vp["finding"],
-        "source_quote":vp.get("source_quote",""),
-        "post_quote":vp.get("post_quote",""),
-        "route_status":routed["status"],
-    })
-    if vp["decision"]=="通す":
-        passed=(run,vp)
-        break
+body=completed["state"]["candidates"]["A"]["fields"].get("content","")
+if "相談を受けたのに" in body:
+    raise AssertionError("Coco answer was ignored; forbidden v1 case-specific のに remains")
 
-    # On a return, the pair must again be real quotations.
-    if vp["source_quote"] not in material or vp["post_quote"] not in body:
-        raise AssertionError(f"VP rerun quote pair invalid: {vp}")
+vp,routed=vp_run()
+if vp["decision"]!="通す":
+    raise AssertionError(f"T01 completed but VP did not pass it: {vp}")
+if routed["status"]!="Coco確認待ち":
+    raise AssertionError(f"VP pass did not reach president desk: {routed}")
 
-    # If this was the second return, the next review is the allowed third check.
-    # A third return would be routed to manager stop by vp_gate; do not bypass it.
-
-if passed is None:
-    case=routing.case(key)
-    if case["status"]=="停止中":
-        desk=workspace.desk()
-        stop=next((x for x in desk["queue"] if x["kind"]=="停止案件" and x.get("key")==key),None)
-        raise AssertionError(
-            "T01 was not cleared by VP; third return correctly escalated to manager stop: "
-            + json.dumps(stop,ensure_ascii=False)
-        )
-    raise AssertionError(f"T01 was not cleared by VP after reruns: {attempts}")
-
-final_run,final_vp=passed
-final_body=final_run["state"]["candidates"]["A"]["fields"].get("content","")
-case=routing.case(key)
-if case["status"]!="Coco確認待ち":
-    raise AssertionError(f"VP pass did not route to Coco: {case}")
-
-# Confirm audit categories remain separate and both are count 1.
-summary=workspace.audit_summary()["rankings"]
-counts={(x["department"],x["reason"]):x["count"] for x in summary}
-if counts.get(("Threads","事実固定で素材の文を結合・言い換えた"))!=1:
-    raise AssertionError(f"Fact-rephrase count mismatch: {counts}")
-if counts.get(("Threads","素材にない事実を足した"))!=1:
-    raise AssertionError(f"Invented-fact count mismatch: {counts}")
-
+# This resolves the previously pending judgment for this test case as an allowed
+# per-case exception, not a canon mutation.
 events=routing.events(key)
-if not any(e["action"]=="Coco判断待ち" and e["detail"].get("issue")=="相談内容なしで完成した件" for e in events):
-    raise AssertionError("Coco judgment pending record missing")
+assert any(e["action"]=="例外通過記録" for e in events)
+assert any(e["actor"]=="Coco" and e["action"]=="回答" for e in events)
 
 assert_no_side_effects()
 
 print(json.dumps({
-    "Threads01_P3":"passed_after_VP_return",
+    "Threads01_P3_v1":"completed_after_Coco_answer",
+    "coco_answer":coco_answer,
+    "exception":{
+        "direction":"型外し（Threads・1段目「〜のに」）",
+        "count":exception["count"],
+    },
     "first_vp":{
         "decision":first_vp["decision"],
         "finding":first_vp["finding"],
         "source_quote":first_vp["source_quote"],
         "post_quote":first_vp["post_quote"],
     },
-    "reruns":attempts,
-    "final_body":final_body,
-    "final_vp":"通す",
-    "final_route_status":case["status"],
+    "final_body":body,
+    "final_vp":{
+        "decision":vp["decision"],
+        "finding":vp["finding"],
+    },
+    "final_route_status":routed["status"],
     "audit_counts":{
         "事実固定で素材の文を結合・言い換えた":1,
         "素材にない事実を足した":1,
     },
-    "coco_judgment_pending":"相談内容なしで完成した件",
+    "canon_version":"v1",
     "canon_changed":False,
     "publish":"not called","x_06":"not called","E567":"not called",
 },ensure_ascii=False))
