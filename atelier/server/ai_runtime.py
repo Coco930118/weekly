@@ -206,6 +206,15 @@ class AIRuntime:
                 )
 
     @staticmethod
+    def _body_only(text):
+        """Strip orchestration labels when a stage returns a wrapped body."""
+        if not isinstance(text, str):
+            return ""
+        if "【本文】" in text:
+            text = text.split("【本文】", 1)[1]
+        return text.strip()
+
+    @staticmethod
     def _nonempty_lines(text):
         return [line for line in text.splitlines() if line.strip()]
 
@@ -402,13 +411,106 @@ class AIRuntime:
             # ⑤ is a review result. "問題ありません" must not overwrite the
             # completed body produced by ④. Canon text remains untouched.
             if stage_name != "⑤":
-                final_content = stage_output
+                final_content = self._body_only(stage_output) if stage_name == "④" else stage_output
             elif stage_output.strip() != "問題ありません":
                 self._log_stage(
                     key, employee, "最終確認指摘", stage_name,
                     {"review_output": stage_output},
                 )
             self._log_stage(key, employee, "工程完了", stage_name, {"index": stage_index})
+
+        # If ⑤ found a substantive issue, feed that exact review back to ④ once,
+        # then run ⑤ again. This applies the existing canon review instead of
+        # saving the pre-review body.
+        last_review = next(
+            (x for x in reversed(history) if x.get("stage") == "⑤"),
+            None,
+        )
+        if last_review and last_review.get("content", "").strip() != "問題ありません":
+            review_feedback = last_review.get("content", "").strip()
+            base_history = [x for x in history if x.get("stage") not in {"④", "⑤"}]
+            revised_history = list(base_history)
+            revised_content = final_content
+            revised_quote = final_quote
+            for stage_index, (stage_name, stage_prompt) in enumerate(prepared["stages"], start=1):
+                if stage_name not in {"④", "⑤"}:
+                    continue
+                stage_request = {
+                    **{k: v for k, v in prepared.items() if k != "stages"},
+                    "stage_name": stage_name,
+                    "stage_index": stage_index,
+                    "stage_count": len(prepared["stages"]),
+                    "stage_prompt": stage_prompt,
+                    "prior_stage_outputs": revised_history,
+                    "completion_feedback": ["⑤指摘: " + review_feedback],
+                }
+                self._log_stage(
+                    key, employee, "最終確認修正", stage_name,
+                    {"review_output": review_feedback},
+                )
+                result = self.provider.execute(stage_request)
+                provider_meta = result.pop("_provider", {})
+                provider_runs.append({"stage": stage_name, "review_correction": True, **provider_meta})
+                if result.get("decision") == "stop":
+                    self._log_stage(
+                        key, employee, "工程停止", stage_name,
+                        {"reason": result.get("stop_reason"), "missing": result.get("missing_or_unknown")},
+                    )
+                    return {
+                        "kind": "stop",
+                        "stop_reason": result["stop_reason"],
+                        "stop_stage": stage_name,
+                        "missing_or_unknown": result["missing_or_unknown"],
+                        "confirmed_facts": result["confirmed_facts"],
+                        "question_for_coco": result["question_for_coco"],
+                        "provider": provider_meta,
+                        "provider_runs": provider_runs,
+                    }
+                if result.get("decision") != "complete":
+                    raise ProviderError("OpenAI decision was neither complete nor stop")
+                stage_output = result.get("content", "")
+                stage_quote = result.get("quote", "")
+                revised_history.append({
+                    "stage": stage_name,
+                    "content": stage_output,
+                    "quote": stage_quote,
+                    "facts_used": result.get("facts_used", []),
+                    "checklist": result.get("checklist", []),
+                })
+                if stage_quote:
+                    revised_quote = stage_quote
+                if stage_name == "④":
+                    revised_content = self._body_only(stage_output)
+
+            history = revised_history
+            final_content = revised_content
+            final_quote = revised_quote
+            last_review = next(
+                (x for x in reversed(history) if x.get("stage") == "⑤"),
+                None,
+            )
+            if last_review and last_review.get("content", "").strip() != "問題ありません":
+                self._record_process_incomplete(
+                    key, employee,
+                    {
+                        "ok": False,
+                        "failures": ["最終確認指摘が未解消"],
+                        "continue_stage": "④",
+                        "facts_count": len(facts_used),
+                        "checklist_count": len(next(
+                            (x.get("checklist") or [] for x in reversed(history) if x.get("stage") == "④"),
+                            [],
+                        )),
+                    },
+                )
+                return {
+                    "kind": "incomplete",
+                    "continue_stage": "④",
+                    "format_failures": ["最終確認指摘が未解消"],
+                    "stage_outputs": history,
+                    "provider": provider_runs[-1] if provider_runs else {},
+                    "provider_runs": provider_runs,
+                }
 
         completion = self._completion_check(prepared["platform"], final_content, history)
         if not completion["ok"]:
@@ -484,7 +586,7 @@ class AIRuntime:
                 if stage_quote:
                     retry_quote = stage_quote
                 if stage_name == "④":
-                    retry_content = stage_output
+                    retry_content = self._body_only(stage_output)
                 self._log_stage(key, employee, "工程完了", stage_name, {"continuation": True})
 
             history = retry_history
