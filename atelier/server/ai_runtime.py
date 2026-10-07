@@ -550,11 +550,24 @@ class AIRuntime:
             if state["platform"] == "X"
             else "完成投稿が慈愛に満ちた哲学者Cocoの声として明らかに混線している場合。"
         )
+        with self.workspace.transaction() as db:
+            coco_resolution = self._coco_resolution(key, db)
+        case_instruction = ""
+        if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "case_instruction":
+            case_instruction = str(coco_resolution.get("instruction", "")).strip()
+
+        fact_rule = (
+            "素材原文にない事実の追加、素材の意味を変える言い換え、主語・時系列・発言内容の変形が"
+            "完成投稿にある場合。単なる語調の好みでは戻さない。"
+        )
+        if case_instruction:
+            fact_rule += (
+                " ただし、この案件についてCocoが明示した案件単位の回答は正典変更ではなく、"
+                "その案件の判定条件として優先する。Coco回答: " + case_instruction
+            )
+
         criteria = {
-            "事実が曲がった": (
-                "素材原文にない事実の追加、素材の意味を変える言い換え、主語・時系列・発言内容の変形が"
-                "完成投稿にある場合。単なる語調の好みでは戻さない。"
-            ),
+            "事実が曲がった": fact_rule,
             "声が混ざった": voice_rule,
             "工程に戻っていない": (
                 "完成投稿そのものに、直すべき不整合が残ったまま完成扱いになった痕跡が明確にある場合。"
