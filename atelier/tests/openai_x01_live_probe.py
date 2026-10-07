@@ -180,8 +180,79 @@ if "相談を受けたのに" in body:
     raise AssertionError("Coco answer was ignored; forbidden v1 case-specific のに remains")
 
 vp,routed=vp_run()
-if vp["decision"]!="通す":
-    raise AssertionError(f"T01 completed but VP did not pass it: {vp}")
+vp_history=[{
+    "decision":vp["decision"],
+    "finding":vp["finding"],
+    "source_quote":vp.get("source_quote",""),
+    "post_quote":vp.get("post_quote",""),
+    "body":body,
+}]
+
+if vp["decision"]=="戻す":
+    # This is the second VP return for this same post. Route it back to the same
+    # T01 once more. A further return is the third check and must be escalated by
+    # routing.vp_gate instead of looping again.
+    if routed["status"]!="稼働中":
+        raise AssertionError(f"Second VP return did not go back to T01: {routed}")
+
+    completed2=employee_run()
+    if completed2["kind"]!="complete":
+        if completed2["kind"]=="stop":
+            six2={
+                "部門":"Threads",
+                "投稿番号":"TP3",
+                "停止工程":completed2.get("stop_stage") or routing.case(key)["stage"],
+                "不足・不明点":completed2.get("missing_or_unknown") or "副社長戻し後の再作成で停止",
+                "現在確認できる事実":completed2.get("confirmed_facts") or "素材原文の明示事実のみ",
+                "Cocoへの質問":completed2.get("question_for_coco") or "再作成に必要な判断をお願いします。",
+            }
+            q2=routing.stop(key,completed2.get("stop_reason") or "事実不明",six2)
+            assert_no_side_effects()
+            print(json.dumps({
+                "Threads01_P3_v1":"stopped_after_second_VP_return",
+                "vp_history":vp_history,
+                "stop":six2,
+                "queue_id":q2["id"],
+                "canon_version":"v1",
+                "canon_changed":False,
+                "publish":"not called","x_06":"not called","E567":"not called",
+            },ensure_ascii=False))
+            tmp.cleanup()
+            raise SystemExit(0)
+        raise AssertionError(f"T01 after second VP return did not complete: {completed2}")
+
+    body2=completed2["state"]["candidates"]["A"]["fields"].get("content","")
+    vp2,routed2=vp_run()
+    vp_history.append({
+        "decision":vp2["decision"],
+        "finding":vp2["finding"],
+        "source_quote":vp2.get("source_quote",""),
+        "post_quote":vp2.get("post_quote",""),
+        "body":body2,
+    })
+    if vp2["decision"]=="戻す":
+        # vp_gate has already applied the approved third-check escalation.
+        case2=routing.case(key)
+        if case2["status"]!="停止中":
+            raise AssertionError(f"Third VP return should become manager stop: {case2}")
+        desk=workspace.desk()
+        stop_item=next((x for x in desk["queue"] if x["kind"]=="停止案件" and x.get("key")==key),None)
+        assert_no_side_effects()
+        print(json.dumps({
+            "Threads01_P3_v1":"third_VP_return_manager_stop",
+            "vp_history":vp_history,
+            "manager_stop":stop_item,
+            "canon_version":"v1",
+            "canon_changed":False,
+            "publish":"not called","x_06":"not called","E567":"not called",
+        },ensure_ascii=False))
+        tmp.cleanup()
+        raise SystemExit(0)
+
+    vp=vp2
+    routed=routed2
+    body=body2
+
 if routed["status"]!="Coco確認待ち":
     raise AssertionError(f"VP pass did not reach president desk: {routed}")
 
@@ -206,6 +277,7 @@ print(json.dumps({
         "source_quote":first_vp["source_quote"],
         "post_quote":first_vp["post_quote"],
     },
+    "vp_history":vp_history,
     "final_body":body,
     "final_vp":{
         "decision":vp["decision"],
