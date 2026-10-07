@@ -158,6 +158,15 @@ class OpenAIDriver:
                 "前回の完成文を正当化せず、正典に従って作り直す。"
             )
 
+        if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "case_instruction":
+            instruction = str(coco_resolution.get("instruction", "")).strip()
+            effective_system_prompt += (
+                "\n\n【この案件だけのCoco回答】\n"
+                + instruction
+                + "\nこれはこの案件だけのCoco判断であり、正典やルールの変更ではない。"
+                "素材にない事実を足さず、この回答の範囲で同じ社員が停止地点から再開する。"
+            )
+
         if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "proceed_without_missing_fact":
             missing = coco_resolution.get("missing_or_unknown", "")
             effective_system_prompt += (
