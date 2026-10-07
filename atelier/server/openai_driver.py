@@ -288,8 +288,8 @@ class OpenAIDriver:
         raise ProviderError("OpenAI technical error", attempts=attempts)
 
 
-    def review_vp(self, material, completed_post):
-        """Independent VP gate. Input is intentionally limited to source + final post."""
+    def review_vp(self, material, completed_post, criteria):
+        """Independent VP gate. API input is source + final post + three criteria only."""
         if not self.connected:
             raise ProviderUnavailable("OpenAI未接続：副社長レビューを実行できません")
         if not isinstance(material, str) or not material.strip():
@@ -298,20 +298,10 @@ class OpenAIDriver:
             raise ProviderError("VP completed_post is required", technical=False)
 
         api_key = os.environ.get("OPENAI_API_KEY", "")
-        criteria = {
-            "事実が曲がった": (
-                "素材原文にない事実の追加、素材の意味を変える言い換え、主語・時系列・発言内容の変形が"
-                "完成投稿にある場合。単なる語調の好みでは戻さない。"
-            ),
-            "声が混ざった": (
-                "完成投稿の声が、媒体の役割として明らかに混線している場合。"
-                "Xは凛とした軍師、Threadsは慈愛に満ちた哲学者という役割差を見る。"
-            ),
-            "工程に戻っていない": (
-                "完成投稿そのものに、直すべき不整合が残ったまま完成扱いになった痕跡が明確にある場合。"
-                "途中工程や社員の推論は見えないため、完成投稿から確認できる範囲だけで判定する。"
-            ),
-        }
+        if not isinstance(criteria, dict) or set(criteria) != {
+            "事実が曲がった", "声が混ざった", "工程に戻っていない"
+        }:
+            raise ProviderError("VP three-point criteria are required", technical=False)
         system_prompt = (
             "あなたはCoco Atelierの副社長。完成投稿をCoco確認前に3点だけで検査する。"
             "本文を書き直してはいけない。好みや完成度では止めない。"
