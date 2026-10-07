@@ -128,15 +128,16 @@
       "purpose": "深掘り誘導",
       "character": "🐢しずく",
       "episode_id": "E589",
-      "content": "声をあげる人より先に、黙って回している人の仕事を見る。\n\n淡々と着実にやってくれる人のほうが、こちらにとっては、貴重。\nその人の仕事を忘れていられる時間の分だけ、こちらは他のことに使える。\n\n上司が減らしてくれている分は、そもそも部下のところに来ない。だから、部下は気づきようがない。\n\nできる人が満たされる環境を、作れなかったという反省もある。\n\n評価の面談の前に見る一行を、返信に置いた。",
-      "quote": "黙って回る人に、気づいた日。",
+      "content": "クレームが入り、原因と思われた担当者は、指示通りに動いていたの。\n関係者全てから話を聞き、誰が何をしたかを順番に並べた。\n問題だと思われていた人への注意ではなく、仕組み、それぞれの役割を修正した。\n\n指示通りなら仕組みと役割を直し、指示から外れていたらその行動だけを確認する。",
+      "quote": "原因と思った人、指示通りでした。",
       "note_funnel": true,
       "self_replies": [
-        "🐢しずく｜黙って回している人の仕事は、忘れていられるほど回っているの。\n今週、忘れていられた仕事は何だった？",
-        "黙って回している人の仕事を評価の面談で言葉にする見方と、上司が減らしてくれている分に気づく手順を、noteに書きました。\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+        "🐢しずく｜クレームの中心にいた人が、原因とは限らないの。\n誰が何をしたかを並べると、直す場所が変わることがある。",
+        "クレームが起きたとき、誰を責めるかではなく、事実をどう並べて仕組みと役割を見直すか。こうした判断の整え方を、noteに積み重ねています。\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale celadon ro-kimono with ginkgo leaf pattern, seen from the shoulders up together with a small soft white bird (Hiyori); they share a quiet moment; her eyes tracing a neat row of small, quietly finished tasks on a desk; a quiet engawa facing a small garden with susuki leaning in a low vase; soft morning light. Refined palette of pale celadon, soft steel blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "静かな人の仕事ほど、\n止まったときにしか目に入らない。"
+      "x_short": "静かな人の仕事ほど、\n止まったときにしか目に入らない。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_08",
