@@ -84,9 +84,10 @@ class OpenAIDriver:
                     "type": "string",
                     "enum": ["none", "事実が曲がった", "声が混ざった", "工程に戻っていない"]
                 },
-                "excerpt": {"type": "string"}
+                "source_quote": {"type": "string"},
+                "post_quote": {"type": "string"}
             },
-            "required": ["decision", "finding", "excerpt"],
+            "required": ["decision", "finding", "source_quote", "post_quote"],
             "additionalProperties": False
         }
 
@@ -306,8 +307,10 @@ class OpenAIDriver:
             "あなたはCoco Atelierの副社長。完成投稿をCoco確認前に3点だけで検査する。"
             "本文を書き直してはいけない。好みや完成度では止めない。"
             "入力は素材原文・完成投稿・3点基準だけであり、見えていない途中工程を推測しない。"
-            "問題がなければdecision=通す,finding=none,excerpt=空文字。"
-            "問題があればdecision=戻すとし、findingは3分類のどれか1つ、excerptには該当箇所を短くそのまま抜き出す。"
+            "問題がなければdecision=通す,finding=none,source_quoteとpost_quoteは空文字。"
+            "問題があればdecision=戻すとし、findingは3分類のどれか1つ。"
+            "source_quoteには素材原文から関連箇所をそのまま引用し、post_quoteには完成投稿の問題箇所をそのまま引用する。"
+            "引用は要約・言い換えせず、それぞれ必ず対応する入力本文に実在する文字列を使う。"
         )
         body = {
             "model": self.model,
