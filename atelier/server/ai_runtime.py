@@ -70,6 +70,36 @@ class AIRuntime:
             "missing_or_unknown": detail.get("不足・不明点", ""),
         }
 
+    def _vp_return_feedback(self, key, db=None):
+        owns_db = db is None
+        if owns_db:
+            ctx = self.workspace.transaction()
+            db = ctx.__enter__()
+        try:
+            exists = db.execute(
+                "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_events'"
+            ).fetchone()
+            if not exists:
+                return None
+            row = db.execute(
+                """SELECT detail FROM workflow_events
+                   WHERE case_id=? AND actor='副社長' AND action='工程へ戻す'
+                   ORDER BY id DESC LIMIT 1""",
+                (key,),
+            ).fetchone()
+            if not row:
+                return None
+            detail = json.loads(row["detail"])
+            return {
+                "finding": detail.get("finding"),
+                "stage": detail.get("stage"),
+                "source_quote": detail.get("source_quote", ""),
+                "post_quote": detail.get("post_quote", ""),
+            }
+        finally:
+            if owns_db:
+                ctx.__exit__(None, None, None)
+
     def _prepare_request(self, key, state, person, db=None):
         source_row = self.workspace.source(key)
         source = source_row["source"]
@@ -91,6 +121,7 @@ class AIRuntime:
             "material": material,
             "required_facts": required_facts,
             "coco_resolution": self._coco_resolution(key, db),
+            "vp_return_feedback": self._vp_return_feedback(key, db),
             "canon_preamble": (
                 "以下はCoco確定正典の工程を、原文のまま順番に実行する。"
                 "各呼び出しでは指定された1工程だけを実行し、その工程で得た成果物を返す。"
@@ -536,7 +567,8 @@ class AIRuntime:
         provider_meta = result.pop("_provider", {})
         decision = result.get("decision")
         finding = result.get("finding")
-        excerpt = result.get("excerpt", "")
+        source_quote = result.get("source_quote", "")
+        post_quote = result.get("post_quote", "")
         valid_findings = {"none", "事実が曲がった", "声が混ざった", "工程に戻っていない"}
         if decision not in {"通す", "戻す"} or finding not in valid_findings:
             raise ProviderError("VP decision schema was invalid", technical=False)
@@ -545,17 +577,30 @@ class AIRuntime:
         if decision == "戻す" and finding == "none":
             raise ProviderError("VP return requires one of the three findings", technical=False)
 
+        if decision == "戻す":
+            if source_quote not in material or post_quote not in completed_post:
+                raise ProviderError("VP quote pair was not found verbatim in source/post", technical=False)
+        else:
+            source_quote = ""
+            post_quote = ""
+
         self._log_stage(
             key,
             "副社長",
             "3点レビュー",
             "副社長確認",
-            {"decision": decision, "finding": finding, "excerpt": excerpt},
+            {
+                "decision": decision,
+                "finding": finding,
+                "source_quote": source_quote,
+                "post_quote": post_quote,
+            },
         )
         return {
             "decision": decision,
             "finding": None if finding == "none" else finding,
-            "excerpt": excerpt,
+            "source_quote": source_quote,
+            "post_quote": post_quote,
             "provider": provider_meta,
         }
 
