@@ -108,15 +108,16 @@
       "purpose": "深掘り誘導",
       "character": "🕊ひより",
       "episode_id": "E485",
-      "content": "任せるときは、「この範囲内で対応してもらえると助かります」と先に言う。\n\n判断は任せる。それでも、一人にはしない。\n「何かあれば、また連絡ください」と、そのあとに足す。\n\n何か起きたときは矢面に立って怒られる覚悟がある、と伝える。\n\n範囲を言っておくと、迷った店長は、範囲の中で動ける。\n判断を預けるのと、責任を預けるのは別。責任は、こちらに置いたまま。\n\n連絡が来たときの返し方を、返信に置いた。",
-      "quote": "範囲を言った、そのあとの一言。",
+      "content": "任せる側が「この範囲内で対応してもらえると助かります」と伝えたの。\nそのあとに「何かあれば、また連絡ください」と足し、何か起きたときの責任はこちらで持つと伝えた。\nその範囲内で即判断したことは共有され、範囲内でも迷ったときは判断する前に相談が来るようになった。\n\n範囲内ならそのまま進めてもらい、迷って連絡が来たら決める前に話を聞く。",
+      "quote": "任せる話なのに、最初は範囲の話。",
       "note_funnel": true,
       "self_replies": [
-        "🕊ひより｜判断は店長へ、責任はこちらへ。\n範囲を言ってから、店長が最初に連絡してきたのはどんな場面？",
+        "🕊ひより｜任せたあとの連絡は、失敗の印とは限らないの。\n範囲内で進んだことも、迷って戻ったことも、どちらも判断の途中。",
         "「この範囲内で」と言ったあと、連絡が来たときの返し方と、責任をこちらに置いたまま任せる伝え方を、noteに書きました。\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand drawing a small square on a blank page with a pencil; a dim corridor of warm paper screens with a small lantern on the floor; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "任せたはずの日ほど、\n連絡が来ないことを先に気にしている。"
+      "x_short": "任せたはずの日ほど、\n連絡が来ないことを先に気にしている。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_07",
