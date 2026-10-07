@@ -145,6 +145,19 @@ class OpenAIDriver:
             + "\n\n【今回実行する正典工程】\n"
             + stage_prompt
         )
+        vp_return_feedback = request.get("vp_return_feedback")
+        if isinstance(vp_return_feedback, dict) and vp_return_feedback.get("finding"):
+            effective_system_prompt += (
+                "\n\n【この案件だけの副社長戻し】\n"
+                f"戻し理由: {vp_return_feedback.get('finding')}\n"
+                f"戻し工程: {vp_return_feedback.get('stage')}\n"
+                f"素材原文の引用: {vp_return_feedback.get('source_quote','')}\n"
+                f"完成投稿の引用: {vp_return_feedback.get('post_quote','')}\n"
+                "この戻しだけを解消して同じ案件をやり直す。正典は変更しない。"
+                "素材原文の事実・主語・時系列・引用語を変えず、素材にない事実や行動を足さない。"
+                "前回の完成文を正当化せず、正典に従って作り直す。"
+            )
+
         if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "proceed_without_missing_fact":
             missing = coco_resolution.get("missing_or_unknown", "")
             effective_system_prompt += (
@@ -163,6 +176,7 @@ class OpenAIDriver:
             "material": material,
             "prior_stage_outputs": prior_outputs,
             "coco_resolution": coco_resolution,
+            "vp_return_feedback": vp_return_feedback,
             "completion_feedback": request.get("completion_feedback"),
             "stage_output_contract": {
                 "content": (
