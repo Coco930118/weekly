@@ -717,12 +717,14 @@ class AIRuntime:
             if name == "④'" and candidates:
                 first_parts = [self._paragraphs(body)[0] for body in candidates if self._paragraphs(body)]
                 if first_parts and any("のに" not in first for first in first_parts):
-                    result.setdefault("audit_tags", []).append("型外し（" + prepared["platform"] + "・冒頭「〜のに」）")
+                    result.setdefault("audit_tags", []).append("型外し（" + prepared["platform"] + "・④💗）")
             for tag in result.get("audit_tags") or []:
                 if tag.startswith("型外し"):
                     type_off = True
                     from .routing import RoutingEngine
-                    RoutingEngine(self.workspace).record_exception(key, prepared["platform"], tag)
+                    if tag not in recorded_tags:
+                        RoutingEngine(self.workspace).record_exception(key, prepared["platform"], tag)
+                        recorded_tags.add(tag)
             self._log_stage(key, employee, "工程完了", name, {"output": output})
             return None
 
