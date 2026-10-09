@@ -683,6 +683,9 @@ class AIRuntime:
             if public_material:
                 request["prior_stage_outputs"] = [({"stage": "一般化", "content": public_material, "public_material": public_material} if x["stage"] == "一般化" else x) for x in history]
             request["canon_preamble"] += "\n" + prepared["canon_common"]
+            if name == "④":
+                request["canon_preamble"] += "\n【v2の型適用条件・④にも優先適用】\n" + prompts["④'"].split("### 3-2")[0]
+                request["canon_preamble"] += "\n型に必要な事実がないだけなら④で素材不足として止めず、正典④'の型外しで事実を足さず完成案を出す。型を外したらaudit_tagsに記録する。"
             self._log_stage(key, employee, "工程開始", name, {})
             try:
                 result = self.provider.execute(request)
