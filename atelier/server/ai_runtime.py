@@ -172,7 +172,7 @@ class AIRuntime:
             "mode": "initial_live_probe",
             "canon_version": canon_version,
             "canon_ref": prompt_ref,
-            "canon_common": full_canon.split("## 一般化工程")[0] if canon_version == "v2" else "",
+            "canon_common": full_canon if canon_version == "v2" else "",
             "employee": person["id"],
             "platform": state["platform"],
             "material": material,
