@@ -745,7 +745,7 @@ class AIRuntime:
                 break
             if correction == 2:
                 return {"kind": "incomplete", "continue_stage": "⑤", "format_failures": ["正典の使わない言葉: " + ",".join(failures)], "stage_outputs": history}
-            stopped = run("⑤", ["正典の使わない言葉が残っている: " + ",".join(failures) + "。該当段だけ直し、核の事実を保つ。4段目は相手との関係の仕組み、5段目は読者への提案形。"])
+            stopped = run("⑤", ["正典の使わない言葉が残っている: " + ",".join(failures) + "。該当段だけ直し、核の事実を保つ。4段目は『相手の』で相手を仕組みの中に置き、出来事の繰り返しや気持ちの決めつけではなく関係の仕組みを言い切る。5段目は比喩を使わず具体的な読者への提案形。型外しでも4段目・5段目・使わない言葉の条件は外さない。"])
             if stopped:
                 return stopped
         if not type_off:
