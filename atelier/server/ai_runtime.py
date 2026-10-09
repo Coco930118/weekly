@@ -672,6 +672,7 @@ class AIRuntime:
         history, runs, candidates = [], [], []
         quote, facts, public_material, source_map = "", [], "", []
         type_off = False
+        recorded_tags = set()
         prompts = dict(prepared["stages"])
 
         def run(name, feedback=None):
@@ -743,6 +744,13 @@ class AIRuntime:
         banned = ("あなた", "みんな", "でいい", "でもいい", "んです", "渡す", "確立", "繋がり", "循環", "気づき")
         for correction in range(3):
             failures = [word for word in banned if any(word in body for body in candidates)] if prepared["platform"] == "Threads" else []
+            if prepared["platform"] == "Threads":
+                for body in candidates:
+                    paragraphs = self._paragraphs(body)
+                    if len(paragraphs) != 6:
+                        failures.append("6段構成")
+                    elif "相手" not in paragraphs[3]:
+                        failures.append("4段目が相手との関係の仕組みになっていない")
             if not failures:
                 break
             if correction == 2:
