@@ -763,6 +763,8 @@ class AIRuntime:
                         failures.append("6段構成")
                     elif "相手" not in paragraphs[3]:
                         failures.append("4段目が相手との関係の仕組みになっていない")
+                    if len(paragraphs) == 6 and paragraphs[4].rstrip().endswith("ひとつ。"):
+                        failures.append("5段目を『〜してみては』『〜してみること』等の明確な読者への提案形にする。『〜をひとつ。』の言い切りは使わない")
                     if paragraphs and paragraphs[-1] != "感情はある。依存はしない。":
                         failures.append("6段目の定型句を保持する")
             if not failures:
