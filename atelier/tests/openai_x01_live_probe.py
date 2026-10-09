@@ -56,7 +56,7 @@ fixtures=[{
     "quote":"",
     "theme":"距離の取り方",
     "axis":"感情と関係の「ん？」",
-    "_probe_required_facts":["日付","場面","わたしがしたこと","そのあと起きたこと"],
+    "_probe_required_facts":["場面","わたしがしたこと","そのあと起きたこと"],
     "material":material,
 }]
 (root/"posts/index.json").write_text(json.dumps({"weeks":["probe.json"]}))
