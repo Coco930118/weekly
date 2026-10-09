@@ -52,6 +52,9 @@ OKU_FROM = '2026-09-22'
 # 配信済みを直さない原則に、この週かぎりの例外を置いた。9/1（x_01・x_02）は対象外。
 FOLD = 280
 FOLD_FROM = '2026-09-02'
+# X本文の4行の型（atelier/canon/x_post.md ④＝正典v2・2026-10-09 Coco承認）。
+# 配信済み・v1で仕上げ中の回には遡及しない（CLAUDE.md「新しいルールは過去記事に遡及しない」）
+X4LINE_FROM = '2026-10-09'
 # 成長物語（「昔は〜だった。今は〜」）の禁止。正典は rules/posts.md「語り手ルール」の
 # 絶対条件（2026-09-12 Coco決定）。ここに条文を複製しない。
 # 適用は 9/15週から——配信済みには遡及しない（CLAUDE.md）が、9/15週は生成済み・未配信で
@@ -308,10 +311,10 @@ def main(path):
         l1 = p['content'].split('\n')[0]
         last = p['content'].strip().split('\n')[-1]
         naked = re.sub(r'「[^」]*」', '', p['content'])
-        # ルール2＝冒頭2行の具体動作。意味判定は機械化せず、
+        # 冒頭2行の具体動作。意味判定は機械化せず、
         # 機械が見るのは、正典が名指しで廃止した「受け口」と「判定の額縁」が
         # 冒頭2行に残っていないかだけ。
-        # 正典は rules/posts.md ルール2 と「Xは全14本、やってみた人の位置で書く」。ここに条文を複製しない
+        # 正典は atelier/canon/x_post.md ④（2026-10-09 正典v2。旧 rules/posts.md ルール2 は廃止）。ここに条文を複製しない
         head2 = [l for l in p['content'].split('\n') if l.strip()][:2]
         uke = [w for w in UKEGUCHI if any(w in l for l in head2)]
         if uke: ng(p['id'], '冒頭2行に受け口／判定の額縁（2026-09-07 廃止）', uke)
@@ -319,7 +322,16 @@ def main(path):
         if '私' in naked: ng(p['id'], '一人称「私」（わたしに統一）')
         if '💎' in p.get('quote', ''): ng(p['id'], 'quoteに💎（絵文字は2026-08-24廃止）')
         lines = [l for l in p['content'].split('\n') if l.strip()]
-        if len(lines) > 7: ng(p['id'], f'X本文が{len(lines)}行（5〜7行に圧縮する）')
+        if p['date'] >= X4LINE_FROM:
+            # 正典v2（atelier/canon/x_post.md ④）＝4行ちょうど・空行は4行目の前の1か所だけ。
+            # 配信済み・v1で仕上げ中の回には遡及しない（CLAUDE.md「新しいルールは過去記事に遡及しない」）
+            raw = p['content'].split('\n')
+            blanks = [i for i, l in enumerate(raw) if not l.strip()]
+            if len(raw) != 5 or blanks != [3]:
+                ng(p['id'], 'X本文が4行の型（3行→空行1つ→4行目）になっていない（atelier/canon/x_post.md ④）',
+                   f'{len(raw)}行・空行位置{blanks}')
+        elif len(lines) > 7:
+            ng(p['id'], f'X本文が{len(lines)}行（5〜7行に圧縮する・v1）')
         if p['date'] >= FOLD_FROM and len(p['content']) > X_MAX:
             ng(p['id'], f'X本文が{len(p["content"])}字（上限{X_MAX}）。型は266字で成立している（x_05）')
 
