@@ -694,6 +694,17 @@ class AIRuntime:
                 if exc.technical:
                     self._record_technical_error(key, employee, candidate, exc)
                 raise
+            if name == "一般化" and result.get("decision") == "complete":
+                literal_quotes = re.findall(r"「[^」]+」", prepared["material"])
+                for retry in range(2):
+                    missing_quotes = [q for q in literal_quotes if q not in result.get("public_material", "")]
+                    if not missing_quotes:
+                        break
+                    runs.append({"stage": name, **result.pop("_provider", {})})
+                    request["completion_feedback"] = ["原素材の実際のセリフは変えない。公開用素材にそのまま保持する引用: " + "、".join(missing_quotes) + "。核の事実の行動・時系列は変えず、登場人物と場面だけ一般化する。"]
+                    result = self.provider.execute(request)
+                if any(q not in result.get("public_material", "") for q in literal_quotes):
+                    return {"kind": "incomplete", "continue_stage": "一般化", "format_failures": ["実際のセリフが一般化で失われた"], "stage_outputs": history}
             runs.append({"stage": name, **result.pop("_provider", {})})
             if result.get("decision") == "stop":
                 return {"kind": "stop", "stop_stage": name,
