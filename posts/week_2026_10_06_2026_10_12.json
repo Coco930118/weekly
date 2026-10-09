@@ -147,14 +147,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E707",
-      "content": "面接メモの「この流れの影響か」を、外してから保存する。\n\n経歴を書いたあとに、「この流れの影響か」と続けて書きかけた。\n\n外すと、経歴と人柄が因果で結ばれなくなる。それぞれ独立した観察になる。\n\n人柄の評価は、面接で見た受け答えそのものを根拠にする。\n書き手の印象は、そのままでいい。\n\n経歴は経歴、受け答えは受け答え。二つを並べて書く。",
-      "quote": "メモから消した、ひとこと。",
+      "content": "経歴を書いたあとに、「この流れの影響か」と、つい続けて書きかけた。\n面接メモの「この流れの影響か」を、外してから保存したの。\n人柄について書いた箇所には、面接中の受け答えだけが残った。\n\n受け答えで確認できるなら残し、確認できないなら、そこは書かない。",
+      "quote": "「この流れの影響か」と、足しかけた。",
       "note_funnel": false,
       "self_replies": [
         "🕊ひより｜印象は持っていていいの。記録に入れるのは、見えたことのほう。\n見えた受け答えを、一つ挙げるとしたら？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep navy-indigo yukata with susuki grass pattern, seen from the shoulders up together with a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks and a small soft white bird (Hiyori); they share a quiet moment; her pencil striking through one short phrase on a small memo pad; a quiet study with a low lamp and a stack of books beside a window; warm amber light from a paper lantern. Refined palette of deep navy-indigo, pale silver-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "人柄を評価したつもりが、\n経歴を並べ直しただけのことがある。"
+      "x_short": "人柄を評価したつもりが、\n経歴を並べ直しただけのことがある。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_09",
