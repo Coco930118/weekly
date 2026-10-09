@@ -172,6 +172,7 @@ class AIRuntime:
             "mode": "initial_live_probe",
             "canon_version": canon_version,
             "canon_ref": prompt_ref,
+            "canon_common": full_canon.split("## 一般化工程")[0] if canon_version == "v2" else "",
             "employee": person["id"],
             "platform": state["platform"],
             "material": material,
@@ -372,6 +373,9 @@ class AIRuntime:
             raise error
         if provider_block:
             raise ProviderUnavailable(provider_block)
+
+        if prepared["canon_version"] == "v2":
+            return self._execute_v2(key, candidate, employee, prepared, state_snapshot)
 
         history = []
         provider_runs = []
@@ -663,6 +667,102 @@ class AIRuntime:
             "completion_check": completion,
         }
 
+    def _execute_v2(self, key, candidate, employee, prepared, snapshot):
+        """Keep v2 public source and candidate checks separate from v1 reviews."""
+        history, runs, candidates = [], [], []
+        quote, facts, public_material, source_map = "", [], "", []
+        type_off = False
+        prompts = dict(prepared["stages"])
+
+        def run(name, feedback=None):
+            nonlocal quote, facts, candidates, public_material, source_map, type_off
+            request = {**prepared, "stage_name": name, "stage_prompt": prompts[name],
+                       "prior_stage_outputs": history, "completion_feedback": feedback,
+                       "stage_index": len(history) + 1, "stage_count": len(prompts)}
+            request["material"] = public_material or prepared["material"]
+            if public_material:
+                request["prior_stage_outputs"] = [({"stage": "一般化", "content": public_material, "public_material": public_material} if x["stage"] == "一般化" else x) for x in history]
+            request["canon_preamble"] += "\n" + prepared["canon_common"]
+            self._log_stage(key, employee, "工程開始", name, {})
+            try:
+                result = self.provider.execute(request)
+            except ProviderError as exc:
+                if exc.technical:
+                    self._record_technical_error(key, employee, candidate, exc)
+                raise
+            runs.append({"stage": name, **result.pop("_provider", {})})
+            if result.get("decision") == "stop":
+                return {"kind": "stop", "stop_stage": name,
+                        **{k: result.get(k, "") for k in ("stop_reason", "missing_or_unknown", "confirmed_facts", "question_for_coco", "material_suggestions")},
+                        "stage_outputs": history, "provider_runs": runs}
+            if result.get("decision") != "complete":
+                raise ProviderError("Invalid v2 stage decision")
+            output = {"stage": name, **result}
+            history.append(output)
+            if name == "一般化":
+                public_material = result.get("public_material", "").strip()
+                source_map = result.get("source_map") or []
+                if not public_material or not source_map:
+                    return {"kind": "incomplete", "continue_stage": "一般化", "format_failures": ["公開用素材・対応表が未記録"], "stage_outputs": history}
+                self._log_stage(key, employee, "一般化記録", name, {"public_material": public_material, "source_map": source_map})
+            if result.get("quote"):
+                quote = result["quote"]
+            if result.get("facts_used"):
+                facts = result["facts_used"]
+            if result.get("candidates"):
+                candidates = result["candidates"]
+            for tag in result.get("audit_tags") or []:
+                if tag.startswith("型外し"):
+                    type_off = True
+                    from .routing import RoutingEngine
+                    RoutingEngine(self.workspace).record_exception(key, prepared["platform"], tag)
+            self._log_stage(key, employee, "工程完了", name, {"output": output})
+            return None
+
+        for name in ("一般化", "①", "ひとこと選び", "②", "③", "④", "④'", "⑤"):
+            stopped = run(name)
+            if stopped:
+                return stopped
+        if not candidates:
+            return {"kind": "incomplete", "continue_stage": "④'", "format_failures": ["本文候補が未記録"], "stage_outputs": history}
+        if not type_off:
+            for round_no in range(3):
+                if round_no == 2:
+                    stopped = run("⑤", ["最終確認2回目の不備。3-6に従い媒体の声の三者会議で直し、最終確認は再実行しない。"])
+                    if stopped:
+                        return stopped
+                    break
+                stopped = run("最終確認")
+                if stopped:
+                    return stopped
+                if history[-1]["content"].strip() == "問題ありません":
+                    break
+                self._log_stage(key, employee, "最終確認不備", "最終確認", {"round": round_no + 1, "review": history[-1]["content"]})
+                if round_no == 0:
+                    stopped = run("⑤", ["最終確認1回目の不備。3-6に従いテーマ・軸・核の事実3点を見直し、外れた段だけ直す。"])
+                    if stopped:
+                        return stopped
+        fixed_candidates = list(candidates)
+        for round_no in range(3):
+            stopped = run("⑦", ["本文候補は固定。通過した完成本文のみcandidatesへ返す。全案が落ちた場合だけ正典どおり停止する。"])
+            if stopped:
+                return stopped
+            if candidates and all(body in fixed_candidates for body in candidates):
+                break
+            candidates = list(fixed_candidates)
+            if round_no == 2:
+                return {"kind": "incomplete", "continue_stage": "⑦", "format_failures": ["⑦で固定本文が変更された"], "stage_outputs": history}
+            for name in ("①", "ひとこと選び"):
+                stopped = run(name, ["⑦の確認により、本文固定でひとことだけ再選定する。"])
+                if stopped:
+                    return stopped
+        body = candidates[0]
+        check = {"ok": bool(body.strip() and quote.strip() and public_material and source_map), "canon_version": "v2", "candidate_count": len(candidates)}
+        saved = self.save_result(key, candidate, employee, snapshot["revision"], snapshot["candidate_revision"],
+            {"theme": snapshot["theme"], "axis": snapshot["axis"], "status": "OK", "findings": [], "fields": {"content": body, "quote": quote}})
+        return {"kind": "complete", "state": saved, "stage_outputs": history, "provider_runs": runs,
+                "public_material": public_material, "source_map": source_map, "facts_used": facts, "completion_check": check, "candidates": candidates}
+
     def review_vp(self, key, candidate):
         """Run the independent VP gate from source + completed post only."""
         source_row = self.workspace.source(key)
@@ -687,6 +787,14 @@ class AIRuntime:
         )
         with self.workspace.transaction() as db:
             coco_resolution = self._coco_resolution(key, db)
+            has_rules = db.execute("SELECT 1 FROM sqlite_master WHERE name='rule_versions'").fetchone()
+            rule = db.execute("SELECT r.rule_key FROM workflow_cases c LEFT JOIN rule_versions r ON r.id=c.rule_version WHERE c.case_id=?", (key,)).fetchone() if has_rules else None
+            is_v2 = bool(rule and rule["rule_key"] == "canon_v2")
+            if is_v2:
+                row = db.execute("SELECT detail FROM workflow_events WHERE case_id=? AND action='一般化記録' ORDER BY id DESC LIMIT 1", (key,)).fetchone()
+                if not row:
+                    raise ProviderError("v2 VP public material is missing", technical=False)
+                material = json.loads(row["detail"])["public_material"]
         case_instruction = ""
         if isinstance(coco_resolution, dict) and coco_resolution.get("action") == "case_instruction":
             case_instruction = str(coco_resolution.get("instruction", "")).strip()
@@ -707,6 +815,11 @@ class AIRuntime:
                     "素材原文に同じ行動がなくても『素材にない出来事』とは判定しない。"
                     "Coco自身がした行動・予定・決意として読める場合だけ事実判定の対象にする。"
                 )
+
+        if is_v2:
+            fact_rule = ("公開用素材を基準に核の事実3点が曲がった場合、または公開用素材にない出来事を足した場合だけ戻す。"
+                         "5段目（Threads）／4行目の一手（X）は読者への提案であり事実ではない。提案形なら素材にない出来事の追加に当たらない。"
+                         "Coco自身の行動・予定・決意として読める場合は事実が曲がったとして戻す。")
 
         criteria = {
             "事実が曲がった": fact_rule,

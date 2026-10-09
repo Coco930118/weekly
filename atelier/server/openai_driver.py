@@ -251,6 +251,9 @@ class OpenAIDriver:
                 )
             }
         }
+        if request.get("canon_version") == "v2":
+            user_input["stage_output_contract"]["content"] = "指定されたv2工程の成果物を返す。⑤は声・場面語で仕上げる工程であり、v1の最終確認ではない。最終確認だけ、すべて満たせば『問題ありません』と返す。"
+            user_input["stage_output_contract"]["candidates"] = "④'は3-3〜3-4を行い各候補を⑤だけ・最終確認だけ・両方で仕上げ、同一を統合する。⑤は各候補を仕上げた完成本文のみ返す。最終確認は型どおりの候補だけを検査し修正候補を返す。型外し候補は最終確認へ送らない。⑦は本文固定で繋がる候補だけ返す。candidatesの各要素は説明・案名・監査を含まない公開本文。複数通過時は三者会議の最適解を先頭に置く。"
         body = {
             "model": self.model,
             "store": False,
