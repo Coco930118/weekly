@@ -722,6 +722,7 @@ class AIRuntime:
             for tag in result.get("audit_tags") or []:
                 if tag.startswith("型外し"):
                     type_off = True
+                    tag = "型外し（" + prepared["platform"] + "・冒頭型）"
                     from .routing import RoutingEngine
                     if tag not in recorded_tags:
                         RoutingEngine(self.workspace).record_exception(key, prepared["platform"], tag)
@@ -741,7 +742,7 @@ class AIRuntime:
                     return {"kind": "incomplete", "continue_stage": "④'", "format_failures": ["型外し本文候補が複数でない"], "stage_outputs": history}
         if not candidates:
             return {"kind": "incomplete", "continue_stage": "④'", "format_failures": ["本文候補が未記録"], "stage_outputs": history}
-        banned = ("あなた", "みんな", "でいい", "でもいい", "んです", "渡す", "確立", "繋がり", "循環", "気づき")
+        banned = ("あなた", "みんな", "でいい", "でもいい", "てもいい", "んです", "渡す", "確立", "繋がり", "循環", "気づき")
         for correction in range(3):
             failures = [word for word in banned if any(word in body for body in candidates)] if prepared["platform"] == "Threads" else []
             if prepared["platform"] == "Threads":
@@ -751,11 +752,13 @@ class AIRuntime:
                         failures.append("6段構成")
                     elif "相手" not in paragraphs[3]:
                         failures.append("4段目が相手との関係の仕組みになっていない")
+                    if paragraphs and paragraphs[-1] != "感情はある。依存はしない。":
+                        failures.append("6段目の定型句を保持する")
             if not failures:
                 break
             if correction == 2:
                 return {"kind": "incomplete", "continue_stage": "⑤", "format_failures": ["正典の使わない言葉: " + ",".join(failures)], "stage_outputs": history}
-            stopped = run("⑤", ["正典の使わない言葉が残っている: " + ",".join(failures) + "。該当段だけ直し、核の事実を保つ。4段目は『相手の』で相手を仕組みの中に置き、出来事の繰り返しや気持ちの決めつけではなく関係の仕組みを言い切る。5段目は比喩を使わず具体的な読者への提案形。型外しでも4段目・5段目・使わない言葉の条件は外さない。"])
+            stopped = run("⑤", ["正典の使わない言葉が残っている: " + ",".join(failures) + "。該当段だけ直し、核の事実を保つ。4段目は『相手の』で相手を仕組みの中に置き、出来事の繰り返しや気持ちの決めつけではなく関係の仕組みを言い切る。5段目は比喩を使わず具体的な読者への提案形。型外しでも4段目・5段目・使わない言葉の条件は外さない。6段目は『感情はある。依存はしない。』で固定する。"])
             if stopped:
                 return stopped
         if not type_off:
