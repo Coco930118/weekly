@@ -709,8 +709,12 @@ class AIRuntime:
                 quote = result["quote"]
             if result.get("facts_used"):
                 facts = result["facts_used"]
-            if result.get("candidates"):
+            if result.get("candidates") and name not in {"①", "ひとこと選び"}:
                 candidates = result["candidates"]
+            if name == "④'" and candidates:
+                first_parts = [self._paragraphs(body)[0] for body in candidates if self._paragraphs(body)]
+                if first_parts and any("のに" not in first for first in first_parts):
+                    result.setdefault("audit_tags", []).append("型外し（" + prepared["platform"] + "・冒頭「〜のに」）")
             for tag in result.get("audit_tags") or []:
                 if tag.startswith("型外し"):
                     type_off = True
@@ -723,8 +727,24 @@ class AIRuntime:
             stopped = run(name)
             if stopped:
                 return stopped
+            if name == "④'" and type_off and len(set(candidates)) < 2:
+                stopped = run("④'", ["冒頭の型を外しているため3-3〜3-4に従い異なる本文候補を複数のまま残す。最終確認を通さず、各候補を⑤だけで仕上げる。核の事実3点と使わない言葉の条件は守る。"])
+                if stopped:
+                    return stopped
+                if len(set(candidates)) < 2:
+                    return {"kind": "incomplete", "continue_stage": "④'", "format_failures": ["型外し本文候補が複数でない"], "stage_outputs": history}
         if not candidates:
             return {"kind": "incomplete", "continue_stage": "④'", "format_failures": ["本文候補が未記録"], "stage_outputs": history}
+        banned = ("あなた", "みんな", "でいい", "でもいい", "んです", "渡す", "確立", "繋がり", "循環", "気づき")
+        for correction in range(3):
+            failures = [word for word in banned if any(word in body for body in candidates)] if prepared["platform"] == "Threads" else []
+            if not failures:
+                break
+            if correction == 2:
+                return {"kind": "incomplete", "continue_stage": "⑤", "format_failures": ["正典の使わない言葉: " + ",".join(failures)], "stage_outputs": history}
+            stopped = run("⑤", ["正典の使わない言葉が残っている: " + ",".join(failures) + "。該当段だけ直し、核の事実を保つ。4段目は相手との関係の仕組み、5段目は読者への提案形。"])
+            if stopped:
+                return stopped
         if not type_off:
             for round_no in range(3):
                 if round_no == 2:
