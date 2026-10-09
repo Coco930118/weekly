@@ -73,7 +73,14 @@ if not state["theme"] or not state["axis"]:
 
 def employee_run():
     state=workspace.get(key)
-    return runtime.execute(key,"A","T01",state["revision"],state["candidates"]["A"]["revision"])
+    result = runtime.execute(key,"A","T01",state["revision"],state["candidates"]["A"]["revision"])
+    for continuation in range(3):
+        if result["kind"] != "incomplete":
+            break
+        print(json.dumps({"process_incomplete": result.get("format_failures"), "continue_stage": result.get("continue_stage"), "retry": continuation + 1}, ensure_ascii=False), flush=True)
+        state = workspace.get(key)
+        result = runtime.execute(key,"A","T01",state["revision"],state["candidates"]["A"]["revision"])
+    return result
 
 
 def vp_run():
@@ -159,7 +166,7 @@ six={
 queued=routing.stop(key,stopped["stop_reason"],six)
 
 # Coco answers the actual stop. Same employee/stage resumes.
-resumed=routing.resume(key,queued["id"],coco_answer)
+resumed=routing.resume(key,queued["id"],coco_answer + "\n" + coco_answer_fifth)
 if resumed["employee"]!="T01" or resumed["stage"]!="素材確認・事実固定" or resumed["status"]!="稼働中":
     raise AssertionError(f"Same T01 did not resume correctly: {resumed}")
 
@@ -323,7 +330,7 @@ print(json.dumps({
     "final_route_status":routed["status"],
     "audit_counts":{
         "事実固定で素材の文を結合・言い換えた":1,
-        "素材にない事実を足した":3,
+        "素材にない事実を足した": a2["count"],
     },
     "canon_version":"v1",
     "canon_changed":False,
