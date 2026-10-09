@@ -10,7 +10,8 @@
     "使える数字": "CLAUDE.md「使える数字は4つだけ」",
     "文体・創作の境界・特定回避": "CLAUDE.md",
     "Cocoへの質問の作法": "CLAUDE.md「Cocoへの質問の作法」",
-    "原理01〜07": "reference/coco_methodology.json"
+    "原理01〜07": "reference/coco_methodology.json",
+    "X本文・Threads本文・X短文の型と声": "atelier/canon/x_post.md・threads_post.md・x_short.md（2026-10-09 正典v2）"
   },
   "common_core": {
     "label": "共通コア（全投稿）",
@@ -49,9 +50,9 @@
     "voice_ratio": "正典は rules/posts.md「Xの声＝凛とした軍師」の配分。ここに数字を書き写さない。",
     "structure": {
       "line1": {
-        "rule": "正典は rules/posts.md ルール2「X14本の1行目は、読者がその場に立てる一行」（2026-09-07 改定。旧「読者の声の「」引用・例外なし」と受け口は廃止）。ここに複製を置かない",
+        "rule": "正典は atelier/canon/x_post.md ④（1行目＝場面。相手のセリフと、そのとき起きたこと。1行目だけで「ん？」と思うねじれが見える形にする）。ここに複製を置かない（2026-10-09 正典v2。rules/posts.md ルール2は廃止・atelier/canon/x_post.md に統合）",
         "example": "「頑張っている人から、先に辞めていきます」",
-        "after": "1行目のすぐあとに判定（型②）。受け口・判定の額縁は置かない（正典は rules/posts.md ルール2）"
+        "after": "2行目＝わたしがしたこと、3行目＝現場で起きたこと、4行目＝一手（分岐の両側か期限）。型の全文は atelier/canon/x_post.md ④が正典"
       },
       "body": "判定の理由を、20年の現場の具体で裏づける。実際に起きている出来事を2つ並べる（抽象語で説明しない）",
       "close": "締めの形は rules/posts.md「締めと語尾の作り方」が正典。ここには書かない。"
@@ -132,7 +133,7 @@
     "使える数字・権威の扱いは CLAUDE.md が正典。ここに数字や本数を書き写さない。",
     "処方の原理01〜07は reference/coco_methodology.json が正典。"
   ],
-  "updated": "2026-09-30",
-  "sync_note": "2026-09-30 最終整合。critical_rules_summary に残っていた旧指示（X=命令形、X診断は絶対変更不可、旧日付つきX冒頭条件など）を削除し、正典参照だけに整理。媒体別の実ルールは rules/*.md と CLAUDE.md を参照する。",
+  "updated": "2026-10-09",
+  "sync_note": "2026-09-30 最終整合。critical_rules_summary に残っていた旧指示（X=命令形、X診断は絶対変更不可、旧日付つきX冒頭条件など）を削除し、正典参照だけに整理。媒体別の実ルールは rules/*.md と CLAUDE.md を参照する。 ／ 2026-10-09：platform_x.structure.line1 を atelier/canon/x_post.md v2 のポインタに更新（旧 rules/posts.md ルール2 は廃止）。",
   "question_to_coco": "Cocoへの質問の作法は CLAUDE.md「Cocoへの質問の作法」が正典。ここには複製を置かない（2026-08-31：旧v2.0の複製が『粒度の例を示す』を持ち、同日Coco決定の『粒度の見本を先に書かない』および『素材不足と名指しして関連投稿の全文を貼る』と食い違っていた。rules/source.md L33 で同じ事故を処置済み）"
 }
