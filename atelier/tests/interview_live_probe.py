@@ -57,7 +57,7 @@ def main():
 
     report = {"raw_material": RAW_MATERIAL}
 
-    stage2 = runtime.interview_fill_points(RAW_MATERIAL)
+    stage2 = runtime.interview_fill_points(case_id, RAW_MATERIAL)
     report["stage2_points"] = stage2["points"]
     report["stage2_missing"] = stage2["missing"]
     report["stage2_provider"] = stage2.get("_provider")
@@ -66,7 +66,7 @@ def main():
     routing.record_provider_usage(case_id, "工程2", stage2.get("_provider"))
 
     summary = routing.material_summary(case_id)
-    stage3 = runtime.interview_propose_drafts(summary["raw_material"], summary["organized_material"])
+    stage3 = runtime.interview_propose_drafts(case_id, summary["raw_material"], summary["organized_material"])
     report["stage3_drafts"] = stage3["drafts"]
     report["stage3_provider"] = stage3.get("_provider")
     routing.material_propose(case_id, stage3["drafts"])
@@ -78,7 +78,7 @@ def main():
     summary = routing.material_summary(case_id)
     selected_draft = summary["drafts"][0] if selection == "A" and summary.get("drafts") else None
     stage5 = runtime.interview_generalize(
-        summary["raw_material"], summary["organized_material"], summary["department"],
+        case_id, summary["raw_material"], summary["organized_material"], summary["department"],
         {"選択": selection, "選んだ案": selected_draft, "追記": ""},
     )
     report["stage5_public_material"] = stage5["public_material"]

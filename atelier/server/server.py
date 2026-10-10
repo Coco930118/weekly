@@ -13,7 +13,7 @@ import threading
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 from .ai_runtime import AIRuntime
-from .openai_driver import ProviderUnavailable
+from .openai_driver import ProviderUnavailable, ProviderError
 from .routing import RoutingEngine, RoutingError
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -489,7 +489,7 @@ class Handler(BaseHTTPRequestHandler):
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             elif path=='/api/material/start':
                 # Cocoが打つのは原文だけ。9問を埋めるのは取材社員（Claude）。
-                ai=self.server.runtime.interview_fill_points(data['raw_material'])
+                ai=self.server.runtime.interview_fill_points(data['case_id'],data['raw_material'])
                 result=self.server.routing.material_start(data['case_id'],data['department'],'MATERIAL',data['raw_material'],ai['points'])
                 self.server.routing.record_provider_usage(data['case_id'],'工程2',ai.get('_provider'))
                 result['missing']=ai['missing']
@@ -498,7 +498,7 @@ class Handler(BaseHTTPRequestHandler):
             elif path=='/api/material/propose':
                 # Cocoは案を選ぶだけ。案を作るのは取材社員（Claude）。
                 summary=self.server.routing.material_summary(data['case_id'])
-                ai=self.server.runtime.interview_propose_drafts(summary['raw_material'],summary['organized_material'])
+                ai=self.server.runtime.interview_propose_drafts(data['case_id'],summary['raw_material'],summary['organized_material'])
                 result=self.server.routing.material_propose(data['case_id'],ai['drafts'])
                 self.server.routing.record_provider_usage(data['case_id'],'工程3',ai.get('_provider'))
             elif path=='/api/material/select':
@@ -512,7 +512,7 @@ class Handler(BaseHTTPRequestHandler):
                 if selection in ('A','B','C') and summary.get('drafts'):
                     selected_draft=summary['drafts'][{'A':0,'B':1,'C':2}[selection]]
                 decision_context={'選択':selection,'選んだ案':selected_draft,'追記':summary.get('addendum') or ''}
-                ai=self.server.runtime.interview_generalize(summary['raw_material'],summary['organized_material'],summary['department'],decision_context)
+                ai=self.server.runtime.interview_generalize(data['case_id'],summary['raw_material'],summary['organized_material'],summary['department'],decision_context)
                 self.server.routing.record_provider_usage(data['case_id'],'工程5',ai.get('_provider'))
                 result={'public_material':ai['public_material'],'smell_flags':ai.get('smell_flags',{}),'provider':ai.get('_provider')}
             elif path=='/api/material/finalize':
@@ -520,6 +520,9 @@ class Handler(BaseHTTPRequestHandler):
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
             self.send_json(result)
         except ProviderUnavailable as exc:self.send_json({'error':'AI_DISABLED','message':str(exc)},409)
+        except ProviderError as exc:
+            technical=getattr(exc,'technical',True)
+            self.send_json({'error':'AI_TECHNICAL_ERROR' if technical else 'AI_INVALID_INPUT','message':str(exc)},502 if technical else 400)
         except WorkspaceError as exc:self.send_json({'error':exc.code,'message':str(exc),'current':exc.details},403 if exc.code=='AUTH' else 409)
         except RoutingError as exc:self.send_json({'error':exc.code,'message':str(exc)},409 if exc.code!='NOT_FOUND' else 404)
         except (KeyError,ValueError,TypeError):self.send_json({'error':'VALIDATION','message':'入力形式を確認してください'},400)
