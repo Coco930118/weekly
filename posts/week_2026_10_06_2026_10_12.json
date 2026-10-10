@@ -165,14 +165,15 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E705",
-      "content": "上位者への報告は、自分の働きを書いた一文を、削ってから送る。\n\n「わたしが来た時は、ものが溢れていて、やっとこれくらい整理できた」と書きかけた。\n\n提案の報告に経緯を添えると、提案の話が経緯の話にすり替わる。\n\n削ると、読むのは提案だけになる。\n経緯を書きたくなるのは、そのままでいい。経緯は、聞かれた日に話す。",
-      "quote": "報告に足したくなる、一文。",
+      "content": "提案の報告に、そこまでの経緯も添えかけた。\n「ここまで整理した」と書いた一文を削った。\n報告を送ったあと、上位者とのやり取りは提案の内容について進んだ。\n\n経緯が必要なら話す。今は、提案の中身で話を進める。",
+      "quote": "報告に足したくなる、余計な一文。",
       "note_funnel": false,
       "self_replies": [
-        "🐢しずく｜頑張った経緯は、なくなるわけじゃないの。聞かれた日に話せばいい。\n報告に足しかけて、やめた一文はある？"
+        "🐢しずく｜言いたかったことまで、消えたわけじゃないの。\n報告に書かなかった経緯にも、話す場面はある。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with autumn chrysanthemum pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand covering one line of a printed report with a small slip of paper; a sunlit window seat with a small potted cosmos on the sill; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "報告に頑張りを添えるほど、\nいちばん伝えたい提案のほうが遠くなる。"
+      "x_short": "提案は一つなのに、そこまでの道のりも同席させたくなる。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_10",
@@ -182,14 +183,15 @@
       "purpose": "保存喚起",
       "character": "🕊ひより",
       "episode_id": "E664",
-      "content": "すぐ返せない案件は、「今決めない」と決めて、いつ決めるかを言う。\n\n上司から「悠長だ」と言われたことがある。\n\n動いていなかったわけじゃない。ひとつの話だけで判断しないように時間をかけて、自分の目でも確かめていた。\n\n「今決めない」は決断。「あとで決める」は判断。即断即決即行動のうち。\n\n何が正解かは、分からない。あるべき状況で進める。\n流れで受けることは、受け入れる。",
-      "quote": "今決めない、のあとに足す一言。",
+      "content": "上司から「悠長だ」と言われたことがある。確認している最中だったの。\nひとつの話だけで判断しないように時間をかけて、自分の目でも確かめていた。\n判断する時期を伝え、その日まで確認を続けた。\n\n決めた日までに確認が揃えば判断し、揃わなければ不足を伝えて次の判断日を決める。",
+      "quote": "「悠長だ」。まだ確認中なのに。",
       "note_funnel": false,
       "self_replies": [
-        "🕊ひより｜決めない日にも、決めていることがあるの。\n今いちばん長く止まっている案件は、いつ決める？"
+        "🕊ひより｜急がない日も、期限は決めているの。\n判断の日に確認が揃わなかったら、何を伝える？"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October night, close-up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a deep indigo yukata with cosmos flower pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand laying a small calendar card face up on the table, one date circled; a night room with a paper lantern and a harvest moon visible through the window; warm amber light from a paper lantern. Refined palette of deep indigo, pale slate blue, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "案件を急がない人は、\n止まっているように見える人もいる。"
+      "x_short": "決める前の確認って、地味すぎて仕事に見えないのかしら。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_11",
@@ -440,12 +442,12 @@
       "purpose": "深掘り誘導",
       "character": "🐈‍⬛しらたま",
       "episode_id": "E242",
-      "content": "会話が短く感じたのに、\n相手の態度を問い詰めず帰った。\n会って話した帰りだった。\n\n今日はそんなモードか、と思って、\nその日はそれに対しても何も言わずに帰った。\n\nそれで終わりにしたまま、\n次に会ったときは、\n前回より質問が増えて、\n途切れずに自然に長く話した。\n\n一度の会話の長さと、\n相手の気持ちの有無は、別のこと。\n\n会話が短く感じた日に、\nその夜は答えを出さない時間をひとつ。\n\n感情はある。依存はしない。💍",
-      "quote": "前回は会話が短かった。次は質問が増えた。",
+      "content": "会って話した帰り、\n会話が短く感じたのに、\n相手の態度を問い詰めなかった。\n\n今日はそんなモードか、と思って、\nその日はそれ以上、何も言わずに帰った。\n\n次に会ったときは、\n前回より質問が増えて、\n途切れずに自然に長く話した。\n\n一度の会話の長さと、\n相手の気持ちの有無は、別のこと。\n\n会話が短く感じた夜に、\n答えを出さずに過ごす時間をひとつ。\n\n感情はある。依存はしない。💍",
+      "quote": "短く感じた会話。その日は何も言わなかった。",
       "note_funnel": true,
       "self_replies": [
-        "🐈‍⬛しらたま｜一度の短い会話だけで、関係の答えまで決めなくていいの。\n会話が短かった日に、いったん置いておけたことはある？",
-        "一度の会話だけで関係を決めず、次に何を見るか。\nその見方と、気になった夜の切り出し方を、noteに書きました。\nメンバーシップは、毎週深堀りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
+        "🐈‍⬛しらたま｜会話が短く感じた日も、次に会えば違う話になったりするの。\nその日に答えを出さずに過ごしたことはある？",
+        "メンバーシップでは、毎週深掘りが増えて、過去の整え方もぜんぶ読めます。→ プロフィールのnoteへ"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, looking up. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale rose ro-kimono with ginkgo leaf pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a fluffy round white long-haired cat (Shiratama) with large gentle eyes and rosy cheeks; they share a quiet moment; her hand resting on a slightly offset pair of teacups on the table; a sunlit window seat with a small potted cosmos on the sill; soft morning light. Refined palette of pale rose, soft gold, warm ivory. Quiet Luxury watercolor. No text, no photorealism.",
       "final_editor_status": "pending_check"
@@ -459,11 +461,12 @@
       "character": "🕊ひより",
       "episode_id": "E414",
       "content": "年の終わりに一度だけ、友達も家族も含めて、関係を棚卸しした。\n切るための作業じゃなく、いまどう感じているかを確かめるために。\n\n分けたあと、連絡が来るかどうか、誘われるかどうかが、気にならなくなった。\n相手が変わったからじゃなく、自分の期待が消えたから。\n\n一度だけ、棚卸ししてみる？\n\n連絡が来た夜も、来なかった夜も、ごはんは普通においしい。\n\n感情はある。依存はしない。💍",
-      "quote": "分けたら、連絡を待たなくなった。",
+      "quote": "誘われるか、もう気にしてない。",
       "note_funnel": false,
       "self_replies": [
         "🕊ひより｜棚卸しは、切る作業ではなく、いまの気持ちの確認なの。\n最初に名前を書きたくなったのは誰？"
       ],
+      "final_editor_status": "pending_check",
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October evening, over-the-shoulder. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a dusty rose ro-kimono with susuki grass pattern, seen from the shoulders up together with a small wise turtle (Shizuku) and a small soft white bird (Hiyori); they share a quiet moment; her pen resting over a sheet with short neat lines of names, evening tea beside it; a calm room with a low table and a single stem of cosmos in a vase; soft late-afternoon light turning warm. Refined palette of dusty rose, warm apricot, warm ivory. Quiet Luxury watercolor. No text, no photorealism."
     },
     {
@@ -474,7 +477,7 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E270",
-      "content": "その一言だけ言えない朝があった。\n話しているのに、\n言えなかったことを相手以外の場所に出した。\n\n言葉にして整理した。\n\n伝えなかったこともあれば、\nやっぱり伝えたこともあった。\n\n言えなかったことと、\n伝えることは、同じじゃない。\n\n言えなかったことの中から、\n伝える一言をひとつ。\n\n感情はある。依存はしない。💍",
+      "content": "その一言だけ言えない朝があった。\n\n話しているのに、\n言えなかったことを相手以外の場所に出した。\n\n相手には言えないのに、AIには話してる。\nなんだか可笑しい。\n\n頭を整理して、\n伝える言葉やタイミングを選んだ。\n\n伝えなかったこともあれば、\nやっぱり伝えたこともあった。\n\n言えなかったことの中から、\n伝える一言をひとつ。\n\n感情はある。依存はしない。💍",
       "quote": "話した。でも、そこは言わなかった。",
       "note_funnel": false,
       "self_replies": [
