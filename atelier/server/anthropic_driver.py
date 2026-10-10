@@ -12,9 +12,14 @@ the stage it is given; it does not publish, send x_06/E567, or call any tool
 other than the single structured-output tool used to force the response shape.
 
 Anthropic's Messages API has no "json_schema strict" response format like
-OpenAI's Responses API. The equivalent here is a forced tool call
-(`tool_choice: {"type": "tool", ...}`) whose `input_schema` is the same
-schema `openai_driver.py` uses, so both drivers return an identical shape.
+OpenAI's Responses API. The equivalent here is a single-tool definition whose
+`input_schema` is the same schema `openai_driver.py` uses, so both drivers
+return an identical shape. `tool_choice` is left at "auto" (not forced to
+`{"type": "tool", ...}` / `{"type": "any"}`) because the live model rejects
+forced tool_choice: `HTTP 400 tool_choice: type "tool" and "any" are not
+supported for this model` (confirmed 2026-10-10 via interview-live-probe
+run #1). The tool's `description` instead instructs the model to always
+call it; a missing tool_use block is treated as a retryable technical error.
 Anthropic also has no separate "incomplete" status or reasoning-token count:
 `stop_reason == "max_tokens"` is treated as the incomplete case, and
 `reasoning_tokens` is left as None (Anthropic's usage object does not break
@@ -96,8 +101,15 @@ class AnthropicDriver:
             "max_tokens": self.max_output_tokens,
             "system": system_prompt,
             "messages": [{"role": "user", "content": user_content}],
-            "tools": [{"name": tool_name, "description": f"Return {tool_name} output.", "input_schema": schema}],
-            "tool_choice": {"type": "tool", "name": tool_name},
+            "tools": [{
+                "name": tool_name,
+                "description": (
+                    f"Return {tool_name} output. You must call this tool exactly once with your "
+                    "complete answer; do not reply with plain text instead of calling it."
+                ),
+                "input_schema": schema,
+            }],
+            "tool_choice": {"type": "auto"},
         }
         thinking = self._thinking_block()
         if thinking:
