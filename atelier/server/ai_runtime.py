@@ -514,31 +514,50 @@ class AIRuntime:
             {"【必ず残す事実】3点", "対応表"},
         )
 
-    def interview_fill_points(self, raw_material, known_points=None):
+    def _run_interview_stage_logged(self, case_id, stage_label, stage_instruction, raw_material, context):
+        """run_interview_stageを呼び、技術エラー（再試行後も解消しない通信・形式の失敗）を
+        workflow_eventsに記録してから再送出する。素材不足等の正典判断（decision=stop）は
+        ここを通らず、呼び出し元がそのまま正常な結果として扱う。記録は課長・社長の机には
+        乗せない（material_interviews / workflow_cases のどちらも更新しない）。"""
+        canon_text = self._interview_canon_text(self.workspace)
+        try:
+            return self.material_driver.run_interview_stage(
+                canon_text, stage_instruction, raw_material, context, self._interview_schema(),
+            )
+        except ProviderError as exc:
+            if getattr(exc, "technical", True):
+                attempts = getattr(exc, "attempts", []) or [{}]
+                last = attempts[-1]
+                self._log_stage(case_id, "取材社員", "技術エラー", stage_label, {
+                    "発生工程": stage_label, "provider": "anthropic",
+                    "attempt番号": last.get("attempt"), "API完了状態": last.get("status"),
+                    "incomplete理由": last.get("incomplete_reason"), "output token数": last.get("output_tokens"),
+                    "reasoning token数": last.get("reasoning_tokens"), "上限値": last.get("max_output_tokens"),
+                    "エラー種別": last.get("error_type") or type(exc).__name__, "attempts": attempts,
+                })
+            raise
+
+    def interview_fill_points(self, case_id, raw_material, known_points=None):
         """工程2：9問を埋める。足りないものだけ、最大3件をmissingで返す（呼び出し元・
         canonの双方で3件に制限するが、ここでは正典どおりモデルの出力をそのまま返す）。"""
-        canon_text = self._interview_canon_text(self.workspace)
-        result = self.material_driver.run_interview_stage(
-            canon_text, INTERVIEW_STAGE_2, raw_material,
-            {"これまでに埋まっている9問": known_points or {}}, self._interview_schema(),
+        result = self._run_interview_stage_logged(
+            case_id, "工程2", INTERVIEW_STAGE_2, raw_material,
+            {"これまでに埋まっている9問": known_points or {}},
         )
         result["missing"] = result.get("missing", [])[: RoutingEngine.MATERIAL_ASK_BATCH]
         return result
 
-    def interview_propose_drafts(self, raw_material, points):
+    def interview_propose_drafts(self, case_id, raw_material, points):
         """工程3：素材案を出す（最大3つ）。"""
-        canon_text = self._interview_canon_text(self.workspace)
-        result = self.material_driver.run_interview_stage(
-            canon_text, INTERVIEW_STAGE_3, raw_material, {"9問の回答": points}, self._interview_schema(),
+        result = self._run_interview_stage_logged(
+            case_id, "工程3", INTERVIEW_STAGE_3, raw_material, {"9問の回答": points},
         )
         result["drafts"] = (result.get("drafts") or [])[: RoutingEngine.MATERIAL_MAX_DRAFTS]
         return result
 
-    def interview_generalize(self, raw_material, points, department, decision_context):
+    def interview_generalize(self, case_id, raw_material, points, department, decision_context):
         """工程5・6：一般化し、公開用素材（形式ゲート8項目）を出す。"""
-        canon_text = self._interview_canon_text(self.workspace)
-        return self.material_driver.run_interview_stage(
-            canon_text, INTERVIEW_STAGE_5, raw_material,
+        return self._run_interview_stage_logged(
+            case_id, "工程5", INTERVIEW_STAGE_5, raw_material,
             {"9問の回答": points, "媒体": department, "Cocoの選択と追記": decision_context},
-            self._interview_schema(),
         )

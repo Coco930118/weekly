@@ -19,7 +19,18 @@ return an identical shape. `tool_choice` is left at "auto" (not forced to
 forced tool_choice: `HTTP 400 tool_choice: type "tool" and "any" are not
 supported for this model` (confirmed 2026-10-10 via interview-live-probe
 run #1). The tool's `description` instead instructs the model to always
-call it; a missing tool_use block is treated as a retryable technical error.
+call it; a missing tool_use block is treated as a retryable technical error
+(same retry budget as an HTTP/connection error: `max_retries` attempts in
+`_call`, then surfaced as a technical error for `ai_runtime.py` to log and
+re-raise — it never becomes a false 停止/manager escalation).
+
+`reasoning_effort="low"` (the default) keeps `thinking` unset (see
+`_thinking_block`). 2026-10-10: considered disabling thinking specifically
+for structured-output stages to avoid any tool_choice/thinking conflict, but
+that is unnecessary now — Anthropic's extended-thinking requirement is that
+`tool_choice` be "auto" when thinking is enabled, which is already the only
+mode this driver uses. So thinking stays controllable via
+`ANTHROPIC_REASONING_EFFORT` with no separate carve-out for these stages.
 Anthropic also has no separate "incomplete" status or reasoning-token count:
 `stop_reason == "max_tokens"` is treated as the incomplete case, and
 `reasoning_tokens` is left as None (Anthropic's usage object does not break

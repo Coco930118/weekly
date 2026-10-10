@@ -11,7 +11,7 @@ from urllib.error import HTTPError
 from atelier.server.server import Workspace,WorkspaceError,ROOT,serve,field_diff
 from atelier.server.ai_runtime import AIRuntime
 from atelier.server.anthropic_driver import AnthropicDriver
-from atelier.server.openai_driver import OpenAIDriver,ProviderUnavailable
+from atelier.server.openai_driver import OpenAIDriver,ProviderUnavailable,ProviderError
 
 class WorkspaceTests(unittest.TestCase):
     def setUp(self):
@@ -381,7 +381,7 @@ class AIRuntimeRoutingTests(unittest.TestCase):
             return self._fake_interview_result(points=points,missing=list(RoutingEngine.MATERIAL_POINTS[:5]))
         with patch.object(AnthropicDriver,'connected',True),\
              patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
-            result=runtime.interview_fill_points('原文テキスト')
+            result=runtime.interview_fill_points('case#1','原文テキスト')
         self.assertEqual(len(result['missing']),3)
         self.assertIn('取材社員の正典',seen[0][0])
         self.assertEqual(seen[0][2],'原文テキスト')
@@ -396,7 +396,7 @@ class AIRuntimeRoutingTests(unittest.TestCase):
             ])
         with patch.object(AnthropicDriver,'connected',True),\
              patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
-            result=runtime.interview_propose_drafts('原文テキスト',{})
+            result=runtime.interview_propose_drafts('case#1','原文テキスト',{})
         self.assertEqual(len(result['drafts']),3)
 
     def test_interview_generalize_passes_through_public_material(self):
@@ -406,9 +406,35 @@ class AIRuntimeRoutingTests(unittest.TestCase):
             return self._fake_interview_result(public_material={'日付':'2026-10-11'},smell_flags={'場面':['常連']})
         with patch.object(AnthropicDriver,'connected',True),\
              patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
-            result=runtime.interview_generalize('原文テキスト',{},'Threads',{'選択':'A'})
+            result=runtime.interview_generalize('case#1','原文テキスト',{},'Threads',{'選択':'A'})
         self.assertEqual(result['public_material']['日付'],'2026-10-11')
         self.assertEqual(result['smell_flags']['場面'],['常連'])
+
+    def test_interview_technical_error_is_logged_and_reraised_without_touching_case_state(self):
+        # tool_use不在などの技術エラーは、2回再試行してもなおAnthropicDriver側が
+        # ProviderError(technical=True)で送出してくる（_call内で吸収しきれなかった場合）。
+        # ai_runtime側はこれをworkflow_eventsに記録したうえで再送出し、課長・社長の机には
+        # 何も作らない（material_interviews行も作らない）。
+        from atelier.server.routing import RoutingEngine
+        routing=RoutingEngine(self.w)  # workflow_eventsテーブルを先に作る（実運用はserve()が先に作る）
+        runtime=AIRuntime(self.w)
+        case_id='posts/fixture.json#0'
+
+        def fake_run_fails(canon_text,stage_instruction,raw_material,context,schema):
+            raise ProviderError('Anthropic response did not contain a coco_atelier_interview tool_use block',
+                                 attempts=[{'attempt':1,'status':'end_turn','error_type':'tool_use_missing',
+                                            'output_tokens':9,'reasoning_tokens':None,'max_output_tokens':8000}])
+
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run_fails):
+            with self.assertRaises(ProviderError):
+                runtime.interview_fill_points(case_id,'原文テキスト')
+
+        self.assertEqual(routing.material_pending(),[])
+        events=routing.events(case_id)
+        self.assertEqual(len(events),1)
+        self.assertEqual(events[0]['action'],'技術エラー')
+        self.assertEqual(events[0]['detail']['エラー種別'],'tool_use_missing')
 
     def test_server_orchestration_sequence_end_to_end_with_mocked_claude(self):
         # server.pyの/api/material/*ハンドラが実際に行う順番（取材社員のAI呼び出し→
@@ -435,14 +461,14 @@ class AIRuntimeRoutingTests(unittest.TestCase):
         with patch.object(AnthropicDriver,'connected',True),\
              patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
             # /api/material/start
-            ai=runtime.interview_fill_points('原文テキスト')
+            ai=runtime.interview_fill_points(case_id,'原文テキスト')
             start=routing.material_start(case_id,'X','MATERIAL','原文テキスト',ai['points'])
             routing.record_provider_usage(case_id,'工程2',ai.get('_provider'))
             self.assertEqual(start['missing'],[])
 
             # /api/material/propose
             summary=routing.material_summary(case_id)
-            ai=runtime.interview_propose_drafts(summary['raw_material'],summary['organized_material'])
+            ai=runtime.interview_propose_drafts(case_id,summary['raw_material'],summary['organized_material'])
             routing.material_propose(case_id,ai['drafts'])
             routing.record_provider_usage(case_id,'工程3',ai.get('_provider'))
 
@@ -451,7 +477,7 @@ class AIRuntimeRoutingTests(unittest.TestCase):
 
             # /api/material/generalize-preview
             summary=routing.material_summary(case_id)
-            ai=runtime.interview_generalize(summary['raw_material'],summary['organized_material'],summary['department'],
+            ai=runtime.interview_generalize(case_id,summary['raw_material'],summary['organized_material'],summary['department'],
                                              {'選択':'A','選んだ案':summary['drafts'][0],'追記':''})
             routing.record_provider_usage(case_id,'工程5',ai.get('_provider'))
 
