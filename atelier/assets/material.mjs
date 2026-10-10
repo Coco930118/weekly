@@ -1,30 +1,28 @@
-import {node,loadMaterialPending,materialStart,materialAnswer,materialPropose,materialSelect,materialFinalize} from './data.mjs';
+import {node,loadMaterialPending,materialStart,materialAnswer,materialPropose,materialSelect,materialGeneralizePreview,materialFinalize} from './data.mjs';
 
 // キー名は atelier/canon/interview.md が正典。ここは表示用の複製。
-const POINTS=['実際に何が起きたか','誰が何と言ったか','わたしが何をしたか','わたしが何をしなかったか',
-  'その前に何があったか','そのあと何が変わったか','何回あったか',
-  '数字（人数・時間・金額など、原文にあるものだけ）','まだ決まっていないこと'];
 const GATE_FIELDS=['日付','媒体と置き換え先','場面','わたしがしたこと','そのあと起きたこと','【必ず残す事実】3点','対応表','原文'];
 const DRAFT_FIELDS=['軸','場面','わたしがしたこと','そのあと起きたこと'];
 const DRAFT_OPTIONAL_FIELD='この案で足りない問い';
+const LIST_GATE_FIELDS=new Set(['【必ず残す事実】3点','対応表']);
 
 function field(label,value){const row=node('div');row.className='desk-field';row.append(node('span',label),node('strong',String(value??'')));return row;}
 function labeledInput(label,tag='input',attrs={}){const wrap=node('label');wrap.className='material-field';const input=node(tag,undefined,attrs);wrap.append(node('span',label),input);return {wrap,input};}
 
 async function refresh(container){await showMaterialPanel(container);container.scrollIntoView({block:'start',behavior:'auto'});}
 
+// Cocoが打つのは原文・聞き返しへの答え・案の選択・追記だけ。9問を埋める・案を作る・
+// 一般化するのは取材社員（Claude）がサーバー側で行う（data.mjsのmaterialStart等）。
 function startForm(container,onDone){
   const form=node('form');form.className='material-start-form';
   const caseId=labeledInput('投稿番号（既存の投稿キー）','input',{placeholder:'posts/week_....json#0'});
   const department=labeledInput('部門','select');for(const d of ['X','Threads'])department.input.append(node('option',d,{value:d}));
-  const raw=labeledInput('原文（Cocoが話す）','textarea',{rows:6,placeholder:'実際に何が起きたか、思い出したまま話す。'});
-  const pointInputs=POINTS.map(p=>labeledInput(p,'input',{placeholder:'（わかれば）'}));
-  form.append(caseId.wrap,department.wrap,raw.wrap,...pointInputs.map(p=>p.wrap));
+  const raw=labeledInput('原文（Cocoが話す。整えない）','textarea',{rows:6,placeholder:'実際に何が起きたか、思い出したまま話す。'});
+  form.append(caseId.wrap,department.wrap,raw.wrap);
   const submit=node('button','取材社員に渡す',{type:'submit'});form.append(submit);
   form.onsubmit=async e=>{
     e.preventDefault();
-    const points={};POINTS.forEach((p,i)=>{points[p]=pointInputs[i].input.value;});
-    await materialStart(caseId.input.value.trim(),department.input.value,'MATERIAL',raw.input.value,points);
+    await materialStart(caseId.input.value.trim(),department.input.value,raw.input.value);
     await onDone();
   };
   container.append(form);
@@ -33,7 +31,7 @@ function startForm(container,onDone){
 function missingBlock(card,caseId,missing,onDone){
   if(!missing.length)return;
   const block=node('div');block.className='material-missing';
-  block.append(node('p',`足りない項目（${missing.length}）：${missing.join('／')}`));
+  block.append(node('p',`取材社員が9問を埋めたところ、足りない項目（${missing.length}）：${missing.join('／')}`));
   const form=node('form');const inputs=missing.map(p=>labeledInput(p,'input'));form.append(...inputs.map(i=>i.wrap));
   const submit=node('button','回答する',{type:'submit'});form.append(submit);
   form.onsubmit=async e=>{e.preventDefault();const answers={};missing.forEach((p,i)=>{answers[p]=inputs[i].input.value;});await materialAnswer(caseId,answers);await onDone();};
@@ -43,25 +41,15 @@ function missingBlock(card,caseId,missing,onDone){
 function draftsBlock(card,caseId,row,onDone){
   const block=node('div');block.className='material-drafts';
   if(!row.drafts){
-    block.append(node('p','素材案（最大3つ。原文にある事実だけで組む。足さない。3つに足りなければ空欄のまま渡す）'));
-    const form=node('form');
-    const draftInputs=[0,1,2].map(i=>{
-      const g=node('fieldset');g.append(node('legend',`案${'ABC'[i]}`));
-      const inputs=[...DRAFT_FIELDS,DRAFT_OPTIONAL_FIELD].map(f=>labeledInput(f,'input'));inputs.forEach(x=>g.append(x.wrap));
-      block.append(g);return inputs;
-    });
-    const submit=node('button','素材案を渡す',{type:'submit'});form.append(submit);block.append(form);
-    form.onsubmit=async e=>{e.preventDefault();
-      const allFields=[...DRAFT_FIELDS,DRAFT_OPTIONAL_FIELD];
-      const drafts=draftInputs.map(inputs=>{const d={};allFields.forEach((f,i)=>{if(inputs[i].input.value.trim())d[f]=inputs[i].input.value;});return d;})
-        .filter(d=>DRAFT_FIELDS.every(f=>d[f]));
-      await materialPropose(caseId,drafts);await onDone();
-    };
+    block.append(node('p','9問は揃いました。素材案（最大3つ）を取材社員に作ってもらう。'));
+    const make=node('button','取材社員に案を作ってもらう');
+    make.onclick=async()=>{await materialPropose(caseId);await onDone();};
+    block.append(make);
   }else if(!row.selected_option){
-    block.append(node('p','Cocoの選択'));
+    block.append(node('p','取材社員が作った素材案。Cocoが選ぶ。'));
     for(const [i,draft] of row.drafts.entries()){
       const d=node('div');d.className='material-draft-card';
-      d.append(...[...DRAFT_FIELDS,DRAFT_OPTIONAL_FIELD].filter(f=>draft[f]!==undefined).map(f=>field(f,draft[f])));
+      d.append(...[...DRAFT_FIELDS,DRAFT_OPTIONAL_FIELD].filter(f=>draft[f]).map(f=>field(f,draft[f])));
       const pick=node('button',`案${'ABC'[i]}を選ぶ`);
       pick.onclick=async()=>{await materialSelect(caseId,'ABC'[i],addendumInput.value);await onDone();};
       d.append(pick);block.append(d);
@@ -71,23 +59,36 @@ function draftsBlock(card,caseId,row,onDone){
     var addendumInput=addendumWrap.input;
     none.onclick=async()=>{await materialSelect(caseId,'案なし・自分で書く',addendumInput.value);await onDone();};
     block.append(addendumWrap.wrap,none);
-  }else{
+  }else if(!row.public_material){
     block.append(field('選択',row.selected_option));
     if(row.has_addendum)block.append(field('追記','あり'));
-    finalizeForm(block,caseId,onDone);
+    const make=node('button','取材社員に公開用素材を作ってもらう');
+    make.onclick=async()=>{
+      const preview=await materialGeneralizePreview(caseId);
+      finalizeForm(block,caseId,preview,onDone);
+      make.remove();
+    };
+    block.append(make);
   }
   card.append(block);
 }
 
-const LIST_GATE_FIELDS=new Set(['【必ず残す事実】3点','対応表']);
-function finalizeForm(block,caseId,onDone){
-  block.append(node('p','公開用素材（出口条件・8項目が揃わないと完了しない）'));
+// 取材社員が作った下書きをCocoが直せる形で表示する（点2：それ以外の欄は取材社員が埋め、
+// Cocoが直せる）。確定するまでは公開用素材はまだ保存されていない。
+function finalizeForm(block,caseId,preview,onDone){
+  block.append(node('p','公開用素材の下書き（取材社員作成。直してから確定する・8項目が揃わないと完了しない）'));
+  if(preview.smell_flags&&Object.keys(preview.smell_flags).length){
+    const warn=node('p');warn.className='material-missing';
+    warn.textContent='業種の匂いの印：'+Object.entries(preview.smell_flags).map(([f,ws])=>`${f}（${ws.join('・')}）`).join('／');
+    block.append(warn);
+  }
   const form=node('form');
   const multiline=f=>f==='原文'||LIST_GATE_FIELDS.has(f);
+  const toText=v=>Array.isArray(v)?v.join('\n'):String(v??'');
   const gateInputs=GATE_FIELDS.map(f=>labeledInput(
     LIST_GATE_FIELDS.has(f)?`${f}（1行に1つ）`:f,
     multiline(f)?'textarea':'input',
-    multiline(f)?{rows:3}:{},
+    multiline(f)?{rows:3,value:toText(preview.public_material?.[f])}:{value:toText(preview.public_material?.[f])},
   ));
   const nextEmployee=labeledInput('渡す投稿社員のID','input',{placeholder:'X01 / T01 等'});
   form.append(...gateInputs.map(i=>i.wrap),nextEmployee.wrap);
@@ -108,8 +109,8 @@ function finalizeForm(block,caseId,onDone){
 export async function showMaterialPanel(container){
   const rows=await loadMaterialPending();
   container.replaceChildren();
-  const header=node('div');header.className='desk-heading';
-  header.append(node('h2','素材を話す'),node('p','Cocoが原文を打つ欄。9問のうち足りないものだけ、1回3問までで聞き返す（2回聞いても1・3・6が埋まらなければ課長へ）。素材案（最大3つ）→選択・追記→公開用素材の順で投稿社員へ直接渡す。'));
+  const header=node('div');header.className='material-heading';
+  header.append(node('h2','素材を話す'),node('p','Cocoが打つのは原文・聞き返しへの答え・案の選択・追記だけ。9問を埋める・素材案を作る・一般化するのは取材社員（Claude）。2回聞いても1・3・6が埋まらなければ課長へ。'));
   container.append(header);
   for(const row of rows){
     const card=node('article');card.className='material-card';card.dataset.caseId=row.case_id;

@@ -488,13 +488,33 @@ class Handler(BaseHTTPRequestHandler):
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
             elif path=='/api/material/start':
-                result=self.server.routing.material_start(data['case_id'],data['department'],data['employee'],data['raw_material'],data['points'])
+                # Cocoが打つのは原文だけ。9問を埋めるのは取材社員（Claude）。
+                ai=self.server.runtime.interview_fill_points(data['raw_material'])
+                result=self.server.routing.material_start(data['case_id'],data['department'],'MATERIAL',data['raw_material'],ai['points'])
+                self.server.routing.record_provider_usage(data['case_id'],'工程2',ai.get('_provider'))
+                result['missing']=ai['missing']
             elif path=='/api/material/answer':
                 result=self.server.routing.material_answer(data['case_id'],data['answers'])
             elif path=='/api/material/propose':
-                result=self.server.routing.material_propose(data['case_id'],data['drafts'])
+                # Cocoは案を選ぶだけ。案を作るのは取材社員（Claude）。
+                summary=self.server.routing.material_summary(data['case_id'])
+                ai=self.server.runtime.interview_propose_drafts(summary['raw_material'],summary['organized_material'])
+                result=self.server.routing.material_propose(data['case_id'],ai['drafts'])
+                self.server.routing.record_provider_usage(data['case_id'],'工程3',ai.get('_provider'))
             elif path=='/api/material/select':
                 result=self.server.routing.material_select(data['case_id'],data['selection'],data.get('addendum'))
+            elif path=='/api/material/generalize-preview':
+                # 一般化・公開用素材の下書きを取材社員（Claude）が作る。Cocoが直せる形で返す
+                # だけで、まだ確定（finalize）はしない。
+                summary=self.server.routing.material_summary(data['case_id'])
+                selection=summary.get('selected_option')
+                selected_draft=None
+                if selection in ('A','B','C') and summary.get('drafts'):
+                    selected_draft=summary['drafts'][{'A':0,'B':1,'C':2}[selection]]
+                decision_context={'選択':selection,'選んだ案':selected_draft,'追記':summary.get('addendum') or ''}
+                ai=self.server.runtime.interview_generalize(summary['raw_material'],summary['organized_material'],summary['department'],decision_context)
+                self.server.routing.record_provider_usage(data['case_id'],'工程5',ai.get('_provider'))
+                result={'public_material':ai['public_material'],'smell_flags':ai.get('smell_flags',{}),'provider':ai.get('_provider')}
             elif path=='/api/material/finalize':
                 result=self.server.routing.material_finalize(data['case_id'],data['public_material'],data.get('next_employee'))
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')

@@ -57,6 +57,53 @@ def stage_output_schema():
     }
 
 
+def interview_output_schema(points_keys, draft_required_fields, draft_optional_field, gate_fields, gate_list_fields):
+    """取材社員（atelier/canon/interview.md）の工程2・3・5共通の構造化出力。
+    キー名だけをパラメータで受け取る——条文の内容はここに複製しない。
+    """
+    draft_fields = list(draft_required_fields) + [draft_optional_field]
+    return {
+        "type": "object",
+        "properties": {
+            "decision": {"type": "string", "enum": ["continue", "stop"]},
+            "stop_reason": {"type": "string"},
+            "points": {
+                "type": "object",
+                "properties": {k: {"type": "string"} for k in points_keys},
+                "required": list(points_keys),
+                "additionalProperties": False,
+            },
+            "missing": {"type": "array", "items": {"type": "string"}},
+            "drafts": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {f: {"type": "string"} for f in draft_fields},
+                    "required": draft_fields,
+                    "additionalProperties": False,
+                },
+            },
+            "public_material": {
+                "type": "object",
+                "properties": {
+                    f: ({"type": "array", "items": {"type": "string"}} if f in gate_list_fields else {"type": "string"})
+                    for f in gate_fields
+                },
+                "required": list(gate_fields),
+                "additionalProperties": False,
+            },
+            "smell_flags": {
+                "type": "object",
+                "properties": {f: {"type": "array", "items": {"type": "string"}} for f in gate_fields},
+                "required": list(gate_fields),
+                "additionalProperties": False,
+            },
+        },
+        "required": ["decision", "stop_reason", "points", "missing", "drafts", "public_material", "smell_flags"],
+        "additionalProperties": False,
+    }
+
+
 def vp_output_schema():
     return {
         "type": "object",
@@ -76,12 +123,18 @@ class OpenAIDriver:
     endpoint = "https://api.openai.com/v1/responses"
     max_retries = 2
 
+    def __init__(self, model_env=None):
+        # 役ごとに違うモデルを設定で切り替えられるようにする（anthropic_driver.pyと同じ仕組み）。
+        self.model_env = model_env
+
     @property
     def connected(self):
         return os.environ.get("ATELIER_OPENAI_LIVE") == "1" and bool(os.environ.get("OPENAI_API_KEY"))
 
     @property
     def model(self):
+        if self.model_env and os.environ.get(self.model_env):
+            return os.environ[self.model_env]
         return os.environ.get("OPENAI_MODEL", "gpt-5.6")
 
     @property

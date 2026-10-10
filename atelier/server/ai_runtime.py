@@ -17,7 +17,26 @@ import json
 import os
 
 from .anthropic_driver import AnthropicDriver
-from .openai_driver import OpenAIDriver, ProviderUnavailable, ProviderError
+from .openai_driver import OpenAIDriver, ProviderUnavailable, ProviderError, interview_output_schema
+from .routing import RoutingEngine
+
+INTERVIEW_STAGE_2 = (
+    "工程2（9問を埋める）だけを実行する。原文から埋まるものは原文の言葉でpointsに入れ、"
+    "埋まらないものだけmissingに入れる（最大3件、推測で埋めない）。drafts・public_material・"
+    "smell_flagsは空のままにする。素材不足で続けられない場合だけdecision=stopにする。"
+)
+INTERVIEW_STAGE_3 = (
+    "工程3（素材案を出す）だけを実行する。pointsはそのまま返し、missingは空にする。"
+    "draftsに最大3案を入れる（3案に足りなければ出せる数だけ入れる）。各案は原文にある"
+    "事実だけで組み、新しい出来事を作らない。public_material・smell_flagsは空のままにする。"
+)
+INTERVIEW_STAGE_5 = (
+    "工程5（一般化）と工程6（公開用素材を出す・形式ゲート）だけを実行する。Cocoが選んだ案・"
+    "追記を踏まえ、媒体の軸に合わせて置き換え先を決め、対応表に残す。業種の匂いがある語に"
+    "印をつける（置き換えで事実が変わるなら置き換えない）。public_materialに8項目（日付・"
+    "媒体と置き換え先・場面・わたしがしたこと・そのあと起きたこと・【必ず残す事実】3点・"
+    "対応表・原文）を入れる。missing・draftsは空のままにする。"
+)
 
 # role (employee `kind`) -> provider name. None = no model (監査委員会・秘書・design).
 ROLE_PROVIDERS = {
@@ -28,6 +47,14 @@ ROLE_PROVIDERS = {
     "audit": None,                # 監査委員会
     "secretary": None,            # 社長Coco秘書
     "design": None,               # TOP OF 敏腕空間デザイナー
+}
+
+# 役ごとに違うモデルを設定で切り替えられるようにする（例：取材社員と投稿社員を別モデルに）。
+# 役専用の環境変数が無ければ、provider共通のANTHROPIC_MODEL/OPENAI_MODEL、それも無ければ
+# 各driverの既定モデルを使う（anthropic_driver.py・openai_driver.pyの3段フォールバック）。
+ROLE_MODEL_ENV = {
+    "material_interview": "ANTHROPIC_MODEL_MATERIAL",
+    "post_owner": "ANTHROPIC_MODEL_POST_OWNER",
 }
 
 # (stage name, canon section header prefixes). Both canon files use the same
@@ -48,10 +75,18 @@ CANON_STAGES = [
 class AIRuntime:
     def __init__(self, workspace):
         self.workspace = workspace
-        self.providers = {"anthropic": AnthropicDriver(), "openai": OpenAIDriver()}
+        self.providers = {
+            "anthropic": AnthropicDriver(model_env=ROLE_MODEL_ENV.get("post_owner")),
+            "openai": OpenAIDriver(),
+        }
+        # 取材社員は投稿社員と同じprovider名（anthropic）だが、モデルを別に設定できるよう
+        # 専用のdriverインスタンスを持つ。
+        self.material_driver = AnthropicDriver(model_env=ROLE_MODEL_ENV.get("material_interview"))
 
     def _provider_for(self, employee):
         person = self.workspace.employee(employee)
+        if person["kind"] == "material_interview":
+            return self.material_driver
         provider_name = ROLE_PROVIDERS.get(person["kind"])
         return self.providers.get(provider_name) if provider_name else None
 
@@ -463,3 +498,47 @@ class AIRuntime:
                     expected_candidate_revision, result):
         return self.workspace.save_ai_result(key, candidate, employee,
                     expected_revision, expected_candidate_revision, result)
+
+    # --- 取材社員（atelier/canon/interview.md・工程2・3・5をClaudeに実行させる） ---
+
+    @staticmethod
+    def _interview_canon_text(workspace):
+        return (workspace.root / "atelier/canon/interview.md").read_text()
+
+    def _interview_schema(self):
+        return interview_output_schema(
+            RoutingEngine.MATERIAL_POINTS,
+            RoutingEngine.MATERIAL_DRAFT_FIELDS,
+            "この案で足りない問い",
+            RoutingEngine.MATERIAL_GATE_FIELDS,
+            {"【必ず残す事実】3点", "対応表"},
+        )
+
+    def interview_fill_points(self, raw_material, known_points=None):
+        """工程2：9問を埋める。足りないものだけ、最大3件をmissingで返す（呼び出し元・
+        canonの双方で3件に制限するが、ここでは正典どおりモデルの出力をそのまま返す）。"""
+        canon_text = self._interview_canon_text(self.workspace)
+        result = self.material_driver.run_interview_stage(
+            canon_text, INTERVIEW_STAGE_2, raw_material,
+            {"これまでに埋まっている9問": known_points or {}}, self._interview_schema(),
+        )
+        result["missing"] = result.get("missing", [])[: RoutingEngine.MATERIAL_ASK_BATCH]
+        return result
+
+    def interview_propose_drafts(self, raw_material, points):
+        """工程3：素材案を出す（最大3つ）。"""
+        canon_text = self._interview_canon_text(self.workspace)
+        result = self.material_driver.run_interview_stage(
+            canon_text, INTERVIEW_STAGE_3, raw_material, {"9問の回答": points}, self._interview_schema(),
+        )
+        result["drafts"] = (result.get("drafts") or [])[: RoutingEngine.MATERIAL_MAX_DRAFTS]
+        return result
+
+    def interview_generalize(self, raw_material, points, department, decision_context):
+        """工程5・6：一般化し、公開用素材（形式ゲート8項目）を出す。"""
+        canon_text = self._interview_canon_text(self.workspace)
+        return self.material_driver.run_interview_stage(
+            canon_text, INTERVIEW_STAGE_5, raw_material,
+            {"9問の回答": points, "媒体": department, "Cocoの選択と追記": decision_context},
+            self._interview_schema(),
+        )

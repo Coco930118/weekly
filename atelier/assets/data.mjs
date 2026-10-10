@@ -14,10 +14,13 @@ export const loadDesk = () => request('/api/desk');
 export const loadAudit = () => request('/api/audit');
 export const loadMaterialPending = (department) => request(`/api/material/pending${department?`?department=${encodeURIComponent(department)}`:''}`);
 export const loadMaterialSummary = (caseId) => request(`/api/material/summary?key=${encodeURIComponent(caseId)}`);
-export const materialStart = (caseId,department,employee,rawMaterial,points) => request('/api/material/start',{case_id:caseId,department,employee,raw_material:rawMaterial,points});
+// Cocoが打つのは原文・聞き返しへの答え・案の選択・追記だけ。9問を埋める・案を作る・
+// 一般化するのは取材社員（Claude、ai_runtime.py経由）がサーバー側で行う。
+export const materialStart = (caseId,department,rawMaterial) => request('/api/material/start',{case_id:caseId,department,raw_material:rawMaterial});
 export const materialAnswer = (caseId,answers) => request('/api/material/answer',{case_id:caseId,answers});
-export const materialPropose = (caseId,drafts) => request('/api/material/propose',{case_id:caseId,drafts});
+export const materialPropose = (caseId) => request('/api/material/propose',{case_id:caseId});
 export const materialSelect = (caseId,selection,addendum) => request('/api/material/select',{case_id:caseId,selection,addendum});
+export const materialGeneralizePreview = (caseId) => request('/api/material/generalize-preview',{case_id:caseId});
 export const materialFinalize = (caseId,publicMaterial,nextEmployee) => request('/api/material/finalize',{case_id:caseId,public_material:publicMaterial,next_employee:nextEmployee});
 export const recordException = (key,note) => request('/api/exception',{key,note});
 export const resolveSecretary = (id,response) => request('/api/secretary/resolve',{id,response});
