@@ -60,7 +60,7 @@ proposal=workspace.enqueue_secretary('仕組み提案','副社長','X',{
 },key='PC_PROPOSAL')
 
 os.environ['ATELIER_TOKEN']=TOKEN
-server=serve(0,root/'work.sqlite3');server.workspace=workspace;server.runtime=AIRuntime(workspace);server.token=TOKEN
+server=serve(0,root/'work.sqlite3');server.workspace=workspace;server.runtime=AIRuntime(workspace);server.routing=routing;server.token=TOKEN
 thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
 base=f'http://127.0.0.1:{server.server_port}'
 

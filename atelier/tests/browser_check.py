@@ -5,10 +5,11 @@ sys.path.insert(0,str(ROOT));sys.path.insert(0,str(Path(__file__).resolve().pare
 from test_atelier import WorkspaceTests
 from atelier.server.server import serve
 from atelier.server.ai_runtime import AIRuntime
+from atelier.server.routing import RoutingEngine
 from playwright.sync_api import sync_playwright
 case=WorkspaceTests();case.setUp()
 os.environ['ATELIER_TOKEN']='fixture-only-token'
-server=serve(0,case.root/'http.sqlite3');server.workspace=case.w;server.runtime=AIRuntime(case.w)
+server=serve(0,case.root/'http.sqlite3');server.workspace=case.w;server.runtime=AIRuntime(case.w);server.routing=RoutingEngine(case.w)
 thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
 errors=[]
 try:

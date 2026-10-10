@@ -1282,5 +1282,24 @@
       "space_design"
     ],
     "order": 57
+  },
+  {
+    "id": "MATERIAL",
+    "name": "取材社員",
+    "kind": "material_interview",
+    "department": "共通",
+    "role": "Cocoの実体験から一次素材を集める。9問（atelier/canon/interview.md）のうち足りないものだけ、1回3問までで聞き返す。2回聞いても1・3・6が埋まらなければ課長へ。素材案3つを原文にある事実だけで作る。Cocoの選択と追記を取り込み、形式ゲート（8項目）を満たした公開用素材を投稿社員へ直接渡す。素材ファイルを経由しない。業種の匂いがある語に印をつける。",
+    "media": [],
+    "fields": [],
+    "permissions": [
+      "material_interview"
+    ],
+    "stop_on": [
+      "素材不足",
+      "事実不明",
+      "指示外"
+    ],
+    "prompt_ref": "atelier/canon/interview.md",
+    "order": 58
   }
 ]

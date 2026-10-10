@@ -19,6 +19,24 @@ class RoutingEngine:
         "声が混ざった": "本文作成・整合性確認",
         "工程に戻っていない": None,
     }
+    # atelier/canon/interview.md「2. 9問を埋める」。ここに条文を復唱しない——
+    # キー名とインデックスだけがコードの都合で必要（インデックス0・2・5＝原文の1・3・6）。
+    MATERIAL_POINTS = (
+        "実際に何が起きたか", "誰が何と言ったか", "わたしが何をしたか", "わたしが何をしなかったか",
+        "その前に何があったか", "そのあと何が変わったか", "何回あったか",
+        "数字（人数・時間・金額など、原文にあるものだけ）", "まだ決まっていないこと",
+    )
+    MATERIAL_POINTS_MUST_FILL = (MATERIAL_POINTS[0], MATERIAL_POINTS[2], MATERIAL_POINTS[5])
+    MATERIAL_ASK_BATCH = 3
+    MATERIAL_ESCALATE_AFTER_ROUNDS = 2
+    MATERIAL_DRAFT_FIELDS = {"軸", "場面", "わたしがしたこと", "そのあと起きたこと"}
+    MATERIAL_MAX_DRAFTS = 3
+    MATERIAL_GATE_FIELDS = (
+        "日付", "媒体と置き換え先", "場面", "わたしがしたこと", "そのあと起きたこと",
+        "【必ず残す事実】3点", "対応表", "原文",
+    )
+    MATERIAL_SELECTIONS = {"A", "B", "C", "案なし・自分で書く"}
+    MATERIAL_SMELL_WORDS = ("来店", "常連", "お客様", "客様", "スタッフ")
 
     def __init__(self, workspace):
         self.workspace = workspace
@@ -64,6 +82,25 @@ class RoutingEngine:
               decision TEXT NOT NULL,
               effective_from TEXT NOT NULL,
               at TEXT DEFAULT CURRENT_TIMESTAMP
+            );
+            CREATE TABLE IF NOT EXISTS material_interviews (
+              case_id TEXT PRIMARY KEY,
+              department TEXT NOT NULL,
+              employee TEXT NOT NULL,
+              raw_material TEXT NOT NULL,
+              organized_material TEXT NOT NULL,
+              missing_points TEXT NOT NULL,
+              follow_up_count INTEGER NOT NULL DEFAULT 0,
+              drafts TEXT,
+              selected_option TEXT,
+              addendum TEXT,
+              has_addendum INTEGER NOT NULL DEFAULT 0,
+              public_material TEXT,
+              smell_flags TEXT,
+              escalated INTEGER NOT NULL DEFAULT 0,
+              status TEXT NOT NULL DEFAULT '進行中',
+              at TEXT DEFAULT CURRENT_TIMESTAMP,
+              updated_at TEXT DEFAULT CURRENT_TIMESTAMP
             );
             """)
 
@@ -401,3 +438,214 @@ class RoutingEngine:
                             reason="言い換え・素材追加")
             return {"accepted": False}
         return {"accepted": True}
+
+    # --- 素材取材（atelier/canon/interview.md） ---
+
+    @staticmethod
+    def _missing_points(points):
+        return [k for k in RoutingEngine.MATERIAL_POINTS if not str(points.get(k) or "").strip()]
+
+    @staticmethod
+    def _load_json_fields(row, fields):
+        data = dict(row)
+        for field in fields:
+            if data.get(field):
+                data[field] = json.loads(data[field])
+        return data
+
+    @classmethod
+    def _ask_batch(cls, missing):
+        """atelier/canon/interview.md「一度に聞くのは3問まで」。全件はDBに持つが、
+        Cocoに見せる・ログに残す聞き返しは先頭3件だけ。"""
+        return missing[:cls.MATERIAL_ASK_BATCH]
+
+    @classmethod
+    def _must_fill_still_missing(cls, missing):
+        return [k for k in cls.MATERIAL_POINTS_MUST_FILL if k in missing]
+
+    def material_start(self, case_id, department, employee, raw_material, points):
+        if not isinstance(raw_material, str) or not raw_material.strip():
+            raise RoutingError("MATERIAL_RAW", "原文が必要です")
+        if set(points) != set(self.MATERIAL_POINTS):
+            raise RoutingError("MATERIAL_POINTS", "9問の項目が揃っていません")
+        missing = self._missing_points(points)
+        ask = self._ask_batch(missing)
+        follow_up_count = 1 if missing else 0
+        with self.workspace.transaction() as db:
+            version = self._current_rule_version(db, department)
+            db.execute(
+                "INSERT INTO workflow_cases(case_id,department,employee,stage,status,rule_version) VALUES (?,?,?,?,?,?)",
+                (case_id, department, employee, "素材取材", "稼働中", version),
+            )
+            db.execute(
+                """INSERT INTO material_interviews
+                   (case_id,department,employee,raw_material,organized_material,missing_points,follow_up_count,status)
+                   VALUES (?,?,?,?,?,?,?,?)""",
+                (case_id, department, employee, raw_material, json.dumps(points, ensure_ascii=False),
+                 json.dumps(missing, ensure_ascii=False), follow_up_count, "進行中"),
+            )
+            self._event(db, case_id, employee, "素材受領", employee, missing=ask)
+            if ask:
+                self._event(db, case_id, employee, "聞き返し", "Coco", missing=ask)
+        # follow_up_countは起点でしかないため、ここで2回目のしきい値に達することはない
+        # （material_answerの応答後にだけ起こる）。
+        return {"case_id": case_id, "missing": ask}
+
+    def material_answer(self, case_id, answers):
+        with self.workspace.transaction() as db:
+            row = db.execute(
+                "SELECT department,organized_material FROM material_interviews WHERE case_id=?", (case_id,)
+            ).fetchone()
+            if not row:
+                raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+            department = row["department"]
+            points = json.loads(row["organized_material"])
+            points.update({k: v for k, v in answers.items() if k in self.MATERIAL_POINTS})
+            missing = self._missing_points(points)
+            ask = self._ask_batch(missing)
+            db.execute(
+                """UPDATE material_interviews SET organized_material=?,missing_points=?,
+                   follow_up_count=follow_up_count+?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?""",
+                (json.dumps(points, ensure_ascii=False), json.dumps(missing, ensure_ascii=False),
+                 1 if missing else 0, case_id),
+            )
+            new_count = db.execute(
+                "SELECT follow_up_count FROM material_interviews WHERE case_id=?", (case_id,)
+            ).fetchone()["follow_up_count"]
+            self._event(db, case_id, "Coco", "聞き返しに回答", "取材社員", answers=list(answers))
+            if ask:
+                self._event(db, case_id, "取材社員", "聞き返し", "Coco", missing=ask)
+        must_fill_missing = self._must_fill_still_missing(missing)
+        if new_count >= self.MATERIAL_ESCALATE_AFTER_ROUNDS and must_fill_missing:
+            return self._escalate_material_shortage(case_id, department, missing)
+        return {"missing": ask}
+
+    def _escalate_material_shortage(self, case_id, department, missing):
+        """atelier/canon/interview.md「2回聞いても 1・3・6 が埋まらなければ、課長へ（素材不足）」。"""
+        must_fill_missing = self._must_fill_still_missing(missing)
+        six = {
+            "部門": department, "投稿番号": case_id, "停止工程": "素材取材",
+            "不足・不明点": "・".join(must_fill_missing),
+            "現在確認できる事実": "・".join(k for k in self.MATERIAL_POINTS if k not in missing) or "なし",
+            "Cocoへの質問": "2回聞いても埋まらない項目です。" + "／".join(must_fill_missing),
+        }
+        with self.workspace.transaction() as db:
+            db.execute("UPDATE material_interviews SET escalated=1,updated_at=CURRENT_TIMESTAMP WHERE case_id=?", (case_id,))
+        queued = self.stop(case_id, "素材不足", six)
+        return {"case_id": case_id, "missing": missing, "escalated": True, "queue": queued}
+
+    def material_propose(self, case_id, drafts):
+        if not isinstance(drafts, list) or not drafts:
+            raise RoutingError("MATERIAL_DRAFTS", "素材案がありません")
+        if len(drafts) > self.MATERIAL_MAX_DRAFTS:
+            raise RoutingError("MATERIAL_DRAFTS", "素材案は3つを超えて出さない")
+        for draft in drafts:
+            if not isinstance(draft, dict) or not self.MATERIAL_DRAFT_FIELDS <= set(draft):
+                raise RoutingError("MATERIAL_DRAFTS", "素材案の形式が不正です")
+        with self.workspace.transaction() as db:
+            row = db.execute("SELECT case_id FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
+            if not row:
+                raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+            db.execute(
+                "UPDATE material_interviews SET drafts=?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
+                (json.dumps(drafts, ensure_ascii=False), case_id),
+            )
+            self._event(db, case_id, "取材社員", "素材案提示", "Coco", count=len(drafts))
+        return {"case_id": case_id, "drafts": drafts}
+
+    def material_select(self, case_id, selection, addendum=None):
+        if selection not in self.MATERIAL_SELECTIONS:
+            raise RoutingError("MATERIAL_SELECTION", "素材案の選択が不正です")
+        has_addendum = bool(addendum and str(addendum).strip())
+        with self.workspace.transaction() as db:
+            row = db.execute("SELECT case_id FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
+            if not row:
+                raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+            db.execute(
+                """UPDATE material_interviews SET selected_option=?,addendum=?,has_addendum=?,
+                   updated_at=CURRENT_TIMESTAMP WHERE case_id=?""",
+                (selection, addendum or "", 1 if has_addendum else 0, case_id),
+            )
+            self._event(db, case_id, "Coco", "素材案選択", "取材社員", selection=selection, has_addendum=has_addendum)
+        return {"case_id": case_id, "selection": selection, "has_addendum": has_addendum}
+
+    @staticmethod
+    def _gate_field_present(value):
+        if isinstance(value, (list, tuple)):
+            return any(str(v).strip() for v in value)
+        return bool(str(value or "").strip())
+
+    def material_finalize(self, case_id, public_material, next_employee=None):
+        if not isinstance(public_material, dict):
+            raise RoutingError("MATERIAL_FINALIZE", "公開用素材の形式が不正です")
+        missing = [f for f in self.MATERIAL_GATE_FIELDS if not self._gate_field_present(public_material.get(f))]
+        with self.workspace.transaction() as db:
+            row = db.execute("SELECT case_id FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
+            if not row:
+                raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+            if missing:
+                db.execute(
+                    "UPDATE material_interviews SET status='工程未完了',updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
+                    (case_id,),
+                )
+                self._event(db, case_id, "取材社員", "工程未完了", "取材社員", missing=missing)
+                return {"complete": False, "missing": missing}
+            smell_flags = {
+                f: [w for w in self.MATERIAL_SMELL_WORDS if w in str(public_material.get(f, ""))]
+                for f in self.MATERIAL_GATE_FIELDS
+            }
+            smell_flags = {f: ws for f, ws in smell_flags.items() if ws}
+            db.execute(
+                """UPDATE material_interviews SET public_material=?,smell_flags=?,status='完了',
+                   updated_at=CURRENT_TIMESTAMP WHERE case_id=?""",
+                (json.dumps(public_material, ensure_ascii=False), json.dumps(smell_flags, ensure_ascii=False), case_id),
+            )
+            current = db.execute(
+                "SELECT employee FROM workflow_cases WHERE case_id=?", (case_id,)
+            ).fetchone()
+            target_employee = next_employee or (current["employee"] if current else None)
+            db.execute(
+                "UPDATE workflow_cases SET status='稼働中',stage='①',employee=?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
+                (target_employee, case_id),
+            )
+            self._event(db, case_id, "取材社員", "公開用素材完成", target_employee, smell_flags=smell_flags)
+        return {"complete": True, "smell_flags": smell_flags, "public_material": public_material}
+
+    def material_summary(self, case_id):
+        with self.workspace.transaction() as db:
+            row = db.execute("SELECT * FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
+        if not row:
+            raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+        return self._load_json_fields(
+            row, ("organized_material", "missing_points", "drafts", "public_material", "smell_flags")
+        )
+
+    def material_pending(self, department=None):
+        # 停止中（課長へ渡した案件）は社長の机の「停止中」段がすでに持つ。
+        # ここに二重表示しない。
+        base = """SELECT mi.* FROM material_interviews mi
+                  LEFT JOIN workflow_cases wc ON wc.case_id = mi.case_id
+                  WHERE mi.status!='完了' AND (wc.status IS NULL OR wc.status!='停止中')"""
+        with self.workspace.transaction() as db:
+            if department:
+                rows = db.execute(base + " AND mi.department=? ORDER BY mi.case_id", (department,)).fetchall()
+            else:
+                rows = db.execute(base + " ORDER BY mi.case_id").fetchall()
+        return [
+            self._load_json_fields(row, ("organized_material", "missing_points", "drafts", "public_material", "smell_flags"))
+            for row in rows
+        ]
+
+    def material_audit(self, department=None):
+        with self.workspace.transaction() as db:
+            if department:
+                rows = db.execute(
+                    """SELECT case_id,follow_up_count,selected_option,has_addendum,escalated
+                       FROM material_interviews WHERE department=? ORDER BY case_id""",
+                    (department,),
+                ).fetchall()
+            else:
+                rows = db.execute(
+                    "SELECT case_id,follow_up_count,selected_option,has_addendum,escalated FROM material_interviews ORDER BY case_id"
+                ).fetchall()
+        return [dict(r) for r in rows]

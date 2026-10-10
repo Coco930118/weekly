@@ -14,6 +14,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 from .ai_runtime import AIRuntime
 from .openai_driver import ProviderUnavailable
+from .routing import RoutingEngine, RoutingError
 
 ROOT = Path(__file__).resolve().parents[2]
 EDITABLE = {'content','quote','x_short','self_replies','title','body','markdown',
@@ -445,6 +446,8 @@ class Handler(BaseHTTPRequestHandler):
             if url.path=='/api/logs':return self.send_json(self.server.workspace.executions(key))
             if url.path=='/api/desk':return self.send_json(self.server.workspace.desk())
             if url.path=='/api/audit':return self.send_json(self.server.workspace.audit_summary())
+            if url.path=='/api/material/pending':return self.send_json(self.server.routing.material_pending(params.get('department',[None])[0]))
+            if url.path=='/api/material/summary':return self.send_json(self.server.routing.material_summary(key))
             if url.path=='/api/status':return self.send_json({'ai':'未接続','enabled':False,'publish':'未実装','db':'SQLite作業DB','write_enabled':bool(self.server.token)})
             allowed={'/':'atelier/index.html','/atelier/':'atelier/index.html'}
             path=allowed.get(url.path,url.path.lstrip('/'))
@@ -458,6 +461,7 @@ class Handler(BaseHTTPRequestHandler):
             self.send_header('Content-Security-Policy',"default-src 'self'; style-src 'self'; script-src 'self'; connect-src 'self'; frame-ancestors 'none'")
             self.end_headers();self.wfile.write(raw)
         except WorkspaceError as exc:self.send_json({'error':exc.code,'message':str(exc),'current':exc.details},409)
+        except RoutingError as exc:self.send_json({'error':exc.code,'message':str(exc)},404 if exc.code=='NOT_FOUND' else 409)
         except (ValueError,TypeError):self.send_json({'error':'VALIDATION','message':'入力形式を確認してください'},400)
 
     def do_POST(self):
@@ -483,17 +487,28 @@ class Handler(BaseHTTPRequestHandler):
                 result=self.server.workspace.decide_proposal(int(data['id']),data['decision'])
             elif path=='/api/execute':
                 result=self.server.runtime.execute(data['key'],data['candidate'],data['employee'],data['revision'],data['candidate_revision'])
+            elif path=='/api/material/start':
+                result=self.server.routing.material_start(data['case_id'],data['department'],data['employee'],data['raw_material'],data['points'])
+            elif path=='/api/material/answer':
+                result=self.server.routing.material_answer(data['case_id'],data['answers'])
+            elif path=='/api/material/propose':
+                result=self.server.routing.material_propose(data['case_id'],data['drafts'])
+            elif path=='/api/material/select':
+                result=self.server.routing.material_select(data['case_id'],data['selection'],data.get('addendum'))
+            elif path=='/api/material/finalize':
+                result=self.server.routing.material_finalize(data['case_id'],data['public_material'],data.get('next_employee'))
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')
             self.send_json(result)
         except ProviderUnavailable as exc:self.send_json({'error':'AI_DISABLED','message':str(exc)},409)
         except WorkspaceError as exc:self.send_json({'error':exc.code,'message':str(exc),'current':exc.details},403 if exc.code=='AUTH' else 409)
+        except RoutingError as exc:self.send_json({'error':exc.code,'message':str(exc)},409 if exc.code!='NOT_FOUND' else 404)
         except (KeyError,ValueError,TypeError):self.send_json({'error':'VALIDATION','message':'入力形式を確認してください'},400)
 
 
 def serve(port=8765,db_path=None):
     workspace=Workspace(db_path=db_path)
     server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
-    server.workspace=workspace;server.runtime=AIRuntime(workspace);server.token=os.environ.get('ATELIER_TOKEN','')
+    server.workspace=workspace;server.runtime=AIRuntime(workspace);server.routing=RoutingEngine(workspace);server.token=os.environ.get('ATELIER_TOKEN','')
     return server
 
 if __name__=='__main__':
