@@ -29,6 +29,7 @@ from .openai_driver import ProviderUnavailable, ProviderError, stage_output_sche
 
 STAGE_TOOL_NAME = "coco_atelier_stage"
 VP_TOOL_NAME = "coco_atelier_vp_gate"
+INTERVIEW_TOOL_NAME = "coco_atelier_interview"
 
 
 class AnthropicDriver:
@@ -37,12 +38,20 @@ class AnthropicDriver:
     api_version = "2023-06-01"
     max_retries = 2
 
+    def __init__(self, model_env=None):
+        # 役ごとに違うモデルを設定で切り替えられるようにする（例：ANTHROPIC_MODEL_MATERIAL／
+        # ANTHROPIC_MODEL_POST_OWNER）。役専用の変数が無ければ共通の ANTHROPIC_MODEL、
+        # それも無ければ既定モデルを使う。正典（interview.md等）はprovider・モデルで変えない。
+        self.model_env = model_env
+
     @property
     def connected(self):
         return os.environ.get("ATELIER_ANTHROPIC_LIVE") == "1" and bool(os.environ.get("ANTHROPIC_API_KEY"))
 
     @property
     def model(self):
+        if self.model_env and os.environ.get(self.model_env):
+            return os.environ[self.model_env]
         return os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5-5")
 
     @property
@@ -239,3 +248,14 @@ class AnthropicDriver:
         )
         user_content = json.dumps({"素材原文": material, "完成投稿": completed_post, "3点基準": criteria}, ensure_ascii=False)
         return self._call(system_prompt, user_content, VP_TOOL_NAME, vp_output_schema(), "coco-atelier-vp/1.0")
+
+    def run_interview_stage(self, canon_text, stage_instruction, raw_material, context, schema):
+        """取材社員（atelier/canon/interview.md）の工程を1つ実行する。canon_textは
+        interview.mdの全文をそのまま指示文として渡す（原文の加工・要約はしない）。"""
+        if not self.connected:
+            raise ProviderUnavailable("Anthropic未接続：取材社員を実行できません")
+        if not isinstance(raw_material, str) or not raw_material.strip():
+            raise ProviderError("interview raw_material is required", technical=False)
+        system_prompt = canon_text + "\n\n【今回実行する工程】\n" + stage_instruction
+        user_content = json.dumps({"原文": raw_material, **(context or {})}, ensure_ascii=False)
+        return self._call(system_prompt, user_content, INTERVIEW_TOOL_NAME, schema, "coco-atelier-interview/1.0")

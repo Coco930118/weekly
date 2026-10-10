@@ -636,6 +636,13 @@ class RoutingEngine:
             for row in rows
         ]
 
+    def record_provider_usage(self, case_id, stage_name, provider_meta):
+        """取材社員のAI呼び出しのusageを記録する（AI呼び出しそのものはai_runtime.pyの仕事。
+        ここでは結果の記録だけを行う）。"""
+        with self.workspace.transaction() as db:
+            self._event(db, case_id, "取材社員", "provider呼び出し", stage_name, provider=provider_meta or {})
+        return {"recorded": True}
+
     def material_audit(self, department=None):
         with self.workspace.transaction() as db:
             if department:

@@ -335,3 +335,14 @@ TOP OF 敏腕空間デザイナーが、会社ルールを変えずに確定組�
 
 適用開始：本承認（2026-10-11）以降。
 社長Coco承認前のルール変更は禁止。
+
+
+### v2.5
+承認済み変更（2026-10-11 Coco決定・「素材案3つと9問の聞き返しをCocoが手入力するのは取材社員ではない」）：
+1. **工程2（9問を埋める）・工程3（素材案3つ）・工程5（一般化・対応表・業種の匂いの印）を、`atelier/canon/interview.md`をそのまま指示文として取材社員（Claude、`anthropic_driver.py`経由）に実行させる。** `atelier/server/ai_runtime.py`に`interview_fill_points`/`interview_propose_drafts`/`interview_generalize`を追加。出力はStructured Outputs（`openai_driver.py`の`interview_output_schema`。キー名のみ、条文は複製しない）。
+2. **社長の机「素材を話す」欄は、Cocoが打つのは原文・聞き返しへの答え・案の選択・追記だけに変更。** それ以外（9問の回答・素材案・公開用素材の下書き）は取材社員が埋め、公開用素材だけはCocoが直せる形で表示してから確定する（`/api/material/generalize-preview`→`/api/material/finalize`の2段）。`/api/material/start`・`/api/material/propose`も同様にサーバー側で取材社員のAI呼び出しを挟む形に変更。
+3. **取材社員・投稿社員のモデルは設定で変えられる。** `anthropic_driver.py`・`openai_driver.py`に役専用の環境変数（`ANTHROPIC_MODEL_MATERIAL`／`ANTHROPIC_MODEL_POST_OWNER`等）→共通の`ANTHROPIC_MODEL`→既定モデルの3段フォールバックを実装（`ai_runtime.py`「ROLE_MODEL_ENV」）。取材社員は投稿社員と別インスタンス（`AIRuntime.material_driver`）を持つため、書く側だけ後で上位モデルに替えることができる。
+4. **本テスト（固定の原文1本・取材社員を1回通す）を`atelier/tests/interview_live_probe.py`として用意し、`.github/workflows/interview-live-probe.yml`（workflow_dispatch限定）で実行できるようにした。** 結果（聞き返し内容・案3つ・公開用素材・usage）は加工せず報告する。3本並走への着手は、このテストが通ってから行う（Coco指示）。
+
+適用開始：本承認（2026-10-11）以降。
+社長Coco承認前のルール変更は禁止。

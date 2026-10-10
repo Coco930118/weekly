@@ -1,0 +1,24 @@
+name: Interview employee live probe
+
+# Manual only. Runs the interview employee (取材社員) through a single fixed
+# synthetic material once (工程2・3・5), reporting its output verbatim plus
+# usage. Does not touch real posts/notes data.
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Interview employee single-pass probe
+        env:
+          ATELIER_ANTHROPIC_LIVE: '1'
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 atelier/tests/interview_live_probe.py

@@ -221,7 +221,7 @@ class AIRuntimeRoutingTests(unittest.TestCase):
         self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
         for folder in ['posts','notes','atelier/config','atelier/canon']:(self.root/folder).mkdir(parents=True)
         for file in ['employees.json','workflow.json']:(self.root/'atelier/config'/file).write_bytes((ROOT/'atelier/config'/file).read_bytes())
-        for file in ['x_post.md','threads_post.md']:(self.root/'atelier/canon'/file).write_bytes((ROOT/'atelier/canon'/file).read_bytes())
+        for file in ['x_post.md','threads_post.md','interview.md']:(self.root/'atelier/canon'/file).write_bytes((ROOT/'atelier/canon'/file).read_bytes())
         (self.root/'posts/index.json').write_text(json.dumps({'weeks':['fixture.json']}))
         (self.root/'posts/fixture.json').write_text(json.dumps({'week':'fixture','posts':[
             {'id':'fixture_1','platform':'X','content':'','quote':'','material':'素材本文'},
@@ -240,6 +240,27 @@ class AIRuntimeRoutingTests(unittest.TestCase):
         self.assertIs(runtime._provider_for('BOARD_EDIT'),runtime.providers['openai'])
         self.assertIsNone(runtime._provider_for('AUDIT'))
         self.assertIsNone(runtime._provider_for('SECRETARY'))
+        # 取材社員は投稿社員と同じprovider(anthropic)だが、モデルを別に設定できるよう
+        # 専用インスタンスを持つ（同一オブジェクトではない）。
+        self.assertIs(runtime._provider_for('MATERIAL'),runtime.material_driver)
+        self.assertIsNot(runtime.material_driver,runtime.providers['anthropic'])
+
+    def test_role_model_env_fallback_chain(self):
+        runtime=AIRuntime(self.w)
+        # 既定：役専用の環境変数も共通ANTHROPIC_MODELも無ければdriverの既定モデル
+        with patch.dict(os.environ,{},clear=False):
+            for var in ('ANTHROPIC_MODEL','ANTHROPIC_MODEL_MATERIAL','ANTHROPIC_MODEL_POST_OWNER'):
+                os.environ.pop(var,None)
+            self.assertEqual(runtime.material_driver.model,'claude-sonnet-5-5')
+            self.assertEqual(runtime.providers['anthropic'].model,'claude-sonnet-5-5')
+        # 共通ANTHROPIC_MODELがあれば両方それを使う
+        with patch.dict(os.environ,{'ANTHROPIC_MODEL':'claude-common-model'}):
+            self.assertEqual(runtime.material_driver.model,'claude-common-model')
+            self.assertEqual(runtime.providers['anthropic'].model,'claude-common-model')
+        # 役専用の変数があれば、役ごとに別モデルへ切り替えられる（投稿社員だけ上位モデルに等）
+        with patch.dict(os.environ,{'ANTHROPIC_MODEL':'claude-common-model','ANTHROPIC_MODEL_POST_OWNER':'claude-opus-5-5'}):
+            self.assertEqual(runtime.material_driver.model,'claude-common-model')
+            self.assertEqual(runtime.providers['anthropic'].model,'claude-opus-5-5')
 
     def test_canon_stage_headers_resolve_against_real_canon(self):
         # Canary: if a future canon edit renames a §0 heading, this fails loudly
@@ -341,6 +362,109 @@ class AIRuntimeRoutingTests(unittest.TestCase):
         # source file's ('fixture theme'/'fixture axis' never appear).
         self.assertIn('取材社員が渡した場面',seen_material[0])
         self.assertTrue(all('fixture' not in m for m in seen_material))
+
+    def _fake_interview_result(self,**overrides):
+        from atelier.server.routing import RoutingEngine
+        result={'decision':'continue','stop_reason':'','points':{k:'' for k in RoutingEngine.MATERIAL_POINTS},
+                'missing':[],'drafts':[],'public_material':{f:'' for f in RoutingEngine.MATERIAL_GATE_FIELDS},
+                'smell_flags':{},'_provider':{'status':'end_turn','output_tokens':12}}
+        result.update(overrides)
+        return result
+
+    def test_interview_fill_points_caps_missing_at_three_and_uses_interview_canon(self):
+        from atelier.server.routing import RoutingEngine
+        runtime=AIRuntime(self.w)
+        seen=[]
+        def fake_run(canon_text,stage_instruction,raw_material,context,schema):
+            seen.append((canon_text,stage_instruction,raw_material,context))
+            points={k:f'{k}の回答' for k in RoutingEngine.MATERIAL_POINTS}
+            return self._fake_interview_result(points=points,missing=list(RoutingEngine.MATERIAL_POINTS[:5]))
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
+            result=runtime.interview_fill_points('原文テキスト')
+        self.assertEqual(len(result['missing']),3)
+        self.assertIn('取材社員の正典',seen[0][0])
+        self.assertEqual(seen[0][2],'原文テキスト')
+
+    def test_interview_propose_drafts_caps_at_three(self):
+        from atelier.server.routing import RoutingEngine
+        runtime=AIRuntime(self.w)
+        def fake_run(canon_text,stage_instruction,raw_material,context,schema):
+            return self._fake_interview_result(drafts=[
+                {'軸':f'軸{i}','場面':'場面','わたしがしたこと':'行動','そのあと起きたこと':'結果','この案で足りない問い':''}
+                for i in range(5)
+            ])
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
+            result=runtime.interview_propose_drafts('原文テキスト',{})
+        self.assertEqual(len(result['drafts']),3)
+
+    def test_interview_generalize_passes_through_public_material(self):
+        runtime=AIRuntime(self.w)
+        def fake_run(canon_text,stage_instruction,raw_material,context,schema):
+            self.assertEqual(context['媒体'],'Threads')
+            return self._fake_interview_result(public_material={'日付':'2026-10-11'},smell_flags={'場面':['常連']})
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
+            result=runtime.interview_generalize('原文テキスト',{},'Threads',{'選択':'A'})
+        self.assertEqual(result['public_material']['日付'],'2026-10-11')
+        self.assertEqual(result['smell_flags']['場面'],['常連'])
+
+    def test_server_orchestration_sequence_end_to_end_with_mocked_claude(self):
+        # server.pyの/api/material/*ハンドラが実際に行う順番（取材社員のAI呼び出し→
+        # routingの決定的な記録）を、HTTPを介さずに同じ順番で再現する。
+        from atelier.server.routing import RoutingEngine
+        routing=RoutingEngine(self.w)
+        runtime=AIRuntime(self.w)
+        case_id='posts/fixture.json#0'
+
+        def fake_run(canon_text,stage_instruction,raw_material,context,schema):
+            if stage_instruction.startswith('工程2'):
+                points={k:f'{k}の回答' for k in RoutingEngine.MATERIAL_POINTS}
+                return self._fake_interview_result(points=points,missing=[])
+            if stage_instruction.startswith('工程3'):
+                return self._fake_interview_result(drafts=[
+                    {'軸':'軸A','場面':'場面A','わたしがしたこと':'行動A','そのあと起きたこと':'結果A','この案で足りない問い':''},
+                ])
+            return self._fake_interview_result(public_material={
+                '日付':'2026-10-11','媒体と置き換え先':'X・仕事上の関係のまま','場面':'場面A',
+                'わたしがしたこと':'行動A','そのあと起きたこと':'結果A',
+                '【必ず残す事実】3点':['事実1','事実2','事実3'],'対応表':['原文 => 公開用'],'原文':raw_material,
+            })
+
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
+            # /api/material/start
+            ai=runtime.interview_fill_points('原文テキスト')
+            start=routing.material_start(case_id,'X','MATERIAL','原文テキスト',ai['points'])
+            routing.record_provider_usage(case_id,'工程2',ai.get('_provider'))
+            self.assertEqual(start['missing'],[])
+
+            # /api/material/propose
+            summary=routing.material_summary(case_id)
+            ai=runtime.interview_propose_drafts(summary['raw_material'],summary['organized_material'])
+            routing.material_propose(case_id,ai['drafts'])
+            routing.record_provider_usage(case_id,'工程3',ai.get('_provider'))
+
+            # Coco selects A
+            routing.material_select(case_id,'A')
+
+            # /api/material/generalize-preview
+            summary=routing.material_summary(case_id)
+            ai=runtime.interview_generalize(summary['raw_material'],summary['organized_material'],summary['department'],
+                                             {'選択':'A','選んだ案':summary['drafts'][0],'追記':''})
+            routing.record_provider_usage(case_id,'工程5',ai.get('_provider'))
+
+            # /api/material/finalize（Cocoがそのまま確定）
+            final=routing.material_finalize(case_id,ai['public_material'],next_employee='X01')
+
+        self.assertTrue(final['complete'])
+        case=routing.case(case_id)
+        self.assertEqual(case['stage'],'①')
+        self.assertEqual(case['employee'],'X01')
+        provider_events=[e for e in routing.events(case_id) if e['action']=='provider呼び出し']
+        self.assertEqual(len(provider_events),3)
+        self.assertEqual({e['target'] for e in provider_events},{'工程2','工程3','工程5'})
 
 class HTTPTests(unittest.TestCase):
     @classmethod
