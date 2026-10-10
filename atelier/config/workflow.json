@@ -165,7 +165,16 @@
     "status": "保留・未稼働"
   },
   "ai": {
-    "status": "未接続・再開しない"
+    "status": "role別provider設定済み。実接続はprovider側のATELIER_*_LIVEフラグとAPIキーの両方が揃った場合のみ（2026-10-11 Coco決定で意図的に反転）",
+    "role_providers": {
+      "material_interview": "anthropic",
+      "post_owner": "anthropic",
+      "management": "openai",
+      "board": "openai",
+      "audit": null,
+      "secretary": null,
+      "design": null
+    }
   },
   "stages": [
     {

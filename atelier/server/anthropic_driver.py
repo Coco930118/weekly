@@ -1,124 +1,99 @@
-"""OpenAI Responses API boundary.
+"""Anthropic Messages API boundary. Mirrors openai_driver.py's public shape
+(execute/review_vp, connected, name, _provider meta keys) so ai_runtime.py can
+treat either driver uniformly through role-based provider selection.
 
 Live calls require both:
-- ATELIER_OPENAI_LIVE=1
-- OPENAI_API_KEY
+- ATELIER_ANTHROPIC_LIVE=1
+- ANTHROPIC_API_KEY
 
 The media canon itself is never rewritten here or sent as anything other than
 its own text (`canon_preamble` / `stage_prompt`). This driver only executes
-the stage it is given; it does not publish, send x_06/E567, or call any tool.
+the stage it is given; it does not publish, send x_06/E567, or call any tool
+other than the single structured-output tool used to force the response shape.
+
+Anthropic's Messages API has no "json_schema strict" response format like
+OpenAI's Responses API. The equivalent here is a forced tool call
+(`tool_choice: {"type": "tool", ...}`) whose `input_schema` is the same
+schema `openai_driver.py` uses, so both drivers return an identical shape.
+Anthropic also has no separate "incomplete" status or reasoning-token count:
+`stop_reason == "max_tokens"` is treated as the incomplete case, and
+`reasoning_tokens` is left as None (Anthropic's usage object does not break
+reasoning/thinking tokens out from output_tokens).
 """
 import json
 import os
 from urllib import request as urlrequest
 from urllib.error import HTTPError, URLError
 
+from .openai_driver import ProviderUnavailable, ProviderError, stage_output_schema, vp_output_schema
 
-class ProviderUnavailable(Exception):
-    pass
-
-
-class ProviderError(Exception):
-    def __init__(self, message, *, technical=True, attempts=None):
-        super().__init__(message)
-        self.technical = technical
-        self.attempts = attempts or []
+STAGE_TOOL_NAME = "coco_atelier_stage"
+VP_TOOL_NAME = "coco_atelier_vp_gate"
 
 
-def stage_output_schema():
-    return {
-        "type": "object",
-        "properties": {
-            "decision": {"type": "string", "enum": ["complete", "stop"]},
-            "stop_reason": {"type": "string", "enum": ["none", "素材不足", "事実不明", "指示外"]},
-            "stop_stage": {"type": "string"},
-            "missing_or_unknown": {"type": "string"},
-            "confirmed_facts": {"type": "string"},
-            "question_for_coco": {"type": "string"},
-            "content": {"type": "string"},
-            "quote": {"type": "string"},
-            "facts_used": {"type": "array", "items": {"type": "string"}},
-            "checklist": {"type": "array", "items": {"type": "string"}},
-            "public_material": {"type": "string"},
-            "source_map": {"type": "array", "items": {"type": "string"}},
-            "candidates": {"type": "array", "items": {"type": "string"}},
-            "selection": {"type": "string"},
-            "audit_tags": {"type": "array", "items": {"type": "string"}},
-            "material_suggestions": {"type": "array", "items": {"type": "string"}},
-            "final_check_round": {"type": "integer", "minimum": 0, "maximum": 2},
-        },
-        "required": [
-            "decision", "stop_reason", "stop_stage", "missing_or_unknown",
-            "confirmed_facts", "question_for_coco", "content", "quote", "facts_used", "checklist",
-            "public_material", "source_map", "candidates", "selection", "audit_tags",
-            "material_suggestions", "final_check_round",
-        ],
-        "additionalProperties": False,
-    }
-
-
-def vp_output_schema():
-    return {
-        "type": "object",
-        "properties": {
-            "decision": {"type": "string", "enum": ["通す", "戻す"]},
-            "finding": {"type": "string", "enum": ["none", "事実が曲がった", "声が混ざった", "工程に戻っていない"]},
-            "source_quote": {"type": "string"},
-            "post_quote": {"type": "string"},
-        },
-        "required": ["decision", "finding", "source_quote", "post_quote"],
-        "additionalProperties": False,
-    }
-
-
-class OpenAIDriver:
-    name = "openai"
-    endpoint = "https://api.openai.com/v1/responses"
+class AnthropicDriver:
+    name = "anthropic"
+    endpoint = "https://api.anthropic.com/v1/messages"
+    api_version = "2023-06-01"
     max_retries = 2
 
     @property
     def connected(self):
-        return os.environ.get("ATELIER_OPENAI_LIVE") == "1" and bool(os.environ.get("OPENAI_API_KEY"))
+        return os.environ.get("ATELIER_ANTHROPIC_LIVE") == "1" and bool(os.environ.get("ANTHROPIC_API_KEY"))
 
     @property
     def model(self):
-        return os.environ.get("OPENAI_MODEL", "gpt-5.6")
+        return os.environ.get("ANTHROPIC_MODEL", "claude-sonnet-5-5")
 
     @property
     def max_output_tokens(self):
-        return int(os.environ.get("OPENAI_MAX_OUTPUT_TOKENS", "8000"))
+        return int(os.environ.get("ANTHROPIC_MAX_OUTPUT_TOKENS", "8000"))
 
     @property
     def reasoning_effort(self):
-        return os.environ.get("OPENAI_REASONING_EFFORT", "low")
+        return os.environ.get("ANTHROPIC_REASONING_EFFORT", "low")
+
+    def _thinking_block(self):
+        if self.reasoning_effort == "low":
+            return None
+        budget = {"medium": 4000, "high": 10000}.get(self.reasoning_effort, 4000)
+        return {"type": "enabled", "budget_tokens": budget}
 
     @staticmethod
-    def _extract_output_text(payload):
-        for item in payload.get("output", []):
-            if item.get("type") != "message":
-                continue
-            for part in item.get("content", []):
-                if part.get("type") == "output_text" and isinstance(part.get("text"), str):
-                    return part["text"]
-                if part.get("type") == "refusal":
-                    raise ProviderError("OpenAI response was refused", technical=False)
-        raise ProviderError("OpenAI response did not contain output_text")
+    def _extract_tool_input(payload, tool_name):
+        for block in payload.get("content", []):
+            if block.get("type") == "tool_use" and block.get("name") == tool_name:
+                return block.get("input", {})
+        raise ProviderError(f"Anthropic response did not contain a {tool_name} tool_use block")
 
     def _response_meta(self, payload, attempt):
         usage = payload.get("usage") or {}
-        details = usage.get("output_tokens_details") or {}
-        incomplete = payload.get("incomplete_details") or {}
+        stop_reason = payload.get("stop_reason")
         return {
             "attempt": attempt,
-            "status": payload.get("status"),
-            "incomplete_reason": incomplete.get("reason"),
+            "status": stop_reason,
+            "incomplete_reason": stop_reason if stop_reason == "max_tokens" else None,
             "output_tokens": usage.get("output_tokens"),
-            "reasoning_tokens": details.get("reasoning_tokens"),
+            # Anthropic's usage object does not separate reasoning/thinking tokens
+            # from output_tokens the way OpenAI's output_tokens_details does.
+            "reasoning_tokens": None,
             "max_output_tokens": self.max_output_tokens,
         }
 
-    def _call(self, body, user_agent):
-        api_key = os.environ.get("OPENAI_API_KEY", "")
+    def _call(self, system_prompt, user_content, tool_name, schema, user_agent):
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        body = {
+            "model": self.model,
+            "max_tokens": self.max_output_tokens,
+            "system": system_prompt,
+            "messages": [{"role": "user", "content": user_content}],
+            "tools": [{"name": tool_name, "description": f"Return {tool_name} output.", "input_schema": schema}],
+            "tool_choice": {"type": "tool", "name": tool_name},
+        }
+        thinking = self._thinking_block()
+        if thinking:
+            body["thinking"] = thinking
+
         attempts = []
         total_attempts = 1 + self.max_retries
         for attempt in range(1, total_attempts + 1):
@@ -126,8 +101,9 @@ class OpenAIDriver:
                 self.endpoint,
                 data=json.dumps(body, ensure_ascii=False).encode("utf-8"),
                 headers={
-                    "Authorization": f"Bearer {api_key}",
-                    "Content-Type": "application/json",
+                    "x-api-key": api_key,
+                    "anthropic-version": self.api_version,
+                    "content-type": "application/json",
                     "User-Agent": user_agent,
                 },
                 method="POST",
@@ -138,13 +114,14 @@ class OpenAIDriver:
                     raw = response.read().decode("utf-8")
                 payload = json.loads(raw)
                 meta = self._response_meta(payload, attempt)
-                if payload.get("status") == "incomplete":
+                if payload.get("stop_reason") == "refusal":
+                    raise ProviderError("Anthropic response was refused", technical=False)
+                if payload.get("stop_reason") == "max_tokens":
                     attempts.append({**meta, "error_type": "incomplete"})
                     if attempt < total_attempts:
                         continue
-                    raise ProviderError("OpenAI response remained incomplete after retries", attempts=attempts)
-                output_text = self._extract_output_text(payload)
-                result = json.loads(output_text)
+                    raise ProviderError("Anthropic response remained incomplete after retries", attempts=attempts)
+                result = self._extract_tool_input(payload, tool_name)
                 result["_provider"] = {
                     "response_id": payload.get("id"),
                     "model": payload.get("model", self.model),
@@ -160,7 +137,7 @@ class OpenAIDriver:
                     "max_output_tokens": self.max_output_tokens, "error_type": f"HTTP_{exc.code}",
                 })
                 if attempt >= total_attempts:
-                    raise ProviderError(f"OpenAI HTTP {exc.code}: {detail[:500]}", attempts=attempts) from exc
+                    raise ProviderError(f"Anthropic HTTP {exc.code}: {detail[:500]}", attempts=attempts) from exc
             except URLError as exc:
                 attempts.append({
                     "attempt": attempt, "status": "connection_error", "incomplete_reason": None,
@@ -168,17 +145,24 @@ class OpenAIDriver:
                     "max_output_tokens": self.max_output_tokens, "error_type": "connection_error",
                 })
                 if attempt >= total_attempts:
-                    raise ProviderError(f"OpenAI connection error: {exc}", attempts=attempts) from exc
+                    raise ProviderError(f"Anthropic connection error: {exc}", attempts=attempts) from exc
             except json.JSONDecodeError as exc:
                 meta = self._response_meta(payload or {}, attempt)
                 attempts.append({**meta, "error_type": "parse_error"})
                 if attempt >= total_attempts:
-                    raise ProviderError("OpenAI structured output could not be parsed after retries", attempts=attempts) from exc
-        raise ProviderError("OpenAI technical error", attempts=attempts)
+                    raise ProviderError("Anthropic response could not be parsed after retries", attempts=attempts) from exc
+            except ProviderError as exc:
+                if not exc.technical:
+                    raise
+                meta = self._response_meta(payload or {}, attempt)
+                attempts.append({**meta, "error_type": "provider_error"})
+                if attempt >= total_attempts:
+                    raise ProviderError(str(exc), attempts=attempts) from exc
+        raise ProviderError("Anthropic technical error", attempts=attempts)
 
     def execute(self, request):
         if not self.connected:
-            raise ProviderUnavailable("OpenAI未接続：ATELIER_OPENAI_LIVE=1 と OPENAI_API_KEY が必要です")
+            raise ProviderUnavailable("Anthropic未接続：ATELIER_ANTHROPIC_LIVE=1 と ANTHROPIC_API_KEY が必要です")
         material = request.get("material", "")
         if not isinstance(material, str) or not material.strip():
             raise ProviderError("material is required", technical=False)
@@ -225,23 +209,18 @@ class OpenAIDriver:
             "vp_return_feedback": vp_return_feedback,
             "completion_feedback": request.get("completion_feedback"),
         }
-        body = {
-            "model": self.model,
-            "store": False,
-            "input": [
-                {"role": "system", "content": effective_system_prompt},
-                {"role": "user", "content": json.dumps(user_input, ensure_ascii=False)},
-            ],
-            "reasoning": {"effort": self.reasoning_effort},
-            "text": {"format": {"type": "json_schema", "name": "coco_atelier_stage", "strict": True, "schema": stage_output_schema()}},
-            "max_output_tokens": self.max_output_tokens,
-        }
-        return self._call(body, "coco-atelier/1.0")
+        return self._call(
+            effective_system_prompt,
+            json.dumps(user_input, ensure_ascii=False),
+            STAGE_TOOL_NAME,
+            stage_output_schema(),
+            "coco-atelier/1.0",
+        )
 
     def review_vp(self, material, completed_post, criteria):
         """Independent VP gate. API input is source + final post + three criteria only."""
         if not self.connected:
-            raise ProviderUnavailable("OpenAI未接続：副社長レビューを実行できません")
+            raise ProviderUnavailable("Anthropic未接続：副社長レビューを実行できません")
         if not isinstance(material, str) or not material.strip():
             raise ProviderError("VP material is required", technical=False)
         if not isinstance(completed_post, str) or not completed_post.strip():
@@ -258,15 +237,5 @@ class OpenAIDriver:
             "source_quoteには素材原文から関連箇所をそのまま引用し、post_quoteには完成投稿の問題箇所をそのまま引用する。"
             "引用は要約・言い換えせず、それぞれ必ず対応する入力本文に実在する文字列を使う。"
         )
-        body = {
-            "model": self.model,
-            "store": False,
-            "input": [
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": json.dumps({"素材原文": material, "完成投稿": completed_post, "3点基準": criteria}, ensure_ascii=False)},
-            ],
-            "reasoning": {"effort": self.reasoning_effort},
-            "text": {"format": {"type": "json_schema", "name": "coco_atelier_vp_gate", "strict": True, "schema": vp_output_schema()}},
-            "max_output_tokens": self.max_output_tokens,
-        }
-        return self._call(body, "coco-atelier-vp/1.0")
+        user_content = json.dumps({"素材原文": material, "完成投稿": completed_post, "3点基準": criteria}, ensure_ascii=False)
+        return self._call(system_prompt, user_content, VP_TOOL_NAME, vp_output_schema(), "coco-atelier-vp/1.0")
