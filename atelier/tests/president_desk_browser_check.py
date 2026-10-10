@@ -78,7 +78,7 @@ with workspace.transaction() as db:
     routing._event(db,'L4_GHOST','副社長','テスト直送','Coco',note='秘書キュー外')
 
 os.environ['ATELIER_TOKEN']=TOKEN
-server=serve(0,root/'work.sqlite3');server.workspace=workspace;server.runtime=AIRuntime(workspace);server.token=TOKEN
+server=serve(0,root/'work.sqlite3');server.workspace=workspace;server.runtime=AIRuntime(workspace);server.routing=routing;server.token=TOKEN
 thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
 base=f'http://127.0.0.1:{server.server_port}'
 

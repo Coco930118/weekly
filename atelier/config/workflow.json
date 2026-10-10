@@ -88,6 +88,7 @@
     "president": "Coco"
   },
   "normal_route": [
+    "取材社員（素材を話す→公開用素材）",
     "投稿社員",
     "必要時のみ取締役会",
     "完成",
@@ -178,6 +179,15 @@
   },
   "stages": [
     {
+      "id": "material_interview",
+      "name": "取材社員",
+      "employees": [
+        "MATERIAL"
+      ],
+      "next": "post_owner",
+      "previous": null
+    },
+    {
       "id": "post_owner",
       "name": "投稿社員",
       "employees": [
@@ -232,7 +242,7 @@
         "XS14"
       ],
       "next": "board_or_complete",
-      "previous": null
+      "previous": "material_interview"
     },
     {
       "id": "board_or_complete",

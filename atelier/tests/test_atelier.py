@@ -38,18 +38,20 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(self.w.get('notes/fixture.json#0')['candidates'].keys(),{'A','B'})
 
     def test_employee_count_and_roles(self):
-        self.assertEqual(len(self.w.employees),57)
+        self.assertEqual(len(self.w.employees),58)
         ids={e['id'] for e in self.w.employees}
-        self.assertIn('X01',ids);self.assertIn('T21',ids);self.assertIn('XS14',ids)
+        self.assertIn('X01',ids);self.assertIn('T21',ids);self.assertIn('XS14',ids);self.assertIn('MATERIAL',ids)
         self.assertEqual(self.w.employee('BOARD_EDIT')['name'],'TOP OF 敏腕編集者')
         self.assertEqual(self.w.employee('VP')['company_stop_only'],['事実が曲がった','声が混ざった','工程に戻っていない'])
+        self.assertEqual(self.w.employee('MATERIAL')['prompt_ref'],'atelier/canon/interview.md')
 
     def test_workflow(self):
         workflow=json.loads((self.root/'atelier/config/workflow.json').read_text())
         stages=workflow['stages']
-        self.assertEqual([s['id'] for s in stages],['post_owner','board_or_complete','vice_president_gate','coco'])
-        self.assertEqual(stages[1]['employees'],['BOARD_EDIT','BOARD_WORD','BOARD_SNS'])
-        self.assertEqual(stages[2]['employees'],['VP'])
+        self.assertEqual([s['id'] for s in stages],['material_interview','post_owner','board_or_complete','vice_president_gate','coco'])
+        self.assertEqual(stages[0]['employees'],['MATERIAL'])
+        self.assertEqual(stages[2]['employees'],['BOARD_EDIT','BOARD_WORD','BOARD_SNS'])
+        self.assertEqual(stages[3]['employees'],['VP'])
         self.assertEqual(workflow['note']['status'],'保留・未稼働')
         self.assertEqual(workflow['ai']['role_providers']['post_owner'],'anthropic')
         self.assertEqual(workflow['ai']['role_providers']['management'],'openai')
@@ -304,6 +306,41 @@ class AIRuntimeRoutingTests(unittest.TestCase):
         self.assertEqual(calls,['一般化','①','ひとこと選び','②'])
         self.assertEqual(outcome['kind'],'stop')
         self.assertEqual(outcome['stop_reason'],'素材不足')
+
+    def test_material_interview_output_feeds_execute_instead_of_source_file(self):
+        # A.5: 取材社員の出力をそのまま投稿社員の入力にする。素材ファイル経由はやめる。
+        from atelier.server.routing import RoutingEngine
+        routing=RoutingEngine(self.w)
+        points={k:f'{k}の回答' for k in routing.MATERIAL_POINTS}
+        routing.material_start(self.key,'X','MATERIAL','原文テキスト（ファイルの素材とは別）',points)
+        routing.material_finalize(self.key,{
+            '日付':'2026-10-11','媒体と置き換え先':'X・仕事上の関係のまま',
+            '場面':'取材社員が渡した場面','わたしがしたこと':'取材社員が渡した行動',
+            'そのあと起きたこと':'取材社員が渡した結果',
+            '【必ず残す事実】3点':['事実1','事実2','事実3'],'対応表':['原文 => 公開用'],
+            '原文':'取材社員が渡した原文',
+        },next_employee='X01')
+        self.w.mutate(self.key,0,'basis',{'theme':'fixture theme','axis':'fixture axis'})
+        runtime=AIRuntime(self.w)
+        seen_material=[]
+        def fake_execute(request):
+            seen_material.append(request['material'])
+            return {'decision':'complete','stop_reason':'none','stop_stage':'','missing_or_unknown':'',
+                    'confirmed_facts':'','question_for_coco':'','content':'本文' if request['stage_name']=='④' else '',
+                    'quote':'ひとこと' if request['stage_name']=='④' else '','facts_used':[],'checklist':[],
+                    'public_material':'公開用素材' if request['stage_name']=='一般化' else '',
+                    'source_map':['原文 => 公開用'] if request['stage_name']=='一般化' else [],
+                    'candidates':['本文'] if request['stage_name']=='④' else [],'selection':'','audit_tags':[],
+                    'material_suggestions':[],'final_check_round':0,'_provider':{'status':'end_turn'}}
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.providers['anthropic'],'execute',side_effect=fake_execute):
+            runtime.execute(self.key,'A','X01',1,0)
+        # Only the first stage (一般化) sees raw material; later stages work from
+        # the public_material that stage itself returns. The point of this test is
+        # that the FIRST material ai_runtime sends is the interview's, not the
+        # source file's ('fixture theme'/'fixture axis' never appear).
+        self.assertIn('取材社員が渡した場面',seen_material[0])
+        self.assertTrue(all('fixture' not in m for m in seen_material))
 
 class HTTPTests(unittest.TestCase):
     @classmethod

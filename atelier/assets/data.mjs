@@ -12,6 +12,13 @@ export const loadHistory = key => request(`/api/history?key=${encodeURIComponent
 export const loadLogs = key => request(`/api/logs?key=${encodeURIComponent(key)}`);
 export const loadDesk = () => request('/api/desk');
 export const loadAudit = () => request('/api/audit');
+export const loadMaterialPending = (department) => request(`/api/material/pending${department?`?department=${encodeURIComponent(department)}`:''}`);
+export const loadMaterialSummary = (caseId) => request(`/api/material/summary?key=${encodeURIComponent(caseId)}`);
+export const materialStart = (caseId,department,employee,rawMaterial,points) => request('/api/material/start',{case_id:caseId,department,employee,raw_material:rawMaterial,points});
+export const materialAnswer = (caseId,answers) => request('/api/material/answer',{case_id:caseId,answers});
+export const materialPropose = (caseId,drafts) => request('/api/material/propose',{case_id:caseId,drafts});
+export const materialSelect = (caseId,selection,addendum) => request('/api/material/select',{case_id:caseId,selection,addendum});
+export const materialFinalize = (caseId,publicMaterial,nextEmployee) => request('/api/material/finalize',{case_id:caseId,public_material:publicMaterial,next_employee:nextEmployee});
 export const recordException = (key,note) => request('/api/exception',{key,note});
 export const resolveSecretary = (id,response) => request('/api/secretary/resolve',{id,response});
 export const routeStopToProposal = id => request('/api/secretary/route-proposal',{id});

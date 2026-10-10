@@ -307,6 +307,144 @@ class RoutingSimulationTests(unittest.TestCase):
         self.assertIn("X短文候補拒否", self.actions("F2"))
         self.assertEqual(self.w.desk()["queue"], [])
 
+    # G. 素材取材（atelier/canon/interview.md）
+
+    def full_points(self, **overrides):
+        points = {k: f"{k}の回答" for k in self.r.MATERIAL_POINTS}
+        points.update(overrides)
+        return points
+
+    def test_G1_all_points_present_has_no_follow_up(self):
+        result = self.r.material_start("G1", "X", "MATERIAL", "原文テキスト", self.full_points())
+        self.assertEqual(result["missing"], [])
+        self.assertNotIn("聞き返し", self.actions("G1"))
+        summary = self.r.material_summary("G1")
+        self.assertEqual(summary["follow_up_count"], 0)
+
+    def test_G2_missing_points_trigger_follow_up_then_resolve(self):
+        points = self.full_points(**{"何回あったか": "", "数字（人数・時間・金額など、原文にあるものだけ）": ""})
+        result = self.r.material_start("G2", "Threads", "MATERIAL", "原文テキスト", points)
+        self.assertEqual(set(result["missing"]), {"何回あったか", "数字（人数・時間・金額など、原文にあるものだけ）"})
+        self.assertIn("聞き返し", self.actions("G2"))
+        answered = self.r.material_answer("G2", {"何回あったか": "3回", "数字（人数・時間・金額など、原文にあるものだけ）": "なし"})
+        self.assertEqual(answered["missing"], [])
+        summary = self.r.material_summary("G2")
+        self.assertEqual(summary["follow_up_count"], 1)
+
+    def test_G2b_asking_batch_is_capped_at_three(self):
+        # 一度に聞くのは3問まで。4,5,7,8,9が欠けていても、見せる・ログに残すのは先頭3件だけ。
+        points = self.full_points(**{k: "" for k in [
+            "わたしが何をしなかったか", "その前に何があったか", "何回あったか",
+            "数字（人数・時間・金額など、原文にあるものだけ）", "まだ決まっていないこと",
+        ]})
+        result = self.r.material_start("G2b", "X", "MATERIAL", "原文テキスト", points)
+        self.assertEqual(len(result["missing"]), 3)
+        logged = [e["detail"]["missing"] for e in self.r.events("G2b") if e["action"] == "聞き返し"][0]
+        self.assertEqual(len(logged), 3)
+        self.assertEqual(self.r.material_summary("G2b")["missing_points"], [
+            "わたしが何をしなかったか", "その前に何があったか", "何回あったか",
+            "数字（人数・時間・金額など、原文にあるものだけ）", "まだ決まっていないこと",
+        ])
+
+    def test_G2c_two_rounds_unresolved_on_1_3_6_escalates_to_manager(self):
+        # 2回聞いても 1・3・6（実際に何が起きたか／わたしが何をしたか／そのあと何が変わったか）が
+        # 埋まらなければ、課長へ（素材不足）。
+        points = self.full_points(**{"実際に何が起きたか": "", "わたしが何をしたか": "", "そのあと何が変わったか": ""})
+        self.r.material_start("G2c", "X", "MATERIAL", "原文テキスト", points)
+        result = self.r.material_answer("G2c", {"実際に何が起きたか": "", "わたしが何をしたか": "", "そのあと何が変わったか": ""})
+        self.assertTrue(result.get("escalated"))
+        self.assertEqual(self.r.case("G2c")["status"], "停止中")
+        queue_payload = self.w.desk()["queue"][0]["payload"]
+        self.assertEqual(queue_payload["停止工程"], "素材取材")
+        self.assertIn("実際に何が起きたか", queue_payload["不足・不明点"])
+
+    def test_G2e_escalated_case_is_not_double_shown_in_pending(self):
+        points = self.full_points(**{"実際に何が起きたか": ""})
+        self.r.material_start("G2e", "X", "MATERIAL", "原文テキスト", points)
+        self.r.material_answer("G2e", {"実際に何が起きたか": ""})
+        pending_ids = [row["case_id"] for row in self.r.material_pending("X")]
+        self.assertNotIn("G2e", pending_ids)
+
+    def test_G2d_two_rounds_unresolved_on_other_points_does_not_escalate(self):
+        # 1・3・6以外（ここでは4・9）が埋まらないままでも、2回目で課長へは渡さない。
+        points = self.full_points(**{"わたしが何をしなかったか": "", "まだ決まっていないこと": ""})
+        self.r.material_start("G2d", "X", "MATERIAL", "原文テキスト", points)
+        result = self.r.material_answer("G2d", {"わたしが何をしなかったか": "", "まだ決まっていないこと": ""})
+        self.assertNotIn("escalated", result)
+        self.assertEqual(self.r.case("G2d")["status"], "稼働中")
+
+    def test_G3_draft_shape_and_count_are_validated(self):
+        self.r.material_start("G3", "X", "MATERIAL", "原文テキスト", self.full_points())
+        with self.assertRaises(Exception):
+            self.r.material_propose("G3", [{"場面": "x"}])
+        with self.assertRaises(Exception):
+            self.r.material_propose("G3", [
+                {"軸": f"軸{i}", "場面": "場面", "わたしがしたこと": "行動", "そのあと起きたこと": "結果"}
+                for i in range(4)
+            ])
+        # 3案に足りなくてもよい（2案）。「この案で足りない問い」は任意。
+        drafts = [
+            {"軸": "軸1", "場面": "場面", "わたしがしたこと": "行動", "そのあと起きたこと": "結果"},
+            {"軸": "軸2", "場面": "場面", "わたしがしたこと": "行動", "そのあと起きたこと": "結果",
+             "この案で足りない問い": "数字がまだない"},
+        ]
+        result = self.r.material_propose("G3", drafts)
+        self.assertEqual(len(result["drafts"]), 2)
+        self.assertIn("素材案提示", self.actions("G3"))
+
+    def test_G4_selection_and_addendum_are_recorded(self):
+        self.r.material_start("G4", "X", "MATERIAL", "原文テキスト", self.full_points())
+        with self.assertRaises(Exception):
+            self.r.material_select("G4", "D")
+        result = self.r.material_select("G4", "B", addendum="追記事実")
+        self.assertTrue(result["has_addendum"])
+        summary = self.r.material_summary("G4")
+        self.assertEqual(summary["selected_option"], "B")
+        self.assertEqual(summary["has_addendum"], 1)
+
+    def test_G5_finalize_incomplete_stays_in_material_interview(self):
+        self.r.material_start("G5", "X", "MATERIAL", "原文テキスト", self.full_points())
+        result = self.r.material_finalize("G5", {"日付": "2026-10-11", "場面": "場面のみ"})
+        self.assertFalse(result["complete"])
+        self.assertIn("媒体と置き換え先", result["missing"])
+        self.assertIn("【必ず残す事実】3点", result["missing"])
+        self.assertIn("対応表", result["missing"])
+        self.assertEqual(self.r.case("G5")["stage"], "素材取材")
+        self.assertIn("工程未完了", self.actions("G5"))
+
+    def test_G6_finalize_complete_hands_off_to_post_owner_and_flags_smell_words(self):
+        self.r.material_start("G6", "Threads", "MATERIAL", "原文テキスト", self.full_points())
+        public_material = {
+            "日付": "2026-10-11", "媒体と置き換え先": "Threads・お相手さまへ置き換え済み",
+            "場面": "常連のお客様が来店した", "わたしがしたこと": "謝った",
+            "そのあと起きたこと": "忘れないと言われた",
+            "【必ず残す事実】3点": ["足が遠のいた", "すぐに謝った", "忘れないと言われた"],
+            "対応表": ["お客様 => お相手さま", "来店した => 会ってくれた"],
+            "原文": "原文そのまま",
+        }
+        result = self.r.material_finalize("G6", public_material, next_employee="T01")
+        self.assertTrue(result["complete"])
+        self.assertIn("場面", result["smell_flags"])
+        self.assertEqual(set(result["smell_flags"]["場面"]), {"常連", "お客様", "客様", "来店"})
+        case = self.r.case("G6")
+        self.assertEqual(case["stage"], "①")
+        self.assertEqual(case["employee"], "T01")
+        self.assertIn("公開用素材完成", self.actions("G6"))
+
+    def test_G7_audit_counts_follow_up_selection_and_addendum(self):
+        self.r.material_start("G7a", "X", "MATERIAL", "原文", self.full_points(**{"何回あったか": ""}))
+        self.r.material_answer("G7a", {"何回あったか": "2回"})
+        self.r.material_select("G7a", "A")
+        self.r.material_start("G7b", "X", "MATERIAL", "原文", self.full_points())
+        self.r.material_select("G7b", "案なし・自分で書く", addendum="追記")
+        rows = {row["case_id"]: row for row in self.r.material_audit("X")}
+        self.assertEqual(rows["G7a"]["follow_up_count"], 1)
+        self.assertEqual(rows["G7a"]["selected_option"], "A")
+        self.assertEqual(rows["G7a"]["has_addendum"], 0)
+        self.assertEqual(rows["G7b"]["follow_up_count"], 0)
+        self.assertEqual(rows["G7b"]["selected_option"], "案なし・自分で書く")
+        self.assertEqual(rows["G7b"]["has_addendum"], 1)
+
 
 if __name__ == "__main__":
     unittest.main()

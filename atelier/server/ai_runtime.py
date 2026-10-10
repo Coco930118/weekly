@@ -146,12 +146,30 @@ class AIRuntime:
                 return value
         return None
 
-    def _prepare_request(self, key, state, person):
+    @staticmethod
+    def _material_from_interview(db, key):
+        """取材社員の公開用素材（atelier/canon/interview.md）。あれば素材ファイルより優先する
+        （素材ファイル経由はやめる、の実装）。呼び出し元が開いたトランザクションのdbを使う——
+        ここで新しいtransaction()を開くとSQLiteの排他ロックで自己デッドロックする。"""
+        exists = db.execute(
+            "SELECT 1 FROM sqlite_master WHERE type='table' AND name='material_interviews'"
+        ).fetchone()
+        if not exists:
+            return None
+        row = db.execute(
+            "SELECT public_material,status FROM material_interviews WHERE case_id=? AND status='完了'", (key,)
+        ).fetchone()
+        if not row or not row["public_material"]:
+            return None
+        fields = json.loads(row["public_material"])
+        return "\n".join(f"{k}：{v}" for k, v in fields.items())
+
+    def _prepare_request(self, key, state, person, db):
         source_row = self.workspace.source(key)
         source = source_row["source"]
         prompt_path = self.workspace.root / person["prompt_ref"]
         full_canon = prompt_path.read_text()
-        material = self._material_from_source(source)
+        material = self._material_from_interview(db, key) or self._material_from_source(source)
         if material is None:
             from .server import WorkspaceError
             raise WorkspaceError("MATERIAL_REQUIRED", "providerへ送る素材フィールドが明示されていません")
@@ -236,7 +254,7 @@ class AIRuntime:
                     self.workspace.log(db, key, employee, "blocked", "AI_DISABLED", candidate)
                     provider = None
                 else:
-                    prepared = self._prepare_request(key, state, person)
+                    prepared = self._prepare_request(key, state, person, db)
                     state_snapshot = {
                         "theme": state["theme"],
                         "axis": state["axis"],
