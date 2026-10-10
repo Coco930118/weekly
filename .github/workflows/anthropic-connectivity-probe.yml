@@ -1,0 +1,24 @@
+name: Anthropic connectivity probe
+
+# Manual only. Confirms ANTHROPIC_API_KEY / org / scope with a single short
+# fixed-input call. Does not use any Coco Atelier canon or employee
+# instruction text (see atelier/tests/anthropic_connectivity_probe.py).
+on:
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Minimal connectivity probe
+        env:
+          ATELIER_ANTHROPIC_LIVE: '1'
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 atelier/tests/anthropic_connectivity_probe.py

@@ -10,6 +10,7 @@ from urllib.request import Request,urlopen
 from urllib.error import HTTPError
 from atelier.server.server import Workspace,WorkspaceError,ROOT,serve,field_diff
 from atelier.server.ai_runtime import AIRuntime
+from atelier.server.anthropic_driver import AnthropicDriver
 from atelier.server.openai_driver import OpenAIDriver,ProviderUnavailable
 
 class WorkspaceTests(unittest.TestCase):
@@ -50,7 +51,9 @@ class WorkspaceTests(unittest.TestCase):
         self.assertEqual(stages[1]['employees'],['BOARD_EDIT','BOARD_WORD','BOARD_SNS'])
         self.assertEqual(stages[2]['employees'],['VP'])
         self.assertEqual(workflow['note']['status'],'保留・未稼働')
-        self.assertEqual(workflow['ai']['status'],'未接続・再開しない')
+        self.assertEqual(workflow['ai']['role_providers']['post_owner'],'anthropic')
+        self.assertEqual(workflow['ai']['role_providers']['management'],'openai')
+        self.assertIsNone(workflow['ai']['role_providers']['audit'])
 
     def test_direct_edit_history_and_conflict(self):
         self.basis();state=self.w.mutate(self.key,1,'edit',{'candidate':'A','candidate_revision':0,'fields':{'content':'Cocoの本文'},'reason':'表現修正'})
@@ -182,10 +185,14 @@ class WorkspaceTests(unittest.TestCase):
         self.assertCountEqual(outcomes,['saved','CONFLICT'])
 
     def test_disabled_provider_never_called(self):
+        # X01 is kind=post_owner, routed to the anthropic provider (role->provider
+        # config in ai_runtime.py). Neither provider is connected without its
+        # live-flag env var and API key, so execute() must block before calling out.
         self.basis();runtime=AIRuntime(self.w)
-        with patch.object(runtime.provider,'execute',side_effect=AssertionError('must not send')) as call:
+        with patch.object(runtime.providers['anthropic'],'execute',side_effect=AssertionError('must not send')) as anthropic_call,\
+             patch.object(runtime.providers['openai'],'execute',side_effect=AssertionError('must not send')) as openai_call:
             with self.assertRaises(ProviderUnavailable):runtime.execute(self.key,'A','X01',1,0)
-            call.assert_not_called()
+            anthropic_call.assert_not_called();openai_call.assert_not_called()
         self.assertEqual(self.w.executions(self.key)[0]['code'],'AI_DISABLED')
         self.assertEqual(self.w.get(self.key)['revision'],1)
         with self.assertRaises(ProviderUnavailable):OpenAIDriver().execute({})
@@ -204,6 +211,99 @@ class WorkspaceTests(unittest.TestCase):
     def test_ranges_and_diff(self):
         self.assertEqual(self.w.changed_ranges('abc','aBc'),[[1,2]])
         diff=field_diff({'quote':'前'},{'quote':'後'});self.assertEqual(diff['quote']['before'],'前');self.assertIn('+"後"',diff['quote']['diff'])
+
+class AIRuntimeRoutingTests(unittest.TestCase):
+    """Role->provider selection and the stage-calling skeleton (v2.3 port)."""
+
+    def setUp(self):
+        self.tmp=tempfile.TemporaryDirectory();self.root=Path(self.tmp.name)
+        for folder in ['posts','notes','atelier/config','atelier/canon']:(self.root/folder).mkdir(parents=True)
+        for file in ['employees.json','workflow.json']:(self.root/'atelier/config'/file).write_bytes((ROOT/'atelier/config'/file).read_bytes())
+        for file in ['x_post.md','threads_post.md']:(self.root/'atelier/canon'/file).write_bytes((ROOT/'atelier/canon'/file).read_bytes())
+        (self.root/'posts/index.json').write_text(json.dumps({'weeks':['fixture.json']}))
+        (self.root/'posts/fixture.json').write_text(json.dumps({'week':'fixture','posts':[
+            {'id':'fixture_1','platform':'X','content':'','quote':'','material':'素材本文'},
+        ]}))
+        (self.root/'notes/index.json').write_text(json.dumps({'notes':['fixture.json']}))
+        (self.root/'notes/fixture.json').write_text(json.dumps({'title':'fixture note','markdown':'本文','maai_axis':{'温度':'高','距離':'低'}}))
+        self.w=Workspace(self.root,self.root/'work.sqlite3');self.key='posts/fixture.json#0'
+    def tearDown(self):self.tmp.cleanup()
+
+    def test_role_provider_mapping(self):
+        runtime=AIRuntime(self.w)
+        self.assertIs(runtime._provider_for('X01'),runtime.providers['anthropic'])
+        self.assertIs(runtime._provider_for('T01'),runtime.providers['anthropic'])
+        self.assertIs(runtime._provider_for('MANAGER'),runtime.providers['openai'])
+        self.assertIs(runtime._provider_for('VP'),runtime.providers['openai'])
+        self.assertIs(runtime._provider_for('BOARD_EDIT'),runtime.providers['openai'])
+        self.assertIsNone(runtime._provider_for('AUDIT'))
+        self.assertIsNone(runtime._provider_for('SECRETARY'))
+
+    def test_canon_stage_headers_resolve_against_real_canon(self):
+        # Canary: if a future canon edit renames a §0 heading, this fails loudly
+        # instead of ai_runtime.py silently skipping a stage.
+        runtime=AIRuntime(self.w)
+        for canon_file in ['atelier/canon/x_post.md','atelier/canon/threads_post.md']:
+            text=(ROOT/canon_file).read_text()
+            stages=runtime._canon_stages(text)
+            names=[name for name,_ in stages]
+            self.assertEqual(names,['一般化','①','ひとこと選び','②','④','③',"④'",'⑧'])
+            for name,body in stages:
+                self.assertTrue(body.strip(),f'{canon_file}:{name} section was empty')
+
+    def test_execute_runs_stages_in_order_and_saves_final_candidate(self):
+        self.w.mutate(self.key,0,'basis',{'theme':'fixture theme','axis':'fixture axis'})
+        runtime=AIRuntime(self.w)
+        expected_order=['一般化','①','ひとこと選び','②','④','③',"④'",'⑧']
+        calls=[]
+
+        def fake_execute(request):
+            calls.append(request['stage_name'])
+            result={'decision':'complete','stop_reason':'none','stop_stage':'','missing_or_unknown':'',
+                    'confirmed_facts':'','question_for_coco':'','content':'','quote':'','facts_used':[],
+                    'checklist':[],'public_material':'','source_map':[],'candidates':[],'selection':'',
+                    'audit_tags':[],'material_suggestions':[],'final_check_round':0,
+                    '_provider':{'status':'end_turn','output_tokens':10}}
+            if request['stage_name']=='一般化':
+                result['public_material']='公開用素材';result['source_map']=['原文 => 公開用']
+            if request['stage_name']=='④':
+                result['content']='本文候補';result['candidates']=['本文候補'];result['quote']='ひとこと'
+            return result
+
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.providers['anthropic'],'execute',side_effect=fake_execute):
+            outcome=runtime.execute(self.key,'A','X01',1,0)
+        self.assertEqual(calls,expected_order)
+        self.assertEqual(outcome['kind'],'complete')
+        self.assertEqual(outcome['public_material'],'公開用素材')
+        self.assertEqual(outcome['state']['candidates']['A']['fields']['content'],'本文候補')
+        self.assertEqual(outcome['state']['candidates']['A']['fields']['quote'],'ひとこと')
+
+    def test_execute_stops_without_calling_later_stages(self):
+        self.w.mutate(self.key,0,'basis',{'theme':'fixture theme','axis':'fixture axis'})
+        runtime=AIRuntime(self.w)
+        calls=[]
+
+        def fake_execute(request):
+            calls.append(request['stage_name'])
+            if request['stage_name']=='②':
+                return {'decision':'stop','stop_reason':'素材不足','stop_stage':'②',
+                        'missing_or_unknown':'現場で起きたこと','confirmed_facts':'場面のみ',
+                        'question_for_coco':'そのあと何が起きましたか？','material_suggestions':[],
+                        '_provider':{'status':'end_turn'}}
+            return {'decision':'complete','stop_reason':'none','stop_stage':'','missing_or_unknown':'',
+                    'confirmed_facts':'','question_for_coco':'','content':'','quote':'','facts_used':[],
+                    'checklist':[],'public_material':'公開用素材' if request['stage_name']=='一般化' else '',
+                    'source_map':['原文 => 公開用'] if request['stage_name']=='一般化' else [],
+                    'candidates':[],'selection':'','audit_tags':[],'material_suggestions':[],
+                    'final_check_round':0,'_provider':{'status':'end_turn'}}
+
+        with patch.object(AnthropicDriver,'connected',True),\
+             patch.object(runtime.providers['anthropic'],'execute',side_effect=fake_execute):
+            outcome=runtime.execute(self.key,'A','X01',1,0)
+        self.assertEqual(calls,['一般化','①','ひとこと選び','②'])
+        self.assertEqual(outcome['kind'],'stop')
+        self.assertEqual(outcome['stop_reason'],'素材不足')
 
 class HTTPTests(unittest.TestCase):
     @classmethod

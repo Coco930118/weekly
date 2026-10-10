@@ -180,10 +180,26 @@ TOP OF 敏腕空間デザイナーが、会社ルールを変えずに確定組�
 
 ## 非対象
 - note部門の設計・社員化
-- OpenAI接続
-- AI生成
 - x_06 / E567送信
 - 公開処理の変更
+
+⚠️ **旧「OpenAI接続」「AI生成」は対象外だったが、2026-10-11 Coco決定で意図的に反転した。** 現在はプロバイダの役割分担（下記「プロバイダ（provider）の役割分担」）に従って対象。`atelier/config/workflow.json`「ai」の `status` と `test_atelier.py` の該当アサートも同時に更新済み。
+
+## プロバイダ（provider）の役割分担（2026-10-11 Coco決定）
+正典（`atelier/canon/*.md`）はprovider（Claude／ChatGPT）によって内容を変えない。どのproviderがどの役を動かすかは設定（`atelier/config/workflow.json`「ai.role_providers」・`atelier/server/ai_runtime.py`「ROLE_PROVIDERS」）であり、工程・ルールではない。
+
+| 役 | provider |
+|---|---|
+| 取材社員 | Claude（`atelier/server/anthropic_driver.py`） |
+| 投稿社員 | Claude |
+| 課長・副社長 | ChatGPT（`atelier/server/openai_driver.py`） |
+| 取締役会 | ChatGPT |
+| 監査委員会・社長Coco秘書・TOP OF 敏腕空間デザイナー | モデルなし |
+
+各工程で実際に動いたproviderは監査委員会が記録する（`workflow_events`の `provider` フィールド）。
+**実接続の条件は両方必要**：①`ATELIER_ANTHROPIC_LIVE=1` / `ATELIER_OPENAI_LIVE=1` の稼働フラグ、②対応するAPIキー（`ANTHROPIC_API_KEY` / `OPENAI_API_KEY`）。どちらか一方でも欠けると `AI_DISABLED` として停止し、providerは一度も呼ばれない（`test_disabled_provider_never_called` が検査）。
+
+**土台は main（2026-10-11 Coco決定・移植の範囲）**：`atelier/openai-x01-probe` ブランチから移植したのは、`openai_driver.py` のAPI呼び出し部分（status／incomplete_details／max_output_tokens／reasoning分の扱い／Structured Outputs strict）と、`ai_runtime.py` の「素材→公開用素材→候補→副社長」を工程ごとに呼ぶ骨組みだけ。持ち込んでいないもの：Final Editor関連（同ブランチの `final-editor-publish.yml` 変更・`tools/final_editor_publish.py` 変更・`ai_runtime.py` 内のFinal Editorゲート）、`x_post_v2.md` / `threads_post_v2.md`（正典は `atelier/canon/` の1系統のみ）、同ブランチ独自の監査・提案・正典バージョン管理。同ブランチはマージせず、`archive/openai-x01-probe` タグで実行ログとして残した。
 
 ## 受け入れ条件
 - 社員が指示文の外へ勝手に仕事を広げない
@@ -273,4 +289,16 @@ TOP OF 敏腕空間デザイナーが、会社ルールを変えずに確定組�
    - 背景：T01（E652）の素材が仕事上の関係（お客様）のままThreadsに流れていたため、一般化工程での置き換えルールを恒久化した。
 
 適用開始：本承認（2026-10-10）以降。
+社長Coco承認前のルール変更は禁止。
+
+
+### v2.3
+承認済み変更（2026-10-11 Coco決定・(a)移植で進める。土台はmain）：
+1. **実接続を対象に変更。** 旧「非対象：OpenAI接続／AI生成」・`atelier/config/workflow.json`「ai.status: 未接続・再開しない」を意図的に反転した。`test_atelier.py` の該当アサートも同時に更新。実接続は provider ごとの `ATELIER_*_LIVE` 稼働フラグとAPIキーの両方が揃った場合のみで、揃わない限り `AI_DISABLED` のまま（既存の安全側挙動は変えていない）。
+2. **`atelier/server/anthropic_driver.py` を新設。** `openai_driver.py` と同じ公開インターフェース（`execute`/`review_vp`／`_provider`メタのキー名）で、Anthropic Messages API を forced tool-use で構造化出力させる。Structured Outputs strict の相当品はこのforced tool-use、reasoning分はAnthropic側に分離されたトークン数が無いため `reasoning_tokens: None` で明示。
+3. **`atelier/server/ai_runtime.py` を新設計で書き換え。** 役（employeeの`kind`）→provider の対応（下記「プロバイダの役割分担」）で `execute`/`review_vp` の呼び先を決める。工程は現行正典（`atelier/canon/x_post.md`・`threads_post.md`）自身の見出し（一般化→①→ひとこと選び→②→④→③→④'→⑧）をそのまま順に呼ぶだけで、ルール内容（禁止語・構造チェック等）はコード側に複製しない——正典の変更がコードの変更を要求しない設計。
+4. **`atelier/openai-x01-probe` ブランチはマージせず `archive/openai-x01-probe` タグで残す。** 同ブランチの実装は2026-10-09以前のFinal Editorモデル・v1/v2正典分岐・独自監査拡張を前提にしており、現行の「ブランド確認（取締役会）＋副社長3点関所」モデルと直接マージできない。移植したのはAPI呼び出し部分と工程骨組みのみ（詳細は「プロバイダの役割分担」）。
+5. **最小疎通確認（キー・Org・スコープ確認のみ・取材社員の指示文は使わない）を実施。** 結果は本changelogとは別に報告する。取材社員の本番テスト（canon経由）は本v2.3がmainへ入ったあとに行う。
+
+適用開始：本承認（2026-10-11）以降。
 社長Coco承認前のルール変更は禁止。
