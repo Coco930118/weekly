@@ -62,3 +62,20 @@ jobs:
           python -m playwright install --with-deps chromium
       - name: President desk PC browser simulation
         run: python3 atelier/tests/president_desk_pc_check.py
+
+  openai-x01-live:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/atelier/openai-x01-probe'
+    runs-on: ubuntu-latest
+    env:
+      ATELIER_OPENAI_LIVE: '1'
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      OPENAI_MODEL: gpt-5.6
+      OPENAI_MAX_OUTPUT_TOKENS: '8000'
+      OPENAI_REASONING_EFFORT: low
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: X01 P1 live OpenAI probe
+        run: python3 atelier/tests/openai_x01_live_probe.py

@@ -5,7 +5,6 @@ on:
     branches: [main]
     paths:
       - 'posts/*.json'
-      - 'tools/full_check.py'
       - 'tools/final_editor_publish.py'
 
 permissions:
@@ -34,20 +33,11 @@ jobs:
                   continue
               if any(p.get('final_editor_status') == 'pending_check' for p in data.get('posts', [])):
                   files.append(path)
-          open('/tmp/pending_files.txt','w',encoding='utf-8').write('\n'.join(files))
           with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as f:
               f.write('has_pending=' + ('true' if files else 'false') + '\n')
           print('pending files:', files)
           PY
-      - name: Re-run full_check
-        if: steps.pending.outputs.has_pending == 'true'
-        shell: bash
-        run: |
-          while IFS= read -r file || [ -n "$file" ]; do
-            [ -z "$file" ] && continue
-            python tools/full_check.py "$file"
-          done < /tmp/pending_files.txt
-      - name: Mark checked posts public OK
+      - name: Final Editor technical check and public OK
         if: steps.pending.outputs.has_pending == 'true'
         run: python tools/final_editor_publish.py
       - name: Commit public OK status

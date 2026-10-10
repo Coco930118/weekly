@@ -344,6 +344,7 @@ class Workspace:
                    ORDER BY CASE WHEN kind='停止案件' THEN 0 ELSE 1 END, id""")]
             for item in queue:item['payload']=json.loads(item['payload'])
             completed=[]
+            completed_keys=set()
             for row in db.execute('SELECT key,state FROM states ORDER BY key'):
                 state=json.loads(row['state'])
                 if state.get('status')=='Coco採用済み':
@@ -354,9 +355,26 @@ class Workspace:
                     if department in {'X','Threads'}:
                         completed.append({'key':row['key'],'platform':platform,'department':department,'label':label,
                                           'revision':state.get('revision'),'adopted':adopted})
+                        completed_keys.add((row['key'],department))
                     if platform=='X' and 'x_short' in fields:
                         completed.append({'key':row['key'],'platform':platform,'department':'X短文','label':label,
                                           'revision':state.get('revision'),'adopted':adopted})
+                        completed_keys.add((row['key'],'X短文'))
+            # RoutingEngine is optional in normal operation. When present, a post that
+            # passed the VP gate and waits for Coco belongs on the president desk even
+            # before Coco adopts it.
+            has_cases=db.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_cases'").fetchone()
+            if has_cases:
+                for case in db.execute("SELECT case_id,department,status FROM workflow_cases WHERE status='Coco確認待ち' ORDER BY updated_at"):
+                    if (case['case_id'],case['department']) in completed_keys:continue
+                    try:
+                        source=self.source(case['case_id'])
+                        state=self._load(db,case['case_id'])
+                    except WorkspaceError:
+                        continue
+                    completed.append({'key':case['case_id'],'platform':state.get('platform'),
+                                      'department':case['department'],'label':source.get('label',case['case_id']),
+                                      'revision':state.get('revision'),'adopted':state.get('adopted')})
         return {'queue':queue,'completed':completed,'audit':self.audit_summary()}
 
     def record_exception(self,key,note):
@@ -396,6 +414,26 @@ class Workspace:
             if row['kind']=='停止案件':
                 self._workflow_event_if_available(db,row['key'],'Coco','停止案件回答','秘書',{'response':response.strip(),'queue_id':item_id})
                 self._workflow_event_if_available(db,row['key'],'秘書','回答返却','課長',{'queue_id':item_id})
+                if response.strip()=='このまま進める':
+                    case=db.execute("SELECT employee,resume_stage,resume_employee,status FROM workflow_cases WHERE case_id=?",(row['key'],)).fetchone() if db.execute(
+                        "SELECT 1 FROM sqlite_master WHERE type='table' AND name='workflow_cases'"
+                    ).fetchone() else None
+                    if case and case['status']=='停止中':
+                        employee=case['resume_employee'] or case['employee']
+                        stage=case['resume_stage'] or row['stage'] or '素材確認・事実固定'
+                        db.execute(
+                            "UPDATE workflow_cases SET status='稼働中',stage=?,employee=?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
+                            (stage,employee,row['key'])
+                        )
+                        payload=json.loads(row['payload'])
+                        self._workflow_event_if_available(
+                            db,row['key'],'Coco','このまま進める','課長',
+                            {'queue_id':item_id,'不足・不明点':payload.get('不足・不明点',''),'停止工程':payload.get('停止工程',stage)}
+                        )
+                        self._workflow_event_if_available(
+                            db,row['key'],'課長','停止地点から再開',employee,
+                            {'stage':stage,'proceed_without_missing_fact':True}
+                        )
         return {'id':item_id,'status':'解決済み'}
 
     def route_stop_to_proposal(self,item_id):
@@ -445,7 +483,11 @@ class Handler(BaseHTTPRequestHandler):
             if url.path=='/api/logs':return self.send_json(self.server.workspace.executions(key))
             if url.path=='/api/desk':return self.send_json(self.server.workspace.desk())
             if url.path=='/api/audit':return self.send_json(self.server.workspace.audit_summary())
-            if url.path=='/api/status':return self.send_json({'ai':'未接続','enabled':False,'publish':'未実装','db':'SQLite作業DB','write_enabled':bool(self.server.token)})
+            if url.path=='/api/status':
+                live=bool(self.server.runtime.provider.connected)
+                return self.send_json({'ai':'X01のみ接続' if live else '未接続','enabled':live,
+                    'scope':'X01のみ' if live else 'なし','publish':'未実装','db':'SQLite作業DB',
+                    'write_enabled':bool(self.server.token)})
             allowed={'/':'atelier/index.html','/atelier/':'atelier/index.html'}
             path=allowed.get(url.path,url.path.lstrip('/'))
             if path not in ['atelier/index.html','atelier/config/employees.json','atelier/config/workflow.json'] and not path.startswith('atelier/assets/'):

@@ -202,6 +202,41 @@ class RoutingSimulationTests(unittest.TestCase):
         self.assertLess(actions.index("監査記録要求"), actions.index("記録"))
         self.assertLess(actions.index("記録"), actions.index("工程へ戻す"))
 
+    def test_D4_third_vp_return_becomes_manager_stop(self):
+        self.new("D4", "Threads", "T01", "④")
+        evidence = [
+            ("事実が曲がった", "私は映画を観た。", "私は映画を観て、予定も変えた。"),
+            ("事実が曲がった", "次に会う予定は入れなかった。", "次に会う予定を少し変えた。"),
+            ("事実が曲がった", "そのあと、翌週に友人から「話せる？」と連絡が来た。", "翌週、友人から連絡が来た。"),
+        ]
+        for index, (finding, source_quote, post_quote) in enumerate(evidence, start=1):
+            self.r.complete("D4")
+            state = self.r.vp_gate(
+                "D4", finding,
+                source_quote=source_quote,
+                post_quote=post_quote,
+            )
+            if index < 3:
+                self.assertEqual(state["status"], "稼働中")
+            else:
+                self.assertEqual(state["status"], "停止中")
+
+        events = self.r.events("D4")
+        returns = [e for e in events if e["actor"]=="副社長" and e["action"]=="工程へ戻す"]
+        self.assertEqual(len(returns), 2)
+        self.assertIn("3回目戻し抑止", self.actions("D4"))
+
+        item = self.w.desk()["queue"][0]
+        self.assertEqual(item["kind"], "停止案件")
+        self.assertEqual(item["source_role"], "課長")
+        question = item["payload"]["Cocoへの質問"]
+        self.assertIn("1回目", question)
+        self.assertIn("2回目", question)
+        self.assertIn("3回目", question)
+        self.assertIn("素材「私は映画を観た。」", question)
+        self.assertIn("投稿「私は映画を観て、予定も変えた。」", question)
+        self.assertIn("「回答する」「このまま進める」「仕組み提案へ回す」", question)
+
     # E. 改善ループと記録
 
     def test_E1_two_same_corrections_do_not_reach_vp(self):

@@ -67,6 +67,29 @@ class RoutingEngine:
             );
             """)
 
+            config_path = self.workspace.root / "atelier/config/canon_versions.json"
+            if config_path.exists():
+                config = json.loads(config_path.read_text())
+                for department, item in (config.get("versions") or {}).items():
+                    exists = db.execute(
+                        "SELECT id FROM rule_versions WHERE department=? AND rule_key=? AND decision='承認'",
+                        (department, item.get("rule_key", "canon_v2")),
+                    ).fetchone()
+                    if not exists:
+                        db.execute(
+                            """INSERT INTO rule_versions
+                               (department,rule_key,old_rule,new_rule,reason,decision,effective_from)
+                               VALUES (?,?,?,?,?,'承認',?)""",
+                            (
+                                department,
+                                item.get("rule_key", "canon_v2"),
+                                item.get("old_rule", ""),
+                                item.get("new_rule", ""),
+                                item.get("reason", ""),
+                                config.get("effective_from", "次の新規投稿"),
+                            ),
+                        )
+
     def _event(self, db, case_id, actor, action, target=None, **detail):
         db.execute(
             "INSERT INTO workflow_events(case_id,actor,action,target,detail) VALUES (?,?,?,?,?)",
@@ -207,8 +230,12 @@ class RoutingEngine:
             self._event(db, case_id, current["employee"], "完成", "副社長")
         return self.case(case_id)
 
-    def vp_gate(self, case_id, finding=None, return_stage=None):
+    def vp_gate(self, case_id, finding=None, return_stage=None, excerpt="",
+                source_quote="", post_quote=""):
         current = self.case(case_id)
+        if excerpt and not post_quote:
+            post_quote = excerpt
+
         if finding not in self.VP_FINDINGS and finding is not None:
             with self.workspace.transaction() as db:
                 db.execute(
@@ -217,16 +244,82 @@ class RoutingEngine:
                 )
                 self._event(db, case_id, "副社長", "3点外なので通過", "Coco", ignored=finding)
             return self.case(case_id)
+
         if finding is None:
             with self.workspace.transaction() as db:
                 db.execute(
                     "UPDATE workflow_cases SET status='Coco確認待ち',updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
                     (case_id,),
                 )
-                self._event(db, case_id, "副社長", "3点確認OK", "Coco")
+                self._event(
+                    db, case_id, "副社長", "3点確認OK", "Coco",
+                    source_quote=source_quote, post_quote=post_quote
+                )
             return self.case(case_id)
 
         stage = self.VP_FINDINGS[finding] or return_stage or current["stage"]
+
+        # Same post may be returned by the VP at most twice. A third return
+        # becomes a manager stop instead of another employee loop.
+        with self.workspace.transaction() as db:
+            rows = db.execute(
+                """SELECT detail FROM workflow_events
+                   WHERE case_id=? AND actor='副社長' AND action='工程へ戻す'
+                   ORDER BY id""",
+                (case_id,),
+            ).fetchall()
+        previous_returns = [json.loads(row["detail"]) for row in rows]
+
+        if len(previous_returns) >= 2:
+            issues = previous_returns + [{
+                "finding": finding,
+                "stage": stage,
+                "source_quote": source_quote,
+                "post_quote": post_quote,
+            }]
+            history_text = " / ".join(
+                f"{i+1}回目: {item.get('finding','')}｜素材「{item.get('source_quote','')}」"
+                f"｜投稿「{item.get('post_quote', item.get('excerpt',''))}」"
+                for i, item in enumerate(issues)
+            )
+            question = (
+                "副社長が同じ投稿を2回戻しても解消せず、3回目も戻し判定です。"
+                f"{history_text}。"
+                "「回答する」「このまま進める」「仕組み提案へ回す」のいずれで処理しますか？"
+            )
+            payload = {
+                "投稿番号": case_id,
+                "停止工程": stage,
+                "不足・不明点": "副社長の同一投稿2回戻し後も3点基準の問題が解消していない",
+                "現在確認できる事実": history_text,
+                "Cocoへの質問": question,
+            }
+            queued = self.workspace.enqueue_secretary(
+                "停止案件", "課長", current["department"], payload,
+                key=case_id, stage=stage
+            )
+            with self.workspace.transaction() as db:
+                db.execute(
+                    """UPDATE workflow_cases SET status='停止中',stage=?,resume_stage=?,
+                       resume_employee=?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?""",
+                    (stage, stage, current["employee"], case_id),
+                )
+                self._event(
+                    db, case_id, "副社長", "3回目戻し抑止", "課長",
+                    finding=finding, stage=stage,
+                    source_quote=source_quote, post_quote=post_quote,
+                    previous_return_count=len(previous_returns)
+                )
+                self._event(
+                    db, case_id, "課長", "6項目整理", "秘書",
+                    queue_id=queued["id"], 部門=current["department"], **payload
+                )
+                self._event(
+                    db, case_id, "秘書", "社長の机へ配置", "Coco",
+                    queue_id=queued["id"]
+                )
+            return self.case(case_id)
+
         with self.workspace.transaction() as db:
             if finding == "工程に戻っていない":
                 self._event(db, case_id, "副社長", "監査記録要求", "監査委員会", finding=finding)
@@ -235,9 +328,21 @@ class RoutingEngine:
                 "UPDATE workflow_cases SET status='稼働中',stage=?,updated_at=CURRENT_TIMESTAMP WHERE case_id=?",
                 (stage, case_id),
             )
-            self._event(db, case_id, "副社長", "工程へ戻す", current["employee"],
-                        finding=finding, stage=stage)
+            self._event(
+                db, case_id, "副社長", "工程へ戻す", current["employee"],
+                finding=finding, stage=stage,
+                source_quote=source_quote, post_quote=post_quote
+            )
         return self.case(case_id)
+
+    def record_coco_judgment_pending(self, case_id, issue, detail=""):
+        current = self.case(case_id)
+        with self.workspace.transaction() as db:
+            self._event(
+                db, case_id, "監査委員会", "Coco判断待ち", "Coco",
+                department=current["department"], issue=issue, detail=detail
+            )
+        return {"recorded": True, "issue": issue}
 
     def unauthorized_change(self, case_id, actor, change_kind, department, suggestion=""):
         if actor == "Coco":
@@ -260,14 +365,15 @@ class RoutingEngine:
             return {"accepted": False}
         return {"accepted": True}
 
-    def record_correction(self, case_id, department, reason):
+    def record_correction(self, case_id, department, reason, diff=None):
+        detail = diff if isinstance(diff, dict) else {}
         with self.workspace.transaction() as db:
             db.execute(
                 "INSERT INTO corrections(key,department,reason,diff) VALUES (?,?,?,?)",
-                (case_id, department, reason, "{}"),
+                (case_id, department, reason, json.dumps(detail, ensure_ascii=False)),
             )
             self._event(db, case_id, "監査委員会", "修正記録", None,
-                        department=department, reason=reason)
+                        department=department, reason=reason, diff=detail)
         return self._threshold(department, reason, case_id)
 
     def _threshold(self, department, reason, case_id):
