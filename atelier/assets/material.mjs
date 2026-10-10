@@ -109,7 +109,7 @@ function finalizeForm(block,caseId,preview,onDone){
 export async function showMaterialPanel(container){
   const rows=await loadMaterialPending();
   container.replaceChildren();
-  const header=node('div');header.className='desk-heading';
+  const header=node('div');header.className='material-heading';
   header.append(node('h2','素材を話す'),node('p','Cocoが打つのは原文・聞き返しへの答え・案の選択・追記だけ。9問を埋める・素材案を作る・一般化するのは取材社員（Claude）。2回聞いても1・3・6が埋まらなければ課長へ。'));
   container.append(header);
   for(const row of rows){
