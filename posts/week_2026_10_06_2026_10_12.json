@@ -165,14 +165,15 @@
       "purpose": "保存喚起",
       "character": "🐢しずく",
       "episode_id": "E705",
-      "content": "上位者への報告は、自分の働きを書いた一文を、削ってから送る。\n\n「わたしが来た時は、ものが溢れていて、やっとこれくらい整理できた」と書きかけた。\n\n提案の報告に経緯を添えると、提案の話が経緯の話にすり替わる。\n\n削ると、読むのは提案だけになる。\n経緯を書きたくなるのは、そのままでいい。経緯は、聞かれた日に話す。",
-      "quote": "報告に足したくなる、一文。",
+      "content": "提案の報告に、そこまでの経緯も添えかけた。\n「ここまで整理した」と書いた一文を削った。\n報告を送ったあと、上位者とのやり取りは提案の内容について進んだ。\n\n経緯を聞かれたら話す。聞かれなければ、提案だけを伝える。",
+      "quote": "報告に足したくなる、余計な一文。",
       "note_funnel": false,
       "self_replies": [
-        "🐢しずく｜頑張った経緯は、なくなるわけじゃないの。聞かれた日に話せばいい。\n報告に足しかけて、やめた一文はある？"
+        "🐢しずく｜言いたかったことまで、消えたわけじゃないの。\n報告に書かなかった経緯にも、話す場面はある。"
       ],
       "image_prompt": "A high-quality square 1:1 watercolor illustration (1080x1080) with soft transparent washes. Early October morning, side profile view. Coco, a gentle Japanese woman in her early thirties, dark brown bob, warm brown eyes, in a pale ash blue ro-kimono with autumn chrysanthemum pattern, seen from the shoulders up together with a small wise turtle (Shizuku); they share a quiet moment; her hand covering one line of a printed report with a small slip of paper; a sunlit window seat with a small potted cosmos on the sill; soft morning light. Refined palette of pale ash blue, muted sage-grey, cool ivory. Quiet Luxury watercolor. No text, no photorealism.",
-      "x_short": "報告に頑張りを添えるほど、\nいちばん伝えたい提案のほうが遠くなる。"
+      "x_short": "報告に頑張りを添えるほど、\nいちばん伝えたい提案のほうが遠くなる。",
+      "final_editor_status": "pending_check"
     },
     {
       "id": "x_10",
