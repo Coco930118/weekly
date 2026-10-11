@@ -1,26 +1,24 @@
-# Coco Atelier（社長の机）— Fly.io配置の出発点。
-# `fly launch` を実行すると、Dockerfileを検出してこのファイルを上書き・補完することがある。
-# 上書きされた場合は、特に [http_service] の internal_port=8080 と、
-# 下の [mounts] （/data への永続ボリューム）が入っているかを確認してから `fly deploy` する。
+# fly.toml app configuration file generated for cocoatelier on 2026-10-11T01:46:30Z
 #
-# app名はFly全体で一意にする必要がある。`fly launch` 実行時に別名を聞かれたら、
-# ここも同じ名前に直すか、`fly launch` にそのまま決めさせてよい。
-app = "coco-atelier"
-primary_region = "nrt"  # 東京。別リージョンが良ければ `fly platform regions` で確認して変更可
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
+
+app = 'cocoatelier'
+primary_region = 'nrt'
 
 [build]
+
+[[mounts]]
+  source = 'coco_atelier_data'
+  destination = '/data'
 
 [http_service]
   internal_port = 8080
   force_https = true
-  auto_stop_machines = false
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
 
-[mounts]
-  source = "coco_atelier_data"
-  destination = "/data"
-
 [[vm]]
-  size = "shared-cpu-1x"
-  memory = "256mb"
+  size = 'shared-cpu-1x'
+  memory = '256mb'
