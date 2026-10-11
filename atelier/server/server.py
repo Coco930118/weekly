@@ -467,7 +467,10 @@ class Handler(BaseHTTPRequestHandler):
     def do_POST(self):
         try:
             origin=self.headers.get('Origin')
-            if origin and origin!=f'http://127.0.0.1:{self.server.server_port}':raise WorkspaceError('AUTH','同一originで操作してください')
+            # クラウド配置時はATELIER_ORIGIN（例：https://coco-atelier.fly.dev）で期待originを上書きする。
+            # 未設定ならローカル既定（http://127.0.0.1:port）のまま。
+            expected_origin=os.environ.get('ATELIER_ORIGIN') or f'http://127.0.0.1:{self.server.server_port}'
+            if origin and origin!=expected_origin:raise WorkspaceError('AUTH','同一originで操作してください')
             token=self.headers.get('Authorization','').removeprefix('Bearer ')
             if not self.server.token or not hmac.compare_digest(token,self.server.token):raise WorkspaceError('AUTH','Coco操作用tokenが必要です')
             length=int(self.headers.get('Content-Length','0'))
@@ -532,12 +535,16 @@ class Handler(BaseHTTPRequestHandler):
         except (KeyError,ValueError,TypeError):self.send_json({'error':'VALIDATION','message':'入力形式を確認してください'},400)
 
 
-def serve(port=8765,db_path=None):
+def serve(port=8765,db_path=None,host='127.0.0.1'):
     workspace=Workspace(db_path=db_path)
-    server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
+    server=ThreadingHTTPServer((host,port),Handler)
     server.workspace=workspace;server.runtime=AIRuntime(workspace);server.routing=RoutingEngine(workspace);server.token=os.environ.get('ATELIER_TOKEN','')
     return server
 
 if __name__=='__main__':
-    parser=argparse.ArgumentParser();parser.add_argument('--port',type=int,default=8765);parser.add_argument('--db')
-    args=parser.parse_args();serve(args.port,args.db).serve_forever()
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--port',type=int,default=8765)
+    parser.add_argument('--db')
+    # 既定はlocalhost限定のまま（開発用）。クラウド配置（コンテナ内）では --host 0.0.0.0 を渡す。
+    parser.add_argument('--host',default='127.0.0.1')
+    args=parser.parse_args();serve(args.port,args.db,args.host).serve_forever()

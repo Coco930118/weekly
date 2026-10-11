@@ -539,5 +539,17 @@ class HTTPTests(unittest.TestCase):
     def test_status_disabled(self):
         with urlopen(self.url+'/api/status') as response:status=json.load(response)
         self.assertFalse(status['enabled']);self.assertEqual(status['ai'],'未接続')
+    def test_atelier_origin_env_overrides_expected_origin_for_cloud(self):
+        # クラウド配置（HTTPSの実ドメイン）では、ブラウザのOriginがhttp://127.0.0.1:portと
+        # 一致しない。ATELIER_ORIGINで期待originを上書きできることを確認する。
+        with patch.dict(os.environ,{'ATELIER_ORIGIN':'https://coco-atelier.fly.dev'}):
+            req=Request(self.url+'/api/mutate',data=b'{}',
+                        headers={'Authorization':'Bearer fixture-only-token','Origin':'https://coco-atelier.fly.dev'})
+            with self.assertRaises(HTTPError) as e:urlopen(req)
+            self.assertEqual(e.exception.code,400)  # originは通る。'key'が無いのでVALIDATION(400)。
+            req2=Request(self.url+'/api/mutate',data=b'{}',
+                         headers={'Authorization':'Bearer fixture-only-token','Origin':self.url})
+            with self.assertRaises(HTTPError) as e2:urlopen(req2)
+            self.assertEqual(e2.exception.code,403)  # ATELIER_ORIGIN設定中は旧既定originが逆に拒否される。
 
 if __name__=='__main__':unittest.main()
