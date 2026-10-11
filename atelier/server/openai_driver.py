@@ -57,9 +57,12 @@ def stage_output_schema():
     }
 
 
-def interview_output_schema(points_keys, draft_required_fields, draft_optional_field, gate_fields, gate_list_fields):
+def interview_output_schema(points_keys, draft_required_fields, draft_optional_field, gate_fields,
+                             gate_list_fields, time_expression_field):
     """取材社員（atelier/canon/interview.md）の工程2・3・5共通の構造化出力。
     キー名だけをパラメータで受け取る——条文の内容はここに複製しない。
+    `gate_fields`は形式ゲートのうちAIに求める項目（「日付」はシステム側で入れるため含まない）。
+    `time_expression_field`は形式ゲートの外に別枠で残す、原文中の時期の表現用のトップレベル項目。
     """
     draft_fields = list(draft_required_fields) + [draft_optional_field]
     return {
@@ -98,8 +101,12 @@ def interview_output_schema(points_keys, draft_required_fields, draft_optional_f
                 "required": list(gate_fields),
                 "additionalProperties": False,
             },
+            time_expression_field: {"type": "string"},
         },
-        "required": ["decision", "stop_reason", "points", "missing", "drafts", "public_material", "smell_flags"],
+        "required": [
+            "decision", "stop_reason", "points", "missing", "drafts", "public_material", "smell_flags",
+            time_expression_field,
+        ],
         "additionalProperties": False,
     }
 

@@ -365,9 +365,11 @@ class AIRuntimeRoutingTests(unittest.TestCase):
 
     def _fake_interview_result(self,**overrides):
         from atelier.server.routing import RoutingEngine
+        # 「日付」はAIに求めない（MATERIAL_AI_GATE_FIELDS=MATERIAL_GATE_FIELDSから日付を除いた7項目）。
         result={'decision':'continue','stop_reason':'','points':{k:'' for k in RoutingEngine.MATERIAL_POINTS},
-                'missing':[],'drafts':[],'public_material':{f:'' for f in RoutingEngine.MATERIAL_GATE_FIELDS},
-                'smell_flags':{},'_provider':{'status':'end_turn','output_tokens':12}}
+                'missing':[],'drafts':[],'public_material':{f:'' for f in RoutingEngine.MATERIAL_AI_GATE_FIELDS},
+                'smell_flags':{},RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD:'',
+                '_provider':{'status':'end_turn','output_tokens':12}}
         result.update(overrides)
         return result
 
@@ -400,15 +402,23 @@ class AIRuntimeRoutingTests(unittest.TestCase):
         self.assertEqual(len(result['drafts']),3)
 
     def test_interview_generalize_passes_through_public_material(self):
+        from atelier.server.routing import RoutingEngine
         runtime=AIRuntime(self.w)
         def fake_run(canon_text,stage_instruction,raw_material,context,schema):
             self.assertEqual(context['媒体'],'Threads')
-            return self._fake_interview_result(public_material={'日付':'2026-10-11'},smell_flags={'場面':['常連']})
+            # AIは「日付」を返さない。原文中の時期の表現は別枠（トップレベル）で返る。
+            return self._fake_interview_result(
+                public_material={'媒体と置き換え先':'Threads・お相手さまへ置き換え済み'},
+                smell_flags={'場面':['常連']},
+                **{RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD:'先週の火曜日'},
+            )
         with patch.object(AnthropicDriver,'connected',True),\
              patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
             result=runtime.interview_generalize('case#1','原文テキスト',{},'Threads',{'選択':'A'})
-        self.assertEqual(result['public_material']['日付'],'2026-10-11')
+        self.assertNotIn('日付',result['public_material'])
+        self.assertEqual(result['public_material']['媒体と置き換え先'],'Threads・お相手さまへ置き換え済み')
         self.assertEqual(result['smell_flags']['場面'],['常連'])
+        self.assertEqual(result[RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD],'先週の火曜日')
 
     def test_interview_technical_error_is_logged_and_reraised_without_touching_case_state(self):
         # tool_use不在などの技術エラーは、2回再試行してもなおAnthropicDriver側が
@@ -452,11 +462,15 @@ class AIRuntimeRoutingTests(unittest.TestCase):
                 return self._fake_interview_result(drafts=[
                     {'軸':'軸A','場面':'場面A','わたしがしたこと':'行動A','そのあと起きたこと':'結果A','この案で足りない問い':''},
                 ])
-            return self._fake_interview_result(public_material={
-                '日付':'2026-10-11','媒体と置き換え先':'X・仕事上の関係のまま','場面':'場面A',
-                'わたしがしたこと':'行動A','そのあと起きたこと':'結果A',
-                '【必ず残す事実】3点':['事実1','事実2','事実3'],'対応表':['原文 => 公開用'],'原文':raw_material,
-            })
+            # 「日付」は返さない（システム側で入れる）。原文中の時期の表現は別枠で返す。
+            return self._fake_interview_result(
+                public_material={
+                    '媒体と置き換え先':'X・仕事上の関係のまま','場面':'場面A',
+                    'わたしがしたこと':'行動A','そのあと起きたこと':'結果A',
+                    '【必ず残す事実】3点':['事実1','事実2','事実3'],'対応表':['原文 => 公開用'],'原文':raw_material,
+                },
+                **{RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD:'先週の火曜日'},
+            )
 
         with patch.object(AnthropicDriver,'connected',True),\
              patch.object(runtime.material_driver,'run_interview_stage',side_effect=fake_run):
@@ -475,16 +489,23 @@ class AIRuntimeRoutingTests(unittest.TestCase):
             # Coco selects A
             routing.material_select(case_id,'A')
 
-            # /api/material/generalize-preview
+            # /api/material/generalize-preview（server.pyと同じく、ここで「日付」と原文中の
+            # 時期の表現をシステム側から注入する）
             summary=routing.material_summary(case_id)
             ai=runtime.interview_generalize(case_id,summary['raw_material'],summary['organized_material'],summary['department'],
                                              {'選択':'A','選んだ案':summary['drafts'][0],'追記':''})
             routing.record_provider_usage(case_id,'工程5',ai.get('_provider'))
+            preview_public_material={
+                **ai['public_material'],'日付':routing.material_entered_date(case_id),
+                RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD:ai.get(RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD,''),
+            }
 
             # /api/material/finalize（Cocoがそのまま確定）
-            final=routing.material_finalize(case_id,ai['public_material'],next_employee='X01')
+            final=routing.material_finalize(case_id,preview_public_material,next_employee='X01')
 
         self.assertTrue(final['complete'])
+        self.assertEqual(final['public_material']['日付'],routing.material_entered_date(case_id))
+        self.assertEqual(final['public_material'][RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD],'先週の火曜日')
         case=routing.case(case_id)
         self.assertEqual(case['stage'],'①')
         self.assertEqual(case['employee'],'X01')

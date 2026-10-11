@@ -404,7 +404,8 @@ class RoutingSimulationTests(unittest.TestCase):
 
     def test_G5_finalize_incomplete_stays_in_material_interview(self):
         self.r.material_start("G5", "X", "MATERIAL", "原文テキスト", self.full_points())
-        result = self.r.material_finalize("G5", {"日付": "2026-10-11", "場面": "場面のみ"})
+        # 「日付」は取材社員に求めない（システム側で入る）ので、ここでは渡さない。
+        result = self.r.material_finalize("G5", {"場面": "場面のみ"})
         self.assertFalse(result["complete"])
         self.assertIn("媒体と置き換え先", result["missing"])
         self.assertIn("【必ず残す事実】3点", result["missing"])
@@ -415,7 +416,8 @@ class RoutingSimulationTests(unittest.TestCase):
     def test_G6_finalize_complete_hands_off_to_post_owner_and_flags_smell_words(self):
         self.r.material_start("G6", "Threads", "MATERIAL", "原文テキスト", self.full_points())
         public_material = {
-            "日付": "2026-10-11", "媒体と置き換え先": "Threads・お相手さまへ置き換え済み",
+            # 「日付」を渡さなくても、システム側（material_interviews.at）で揃う。
+            "媒体と置き換え先": "Threads・お相手さまへ置き換え済み",
             "場面": "常連のお客様が来店した", "わたしがしたこと": "謝った",
             "そのあと起きたこと": "忘れないと言われた",
             "【必ず残す事実】3点": ["足が遠のいた", "すぐに謝った", "忘れないと言われた"],
@@ -424,12 +426,47 @@ class RoutingSimulationTests(unittest.TestCase):
         }
         result = self.r.material_finalize("G6", public_material, next_employee="T01")
         self.assertTrue(result["complete"])
+        self.assertEqual(result["public_material"]["日付"], self.r.material_entered_date("G6"))
         self.assertIn("場面", result["smell_flags"])
         self.assertEqual(set(result["smell_flags"]["場面"]), {"常連", "お客様", "客様", "来店"})
         case = self.r.case("G6")
         self.assertEqual(case["stage"], "①")
         self.assertEqual(case["employee"], "T01")
         self.assertIn("公開用素材完成", self.actions("G6"))
+
+    def test_G6b_finalize_overrides_date_with_system_entered_date(self):
+        # 「日付」はCocoが原文を打った日時（material_start時点）をシステム側で入れる。
+        # AI・Cocoの入力が食い違っていても、確定時に必ず上書きされる（2026-10-10 Coco決定）。
+        self.r.material_start("G6b", "X", "MATERIAL", "原文テキスト", self.full_points())
+        public_material = {
+            "日付": "9999-01-01",  # 取材社員やCocoが誤って入れても無視される値
+            "媒体と置き換え先": "X・仕事のまま", "場面": "場面", "わたしがしたこと": "行動",
+            "そのあと起きたこと": "結果", "【必ず残す事実】3点": ["事実1"], "対応表": ["語 => 語"],
+            "原文": "原文そのまま",
+        }
+        result = self.r.material_finalize("G6b", public_material)
+        self.assertTrue(result["complete"])
+        entered_date = self.r.material_entered_date("G6b")
+        self.assertEqual(result["public_material"]["日付"], entered_date)
+        self.assertNotEqual(result["public_material"]["日付"], "9999-01-01")
+
+    def test_G6c_time_expression_field_is_optional_and_outside_the_gate(self):
+        # 原文中の時期の表現（別枠）が空でも、形式ゲートの完了を妨げない。
+        self.r.material_start("G6c", "X", "MATERIAL", "原文テキスト", self.full_points())
+        public_material = {
+            "媒体と置き換え先": "X・仕事のまま", "場面": "場面", "わたしがしたこと": "行動",
+            "そのあと起きたこと": "結果", "【必ず残す事実】3点": ["事実1"], "対応表": ["語 => 語"],
+            "原文": "原文そのまま",
+        }
+        result = self.r.material_finalize("G6c", public_material)
+        self.assertTrue(result["complete"])
+        self.assertNotIn(RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD, result["missing"] if not result["complete"] else [])
+        # 別枠として渡せば、そのまま保存される（確定ゲートの対象外として）。
+        self.r.material_start("G6d", "X", "MATERIAL", "原文テキスト2", self.full_points())
+        public_material2 = {**public_material, RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD: "先週の火曜日"}
+        result2 = self.r.material_finalize("G6d", public_material2)
+        self.assertTrue(result2["complete"])
+        self.assertEqual(result2["public_material"][RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD], "先週の火曜日")
 
     def test_G7_audit_counts_follow_up_selection_and_addendum(self):
         self.r.material_start("G7a", "X", "MATERIAL", "原文", self.full_points(**{"何回あったか": ""}))

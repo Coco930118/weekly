@@ -34,6 +34,18 @@
 値は環境で管理し、ファイルやGitHubへ保存しない。未設定なら読取のみ。
 サーバーはlocalhostに限定し、インターネットへの公開を想定しない。
 
+取材社員（素材を話す）・投稿社員・副社長のAI呼び出しを動かすには、サーバー起動前に
+`ATELIER_ANTHROPIC_LIVE=1` と `ANTHROPIC_API_KEY` も環境変数で設定する（下記「AI接続」）。
+未設定のままでも画面は開けるが、「素材を話す」はAI未接続のエラーになる。
+
+起動例：
+```bash
+export ATELIER_TOKEN=（任意の値）
+export ATELIER_ANTHROPIC_LIVE=1
+export ANTHROPIC_API_KEY=（GitHub Secretsと同じ鍵）
+python3 -m atelier.server.server
+```
+
 ## 作業DB
 
 作業DBは `atelier/.local/work.sqlite3`。
@@ -42,9 +54,13 @@ weeklyの公開正本は読取対象であり、Atelierの作業状態から公�
 
 ## AI接続
 
-**未接続のまま。**
-今回の社員編成・会社運用の変更ではOpenAI接続、AI生成、x_06 / E567送信、公開処理の変更を行わない。
-`openai_driver.py` は実通信を行わず、実行要求は安全停止する。
+**取材社員・投稿社員はAnthropic（Claude）、課長・取締役会・副社長はOpenAI（ChatGPT）に接続**
+（2026-10-10 実接続を対象に変更。正典は `docs/coco_atelier_company_spec.md`「プロバイダ（provider）の役割分担」）。
+監査委員会・秘書はモデルなし。
+
+`ATELIER_ANTHROPIC_LIVE=1` と `ANTHROPIC_API_KEY`（Anthropic用）、必要に応じて
+`ATELIER_OPENAI_LIVE=1` と `OPENAI_API_KEY`（OpenAI用）を設定しない限り、各providerは未接続のまま
+安全停止する（`ProviderUnavailable`）。指示文（正典）はproviderで変えない。
 
 ## 検証
 

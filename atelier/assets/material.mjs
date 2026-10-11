@@ -5,6 +5,9 @@ const GATE_FIELDS=['日付','媒体と置き換え先','場面','わたしがし
 const DRAFT_FIELDS=['軸','場面','わたしがしたこと','そのあと起きたこと'];
 const DRAFT_OPTIONAL_FIELD='この案で足りない問い';
 const LIST_GATE_FIELDS=new Set(['【必ず残す事実】3点','対応表']);
+// 「日付」はCocoが原文を打った日時をシステム側で入れる（取材社員には求めない・2026-10-10）。
+// 原文中の時期表現は形式ゲートの外、別枠に残す。
+const TIME_EXPRESSION_FIELD='原文中の時期の表現';
 
 function field(label,value){const row=node('div');row.className='desk-field';row.append(node('span',label),node('strong',String(value??'')));return row;}
 function labeledInput(label,tag='input',attrs={}){const wrap=node('label');wrap.className='material-field';const input=node(tag,undefined,attrs);wrap.append(node('span',label),input);return {wrap,input};}
@@ -86,12 +89,18 @@ function finalizeForm(block,caseId,preview,onDone){
   const multiline=f=>f==='原文'||LIST_GATE_FIELDS.has(f);
   const toText=v=>Array.isArray(v)?v.join('\n'):String(v??'');
   const gateInputs=GATE_FIELDS.map(f=>labeledInput(
-    LIST_GATE_FIELDS.has(f)?`${f}（1行に1つ）`:f,
+    f==='日付'?'日付（Cocoが原文を打った日。システム側で入る・確定時に上書きされる）':LIST_GATE_FIELDS.has(f)?`${f}（1行に1つ）`:f,
     multiline(f)?'textarea':'input',
-    multiline(f)?{rows:3,value:toText(preview.public_material?.[f])}:{value:toText(preview.public_material?.[f])},
+    f==='日付'
+      ?{value:toText(preview.public_material?.[f]),readOnly:true}
+      :multiline(f)?{rows:3,value:toText(preview.public_material?.[f])}:{value:toText(preview.public_material?.[f])},
   ));
+  const timeExpression=labeledInput(
+    `${TIME_EXPRESSION_FIELD}（参考・確定ゲートの対象外。原文にあればそのまま）`,'input',
+    {value:toText(preview.public_material?.[TIME_EXPRESSION_FIELD])},
+  );
   const nextEmployee=labeledInput('渡す投稿社員のID','input',{placeholder:'X01 / T01 等'});
-  form.append(...gateInputs.map(i=>i.wrap),nextEmployee.wrap);
+  form.append(...gateInputs.map(i=>i.wrap),timeExpression.wrap,nextEmployee.wrap);
   const submit=node('button','公開用素材を確定する',{type:'submit'});form.append(submit);
   form.onsubmit=async e=>{e.preventDefault();
     const publicMaterial={};
@@ -99,6 +108,7 @@ function finalizeForm(block,caseId,preview,onDone){
       const value=gateInputs[i].input.value;
       publicMaterial[f]=LIST_GATE_FIELDS.has(f)?value.split('\n').map(x=>x.trim()).filter(Boolean):value;
     });
+    publicMaterial[TIME_EXPRESSION_FIELD]=timeExpression.input.value;
     const result=await materialFinalize(caseId,publicMaterial,nextEmployee.input.value.trim()||undefined);
     if(!result.complete){alert('工程未完了：'+result.missing.join('／'));}
     await onDone();

@@ -81,7 +81,12 @@ def main():
         case_id, summary["raw_material"], summary["organized_material"], summary["department"],
         {"選択": selection, "選んだ案": selected_draft, "追記": ""},
     )
-    report["stage5_public_material"] = stage5["public_material"]
+    # 「日付」は取材社員に求めていない。server.pyと同じく、ここでシステム側から注入する
+    # （Cocoが原文を打った日時＝material_start時点のmaterial_interviews.at）。
+    report["stage5_public_material"] = {
+        **stage5["public_material"], "日付": routing.material_entered_date(case_id),
+        RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD: stage5.get(RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD, ""),
+    }
     report["stage5_smell_flags"] = stage5.get("smell_flags")
     report["stage5_provider"] = stage5.get("_provider")
 
