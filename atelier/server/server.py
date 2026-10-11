@@ -514,7 +514,11 @@ class Handler(BaseHTTPRequestHandler):
                 decision_context={'選択':selection,'選んだ案':selected_draft,'追記':summary.get('addendum') or ''}
                 ai=self.server.runtime.interview_generalize(data['case_id'],summary['raw_material'],summary['organized_material'],summary['department'],decision_context)
                 self.server.routing.record_provider_usage(data['case_id'],'工程5',ai.get('_provider'))
-                result={'public_material':ai['public_material'],'smell_flags':ai.get('smell_flags',{}),'provider':ai.get('_provider')}
+                # 「日付」は取材社員に求めていない。Cocoが原文を打った日時をここでシステム側から入れる
+                # （material_finalizeでも同じ値に上書きするため、ここで入れ忘れても確定時に揃う）。
+                public_material={**ai['public_material'],'日付':self.server.routing.material_entered_date(data['case_id']),
+                                  RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD:ai.get(RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD,'')}
+                result={'public_material':public_material,'smell_flags':ai.get('smell_flags',{}),'provider':ai.get('_provider')}
             elif path=='/api/material/finalize':
                 result=self.server.routing.material_finalize(data['case_id'],data['public_material'],data.get('next_employee'))
             else:raise WorkspaceError('NOT_FOUND','操作が見つかりません')

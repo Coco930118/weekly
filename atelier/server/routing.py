@@ -35,6 +35,13 @@ class RoutingEngine:
         "日付", "媒体と置き換え先", "場面", "わたしがしたこと", "そのあと起きたこと",
         "【必ず残す事実】3点", "対応表", "原文",
     )
+    # 「日付」はCocoが原文を打った日時（material_interviews.at）をシステム側で入れる
+    # （2026-10-10 Coco決定）。取材社員には求めない——AIへの構造化出力はこの7項目だけを
+    # 求め、material_finalizeが確定直前に「日付」を上書きしてから8項目の完了判定にかける。
+    MATERIAL_AI_GATE_FIELDS = tuple(f for f in MATERIAL_GATE_FIELDS if f != "日付")
+    # 原文にある時期の表現（「先週の火曜日」等）は、形式ゲートの外に別枠で残す
+    # （2026-10-10 Coco決定）。確定ゲート（MATERIAL_GATE_FIELDS）の対象外＝空でも完了を妨げない。
+    MATERIAL_TIME_EXPRESSION_FIELD = "原文中の時期の表現"
     MATERIAL_SELECTIONS = {"A", "B", "C", "案なし・自分で書く"}
     MATERIAL_SMELL_WORDS = ("来店", "常連", "お客様", "客様", "スタッフ")
 
@@ -575,14 +582,26 @@ class RoutingEngine:
             return any(str(v).strip() for v in value)
         return bool(str(value or "").strip())
 
+    def material_entered_date(self, case_id):
+        """Cocoが原文を打った日時（material_interviews.atの日付部分）。
+        形式ゲート「日付」はこの値で固定する——取材社員の推測に任せない。"""
+        with self.workspace.transaction() as db:
+            row = db.execute("SELECT at FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
+        if not row:
+            raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+        return str(row["at"])[:10]
+
     def material_finalize(self, case_id, public_material, next_employee=None):
         if not isinstance(public_material, dict):
             raise RoutingError("MATERIAL_FINALIZE", "公開用素材の形式が不正です")
-        missing = [f for f in self.MATERIAL_GATE_FIELDS if not self._gate_field_present(public_material.get(f))]
         with self.workspace.transaction() as db:
-            row = db.execute("SELECT case_id FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
+            row = db.execute("SELECT at FROM material_interviews WHERE case_id=?", (case_id,)).fetchone()
             if not row:
                 raise RoutingError("NOT_FOUND", "取材案件が見つかりません")
+            # 「日付」はCocoが原文を打った日時をシステム側で入れる。取材社員・Coco入力の
+            # 値があっても上書きする（2026-10-10 Coco決定）。
+            public_material = {**public_material, "日付": str(row["at"])[:10]}
+            missing = [f for f in self.MATERIAL_GATE_FIELDS if not self._gate_field_present(public_material.get(f))]
             if missing:
                 db.execute(
                     "UPDATE material_interviews SET status='工程未完了',updated_at=CURRENT_TIMESTAMP WHERE case_id=?",

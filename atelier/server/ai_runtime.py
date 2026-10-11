@@ -33,9 +33,12 @@ INTERVIEW_STAGE_3 = (
 INTERVIEW_STAGE_5 = (
     "工程5（一般化）と工程6（公開用素材を出す・形式ゲート）だけを実行する。Cocoが選んだ案・"
     "追記を踏まえ、媒体の軸に合わせて置き換え先を決め、対応表に残す。業種の匂いがある語に"
-    "印をつける（置き換えで事実が変わるなら置き換えない）。public_materialに8項目（日付・"
-    "媒体と置き換え先・場面・わたしがしたこと・そのあと起きたこと・【必ず残す事実】3点・"
-    "対応表・原文）を入れる。missing・draftsは空のままにする。"
+    "印をつける（置き換えで事実が変わるなら置き換えない）。public_materialに7項目（媒体と"
+    "置き換え先・場面・わたしがしたこと・そのあと起きたこと・【必ず残す事実】3点・対応表・"
+    "原文）を入れる。「日付」はシステム側がCocoの原文入力日時で入れるため、public_materialに"
+    "含めない・推測しない。原文に時期の表現（「先週の火曜日」等）があれば、それを言い換えず"
+    "そのままの形で別枠（トップレベルの原文中の時期の表現）に入れる。無ければ空文字でよい。"
+    "missing・draftsは空のままにする。"
 )
 
 # role (employee `kind`) -> provider name. None = no model (監査委員会・秘書・design).
@@ -510,8 +513,9 @@ class AIRuntime:
             RoutingEngine.MATERIAL_POINTS,
             RoutingEngine.MATERIAL_DRAFT_FIELDS,
             "この案で足りない問い",
-            RoutingEngine.MATERIAL_GATE_FIELDS,
+            RoutingEngine.MATERIAL_AI_GATE_FIELDS,
             {"【必ず残す事実】3点", "対応表"},
+            RoutingEngine.MATERIAL_TIME_EXPRESSION_FIELD,
         )
 
     def _run_interview_stage_logged(self, case_id, stage_label, stage_instruction, raw_material, context):
@@ -556,7 +560,8 @@ class AIRuntime:
         return result
 
     def interview_generalize(self, case_id, raw_material, points, department, decision_context):
-        """工程5・6：一般化し、公開用素材（形式ゲート8項目）を出す。"""
+        """工程5・6：一般化し、公開用素材（形式ゲート・AIが出すのは「日付」を除く7項目）と、
+        原文中の時期の表現（別枠）を出す。「日付」のシステム側での注入はserver.py側で行う。"""
         return self._run_interview_stage_logged(
             case_id, "工程5", INTERVIEW_STAGE_5, raw_material,
             {"9問の回答": points, "媒体": department, "Cocoの選択と追記": decision_context},
