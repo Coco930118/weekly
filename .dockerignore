@@ -1,0 +1,11 @@
+.git
+.github
+__pycache__
+*.py[cod]
+.DS_Store
+atelier/.local
+atelier/**/*.sqlite3
+atelier/**/*.sqlite3-*
+atelier/.env
+atelier/.env.*
+node_modules
